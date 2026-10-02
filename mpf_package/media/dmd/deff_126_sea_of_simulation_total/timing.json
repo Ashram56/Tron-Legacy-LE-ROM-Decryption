@@ -1,0 +1,29 @@
+{
+ "deff": 126,
+ "run_seconds": 4.135,
+ "ended_by_timeout": false,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 5,
+   "duration_ms": 4129
+  }
+ ],
+ "images_used": [
+  6448
+ ],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x115"
+  }
+ ],
+ "light_effects": [
+  {
+   "t_ms": 0,
+   "leff": 78,
+   "from_deff": "126"
+  }
+ ],
+ "reference_frames": 103
+}

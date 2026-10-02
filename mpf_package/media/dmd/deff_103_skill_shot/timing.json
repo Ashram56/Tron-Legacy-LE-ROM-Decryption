@@ -1,0 +1,15 @@
+{
+ "deff": 103,
+ "run_seconds": 1.205,
+ "ended_by_timeout": false,
+ "graphics_frames": [],
+ "images_used": [],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x048"
+  }
+ ],
+ "light_effects": [],
+ "reference_frames": 28
+}

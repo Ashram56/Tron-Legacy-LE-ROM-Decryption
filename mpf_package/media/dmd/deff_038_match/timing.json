@@ -1,0 +1,417 @@
+{
+ "deff": 38,
+ "run_seconds": 6.238,
+ "ended_by_timeout": false,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 3,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 67,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 131,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 195,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 260,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 325,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 389,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 454,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 518,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 583,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 648,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 712,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 777,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 841,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 905,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 971,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 1036,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 1100,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 1164,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 1229,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/020.png",
+   "t_ms": 1294,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/021.png",
+   "t_ms": 1358,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/022.png",
+   "t_ms": 1423,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/023.png",
+   "t_ms": 1487,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/024.png",
+   "t_ms": 1552,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/025.png",
+   "t_ms": 1617,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/026.png",
+   "t_ms": 1681,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/027.png",
+   "t_ms": 1746,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/028.png",
+   "t_ms": 1811,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/029.png",
+   "t_ms": 1875,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/030.png",
+   "t_ms": 1939,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/031.png",
+   "t_ms": 2003,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/032.png",
+   "t_ms": 2067,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/033.png",
+   "t_ms": 2132,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/034.png",
+   "t_ms": 2196,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/035.png",
+   "t_ms": 2261,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/036.png",
+   "t_ms": 2325,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/037.png",
+   "t_ms": 2390,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/038.png",
+   "t_ms": 2454,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/039.png",
+   "t_ms": 2518,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/040.png",
+   "t_ms": 2582,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/041.png",
+   "t_ms": 2646,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/042.png",
+   "t_ms": 2711,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/043.png",
+   "t_ms": 2775,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/044.png",
+   "t_ms": 2839,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/045.png",
+   "t_ms": 2904,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/046.png",
+   "t_ms": 2968,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/047.png",
+   "t_ms": 3032,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/048.png",
+   "t_ms": 3097,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/049.png",
+   "t_ms": 3161,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/050.png",
+   "t_ms": 3226,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/051.png",
+   "t_ms": 3291,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/052.png",
+   "t_ms": 3355,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/053.png",
+   "t_ms": 3420,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/054.png",
+   "t_ms": 3484,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/055.png",
+   "t_ms": 3548,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/056.png",
+   "t_ms": 3613,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/057.png",
+   "t_ms": 3678,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/058.png",
+   "t_ms": 3742,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/059.png",
+   "t_ms": 3807,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/060.png",
+   "t_ms": 3871,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/061.png",
+   "t_ms": 3935,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/062.png",
+   "t_ms": 4000,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/063.png",
+   "t_ms": 4064,
+   "duration_ms": 2173
+  }
+ ],
+ "images_used": [
+  3647,
+  3648,
+  3649,
+  3650,
+  3651,
+  3652,
+  3653,
+  3654,
+  3655,
+  3656,
+  3657,
+  3658,
+  3659,
+  3660,
+  3661,
+  3662,
+  3663,
+  3664,
+  3665,
+  3666,
+  3667,
+  3668,
+  3669,
+  3670,
+  3671,
+  3672,
+  3673,
+  3674,
+  3675,
+  3676,
+  3677,
+  3678,
+  3679,
+  3680,
+  3681,
+  3682,
+  3683,
+  3684,
+  3685,
+  3686,
+  3687,
+  3688,
+  3689,
+  3690,
+  3691,
+  3692,
+  3693,
+  3694,
+  3695,
+  3696,
+  3697,
+  3698,
+  3699,
+  3700,
+  3701,
+  3702,
+  3703,
+  3704,
+  3705,
+  3706,
+  3707,
+  3708,
+  3709,
+  3710
+ ],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x01c"
+  },
+  {
+   "t_ms": 320,
+   "call": "0x041"
+  },
+  {
+   "t_ms": 966,
+   "call": "0x03f"
+  },
+  {
+   "t_ms": 3093,
+   "call": "0x040"
+  },
+  {
+   "t_ms": 4190,
+   "call": "0x042"
+  }
+ ],
+ "light_effects": [],
+ "reference_frames": 65
+}

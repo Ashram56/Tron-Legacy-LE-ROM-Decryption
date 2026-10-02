@@ -1,0 +1,147 @@
+{
+ "deff": 76,
+ "run_seconds": 2.529,
+ "ended_by_timeout": false,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 4,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 54,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 102,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 151,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 200,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 249,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 297,
+   "duration_ms": 50
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 347,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 395,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 444,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 492,
+   "duration_ms": 50
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 542,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 590,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 640,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 688,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 737,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 785,
+   "duration_ms": 50
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 835,
+   "duration_ms": 48
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 883,
+   "duration_ms": 49
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 932,
+   "duration_ms": 1596
+  }
+ ],
+ "images_used": [
+  8110,
+  8111,
+  8112,
+  8113,
+  8114,
+  8115,
+  8116,
+  8117,
+  8118,
+  8119,
+  8120,
+  8121,
+  8122,
+  8123,
+  8124,
+  8125,
+  8126,
+  8127,
+  8128,
+  8129
+ ],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x090"
+  },
+  {
+   "t_ms": 976,
+   "call": "0x091"
+  }
+ ],
+ "light_effects": [
+  {
+   "t_ms": 0,
+   "leff": 17,
+   "from_deff": "76"
+  }
+ ],
+ "reference_frames": 66
+}

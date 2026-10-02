@@ -1,0 +1,20 @@
+{
+ "deff": 36,
+ "run_seconds": 12.011,
+ "ended_by_timeout": true,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 2,
+   "duration_ms": 12009
+  }
+ ],
+ "images_used": [
+  203,
+  204,
+  205
+ ],
+ "sounds": [],
+ "light_effects": [],
+ "reference_frames": 106
+}

@@ -1,0 +1,25 @@
+{
+ "deff": 144,
+ "run_seconds": 2.185,
+ "ended_by_timeout": false,
+ "graphics_frames": [],
+ "images_used": [],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x07e"
+  },
+  {
+   "t_ms": 979,
+   "call": "0x07f"
+  }
+ ],
+ "light_effects": [
+  {
+   "t_ms": 0,
+   "leff": 84,
+   "from_deff": "144"
+  }
+ ],
+ "reference_frames": 54
+}

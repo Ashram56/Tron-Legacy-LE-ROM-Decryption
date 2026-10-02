@@ -1,0 +1,156 @@
+{
+ "deff": 83,
+ "run_seconds": 1.986,
+ "ended_by_timeout": false,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 2,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 35,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 68,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 101,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 134,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 166,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 199,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 231,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 264,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 296,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 329,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 361,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 394,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 427,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 459,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 492,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 524,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 557,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 589,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 621,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/020.png",
+   "t_ms": 654,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/021.png",
+   "t_ms": 687,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/022.png",
+   "t_ms": 719,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/023.png",
+   "t_ms": 751,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/024.png",
+   "t_ms": 784,
+   "duration_ms": 32
+  },
+  {
+   "file": "frames/025.png",
+   "t_ms": 816,
+   "duration_ms": 33
+  },
+  {
+   "file": "frames/026.png",
+   "t_ms": 849,
+   "duration_ms": 1136
+  }
+ ],
+ "images_used": [
+  3941,
+  3942,
+  3943
+ ],
+ "sounds": [],
+ "light_effects": [
+  {
+   "t_ms": 0,
+   "leff": 51,
+   "from_deff": "83"
+  }
+ ],
+ "reference_frames": 48
+}

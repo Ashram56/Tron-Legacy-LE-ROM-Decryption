@@ -1,0 +1,175 @@
+{
+ "deff": 109,
+ "run_seconds": 3.776,
+ "ended_by_timeout": false,
+ "graphics_frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 5,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 70,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 135,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 200,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 265,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 331,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 396,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 462,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 528,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 593,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 659,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 724,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 790,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 855,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 921,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 986,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 1052,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 1118,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 1182,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 1248,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/020.png",
+   "t_ms": 1314,
+   "duration_ms": 65
+  },
+  {
+   "file": "frames/021.png",
+   "t_ms": 1379,
+   "duration_ms": 64
+  },
+  {
+   "file": "frames/022.png",
+   "t_ms": 1443,
+   "duration_ms": 66
+  },
+  {
+   "file": "frames/023.png",
+   "t_ms": 1508,
+   "duration_ms": 2267
+  }
+ ],
+ "images_used": [
+  4050,
+  4051,
+  4052,
+  4053,
+  4054,
+  4055,
+  4056,
+  4057,
+  4058,
+  4059,
+  4060,
+  4061,
+  4062,
+  4063,
+  4064,
+  4065,
+  4066,
+  4067,
+  4068,
+  4069,
+  4070,
+  4071,
+  4072,
+  4073
+ ],
+ "sounds": [
+  {
+   "t_ms": 0,
+   "call": "0x0d8"
+  },
+  {
+   "t_ms": 458,
+   "call": "0x0d9"
+  },
+  {
+   "t_ms": 1865,
+   "call": "0x0da"
+  }
+ ],
+ "light_effects": [
+  {
+   "t_ms": 0,
+   "leff": 60,
+   "from_deff": "109"
+  }
+ ],
+ "reference_frames": 86
+}
