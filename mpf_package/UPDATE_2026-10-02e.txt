@@ -1,0 +1,35 @@
+Tron MPF package update 2026-10-02e (replaces update d): fixes the gaps found by a full check of the package.
+Unzip in the folder that contains mpf_package/ (paths in the zip start with mpf_package/). Nothing was removed.
+- New: the effect 105 (Flynn's Arcade mystery award) parts/ folder the README describes. It was never in the package.
+- Changed: README.md (dmd_library/index.json is one file for the whole library, not one per folder).
+Files:
+README.md
+media/dmd/deff_105_flynns_arcade_award/parts/award_01_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_01_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_02_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_02_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_03_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_03_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_04_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_04_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_05_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_05_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_06_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_06_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_07_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_07_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_08_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_08_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_09_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_09_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_10_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_10_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_11_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_11_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_12_a.png
+media/dmd/deff_105_flynns_arcade_award/parts/award_12_b.png
+media/dmd/deff_105_flynns_arcade_award/parts/cabinet_0.png
+media/dmd/deff_105_flynns_arcade_award/parts/cabinet_1.png
+media/dmd/deff_105_flynns_arcade_award/parts/cabinet_2.png
+media/dmd/deff_105_flynns_arcade_award/parts/cabinet_3.png
+media/dmd/deff_105_flynns_arcade_award/parts/index.json

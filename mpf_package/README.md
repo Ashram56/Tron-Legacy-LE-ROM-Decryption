@@ -55,7 +55,8 @@ mpf_package/
     dmd_library/anim_NNN_imgXXXX/        all 145 full-size ROM animations, including ones no
       animation.gif, frames/              effect played during capture (native size)
       animation_128x32.gif   on the 128x32 canvas at the ROM's position and frame time
-      index.json             frame ranges, size, and which effects were seen using each one
+    dmd_library/index.json               one entry per library animation: frame range, size, and
+                                         which effects were seen using it
     rom_images_all.zip       every one of the ROM's 8,181 images as PNG (fonts, icons, sprites,
                              frames) with index.json
   tools/                 the scripts and emulator patch that produced all of this

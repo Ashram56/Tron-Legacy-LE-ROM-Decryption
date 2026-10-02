@@ -1,0 +1,183 @@
+{
+ "cabinets": [
+  {
+   "file": "cabinet_0.png",
+   "image": 1477,
+   "size": [
+    45,
+    32
+   ]
+  },
+  {
+   "file": "cabinet_1.png",
+   "image": 1478,
+   "size": [
+    45,
+    32
+   ]
+  },
+  {
+   "file": "cabinet_2.png",
+   "image": 1479,
+   "size": [
+    45,
+    32
+   ]
+  },
+  {
+   "file": "cabinet_3.png",
+   "image": 1480,
+   "size": [
+    45,
+    32
+   ]
+  }
+ ],
+ "awards": [
+  {
+   "award_id": 1,
+   "name": "500K",
+   "icon_a": 1482,
+   "icon_b": 1481,
+   "file_a": "award_01_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_01_b.png"
+  },
+  {
+   "award_id": 2,
+   "name": "ADV. GEM",
+   "icon_a": 1488,
+   "icon_b": 1487,
+   "file_a": "award_02_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_02_b.png"
+  },
+  {
+   "award_id": 3,
+   "name": "ADV. CLU",
+   "icon_a": 1522,
+   "icon_b": 1521,
+   "file_a": "award_03_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_03_b.png"
+  },
+  {
+   "award_id": 4,
+   "name": "ADV. ZUSE",
+   "icon_a": 1524,
+   "icon_b": 1523,
+   "file_a": "award_04_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_04_b.png"
+  },
+  {
+   "award_id": 5,
+   "name": "ADV. QUORRA",
+   "icon_a": 1492,
+   "icon_b": 1491,
+   "file_a": "award_05_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_05_b.png"
+  },
+  {
+   "award_id": 6,
+   "name": "ADV. DISC",
+   "icon_a": 1510,
+   "icon_b": 1509,
+   "file_a": "award_06_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_06_b.png"
+  },
+  {
+   "award_id": 7,
+   "name": "ADV. LIGHT CYCLE",
+   "icon_a": 1502,
+   "icon_b": 1501,
+   "file_a": "award_07_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_07_b.png"
+  },
+  {
+   "award_id": 8,
+   "name": "ADV. RECOGNIZER",
+   "icon_a": 1496,
+   "icon_b": 1495,
+   "file_a": "award_08_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_08_b.png"
+  },
+  {
+   "award_id": 9,
+   "name": "ADV. SEA OF SIMUL.",
+   "icon_a": 1526,
+   "icon_b": 1525,
+   "file_a": "award_09_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_09_b.png"
+  },
+  {
+   "award_id": 10,
+   "name": "MORE TIME",
+   "icon_a": 1514,
+   "icon_b": 1513,
+   "file_a": "award_10_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_10_b.png"
+  },
+  {
+   "award_id": 11,
+   "name": "LIGHT EXTRA BALL",
+   "icon_a": 1484,
+   "icon_b": 1483,
+   "file_a": "award_11_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_11_b.png"
+  },
+  {
+   "award_id": 12,
+   "name": "LIGHT SPECIAL",
+   "icon_a": 1486,
+   "icon_b": 1485,
+   "file_a": "award_12_a.png",
+   "size": [
+    29,
+    22
+   ],
+   "file_b": "award_12_b.png"
+  }
+ ],
+ "how_it_plays": "3 random cabinets (of 4) scroll in 4 px every 3 ticks (49 ms) with sound call 0x0e1, each carrying an award icon: 2 random decoys and the chosen award. Then 0x0e1 stops, 0x0e3 plays and the chosen award's icon alternates icon_a/icon_b every 3 ticks (49 ms) for 21 to 61 steps. Award names come from the ROM audits (0x5b-0x66); the pick weights are not verified."
+}
