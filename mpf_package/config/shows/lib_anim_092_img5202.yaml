@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 92: images 5202-5471, 270 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_092_img5202:
+      action: play
+- time: 13227ms
+  slides:
+    lib_anim_092_img5202:
+      action: remove

@@ -1,0 +1,24 @@
+#show_version=6
+# deff_004_coil_power_disabled: 50V / 20V DISABLED
+# ROM trigger: service: coil power off (coin door open). Timing from emulation.
+- time: 256ms
+  sounds:
+    call_010:
+      action: play
+- time: 512ms
+  sounds:
+    call_010:
+      action: play
+- time: 768ms
+  sounds:
+    call_010:
+      action: play
+- time: 1024ms
+  sounds:
+    call_010:
+      action: play
+- time: 1280ms
+  sounds:
+    call_010:
+      action: play
+- time: 12000ms

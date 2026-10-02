@@ -1,0 +1,12 @@
+#show_version=6
+# deff_093_zuse_ready: ZUSE FAST SCORING READY
+# ROM trigger: ZUSE Fast Scoring lit. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_0ab:
+      action: play
+- time: 589ms
+  sounds:
+    call_0ac:
+      action: play
+- time: 2282ms

@@ -1,0 +1,22 @@
+#show_version=6
+# deff_121_sea_stage_6_v01: Sea of Simulation stage animation 6, clip anim_118_img6761.
+# Same sounds and tube show as deff_121_sea_stage_6; only the clip differs. random pick of 2 clips; a third clip plays instead when the caller sets a flag (code: FUN_01027374 / FUN_01027478, flag meaning not traced).
+# Lamp effect: lampfx_146_sea_stage_6 at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_121_sea_stage_6_v01:
+      action: play
+  shows:
+    leff_073:
+      action: play
+      loops: 0
+    lampfx_146_sea_stage_6:
+      action: play
+      loops: 0
+  sounds:
+    call_10a:
+      action: play
+- time: 1595ms
+  slides:
+    deff_121_sea_stage_6_v01:
+      action: remove

@@ -1,0 +1,26 @@
+#show_version=6
+# deff_089_light_cycle_double_super_jackpot_level_5: DOUBLE SUPER JACKPOT, clip anim_041_img3479.
+# Same sounds and tube show as deff_089_light_cycle_double_super_jackpot; only the clip differs. clip chosen by Light Cycle multiball level 1-6 (code: table 0x40d2ffc field 3).
+# Lamp effect: lampfx_097_light_cycle_double_super_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_089_light_cycle_double_super_jackpot_level_5:
+      action: play
+  shows:
+    leff_057:
+      action: play
+      loops: 0
+    lampfx_097_light_cycle_double_super_jackpot:
+      action: play
+      loops: 0
+  sounds:
+    call_0ca:
+      action: play
+- time: 1027ms
+  sounds:
+    call_0cb:
+      action: play
+- time: 2428ms
+  slides:
+    deff_089_light_cycle_double_super_jackpot_level_5:
+      action: remove

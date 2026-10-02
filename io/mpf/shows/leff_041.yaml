@@ -1,0 +1,18 @@
+#show_version=6
+# Tron LE light effect 41 (ROM function 0x1007990), loop. Generated from ROM emulation.
+- duration: 496ms
+  lights:
+    l_left_ramp_tube:
+      color: ff0000
+      fade: 500ms
+    l_right_ramp_tube:
+      color: ff0000
+      fade: 500ms
+- duration: 496ms
+  lights:
+    l_left_ramp_tube:
+      color: 000000
+      fade: 500ms
+    l_right_ramp_tube:
+      color: 000000
+      fade: 500ms

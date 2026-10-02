@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 18: images 2770-2773, 4 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_018_img2770:
+      action: play
+- time: 196ms
+  slides:
+    lib_anim_018_img2770:
+      action: remove

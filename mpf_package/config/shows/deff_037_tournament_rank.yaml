@@ -1,0 +1,11 @@
+#show_version=6
+# deff_037_tournament_rank: PLAYER n YOU ARE IN nTH PLACE!
+# ROM trigger: tournament end. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_037_tournament_rank:
+      action: play
+- time: 1648ms
+  slides:
+    deff_037_tournament_rank:
+      action: remove

@@ -1,0 +1,8 @@
+#show_version=6
+# deff_065_quorra_multiball_running: QUORRA MULTIBALL status (background)
+# ROM trigger: during Quorra Multiball. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_065_quorra_multiball_running:
+      action: play
+- time: 12011ms

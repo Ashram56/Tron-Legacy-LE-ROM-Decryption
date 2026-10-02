@@ -1,0 +1,8 @@
+#show_version=6
+# deff_057_end_of_line_running: SWITCHES = value (background)
+# ROM trigger: during End of Line Multiball. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_057_end_of_line_running:
+      action: play
+- time: 12002ms

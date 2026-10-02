@@ -1,0 +1,508 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Animated DMD images (128x32 GIF, 16 grey levels). Frame PNGs and exact timing are in
+# media/dmd/<name>/frames and timing.json.
+images:
+  deff_002_volume:
+    file: deff_002_volume/animation.gif
+  deff_018_bump_n_win:
+    file: deff_018_bump_n_win/animation.gif
+  deff_030_tickets:
+    file: deff_030_tickets/animation.gif
+  deff_032_high_score_value:
+    file: deff_032_high_score_value/animation.gif
+  deff_035_tournament_qualified:
+    file: deff_035_tournament_qualified/animation.gif
+  deff_036_tournament_place:
+    file: deff_036_tournament_place/animation.gif
+  deff_037_tournament_rank:
+    file: deff_037_tournament_rank/animation.gif
+  deff_038_match:
+    file: deff_038_match/animation.gif
+  deff_046_disc_multiball_intro:
+    file: deff_046_disc_multiball_intro/animation.gif
+  deff_047_disc_multiball_running:
+    file: deff_047_disc_multiball_running/animation.gif
+  deff_048_disc_multiball_jackpot:
+    file: deff_048_disc_multiball_jackpot/animation.gif
+  deff_049_disc_multiball_jackpot_2:
+    file: deff_049_disc_multiball_jackpot_2/animation.gif
+  deff_051_disc_multiball_total:
+    file: deff_051_disc_multiball_total/animation.gif
+  deff_053_disc_multiball_restart_running:
+    file: deff_053_disc_multiball_restart_running/animation.gif
+  deff_055_multiball_lit:
+    file: deff_055_multiball_lit/animation.gif
+  deff_056_end_of_line_intro:
+    file: deff_056_end_of_line_intro/animation.gif
+  deff_057_end_of_line_running:
+    file: deff_057_end_of_line_running/animation.gif
+  deff_058_end_of_line_jackpot:
+    file: deff_058_end_of_line_jackpot/animation.gif
+  deff_059_end_of_line_double_jackpot:
+    file: deff_059_end_of_line_double_jackpot/animation.gif
+  deff_060_end_of_line_add_ball:
+    file: deff_060_end_of_line_add_ball/animation.gif
+  deff_062_quorra_progress:
+    file: deff_062_quorra_progress/animation.gif
+  deff_063_quorra_lit:
+    file: deff_063_quorra_lit/animation.gif
+  deff_064_quorra_multiball_intro:
+    file: deff_064_quorra_multiball_intro/animation.gif
+  deff_065_quorra_multiball_running:
+    file: deff_065_quorra_multiball_running/animation.gif
+  deff_068_quorra_jackpot:
+    file: deff_068_quorra_jackpot/animation.gif
+  deff_069_quorra_super_jackpot:
+    file: deff_069_quorra_super_jackpot/animation.gif
+  deff_070_quorra_total:
+    file: deff_070_quorra_total/animation.gif
+  deff_071_clu_intro:
+    file: deff_071_clu_intro/animation.gif
+  deff_073_clu_award:
+    file: deff_073_clu_award/animation.gif
+  deff_074_clu_total:
+    file: deff_074_clu_total/animation.gif
+  deff_075_gem_progress:
+    file: deff_075_gem_progress/animation.gif
+  deff_076_gem_intro:
+    file: deff_076_gem_intro/animation.gif
+  deff_078_gem_award:
+    file: deff_078_gem_award/animation.gif
+  deff_079_gem_total:
+    file: deff_079_gem_total/animation.gif
+  deff_080_hurryup_progress:
+    file: deff_080_hurryup_progress/animation.gif
+  deff_083_light_cycle_progress:
+    file: deff_083_light_cycle_progress/animation.gif
+  deff_084_light_cycle_lit:
+    file: deff_084_light_cycle_lit/animation.gif
+  deff_085_light_cycle_intro:
+    file: deff_085_light_cycle_intro/animation.gif
+  deff_086_light_cycle_running:
+    file: deff_086_light_cycle_running/animation.gif
+  deff_087_light_cycle_jackpot:
+    file: deff_087_light_cycle_jackpot/animation.gif
+  deff_088_light_cycle_super_jackpot:
+    file: deff_088_light_cycle_super_jackpot/animation.gif
+  deff_089_light_cycle_double_super_jackpot:
+    file: deff_089_light_cycle_double_super_jackpot/animation.gif
+  deff_090_light_cycle_total:
+    file: deff_090_light_cycle_total/animation.gif
+  deff_091_zuse_collect:
+    file: deff_091_zuse_collect/animation.gif
+  deff_092_zuse_progress:
+    file: deff_092_zuse_progress/animation.gif
+  deff_094_zuse_intro:
+    file: deff_094_zuse_intro/animation.gif
+  deff_095_zuse_running:
+    file: deff_095_zuse_running/animation.gif
+  deff_096_zuse_target_hit:
+    file: deff_096_zuse_target_hit/animation.gif
+  deff_097_zuse_all_targets:
+    file: deff_097_zuse_all_targets/animation.gif
+  deff_098_zuse_time_extended:
+    file: deff_098_zuse_time_extended/animation.gif
+  deff_099_zuse_total:
+    file: deff_099_zuse_total/animation.gif
+  deff_104_arcade_lit:
+    file: deff_104_arcade_lit/animation.gif
+  deff_105_flynns_arcade_award:
+    file: deff_105_flynns_arcade_award/animation.gif
+  deff_107_timed_award:
+    file: deff_107_timed_award/animation.gif
+  deff_108_disc_access_progress:
+    file: deff_108_disc_access_progress/animation.gif
+  deff_109_disc_battle_ready:
+    file: deff_109_disc_battle_ready/animation.gif
+  deff_111_disc_multiball_progress:
+    file: deff_111_disc_multiball_progress/animation.gif
+  deff_112_super_feature:
+    file: deff_112_super_feature/animation.gif
+  deff_113_sea_of_simulation_intro:
+    file: deff_113_sea_of_simulation_intro/animation.gif
+  deff_114_sea_of_simulation_running:
+    file: deff_114_sea_of_simulation_running/animation.gif
+  deff_115_sea_of_simulation_value:
+    file: deff_115_sea_of_simulation_value/animation.gif
+  deff_116_sea_stage_1:
+    file: deff_116_sea_stage_1/animation.gif
+  deff_117_sea_stage_2:
+    file: deff_117_sea_stage_2/animation.gif
+  deff_118_sea_stage_3:
+    file: deff_118_sea_stage_3/animation.gif
+  deff_119_sea_stage_4:
+    file: deff_119_sea_stage_4/animation.gif
+  deff_120_sea_stage_5:
+    file: deff_120_sea_stage_5/animation.gif
+  deff_121_sea_stage_6:
+    file: deff_121_sea_stage_6/animation.gif
+  deff_122_sea_stage_7:
+    file: deff_122_sea_stage_7/animation.gif
+  deff_123_sea_stage_8:
+    file: deff_123_sea_stage_8/animation.gif
+  deff_124_sea_stage_9:
+    file: deff_124_sea_stage_9/animation.gif
+  deff_125_sea_of_simulation_completed:
+    file: deff_125_sea_of_simulation_completed/animation.gif
+  deff_126_sea_of_simulation_total:
+    file: deff_126_sea_of_simulation_total/animation.gif
+  deff_128_clip_player_a:
+    file: deff_128_clip_player_a/animation.gif
+  deff_129_clip_player_b:
+    file: deff_129_clip_player_b/animation.gif
+  deff_130_game_over_disc_progress:
+    file: deff_130_game_over_disc_progress/animation.gif
+  deff_131_clu_face:
+    file: deff_131_clu_face/animation.gif
+  deff_133_extra_ball:
+    file: deff_133_extra_ball/animation.gif
+  deff_136_find_flynn_intro:
+    file: deff_136_find_flynn_intro/animation.gif
+  deff_137_flynn_found:
+    file: deff_137_flynn_found/animation.gif
+  deff_139_end_of_line_jackpot_combo:
+    file: deff_139_end_of_line_jackpot_combo/animation.gif
+  deff_140_portal_multiball_intro:
+    file: deff_140_portal_multiball_intro/animation.gif
+  deff_142_portal_shot:
+    file: deff_142_portal_shot/animation.gif
+  deff_143_portal_super_jackpot:
+    file: deff_143_portal_super_jackpot/animation.gif
+
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# One slide per ROM display effect. The image is the effect's graphics layer (animated GIF,
+# 128x32, transparent where the ROM drew nothing). Text the ROM draws on top is listed in a
+# comment; lay it out with text widgets. Score-panel and number fields are dynamic.
+slides:
+  deff_002_volume:
+    # ROM text: USE -/+ TO ADJUST VOLUME / VOLUME %d
+    - type: image
+      image: deff_002_volume
+  deff_018_bump_n_win:
+    # ROM text: BUMP 'N' WIN / BUMP 'N' WIN SCORE
+    - type: image
+      image: deff_018_bump_n_win
+  deff_030_tickets:
+    # ROM text: %u / TICKET%P1//S/%
+    - type: image
+      image: deff_030_tickets
+  deff_032_high_score_value:
+    # ROM text: PLAYER %d - ENTER INITIALS / %u
+    - type: image
+      image: deff_032_high_score_value
+  deff_035_tournament_qualified:
+    # ROM text: YOU QUALIFIED! / PLAYER %d
+    - type: image
+      image: deff_035_tournament_qualified
+  deff_036_tournament_place:
+    # ROM text: %P1/FIRST/SECOND/THIRD/FOURTH/FIFTH//% PLACE
+    - type: image
+      image: deff_036_tournament_place
+  deff_037_tournament_rank:
+    # ROM text: PLAYER %d / YOU ARE IN %P1/1ST/2ND/3RD/4TH/5TH//% PLACE!
+    - type: image
+      image: deff_037_tournament_rank
+  deff_038_match:
+    # ROM text: MATCH / %,02lu / %,02lu
+    - type: image
+      image: deff_038_match
+  deff_046_disc_multiball_intro:
+    # ROM text: DISC / MULTIBALL
+    - type: image
+      image: deff_046_disc_multiball_intro
+  deff_047_disc_multiball_running:
+    # ROM text: DISC MULTIBALL / %d / SHOOT RECOGNIZER / %d / SHOOT SPINNING DISC / SHOOT SPINNING DISC / SUPER=%,02lu
+    - type: image
+      image: deff_047_disc_multiball_running
+  deff_048_disc_multiball_jackpot:
+    # ROM text: DISC MULTIBALL / JACKPOT / %,02lu
+    - type: image
+      image: deff_048_disc_multiball_jackpot
+  deff_049_disc_multiball_jackpot_2:
+    # ROM text: DISC MULTIBALL / JACKPOT / %,02lu
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2
+  deff_051_disc_multiball_total:
+    # ROM text: DISC MULTIBALL / TOTAL: / %,02lu
+    - type: image
+      image: deff_051_disc_multiball_total
+  deff_053_disc_multiball_restart_running:
+    # ROM text: DISC MULTIBALL / RESTART / SHOOT DISC / %d
+    - type: image
+      image: deff_053_disc_multiball_restart_running
+  deff_055_multiball_lit:
+    # ROM text: MULTIBALL + E.B. / EXTRA BALL / %u MORE TO / LIGHT MULTIBALL / MULTIBALL / IS LIT
+    - type: image
+      image: deff_055_multiball_lit
+  deff_056_end_of_line_intro:
+    # ROM text: END OF LINE / MULTIBALL
+    - type: image
+      image: deff_056_end_of_line_intro
+  deff_057_end_of_line_running:
+    # ROM text: SWITCHES=%,02lu
+    - type: image
+      image: deff_057_end_of_line_running
+  deff_058_end_of_line_jackpot:
+    # ROM text: JACKPOT / %,02lu
+    - type: image
+      image: deff_058_end_of_line_jackpot
+  deff_059_end_of_line_double_jackpot:
+    # ROM text: DOUBLE JACKPOT / %,02lu
+    - type: image
+      image: deff_059_end_of_line_double_jackpot
+  deff_060_end_of_line_add_ball:
+    # ROM text: %,02lu / BALL ADDED / %u MORE FOR / ADD-A-BALL
+    - type: image
+      image: deff_060_end_of_line_add_ball
+  deff_062_quorra_progress:
+    # ROM text: %d / TO LIGHT / QUORRA / MULTIBALL
+    - type: image
+      image: deff_062_quorra_progress
+  deff_063_quorra_lit:
+    # ROM text: QUORRA / MULTIBALL / IS LIT
+    - type: image
+      image: deff_063_quorra_lit
+  deff_064_quorra_multiball_intro:
+    # ROM text: QUORRA / MULTIBALL
+    - type: image
+      image: deff_064_quorra_multiball_intro
+  deff_065_quorra_multiball_running:
+    # ROM text: QUORRA MULTIBALL / SUPER=%,02lu / %d / ALL JACKPOTS / DOUBLED
+    - type: image
+      image: deff_065_quorra_multiball_running
+  deff_068_quorra_jackpot:
+    # ROM text: DOUBLE / JACKPOT / %,02lu / JACKPOT
+    - type: image
+      image: deff_068_quorra_jackpot
+  deff_069_quorra_super_jackpot:
+    # ROM text: DOUBLE / SUPER JACKPOT / %,02lu / SUPER / JACKPOT
+    - type: image
+      image: deff_069_quorra_super_jackpot
+  deff_070_quorra_total:
+    # ROM text: QUORRA / MULTIBALL / TOTAL: / %,02lu
+    - type: image
+      image: deff_070_quorra_total
+  deff_071_clu_intro:
+    # ROM text: TERMINATE CLU / SHOOT / CLU HELMET SHOTS
+    - type: image
+      image: deff_071_clu_intro
+  deff_073_clu_award:
+    # ROM text: %,02lu
+    - type: image
+      image: deff_073_clu_award
+  deff_074_clu_total:
+    # ROM text: TERMINATE / CLU / TOTAL: / %,02lu
+    - type: image
+      image: deff_074_clu_total
+  deff_075_gem_progress:
+    # ROM text: %d / MORE TO START / FOLLOW GEM
+    - type: image
+      image: deff_075_gem_progress
+  deff_076_gem_intro:
+    # ROM text: (none)
+    - type: image
+      image: deff_076_gem_intro
+  deff_078_gem_award:
+    # ROM text: FOLLOW GEM / %d FOLLOWING%P1//S/% / %,02lu
+    - type: image
+      image: deff_078_gem_award
+  deff_079_gem_total:
+    # ROM text: FOLLOW / GEM / TOTAL: / %,02lu
+    - type: image
+      image: deff_079_gem_total
+  deff_080_hurryup_progress:
+    # ROM text: %d MORE / TO LIGHT HURRY-UP / HURRY-UP / IS LIT
+    - type: image
+      image: deff_080_hurryup_progress
+  deff_083_light_cycle_progress:
+    # ROM text: %d MORE / TO LIGHT / LIGHT CYCLE
+    - type: image
+      image: deff_083_light_cycle_progress
+  deff_084_light_cycle_lit:
+    # ROM text: LIGHT CYCLE / MULTIBALL / IS LIT
+    - type: image
+      image: deff_084_light_cycle_lit
+  deff_085_light_cycle_intro:
+    # ROM text: LIGHT CYCLE / MULTIBALL
+    - type: image
+      image: deff_085_light_cycle_intro
+  deff_086_light_cycle_running:
+    # ROM text: LIGHT CYCLE / MULTIBALL
+    - type: image
+      image: deff_086_light_cycle_running
+  deff_087_light_cycle_jackpot:
+    # ROM text: JACKPOT / %,02lu
+    - type: image
+      image: deff_087_light_cycle_jackpot
+  deff_088_light_cycle_super_jackpot:
+    # ROM text: SUPER JACKPOT / %,02lu
+    - type: image
+      image: deff_088_light_cycle_super_jackpot
+  deff_089_light_cycle_double_super_jackpot:
+    # ROM text: DOUBLE / SUPER JACKPOT / %,02lu
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot
+  deff_090_light_cycle_total:
+    # ROM text: LIGHT CYCLE / MULTIBALL / TOTAL: / %,02lu
+    - type: image
+      image: deff_090_light_cycle_total
+  deff_091_zuse_collect:
+    # ROM text: COLLECT / FOR FASTSCORING / COLLECT / FOR SOS ITEM
+    - type: image
+      image: deff_091_zuse_collect
+  deff_092_zuse_progress:
+    # ROM text: %d MORE / FOR FASTSCORING
+    - type: image
+      image: deff_092_zuse_progress
+  deff_094_zuse_intro:
+    # ROM text: FAST SCORING / ALL TARGETS / SCORE / %,02lu POINTS
+    - type: image
+      image: deff_094_zuse_intro
+  deff_095_zuse_running:
+    # ROM text: %u / ALL TARGETS=%,02lu
+    - type: image
+      image: deff_095_zuse_running
+  deff_096_zuse_target_hit:
+    # ROM text: %luK / %u / ALL TARGETS=%,02lu
+    - type: image
+      image: deff_096_zuse_target_hit
+  deff_097_zuse_all_targets:
+    # ROM text: ALL / TARGETS / %,02lu
+    - type: image
+      image: deff_097_zuse_all_targets
+  deff_098_zuse_time_extended:
+    # ROM text: %u / ALL TARGETS=%,02lu / TIME / EXTENDED
+    - type: image
+      image: deff_098_zuse_time_extended
+  deff_099_zuse_total:
+    # ROM text: FAST SCORING / TOTAL: / %,02lu
+    - type: image
+      image: deff_099_zuse_total
+  deff_104_arcade_lit:
+    # ROM text: ARCADE IS LIT
+    - type: image
+      image: deff_104_arcade_lit
+  deff_105_flynns_arcade_award:
+    # ROM text: (none)
+    - type: image
+      image: deff_105_flynns_arcade_award
+  deff_107_timed_award:
+    # ROM text: COLLECT / FOR TIMED AWARD
+    - type: image
+      image: deff_107_timed_award
+  deff_108_disc_access_progress:
+    # ROM text: %u MORE / TO ACCESS / DISC
+    - type: image
+      image: deff_108_disc_access_progress
+  deff_109_disc_battle_ready:
+    # ROM text: DISC / BATTLE / READY
+    - type: image
+      image: deff_109_disc_battle_ready
+  deff_111_disc_multiball_progress:
+    # ROM text: %d / MORE TO START / DISC MULTIBALL
+    - type: image
+      image: deff_111_disc_multiball_progress
+  deff_112_super_feature:
+    # ROM text: SUPER / POPS / DOUBLE / SCORING / SUPER / SPINNERS / ALL SCORES / DOUBLED / POPS SCORE / 3X / SPINNERS SCORE / 3X
+    - type: image
+      image: deff_112_super_feature
+  deff_113_sea_of_simulation_intro:
+    # ROM text: SEA OF / SIMULATION / COMPLETE / ALL STAGES / TO REACH / THE PORTAL
+    - type: image
+      image: deff_113_sea_of_simulation_intro
+  deff_114_sea_of_simulation_running:
+    # ROM text: SEA OF / SIMULATION
+    - type: image
+      image: deff_114_sea_of_simulation_running
+  deff_115_sea_of_simulation_value:
+    # ROM text: %,02lu
+    - type: image
+      image: deff_115_sea_of_simulation_value
+  deff_116_sea_stage_1:
+    # ROM text: (none)
+    - type: image
+      image: deff_116_sea_stage_1
+  deff_117_sea_stage_2:
+    # ROM text: (none)
+    - type: image
+      image: deff_117_sea_stage_2
+  deff_118_sea_stage_3:
+    # ROM text: (none)
+    - type: image
+      image: deff_118_sea_stage_3
+  deff_119_sea_stage_4:
+    # ROM text: (none)
+    - type: image
+      image: deff_119_sea_stage_4
+  deff_120_sea_stage_5:
+    # ROM text: (none)
+    - type: image
+      image: deff_120_sea_stage_5
+  deff_121_sea_stage_6:
+    # ROM text: (none)
+    - type: image
+      image: deff_121_sea_stage_6
+  deff_122_sea_stage_7:
+    # ROM text: (none)
+    - type: image
+      image: deff_122_sea_stage_7
+  deff_123_sea_stage_8:
+    # ROM text: (none)
+    - type: image
+      image: deff_123_sea_stage_8
+  deff_124_sea_stage_9:
+    # ROM text: (none)
+    - type: image
+      image: deff_124_sea_stage_9
+  deff_125_sea_of_simulation_completed:
+    # ROM text: SEA OF / SIMULATION / COMPLETED / %,02lu
+    - type: image
+      image: deff_125_sea_of_simulation_completed
+  deff_126_sea_of_simulation_total:
+    # ROM text: SEA OF / SIMULATION / TOTAL: / %,02lu
+    - type: image
+      image: deff_126_sea_of_simulation_total
+  deff_128_clip_player_a:
+    # ROM text: (none)
+    - type: image
+      image: deff_128_clip_player_a
+  deff_129_clip_player_b:
+    # ROM text: (none)
+    - type: image
+      image: deff_129_clip_player_b
+  deff_130_game_over_disc_progress:
+    # ROM text: GAME OVER / %u MORE / TO ACCESS / DISC
+    - type: image
+      image: deff_130_game_over_disc_progress
+  deff_131_clu_face:
+    # ROM text: (none)
+    - type: image
+      image: deff_131_clu_face
+  deff_133_extra_ball:
+    # ROM text: EXTRA / BALL / %,02lu
+    - type: image
+      image: deff_133_extra_ball
+  deff_136_find_flynn_intro:
+    # ROM text: SHOOT / ROVING / RED ARROW / TO / FIND FLYNN
+    - type: image
+      image: deff_136_find_flynn_intro
+  deff_137_flynn_found:
+    # ROM text: FLYNN / FOUND / %,02lu
+    - type: image
+      image: deff_137_flynn_found
+  deff_139_end_of_line_jackpot_combo:
+    # ROM text: END OF LINE / JACKPOT / %,02lu
+    - type: image
+      image: deff_139_end_of_line_jackpot_combo
+  deff_140_portal_multiball_intro:
+    # ROM text: %,02lu / SEA OF SIMULATION / BONUS / PORTAL / MULTIBALL / COMPLETE ALL SHOTS / FOR / SUPER JACKPOT
+    - type: image
+      image: deff_140_portal_multiball_intro
+  deff_142_portal_shot:
+    # ROM text: %,02lu
+    - type: image
+      image: deff_142_portal_shot
+  deff_143_portal_super_jackpot:
+    # ROM text: SUPER / JACKPOT / %,02lu
+    - type: image
+      image: deff_143_portal_super_jackpot

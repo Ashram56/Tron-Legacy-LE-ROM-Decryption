@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 42: images 3522-3572, 51 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_042_img3522:
+      action: play
+- time: 2498ms
+  slides:
+    lib_anim_042_img3522:
+      action: remove

@@ -1,0 +1,758 @@
+#show_version=6
+# ROM lamp effect 99 (leff table 0x040e23e4, function 0x1020ff8, priority 5). Captured in emulation.
+# Loops until stopped. loops in the ROM until stopped; capture cut at 12 s, show repeats that
+# Started by: rule: while recog_moving_target_running
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+    l_recognizer_pos_2: '000000'
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: 7f7f7f
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+    l_recognizer_pos_3: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: '000000'
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: 7f7f7f
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+    l_recognizer_pos_3: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+    l_recognizer_pos_3: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 49ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 48ms
+  lights:
+    l_recognizer_pos_2: 7f7f7f
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 49ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 15ms
+  lights:
+    l_recognizer_pos_1: ffffff

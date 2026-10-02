@@ -1,0 +1,322 @@
+#show_version=6
+# Tron LE light effect 76 (ROM function 0x1028090), once. Generated from ROM emulation.
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff

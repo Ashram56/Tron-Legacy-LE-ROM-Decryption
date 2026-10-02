@@ -1,0 +1,23 @@
+#show_version=6
+# deff_125_sea_of_simulation_completed: SEA OF SIMULATION COMPLETED
+# ROM trigger: all stages done. Timing from emulation.
+# Lamp effect: lampfx_150_sea_of_simulation_completed at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_125_sea_of_simulation_completed:
+      action: play
+  shows:
+    leff_077:
+      action: play
+      loops: 0
+    lampfx_150_sea_of_simulation_completed:
+      action: play
+      loops: 0
+- time: 8013ms
+  sounds:
+    call_113:
+      action: play
+- time: 10195ms
+  slides:
+    deff_125_sea_of_simulation_completed:
+      action: remove

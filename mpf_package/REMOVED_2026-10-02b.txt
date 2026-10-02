@@ -1,0 +1,9 @@
+Delete these from your copy of mpf_package before unzipping this update (they were renamed):
+media/dmd/deff_022_tilt_warning/              -> deff_022_unused (effect 22 is an empty function)
+media/dmd/deff_105_arcade_video_intro/        -> deff_105_flynns_arcade_award
+media/dmd/deff_111_recognizer_progress/       -> deff_111_disc_multiball_progress
+media/dmd/deff_127_award_value/               -> deff_127_debug_image_viewer
+media/dmd/deff_128_light_cycle_cinematic/     -> deff_128_clip_player_a
+media/dmd/deff_129_light_cycle_cinematic_2/   -> deff_129_clip_player_b
+config/shows/deff_022_tilt_warning.yaml, deff_105_arcade_video_intro.yaml, deff_111_recognizer_progress*.yaml,
+deff_127_award_value.yaml, deff_128_light_cycle_cinematic.yaml, deff_129_light_cycle_cinematic_2.yaml (if present)

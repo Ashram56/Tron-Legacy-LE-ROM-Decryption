@@ -1,0 +1,10 @@
+#show_version=6
+# Tron LE light effect 104 (ROM function 0x100199c), once. Generated from ROM emulation.
+- duration: 160ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 160ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000

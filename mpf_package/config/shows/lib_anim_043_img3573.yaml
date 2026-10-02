@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 43: images 3573-3602, 30 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_043_img3573:
+      action: play
+- time: 1470ms
+  slides:
+    lib_anim_043_img3573:
+      action: remove

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 107: images 6018-6228, 211 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_107_img6018:
+      action: play
+- time: 10337ms
+  slides:
+    lib_anim_107_img6018:
+      action: remove

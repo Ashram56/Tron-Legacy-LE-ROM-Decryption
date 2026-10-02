@@ -1,0 +1,11 @@
+#show_version=6
+# deff_129_clip_player_b: Clip player: plays film clip 30-73 by number
+# ROM trigger: none in game code (no deff_start(0x81) call site; debug clip viewer, inferred). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_129_clip_player_b:
+      action: play
+- time: 5549ms
+  slides:
+    deff_129_clip_player_b:
+      action: remove

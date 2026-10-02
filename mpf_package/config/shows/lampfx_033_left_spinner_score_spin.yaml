@@ -1,0 +1,7 @@
+#show_version=6
+# ROM lamp effect 33 (leff table 0x040e23e4, function 0x1029d94, priority 133). Captured in emulation.
+# Plays once. 
+# Started by: code: left_spinner_score_spin
+- duration: 146ms
+  flashers:
+    f_disc_left: 32ms

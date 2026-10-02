@@ -1,0 +1,12 @@
+#show_version=6
+# Start of the next ball (observed): music restarts (call 0x029 or 0x01a) with tube show 10.
+# When Flynn's Arcade is lit the ROM also plays effect 104, and after an extra ball effect 26.
+- time: 13ms
+  sounds:
+    call_029:
+      action: play
+- time: 14ms
+  shows:
+    leff_010:
+      action: play
+- time: 1000ms

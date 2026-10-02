@@ -1,0 +1,21 @@
+# bonus count skipped by holding both flippers (poke: bonusX=10, SoS x2, Portal x1 on player 1)
+start 1
+wait 2.5
+mark B1_valid
+hit 12
+wait 2
+mark poke bonusX 10, SoS 2, Portal 1
+poke 21115d4 10
+poke 2111800 2
+poke 21118b8 1
+wait 10
+mark B1_drain
+drain
+wait 2.0
+mark hold_both_flippers
+button left -1
+button right -1
+wait 3
+button left 0
+button right 0
+wait 6

@@ -1,0 +1,28 @@
+#show_version=6
+# ROM lamp effect 70 (leff table 0x040e23e4, function 0x101ed8c, priority 194). Captured in emulation.
+# Plays once. 
+# Started by: effect 66 (deff_066_quorra_add_ball_progress)
+- duration: 32ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 31ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 33ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 32ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 33ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 33ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 33ms
+  flashers:
+    f_recognizer: 24ms
+- duration: 49ms
+  flashers:
+    f_recognizer: 24ms

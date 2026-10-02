@@ -1,0 +1,8 @@
+#show_version=6
+# deff_103_skill_shot: SKILL SHOT (other)
+# ROM trigger: skill shot. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_048:
+      action: play
+- time: 1205ms

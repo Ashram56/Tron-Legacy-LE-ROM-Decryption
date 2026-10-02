@@ -1,0 +1,10 @@
+#show_version=6
+# Tron LE light effect 45 (ROM function 0x1008e68), loop. Generated from ROM emulation.
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 0000ff
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 0000ff

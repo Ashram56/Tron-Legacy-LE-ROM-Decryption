@@ -1,0 +1,12 @@
+#show_version=6
+# deff_081_special_lit: SPECIAL IS LIT
+# ROM trigger: special lit. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_0a0:
+      action: play
+- time: 2054ms
+  sounds:
+    call_0a1:
+      action: play
+- time: 2231ms

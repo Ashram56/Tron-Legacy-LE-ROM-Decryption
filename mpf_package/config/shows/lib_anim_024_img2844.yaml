@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 24: images 2844-2956, 113 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_024_img2844:
+      action: play
+- time: 5536ms
+  slides:
+    lib_anim_024_img2844:
+      action: remove

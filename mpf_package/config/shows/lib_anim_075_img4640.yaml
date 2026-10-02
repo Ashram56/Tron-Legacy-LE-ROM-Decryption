@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 75: images 4640-4668, 29 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_075_img4640:
+      action: play
+- time: 1421ms
+  slides:
+    lib_anim_075_img4640:
+      action: remove

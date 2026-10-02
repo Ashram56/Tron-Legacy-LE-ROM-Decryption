@@ -1,0 +1,184 @@
+#show_version=6
+# ROM lamp effect 60 (leff table 0x040e23e4, function 0x1005658, priority 9). Captured in emulation.
+# Loops until stopped. loops in the ROM after a lead-in; capture cut at 12 s, show repeats that
+# Started by: rule: while eol_background_rule
+- duration: 131ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 131ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 131ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 129ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 130ms
+  flashers:
+    f_red_disc: 32ms
+- duration: 43ms
+  flashers:
+    f_red_disc: 32ms

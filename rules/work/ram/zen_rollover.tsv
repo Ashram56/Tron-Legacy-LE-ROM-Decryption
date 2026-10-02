@@ -1,0 +1,4 @@
+0x21118bc	zen_charges	2	per player	banked ZEN charges; +1 per sw12 (no multiball), -1 per use on a TRON letter; 0 on event 0x26
+0x2111848	tron_letters	1	per player	TRON letters 1 T, 2 R, 4 O, 8 N (owned by tron_targets)
+0x2111840	tron_completions	2	per player	TRON completions (owned by tron_targets)
+0x372e8	playfield_valid	1	OS	playfield validated flag

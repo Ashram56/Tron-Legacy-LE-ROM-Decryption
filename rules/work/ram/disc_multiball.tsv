@@ -1,0 +1,14 @@
+0x0003af04	dmb_phase	4	while mode runs	0=SHOOT SPINNING DISC (jackpots), 1=SHOOT RECOGNIZER, 2=SHOOT SPINNING DISC for super
+0x0003af08	dmb_lit_mask	4	while mode runs	bitmask of lit shots (table 0x040d26c0 masks): 0xBF phase 0, 0x40 phase 1, 0x80 phase 2
+0x0003af0c	dmb_level	1	while mode runs	D: disc jackpots collected since start (NOT reset by super jackpot or restart); raises shot values and jackpot reset value
+0x0003af10	dmb_disc_count	1	while mode runs	disc jackpots this phase-0 cycle; at adj 68 -> phase 1; reset at start and after super
+0x0003af14	dmb_recog_count	1	while mode runs	Recognizer hits this phase-1 cycle; at adj 69 -> phase 2; reset on entering phase 1
+0x0003af18	dmb_jackpot	4	while mode runs	current Jackpot; seeded min(250000+5000*(D+L),375000); grows by points of every phase-0 blue shot
+0x0003af1c	dmb_super	4	while mode runs	Super Jackpot; starts 100,000; + every disc jackpot and Recognizer award; reset to 100,000 after super
+0x0003af20	dmb_total	4	while mode runs	Total shown at the end; seeded with the 100,000 start score; + every award
+0x0003af24	dmb_deff_variant	1	while mode runs	counter written to deff 48 (0-3) / 49 (0-4) arg +0x34; the deffs do not read it
+0x0003af28	dmb_restart_secs	1	restart window	restart countdown, = adj 70 when window opens, -1 every 68 ticks
+0x02111630	dmb_started_count	1	per player	[player-1]; Disc Multiballs started this game (sat. 255); L = this-1 in value formulas; reset at game start
+0x02111634	dmb_supers_collected	1	per player	[player-1]; super jackpots this game; reset at game start; not read by rules
+0x02111638	dmb_unused_638	1	per player	[player-1]; reset at game start; FUN_01006f8c adds to it but has no caller
+0x0003ae3c	disc_motor_direction	1	game	disc spin direction flag; set to 1 at game start, toggled 125 ticks after each stop if still stopped (inferred)

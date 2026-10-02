@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 2: images 210-211, 2 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_002_img0210:
+      action: play
+- time: 98ms
+  slides:
+    lib_anim_002_img0210:
+      action: remove

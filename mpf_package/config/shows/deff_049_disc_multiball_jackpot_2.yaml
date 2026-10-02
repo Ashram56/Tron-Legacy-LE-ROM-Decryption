@@ -1,0 +1,29 @@
+#show_version=6
+# deff_049_disc_multiball_jackpot_2: DISC MULTIBALL JACKPOT (variant)
+# ROM trigger: Disc Multiball jackpot. Timing from emulation.
+# Lamp effect: lampfx_049_disc_multiball_jackpot_2 at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_049_disc_multiball_jackpot_2:
+      action: play
+  shows:
+    leff_045:
+      action: play
+    lampfx_049_disc_multiball_jackpot_2:
+      action: play
+      loops: 0
+  sounds:
+    call_05d:
+      action: play
+- time: 589ms
+  sounds:
+    call_05c:
+      action: play
+- time: 1911ms
+  sounds:
+    call_05b:
+      action: play
+- time: 3311ms
+  slides:
+    deff_049_disc_multiball_jackpot_2:
+      action: remove

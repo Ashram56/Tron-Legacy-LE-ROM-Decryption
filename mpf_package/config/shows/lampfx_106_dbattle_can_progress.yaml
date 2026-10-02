@@ -1,0 +1,10 @@
+#show_version=6
+# ROM lamp effect 106 (leff table 0x040e23e4, function 0x1021694, priority 7). Captured in emulation.
+# Loops until stopped. 
+# Started by: rule: while dbattle_can_progress
+- duration: 65ms
+  lights:
+    l_recognizer_3_bank: ffffff
+- duration: 65ms
+  lights:
+    l_recognizer_3_bank: '000000'

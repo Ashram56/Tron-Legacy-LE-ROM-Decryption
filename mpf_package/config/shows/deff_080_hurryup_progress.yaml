@@ -1,0 +1,11 @@
+#show_version=6
+# deff_080_hurryup_progress: n MORE TO LIGHT HURRY-UP / HURRY-UP IS LIT
+# ROM trigger: CLU targets (sw14, sw25, sw28). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_080_hurryup_progress:
+      action: play
+- time: 2082ms
+  slides:
+    deff_080_hurryup_progress:
+      action: remove

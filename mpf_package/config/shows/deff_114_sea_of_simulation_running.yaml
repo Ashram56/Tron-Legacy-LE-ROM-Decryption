@@ -1,0 +1,8 @@
+#show_version=6
+# deff_114_sea_of_simulation_running: SEA OF SIMULATION (background)
+# ROM trigger: during Sea of Simulation. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_114_sea_of_simulation_running:
+      action: play
+- time: 12014ms

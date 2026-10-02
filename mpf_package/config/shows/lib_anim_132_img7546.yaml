@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 132: images 7546-7561, 16 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_132_img7546:
+      action: play
+- time: 784ms
+  slides:
+    lib_anim_132_img7546:
+      action: remove

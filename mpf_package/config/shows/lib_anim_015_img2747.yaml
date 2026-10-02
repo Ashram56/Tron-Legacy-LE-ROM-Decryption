@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 15: images 2747-2761, 15 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_015_img2747:
+      action: play
+- time: 735ms
+  slides:
+    lib_anim_015_img2747:
+      action: remove

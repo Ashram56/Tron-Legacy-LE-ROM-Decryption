@@ -1,0 +1,7 @@
+#show_version=6
+# ROM lamp effect 157 (leff table 0x040e23e4, function 0x100da04, priority 3). Captured in emulation.
+# Loops until stopped. loops in the ROM until stopped; capture cut at 12 s, show repeats that
+# Started by: rule: while FUN_0100d5b4
+- duration: 12000ms
+  lights:
+    l_l_loop_arrow: ffffff

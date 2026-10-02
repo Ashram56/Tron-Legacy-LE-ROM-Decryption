@@ -1,0 +1,83 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# number: the SAM coil/driver number (1-40). FLASH: entries are flashers (driver outputs),
+# 33-35 are the ticket outputs on the aux bus (ESTB). Motors and relays (5, 6, 8, 22, 23, 30) are held
+# outputs, so they get default_hold_power (use digital_outputs instead if your platform prefers).
+coils:
+  c_trough_up_kicker:
+    number: 1   # TROUGH UP-KICKER
+  c_auto_launch:
+    number: 2   # AUTO LAUNCH
+  c_drop_target_bank:
+    number: 3   # DROP TARGET BANK
+  c_video_game_eject:
+    number: 4   # VIDEO GAME EJECT
+  c_disc_motor_power:
+    number: 5   # DISC MOTOR POWER
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_recognizer_3_bank_motor_relay:
+    number: 6   # RECOGNIZER 3-BANK MOTOR/RELAY
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_orbit_up_down_post:
+    number: 7   # ORBIT UP/DOWN POST
+  c_shaker_motor_optional:
+    number: 8   # SHAKER MOTOR (OPTIONAL)
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_left_bumper:
+    number: 9   # LEFT BUMPER
+  c_right_bumper:
+    number: 10   # RIGHT BUMPER
+  c_bottom_bumper:
+    number: 11   # BOTTOM BUMPER
+  c_upper_left_flipper:
+    number: 12   # UPPER LEFT FLIPPER
+  c_left_slingshot:
+    number: 13   # LEFT SLINGSHOT
+  c_right_slingshot:
+    number: 14   # RIGHT SLINGSHOT
+  c_left_flipper:
+    number: 15   # LEFT FLIPPER
+  c_right_flipper:
+    number: 16   # RIGHT FLIPPER
+  c_disc_direction_relay:
+    number: 22   # DISC DIRECTION RELAY
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_recognizer_motor_relay:
+    number: 23   # RECOGNIZER MOTOR RELAY
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_optional_coil:
+    number: 24   # OPTIONAL COIL
+  c_disc_motor_relay:
+    number: 30   # DISC MOTOR RELAY
+    default_hold_power: 1.0   # motor/relay: held on, not pulsed (ROM drive flags not decoded)
+  c_aux_1_ticket_advance:
+    number: 33   # AUX 1: TICKET ADVANCE
+  c_aux_2_ticket_meter:
+    number: 34   # AUX 2: TICKET METER
+  c_aux_3_ticket_enable:
+    number: 35   # AUX 3: TICKET ENABLE
+
+flashers:
+  f_zen_flasher:
+    number: 17   # ZEN FLASHER
+  f_video_game:
+    number: 18   # FLASH: VIDEO GAME
+  f_left_ramp:
+    number: 19   # FLASH: LEFT RAMP
+  f_bottom_arch_left:
+    number: 20   # FLASH: BOTTOM ARCH (LEFT)
+  f_bottom_arch_right:
+    number: 21   # FLASH: BOTTOM ARCH (RIGHT)
+  f_right_ramp:
+    number: 25   # FLASH: RIGHT RAMP
+  f_disc_left:
+    number: 26   # FLASH: DISC (LEFT)
+  f_disc_right:
+    number: 27   # FLASH: DISC (RIGHT)
+  f_backpanel:
+    number: 28   # FLASH: BACKPANEL
+  f_recognizer:
+    number: 29   # FLASH: RECOGNIZER
+  f_red_disc:
+    number: 31   # FLASH: RED DISC
+  f_blue_disc:
+    number: 32   # FLASH: BLUE DISC

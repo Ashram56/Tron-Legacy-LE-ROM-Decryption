@@ -1,0 +1,17 @@
+#show_version=6
+# Start of game (observed): main play music (call 0x01a) and tube show 10. The ROM also shows effect 104
+# (FLYNN'S ARCADE IS LIT) here, but only because the arcade starts lit; post tron_arcade_lit from your arcade logic.
+# Then the score display (effect 19) runs.
+- time: 57ms
+  sounds:
+    call_01a:
+      action: play
+- time: 58ms
+  shows:
+    leff_010:
+      action: play
+- time: 63ms
+  sounds:
+    call_0f5:
+      action: play
+- time: 3300ms

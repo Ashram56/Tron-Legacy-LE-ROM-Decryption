@@ -1,0 +1,10 @@
+0x3ad58	combo_starters	4	per ball	0x36: shots that may open a window
+0x3ad5c	combo_lit	4	window	shot masks that combo now
+0x3ad54	combo_count	4	chain	N of N-way combo
+0x3ad60	combo_timer	4	window	312 at open, -7 per 7 ticks
+0x3ad64	combo_history	20	chain	up to 5 shot masks, prefix of a named combo
+0x3ad78	combo_history_len	4	chain	entries in combo_history
+0x3ad10	combo_base	4	per player [p-1] (RAM)	250000, 2-way value
+0x21115fc	combo_total	2	per game [p-1]	combos made this game
+0x2111608	eol_combo_jackpot	4	per ball [p-1]	500000 + named combo values; collected at VUK
+0x2111604	eol_jackpot_collected	1	per ball [p-1]	times collected

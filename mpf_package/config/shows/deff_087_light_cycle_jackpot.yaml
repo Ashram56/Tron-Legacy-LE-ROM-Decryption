@@ -1,0 +1,28 @@
+#show_version=6
+# deff_087_light_cycle_jackpot: JACKPOT
+# ROM trigger: Light Cycle Multiball jackpot. Timing from emulation.
+# Lamp effect: lampfx_095_light_cycle_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_087_light_cycle_jackpot:
+      action: play
+  shows:
+    leff_055:
+      action: play
+      loops: 0
+    lampfx_095_light_cycle_jackpot:
+      action: play
+      loops: -1
+  sounds:
+    call_0c5:
+      action: play
+- time: 1277ms
+  sounds:
+    call_0c7:
+      action: play
+    call_0c6:
+      action: play
+- time: 2701ms
+  slides:
+    deff_087_light_cycle_jackpot:
+      action: remove

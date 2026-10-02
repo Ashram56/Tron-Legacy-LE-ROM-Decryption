@@ -1,0 +1,24 @@
+0x0211189c	lc_lit	1	per player	Light Cycle MB lit (0/1; capped at 1). [player-1]. Shared 'lit items' block 0x2111894.. (bit 4 of FUN_0102e8c0/0102eaa4/0102ec38)
+0x02111744	lc_remaining_mask	1	per player	LC progress shots not yet made (bits 1 LO,2 LR,4 LIL,8 RIL,0x40 RR,0x80 RO); reset to 0xcf
+0x02111754	lc_collected_mask	1	per player	LC progress shots made since last lighting
+0x02111764	lc_starts	1	per player	LC multiballs started (cap 255); 0 -> 4 shots needed, else 6
+0x02111768	lc_super_points	1	per player	sum of (level-1) over LC MB awards (super=1, double super=2), cap 255
+0x0211176c	lc_clip_level	2	per player	0..5, +1 per double super (wraps to 0 after 5): picks jackpot clip range (table 0x040d2ffc)
+0x02111774	lc_clip_index	2	per player	last jackpot clip index (deff 87 art), table 0x040d3084
+0x0003b280	lc_a_lit_mask	4	while mode runs	chain A lit shots (start 0x02 left ramp)
+0x0003b284	lc_a_prev_mask	4	while mode runs	chain A shots still accepted during 125-tick grace after timeout
+0x0003b288	lc_a_timer	4	while mode runs	chain A remaining ticks (312, -7 per 7 ticks)
+0x0003b28c	lc_a_level	1	while mode runs	award level for chain A lit shots (1 J,2 SJ,3 DSJ)
+0x0003b290	lc_a_prev_level	1	while mode runs	level for chain A grace shots
+0x0003b294	lc_b_lit_mask	4	while mode runs	chain B lit shots (start 0x80 right orbit)
+0x0003b298	lc_b_prev_mask	4	while mode runs	chain B grace shots
+0x0003b29c	lc_b_timer	4	while mode runs	chain B remaining ticks
+0x0003b2a0	lc_b_level	1	while mode runs	chain B level
+0x0003b2a4	lc_b_prev_level	1	while mode runs	chain B grace level
+0x0003b2a8	lc_c_lit_mask	4	while mode runs	always-lit jackpot shots (0x40 right ramp)
+0x0003b2ac	lc_c_prev_mask	4	while mode runs	unused (always 0)
+0x0003b2b0	lc_c_timer	4	while mode runs	unused (always 0; task 0xbe never created)
+0x0003b2b4	lc_c_level	1	while mode runs	level of chain C (1)
+0x0003b2b8	lc_c_prev_level	1	while mode runs	unused (0)
+0x0003b2bc	lc_mb_super_points	1	while mode runs	sum of (level-1) this MB; >2 -> items-collected stat (6,2)
+0x0003b2c0	lc_total	4	while mode runs	points scored by LC MB (start award + all awards), shown by deff 90

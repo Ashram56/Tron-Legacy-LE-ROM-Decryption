@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 138: images 7838-7888, 51 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_138_img7838:
+      action: play
+- time: 2498ms
+  slides:
+    lib_anim_138_img7838:
+      action: remove

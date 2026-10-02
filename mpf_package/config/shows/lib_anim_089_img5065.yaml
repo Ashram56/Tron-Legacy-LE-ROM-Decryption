@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 89: images 5065-5101, 37 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_089_img5065:
+      action: play
+- time: 1813ms
+  slides:
+    lib_anim_089_img5065:
+      action: remove

@@ -1,0 +1,1282 @@
+[
+ {
+  "addr": "0x28ca8",
+  "name": "text_draw_msg",
+  "signature": "void text_draw_msg(ushort msg_id, int page, uint font, uchar flags, int x, int y, int color)",
+  "meaning": "Draw localized message msg_id (0xa58c) on DMD page (0x1080000+page*0x1000) with font; flags 2=center x,4=right-align",
+  "confidence": "high",
+  "evidence": "asm: r0..r3 + 3 stack args forwarded to 0x28f74; 470/475 sites set r0-r3,[sp],[sp+4],[sp+8]"
+ },
+ {
+  "addr": "0x28d5c",
+  "name": "text_printf_msg",
+  "signature": "void text_printf_msg(ushort msg_id, int page, uint font, uchar flags, int x, int y, int color, ...)",
+  "meaning": "printf-style draw: vsprintf(buf128, msg(msg_id), varargs after 7th arg) then text_draw_str",
+  "confidence": "high",
+  "evidence": "calls 0x35fb0(buf,fmt,&stack+0xc); sites store [sp+0xc..] varargs"
+ },
+ {
+  "addr": "0x28f34",
+  "name": "text_draw_str_page",
+  "signature": "void text_draw_str_page(char *str, int page, uint font, uchar flags, int x, int y, int color)",
+  "meaning": "Draw raw C string on DMD page number",
+  "confidence": "high",
+  "evidence": "wrapper: 0x28f74(str,0x1080000+page*0x1000,...)"
+ },
+ {
+  "addr": "0x28f74",
+  "name": "text_draw_str",
+  "signature": "void text_draw_str(char *str, void *dmd_buf, uint font, uint flags, int x, int y, int color)",
+  "meaning": "Core glyph renderer (font table *0x36f48, 0x14-byte records); flags 2=center,4=right",
+  "confidence": "high",
+  "evidence": "pseudo-C + fatal 0x72 on bad font"
+ },
+ {
+  "addr": "0x28e48",
+  "name": "text_draw_msg_fit",
+  "signature": "int text_draw_msg_fit(ushort msg_id, int page, int *font_list, uchar flags, int x, int y, int color, int max_width)",
+  "meaning": "Draw message with the first font in 0-terminated font_list whose width fits (max_width or screen); returns font used",
+  "confidence": "high",
+  "evidence": "0x2928c walks param_3 list calling text_width"
+ },
+ {
+  "addr": "0x2928c",
+  "name": "text_draw_str_fit",
+  "signature": "int text_draw_str_fit(char *str, void *dmd_buf, int *font_list, uchar flags, int x, int y, int color, int max_width)",
+  "meaning": "Core of text_draw_msg_fit",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x28a74",
+  "name": "text_width",
+  "signature": "int text_width(char *str, uint font)",
+  "meaning": "Pixel width of string in font",
+  "confidence": "high",
+  "evidence": "sums glyph advances; 69/74 callers use r0"
+ },
+ {
+  "addr": "0x28940",
+  "name": "font_height",
+  "signature": "ushort font_height(uint font)",
+  "meaning": "Font record field +8 (line height)",
+  "confidence": "medium",
+  "evidence": "returns u16 at font_rec+8"
+ },
+ {
+  "addr": "0x35fb0",
+  "name": "vsprintf",
+  "signature": "int vsprintf(char *buf, char *fmt, void *va_list)",
+  "meaning": "C vsprintf (supports %d %lu %,02lu %P plural extension)",
+  "confidence": "high",
+  "evidence": "format parser; used by sprintf/0xf340/0x28d5c"
+ },
+ {
+  "addr": "0x35e6c",
+  "name": "sprintf",
+  "signature": "int sprintf(char *buf, char *fmt, ...)",
+  "meaning": "C sprintf",
+  "confidence": "high",
+  "evidence": "spills r2,r3 and calls vsprintf(buf,fmt,&args)"
+ },
+ {
+  "addr": "0xf340",
+  "name": "debug_printf",
+  "signature": "void debug_printf(char *fmt, ...)",
+  "meaning": "sprintf into 0x1059c78 then send to debug/console port (0x16618)",
+  "confidence": "medium",
+  "evidence": "vsprintf+0x16618 serial tx loop"
+ },
+ {
+  "addr": "0x35f0c",
+  "name": "strlen",
+  "signature": "int strlen(char *s)",
+  "meaning": "C strlen",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x35ef0",
+  "name": "strcpy",
+  "signature": "char * strcpy(char *dst, char *src)",
+  "meaning": "C strcpy",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x35ec0",
+  "name": "strcmp",
+  "signature": "int strcmp(char *a, char *b)",
+  "meaning": "C strcmp",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x35e40",
+  "name": "memset",
+  "signature": "void memset(void *dst, int value, int n)",
+  "meaning": "C memset (byte fill)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x35e08",
+  "name": "memcpy",
+  "signature": "void memcpy(void *dst, void *src, int n)",
+  "meaning": "C memcpy (byte copy)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x35ae4",
+  "name": "atoi",
+  "signature": "int atoi(char *s)",
+  "meaning": "Parse signed decimal (skips leading whitespace)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x354c8",
+  "name": "__udivsi3",
+  "signature": "uint __udivsi3(uint num, uint den)",
+  "meaning": "Unsigned divide (quotient)",
+  "confidence": "high",
+  "evidence": "shift-subtract; div0 -> 0x34a6c"
+ },
+ {
+  "addr": "0x35a30",
+  "name": "__umodsi3",
+  "signature": "uint __umodsi3(uint num, uint den)",
+  "meaning": "Unsigned modulo (remainder)",
+  "confidence": "high",
+  "evidence": "same loop as udiv but returns remainder"
+ },
+ {
+  "addr": "0x338c8",
+  "name": "malloc",
+  "signature": "void * malloc(int size)",
+  "meaning": "Heap alloc (8-byte aligned, heap at 0x1059e78)",
+  "confidence": "high",
+  "evidence": "free-list walk, IRQ guarded"
+ },
+ {
+  "addr": "0x272c",
+  "name": "checksum8",
+  "signature": "uchar checksum8(void *p, int len)",
+  "meaning": "8-bit additive checksum (NVRAM records store ~sum)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x27a0",
+  "name": "checksum16",
+  "signature": "ushort checksum16(void *p, int len)",
+  "meaning": "16-bit additive checksum",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0xa58c",
+  "name": "msg_get",
+  "signature": "char * msg_get(ushort msg_id)",
+  "meaning": "Localized message string (table 0x040eeb7c)",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xa440",
+  "name": "lang_select",
+  "signature": "void * lang_select(void **per_language_list)",
+  "meaning": "Pick current-language entry from 0-terminated list (falls back to [0])",
+  "confidence": "high",
+  "evidence": "uses 0xa424 language index"
+ },
+ {
+  "addr": "0xa424",
+  "name": "language_get",
+  "signature": "int language_get(void)",
+  "meaning": "Current language (adjustment 7 LANGUAGE)",
+  "confidence": "high",
+  "evidence": "reads adj record 7"
+ },
+ {
+  "addr": "0x276d0",
+  "name": "dmd_page_alloc",
+  "signature": "int dmd_page_alloc(uint *page_out)",
+  "meaning": "Allocate next free DMD page (0..17) not currently shown/in use; returns 1, fatal 0x1f if none",
+  "confidence": "high",
+  "evidence": "pseudo-C round robin 0x3d53c"
+ },
+ {
+  "addr": "0x2779c",
+  "name": "dmd_page_alloc_pair",
+  "signature": "int dmd_page_alloc_pair(uint *page0, uint *page1)",
+  "meaning": "Allocate two distinct DMD pages",
+  "confidence": "high",
+  "evidence": "calls 0x276d0 twice"
+ },
+ {
+  "addr": "0x27290",
+  "name": "dmd_clear_work0",
+  "signature": "void dmd_clear_work0(void)",
+  "meaning": "Clear work page *0x3d530 (4KB)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x27274",
+  "name": "dmd_clear_work1",
+  "signature": "void dmd_clear_work1(void)",
+  "meaning": "Clear work page *0x3d52c",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x27400",
+  "name": "dmd_fill_work0",
+  "signature": "void dmd_fill_work0(uchar color)",
+  "meaning": "Fill work page *0x3d530 with color",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x27830",
+  "name": "dmd_show_pages",
+  "signature": "int dmd_show_pages(uint page0, uint page1)",
+  "meaning": "Make page0/page1 the displayed pages (0x3d528/0x3d524 -> HW regs 0x381b8/0x381bc)",
+  "confidence": "high",
+  "evidence": "code; fatal 0x20 if >=30"
+ },
+ {
+  "addr": "0x278b8",
+  "name": "dmd_flip",
+  "signature": "int dmd_flip(void)",
+  "meaning": "Show work pages and allocate a fresh work pair",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x2791c",
+  "name": "deff_frame_sleep",
+  "signature": "int deff_frame_sleep(int ticks)",
+  "meaning": "dmd_flip then task_sleep(ticks); returns flip success",
+  "confidence": "high",
+  "evidence": "asm"
+ },
+ {
+  "addr": "0x270bc",
+  "name": "dmd_hline",
+  "signature": "void dmd_hline(uint page, int x, int y, int len, uchar color)",
+  "meaning": "Horizontal line on page (128x32, 1 byte/pixel, color 0..15)",
+  "confidence": "high",
+  "evidence": "asm forwards r1-r3+[sp]; site (page,0,6,0x80,3)"
+ },
+ {
+  "addr": "0x27100",
+  "name": "dmd_hline_buf",
+  "signature": "void dmd_hline_buf(void *buf, uint x, uint y, int len, uchar color)",
+  "meaning": "Core of dmd_hline",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x2746c",
+  "name": "dmd_fill_rect",
+  "signature": "void dmd_fill_rect(uint page, int x1, int y1, int x2, int y2, uchar color)",
+  "meaning": "Filled rectangle on page",
+  "confidence": "high",
+  "evidence": "forwards 6 args to 0x274c0; site (pg,0x29,0,0x7f,0x1f,0xff)"
+ },
+ {
+  "addr": "0x27324",
+  "name": "dmd_copy_rect",
+  "signature": "void dmd_copy_rect(uchar *dst, uchar *src, int width, int height)",
+  "meaning": "Copy width x height pixel rect (stride 0x80)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x2b378",
+  "name": "bitmap_draw",
+  "signature": "void bitmap_draw(uint bitmap_id, int page, int x, int y, uchar *palette)",
+  "meaning": "Blit image bitmap_id (table *0x36f50) to page; palette NULL = none",
+  "confidence": "high",
+  "evidence": "all 147 sites set r0-r3,[sp]"
+ },
+ {
+  "addr": "0x2b424",
+  "name": "bitmap_draw_masked",
+  "signature": "void bitmap_draw_masked(uint bitmap_id, int page, int x, int y, uchar *palette, uchar transparent)",
+  "meaning": "Blit with transparent color",
+  "confidence": "high",
+  "evidence": "sites set r0-r3,[sp],[sp+4]"
+ },
+ {
+  "addr": "0x2b194",
+  "name": "bitmap_blit",
+  "signature": "void bitmap_blit(void *bitmap, void *dmd_buf, int x, int y, uchar *palette)",
+  "meaning": "Codec dispatch (table 0x40d8638) for blit",
+  "confidence": "high",
+  "evidence": "stack arg selects remap variant"
+ },
+ {
+  "addr": "0x2b2a0",
+  "name": "bitmap_blit_masked",
+  "signature": "void bitmap_blit_masked(void *bitmap, void *dmd_buf, int x, int y, uchar *palette, uchar transparent)",
+  "meaning": "Codec dispatch for transparent blit",
+  "confidence": "high",
+  "evidence": "2 stack args"
+ },
+ {
+  "addr": "0x2b094",
+  "name": "bitmap_width",
+  "signature": "int bitmap_width(uint bitmap_id)",
+  "meaning": "Width (hdr+8)",
+  "confidence": "high",
+  "evidence": "0x2b08c returns short@+8"
+ },
+ {
+  "addr": "0x2b118",
+  "name": "bitmap_height",
+  "signature": "int bitmap_height(uint bitmap_id)",
+  "meaning": "Height (hdr+10)",
+  "confidence": "high",
+  "evidence": "0x2b110 returns short@+10"
+ },
+ {
+  "addr": "0x2b554",
+  "name": "palette_identity",
+  "signature": "void palette_identity(uchar *pal16)",
+  "meaning": "pal[i]=i for 16 shades",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x2b56c",
+  "name": "palette_fill",
+  "signature": "void palette_fill(uchar *pal16, uchar value, int from, int to)",
+  "meaning": "pal[from..to]=value",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x11e8c",
+  "name": "flash_bank_select",
+  "signature": "uint flash_bank_select(uchar bank)",
+  "meaning": "Select graphics/sound flash bank, returns previous (restore with same call)",
+  "confidence": "medium",
+  "evidence": "writes *0x37344, returns *0x373fc&0xf"
+ },
+ {
+  "addr": "0xb624",
+  "name": "task_create",
+  "signature": "void * task_create(ushort task_id, void *fn, ushort flags, ushort stack_size)",
+  "meaning": "Create task (group id, entry, flags 1/2 = attach to parent/system list, stack bytes typ 0x300); returns task struct (0x68 bytes, +0x30.. user data)",
+  "confidence": "high",
+  "evidence": "pseudo-C; sites r3=0x300"
+ },
+ {
+  "addr": "0xb718",
+  "name": "task_create_unique",
+  "signature": "void * task_create_unique(ushort task_id, void *fn, ushort flags, ushort stack_size)",
+  "meaning": "task_create only if no task with this id is running (else NULL)",
+  "confidence": "high",
+  "evidence": "task_running check then create"
+ },
+ {
+  "addr": "0xb76c",
+  "name": "task_recreate",
+  "signature": "void * task_recreate(ushort task_id, void *fn, ushort flags, ushort stack_size)",
+  "meaning": "Kill tasks with this id (0xba3c) then create",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xb840",
+  "name": "task_spawn_child",
+  "signature": "void * task_spawn_child(void *fn, ushort flags, ushort stack_size)",
+  "meaning": "Create task with the CURRENT task's id, inheriting its context/user words (+0x24..0x44)",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xb808",
+  "name": "task_timer_restart",
+  "signature": "void task_timer_restart(ushort task_id, int ticks, ushort flags)",
+  "meaning": "(Re)start a timer task (fn 0xb7bc just task_sleep(+0x30)); test with task_running(id)",
+  "confidence": "high",
+  "evidence": "task_recreate(id,0xb7bc,flags,0x80); +0x30=ticks"
+ },
+ {
+  "addr": "0xb7d0",
+  "name": "task_timer_start",
+  "signature": "void task_timer_start(ushort task_id, int ticks, ushort flags)",
+  "meaning": "Start timer task only if not already running",
+  "confidence": "high",
+  "evidence": "asm: task_create_unique(id,0xb7bc,flags,0x80)"
+ },
+ {
+  "addr": "0xb91c",
+  "name": "task_sleep",
+  "signature": "void task_sleep(int ticks)",
+  "meaning": "Sleep current task (~16ms ticks)",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xba04",
+  "name": "task_exit",
+  "signature": "void task_exit(void)",
+  "meaning": "Kill current task",
+  "confidence": "medium",
+  "evidence": "kills *0x372c0"
+ },
+ {
+  "addr": "0xba3c",
+  "name": "task_kill",
+  "signature": "int task_kill(short task_id, ushort keep_mask)",
+  "meaning": "Kill all tasks with id (except self); id 0 = kill all tasks whose flags&keep_mask==0",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbb40",
+  "name": "task_kill_range",
+  "signature": "int task_kill_range(ushort lo, ushort hi)",
+  "meaning": "Kill tasks with lo<=id<=hi",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbad8",
+  "name": "task_kill_ptr",
+  "signature": "int task_kill_ptr(void *task)",
+  "meaning": "Kill a specific task struct",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbbd0",
+  "name": "task_kill_list",
+  "signature": "void task_kill_list(short *ids)",
+  "meaning": "Kill tasks whose id is in 0-terminated list",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbcec",
+  "name": "task_suspend",
+  "signature": "int task_suspend(short task_id, ushort keep_mask)",
+  "meaning": "Set suspended flag 0x40 on matching tasks (and children)",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbdec",
+  "name": "task_resume",
+  "signature": "int task_resume(short task_id)",
+  "meaning": "Clear suspended flag 0x40",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xbe68",
+  "name": "task_running",
+  "signature": "int task_running(short task_id)",
+  "meaning": "Any task with id alive",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xbecc",
+  "name": "task_running_range",
+  "signature": "int task_running_range(ushort lo, ushort hi)",
+  "meaning": "Any task id in range alive",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xc0d0",
+  "name": "task_set_id",
+  "signature": "void task_set_id(ushort task_id)",
+  "meaning": "Change current task's id (error 0x10 logged if no current task)",
+  "confidence": "high",
+  "evidence": "writes *(*0x372c0)"
+ },
+ {
+  "addr": "0xc1b8",
+  "name": "task_set_exit_handler",
+  "signature": "uint task_set_exit_handler(void *task, void *fn, void *arg, uint slot)",
+  "meaning": "Register cleanup fn(arg) run when task dies; slot 0 = first free of 4",
+  "confidence": "high",
+  "evidence": "sites: (task, fn, 0, 1)"
+ },
+ {
+  "addr": "0x79ec",
+  "name": "event_post",
+  "signature": "int event_post(int event_id, int arg)",
+  "meaning": "Call every handler hooked on event_id (<0x6d) in priority order; returns 0 if a handler vetoed",
+  "confidence": "high",
+  "evidence": "walks lists at 0x3e3a0"
+ },
+ {
+  "addr": "0x7944",
+  "name": "event_hook_add",
+  "signature": "void * event_hook_add(void *ctx, int event_id, void *handler, uchar priority)",
+  "meaning": "Register handler char fn(int arg) on event_id list 0x3e3a0 sorted by priority; returns ctx unchanged (r0 just passed through; static-init style)",
+  "confidence": "high",
+  "evidence": "malloc(0xc){fn,prio,next}; 117 sites set r0-r3"
+ },
+ {
+  "addr": "0x7a54",
+  "name": "object_dtor_stub",
+  "signature": "void object_dtor_stub(void *obj, uint flags)",
+  "meaning": "Empty deleting-destructor stub (if flags&1 -> no-op free)",
+  "confidence": "high",
+  "evidence": "asm: tst r1,#1; b 0x1dc (bx lr)"
+ },
+ {
+  "addr": "0x19648",
+  "name": "rules_refresh_request",
+  "signature": "void rules_refresh_request(void)",
+  "meaning": "Set 0x37418=1 so the 6 rule lists at 0x3e560 (lamp/leff conditions) are re-evaluated next pass",
+  "confidence": "high",
+  "evidence": "read+cleared by 0x1965c -> 0x19628"
+ },
+ {
+  "addr": "0x19740",
+  "name": "leff_rule_init",
+  "signature": "void * leff_rule_init(void *obj, uchar list, void *cond_fn, ushort leff_id, ushort mode_mask, uchar p6, uchar p7)",
+  "meaning": "Register a rule object: on refresh, if cond_fn() true start leff_id (0x87ac) else stop it (0xc404); only in modes matching 0x37274&mode_mask",
+  "confidence": "high",
+  "evidence": "vtable 0x39f88 method 0x197ac; 32 sites set r0-r3+3 stack"
+ },
+ {
+  "addr": "0x194f8",
+  "name": "rule_obj_init",
+  "signature": "void * rule_obj_init(void *obj, uchar list, void *fn, ushort mode_mask, uchar p5, uchar p6)",
+  "meaning": "Base rule object (calls fn on refresh) inserted into list 0..5",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x1982c",
+  "name": "lamp_rule_init",
+  "signature": "void * lamp_rule_init(void *obj, uchar list, void *fn, ushort a, ushort b, int c, ushort mode_mask, uchar p8, uchar p9)",
+  "meaning": "Rule object variant (vtable 0x39f60) - likely lamp-state rule",
+  "confidence": "low",
+  "evidence": "pseudo-C only"
+ },
+ {
+  "addr": "0x1979c",
+  "name": "leff_rule_dtor",
+  "signature": "void leff_rule_dtor(void *obj, uint flags)",
+  "meaning": "Destructor of leff rule object (vtable slot)",
+  "confidence": "medium",
+  "evidence": "resets vtable then base dtor"
+ },
+ {
+  "addr": "0x8114",
+  "name": "lamp_lookup",
+  "signature": "void * lamp_lookup(uchar lamp, uint *index_out)",
+  "meaning": "Lamp record (0x040e338c+n*12) and matrix index n-1 (<80); lamp numbers == lamps.csv numbers",
+  "confidence": "high",
+  "evidence": "fatal 0x2a"
+ },
+ {
+  "addr": "0x833c",
+  "name": "lamp_on",
+  "signature": "void lamp_on(uchar lamp, uchar *image, uchar planes)",
+  "meaning": "Set lamp bit in image planes (bit0=plane0 @+0, bit1=plane1 @+10); planes 0xff=full on; game image 0x3c204",
+  "confidence": "high",
+  "evidence": "sites (lamp,0x3c204,0xff)"
+ },
+ {
+  "addr": "0x81f8",
+  "name": "lamp_off",
+  "signature": "void lamp_off(uchar lamp, uchar *image, uchar planes)",
+  "meaning": "Clear lamp bit in image planes",
+  "confidence": "high",
+  "evidence": "sites (lamp,0x3c204,0xff)"
+ },
+ {
+  "addr": "0x8478",
+  "name": "lamp_toggle",
+  "signature": "void lamp_toggle(uchar lamp, uchar *image, uchar planes)",
+  "meaning": "Toggle lamp in image planes",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x8548",
+  "name": "lamp_test",
+  "signature": "int lamp_test(uchar lamp, uchar *image, uchar planes)",
+  "meaning": "True if lamp set in all selected planes",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x83f4",
+  "name": "lamp_on_solid",
+  "signature": "void lamp_on_solid(uchar lamp, uchar *image, uchar *flash_mask, uchar planes)",
+  "meaning": "Lamp on and clear its flash bit (0x3c218)",
+  "confidence": "high",
+  "evidence": "sites (l,0x3c204,0x3c218,..)"
+ },
+ {
+  "addr": "0x82b0",
+  "name": "lamp_off_all",
+  "signature": "void lamp_off_all(uchar lamp, uchar *image, uchar *flash_mask, uchar planes)",
+  "meaning": "Lamp off and clear its flash bit",
+  "confidence": "high",
+  "evidence": "sites (l,0x3c204,0x3c218,..)"
+ },
+ {
+  "addr": "0x83b0",
+  "name": "lamp_bit_set",
+  "signature": "void lamp_bit_set(uchar lamp, uchar *bits10)",
+  "meaning": "Set lamp bit in a 10-byte mask (flash mask 0x3c218, layer mask +0x14, leff mask 0x3c238); set in 0x3c218 => lamp flashes",
+  "confidence": "high",
+  "evidence": "code; 0x1a3a4 start-button flash"
+ },
+ {
+  "addr": "0x826c",
+  "name": "lamp_bit_clear",
+  "signature": "void lamp_bit_clear(uchar lamp, uchar *bits10)",
+  "meaning": "Clear lamp bit in 10-byte mask",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x84f8",
+  "name": "lamp_bit_toggle",
+  "signature": "void lamp_bit_toggle(uchar lamp, uchar *bits10)",
+  "meaning": "Toggle lamp bit in 10-byte mask",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x85f4",
+  "name": "lamp_bit_test",
+  "signature": "int lamp_bit_test(uchar lamp, uchar *bits10)",
+  "meaning": "Test lamp bit in 10-byte mask",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x9200",
+  "name": "lampgroup_on",
+  "signature": "void lampgroup_on(ushort group, uchar *image, uchar planes)",
+  "meaning": "lamp_on for each lamp of group (table 0x040e3acc: 0-terminated lamp lists, 109 groups)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x9068",
+  "name": "lampgroup_off",
+  "signature": "void lampgroup_off(ushort group, uchar *image, uchar planes)",
+  "meaning": "lamp_off for each lamp of group",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x9398",
+  "name": "lampgroup_toggle",
+  "signature": "void lampgroup_toggle(ushort group, uchar *image, uchar planes)",
+  "meaning": "lamp_toggle for group",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x9270",
+  "name": "lampgroup_bit_set",
+  "signature": "void lampgroup_bit_set(ushort group, uchar *bits10)",
+  "meaning": "lamp_bit_set for group (claim/flash mask)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x90d8",
+  "name": "lampgroup_bit_clear",
+  "signature": "void lampgroup_bit_clear(ushort group, uchar *bits10)",
+  "meaning": "lamp_bit_clear for group",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x8f78",
+  "name": "lampgroup_count",
+  "signature": "int lampgroup_count(ushort group)",
+  "meaning": "Number of lamps in group",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x7d9c",
+  "name": "lamp_layer_create",
+  "signature": "void * lamp_layer_create(ushort group, uchar priority)",
+  "meaning": "Allocate a lamp override layer (image 2x10 @+0, mask @+0x14 = group lamps, prio @+0x1e, owner task @+0x20) composited over game image by 0x7f68",
+  "confidence": "high",
+  "evidence": "pseudo-C; inserted in prio list 0x3728c"
+ },
+ {
+  "addr": "0x87ac",
+  "name": "leff_start",
+  "signature": "void * leff_start(ushort leff_id)",
+  "meaning": "OS lamp-effect start: table 0x040e23e4 (12B: fn, flags, lamp group, group2, prio); runs as task id 3 flag 0x20, claims group lamps (0x3c224 image, 0x3c238 mask); returns task or NULL if outranked",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xc404",
+  "name": "leff_stop",
+  "signature": "int leff_stop(short leff_id)",
+  "meaning": "Kill leff tasks (flag 0x20) with this leff id",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x8ab8",
+  "name": "leff_current_priority",
+  "signature": "uchar leff_current_priority(void)",
+  "meaning": "Priority of leff whose task is the current task (0 if not a leff)",
+  "confidence": "medium",
+  "evidence": "0x8afc"
+ },
+ {
+  "addr": "0x8d90",
+  "name": "leff_current_info",
+  "signature": "ushort leff_current_info(void)",
+  "meaning": "Field +8 of entry (array 0x36cf0) for current task's leff id",
+  "confidence": "low",
+  "evidence": "0x8de0"
+ },
+ {
+  "addr": "0x1a3a4",
+  "name": "shoot_again_lamp_update",
+  "signature": "void shoot_again_lamp_update(void)",
+  "meaning": "Drives lamp 26 SHOOT AGAIN (corrected by game_flow worker)",
+  "confidence": "high",
+  "evidence": "rom byte 0x36f62=0x41"
+ },
+ {
+  "addr": "0x7cc",
+  "name": "tube_set",
+  "signature": "void tube_set(void *tube, int *rgb3)",
+  "meaning": "Set ramp light tube object to rgb[3] (4-bit) immediately",
+  "confidence": "high",
+  "evidence": "copies 3 words to +4; sites (obj, sp)"
+ },
+ {
+  "addr": "0x7a0",
+  "name": "tube_set_rgb",
+  "signature": "void tube_set_rgb(void *tube, int r, int g, int b)",
+  "meaning": "Same as tube_set with separate components",
+  "confidence": "high",
+  "evidence": "asm stmib r4,{r5,r6,r7}"
+ },
+ {
+  "addr": "0x800",
+  "name": "tube_fade",
+  "signature": "void tube_fade(void *tube, int *rgb3, ushort ms)",
+  "meaning": "Fade tube to rgb over ms (0 = immediate)",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x11f2c",
+  "name": "irq_disable",
+  "signature": "uint irq_disable(void)",
+  "meaning": "Disable AIC IRQ source 4 (mask 0x10), return previous enable bit",
+  "confidence": "high",
+  "evidence": "writes 0xfffff124, reads 0xfffff110"
+ },
+ {
+  "addr": "0x11f64",
+  "name": "irq_restore",
+  "signature": "void irq_restore(uint saved)",
+  "meaning": "Re-enable per saved mask (AIC IECR 0xfffff120)",
+  "confidence": "high",
+  "evidence": "asm"
+ },
+ {
+  "addr": "0x2c8f4",
+  "name": "snd_play",
+  "signature": "int snd_play(ushort call_id)",
+  "meaning": "Play sound call (sound_calls.csv); returns play handle",
+  "confidence": "high",
+  "evidence": "asm: handle=0x2c1c8(); 0x2c744(id,handle,&tmp,0)"
+ },
+ {
+  "addr": "0x2c1c8",
+  "name": "snd_next_handle",
+  "signature": "uint snd_next_handle(void)",
+  "meaning": "Increment and return nonzero sound handle counter 0x38224",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x2c984",
+  "name": "snd_play_after",
+  "signature": "int snd_play_after(ushort call_id, int after_handle, int p3, int p4, uchar p5)",
+  "meaning": "Queue call_id to start when after_handle finishes (8 slots 0x3e238); after_handle 0 = play now",
+  "confidence": "high",
+  "evidence": "asm"
+ },
+ {
+  "addr": "0x2ca1c",
+  "name": "snd_play_chain",
+  "signature": "int snd_play_chain(ushort call_id, int after_handle, int p3)",
+  "meaning": "snd_play_after(call,after,p3,0,0)",
+  "confidence": "high",
+  "evidence": "asm; sites chain handles from snd_play"
+ },
+ {
+  "addr": "0x2c744",
+  "name": "snd_resolve_call",
+  "signature": "int snd_resolve_call(ushort call_id, uint handle, uint *variant_io, char fixed_variant)",
+  "meaning": "Pick variant sample and start it",
+  "confidence": "high",
+  "evidence": "given+pseudo-C"
+ },
+ {
+  "addr": "0x2c1e4",
+  "name": "snd_start_sample",
+  "signature": "int snd_start_sample(ushort sample, int *ctx, int channel, int p4)",
+  "meaning": "Low-level sample start",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xf914",
+  "name": "snd_play_009",
+  "signature": "void snd_play_009(void)",
+  "meaning": "snd_play(9) (service key click)",
+  "confidence": "high",
+  "evidence": "asm: mov r0,#9; b 0x2c8f4"
+ },
+ {
+  "addr": "0xf924",
+  "name": "snd_play_00a",
+  "signature": "void snd_play_00a(void)",
+  "meaning": "snd_play(0xa)",
+  "confidence": "high",
+  "evidence": "asm tail call"
+ },
+ {
+  "addr": "0xf934",
+  "name": "snd_play_00b",
+  "signature": "void snd_play_00b(void)",
+  "meaning": "snd_play(0xb)",
+  "confidence": "high",
+  "evidence": "asm tail call"
+ },
+ {
+  "addr": "0xf944",
+  "name": "snd_play_00c",
+  "signature": "void snd_play_00c(void)",
+  "meaning": "snd_play(0xc)",
+  "confidence": "high",
+  "evidence": "asm tail call"
+ },
+ {
+  "addr": "0x5ac8",
+  "name": "error_log",
+  "signature": "void error_log(ushort code)",
+  "meaning": "NON-fatal: append (code,type 2) to error ring 0x2110084 (10 entries) and return",
+  "confidence": "high",
+  "evidence": "asm: mov r1,#2; b 0x5a44 - no halt"
+ },
+ {
+  "addr": "0x5aa8",
+  "name": "fatal_halt",
+  "signature": "void fatal_halt(ushort code)",
+  "meaning": "Log (code,type 1) then 0x10ce8 -> 0x16a94(1) + infinite loop (reset)",
+  "confidence": "high",
+  "evidence": "asm"
+ },
+ {
+  "addr": "0xe90",
+  "name": "adj_get",
+  "signature": "int adj_get(ushort adj_id)",
+  "meaning": "Adjustment value (validated, defaults if corrupt)",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0x164c",
+  "name": "audit_get",
+  "signature": "int audit_get(ushort audit_id, uint mode)",
+  "meaning": "Read audit counter (table 0x040ded38); mode 0x40 value,8 word1,0x20 word2,0x10 alt store, |0x80 add base",
+  "confidence": "high",
+  "evidence": "same table/limit as audit_add"
+ },
+ {
+  "addr": "0x178c",
+  "name": "audit_add",
+  "signature": "void audit_add(ushort audit_id, int n)",
+  "meaning": "Increment audit",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xaa64",
+  "name": "nvram_unlock",
+  "signature": "uchar nvram_unlock(void)",
+  "meaning": "Write unlock sequence to NVRAM protect latch; returns previous locked flag 0x372a6",
+  "confidence": "medium",
+  "evidence": "shifts 0x17 into *0x373a0"
+ },
+ {
+  "addr": "0xaaac",
+  "name": "nvram_lock",
+  "signature": "uchar nvram_lock(void)",
+  "meaning": "Write-protect NVRAM; returns previous flag",
+  "confidence": "medium",
+  "evidence": "code"
+ },
+ {
+  "addr": "0xaad8",
+  "name": "nvram_lock_restore",
+  "signature": "void nvram_lock_restore(uchar was_locked)",
+  "meaning": "Restore state returned by nvram_unlock",
+  "confidence": "medium",
+  "evidence": "if arg lock else unlock"
+ },
+ {
+  "addr": "0xefb8",
+  "name": "array_elem",
+  "signature": "void * array_elem(void *array_desc, uint index)",
+  "meaning": "Element ptr of {base,count,size} descriptor; fatal 0x98 if out of range",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x21248",
+  "name": "player_check",
+  "signature": "uint player_check(uchar player)",
+  "meaning": "Validate player number 1..4 (fatal 0x13, returns 1)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x2126c",
+  "name": "num_players",
+  "signature": "uchar num_players(void)",
+  "meaning": "Players in current game (byte 0x2110900, 1..4)",
+  "confidence": "high",
+  "evidence": "setter 0x212a0"
+ },
+ {
+  "addr": "0x21360",
+  "name": "current_player",
+  "signature": "uchar current_player(void)",
+  "meaning": "Current player 1..4",
+  "confidence": "high",
+  "evidence": "given"
+ },
+ {
+  "addr": "0xe4c4",
+  "name": "playfield_is_valid",
+  "signature": "uchar playfield_is_valid(void)",
+  "meaning": "True once the playfield is validated (object 0x372e8: 3 different counting switches or one instant switch); corrected by mode workers, verified in emulator",
+  "confidence": "high",
+  "evidence": "callers of 0xe4dc include on_tilts"
+ },
+ {
+  "addr": "0xe4dc",
+  "name": "playfield_set_valid",
+  "signature": "void playfield_set_valid(void)",
+  "meaning": "Set tilt flag and event_post(0x6a)",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0xe098",
+  "name": "sw_is_disabled",
+  "signature": "int sw_is_disabled(uchar sw)",
+  "meaning": "True if switch is masked/ignored/stuck (bits in 0x21100e0/0x21100f4 or zero debounce)",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x1ba98",
+  "name": "ball_dev_call",
+  "signature": "uchar ball_dev_call(ushort dev, uchar event, uchar a, uchar b)",
+  "meaning": "Invoke game handler of ball device dev (table 0x040e41f4, 4 devices: trough + 3) with event code",
+  "confidence": "medium",
+  "evidence": "handler ptr +0xc = 0x101bbc0..; sites events 2,0xd"
+ },
+ {
+  "addr": "0x1e044",
+  "name": "balls_installed_max",
+  "signature": "uchar balls_installed_max(void)",
+  "meaning": "Fixed ball count (0x36f6a) or trough switch count",
+  "confidence": "medium",
+  "evidence": "0x1dfdc counts device switch list"
+ },
+ {
+  "addr": "0x1e4a8",
+  "name": "balls_in_play",
+  "signature": "uint balls_in_play(void)",
+  "meaning": "Live balls = installed (0x1e080) - balls resting in devices",
+  "confidence": "medium",
+  "evidence": "pseudo-C; used by multiball starts"
+ },
+ {
+  "addr": "0x22f18",
+  "name": "replay_check",
+  "signature": "uchar replay_check(uchar player, uint score)",
+  "meaning": "Award replay levels crossed by score (adj 0xd REPLAY AWARD)",
+  "confidence": "high",
+  "evidence": "per-player thresholds 0x2110984"
+ },
+ {
+  "addr": "0x24aa0",
+  "name": "tournament_bumpnwin_check",
+  "signature": "int tournament_bumpnwin_check(uchar player, uint score)",
+  "meaning": "Bump'n'Win tournament qualify check",
+  "confidence": "medium",
+  "evidence": "record +0x118 threshold; msgs 0x4a0.."
+ },
+ {
+  "addr": "0x22008",
+  "name": "score_award_check",
+  "signature": "int score_award_check(uchar player, uint score)",
+  "meaning": "Score-threshold award tracker (config 0x2102c88, per-player 0x2111908)",
+  "confidence": "low",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x2553c",
+  "name": "tournament_get",
+  "signature": "void * tournament_get(void)",
+  "meaning": "Active tournament record (10x300B at 0x2100000) if checksum OK, else NULL",
+  "confidence": "medium",
+  "evidence": "callers draw TOURNAMENT strings"
+ },
+ {
+  "addr": "0x251cc",
+  "name": "tournament_get_type",
+  "signature": "int tournament_get_type(void)",
+  "meaning": "Field +0x124 of tournament record (0 if invalid)",
+  "confidence": "low",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x6970",
+  "name": "coil_pulse",
+  "signature": "void coil_pulse(uchar coil, ushort time)",
+  "meaning": "Pulse coil/flasher (1..40, coils.csv) via driver slot 0x3b98c",
+  "confidence": "high",
+  "evidence": "sites flashers 0x13,0x19,0x1c with 0x30"
+ },
+ {
+  "addr": "0x69c0",
+  "name": "coil_pulse_fn",
+  "signature": "void coil_pulse_fn(uchar coil, ushort time, int p3)",
+  "meaning": "Coil pulse variant with extra parameter (0x2d18)",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x6b24",
+  "name": "coilgroup_pulse",
+  "signature": "void coilgroup_pulse(ushort group, ushort time)",
+  "meaning": "coil_pulse for each coil in group (table 0x040e20c4)",
+  "confidence": "high",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x15c54",
+  "name": "pio_shift_byte",
+  "signature": "void pio_shift_byte(uchar b)",
+  "meaning": "Bit-bang 8 bits (inverted) on PIO clock 0x40000/data 0x20000",
+  "confidence": "low",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x15d0c",
+  "name": "pio_shift_idle",
+  "signature": "void pio_shift_idle(void)",
+  "meaning": "Return bit-bang lines to idle",
+  "confidence": "low",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x104f4c0",
+  "name": "aux_out_bit",
+  "signature": "void aux_out_bit(uchar bit, uchar value)",
+  "meaning": "Set one output bit on expander registers 0xf8-0xfa (layout by board type 0x1050ff0)",
+  "confidence": "low",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x1050ff0",
+  "name": "aux_board_type",
+  "signature": "uchar aux_board_type(void)",
+  "meaning": "Byte 0x3ee62 (expander/board type)",
+  "confidence": "low",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x104b18c",
+  "name": "usb_msc_read10",
+  "signature": "int usb_msc_read10(void *dev, uint lba, ushort blocks)",
+  "meaning": "SCSI READ(10) (opcode 0x28) on USB mass storage; 0=ok 3=error",
+  "confidence": "medium",
+  "evidence": "cmd byte 0x28, BE LBA at +0x23d"
+ },
+ {
+  "addr": "0xfbd0",
+  "name": "key_repeat_reset",
+  "signature": "void key_repeat_reset(void *state)",
+  "meaning": "Reset service-button autorepeat state {count,ticks,..,done=1}",
+  "confidence": "medium",
+  "evidence": "used with 0xfb10"
+ },
+ {
+  "addr": "0xfbe8",
+  "name": "key_repeat_reset_all",
+  "signature": "void key_repeat_reset_all(void)",
+  "meaning": "Reset 4 autorepeat states 0x3c950..0x3c980",
+  "confidence": "medium",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x1b2e0",
+  "name": "instant_info_cancel",
+  "signature": "void instant_info_cancel(void)",
+  "meaning": "deff_stop(0x1b instant info) and clear its state",
+  "confidence": "medium",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x19d58",
+  "name": "ball_search_reset",
+  "signature": "void ball_search_reset(void)",
+  "meaning": "Resets the ball-search timer (corrected by game_flow worker)",
+  "confidence": "low",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x10241a0",
+  "name": "deff_status_frames",
+  "signature": "void deff_status_frames(int frames, int arg)",
+  "meaning": "Render N frames of fill + status panel (0x10230ec) and show",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x1024460",
+  "name": "deff_hold_frames",
+  "signature": "void deff_hold_frames(int frames, uchar arg)",
+  "meaning": "Render N frames copying shown page + status panel, after 0x28580(arg)",
+  "confidence": "low",
+  "evidence": "pseudo-C; arg always 0x20"
+ },
+ {
+  "addr": "0x10230ec",
+  "name": "deff_draw_status_panel",
+  "signature": "void deff_draw_status_panel(int page, int highlight)",
+  "meaning": "Draw left 40px panel: player scores, ball/progress bars",
+  "confidence": "medium",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x1023edc",
+  "name": "anim_play",
+  "signature": "void anim_play(uint first_bitmap, uint last_bitmap, int ticks_per_frame, int loops, void *sound_cues)",
+  "meaning": "Play bitmap animation first..last with status panel; cue list {frame,call} played as reached",
+  "confidence": "high",
+  "evidence": "asm site (0x11dc,0x1214,3,1,0)"
+ },
+ {
+  "addr": "0x1023fe4",
+  "name": "anim_play_pal",
+  "signature": "void anim_play_pal(uint first_bitmap, uint last_bitmap, int ticks_per_frame, int loops, void *sound_cues)",
+  "meaning": "anim_play with palette remap 0x40d3472",
+  "confidence": "high",
+  "evidence": "pseudo-C"
+ },
+ {
+  "addr": "0x10289b8",
+  "name": "shaker_run",
+  "signature": "uchar shaker_run(int strength, int min_setting)",
+  "meaning": "Run shaker motor (coil 8) if adj 0x56 SHAKER MOTOR >= min_setting; strength 1..3",
+  "confidence": "high",
+  "evidence": "adj name check"
+ },
+ {
+  "addr": "0x1031d0c",
+  "name": "zuse_target_hit",
+  "signature": "int zuse_target_hit(int target)",
+  "meaning": "ZUSE fast scoring: collect target bit (5 -> all targets, deffs 93/96/97/98, leff 0x78/0x79, task 0x80)",
+  "confidence": "medium",
+  "evidence": "deff ids in module"
+ },
+ {
+  "addr": "0x1005074",
+  "name": "eol_shot_score",
+  "signature": "int eol_shot_score(void)",
+  "meaning": "If End-of-Line/Daft Punk MB active (flag 0x27 or task 0xb0-0xb1) award *0x3ae00 points",
+  "confidence": "medium",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x102f6c8",
+  "name": "portal_mb_shot",
+  "signature": "int portal_mb_shot(int shot)",
+  "meaning": "Portal multiball shot: jackpot (deff 0x90) / super jackpot (0x8f)",
+  "confidence": "medium",
+  "evidence": "deffs 143/144"
+ },
+ {
+  "addr": "0x10186bc",
+  "name": "light_cycle_target",
+  "signature": "int light_cycle_target(uint mask, char quiet)",
+  "meaning": "Light Cycle progress: move bit mask from pending to done; deff 0x53 (n more) or 0x54 lit",
+  "confidence": "medium",
+  "evidence": "deffs 83/84"
+ },
+ {
+  "addr": "0x1018804",
+  "name": "light_cycle_mb_shot",
+  "signature": "int light_cycle_mb_shot(uint mask)",
+  "meaning": "Light Cycle (flag 0x2b / tasks 0xb8-0xb9) shot handler",
+  "confidence": "low",
+  "evidence": "code"
+ },
+ {
+  "addr": "0x1026608",
+  "name": "simulation_shot",
+  "signature": "uchar simulation_shot(int shot, uchar arg)",
+  "meaning": "Simulation stage shot (9 stages table 0x040d37d8: SHOOT FLYNNS ARCADE/CLU HELMETS/ZUSE..); calls stage method, audits, advances",
+  "confidence": "medium",
+  "evidence": "msgs 0x64a-0x65c"
+ },
+ {
+  "addr": "0x101b824",
+  "name": "tube_show_start",
+  "signature": "void * tube_show_start(ushort show_id)",
+  "meaning": "Game-side light show start for the 2 ramp tubes (0x3b1d8/0x3b504) - not the 80-lamp leff (that is 0x87ac)",
+  "confidence": "medium",
+  "evidence": "task 0x7f, tube objects"
+ },
+ {
+  "addr": "0x101baac",
+  "name": "tube_show_stop",
+  "signature": "int tube_show_stop(short show_id)",
+  "meaning": "Stop tube show",
+  "confidence": "medium",
+  "evidence": "pair of 0x101b824"
+ },
+ {
+  "addr": "0x2340c",
+  "name": "score_add",
+  "signature": "int score_add(int points)",
+  "meaning": "Add points*playfield multiplier to current player; returns points added",
+  "confidence": "high",
+  "evidence": "given (Ghidra name lamp_show_start is wrong)"
+ }
+]

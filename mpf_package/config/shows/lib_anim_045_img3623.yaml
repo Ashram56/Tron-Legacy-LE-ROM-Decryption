@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 45: images 3623-3646, 24 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_045_img3623:
+      action: play
+- time: 1176ms
+  slides:
+    lib_anim_045_img3623:
+      action: remove

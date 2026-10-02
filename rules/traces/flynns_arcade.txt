@@ -1,0 +1,33 @@
+# Flynn's Arcade: lit at ball start, collected at the VUK (sw11), relit by the right orbit (sw46).
+start 1
+wait 3
+mark pop bumper rotates the lit TRON award (BUMPERS -> SPINNERS)
+hit 30
+wait 1
+mark VUK collects arcade award 1 (VUK skill shot 500,000 also scores first)
+hit 11
+wait 8
+mark VUK again: arcade not lit -> no award
+hit 11
+wait 4
+mark right orbit relights arcade (deff 104)
+hit 46
+wait 4
+mark complete TRON so SPINNERS runs (MORE TIME enters the bag with weight 100)
+hit 1
+hit 2
+hit 3
+hit 4
+wait 4
+hit 11
+wait 8
+hit 46
+wait 3
+mark competition mode (adj 42) forces 500K: weight 100+1000
+adj 42 1
+hit 11
+wait 8
+adj 42 0
+mark drain: next ball re-lights the arcade (deff 104) and resets the TRON award to BUMPERS
+drain left
+wait 10

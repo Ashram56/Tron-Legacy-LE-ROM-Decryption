@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 29: images 3124-3160, 37 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_029_img3124:
+      action: play
+- time: 1813ms
+  slides:
+    lib_anim_029_img3124:
+      action: remove

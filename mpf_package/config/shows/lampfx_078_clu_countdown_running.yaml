@@ -1,0 +1,11 @@
+#show_version=6
+# ROM lamp effect 78 (leff table 0x040e23e4, function 0x10028ec, priority 7). Captured in emulation.
+# Loops until stopped. loops in the ROM until stopped; capture cut at 12 s, show repeats that
+# Holds these lamps off (a blackout layer) for as long as it runs.
+# Started by: rule: while clu_countdown_running
+- duration: 1000ms
+  lights:
+    l_left_orbit_clu: '000000'
+    l_eject_clu: '000000'
+    l_right_orbit_clu: '000000'
+    l_l_inner_loop_clu: '000000'

@@ -1,0 +1,12 @@
+0x02111618	eol_letters_left	1 x4	per player (reset when a set completes, and at game start)	Left-ramp letters lit, 0..4, [player-1]
+0x0211161c	eol_letters_right	1 x4	per player	Right-ramp letters lit, 0..4
+0x02111620	eol_times_lit	1 x4	per game per player (reset at game start)	How many times the multiball has been lit; 0 selects adj 83, else adj 84
+0x02111624	eol_sets	1 x4	per game per player	Completed letter sets since the multiball was last lit (reset to 0 when lit)
+0x02111628	eol_sets_total	1 x4	per game per player	Completed letter sets this game (never reset during the game); compared with adj 85 for the extra ball
+0x0211162c	eol_starts_this_ball	1 x4	per player (reset at start of each player turn, event 0x26)	Daft Punk / End of Line multiballs started; no reader found
+0x0003adf0	eol_lit_mask	4	while mode runs	Jackpot shots lit: bit0 left ramp, bit1 right ramp, bit2 disc; 7 at start; refilled to 7 when both ramp bits are gone or after a disc hit
+0x0003adf4	eol_level	4	while mode runs	Disc hits this multiball (jackpot level); also picks the music (call 0x20 + level&3)
+0x0003adf8	eol_aab_left	4	while mode runs	Disc hits still needed for the next add-a-ball (2 at start, then add_count+2)
+0x0003adfc	eol_aab_count	4	while mode runs	Add-a-balls earned this multiball
+0x0003ae00	eol_switch_value	4	while mode runs (stale value stays after end)	Points per switch: 10,000 at start, +1,000 per disc hit, max 50,000
+0x0003ae04	eol_total	4	while mode runs	Running total for the end display: 100,000 start award + everything this feature scored

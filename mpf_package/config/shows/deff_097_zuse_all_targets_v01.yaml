@@ -1,0 +1,18 @@
+#show_version=6
+# deff_097_zuse_all_targets_v01: ALL TARGETS value, clip anim_099_img5670.
+# Same sounds and tube show as deff_097_zuse_all_targets; only the clip differs. random pick of 2 clips.
+- time: 0ms
+  slides:
+    deff_097_zuse_all_targets_v01:
+      action: play
+  sounds:
+    call_0af:
+      action: play
+- time: 979ms
+  sounds:
+    call_0b0:
+      action: play
+- time: 1793ms
+  slides:
+    deff_097_zuse_all_targets_v01:
+      action: remove

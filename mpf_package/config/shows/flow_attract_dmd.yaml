@@ -1,0 +1,11 @@
+#show_version=6
+# Attract mode display cycle (observed, 25.9 s, repeats): Stern logo scroll (library animation 4),
+# TRON intro (library animation 5), then text pages: "Learn more about Stern Pinball", "Participate in
+# local tournaments", credits, replay score, grand champion and high scores 1-4.
+# The slide is the full DMD as the emulator showed it; replace the text pages with text widgets
+# that read your own credits and high score data.
+- time: 0ms
+  slides:
+    flow_attract_cycle:
+      action: play
+- time: 25900ms

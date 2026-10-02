@@ -1,0 +1,13 @@
+#show_version=6
+# ROM lamp effect 14 (leff table 0x040e23e4, function 0x2fe1c, priority 128). Captured in emulation.
+# Plays once. 
+# Started by: code: ball_save_task
+- duration: 163ms
+  lights:
+    l_shoot_again: ffffff
+- duration: 162ms
+  lights:
+    l_shoot_again: '000000'
+- duration: 178ms
+  lights:
+    l_shoot_again: ffffff

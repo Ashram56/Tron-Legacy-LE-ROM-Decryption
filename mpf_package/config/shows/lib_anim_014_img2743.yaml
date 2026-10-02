@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 14: images 2743-2746, 4 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_014_img2743:
+      action: play
+- time: 196ms
+  slides:
+    lib_anim_014_img2743:
+      action: remove

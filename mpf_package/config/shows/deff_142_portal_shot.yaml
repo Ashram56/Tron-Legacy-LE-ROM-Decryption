@@ -1,0 +1,30 @@
+#show_version=6
+# deff_142_portal_shot: Portal shot value
+# ROM trigger: Portal Multiball shot (disc, inner loop, orbit). Timing from emulation.
+# Lamp effect: lampfx_168_portal_shot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_142_portal_shot:
+      action: play
+  shows:
+    leff_082:
+      action: play
+      loops: 0
+    lampfx_168_portal_shot:
+      action: play
+      loops: 0
+  sounds:
+    call_079:
+      action: play
+- time: 1710ms
+  sounds:
+    call_07a:
+      action: play
+- time: 2200ms
+  sounds:
+    call_07a:
+      action: play
+- time: 3408ms
+  slides:
+    deff_142_portal_shot:
+      action: remove

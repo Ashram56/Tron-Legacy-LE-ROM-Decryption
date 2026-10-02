@@ -1,0 +1,18 @@
+#show_version=6
+# ROM lamp effect 118 (leff table 0x040e23e4, function 0x1031490, priority 160). Captured in emulation.
+# Plays once. 
+- duration: 244ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_bottom_arch_right: 64ms
+    f_zen_flasher: 64ms
+- duration: 244ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_bottom_arch_right: 64ms
+    f_zen_flasher: 64ms
+- duration: 259ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_bottom_arch_right: 64ms
+    f_zen_flasher: 64ms

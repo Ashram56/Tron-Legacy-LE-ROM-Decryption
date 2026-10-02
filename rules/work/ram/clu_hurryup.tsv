@@ -1,0 +1,15 @@
+0x2111724	clu_lane_bits	4	per player, per ball	lit C-L-U lanes bit0 (C)LU sw25, bit1 C(L)U sw14, bit2 CL(U) sw28; 0 on events 0x13/0x26
+0x2111734	clu_lane_completions	2	per player	lane sets that counted toward lighting; 0 on event 0x26
+0x211173c	clu_lights	2	per player	times CLU was lit; lit when completions > 4*lights
+0x21118a4	clu_lit	1	per player	CLU hurry-up lit at VUK (shared lit table 0x2111894+4*k, bit 0x10)
+0x21115f0	clu_starts	1	per player	hurry-ups started; base = min(250000+75000*starts,1500000)
+0x21115f4	clu_awards_count	1	per player	CLU shots collected, all hurry-ups
+0x21115f8	clu_completed_count	1	per player	hurry-ups with all 4 shots collected
+0x3ad00	clu_timer	1	while running	seconds left, 25 at start, 40 on MORE TIME; -1 per 64 unpaused ticks
+0x3acfc	clu_shots	4	while running	lit shots 0x001 L orbit, 0x004 L inner loop, 0x080 R orbit, 0x100 VUK; 0x185 at start
+0x3ad08	clu_base	4	while running	base award
+0x3ad04	clu_hits	1	while running	shots collected this hurry-up; award = min(base+75000*hits,1500000)
+0x3ad0c	clu_total	4	while running	running total for deff 74 (starts at 100000)
+0x36f18	clu_award_snd_idx	1	while running	sfx variant for deff 73 (call 0x89)
+0x3b57c	clu_timer_bar	2	while running	status panel bar cur/max (0x3b57c/0x3b580)
+0x372e8	playfield_valid	1	OS	playfield validated flag (decompile name is_tilted is wrong); 0 pauses hurry-up timers

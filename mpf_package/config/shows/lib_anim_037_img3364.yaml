@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 37: images 3364-3384, 21 frames at 82 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_037_img3364:
+      action: play
+- time: 1715ms
+  slides:
+    lib_anim_037_img3364:
+      action: remove

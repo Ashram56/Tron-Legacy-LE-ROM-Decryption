@@ -1,0 +1,253 @@
+#show_version=6
+# ROM lamp effect 123 (leff table 0x040e23e4, function 0x10326d8, priority 176). Captured in emulation.
+# Plays once. 
+# Started by: effect 94 (deff_094_zuse_intro)
+- duration: 14ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 32ms
+  lights:
+    l_flynns_arcade: '000000'
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 32ms
+  lights:
+    l_flynns_arcade: ffffff
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 2ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 31ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 32ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 33ms
+  lights:
+    l_flynns_arcade: '000000'
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 19ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 13ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 32ms
+  lights:
+    l_flynns_arcade: ffffff
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 2ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 30ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 33ms
+  lights:
+    l_flynns_arcade: '000000'
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 32ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 19ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 14ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 32ms
+  lights:
+    l_flynns_arcade: ffffff
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 32ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 2ms
+  lights:
+    l_flynns_arcade: '000000'
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 31ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 32ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 19ms
+  lights:
+    l_flynns_arcade: ffffff
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 13ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 33ms
+  lights:
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 32ms
+  lights:
+    l_zuse_e: ffffff
+    l_zuse_s: ffffff
+    l_zuse_u: ffffff
+    l_zuse_z: ffffff
+- duration: 35ms
+  lights:
+    l_flynns_arcade: '000000'
+    l_zuse_e: '000000'
+    l_zuse_s: '000000'
+    l_zuse_u: '000000'
+    l_zuse_z: '000000'
+- duration: 63ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 51ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 46ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 67ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 31ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 84ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 13ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 98ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 2ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 95ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 19ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 79ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 34ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 63ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 51ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 46ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 67ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 1ms
+  flashers:
+    f_disc_left: 64ms
+- duration: 30ms
+  flashers:
+    f_disc_right: 64ms
+- duration: 100ms
+  lights:
+    l_flynns_arcade: '000000'

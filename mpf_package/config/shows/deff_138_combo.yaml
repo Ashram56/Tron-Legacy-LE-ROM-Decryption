@@ -1,0 +1,8 @@
+#show_version=6
+# deff_138_combo: n WAY COMBO / JACKPOT
+# ROM trigger: combo award. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_127:
+      action: play
+- time: 2180ms

@@ -1,0 +1,30 @@
+#show_version=6
+# deff_038_match: MATCH sequence
+# ROM trigger: end of game match. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_038_match:
+      action: play
+  sounds:
+    call_01c:
+      action: play
+- time: 320ms
+  sounds:
+    call_041:
+      action: play
+- time: 966ms
+  sounds:
+    call_03f:
+      action: play
+- time: 3093ms
+  sounds:
+    call_040:
+      action: play
+- time: 4190ms
+  sounds:
+    call_042:
+      action: play
+- time: 6238ms
+  slides:
+    deff_038_match:
+      action: remove

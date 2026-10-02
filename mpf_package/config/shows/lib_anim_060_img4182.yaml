@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 60: images 4182-4229, 48 frames at 33 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_060_img4182:
+      action: play
+- time: 1568ms
+  slides:
+    lib_anim_060_img4182:
+      action: remove

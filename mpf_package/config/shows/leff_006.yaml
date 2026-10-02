@@ -1,0 +1,6 @@
+#show_version=6
+# Tron LE light effect 6 (ROM function 0x1017b60), hold. Generated from ROM emulation.
+- duration: 16ms
+  lights:
+    l_left_ramp_tube: ff0000
+    l_right_ramp_tube: ff0000

@@ -1,0 +1,11 @@
+#show_version=6
+# deff_136_find_flynn_intro: SHOOT ROVING RED ARROW TO FIND FLYNN
+# ROM trigger: Find Flynn start (ZEN rollover sw12). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_136_find_flynn_intro:
+      action: play
+- time: 1694ms
+  slides:
+    deff_136_find_flynn_intro:
+      action: remove

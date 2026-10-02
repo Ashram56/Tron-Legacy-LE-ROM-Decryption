@@ -1,0 +1,330 @@
+#show_version=6
+# ROM lamp effect 161 (leff table 0x040e23e4, function 0x1003e40, priority 4). Captured in emulation.
+# Loops until stopped. loops in the ROM after a lead-in; capture cut at 12 s, show repeats that
+# Started by: rule: while LAB_01003914
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 1ms
+  flashers:
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 1ms
+  flashers:
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 1ms
+  flashers:
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 98ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 97ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms
+- duration: 10ms
+  flashers:
+    f_video_game: 200ms
+    f_zen_flasher: 200ms

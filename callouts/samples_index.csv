@@ -1,0 +1,1091 @@
+sample_id,kind,duration_s,sample_rate,file,used_by_sound_calls
+0x015,sfx,0.11,24000,samples/sfx/0015.wav,0x019
+0x01a,sfx,6.60,24000,samples/sfx/001a.wav,0x115
+0x01b,sfx,1.64,24000,samples/sfx/001b.wav,0x04e
+0x01c,sfx,2.10,24000,samples/sfx/001c.wav,
+0x01d,sfx,3.72,24000,samples/sfx/001d.wav,
+0x01e,sfx,1.52,24000,samples/sfx/001e.wav,
+0x01f,sfx,5.03,24000,samples/sfx/001f.wav,0x077
+0x020,sfx,3.26,24000,samples/sfx/0020.wav,0x0e7
+0x021,sfx,3.07,24000,samples/sfx/0021.wav,0x094
+0x022,sfx,2.29,24000,samples/sfx/0022.wav,0x089
+0x023,sfx,2.96,24000,samples/sfx/0023.wav,0x127 0x127
+0x024,sfx,2.96,24000,samples/sfx/0024.wav,0x127
+0x025,sfx,2.99,24000,samples/sfx/0025.wav,0x127
+0x026,sfx,2.99,24000,samples/sfx/0026.wav,0x127
+0x027,sfx,3.01,24000,samples/sfx/0027.wav,0x127
+0x028,sfx,3.85,24000,samples/sfx/0028.wav,0x127
+0x029,sfx,1.74,24000,samples/sfx/0029.wav,0x10a
+0x02a,sfx,1.74,24000,samples/sfx/002a.wav,0x10a
+0x02b,sfx,1.72,24000,samples/sfx/002b.wav,0x10a
+0x02c,sfx,1.68,24000,samples/sfx/002c.wav,0x10a
+0x02d,sfx,1.80,24000,samples/sfx/002d.wav,0x10a
+0x02e,sfx,2.41,24000,samples/sfx/002e.wav,0x10a
+0x02f,sfx,3.07,24000,samples/sfx/002f.wav,0x109
+0x030,sfx,3.07,24000,samples/sfx/0030.wav,0x109
+0x031,sfx,3.07,24000,samples/sfx/0031.wav,0x109
+0x032,sfx,3.07,24000,samples/sfx/0032.wav,0x109
+0x033,sfx,3.07,24000,samples/sfx/0033.wav,0x109
+0x034,sfx,3.07,24000,samples/sfx/0034.wav,0x109
+0x035,sfx,3.07,24000,samples/sfx/0035.wav,0x109
+0x036,sfx,3.07,24000,samples/sfx/0036.wav,0x109
+0x037,sfx,3.07,24000,samples/sfx/0037.wav,0x109
+0x038,sfx,1.11,24000,samples/sfx/0038.wav,0x069
+0x039,sfx,1.63,24000,samples/sfx/0039.wav,0x06a
+0x03a,sfx,2.63,24000,samples/sfx/003a.wav,0x074
+0x03b,sfx,1.83,24000,samples/sfx/003b.wav,0x028 0x070
+0x03c,sfx,1.86,24000,samples/sfx/003c.wav,0x027 0x06c
+0x03d,sfx,0.03,24000,samples/sfx/003d.wav,
+0x03e,sfx,0.04,24000,samples/sfx/003e.wav,
+0x03f,sfx,0.04,24000,samples/sfx/003f.wav,
+0x040,sfx,1.63,24000,samples/sfx/0040.wav,0x041
+0x041,sfx,2.60,24000,samples/sfx/0041.wav,0x063 0x064
+0x042,sfx,1.60,24000,samples/sfx/0042.wav,0x051
+0x043,sfx,1.60,24000,samples/sfx/0043.wav,0x051
+0x044,sfx,1.60,24000,samples/sfx/0044.wav,0x051
+0x045,sfx,1.98,24000,samples/sfx/0045.wav,
+0x046,sfx,1.95,24000,samples/sfx/0046.wav,0x11c
+0x047,sfx,1.95,24000,samples/sfx/0047.wav,0x11c
+0x048,sfx,1.95,24000,samples/sfx/0048.wav,0x11c
+0x049,sfx,1.67,24000,samples/sfx/0049.wav,0x030 0x05a 0x05d 0x05e
+0x04a,sfx,1.67,24000,samples/sfx/004a.wav,0x030 0x05a 0x05d 0x05e
+0x04b,sfx,1.67,24000,samples/sfx/004b.wav,0x030 0x05a 0x05d 0x05e
+0x04c,sfx,3.69,24000,samples/sfx/004c.wav,0x06e
+0x04d,sfx,0.41,24000,samples/sfx/004d.wav,0x035
+0x04e,sfx,0.63,24000,samples/sfx/004e.wav,
+0x04f,sfx,2.57,24000,samples/sfx/004f.wav,0x02c
+0x050,sfx,4.63,24000,samples/sfx/0050.wav,0x0c1
+0x051,sfx,3.48,24000,samples/sfx/0051.wav,0x0e5
+0x052,sfx,4.60,24000,samples/sfx/0052.wav,0x080
+0x053,sfx,2.98,24000,samples/sfx/0053.wav,0x0e1
+0x054,sfx,2.23,24000,samples/sfx/0054.wav,0x0e2
+0x055,sfx,2.04,24000,samples/sfx/0055.wav,0x08e
+0x056,sfx,2.04,24000,samples/sfx/0056.wav,0x08e
+0x057,sfx,2.04,24000,samples/sfx/0057.wav,0x08e
+0x058,sfx,3.30,24000,samples/sfx/0058.wav,0x090
+0x059,sfx,4.48,24000,samples/sfx/0059.wav,0x0cc
+0x05a,sfx,3.50,24000,samples/sfx/005a.wav,0x061
+0x05b,sfx,1.09,24000,samples/sfx/005b.wav,0x0b2
+0x05c,sfx,1.09,24000,samples/sfx/005c.wav,0x0b2
+0x05d,sfx,1.09,24000,samples/sfx/005d.wav,0x0b2
+0x05e,sfx,3.70,24000,samples/sfx/005e.wav,0x0b4
+0x05f,sfx,2.49,24000,samples/sfx/005f.wav,0x03c 0x042 0x044 0x053 0x05b 0x05f 0x07a 0x07c 0x07f 0x0c6
+0x060,sfx,3.21,24000,samples/sfx/0060.wav,0x03c 0x053 0x05b 0x05f 0x07a 0x07c 0x07f 0x0c6
+0x061,sfx,2.56,24000,samples/sfx/0061.wav,
+0x062,sfx,3.87,24000,samples/sfx/0062.wav,0x089
+0x063,sfx,3.87,24000,samples/sfx/0063.wav,0x089
+0x064,sfx,3.85,24000,samples/sfx/0064.wav,0x089
+0x065,sfx,3.26,24000,samples/sfx/0065.wav,0x092
+0x066,sfx,3.26,24000,samples/sfx/0066.wav,0x092
+0x067,sfx,3.26,24000,samples/sfx/0067.wav,0x092
+0x068,sfx,3.26,24000,samples/sfx/0068.wav,0x092
+0x069,sfx,4.42,24000,samples/sfx/0069.wav,
+0x06a,sfx,4.38,24000,samples/sfx/006a.wav,
+0x06b,sfx,4.39,24000,samples/sfx/006b.wav,
+0x06c,sfx,1.75,24000,samples/sfx/006c.wav,
+0x06d,sfx,1.75,24000,samples/sfx/006d.wav,
+0x06e,sfx,1.75,24000,samples/sfx/006e.wav,
+0x06f,sfx,3.21,24000,samples/sfx/006f.wav,0x0ba
+0x070,sfx,3.21,24000,samples/sfx/0070.wav,
+0x071,sfx,3.19,24000,samples/sfx/0071.wav,0x0b7
+0x072,sfx,3.19,24000,samples/sfx/0072.wav,
+0x073,sfx,7.49,24000,samples/sfx/0073.wav,0x0b8
+0x074,sfx,7.49,24000,samples/sfx/0074.wav,
+0x075,sfx,4.11,24000,samples/sfx/0075.wav,
+0x076,sfx,4.11,24000,samples/sfx/0076.wav,
+0x077,sfx,1.59,24000,samples/sfx/0077.wav,0x050
+0x078,sfx,1.59,24000,samples/sfx/0078.wav,0x050
+0x079,sfx,1.70,24000,samples/sfx/0079.wav,0x050
+0x07a,sfx,1.21,24000,samples/sfx/007a.wav,0x050
+0x07b,sfx,3.02,24000,samples/sfx/007b.wav,0x0ed 0x0ef
+0x07c,sfx,2.80,24000,samples/sfx/007c.wav,0x0ed 0x0ef
+0x07d,sfx,3.10,24000,samples/sfx/007d.wav,0x0ed 0x0ef
+0x07e,sfx,2.92,24000,samples/sfx/007e.wav,0x0d5
+0x07f,sfx,2.89,24000,samples/sfx/007f.wav,0x0d3
+0x080,sfx,1.28,24000,samples/sfx/0080.wav,0x0c8 0x0ca
+0x081,sfx,1.23,24000,samples/sfx/0081.wav,0x0c8 0x0ca
+0x082,sfx,1.24,24000,samples/sfx/0082.wav,0x0c8 0x0ca
+0x083,sfx,1.34,24000,samples/sfx/0083.wav,0x0a4 0x0a5
+0x084,music,5.82,24000,samples/music/0084.wav,0x036
+0x085,sfx,1.49,24000,samples/sfx/0085.wav,
+0x086,sfx,1.49,24000,samples/sfx/0086.wav,
+0x087,sfx,1.07,24000,samples/sfx/0087.wav,
+0x088,sfx,0.88,24000,samples/sfx/0088.wav,
+0x089,sfx,0.88,24000,samples/sfx/0089.wav,
+0x08a,sfx,1.60,24000,samples/sfx/008a.wav,0x0ce 0x0cf
+0x08b,sfx,1.13,24000,samples/sfx/008b.wav,0x0fe
+0x08c,sfx,2.41,24000,samples/sfx/008c.wav,0x0fd
+0x08d,sfx,1.19,24000,samples/sfx/008d.wav,
+0x08e,sfx,1.06,24000,samples/sfx/008e.wav,
+0x08f,sfx,1.40,24000,samples/sfx/008f.wav,
+0x090,sfx,0.73,24000,samples/sfx/0090.wav,
+0x091,sfx,0.53,24000,samples/sfx/0091.wav,
+0x092,sfx,0.63,24000,samples/sfx/0092.wav,0x0f0
+0x093,sfx,0.83,24000,samples/sfx/0093.wav,0x0f1 0x0f2
+0x094,sfx,1.03,24000,samples/sfx/0094.wav,0x0af
+0x095,sfx,1.33,24000,samples/sfx/0095.wav,
+0x096,sfx,0.73,24000,samples/sfx/0096.wav,
+0x097,sfx,1.90,24000,samples/sfx/0097.wav,0x046 0x047 0x048
+0x098,sfx,3.53,24000,samples/sfx/0098.wav,0x0a0 0x105
+0x099,sfx,3.77,24000,samples/sfx/0099.wav,0x106
+0x09a,sfx,3.71,24000,samples/sfx/009a.wav,0x072
+0x09b,sfx,2.68,24000,samples/sfx/009b.wav,
+0x09c,sfx,3.82,24000,samples/sfx/009c.wav,0x079 0x07b 0x07e
+0x09d,sfx,4.47,24000,samples/sfx/009d.wav,0x079 0x07b 0x07e
+0x09e,sfx,4.13,24000,samples/sfx/009e.wav,0x079 0x07b 0x07e
+0x09f,sfx,0.58,24000,samples/sfx/009f.wav,0x033
+0x0a0,sfx,0.57,24000,samples/sfx/00a0.wav,0x034
+0x0a1,sfx,5.83,24000,samples/sfx/00a1.wav,0x0a2
+0x0a2,sfx,7.03,24000,samples/sfx/00a2.wav,0x0a2
+0x0a3,sfx,5.13,24000,samples/sfx/00a3.wav,0x0a2
+0x0a4,sfx,5.00,24000,samples/sfx/00a4.wav,0x0a2
+0x0a5,sfx,1.18,24000,samples/sfx/00a5.wav,0x099 0x10e
+0x0a6,sfx,1.26,24000,samples/sfx/00a6.wav,0x09a 0x10f
+0x0a7,sfx,1.14,24000,samples/sfx/00a7.wav,0x09b 0x110
+0x0a8,sfx,4.22,24000,samples/sfx/00a8.wav,0x119
+0x0a9,sfx,1.39,24000,samples/sfx/00a9.wav,0x116
+0x0aa,sfx,3.09,24000,samples/sfx/00aa.wav,0x04d
+0x0ab,sfx,3.83,24000,samples/sfx/00ab.wav,0x04c
+0x0ac,sfx,3.54,24000,samples/sfx/00ac.wav,0x04c
+0x0ad,sfx,3.52,24000,samples/sfx/00ad.wav,0x04c
+0x0ae,sfx,1.63,24000,samples/sfx/00ae.wav,0x016
+0x0af,sfx,1.05,24000,samples/sfx/00af.wav,
+0x0b0,sfx,2.15,24000,samples/sfx/00b0.wav,0x017
+0x0b1,sfx,2.83,24000,samples/sfx/00b1.wav,0x0ff
+0x0b2,sfx,2.96,24000,samples/sfx/00b2.wav,0x101
+0x0b3,sfx,3.15,24000,samples/sfx/00b3.wav,0x103
+0x0b4,sfx,1.15,24000,samples/sfx/00b4.wav,0x084
+0x0b5,sfx,1.03,24000,samples/sfx/00b5.wav,0x084
+0x0b6,sfx,1.08,24000,samples/sfx/00b6.wav,0x084
+0x0b7,sfx,0.95,24000,samples/sfx/00b7.wav,0x084
+0x0b8,sfx,0.97,24000,samples/sfx/00b8.wav,0x084
+0x0b9,sfx,7.76,24000,samples/sfx/00b9.wav,0x083
+0x0ba,sfx,2.11,24000,samples/sfx/00ba.wav,0x082
+0x0bb,sfx,1.13,24000,samples/sfx/00bb.wav,0x085 0x087
+0x0bc,sfx,1.13,24000,samples/sfx/00bc.wav,0x085
+0x0bd,sfx,1.13,24000,samples/sfx/00bd.wav,0x085
+0x0be,sfx,1.23,24000,samples/sfx/00be.wav,0x085
+0x0bf,sfx,1.20,24000,samples/sfx/00bf.wav,0x085
+0x0c0,sfx,2.13,24000,samples/sfx/00c0.wav,0x0df 0x0e3
+0x0c1,sfx,2.11,24000,samples/sfx/00c1.wav,0x0df 0x0e3
+0x0c2,sfx,1.31,24000,samples/sfx/00c2.wav,0x043 0x0df 0x0e3
+0x0c3,sfx,1.69,24000,samples/sfx/00c3.wav,0x0df 0x0e3
+0x0c4,sfx,2.03,24000,samples/sfx/00c4.wav,0x0df 0x0e3
+0x0c5,sfx,1.53,24000,samples/sfx/00c5.wav,0x0df 0x0e3
+0x0c6,sfx,1.80,24000,samples/sfx/00c6.wav,0x0df 0x0e3
+0x0c7,sfx,3.26,24000,samples/sfx/00c7.wav,0x0c5
+0x0c8,sfx,3.65,24000,samples/sfx/00c8.wav,0x0c5
+0x0c9,sfx,4.51,24000,samples/sfx/00c9.wav,0x0c5
+0x0ca,sfx,1.44,24000,samples/sfx/00ca.wav,0x0ee
+0x0cb,sfx,1.33,24000,samples/sfx/00cb.wav,0x0ec
+0x0cc,sfx,1.33,24000,samples/sfx/00cc.wav,0x0ec
+0x0cd,sfx,3.34,24000,samples/sfx/00cd.wav,0x040 0x0bf 0x0eb
+0x0ce,sfx,3.08,24000,samples/sfx/00ce.wav,0x040 0x0bf 0x0eb
+0x0cf,sfx,3.37,24000,samples/sfx/00cf.wav,0x040 0x0bf 0x0eb
+0x0d0,sfx,2.16,24000,samples/sfx/00d0.wav,0x0ea
+0x0d1,sfx,1.16,24000,samples/sfx/00d1.wav,
+0x0d2,sfx,1.16,24000,samples/sfx/00d2.wav,
+0x0d3,sfx,1.50,24000,samples/sfx/00d3.wav,
+0x0d4,sfx,1.35,24000,samples/sfx/00d4.wav,
+0x0d5,sfx,1.62,24000,samples/sfx/00d5.wav,
+0x0d6,sfx,1.66,24000,samples/sfx/00d6.wav,
+0x0d7,sfx,2.13,24000,samples/sfx/00d7.wav,
+0x0d8,sfx,1.83,24000,samples/sfx/00d8.wav,
+0x0d9,sfx,3.48,24000,samples/sfx/00d9.wav,0x0d0 0x0d2 0x0d8
+0x0da,sfx,1.95,24000,samples/sfx/00da.wav,0x0a6 0x121
+0x0db,sfx,1.95,24000,samples/sfx/00db.wav,0x0a6
+0x0dc,sfx,2.11,24000,samples/sfx/00dc.wav,0x0a6
+0x0dd,sfx,1.40,24000,samples/sfx/00dd.wav,0x096 0x10b
+0x0de,sfx,1.30,24000,samples/sfx/00de.wav,0x097 0x10c
+0x0df,sfx,1.28,24000,samples/sfx/00df.wav,0x098 0x10d
+0x0e0,sfx,1.63,24000,samples/sfx/00e0.wav,0x04a
+0x0e1,sfx,1.99,24000,samples/sfx/00e1.wav,0x04b
+0x0e2,sfx,2.26,24000,samples/sfx/00e2.wav,0x0e8
+0x0e3,sfx,2.26,24000,samples/sfx/00e3.wav,0x0e9
+0x0e4,sfx,2.64,24000,samples/sfx/00e4.wav,0x052
+0x0e5,sfx,2.62,24000,samples/sfx/00e5.wav,0x052
+0x0e6,sfx,3.15,24000,samples/sfx/00e6.wav,0x052
+0x0e7,sfx,2.81,24000,samples/sfx/00e7.wav,0x052
+0x0e8,sfx,2.03,24000,samples/sfx/00e8.wav,0x054 0x122
+0x0e9,sfx,2.21,24000,samples/sfx/00e9.wav,0x054
+0x0ea,sfx,2.30,24000,samples/sfx/00ea.wav,0x054
+0x0eb,sfx,2.62,24000,samples/sfx/00eb.wav,0x054
+0x0ec,sfx,3.71,24000,samples/sfx/00ec.wav,0x08c
+0x0ed,sfx,1.34,24000,samples/sfx/00ed.wav,0x09c 0x09e 0x0a8 0x0b1 0x0b9
+0x0ee,speech,1.03,24000,samples/speech/00ee.wav,0x12a
+0x0ef,speech,1.00,24000,samples/speech/00ef.wav,0x12a
+0x0f0,speech,1.66,24000,samples/speech/00f0.wav,0x12a
+0x0f1,speech,1.11,24000,samples/speech/00f1.wav,0x12a
+0x0f2,speech,1.49,24000,samples/speech/00f2.wav,0x12a
+0x0f3,speech,1.57,24000,samples/speech/00f3.wav,0x12a
+0x0f4,speech,1.83,24000,samples/speech/00f4.wav,0x12a
+0x0f5,speech,1.55,24000,samples/speech/00f5.wav,0x12a
+0x0f6,speech,1.47,24000,samples/speech/00f6.wav,0x12a
+0x0f7,speech,2.10,24000,samples/speech/00f7.wav,0x12a
+0x0f8,speech,2.43,24000,samples/speech/00f8.wav,0x12a
+0x0f9,speech,2.71,24000,samples/speech/00f9.wav,0x12a
+0x0fa,speech,2.57,24000,samples/speech/00fa.wav,0x12a
+0x0fb,speech,2.73,24000,samples/speech/00fb.wav,0x12a
+0x0fc,speech,2.33,24000,samples/speech/00fc.wav,0x12a
+0x0fd,speech,2.05,24000,samples/speech/00fd.wav,0x12a
+0x0fe,speech,2.11,24000,samples/speech/00fe.wav,0x12a
+0x0ff,speech,2.46,24000,samples/speech/00ff.wav,0x12a
+0x100,speech,2.09,24000,samples/speech/0100.wav,0x12a
+0x101,speech,1.92,24000,samples/speech/0101.wav,0x12a
+0x102,speech,2.20,24000,samples/speech/0102.wav,0x12a
+0x103,speech,1.92,24000,samples/speech/0103.wav,0x12a
+0x104,speech,2.04,24000,samples/speech/0104.wav,0x12a
+0x105,speech,2.18,24000,samples/speech/0105.wav,0x12a
+0x106,speech,2.40,24000,samples/speech/0106.wav,0x12a
+0x107,speech,1.52,24000,samples/speech/0107.wav,0x12a
+0x108,speech,1.92,24000,samples/speech/0108.wav,0x12a
+0x109,speech,1.43,24000,samples/speech/0109.wav,0x12a
+0x10a,speech,2.07,24000,samples/speech/010a.wav,0x12a
+0x10b,speech,2.27,24000,samples/speech/010b.wav,0x12a
+0x10c,speech,2.15,24000,samples/speech/010c.wav,0x12a
+0x10d,speech,1.53,24000,samples/speech/010d.wav,0x12a
+0x10e,speech,1.50,24000,samples/speech/010e.wav,0x0b3
+0x10f,speech,1.86,24000,samples/speech/010f.wav,0x12a
+0x110,speech,1.84,24000,samples/speech/0110.wav,0x12a
+0x111,speech,2.35,24000,samples/speech/0111.wav,0x12a
+0x112,speech,2.20,24000,samples/speech/0112.wav,0x12a
+0x113,speech,2.48,24000,samples/speech/0113.wav,0x12a
+0x114,speech,2.42,24000,samples/speech/0114.wav,0x12a
+0x115,speech,2.37,24000,samples/speech/0115.wav,0x12a
+0x116,speech,2.48,24000,samples/speech/0116.wav,0x078
+0x117,speech,1.98,24000,samples/speech/0117.wav,0x12a
+0x118,speech,2.21,24000,samples/speech/0118.wav,0x12a
+0x119,speech,2.27,24000,samples/speech/0119.wav,0x12a
+0x11a,speech,4.33,24000,samples/speech/011a.wav,0x12a
+0x11b,speech,1.28,24000,samples/speech/011b.wav,0x12a
+0x11c,speech,1.54,24000,samples/speech/011c.wav,0x12a
+0x11d,speech,1.90,24000,samples/speech/011d.wav,0x12a
+0x11e,speech,2.37,24000,samples/speech/011e.wav,0x12a
+0x11f,speech,2.66,24000,samples/speech/011f.wav,0x12a
+0x120,speech,2.53,12000,samples/speech/0120.wav,0x12a
+0x121,speech,1.81,12000,samples/speech/0121.wav,0x0f7
+0x122,speech,2.58,12000,samples/speech/0122.wav,0x0c3 0x0c4
+0x123,speech,2.04,12000,samples/speech/0123.wav,0x12a
+0x124,speech,2.74,12000,samples/speech/0124.wav,0x12a
+0x125,speech,2.21,12000,samples/speech/0125.wav,0x12a
+0x126,speech,2.16,12000,samples/speech/0126.wav,0x12a
+0x127,speech,2.87,12000,samples/speech/0127.wav,0x0c0
+0x128,speech,3.07,12000,samples/speech/0128.wav,0x0c3
+0x129,speech,4.61,12000,samples/speech/0129.wav,0x12a
+0x12a,speech,3.36,12000,samples/speech/012a.wav,0x056
+0x12b,speech,3.59,12000,samples/speech/012b.wav,0x057
+0x12c,speech,3.55,12000,samples/speech/012c.wav,0x058
+0x12d,speech,3.56,12000,samples/speech/012d.wav,0x059
+0x12e,speech,4.32,12000,samples/speech/012e.wav,0x055 0x0da
+0x12f,speech,2.49,12000,samples/speech/012f.wav,0x056 0x057 0x058 0x059
+0x130,speech,2.54,12000,samples/speech/0130.wav,0x12a
+0x131,speech,2.30,12000,samples/speech/0131.wav,0x065
+0x132,speech,1.71,12000,samples/speech/0132.wav,0x067 0x068
+0x133,speech,1.59,12000,samples/speech/0133.wav,0x091
+0x134,speech,2.48,12000,samples/speech/0134.wav,0x091
+0x135,speech,2.59,12000,samples/speech/0135.wav,0x12a
+0x136,speech,2.63,12000,samples/speech/0136.wav,0x12a
+0x137,speech,2.86,12000,samples/speech/0137.wav,0x12a
+0x138,speech,2.82,12000,samples/speech/0138.wav,0x12a
+0x139,speech,2.93,12000,samples/speech/0139.wav,0x12a
+0x13a,speech,2.96,12000,samples/speech/013a.wav,0x12a
+0x13b,speech,3.10,12000,samples/speech/013b.wav,0x12a
+0x13c,speech,3.05,12000,samples/speech/013c.wav,0x12a
+0x13d,speech,3.01,12000,samples/speech/013d.wav,0x12a
+0x13e,speech,1.84,12000,samples/speech/013e.wav,0x12a
+0x13f,speech,1.81,12000,samples/speech/013f.wav,0x12a
+0x140,speech,1.73,12000,samples/speech/0140.wav,0x12a
+0x141,speech,1.96,12000,samples/speech/0141.wav,0x12a
+0x142,speech,1.94,12000,samples/speech/0142.wav,0x12a
+0x143,speech,1.86,12000,samples/speech/0143.wav,0x12a
+0x144,speech,1.86,12000,samples/speech/0144.wav,0x12a
+0x145,speech,1.86,12000,samples/speech/0145.wav,0x12a
+0x146,speech,1.86,12000,samples/speech/0146.wav,0x12a
+0x147,speech,1.86,12000,samples/speech/0147.wav,0x12a
+0x148,speech,3.61,12000,samples/speech/0148.wav,0x12a
+0x149,speech,2.75,12000,samples/speech/0149.wav,0x12a
+0x14a,speech,2.40,12000,samples/speech/014a.wav,0x12a
+0x14b,speech,2.14,12000,samples/speech/014b.wav,0x12a
+0x14c,speech,1.14,12000,samples/speech/014c.wav,0x05c 0x12a
+0x14d,speech,1.85,12000,samples/speech/014d.wav,0x05c 0x12a
+0x14e,speech,2.21,12000,samples/speech/014e.wav,0x12a
+0x14f,speech,1.61,12000,samples/speech/014f.wav,0x12a
+0x150,speech,2.28,12000,samples/speech/0150.wav,0x060 0x07d 0x12a
+0x151,speech,1.97,12000,samples/speech/0151.wav,0x060 0x07d 0x12a
+0x152,speech,1.88,12000,samples/speech/0152.wav,0x12a
+0x153,speech,1.98,12000,samples/speech/0153.wav,0x12a
+0x154,speech,2.25,12000,samples/speech/0154.wav,0x12a
+0x155,speech,2.10,12000,samples/speech/0155.wav,0x12a
+0x156,speech,3.35,12000,samples/speech/0156.wav,0x12a
+0x157,speech,3.84,12000,samples/speech/0157.wav,0x12a
+0x158,speech,1.19,12000,samples/speech/0158.wav,0x06b
+0x159,speech,2.21,12000,samples/speech/0159.wav,0x12a
+0x15a,speech,2.55,12000,samples/speech/015a.wav,0x12a
+0x15b,speech,3.81,12000,samples/speech/015b.wav,0x12a
+0x15c,speech,1.95,12000,samples/speech/015c.wav,
+0x15d,speech,2.16,12000,samples/speech/015d.wav,0x12a
+0x15e,speech,1.59,12000,samples/speech/015e.wav,0x12a
+0x15f,speech,3.15,12000,samples/speech/015f.wav,0x12a
+0x160,speech,2.54,12000,samples/speech/0160.wav,0x12a
+0x161,speech,3.21,12000,samples/speech/0161.wav,0x12a
+0x162,speech,3.07,12000,samples/speech/0162.wav,0x12a
+0x163,speech,1.81,12000,samples/speech/0163.wav,0x12a
+0x164,speech,1.98,12000,samples/speech/0164.wav,0x12a
+0x165,speech,1.07,12000,samples/speech/0165.wav,0x12a
+0x166,speech,1.86,12000,samples/speech/0166.wav,0x104
+0x167,speech,2.06,12000,samples/speech/0167.wav,0x12a
+0x168,speech,2.03,12000,samples/speech/0168.wav,0x12a
+0x169,speech,1.81,12000,samples/speech/0169.wav,0x102
+0x16a,speech,2.02,12000,samples/speech/016a.wav,0x12a
+0x16b,speech,1.98,12000,samples/speech/016b.wav,0x12a
+0x16c,speech,1.88,12000,samples/speech/016c.wav,0x12a
+0x16d,speech,2.15,12000,samples/speech/016d.wav,0x100
+0x16e,speech,1.58,12000,samples/speech/016e.wav,0x12a
+0x16f,speech,1.96,12000,samples/speech/016f.wav,0x117 0x118
+0x170,speech,1.93,12000,samples/speech/0170.wav,0x11a
+0x171,speech,1.93,12000,samples/speech/0171.wav,0x0a1
+0x172,speech,1.68,12000,samples/speech/0172.wav,0x09f
+0x173,speech,2.51,12000,samples/speech/0173.wav,0x0a1
+0x174,speech,1.52,12000,samples/speech/0174.wav,0x03f
+0x175,speech,2.06,12000,samples/speech/0175.wav,0x0f8
+0x176,speech,2.60,12000,samples/speech/0176.wav,0x038
+0x177,speech,2.04,12000,samples/speech/0177.wav,0x038 0x039
+0x178,speech,2.20,12000,samples/speech/0178.wav,0x039
+0x179,speech,2.18,12000,samples/speech/0179.wav,0x039
+0x17a,speech,2.19,12000,samples/speech/017a.wav,0x039
+0x17b,speech,1.16,12000,samples/speech/017b.wav,0x0a3 0x12a
+0x17c,speech,1.71,12000,samples/speech/017c.wav,0x02f 0x05c 0x062
+0x17d,speech,1.20,12000,samples/speech/017d.wav,0x0f9
+0x17e,speech,1.17,12000,samples/speech/017e.wav,0x0fa
+0x17f,speech,1.34,12000,samples/speech/017f.wav,0x0fb
+0x180,speech,1.18,12000,samples/speech/0180.wav,0x0fc
+0x181,speech,1.36,12000,samples/speech/0181.wav,0x045
+0x182,speech,1.31,12000,samples/speech/0182.wav,0x12a
+0x183,speech,1.58,12000,samples/speech/0183.wav,0x12a
+0x184,speech,1.61,12000,samples/speech/0184.wav,0x11b
+0x185,speech,3.13,12000,samples/speech/0185.wav,0x055 0x0da
+0x186,speech,1.72,12000,samples/speech/0186.wav,0x12a
+0x187,speech,2.65,12000,samples/speech/0187.wav,0x12a
+0x188,speech,1.64,12000,samples/speech/0188.wav,0x02d 0x031 0x056 0x057 0x058 0x059
+0x189,speech,1.49,12000,samples/speech/0189.wav,0x12a
+0x18a,speech,1.63,12000,samples/speech/018a.wav,0x12a
+0x18b,speech,1.61,12000,samples/speech/018b.wav,0x12a
+0x18c,speech,1.53,12000,samples/speech/018c.wav,0x12a
+0x18d,speech,1.57,12000,samples/speech/018d.wav,0x12a
+0x18e,speech,2.11,12000,samples/speech/018e.wav,0x12a
+0x18f,speech,1.90,12000,samples/speech/018f.wav,0x12a
+0x190,speech,1.74,12000,samples/speech/0190.wav,0x12a
+0x191,speech,1.60,12000,samples/speech/0191.wav,
+0x192,speech,0.83,12000,samples/speech/0192.wav,0x11d
+0x193,speech,1.46,12000,samples/speech/0193.wav,0x11d
+0x194,speech,1.53,12000,samples/speech/0194.wav,0x11e 0x12a
+0x195,speech,1.00,12000,samples/speech/0195.wav,0x12a
+0x196,speech,0.96,12000,samples/speech/0196.wav,0x12a
+0x197,speech,0.86,12000,samples/speech/0197.wav,0x12a
+0x198,speech,0.81,12000,samples/speech/0198.wav,0x12a
+0x199,speech,2.45,12000,samples/speech/0199.wav,0x12a
+0x19a,speech,2.29,12000,samples/speech/019a.wav,0x12a
+0x19b,speech,1.84,12000,samples/speech/019b.wav,0x0b3
+0x19c,speech,2.71,12000,samples/speech/019c.wav,0x12a
+0x19d,speech,1.67,12000,samples/speech/019d.wav,0x04f
+0x19e,speech,1.85,12000,samples/speech/019e.wav,0x02e 0x12a
+0x19f,speech,2.07,12000,samples/speech/019f.wav,0x02e 0x12a
+0x1a0,speech,0.97,12000,samples/speech/01a0.wav,0x02f 0x12a
+0x1a1,speech,0.96,12000,samples/speech/01a1.wav,0x02f 0x12a
+0x1a2,speech,1.06,12000,samples/speech/01a2.wav,0x02f 0x12a
+0x1a3,speech,0.94,12000,samples/speech/01a3.wav,0x02f 0x12a
+0x1a4,speech,1.03,12000,samples/speech/01a4.wav,0x02f 0x12a
+0x1a5,speech,2.20,12000,samples/speech/01a5.wav,0x12a
+0x1a6,speech,1.23,12000,samples/speech/01a6.wav,0x0f9 0x12a
+0x1a7,speech,1.23,12000,samples/speech/01a7.wav,0x0fa 0x12a
+0x1a8,speech,1.53,12000,samples/speech/01a8.wav,0x0fb 0x12a
+0x1a9,speech,1.13,12000,samples/speech/01a9.wav,0x0fc 0x12a
+0x1aa,speech,1.23,12000,samples/speech/01aa.wav,0x12a
+0x1ab,speech,1.43,12000,samples/speech/01ab.wav,0x12a
+0x1ac,speech,1.53,12000,samples/speech/01ac.wav,0x12a
+0x1ad,speech,1.23,12000,samples/speech/01ad.wav,0x12a
+0x1ae,speech,1.23,12000,samples/speech/01ae.wav,
+0x1af,speech,1.43,12000,samples/speech/01af.wav,
+0x1b0,speech,1.43,12000,samples/speech/01b0.wav,
+0x1b1,speech,2.36,12000,samples/speech/01b1.wav,0x100
+0x1b2,speech,1.63,12000,samples/speech/01b2.wav,0x12a
+0x1b3,speech,1.33,12000,samples/speech/01b3.wav,0x12a
+0x1b4,speech,1.03,12000,samples/speech/01b4.wav,0x12a
+0x1b5,speech,1.03,12000,samples/speech/01b5.wav,0x12a
+0x1b6,speech,1.23,12000,samples/speech/01b6.wav,0x12a
+0x1b7,speech,1.23,12000,samples/speech/01b7.wav,0x12a
+0x1b8,speech,1.63,12000,samples/speech/01b8.wav,0x12a
+0x1b9,speech,1.06,12000,samples/speech/01b9.wav,0x12a
+0x1ba,speech,0.73,12000,samples/speech/01ba.wav,0x12a
+0x1bb,speech,1.13,12000,samples/speech/01bb.wav,0x12a
+0x1bc,speech,1.13,12000,samples/speech/01bc.wav,0x12a
+0x1bd,speech,0.93,12000,samples/speech/01bd.wav,0x12a
+0x1be,speech,1.23,12000,samples/speech/01be.wav,0x12a
+0x1bf,speech,1.26,12000,samples/speech/01bf.wav,0x12a
+0x1c0,speech,2.91,24000,samples/speech/01c0.wav,
+0x1c1,speech,0.93,12000,samples/speech/01c1.wav,0x12a
+0x1c2,speech,1.13,12000,samples/speech/01c2.wav,0x12a
+0x1c3,speech,0.83,12000,samples/speech/01c3.wav,0x12a
+0x1c4,speech,1.33,12000,samples/speech/01c4.wav,0x12a
+0x1c5,speech,1.43,12000,samples/speech/01c5.wav,0x12a
+0x1c6,speech,1.53,12000,samples/speech/01c6.wav,0x12a
+0x1c7,speech,1.43,12000,samples/speech/01c7.wav,0x0b3
+0x1c8,speech,1.73,12000,samples/speech/01c8.wav,0x03e
+0x1c9,speech,1.43,12000,samples/speech/01c9.wav,0x12a
+0x1ca,speech,1.13,12000,samples/speech/01ca.wav,0x12a
+0x1cb,speech,1.13,12000,samples/speech/01cb.wav,0x12a
+0x1cc,speech,0.93,12000,samples/speech/01cc.wav,0x12a
+0x1cd,speech,1.43,12000,samples/speech/01cd.wav,0x12a
+0x1ce,speech,1.13,12000,samples/speech/01ce.wav,0x12a
+0x1cf,speech,1.33,12000,samples/speech/01cf.wav,0x12a
+0x1d0,speech,1.53,12000,samples/speech/01d0.wav,0x12a
+0x1d1,speech,1.33,12000,samples/speech/01d1.wav,0x12a
+0x1d2,speech,1.43,12000,samples/speech/01d2.wav,0x12a
+0x1d3,speech,0.93,12000,samples/speech/01d3.wav,0x12a
+0x1d4,speech,1.23,12000,samples/speech/01d4.wav,0x12a
+0x1d5,speech,2.15,24000,samples/speech/01d5.wav,
+0x1d6,speech,1.17,12000,samples/speech/01d6.wav,0x12a
+0x1d7,speech,1.03,12000,samples/speech/01d7.wav,
+0x1d8,speech,1.23,12000,samples/speech/01d8.wav,
+0x1d9,speech,2.95,12000,samples/speech/01d9.wav,0x12a
+0x1da,speech,0.94,12000,samples/speech/01da.wav,0x12a
+0x1db,speech,1.58,12000,samples/speech/01db.wav,0x12a
+0x1dc,speech,2.15,12000,samples/speech/01dc.wav,0x12a
+0x1dd,speech,4.88,12000,samples/speech/01dd.wav,0x12a
+0x1de,speech,1.54,12000,samples/speech/01de.wav,0x12a
+0x1df,speech,1.20,12000,samples/speech/01df.wav,0x12a
+0x1e0,speech,2.99,12000,samples/speech/01e0.wav,0x12a
+0x1e1,speech,2.62,12000,samples/speech/01e1.wav,0x12a
+0x1e2,speech,2.51,12000,samples/speech/01e2.wav,
+0x1e3,speech,3.49,12000,samples/speech/01e3.wav,
+0x1e4,speech,2.03,12000,samples/speech/01e4.wav,
+0x1e5,speech,1.53,12000,samples/speech/01e5.wav,
+0x1e6,speech,1.35,12000,samples/speech/01e6.wav,0x12a
+0x1e7,speech,1.27,12000,samples/speech/01e7.wav,0x12a
+0x1e8,speech,0.98,12000,samples/speech/01e8.wav,0x12a
+0x1e9,speech,1.75,12000,samples/speech/01e9.wav,0x111 0x12a
+0x1ea,speech,1.67,12000,samples/speech/01ea.wav,0x12a
+0x1eb,speech,0.93,12000,samples/speech/01eb.wav,0x12a
+0x1ec,speech,1.35,12000,samples/speech/01ec.wav,0x129
+0x1ed,speech,1.19,12000,samples/speech/01ed.wav,0x129
+0x1ee,speech,0.85,12000,samples/speech/01ee.wav,0x12a
+0x1ef,speech,3.49,12000,samples/speech/01ef.wav,0x129
+0x1f0,speech,3.25,12000,samples/speech/01f0.wav,0x12a
+0x1f1,speech,3.25,12000,samples/speech/01f1.wav,0x12a
+0x1f2,speech,2.17,12000,samples/speech/01f2.wav,0x12a
+0x1f3,speech,1.18,12000,samples/speech/01f3.wav,0x12a
+0x1f4,speech,0.87,12000,samples/speech/01f4.wav,0x12a
+0x1f5,speech,1.22,12000,samples/speech/01f5.wav,0x12a
+0x1f6,speech,2.11,12000,samples/speech/01f6.wav,0x12a
+0x1f7,speech,2.18,12000,samples/speech/01f7.wav,0x129
+0x1f8,speech,3.02,12000,samples/speech/01f8.wav,
+0x1f9,speech,2.01,12000,samples/speech/01f9.wav,
+0x1fa,speech,1.44,12000,samples/speech/01fa.wav,
+0x1fb,speech,2.88,12000,samples/speech/01fb.wav,
+0x1fc,speech,1.60,12000,samples/speech/01fc.wav,0x12a
+0x1fd,speech,1.49,12000,samples/speech/01fd.wav,0x12a
+0x1fe,speech,2.14,12000,samples/speech/01fe.wav,0x12a
+0x1ff,speech,2.38,12000,samples/speech/01ff.wav,0x12a
+0x200,speech,1.61,12000,samples/speech/0200.wav,0x0e4
+0x201,speech,0.86,12000,samples/speech/0201.wav,0x0e4
+0x202,speech,1.31,12000,samples/speech/0202.wav,0x12a
+0x203,speech,2.16,12000,samples/speech/0203.wav,0x12a
+0x204,speech,1.92,12000,samples/speech/0204.wav,0x12a
+0x205,speech,1.33,12000,samples/speech/0205.wav,0x12a
+0x206,speech,1.06,12000,samples/speech/0206.wav,0x12a
+0x207,speech,1.47,12000,samples/speech/0207.wav,0x12a
+0x208,speech,2.16,12000,samples/speech/0208.wav,0x12a
+0x209,speech,1.54,12000,samples/speech/0209.wav,0x12a
+0x20a,speech,1.79,12000,samples/speech/020a.wav,0x12a
+0x20b,speech,1.21,12000,samples/speech/020b.wav,0x12a
+0x20c,speech,1.35,12000,samples/speech/020c.wav,0x09d
+0x20d,speech,1.67,12000,samples/speech/020d.wav,0x12a
+0x20e,speech,0.97,12000,samples/speech/020e.wav,0x12a
+0x20f,speech,1.66,12000,samples/speech/020f.wav,0x12a
+0x210,speech,1.77,12000,samples/speech/0210.wav,0x12a
+0x211,speech,1.61,12000,samples/speech/0211.wav,0x12a
+0x212,speech,0.79,12000,samples/speech/0212.wav,0x067
+0x213,speech,1.17,12000,samples/speech/0213.wav,0x067
+0x214,speech,2.63,12000,samples/speech/0214.wav,0x128
+0x215,speech,2.88,12000,samples/speech/0215.wav,0x0ae
+0x216,speech,4.64,12000,samples/speech/0216.wav,
+0x217,speech,2.10,12000,samples/speech/0217.wav,0x12a
+0x218,speech,1.20,12000,samples/speech/0218.wav,0x12a
+0x219,speech,1.42,12000,samples/speech/0219.wav,0x12a
+0x21a,speech,0.99,12000,samples/speech/021a.wav,0x03d
+0x21b,speech,1.16,12000,samples/speech/021b.wav,0x03d
+0x21c,speech,1.06,12000,samples/speech/021c.wav,0x12a
+0x21d,speech,1.64,12000,samples/speech/021d.wav,0x12a
+0x21e,speech,1.68,12000,samples/speech/021e.wav,0x12a
+0x21f,speech,0.87,12000,samples/speech/021f.wav,0x12a
+0x220,speech,0.85,12000,samples/speech/0220.wav,0x12a
+0x221,speech,1.58,12000,samples/speech/0221.wav,0x129
+0x222,speech,1.59,12000,samples/speech/0222.wav,0x129
+0x223,speech,1.25,12000,samples/speech/0223.wav,0x129
+0x224,speech,0.91,12000,samples/speech/0224.wav,0x12a
+0x225,speech,1.50,12000,samples/speech/0225.wav,0x12a
+0x226,speech,1.18,12000,samples/speech/0226.wav,0x0e4
+0x227,speech,1.26,12000,samples/speech/0227.wav,0x0e4
+0x228,speech,1.31,12000,samples/speech/0228.wav,0x05c
+0x229,speech,1.04,12000,samples/speech/0229.wav,
+0x22a,speech,1.88,12000,samples/speech/022a.wav,0x05c 0x0c9
+0x22b,speech,1.76,12000,samples/speech/022b.wav,0x0c9
+0x22c,speech,0.95,12000,samples/speech/022c.wav,
+0x22d,speech,0.84,12000,samples/speech/022d.wav,
+0x22e,speech,1.44,12000,samples/speech/022e.wav,0x12a
+0x22f,speech,2.21,12000,samples/speech/022f.wav,0x12a
+0x230,speech,1.27,12000,samples/speech/0230.wav,0x12a
+0x231,speech,1.91,12000,samples/speech/0231.wav,0x12a
+0x232,speech,1.04,12000,samples/speech/0232.wav,0x12a
+0x233,speech,0.85,12000,samples/speech/0233.wav,0x12a
+0x234,speech,0.93,12000,samples/speech/0234.wav,0x12a
+0x235,speech,1.50,12000,samples/speech/0235.wav,0x12a
+0x236,speech,1.10,12000,samples/speech/0236.wav,0x12a
+0x237,speech,0.93,12000,samples/speech/0237.wav,0x12a
+0x238,speech,1.15,12000,samples/speech/0238.wav,0x0bd 0x128
+0x239,speech,3.41,12000,samples/speech/0239.wav,0x0bd 0x0e6
+0x23a,speech,2.69,12000,samples/speech/023a.wav,0x0bd
+0x23b,speech,1.38,12000,samples/speech/023b.wav,0x0bd 0x128
+0x23c,speech,0.95,12000,samples/speech/023c.wav,0x0bd
+0x23d,speech,1.04,12000,samples/speech/023d.wav,0x0bd
+0x23e,speech,1.37,12000,samples/speech/023e.wav,0x0bd 0x0e6
+0x23f,speech,2.01,12000,samples/speech/023f.wav,0x12a
+0x240,speech,1.62,12000,samples/speech/0240.wav,0x12a
+0x241,speech,3.98,12000,samples/speech/0241.wav,0x12a
+0x242,speech,1.28,12000,samples/speech/0242.wav,0x12a
+0x243,speech,2.96,12000,samples/speech/0243.wav,0x0bc
+0x244,speech,3.27,12000,samples/speech/0244.wav,0x0bc
+0x245,speech,1.20,12000,samples/speech/0245.wav,0x0bc 0x128
+0x246,speech,2.14,12000,samples/speech/0246.wav,0x0bd
+0x247,speech,4.96,12000,samples/speech/0247.wav,0x0bd
+0x248,speech,1.93,12000,samples/speech/0248.wav,0x0bd
+0x249,speech,1.54,12000,samples/speech/0249.wav,
+0x24a,speech,1.24,12000,samples/speech/024a.wav,
+0x24b,speech,1.30,12000,samples/speech/024b.wav,0x0bb
+0x24c,speech,2.32,12000,samples/speech/024c.wav,0x0bb
+0x24d,speech,2.00,12000,samples/speech/024d.wav,0x0bb
+0x24e,speech,1.66,12000,samples/speech/024e.wav,0x128
+0x24f,speech,1.36,12000,samples/speech/024f.wav,0x0bb
+0x250,speech,2.11,12000,samples/speech/0250.wav,0x0bc
+0x251,speech,0.99,12000,samples/speech/0251.wav,0x0bb 0x0f7
+0x252,speech,1.80,12000,samples/speech/0252.wav,0x0bb 0x0f7
+0x253,speech,3.98,12000,samples/speech/0253.wav,0x0bb 0x0f7
+0x254,speech,3.43,12000,samples/speech/0254.wav,0x0bb 0x0f7
+0x255,speech,2.00,12000,samples/speech/0255.wav,0x0bb
+0x256,speech,3.54,12000,samples/speech/0256.wav,0x0bb
+0x257,speech,2.53,12000,samples/speech/0257.wav,0x0bb
+0x258,speech,4.42,12000,samples/speech/0258.wav,0x123
+0x259,speech,1.14,12000,samples/speech/0259.wav,0x12a
+0x25a,speech,3.76,12000,samples/speech/025a.wav,0x0bc
+0x25b,speech,4.14,12000,samples/speech/025b.wav,0x0bc
+0x25c,speech,2.30,12000,samples/speech/025c.wav,0x0bd 0x0e6
+0x25d,speech,1.27,12000,samples/speech/025d.wav,0x0bd 0x128
+0x25e,speech,1.07,12000,samples/speech/025e.wav,0x12a
+0x25f,speech,3.92,12000,samples/speech/025f.wav,0x0be
+0x260,speech,2.08,12000,samples/speech/0260.wav,0x0be
+0x261,speech,1.23,12000,samples/speech/0261.wav,0x0be
+0x262,speech,1.76,12000,samples/speech/0262.wav,0x0be 0x0e6
+0x263,speech,2.56,12000,samples/speech/0263.wav,0x0be
+0x264,speech,2.38,12000,samples/speech/0264.wav,0x0be
+0x265,speech,4.59,12000,samples/speech/0265.wav,0x0be
+0x266,speech,4.13,12000,samples/speech/0266.wav,0x12a
+0x267,speech,1.97,12000,samples/speech/0267.wav,0x12a
+0x268,speech,1.64,12000,samples/speech/0268.wav,0x12a
+0x269,speech,1.46,12000,samples/speech/0269.wav,0x0e6
+0x26a,speech,1.44,12000,samples/speech/026a.wav,0x12a
+0x26b,speech,2.37,12000,samples/speech/026b.wav,0x12a
+0x26c,speech,1.16,12000,samples/speech/026c.wav,0x03d
+0x26d,speech,2.25,12000,samples/speech/026d.wav,0x12a
+0x26e,speech,1.36,12000,samples/speech/026e.wav,0x12a
+0x26f,speech,0.62,12000,samples/speech/026f.wav,0x03d
+0x270,speech,1.09,12000,samples/speech/0270.wav,0x12a
+0x271,speech,3.23,12000,samples/speech/0271.wav,0x12a
+0x272,speech,1.79,12000,samples/speech/0272.wav,0x129
+0x273,speech,2.59,12000,samples/speech/0273.wav,0x12a
+0x274,speech,2.59,12000,samples/speech/0274.wav,0x12a
+0x275,speech,1.54,12000,samples/speech/0275.wav,0x12a
+0x276,speech,1.41,12000,samples/speech/0276.wav,0x12a
+0x277,speech,3.02,12000,samples/speech/0277.wav,0x12a
+0x278,speech,1.08,12000,samples/speech/0278.wav,0x12a
+0x279,speech,0.87,12000,samples/speech/0279.wav,0x12a
+0x27a,speech,1.25,12000,samples/speech/027a.wav,0x12a
+0x27b,speech,0.85,12000,samples/speech/027b.wav,0x12a
+0x27c,speech,1.29,12000,samples/speech/027c.wav,0x12a
+0x27d,speech,1.23,12000,samples/speech/027d.wav,0x12a
+0x27e,speech,2.40,12000,samples/speech/027e.wav,0x12a
+0x27f,speech,2.64,12000,samples/speech/027f.wav,0x12a
+0x280,speech,1.43,12000,samples/speech/0280.wav,0x12a
+0x281,speech,1.12,12000,samples/speech/0281.wav,0x12a
+0x282,speech,1.58,12000,samples/speech/0282.wav,0x12a
+0x283,speech,1.25,12000,samples/speech/0283.wav,0x12a
+0x284,speech,0.78,12000,samples/speech/0284.wav,0x12a
+0x285,speech,1.14,12000,samples/speech/0285.wav,0x05c 0x12a
+0x286,speech,2.52,12000,samples/speech/0286.wav,0x12a
+0x287,speech,0.86,12000,samples/speech/0287.wav,0x12a
+0x288,speech,1.06,12000,samples/speech/0288.wav,0x12a
+0x289,speech,1.77,12000,samples/speech/0289.wav,0x12a
+0x28a,speech,1.71,12000,samples/speech/028a.wav,0x12a
+0x28b,speech,1.99,12000,samples/speech/028b.wav,0x12a
+0x28c,speech,1.21,12000,samples/speech/028c.wav,0x12a
+0x28d,speech,1.89,12000,samples/speech/028d.wav,0x12a
+0x28e,speech,2.33,12000,samples/speech/028e.wav,0x12a
+0x28f,speech,0.85,12000,samples/speech/028f.wav,0x09d
+0x290,speech,2.52,12000,samples/speech/0290.wav,0x12a
+0x291,speech,2.25,12000,samples/speech/0291.wav,0x12a
+0x292,speech,3.77,12000,samples/speech/0292.wav,0x032 0x12a
+0x293,speech,2.25,12000,samples/speech/0293.wav,0x12a
+0x294,speech,3.17,12000,samples/speech/0294.wav,0x12a
+0x295,speech,1.46,12000,samples/speech/0295.wav,0x0c3
+0x296,speech,0.95,12000,samples/speech/0296.wav,0x0c3
+0x297,speech,0.72,12000,samples/speech/0297.wav,0x0c7
+0x298,speech,3.13,12000,samples/speech/0298.wav,0x0c7
+0x299,speech,1.58,12000,samples/speech/0299.wav,0x12a
+0x29a,speech,2.81,12000,samples/speech/029a.wav,0x0c9 0x12a
+0x29b,speech,4.09,12000,samples/speech/029b.wav,0x0cb 0x12a
+0x29c,speech,1.61,12000,samples/speech/029c.wav,0x12a
+0x29d,speech,1.11,12000,samples/speech/029d.wav,0x12a
+0x29e,speech,0.99,12000,samples/speech/029e.wav,0x12a
+0x29f,speech,1.85,12000,samples/speech/029f.wav,0x12a
+0x2a0,speech,0.73,12000,samples/speech/02a0.wav,0x12a
+0x2a1,speech,0.72,12000,samples/speech/02a1.wav,0x065
+0x2a2,speech,0.86,12000,samples/speech/02a2.wav,0x12a
+0x2a3,speech,1.08,12000,samples/speech/02a3.wav,0x12a
+0x2a4,speech,1.87,12000,samples/speech/02a4.wav,0x12a
+0x2a5,speech,1.55,12000,samples/speech/02a5.wav,0x12a
+0x2a6,speech,0.90,12000,samples/speech/02a6.wav,0x12a
+0x2a7,speech,1.68,12000,samples/speech/02a7.wav,0x12a
+0x2a8,speech,1.07,12000,samples/speech/02a8.wav,0x12a
+0x2a9,speech,1.13,12000,samples/speech/02a9.wav,0x03d
+0x2aa,speech,1.68,12000,samples/speech/02aa.wav,0x12a
+0x2ab,speech,1.07,12000,samples/speech/02ab.wav,0x12a
+0x2ac,speech,3.15,12000,samples/speech/02ac.wav,0x12a
+0x2ad,speech,1.13,12000,samples/speech/02ad.wav,0x032 0x12a
+0x2ae,speech,2.15,12000,samples/speech/02ae.wav,0x12a
+0x2af,speech,0.87,12000,samples/speech/02af.wav,0x12a
+0x2b0,speech,0.94,12000,samples/speech/02b0.wav,0x12a
+0x2b1,speech,1.13,12000,samples/speech/02b1.wav,0x12a
+0x2b2,speech,0.82,12000,samples/speech/02b2.wav,0x12a
+0x2b3,speech,1.03,12000,samples/speech/02b3.wav,0x12a
+0x2b4,speech,0.95,12000,samples/speech/02b4.wav,0x12a
+0x2b5,speech,1.21,12000,samples/speech/02b5.wav,0x12a
+0x2b6,speech,1.06,12000,samples/speech/02b6.wav,0x12a
+0x2b7,speech,4.60,12000,samples/speech/02b7.wav,0x12a
+0x2b8,speech,3.48,12000,samples/speech/02b8.wav,0x0cd
+0x2b9,speech,1.48,12000,samples/speech/02b9.wav,0x12a
+0x2ba,speech,1.90,12000,samples/speech/02ba.wav,0x12a
+0x2bb,speech,4.61,12000,samples/speech/02bb.wav,0x065
+0x2bc,speech,1.32,12000,samples/speech/02bc.wav,0x0e6
+0x2bd,speech,2.28,12000,samples/speech/02bd.wav,0x12a
+0x2be,speech,1.21,12000,samples/speech/02be.wav,0x12a
+0x2bf,speech,1.08,12000,samples/speech/02bf.wav,0x12a
+0x2c0,speech,2.07,12000,samples/speech/02c0.wav,0x032 0x12a
+0x2c1,speech,1.58,12000,samples/speech/02c1.wav,0x12a
+0x2c2,speech,2.33,12000,samples/speech/02c2.wav,0x12a
+0x2c3,speech,2.85,12000,samples/speech/02c3.wav,0x12a
+0x2c4,speech,1.25,12000,samples/speech/02c4.wav,0x12a
+0x2c5,speech,1.99,12000,samples/speech/02c5.wav,0x12a
+0x2c6,speech,0.86,12000,samples/speech/02c6.wav,0x12a
+0x2c7,speech,1.21,12000,samples/speech/02c7.wav,0x12a
+0x2c8,speech,1.14,12000,samples/speech/02c8.wav,0x12a
+0x2c9,speech,1.14,12000,samples/speech/02c9.wav,0x12a
+0x2ca,speech,1.42,12000,samples/speech/02ca.wav,0x12a
+0x2cb,speech,2.13,12000,samples/speech/02cb.wav,0x12a
+0x2cc,speech,0.71,12000,samples/speech/02cc.wav,0x06d 0x06f 0x071 0x073
+0x2cd,speech,0.86,12000,samples/speech/02cd.wav,0x06d 0x06f 0x071 0x073
+0x2ce,speech,2.06,12000,samples/speech/02ce.wav,0x06d 0x06f 0x071 0x073 0x124
+0x2cf,speech,1.97,12000,samples/speech/02cf.wav,0x12a
+0x2d0,speech,1.22,12000,samples/speech/02d0.wav,0x12a
+0x2d1,speech,0.87,12000,samples/speech/02d1.wav,0x12a
+0x2d2,speech,1.61,12000,samples/speech/02d2.wav,0x088
+0x2d3,speech,1.21,12000,samples/speech/02d3.wav,0x12a
+0x2d4,speech,3.15,12000,samples/speech/02d4.wav,0x12a
+0x2d5,speech,0.83,12000,samples/speech/02d5.wav,0x12a
+0x2d6,speech,1.40,12000,samples/speech/02d6.wav,0x088
+0x2d7,speech,1.10,12000,samples/speech/02d7.wav,0x12a
+0x2d8,speech,0.99,12000,samples/speech/02d8.wav,0x12a
+0x2d9,speech,1.55,12000,samples/speech/02d9.wav,0x12a
+0x2da,speech,1.42,12000,samples/speech/02da.wav,0x12a
+0x2db,speech,0.92,12000,samples/speech/02db.wav,0x12a
+0x2dc,speech,1.79,12000,samples/speech/02dc.wav,0x088
+0x2dd,speech,2.54,12000,samples/speech/02dd.wav,0x088
+0x2de,speech,1.48,12000,samples/speech/02de.wav,0x08d
+0x2df,speech,2.52,12000,samples/speech/02df.wav,0x12a
+0x2e0,speech,1.12,12000,samples/speech/02e0.wav,0x12a
+0x2e1,speech,0.79,12000,samples/speech/02e1.wav,0x12a
+0x2e2,speech,1.06,12000,samples/speech/02e2.wav,0x12a
+0x2e3,speech,1.29,12000,samples/speech/02e3.wav,0x12a
+0x2e4,speech,2.97,12000,samples/speech/02e4.wav,0x12a
+0x2e5,speech,3.12,12000,samples/speech/02e5.wav,0x12a
+0x2e6,speech,2.12,12000,samples/speech/02e6.wav,0x12a
+0x2e7,speech,1.86,12000,samples/speech/02e7.wav,0x12a
+0x2e8,speech,1.03,12000,samples/speech/02e8.wav,0x12a
+0x2e9,speech,1.94,12000,samples/speech/02e9.wav,0x12a
+0x2ea,speech,1.23,12000,samples/speech/02ea.wav,0x12a
+0x2eb,speech,3.83,12000,samples/speech/02eb.wav,0x12a
+0x2ec,speech,1.38,12000,samples/speech/02ec.wav,0x12a
+0x2ed,speech,1.85,12000,samples/speech/02ed.wav,0x12a
+0x2ee,speech,1.17,12000,samples/speech/02ee.wav,0x12a
+0x2ef,speech,0.84,12000,samples/speech/02ef.wav,0x12a
+0x2f0,speech,1.23,12000,samples/speech/02f0.wav,0x12a
+0x2f1,speech,1.27,12000,samples/speech/02f1.wav,0x12a
+0x2f2,speech,3.96,12000,samples/speech/02f2.wav,0x12a
+0x2f3,speech,2.09,12000,samples/speech/02f3.wav,0x12a
+0x2f4,speech,2.59,12000,samples/speech/02f4.wav,0x12a
+0x2f5,speech,1.88,12000,samples/speech/02f5.wav,0x12a
+0x2f6,speech,1.16,12000,samples/speech/02f6.wav,0x12a
+0x2f7,speech,2.00,12000,samples/speech/02f7.wav,0x12a
+0x2f8,speech,1.14,12000,samples/speech/02f8.wav,0x01e
+0x2f9,speech,2.02,12000,samples/speech/02f9.wav,0x12a
+0x2fa,speech,2.15,12000,samples/speech/02fa.wav,0x12a
+0x2fb,speech,3.74,12000,samples/speech/02fb.wav,0x12a
+0x2fc,speech,1.81,12000,samples/speech/02fc.wav,0x12a
+0x2fd,speech,3.28,12000,samples/speech/02fd.wav,0x12a
+0x2fe,speech,2.13,12000,samples/speech/02fe.wav,0x12a
+0x2ff,speech,4.48,12000,samples/speech/02ff.wav,0x12a
+0x300,speech,1.46,12000,samples/speech/0300.wav,0x12a
+0x301,speech,1.92,12000,samples/speech/0301.wav,0x12a
+0x302,speech,2.38,12000,samples/speech/0302.wav,0x12a
+0x303,speech,2.18,12000,samples/speech/0303.wav,0x12a
+0x304,speech,2.50,12000,samples/speech/0304.wav,0x12a
+0x305,speech,2.99,12000,samples/speech/0305.wav,0x0a9
+0x306,speech,1.14,12000,samples/speech/0306.wav,0x12a
+0x307,speech,2.64,12000,samples/speech/0307.wav,0x12a
+0x308,speech,0.83,12000,samples/speech/0308.wav,0x12a
+0x309,speech,1.86,12000,samples/speech/0309.wav,0x032 0x0e4
+0x30a,speech,1.36,12000,samples/speech/030a.wav,0x12a
+0x30b,speech,2.01,12000,samples/speech/030b.wav,0x12a
+0x30c,speech,3.13,12000,samples/speech/030c.wav,0x12a
+0x30d,speech,2.70,12000,samples/speech/030d.wav,0x12a
+0x30e,speech,2.32,12000,samples/speech/030e.wav,0x12a
+0x30f,speech,3.54,12000,samples/speech/030f.wav,0x12a
+0x310,speech,2.68,12000,samples/speech/0310.wav,
+0x311,speech,1.71,12000,samples/speech/0311.wav,0x12a
+0x312,speech,5.14,12000,samples/speech/0312.wav,0x12a
+0x313,speech,3.32,12000,samples/speech/0313.wav,0x0ae
+0x314,speech,3.24,12000,samples/speech/0314.wav,0x12a
+0x315,speech,2.22,12000,samples/speech/0315.wav,0x12a
+0x316,speech,5.39,12000,samples/speech/0316.wav,0x12a
+0x317,speech,6.85,12000,samples/speech/0317.wav,0x06f 0x071 0x073 0x0ae 0x0ae
+0x318,speech,1.19,12000,samples/speech/0318.wav,0x12a
+0x319,speech,1.30,12000,samples/speech/0319.wav,
+0x31a,speech,1.92,12000,samples/speech/031a.wav,
+0x31b,speech,0.93,12000,samples/speech/031b.wav,
+0x31c,speech,4.06,12000,samples/speech/031c.wav,0x12a
+0x31d,speech,3.46,12000,samples/speech/031d.wav,0x12a
+0x31e,speech,1.68,12000,samples/speech/031e.wav,0x12a
+0x31f,speech,0.82,12000,samples/speech/031f.wav,0x12a
+0x320,speech,2.56,12000,samples/speech/0320.wav,0x024 0x06d 0x06f 0x071 0x073
+0x321,speech,2.33,12000,samples/speech/0321.wav,0x025 0x06d 0x06f 0x071 0x073
+0x322,speech,4.63,12000,samples/speech/0322.wav,0x026 0x06d 0x06f 0x071 0x073
+0x323,speech,2.01,12000,samples/speech/0323.wav,0x12a
+0x324,speech,0.92,12000,samples/speech/0324.wav,0x09d 0x12a
+0x325,speech,2.52,12000,samples/speech/0325.wav,0x12a
+0x326,speech,2.38,12000,samples/speech/0326.wav,0x12a
+0x327,speech,2.32,12000,samples/speech/0327.wav,0x12a
+0x328,speech,2.79,12000,samples/speech/0328.wav,0x08a
+0x329,speech,1.08,12000,samples/speech/0329.wav,0x088
+0x32a,speech,3.56,12000,samples/speech/032a.wav,0x12a
+0x32b,speech,4.52,12000,samples/speech/032b.wav,0x12a
+0x32c,speech,1.09,12000,samples/speech/032c.wav,
+0x32d,speech,2.07,12000,samples/speech/032d.wav,
+0x32e,speech,3.30,12000,samples/speech/032e.wav,0x12a
+0x32f,speech,1.75,12000,samples/speech/032f.wav,0x12a
+0x330,speech,2.93,12000,samples/speech/0330.wav,
+0x331,speech,1.37,12000,samples/speech/0331.wav,0x12a
+0x332,speech,1.79,12000,samples/speech/0332.wav,0x12a
+0x333,speech,1.13,12000,samples/speech/0333.wav,0x12a
+0x334,speech,1.51,12000,samples/speech/0334.wav,0x0b3
+0x335,speech,1.36,12000,samples/speech/0335.wav,0x12a
+0x336,speech,2.66,12000,samples/speech/0336.wav,0x129
+0x337,speech,4.24,12000,samples/speech/0337.wav,0x12a
+0x338,speech,0.84,12000,samples/speech/0338.wav,0x12a
+0x339,speech,3.21,12000,samples/speech/0339.wav,0x12a
+0x33a,speech,1.93,12000,samples/speech/033a.wav,0x032 0x12a
+0x33b,speech,0.99,12000,samples/speech/033b.wav,0x12a
+0x33c,speech,2.52,12000,samples/speech/033c.wav,0x12a
+0x33d,speech,1.47,12000,samples/speech/033d.wav,0x12a
+0x33e,speech,1.78,12000,samples/speech/033e.wav,0x12a
+0x33f,speech,1.68,12000,samples/speech/033f.wav,0x032 0x12a
+0x340,speech,4.61,12000,samples/speech/0340.wav,0x12a
+0x341,speech,1.60,12000,samples/speech/0341.wav,0x12a
+0x342,speech,4.45,12000,samples/speech/0342.wav,0x12a
+0x343,speech,2.62,12000,samples/speech/0343.wav,0x0ae
+0x344,speech,2.32,12000,samples/speech/0344.wav,0x12a
+0x345,speech,1.31,12000,samples/speech/0345.wav,0x12a
+0x346,speech,3.39,12000,samples/speech/0346.wav,0x0b0
+0x347,speech,1.61,12000,samples/speech/0347.wav,0x0b0
+0x348,speech,2.51,12000,samples/speech/0348.wav,0x12a
+0x349,speech,4.10,12000,samples/speech/0349.wav,0x0b0
+0x34a,speech,1.04,12000,samples/speech/034a.wav,0x12a
+0x34b,speech,1.22,12000,samples/speech/034b.wav,0x12a
+0x34c,speech,0.73,12000,samples/speech/034c.wav,0x12a
+0x34d,speech,1.15,12000,samples/speech/034d.wav,0x12a
+0x34e,speech,1.68,12000,samples/speech/034e.wav,0x129
+0x34f,speech,2.05,12000,samples/speech/034f.wav,0x12a
+0x350,speech,1.27,12000,samples/speech/0350.wav,0x12a
+0x351,speech,1.69,12000,samples/speech/0351.wav,0x12a
+0x352,speech,2.12,12000,samples/speech/0352.wav,0x032 0x0e6
+0x353,speech,1.25,12000,samples/speech/0353.wav,0x12a
+0x354,speech,1.30,12000,samples/speech/0354.wav,0x12a
+0x355,speech,1.66,12000,samples/speech/0355.wav,0x12a
+0x356,speech,1.14,12000,samples/speech/0356.wav,0x12a
+0x357,speech,1.65,12000,samples/speech/0357.wav,0x12a
+0x358,speech,2.03,12000,samples/speech/0358.wav,0x12a
+0x359,speech,1.50,12000,samples/speech/0359.wav,0x12a
+0x35a,speech,1.11,12000,samples/speech/035a.wav,0x12a
+0x35b,speech,1.05,12000,samples/speech/035b.wav,0x12a
+0x35c,speech,2.07,12000,samples/speech/035c.wav,0x12a
+0x35d,speech,2.86,12000,samples/speech/035d.wav,0x12a
+0x35e,speech,1.27,12000,samples/speech/035e.wav,0x12a
+0x35f,speech,2.92,12000,samples/speech/035f.wav,0x12a
+0x360,speech,1.24,12000,samples/speech/0360.wav,0x06d 0x06f 0x071 0x073
+0x361,speech,1.29,12000,samples/speech/0361.wav,0x06d 0x06f 0x071 0x073
+0x362,speech,3.01,12000,samples/speech/0362.wav,0x12a
+0x363,speech,1.25,12000,samples/speech/0363.wav,
+0x364,speech,1.52,12000,samples/speech/0364.wav,
+0x365,speech,1.91,12000,samples/speech/0365.wav,0x12a
+0x366,speech,1.68,12000,samples/speech/0366.wav,0x067
+0x367,speech,1.70,12000,samples/speech/0367.wav,0x067
+0x368,speech,4.07,12000,samples/speech/0368.wav,
+0x369,speech,2.26,12000,samples/speech/0369.wav,0x12a
+0x36a,speech,1.73,12000,samples/speech/036a.wav,0x12a
+0x36b,speech,3.72,12000,samples/speech/036b.wav,0x12a
+0x36c,speech,0.85,12000,samples/speech/036c.wav,0x12a
+0x36d,speech,0.72,12000,samples/speech/036d.wav,0x12a
+0x36e,speech,0.98,12000,samples/speech/036e.wav,0x12a
+0x36f,speech,1.32,12000,samples/speech/036f.wav,0x12a
+0x370,speech,1.47,12000,samples/speech/0370.wav,0x12a
+0x371,speech,1.50,12000,samples/speech/0371.wav,0x12a
+0x372,speech,1.52,12000,samples/speech/0372.wav,0x06d 0x06f 0x071 0x073
+0x373,speech,1.34,12000,samples/speech/0373.wav,0x06d 0x06f 0x071 0x073
+0x374,speech,2.22,12000,samples/speech/0374.wav,0x12a
+0x375,speech,1.11,12000,samples/speech/0375.wav,0x12a
+0x376,speech,2.03,12000,samples/speech/0376.wav,0x12a
+0x377,speech,2.32,12000,samples/speech/0377.wav,0x12a
+0x378,speech,2.72,12000,samples/speech/0378.wav,0x12a
+0x379,speech,3.45,12000,samples/speech/0379.wav,0x12a
+0x37a,speech,0.81,12000,samples/speech/037a.wav,0x12a
+0x37b,speech,4.33,12000,samples/speech/037b.wav,0x12a
+0x37c,speech,1.21,12000,samples/speech/037c.wav,0x12a
+0x37d,speech,2.24,12000,samples/speech/037d.wav,0x12a
+0x37e,speech,2.92,12000,samples/speech/037e.wav,0x12a
+0x37f,speech,0.89,12000,samples/speech/037f.wav,0x12a
+0x380,speech,3.60,12000,samples/speech/0380.wav,0x125 0x12a
+0x381,speech,2.58,12000,samples/speech/0381.wav,0x12a
+0x382,speech,1.74,12000,samples/speech/0382.wav,0x12a
+0x383,speech,3.70,12000,samples/speech/0383.wav,0x0b0
+0x384,speech,2.15,12000,samples/speech/0384.wav,0x12a
+0x385,speech,1.67,12000,samples/speech/0385.wav,0x0b0 0x126
+0x386,speech,2.72,12000,samples/speech/0386.wav,0x12a
+0x387,speech,4.97,12000,samples/speech/0387.wav,0x12a
+0x388,speech,1.56,12000,samples/speech/0388.wav,0x12a
+0x389,speech,3.71,12000,samples/speech/0389.wav,0x12a
+0x38a,speech,1.34,12000,samples/speech/038a.wav,0x12a
+0x38b,speech,1.04,12000,samples/speech/038b.wav,0x12a
+0x38c,speech,1.87,12000,samples/speech/038c.wav,0x12a
+0x38d,speech,1.56,12000,samples/speech/038d.wav,0x12a
+0x38e,speech,1.50,12000,samples/speech/038e.wav,
+0x38f,speech,1.14,12000,samples/speech/038f.wav,0x12a
+0x390,speech,2.24,12000,samples/speech/0390.wav,0x12a
+0x391,speech,1.53,12000,samples/speech/0391.wav,0x12a
+0x392,speech,0.89,12000,samples/speech/0392.wav,0x12a
+0x393,speech,2.00,12000,samples/speech/0393.wav,0x12a
+0x394,speech,0.62,12000,samples/speech/0394.wav,0x12a
+0x395,speech,1.92,12000,samples/speech/0395.wav,0x12a
+0x396,speech,1.21,12000,samples/speech/0396.wav,0x12a
+0x397,speech,0.82,12000,samples/speech/0397.wav,0x12a
+0x398,speech,0.67,12000,samples/speech/0398.wav,0x12a
+0x399,speech,1.44,12000,samples/speech/0399.wav,0x12a
+0x39a,speech,1.32,12000,samples/speech/039a.wav,0x12a
+0x39b,speech,2.55,12000,samples/speech/039b.wav,0x12a
+0x39c,speech,1.99,12000,samples/speech/039c.wav,0x12a
+0x39d,speech,1.13,12000,samples/speech/039d.wav,0x12a
+0x39e,speech,0.88,12000,samples/speech/039e.wav,0x12a
+0x39f,speech,2.92,12000,samples/speech/039f.wav,0x12a
+0x3a0,speech,1.64,12000,samples/speech/03a0.wav,0x12a
+0x3a1,speech,1.30,12000,samples/speech/03a1.wav,0x12a
+0x3a2,speech,1.74,12000,samples/speech/03a2.wav,0x12a
+0x3a3,speech,2.32,12000,samples/speech/03a3.wav,0x12a
+0x3a4,speech,5.17,12000,samples/speech/03a4.wav,0x12a
+0x3a5,speech,0.87,12000,samples/speech/03a5.wav,0x12a
+0x3a6,speech,0.95,12000,samples/speech/03a6.wav,0x12a
+0x3a7,speech,2.59,12000,samples/speech/03a7.wav,0x12a
+0x3a8,speech,1.07,12000,samples/speech/03a8.wav,0x12a
+0x3a9,speech,2.14,12000,samples/speech/03a9.wav,0x0e6
+0x3aa,speech,5.27,12000,samples/speech/03aa.wav,0x12a
+0x3ab,speech,0.78,12000,samples/speech/03ab.wav,0x12a
+0x3ac,speech,2.17,12000,samples/speech/03ac.wav,0x12a
+0x3ad,speech,0.85,12000,samples/speech/03ad.wav,0x128
+0x3ae,speech,1.76,12000,samples/speech/03ae.wav,0x12a
+0x3af,speech,1.05,12000,samples/speech/03af.wav,0x12a
+0x3b0,speech,1.33,12000,samples/speech/03b0.wav,0x12a
+0x3b1,speech,0.73,12000,samples/speech/03b1.wav,0x12a
+0x3b2,speech,0.90,12000,samples/speech/03b2.wav,0x12a
+0x3b3,speech,1.68,12000,samples/speech/03b3.wav,0x12a
+0x3b4,speech,1.35,12000,samples/speech/03b4.wav,0x12a
+0x3b5,speech,0.86,12000,samples/speech/03b5.wav,0x12a
+0x3b6,speech,1.43,12000,samples/speech/03b6.wav,0x12a
+0x3b7,speech,0.74,12000,samples/speech/03b7.wav,0x12a
+0x3b8,speech,2.08,12000,samples/speech/03b8.wav,0x12a
+0x3b9,speech,8.01,12000,samples/speech/03b9.wav,0x12a
+0x3ba,speech,1.33,12000,samples/speech/03ba.wav,0x12a
+0x3bb,speech,1.19,12000,samples/speech/03bb.wav,0x12a
+0x3bc,speech,1.74,12000,samples/speech/03bc.wav,0x12a
+0x3bd,speech,0.93,12000,samples/speech/03bd.wav,0x12a
+0x3be,speech,3.53,12000,samples/speech/03be.wav,0x032 0x12a
+0x3bf,speech,1.28,12000,samples/speech/03bf.wav,0x12a
+0x3c0,speech,1.56,12000,samples/speech/03c0.wav,0x12a
+0x3c1,speech,2.40,12000,samples/speech/03c1.wav,0x12a
+0x3c2,speech,2.37,12000,samples/speech/03c2.wav,0x12a
+0x3c3,speech,4.47,12000,samples/speech/03c3.wav,0x12a
+0x3c4,speech,2.50,12000,samples/speech/03c4.wav,0x12a
+0x3c5,speech,2.72,12000,samples/speech/03c5.wav,0x12a
+0x3c6,speech,3.55,12000,samples/speech/03c6.wav,0x12a
+0x3c7,speech,2.16,12000,samples/speech/03c7.wav,0x12a
+0x3c8,speech,4.13,12000,samples/speech/03c8.wav,0x12a
+0x3c9,speech,2.69,12000,samples/speech/03c9.wav,0x12a
+0x3ca,speech,1.63,12000,samples/speech/03ca.wav,0x12a
+0x3cb,speech,1.70,12000,samples/speech/03cb.wav,0x12a
+0x3cc,speech,4.45,12000,samples/speech/03cc.wav,0x12a
+0x3cd,speech,5.43,12000,samples/speech/03cd.wav,0x12a
+0x3ce,speech,6.11,12000,samples/speech/03ce.wav,0x12a
+0x3cf,speech,6.67,12000,samples/speech/03cf.wav,0x12a
+0x3d0,speech,0.99,12000,samples/speech/03d0.wav,0x12a
+0x3d1,speech,6.16,12000,samples/speech/03d1.wav,0x12a
+0x3d2,speech,7.30,12000,samples/speech/03d2.wav,0x12a
+0x3d3,speech,1.61,12000,samples/speech/03d3.wav,0x12a
+0x3d4,speech,3.09,12000,samples/speech/03d4.wav,0x12a
+0x3d5,speech,1.49,12000,samples/speech/03d5.wav,0x12a
+0x3d6,speech,1.81,12000,samples/speech/03d6.wav,0x12a
+0x3d7,speech,4.26,12000,samples/speech/03d7.wav,0x12a
+0x3d8,speech,3.71,12000,samples/speech/03d8.wav,0x12a
+0x3d9,speech,4.20,12000,samples/speech/03d9.wav,0x12a
+0x3da,speech,6.16,12000,samples/speech/03da.wav,0x12a
+0x3db,speech,1.69,12000,samples/speech/03db.wav,0x12a
+0x3dc,speech,1.42,12000,samples/speech/03dc.wav,0x12a
+0x3dd,speech,1.75,12000,samples/speech/03dd.wav,0x12a
+0x3de,speech,1.88,12000,samples/speech/03de.wav,0x12a
+0x3df,speech,0.71,12000,samples/speech/03df.wav,0x12a
+0x3e0,speech,1.80,12000,samples/speech/03e0.wav,0x12a
+0x3e1,speech,1.69,12000,samples/speech/03e1.wav,0x12a
+0x3e2,speech,2.36,12000,samples/speech/03e2.wav,0x12a
+0x3e3,speech,3.81,12000,samples/speech/03e3.wav,0x12a
+0x3e4,speech,4.23,12000,samples/speech/03e4.wav,0x08a
+0x3e5,speech,2.82,12000,samples/speech/03e5.wav,0x08a
+0x3e6,speech,1.22,12000,samples/speech/03e6.wav,0x12a
+0x3e7,speech,1.43,12000,samples/speech/03e7.wav,0x12a
+0x3e8,speech,1.29,12000,samples/speech/03e8.wav,0x12a
+0x3e9,speech,0.80,12000,samples/speech/03e9.wav,0x12a
+0x3ea,speech,0.77,12000,samples/speech/03ea.wav,0x12a
+0x3eb,speech,1.27,12000,samples/speech/03eb.wav,0x12a
+0x3ec,speech,2.20,12000,samples/speech/03ec.wav,0x12a
+0x3ed,speech,1.15,12000,samples/speech/03ed.wav,0x12a
+0x3ee,speech,1.99,12000,samples/speech/03ee.wav,0x12a
+0x3ef,speech,1.25,12000,samples/speech/03ef.wav,0x12a
+0x3f0,speech,0.74,12000,samples/speech/03f0.wav,0x12a
+0x3f1,speech,2.62,12000,samples/speech/03f1.wav,0x12a
+0x3f2,speech,2.53,12000,samples/speech/03f2.wav,0x12a
+0x3f3,speech,1.44,12000,samples/speech/03f3.wav,0x12a
+0x3f4,speech,1.78,12000,samples/speech/03f4.wav,0x12a
+0x3f5,speech,2.43,12000,samples/speech/03f5.wav,0x12a
+0x3f6,speech,2.31,12000,samples/speech/03f6.wav,0x12a
+0x3f7,speech,0.81,12000,samples/speech/03f7.wav,0x107 0x12a
+0x3f8,speech,1.37,12000,samples/speech/03f8.wav,0x107 0x12a
+0x3f9,speech,1.99,12000,samples/speech/03f9.wav,0x107 0x12a
+0x3fa,speech,0.95,12000,samples/speech/03fa.wav,0x111
+0x3fb,speech,1.36,12000,samples/speech/03fb.wav,0x12a
+0x3fc,speech,0.68,12000,samples/speech/03fc.wav,0x111
+0x3fd,speech,1.29,12000,samples/speech/03fd.wav,0x111
+0x3fe,speech,0.93,12000,samples/speech/03fe.wav,0x12a
+0x3ff,speech,1.70,12000,samples/speech/03ff.wav,0x12a
+0x400,speech,0.85,12000,samples/speech/0400.wav,0x111
+0x401,speech,2.07,12000,samples/speech/0401.wav,0x12a
+0x402,speech,1.09,12000,samples/speech/0402.wav,0x12a
+0x403,speech,1.60,12000,samples/speech/0403.wav,0x12a
+0x404,speech,1.53,12000,samples/speech/0404.wav,0x111
+0x405,speech,1.06,12000,samples/speech/0405.wav,0x111
+0x406,speech,0.96,12000,samples/speech/0406.wav,0x12a
+0x407,speech,1.08,12000,samples/speech/0407.wav,0x111
+0x408,speech,1.68,12000,samples/speech/0408.wav,
+0x409,speech,1.21,12000,samples/speech/0409.wav,0x08b
+0x40a,speech,1.65,12000,samples/speech/040a.wav,0x113
+0x40b,speech,2.50,12000,samples/speech/040b.wav,0x12a
+0x40c,speech,1.41,12000,samples/speech/040c.wav,0x12a
+0x40d,speech,1.70,12000,samples/speech/040d.wav,0x12a
+0x40e,speech,2.28,12000,samples/speech/040e.wav,0x12a
+0x40f,speech,0.97,12000,samples/speech/040f.wav,0x12a
+0x410,speech,1.69,12000,samples/speech/0410.wav,0x12a
+0x411,speech,2.48,12000,samples/speech/0411.wav,0x12a
+0x412,speech,2.28,12000,samples/speech/0412.wav,0x12a
+0x413,speech,3.25,12000,samples/speech/0413.wav,0x12a
+0x414,speech,0.94,12000,samples/speech/0414.wav,0x12a
+0x415,speech,1.71,12000,samples/speech/0415.wav,0x12a
+0x416,speech,1.12,12000,samples/speech/0416.wav,0x12a
+0x417,speech,2.21,12000,samples/speech/0417.wav,0x12a
+0x418,speech,3.09,12000,samples/speech/0418.wav,0x12a
+0x419,speech,3.76,12000,samples/speech/0419.wav,0x12a
+0x41a,speech,2.70,12000,samples/speech/041a.wav,0x12a
+0x41b,speech,9.93,12000,samples/speech/041b.wav,0x12a
+0x41c,speech,0.88,12000,samples/speech/041c.wav,0x12a
+0x41d,speech,1.79,12000,samples/speech/041d.wav,0x12a
+0x41e,speech,0.68,12000,samples/speech/041e.wav,0x12a
+0x41f,speech,1.61,12000,samples/speech/041f.wav,0x12a
+0x420,speech,2.73,12000,samples/speech/0420.wav,0x12a
+0x421,speech,5.01,12000,samples/speech/0421.wav,0x12a
+0x422,speech,1.54,12000,samples/speech/0422.wav,0x12a
+0x423,speech,0.81,12000,samples/speech/0423.wav,0x12a
+0x424,speech,2.13,12000,samples/speech/0424.wav,0x12a
+0x425,speech,0.90,12000,samples/speech/0425.wav,0x12a
+0x426,speech,1.98,12000,samples/speech/0426.wav,0x12a
+0x427,speech,1.72,12000,samples/speech/0427.wav,0x12a
+0x428,speech,0.97,12000,samples/speech/0428.wav,0x12a
+0x429,speech,1.08,12000,samples/speech/0429.wav,0x12a
+0x42a,speech,1.09,12000,samples/speech/042a.wav,0x12a
+0x42b,speech,1.95,12000,samples/speech/042b.wav,0x12a
+0x42c,speech,0.94,12000,samples/speech/042c.wav,0x0d9
+0x42d,speech,1.03,12000,samples/speech/042d.wav,0x0d1
+0x42e,speech,1.39,12000,samples/speech/042e.wav,0x0f4
+0x42f,speech,2.24,12000,samples/speech/042f.wav,0x0f4
+0x430,speech,1.00,12000,samples/speech/0430.wav,0x12a
+0x431,speech,2.64,12000,samples/speech/0431.wav,0x0f3 0x12a
+0x432,speech,3.01,12000,samples/speech/0432.wav,0x12a
+0x433,speech,1.56,12000,samples/speech/0433.wav,0x03e 0x0f4
+0x434,speech,2.35,24000,samples/speech/0434.wav,0x12a
+0x435,speech,2.78,12000,samples/speech/0435.wav,0x088 0x0bd
+0x436,speech,4.31,12000,samples/speech/0436.wav,0x088
+0x437,speech,6.00,12000,samples/speech/0437.wav,0x08a
+0x438,speech,3.56,12000,samples/speech/0438.wav,0x08a
+0x439,speech,5.03,12000,samples/speech/0439.wav,0x04f
+0x43a,speech,3.16,12000,samples/speech/043a.wav,
+0x43b,speech,2.74,12000,samples/speech/043b.wav,0x04f
+0x43c,speech,2.35,12000,samples/speech/043c.wav,0x0c7
+0x43d,speech,1.79,12000,samples/speech/043d.wav,0x0c9
+0x43e,speech,7.52,12000,samples/speech/043e.wav,0x0ae
+0x43f,speech,3.23,12000,samples/speech/043f.wav,
+0x440,speech,4.15,12000,samples/speech/0440.wav,
+0x441,speech,2.26,12000,samples/speech/0441.wav,0x067
+0x442,speech,2.77,12000,samples/speech/0442.wav,0x06d 0x06f 0x071 0x073
+0x443,speech,2.28,12000,samples/speech/0443.wav,0x04f 0x112
+0x444,speech,2.89,12000,samples/speech/0444.wav,0x112
+0x445,speech,2.04,12000,samples/speech/0445.wav,0x114
+0x446,speech,5.98,12000,samples/speech/0446.wav,0x037
+0x447,music,10.00,24000,samples/music/0447.wav,0x020
+0x448,music,22.01,24000,samples/music/0448.wav,0x021
+0x449,music,11.95,24000,samples/music/0449.wav,0x022
+0x44a,music,11.02,24000,samples/music/044a.wav,0x023
+0x44b,music,23.14,24000,samples/music/044b.wav,0x108
+0x44c,music,42.86,24000,samples/music/044c.wav,0x01c
+0x44e,music,26.98,24000,samples/music/044e.wav,0x02a
+0x44f,music,15.95,24000,samples/music/044f.wav,0x029
+0x450,music,50.54,24000,samples/music/0450.wav,0x0aa
+0x451,music,32.03,24000,samples/music/0451.wav,0x08f
+0x452,music,44.56,24000,samples/music/0452.wav,
+0x453,music,23.10,24000,samples/music/0453.wav,0x081
+0x454,music,38.94,24000,samples/music/0454.wav,0x0c2
+0x455,music,11.29,24000,samples/music/0455.wav,0x0b6
+0x456,music,22.93,24000,samples/music/0456.wav,0x01f 0x066 0x120
+0x457,music,44.69,24000,samples/music/0457.wav,
+0x458,music,33.49,24000,samples/music/0458.wav,0x086
+0x459,music,55.21,24000,samples/music/0459.wav,0x01d 0x076
+0x45a,music,8.24,24000,samples/music/045a.wav,0x01a
+0x45b,music,78.60,24000,samples/music/045b.wav,0x01b 0x11f

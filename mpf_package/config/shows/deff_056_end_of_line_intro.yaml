@@ -1,0 +1,22 @@
+#show_version=6
+# deff_056_end_of_line_intro: END OF LINE MULTIBALL intro
+# ROM trigger: End of Line (Daft Punk) Multiball start. Timing from emulation.
+# Lamp effect: lampfx_058_end_of_line_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_056_end_of_line_intro:
+      action: play
+  shows:
+    leff_087:
+      action: play
+      loops: 0
+    lampfx_058_end_of_line_intro:
+      action: play
+      loops: -1
+  sounds:
+    call_024:
+      action: play
+- time: 4121ms
+  slides:
+    deff_056_end_of_line_intro:
+      action: remove

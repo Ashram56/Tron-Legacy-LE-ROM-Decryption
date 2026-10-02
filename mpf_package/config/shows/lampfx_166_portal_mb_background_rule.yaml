@@ -1,0 +1,46 @@
+#show_version=6
+# ROM lamp effect 166 (leff table 0x040e23e4, function 0x1030198, priority 7). Captured in emulation.
+# Loops until stopped. loops in the ROM; the first 48 ms (a lead-in before the loop settles) are left out
+# Started by: rule: while portal_mb_background_rule
+- duration: 49ms
+  lights:
+    l_advance_quorra: '000000'
+    l_center_clu: ffffff
+    l_center_disc: ffffff
+    l_center_flynn: ffffff
+    l_center_gem: ffffff
+    l_center_light_cycle: ffffff
+    l_center_portal: ffffff
+    l_center_quorra: ffffff
+    l_center_recognizer: ffffff
+    l_center_tron: ffffff
+    l_center_zuse: ffffff
+    l_l_inner_loop_arrow: '000000'
+    l_l_inner_loop_clu: '000000'
+    l_l_inner_loop_disc: '000000'
+    l_l_inner_loop_light_cycle: '000000'
+    l_l_loop_arrow: '000000'
+    l_left_orbit_clu: '000000'
+    l_left_orbit_disc: '000000'
+    l_left_orbit_light_cycle: '000000'
+    l_left_ramp_arrow: '000000'
+    l_left_ramp_disc: '000000'
+    l_left_ramp_light_cycle: '000000'
+    l_r_inner_loop_arrow: '000000'
+    l_r_inner_loop_disc: '000000'
+    l_r_inner_loop_light_cycle: '000000'
+    l_r_loop_arrow: '000000'
+    l_r_ramp_arrow: '000000'
+    l_r_ramp_light_cycle: '000000'
+    l_right_orbit_clu: '000000'
+    l_right_orbit_disc: '000000'
+    l_right_orbit_light_cycle: '000000'
+    l_right_ramp_disc: '000000'
+- duration: 49ms
+  lights:
+    l_advance_quorra: ffffff
+    l_left_orbit_clu: ffffff
+    l_left_ramp_light_cycle: ffffff
+    l_r_inner_loop_light_cycle: ffffff
+    l_r_ramp_light_cycle: ffffff
+    l_right_orbit_clu: ffffff

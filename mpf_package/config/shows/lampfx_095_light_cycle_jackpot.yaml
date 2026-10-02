@@ -1,0 +1,337 @@
+#show_version=6
+# ROM lamp effect 95 (leff table 0x040e23e4, function 0x101a05c, priority 195). Captured in emulation.
+# Loops until stopped. loops in the ROM after a lead-in; capture cut at 12 s, show repeats that
+# Started by: effect 87 (deff_087_light_cycle_jackpot)
+- duration: 32ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_left_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 32ms
+  flashers:
+    f_right_ramp: 50ms
+- duration: 33ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 33ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 33ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 32ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 32ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 32ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 32ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 33ms
+  flashers:
+    f_backpanel: 50ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 128ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 128ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 130ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 129ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 131ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 44ms
+  flashers:
+    f_right_ramp: 48ms

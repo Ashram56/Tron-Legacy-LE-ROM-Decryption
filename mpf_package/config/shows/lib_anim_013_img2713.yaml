@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 13: images 2713-2742, 30 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_013_img2713:
+      action: play
+- time: 1470ms
+  slides:
+    lib_anim_013_img2713:
+      action: remove

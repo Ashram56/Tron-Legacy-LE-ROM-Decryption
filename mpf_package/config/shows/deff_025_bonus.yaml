@@ -1,0 +1,21 @@
+#show_version=6
+# deff_025_bonus: TOTAL BONUS
+# ROM trigger: end of ball bonus. Timing from emulation.
+# Lamp effect: lampfx_020_bonus_lamps_off at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  sounds:
+    call_0b6:
+      action: play
+  shows:
+    lampfx_020_bonus_lamps_off:
+      action: play
+      loops: 0
+- time: 356ms
+  shows:
+    leff_105:
+      action: play
+      loops: 0
+  sounds:
+    call_0ba:
+      action: play
+- time: 1242ms

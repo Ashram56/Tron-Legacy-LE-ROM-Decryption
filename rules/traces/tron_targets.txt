@@ -1,0 +1,38 @@
+# TRON drop targets (sw1-4) and TRON timed awards. Factory settings, 1 player.
+start 1
+wait 3
+mark letter T (10,000 + 30)
+hit 1
+wait 1
+mark T again while its drop is still down: ignored by the bank
+hit 1
+wait 1
+mark R O N -> TRON completed: 100,000 + lit award BUMPERS starts (22,000, deff 112, 30 s)
+hit 2
+wait 0.5
+hit 3
+wait 0.5
+hit 4
+wait 4
+mark 2nd TRON while BUMPERS runs: DOUBLE SCORING starts; both timers now drop 2 per second
+hit 1
+wait 0.5
+hit 2
+wait 0.5
+hit 3
+wait 0.5
+hit 4
+wait 26
+mark letters T R then drain; letters persist into ball 2
+hit 1
+wait 0.5
+hit 2
+wait 1
+drain left
+wait 10
+mark ball 2: T again -> letter already collected -> 450 points, sound 0x04a
+hit 1
+wait 1
+mark R again -> 450, sound 0x04b
+hit 2
+wait 2

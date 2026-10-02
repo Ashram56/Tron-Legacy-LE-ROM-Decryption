@@ -1,0 +1,19 @@
+0x0211166c	arcade_lit	1	per player	Flynn's Arcade lit flag; set each ball start and by right orbit
+0x00036d68	arcade_bag	obj	machine	weighted bag header {entries 0x040f08dc, 13, 24}
+0x0003aba6	arcade_w_500k	2	per pick	computed weight 500K
+0x0003aba8	arcade_w_gem	2	per pick	weight ADV GEM
+0x0003abaa	arcade_w_clu	2	per pick	weight ADV CLU
+0x0003abac	arcade_w_zuse	2	per pick	weight ADV ZUSE
+0x0003abae	arcade_w_quorra	2	per pick	weight ADV QUORRA
+0x0003abb0	arcade_w_disc	2	per pick	weight ADV DISC
+0x0003abb2	arcade_w_lightcycle	2	per pick	weight ADV LIGHT CYCLE
+0x0003abb4	arcade_w_recognizer	2	per pick	weight ADV RECOGNIZER
+0x0003abb6	arcade_w_sos	2	per pick	weight ADV SOS
+0x0003abb8	arcade_w_more_time	2	per pick	weight MORE TIME
+0x0003abba	arcade_w_extra_ball	2	per pick	weight LIGHT EXTRA BALL
+0x0003abbc	arcade_w_special	2	per pick	weight LIGHT SPECIAL
+0x02111894	vuk_extra_ball_lit	1	per player	extra ball lit at VUK count
+0x02111898	vuk_quorra_lit	1	per player	Quorra lit at VUK
+0x0211189c	vuk_light_cycle_lit	1	per player	Light Cycle lit at VUK
+0x021118a0	vuk_portal_lit	1	per player	Portal lit at VUK
+0x021118a4	vuk_clu_lit	1	per player	CLU lit at VUK

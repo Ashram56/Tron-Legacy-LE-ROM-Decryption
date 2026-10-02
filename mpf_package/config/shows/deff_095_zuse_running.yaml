@@ -1,0 +1,8 @@
+#show_version=6
+# deff_095_zuse_running: ALL TARGETS = value (background)
+# ROM trigger: during ZUSE Fast Scoring. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_095_zuse_running:
+      action: play
+- time: 12001ms

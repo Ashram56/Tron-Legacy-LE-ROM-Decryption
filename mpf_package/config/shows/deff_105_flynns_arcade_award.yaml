@@ -1,0 +1,22 @@
+#show_version=6
+# deff_105_flynns_arcade_award: Flynn's Arcade mystery award: 3 cabinets scroll in, the picked award blinks
+# ROM trigger: ball enters the VUK (sw11 VIDEO GAME EJECT) while Flynn's Arcade is lit; the game picks 1 of 12 awards (500K, advance Gem/CLU/ZUSE/Quorra/Disc/Light Cycle/Recognizer/Sea of Simulation, more time, light extra ball, light special) by weighted random. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_105_flynns_arcade_award:
+      action: play
+  sounds:
+    call_0e4:
+      action: play
+    call_0e1:
+      action: play
+- time: 883ms
+  sounds:
+    call_0e3:
+      action: play
+    call_0e1:
+      action: stop
+- time: 2672ms
+  slides:
+    deff_105_flynns_arcade_award:
+      action: remove

@@ -1,0 +1,11 @@
+#show_version=6
+# deff_036_tournament_place: nTH PLACE
+# ROM trigger: tournament end. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_036_tournament_place:
+      action: play
+- time: 12011ms
+  slides:
+    deff_036_tournament_place:
+      action: remove

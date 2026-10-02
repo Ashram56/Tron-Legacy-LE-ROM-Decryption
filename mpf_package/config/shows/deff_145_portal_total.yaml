@@ -1,0 +1,16 @@
+#show_version=6
+# deff_145_portal_total: PORTAL MULTIBALL TOTAL
+# ROM trigger: Portal Multiball end. Timing from emulation.
+# Lamp effect: lampfx_171_portal_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  shows:
+    leff_085:
+      action: play
+      loops: 0
+    lampfx_171_portal_total:
+      action: play
+      loops: 0
+  sounds:
+    call_080:
+      action: play
+- time: 2991ms

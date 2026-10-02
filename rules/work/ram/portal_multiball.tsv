@@ -1,0 +1,14 @@
+0x0003b854	pm_super_value	4	while mode runs	Super Jackpot value: 1,000,000 at start, + every phase-0 award (points after multiplier); scored on the disc in phase 1
+0x0003b858	pm_total	4	while mode runs	Running total for the end display: start award (1,000,000) + awards + super + bonus-phase awards (50M start bonus NOT included)
+0x0003b85c	pm_cnt_left_orbit	1	while mode runs	Left orbit shots made (max 4), reset to 0 at start
+0x0003b860	pm_cnt_left_ramp	1	while mode runs	Left ramp shots made (max 3)
+0x0003b864	pm_cnt_l_inner_loop	1	while mode runs	Left inner loop shots made (max 5)
+0x0003b868	pm_cnt_r_inner_loop	1	while mode runs	Right inner loop shots made (max 3)
+0x0003b86c	pm_cnt_right_ramp	1	while mode runs	Right ramp shots made (max 3)
+0x0003b870	pm_cnt_right_orbit	1	while mode runs	Right orbit shots made (max 4)
+0x0003b874	pm_cnt_disc	1	while mode runs	Disc entry of the shot table (max 0, never counts)
+0x0003b878	pm_phase	4	while mode runs	0 = collect shots, 1 = super jackpot lit at disc, 2 = all shots 1,000,000
+0x021118b8	pm_starts_this_ball	1 x4	per player (reset at start of each player turn, event 0x26)	Portal multiballs started this ball, [player-1], saturates at 255; end-of-ball bonus adds 2,250,000 x this x bonus multiplier
+0x021118a0	pm_eject_lit	1 x4	per player (reset event 0x26)	Bit-8 entry of the eject-award table (FUN_0102e8c0); gates lamp 40 in the rule lamp updater; no setter found in this ROM
+0x021118a8	pm_unknown_game	4 x4	per game (cleared at game start, event 0x2e)	Cleared by FUN_0102f2a4; no other reference found
+0x02111690	items_table	4 x4 x9	per player	Shared with item/SoS features: word at 0x2111690+player*4+item*16; byte0 = item lit, byte1 = item collected. Portal is startable when byte1 != 0 for all 9 items; Portal start clears both bytes for all items

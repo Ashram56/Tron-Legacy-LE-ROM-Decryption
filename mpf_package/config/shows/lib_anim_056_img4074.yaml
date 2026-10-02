@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 56: images 4074-4105, 32 frames at 65 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_056_img4074:
+      action: play
+- time: 2090ms
+  slides:
+    lib_anim_056_img4074:
+      action: remove

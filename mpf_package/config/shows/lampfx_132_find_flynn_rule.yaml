@@ -1,0 +1,284 @@
+#show_version=6
+# ROM lamp effect 132 (leff table 0x040e23e4, function 0x100c748, priority 8). Captured in emulation.
+# Plays once. 
+# Started by: rule: while LAB_0100c734
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 1ms
+  flashers:
+    f_bottom_arch_left: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_right: 100ms
+- duration: 64ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 1ms
+  flashers:
+    f_bottom_arch_left: 100ms
+- duration: 64ms
+  flashers:
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 64ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 66ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 64ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 65ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms
+- duration: 665ms
+  flashers:
+    f_bottom_arch_left: 100ms
+    f_bottom_arch_right: 100ms

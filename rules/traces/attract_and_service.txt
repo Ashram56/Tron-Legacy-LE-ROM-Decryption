@@ -1,0 +1,8 @@
+# attract mode page cycle, no game started (factory settings)
+wait 75
+mark right_flipper_steps_forward
+button right
+wait 1
+mark left_flipper_steps_back
+button left
+wait 3

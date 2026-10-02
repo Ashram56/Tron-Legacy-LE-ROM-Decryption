@@ -1,0 +1,15 @@
+#show_version=6
+# deff_112_super_feature: SUPER POPS / SUPER SPINNERS / DOUBLE SCORING
+# ROM trigger: Sea of Simulation award (captured in emulated play). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_112_super_feature:
+      action: play
+- time: 1324ms
+  sounds:
+    call_104:
+      action: play
+- time: 4077ms
+  slides:
+    deff_112_super_feature:
+      action: remove

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 70: images 4487-4500, 14 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_070_img4487:
+      action: play
+- time: 686ms
+  slides:
+    lib_anim_070_img4487:
+      action: remove

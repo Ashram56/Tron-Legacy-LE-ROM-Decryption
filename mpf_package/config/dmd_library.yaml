@@ -1,0 +1,880 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Every full-size animation in the ROM as a 128x32 slide (87x32 animations sit at x=41, as the
+# ROM draws them). Frame time is the ROM's own (player ticks x 16.3 ms) where the code gives it.
+images:
+  lib_anim_000_img0177:
+    file: ../dmd_library/anim_000_img0177/animation_128x32.gif
+  lib_anim_001_img0208:
+    file: ../dmd_library/anim_001_img0208/animation_128x32.gif
+  lib_anim_002_img0210:
+    file: ../dmd_library/anim_002_img0210/animation_128x32.gif
+  lib_anim_003_img0212:
+    file: ../dmd_library/anim_003_img0212/animation_128x32.gif
+  lib_anim_004_img1439:
+    file: ../dmd_library/anim_004_img1439/animation_128x32.gif
+  lib_anim_005_img1440:
+    file: ../dmd_library/anim_005_img1440/animation_128x32.gif
+  lib_anim_006_img1531:
+    file: ../dmd_library/anim_006_img1531/animation_128x32.gif
+  lib_anim_007_img1764:
+    file: ../dmd_library/anim_007_img1764/animation_128x32.gif
+  lib_anim_008_img2034:
+    file: ../dmd_library/anim_008_img2034/animation_128x32.gif
+  lib_anim_009_img2097:
+    file: ../dmd_library/anim_009_img2097/animation_128x32.gif
+  lib_anim_010_img2623:
+    file: ../dmd_library/anim_010_img2623/animation_128x32.gif
+  lib_anim_011_img2653:
+    file: ../dmd_library/anim_011_img2653/animation_128x32.gif
+  lib_anim_012_img2683:
+    file: ../dmd_library/anim_012_img2683/animation_128x32.gif
+  lib_anim_013_img2713:
+    file: ../dmd_library/anim_013_img2713/animation_128x32.gif
+  lib_anim_014_img2743:
+    file: ../dmd_library/anim_014_img2743/animation_128x32.gif
+  lib_anim_015_img2747:
+    file: ../dmd_library/anim_015_img2747/animation_128x32.gif
+  lib_anim_016_img2762:
+    file: ../dmd_library/anim_016_img2762/animation_128x32.gif
+  lib_anim_017_img2766:
+    file: ../dmd_library/anim_017_img2766/animation_128x32.gif
+  lib_anim_018_img2770:
+    file: ../dmd_library/anim_018_img2770/animation_128x32.gif
+  lib_anim_019_img2774:
+    file: ../dmd_library/anim_019_img2774/animation_128x32.gif
+  lib_anim_020_img2780:
+    file: ../dmd_library/anim_020_img2780/animation_128x32.gif
+  lib_anim_021_img2786:
+    file: ../dmd_library/anim_021_img2786/animation_128x32.gif
+  lib_anim_022_img2787:
+    file: ../dmd_library/anim_022_img2787/animation_128x32.gif
+  lib_anim_023_img2798:
+    file: ../dmd_library/anim_023_img2798/animation_128x32.gif
+  lib_anim_024_img2844:
+    file: ../dmd_library/anim_024_img2844/animation_128x32.gif
+  lib_anim_025_img2957:
+    file: ../dmd_library/anim_025_img2957/animation_128x32.gif
+  lib_anim_026_img3008:
+    file: ../dmd_library/anim_026_img3008/animation_128x32.gif
+  lib_anim_027_img3089:
+    file: ../dmd_library/anim_027_img3089/animation_128x32.gif
+  lib_anim_028_img3110:
+    file: ../dmd_library/anim_028_img3110/animation_128x32.gif
+  lib_anim_029_img3124:
+    file: ../dmd_library/anim_029_img3124/animation_128x32.gif
+  lib_anim_030_img3161:
+    file: ../dmd_library/anim_030_img3161/animation_128x32.gif
+  lib_anim_031_img3205:
+    file: ../dmd_library/anim_031_img3205/animation_128x32.gif
+  lib_anim_032_img3223:
+    file: ../dmd_library/anim_032_img3223/animation_128x32.gif
+  lib_anim_033_img3244:
+    file: ../dmd_library/anim_033_img3244/animation_128x32.gif
+  lib_anim_034_img3272:
+    file: ../dmd_library/anim_034_img3272/animation_128x32.gif
+  lib_anim_035_img3319:
+    file: ../dmd_library/anim_035_img3319/animation_128x32.gif
+  lib_anim_036_img3345:
+    file: ../dmd_library/anim_036_img3345/animation_128x32.gif
+  lib_anim_037_img3364:
+    file: ../dmd_library/anim_037_img3364/animation_128x32.gif
+  lib_anim_038_img3385:
+    file: ../dmd_library/anim_038_img3385/animation_128x32.gif
+  lib_anim_039_img3428:
+    file: ../dmd_library/anim_039_img3428/animation_128x32.gif
+  lib_anim_040_img3462:
+    file: ../dmd_library/anim_040_img3462/animation_128x32.gif
+  lib_anim_041_img3479:
+    file: ../dmd_library/anim_041_img3479/animation_128x32.gif
+  lib_anim_042_img3522:
+    file: ../dmd_library/anim_042_img3522/animation_128x32.gif
+  lib_anim_043_img3573:
+    file: ../dmd_library/anim_043_img3573/animation_128x32.gif
+  lib_anim_044_img3603:
+    file: ../dmd_library/anim_044_img3603/animation_128x32.gif
+  lib_anim_045_img3623:
+    file: ../dmd_library/anim_045_img3623/animation_128x32.gif
+  lib_anim_046_img3647:
+    file: ../dmd_library/anim_046_img3647/animation_128x32.gif
+  lib_anim_047_img3711:
+    file: ../dmd_library/anim_047_img3711/animation_128x32.gif
+  lib_anim_048_img3771:
+    file: ../dmd_library/anim_048_img3771/animation_128x32.gif
+  lib_anim_049_img3815:
+    file: ../dmd_library/anim_049_img3815/animation_128x32.gif
+  lib_anim_050_img3903:
+    file: ../dmd_library/anim_050_img3903/animation_128x32.gif
+  lib_anim_051_img3941:
+    file: ../dmd_library/anim_051_img3941/animation_128x32.gif
+  lib_anim_052_img3944:
+    file: ../dmd_library/anim_052_img3944/animation_128x32.gif
+  lib_anim_053_img4007:
+    file: ../dmd_library/anim_053_img4007/animation_128x32.gif
+  lib_anim_054_img4034:
+    file: ../dmd_library/anim_054_img4034/animation_128x32.gif
+  lib_anim_055_img4050:
+    file: ../dmd_library/anim_055_img4050/animation_128x32.gif
+  lib_anim_056_img4074:
+    file: ../dmd_library/anim_056_img4074/animation_128x32.gif
+  lib_anim_057_img4106:
+    file: ../dmd_library/anim_057_img4106/animation_128x32.gif
+  lib_anim_058_img4164:
+    file: ../dmd_library/anim_058_img4164/animation_128x32.gif
+  lib_anim_059_img4176:
+    file: ../dmd_library/anim_059_img4176/animation_128x32.gif
+  lib_anim_060_img4182:
+    file: ../dmd_library/anim_060_img4182/animation_128x32.gif
+  lib_anim_061_img4230:
+    file: ../dmd_library/anim_061_img4230/animation_128x32.gif
+  lib_anim_062_img4244:
+    file: ../dmd_library/anim_062_img4244/animation_128x32.gif
+  lib_anim_063_img4295:
+    file: ../dmd_library/anim_063_img4295/animation_128x32.gif
+  lib_anim_064_img4307:
+    file: ../dmd_library/anim_064_img4307/animation_128x32.gif
+  lib_anim_065_img4342:
+    file: ../dmd_library/anim_065_img4342/animation_128x32.gif
+  lib_anim_066_img4361:
+    file: ../dmd_library/anim_066_img4361/animation_128x32.gif
+  lib_anim_067_img4390:
+    file: ../dmd_library/anim_067_img4390/animation_128x32.gif
+  lib_anim_068_img4430:
+    file: ../dmd_library/anim_068_img4430/animation_128x32.gif
+  lib_anim_069_img4466:
+    file: ../dmd_library/anim_069_img4466/animation_128x32.gif
+  lib_anim_070_img4487:
+    file: ../dmd_library/anim_070_img4487/animation_128x32.gif
+  lib_anim_071_img4501:
+    file: ../dmd_library/anim_071_img4501/animation_128x32.gif
+  lib_anim_072_img4542:
+    file: ../dmd_library/anim_072_img4542/animation_128x32.gif
+  lib_anim_073_img4572:
+    file: ../dmd_library/anim_073_img4572/animation_128x32.gif
+  lib_anim_074_img4629:
+    file: ../dmd_library/anim_074_img4629/animation_128x32.gif
+  lib_anim_075_img4640:
+    file: ../dmd_library/anim_075_img4640/animation_128x32.gif
+  lib_anim_076_img4669:
+    file: ../dmd_library/anim_076_img4669/animation_128x32.gif
+  lib_anim_077_img4692:
+    file: ../dmd_library/anim_077_img4692/animation_128x32.gif
+  lib_anim_078_img4708:
+    file: ../dmd_library/anim_078_img4708/animation_128x32.gif
+  lib_anim_079_img4742:
+    file: ../dmd_library/anim_079_img4742/animation_128x32.gif
+  lib_anim_080_img4753:
+    file: ../dmd_library/anim_080_img4753/animation_128x32.gif
+  lib_anim_081_img4790:
+    file: ../dmd_library/anim_081_img4790/animation_128x32.gif
+  lib_anim_082_img4822:
+    file: ../dmd_library/anim_082_img4822/animation_128x32.gif
+  lib_anim_083_img4884:
+    file: ../dmd_library/anim_083_img4884/animation_128x32.gif
+  lib_anim_084_img4916:
+    file: ../dmd_library/anim_084_img4916/animation_128x32.gif
+  lib_anim_085_img4981:
+    file: ../dmd_library/anim_085_img4981/animation_128x32.gif
+  lib_anim_086_img5010:
+    file: ../dmd_library/anim_086_img5010/animation_128x32.gif
+  lib_anim_087_img5041:
+    file: ../dmd_library/anim_087_img5041/animation_128x32.gif
+  lib_anim_088_img5054:
+    file: ../dmd_library/anim_088_img5054/animation_128x32.gif
+  lib_anim_089_img5065:
+    file: ../dmd_library/anim_089_img5065/animation_128x32.gif
+  lib_anim_090_img5102:
+    file: ../dmd_library/anim_090_img5102/animation_128x32.gif
+  lib_anim_091_img5135:
+    file: ../dmd_library/anim_091_img5135/animation_128x32.gif
+  lib_anim_092_img5202:
+    file: ../dmd_library/anim_092_img5202/animation_128x32.gif
+  lib_anim_093_img5472:
+    file: ../dmd_library/anim_093_img5472/animation_128x32.gif
+  lib_anim_094_img5489:
+    file: ../dmd_library/anim_094_img5489/animation_128x32.gif
+  lib_anim_095_img5524:
+    file: ../dmd_library/anim_095_img5524/animation_128x32.gif
+  lib_anim_096_img5569:
+    file: ../dmd_library/anim_096_img5569/animation_128x32.gif
+  lib_anim_097_img5609:
+    file: ../dmd_library/anim_097_img5609/animation_128x32.gif
+  lib_anim_098_img5626:
+    file: ../dmd_library/anim_098_img5626/animation_128x32.gif
+  lib_anim_099_img5670:
+    file: ../dmd_library/anim_099_img5670/animation_128x32.gif
+  lib_anim_100_img5686:
+    file: ../dmd_library/anim_100_img5686/animation_128x32.gif
+  lib_anim_101_img5851:
+    file: ../dmd_library/anim_101_img5851/animation_128x32.gif
+  lib_anim_102_img5972:
+    file: ../dmd_library/anim_102_img5972/animation_128x32.gif
+  lib_anim_103_img5989:
+    file: ../dmd_library/anim_103_img5989/animation_128x32.gif
+  lib_anim_104_img5998:
+    file: ../dmd_library/anim_104_img5998/animation_128x32.gif
+  lib_anim_105_img6006:
+    file: ../dmd_library/anim_105_img6006/animation_128x32.gif
+  lib_anim_106_img6011:
+    file: ../dmd_library/anim_106_img6011/animation_128x32.gif
+  lib_anim_107_img6018:
+    file: ../dmd_library/anim_107_img6018/animation_128x32.gif
+  lib_anim_108_img6229:
+    file: ../dmd_library/anim_108_img6229/animation_128x32.gif
+  lib_anim_109_img6351:
+    file: ../dmd_library/anim_109_img6351/animation_128x32.gif
+  lib_anim_110_img6355:
+    file: ../dmd_library/anim_110_img6355/animation_128x32.gif
+  lib_anim_111_img6369:
+    file: ../dmd_library/anim_111_img6369/animation_128x32.gif
+  lib_anim_112_img6383:
+    file: ../dmd_library/anim_112_img6383/animation_128x32.gif
+  lib_anim_113_img6443:
+    file: ../dmd_library/anim_113_img6443/animation_128x32.gif
+  lib_anim_114_img6449:
+    file: ../dmd_library/anim_114_img6449/animation_128x32.gif
+  lib_anim_115_img6512:
+    file: ../dmd_library/anim_115_img6512/animation_128x32.gif
+  lib_anim_116_img6677:
+    file: ../dmd_library/anim_116_img6677/animation_128x32.gif
+  lib_anim_117_img6732:
+    file: ../dmd_library/anim_117_img6732/animation_128x32.gif
+  lib_anim_118_img6761:
+    file: ../dmd_library/anim_118_img6761/animation_128x32.gif
+  lib_anim_119_img6798:
+    file: ../dmd_library/anim_119_img6798/animation_128x32.gif
+  lib_anim_120_img6841:
+    file: ../dmd_library/anim_120_img6841/animation_128x32.gif
+  lib_anim_121_img6897:
+    file: ../dmd_library/anim_121_img6897/animation_128x32.gif
+  lib_anim_122_img7009:
+    file: ../dmd_library/anim_122_img7009/animation_128x32.gif
+  lib_anim_123_img7065:
+    file: ../dmd_library/anim_123_img7065/animation_128x32.gif
+  lib_anim_124_img7113:
+    file: ../dmd_library/anim_124_img7113/animation_128x32.gif
+  lib_anim_125_img7159:
+    file: ../dmd_library/anim_125_img7159/animation_128x32.gif
+  lib_anim_126_img7195:
+    file: ../dmd_library/anim_126_img7195/animation_128x32.gif
+  lib_anim_127_img7263:
+    file: ../dmd_library/anim_127_img7263/animation_128x32.gif
+  lib_anim_128_img7314:
+    file: ../dmd_library/anim_128_img7314/animation_128x32.gif
+  lib_anim_129_img7381:
+    file: ../dmd_library/anim_129_img7381/animation_128x32.gif
+  lib_anim_130_img7471:
+    file: ../dmd_library/anim_130_img7471/animation_128x32.gif
+  lib_anim_131_img7510:
+    file: ../dmd_library/anim_131_img7510/animation_128x32.gif
+  lib_anim_132_img7546:
+    file: ../dmd_library/anim_132_img7546/animation_128x32.gif
+  lib_anim_133_img7562:
+    file: ../dmd_library/anim_133_img7562/animation_128x32.gif
+  lib_anim_134_img7670:
+    file: ../dmd_library/anim_134_img7670/animation_128x32.gif
+  lib_anim_135_img7709:
+    file: ../dmd_library/anim_135_img7709/animation_128x32.gif
+  lib_anim_136_img7750:
+    file: ../dmd_library/anim_136_img7750/animation_128x32.gif
+  lib_anim_137_img7813:
+    file: ../dmd_library/anim_137_img7813/animation_128x32.gif
+  lib_anim_138_img7838:
+    file: ../dmd_library/anim_138_img7838/animation_128x32.gif
+  lib_anim_139_img7889:
+    file: ../dmd_library/anim_139_img7889/animation_128x32.gif
+  lib_anim_140_img7911:
+    file: ../dmd_library/anim_140_img7911/animation_128x32.gif
+  lib_anim_141_img7977:
+    file: ../dmd_library/anim_141_img7977/animation_128x32.gif
+  lib_anim_142_img8110:
+    file: ../dmd_library/anim_142_img8110/animation_128x32.gif
+  lib_anim_143_img8131:
+    file: ../dmd_library/anim_143_img8131/animation_128x32.gif
+  lib_anim_144_img8151:
+    file: ../dmd_library/anim_144_img8151/animation_128x32.gif
+
+slides:
+  lib_anim_000_img0177:
+    - type: image
+      image: lib_anim_000_img0177
+  lib_anim_001_img0208:
+    - type: image
+      image: lib_anim_001_img0208
+  lib_anim_002_img0210:
+    - type: image
+      image: lib_anim_002_img0210
+  lib_anim_003_img0212:
+    - type: image
+      image: lib_anim_003_img0212
+  lib_anim_004_img1439:
+    - type: image
+      image: lib_anim_004_img1439
+  lib_anim_005_img1440:
+    - type: image
+      image: lib_anim_005_img1440
+  lib_anim_006_img1531:
+    - type: image
+      image: lib_anim_006_img1531
+  lib_anim_007_img1764:
+    - type: image
+      image: lib_anim_007_img1764
+  lib_anim_008_img2034:
+    - type: image
+      image: lib_anim_008_img2034
+  lib_anim_009_img2097:
+    - type: image
+      image: lib_anim_009_img2097
+  lib_anim_010_img2623:
+    - type: image
+      image: lib_anim_010_img2623
+  lib_anim_011_img2653:
+    - type: image
+      image: lib_anim_011_img2653
+  lib_anim_012_img2683:
+    - type: image
+      image: lib_anim_012_img2683
+  lib_anim_013_img2713:
+    - type: image
+      image: lib_anim_013_img2713
+  lib_anim_014_img2743:
+    - type: image
+      image: lib_anim_014_img2743
+  lib_anim_015_img2747:
+    - type: image
+      image: lib_anim_015_img2747
+  lib_anim_016_img2762:
+    - type: image
+      image: lib_anim_016_img2762
+  lib_anim_017_img2766:
+    - type: image
+      image: lib_anim_017_img2766
+  lib_anim_018_img2770:
+    - type: image
+      image: lib_anim_018_img2770
+  lib_anim_019_img2774:
+    - type: image
+      image: lib_anim_019_img2774
+  lib_anim_020_img2780:
+    - type: image
+      image: lib_anim_020_img2780
+  lib_anim_021_img2786:
+    - type: image
+      image: lib_anim_021_img2786
+  lib_anim_022_img2787:
+    - type: image
+      image: lib_anim_022_img2787
+  lib_anim_023_img2798:
+    - type: image
+      image: lib_anim_023_img2798
+  lib_anim_024_img2844:
+    - type: image
+      image: lib_anim_024_img2844
+  lib_anim_025_img2957:
+    - type: image
+      image: lib_anim_025_img2957
+  lib_anim_026_img3008:
+    - type: image
+      image: lib_anim_026_img3008
+  lib_anim_027_img3089:
+    - type: image
+      image: lib_anim_027_img3089
+  lib_anim_028_img3110:
+    - type: image
+      image: lib_anim_028_img3110
+  lib_anim_029_img3124:
+    - type: image
+      image: lib_anim_029_img3124
+  lib_anim_030_img3161:
+    - type: image
+      image: lib_anim_030_img3161
+  lib_anim_031_img3205:
+    - type: image
+      image: lib_anim_031_img3205
+  lib_anim_032_img3223:
+    - type: image
+      image: lib_anim_032_img3223
+  lib_anim_033_img3244:
+    - type: image
+      image: lib_anim_033_img3244
+  lib_anim_034_img3272:
+    - type: image
+      image: lib_anim_034_img3272
+  lib_anim_035_img3319:
+    - type: image
+      image: lib_anim_035_img3319
+  lib_anim_036_img3345:
+    - type: image
+      image: lib_anim_036_img3345
+  lib_anim_037_img3364:
+    - type: image
+      image: lib_anim_037_img3364
+  lib_anim_038_img3385:
+    - type: image
+      image: lib_anim_038_img3385
+  lib_anim_039_img3428:
+    - type: image
+      image: lib_anim_039_img3428
+  lib_anim_040_img3462:
+    - type: image
+      image: lib_anim_040_img3462
+  lib_anim_041_img3479:
+    - type: image
+      image: lib_anim_041_img3479
+  lib_anim_042_img3522:
+    - type: image
+      image: lib_anim_042_img3522
+  lib_anim_043_img3573:
+    - type: image
+      image: lib_anim_043_img3573
+  lib_anim_044_img3603:
+    - type: image
+      image: lib_anim_044_img3603
+  lib_anim_045_img3623:
+    - type: image
+      image: lib_anim_045_img3623
+  lib_anim_046_img3647:
+    - type: image
+      image: lib_anim_046_img3647
+  lib_anim_047_img3711:
+    - type: image
+      image: lib_anim_047_img3711
+  lib_anim_048_img3771:
+    - type: image
+      image: lib_anim_048_img3771
+  lib_anim_049_img3815:
+    - type: image
+      image: lib_anim_049_img3815
+  lib_anim_050_img3903:
+    - type: image
+      image: lib_anim_050_img3903
+  lib_anim_051_img3941:
+    - type: image
+      image: lib_anim_051_img3941
+  lib_anim_052_img3944:
+    - type: image
+      image: lib_anim_052_img3944
+  lib_anim_053_img4007:
+    - type: image
+      image: lib_anim_053_img4007
+  lib_anim_054_img4034:
+    - type: image
+      image: lib_anim_054_img4034
+  lib_anim_055_img4050:
+    - type: image
+      image: lib_anim_055_img4050
+  lib_anim_056_img4074:
+    - type: image
+      image: lib_anim_056_img4074
+  lib_anim_057_img4106:
+    - type: image
+      image: lib_anim_057_img4106
+  lib_anim_058_img4164:
+    - type: image
+      image: lib_anim_058_img4164
+  lib_anim_059_img4176:
+    - type: image
+      image: lib_anim_059_img4176
+  lib_anim_060_img4182:
+    - type: image
+      image: lib_anim_060_img4182
+  lib_anim_061_img4230:
+    - type: image
+      image: lib_anim_061_img4230
+  lib_anim_062_img4244:
+    - type: image
+      image: lib_anim_062_img4244
+  lib_anim_063_img4295:
+    - type: image
+      image: lib_anim_063_img4295
+  lib_anim_064_img4307:
+    - type: image
+      image: lib_anim_064_img4307
+  lib_anim_065_img4342:
+    - type: image
+      image: lib_anim_065_img4342
+  lib_anim_066_img4361:
+    - type: image
+      image: lib_anim_066_img4361
+  lib_anim_067_img4390:
+    - type: image
+      image: lib_anim_067_img4390
+  lib_anim_068_img4430:
+    - type: image
+      image: lib_anim_068_img4430
+  lib_anim_069_img4466:
+    - type: image
+      image: lib_anim_069_img4466
+  lib_anim_070_img4487:
+    - type: image
+      image: lib_anim_070_img4487
+  lib_anim_071_img4501:
+    - type: image
+      image: lib_anim_071_img4501
+  lib_anim_072_img4542:
+    - type: image
+      image: lib_anim_072_img4542
+  lib_anim_073_img4572:
+    - type: image
+      image: lib_anim_073_img4572
+  lib_anim_074_img4629:
+    - type: image
+      image: lib_anim_074_img4629
+  lib_anim_075_img4640:
+    - type: image
+      image: lib_anim_075_img4640
+  lib_anim_076_img4669:
+    - type: image
+      image: lib_anim_076_img4669
+  lib_anim_077_img4692:
+    - type: image
+      image: lib_anim_077_img4692
+  lib_anim_078_img4708:
+    - type: image
+      image: lib_anim_078_img4708
+  lib_anim_079_img4742:
+    - type: image
+      image: lib_anim_079_img4742
+  lib_anim_080_img4753:
+    - type: image
+      image: lib_anim_080_img4753
+  lib_anim_081_img4790:
+    - type: image
+      image: lib_anim_081_img4790
+  lib_anim_082_img4822:
+    - type: image
+      image: lib_anim_082_img4822
+  lib_anim_083_img4884:
+    - type: image
+      image: lib_anim_083_img4884
+  lib_anim_084_img4916:
+    - type: image
+      image: lib_anim_084_img4916
+  lib_anim_085_img4981:
+    - type: image
+      image: lib_anim_085_img4981
+  lib_anim_086_img5010:
+    - type: image
+      image: lib_anim_086_img5010
+  lib_anim_087_img5041:
+    - type: image
+      image: lib_anim_087_img5041
+  lib_anim_088_img5054:
+    - type: image
+      image: lib_anim_088_img5054
+  lib_anim_089_img5065:
+    - type: image
+      image: lib_anim_089_img5065
+  lib_anim_090_img5102:
+    - type: image
+      image: lib_anim_090_img5102
+  lib_anim_091_img5135:
+    - type: image
+      image: lib_anim_091_img5135
+  lib_anim_092_img5202:
+    - type: image
+      image: lib_anim_092_img5202
+  lib_anim_093_img5472:
+    - type: image
+      image: lib_anim_093_img5472
+  lib_anim_094_img5489:
+    - type: image
+      image: lib_anim_094_img5489
+  lib_anim_095_img5524:
+    - type: image
+      image: lib_anim_095_img5524
+  lib_anim_096_img5569:
+    - type: image
+      image: lib_anim_096_img5569
+  lib_anim_097_img5609:
+    - type: image
+      image: lib_anim_097_img5609
+  lib_anim_098_img5626:
+    - type: image
+      image: lib_anim_098_img5626
+  lib_anim_099_img5670:
+    - type: image
+      image: lib_anim_099_img5670
+  lib_anim_100_img5686:
+    - type: image
+      image: lib_anim_100_img5686
+  lib_anim_101_img5851:
+    - type: image
+      image: lib_anim_101_img5851
+  lib_anim_102_img5972:
+    - type: image
+      image: lib_anim_102_img5972
+  lib_anim_103_img5989:
+    - type: image
+      image: lib_anim_103_img5989
+  lib_anim_104_img5998:
+    - type: image
+      image: lib_anim_104_img5998
+  lib_anim_105_img6006:
+    - type: image
+      image: lib_anim_105_img6006
+  lib_anim_106_img6011:
+    - type: image
+      image: lib_anim_106_img6011
+  lib_anim_107_img6018:
+    - type: image
+      image: lib_anim_107_img6018
+  lib_anim_108_img6229:
+    - type: image
+      image: lib_anim_108_img6229
+  lib_anim_109_img6351:
+    - type: image
+      image: lib_anim_109_img6351
+  lib_anim_110_img6355:
+    - type: image
+      image: lib_anim_110_img6355
+  lib_anim_111_img6369:
+    - type: image
+      image: lib_anim_111_img6369
+  lib_anim_112_img6383:
+    - type: image
+      image: lib_anim_112_img6383
+  lib_anim_113_img6443:
+    - type: image
+      image: lib_anim_113_img6443
+  lib_anim_114_img6449:
+    - type: image
+      image: lib_anim_114_img6449
+  lib_anim_115_img6512:
+    - type: image
+      image: lib_anim_115_img6512
+  lib_anim_116_img6677:
+    - type: image
+      image: lib_anim_116_img6677
+  lib_anim_117_img6732:
+    - type: image
+      image: lib_anim_117_img6732
+  lib_anim_118_img6761:
+    - type: image
+      image: lib_anim_118_img6761
+  lib_anim_119_img6798:
+    - type: image
+      image: lib_anim_119_img6798
+  lib_anim_120_img6841:
+    - type: image
+      image: lib_anim_120_img6841
+  lib_anim_121_img6897:
+    - type: image
+      image: lib_anim_121_img6897
+  lib_anim_122_img7009:
+    - type: image
+      image: lib_anim_122_img7009
+  lib_anim_123_img7065:
+    - type: image
+      image: lib_anim_123_img7065
+  lib_anim_124_img7113:
+    - type: image
+      image: lib_anim_124_img7113
+  lib_anim_125_img7159:
+    - type: image
+      image: lib_anim_125_img7159
+  lib_anim_126_img7195:
+    - type: image
+      image: lib_anim_126_img7195
+  lib_anim_127_img7263:
+    - type: image
+      image: lib_anim_127_img7263
+  lib_anim_128_img7314:
+    - type: image
+      image: lib_anim_128_img7314
+  lib_anim_129_img7381:
+    - type: image
+      image: lib_anim_129_img7381
+  lib_anim_130_img7471:
+    - type: image
+      image: lib_anim_130_img7471
+  lib_anim_131_img7510:
+    - type: image
+      image: lib_anim_131_img7510
+  lib_anim_132_img7546:
+    - type: image
+      image: lib_anim_132_img7546
+  lib_anim_133_img7562:
+    - type: image
+      image: lib_anim_133_img7562
+  lib_anim_134_img7670:
+    - type: image
+      image: lib_anim_134_img7670
+  lib_anim_135_img7709:
+    - type: image
+      image: lib_anim_135_img7709
+  lib_anim_136_img7750:
+    - type: image
+      image: lib_anim_136_img7750
+  lib_anim_137_img7813:
+    - type: image
+      image: lib_anim_137_img7813
+  lib_anim_138_img7838:
+    - type: image
+      image: lib_anim_138_img7838
+  lib_anim_139_img7889:
+    - type: image
+      image: lib_anim_139_img7889
+  lib_anim_140_img7911:
+    - type: image
+      image: lib_anim_140_img7911
+  lib_anim_141_img7977:
+    - type: image
+      image: lib_anim_141_img7977
+  lib_anim_142_img8110:
+    - type: image
+      image: lib_anim_142_img8110
+  lib_anim_143_img8131:
+    - type: image
+      image: lib_anim_143_img8131
+  lib_anim_144_img8151:
+    - type: image
+      image: lib_anim_144_img8151
+
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# One event per library animation, so any of them can be played on its own.
+show_player:
+  tron_lib_anim_000: lib_anim_000_img0177
+  tron_lib_anim_001: lib_anim_001_img0208
+  tron_lib_anim_002: lib_anim_002_img0210
+  tron_lib_anim_003: lib_anim_003_img0212
+  tron_lib_anim_004: lib_anim_004_img1439
+  tron_lib_anim_005: lib_anim_005_img1440
+  tron_lib_anim_006: lib_anim_006_img1531
+  tron_lib_anim_007: lib_anim_007_img1764
+  tron_lib_anim_008: lib_anim_008_img2034
+  tron_lib_anim_009: lib_anim_009_img2097
+  tron_lib_anim_010: lib_anim_010_img2623
+  tron_lib_anim_011: lib_anim_011_img2653
+  tron_lib_anim_012: lib_anim_012_img2683
+  tron_lib_anim_013: lib_anim_013_img2713
+  tron_lib_anim_014: lib_anim_014_img2743
+  tron_lib_anim_015: lib_anim_015_img2747
+  tron_lib_anim_016: lib_anim_016_img2762
+  tron_lib_anim_017: lib_anim_017_img2766
+  tron_lib_anim_018: lib_anim_018_img2770
+  tron_lib_anim_019: lib_anim_019_img2774
+  tron_lib_anim_020: lib_anim_020_img2780
+  tron_lib_anim_021: lib_anim_021_img2786
+  tron_lib_anim_022: lib_anim_022_img2787
+  tron_lib_anim_023: lib_anim_023_img2798
+  tron_lib_anim_024: lib_anim_024_img2844
+  tron_lib_anim_025: lib_anim_025_img2957
+  tron_lib_anim_026: lib_anim_026_img3008
+  tron_lib_anim_027: lib_anim_027_img3089
+  tron_lib_anim_028: lib_anim_028_img3110
+  tron_lib_anim_029: lib_anim_029_img3124
+  tron_lib_anim_030: lib_anim_030_img3161
+  tron_lib_anim_031: lib_anim_031_img3205
+  tron_lib_anim_032: lib_anim_032_img3223
+  tron_lib_anim_033: lib_anim_033_img3244
+  tron_lib_anim_034: lib_anim_034_img3272
+  tron_lib_anim_035: lib_anim_035_img3319
+  tron_lib_anim_036: lib_anim_036_img3345
+  tron_lib_anim_037: lib_anim_037_img3364
+  tron_lib_anim_038: lib_anim_038_img3385
+  tron_lib_anim_039: lib_anim_039_img3428
+  tron_lib_anim_040: lib_anim_040_img3462
+  tron_lib_anim_041: lib_anim_041_img3479
+  tron_lib_anim_042: lib_anim_042_img3522
+  tron_lib_anim_043: lib_anim_043_img3573
+  tron_lib_anim_044: lib_anim_044_img3603
+  tron_lib_anim_045: lib_anim_045_img3623
+  tron_lib_anim_046: lib_anim_046_img3647
+  tron_lib_anim_047: lib_anim_047_img3711
+  tron_lib_anim_048: lib_anim_048_img3771
+  tron_lib_anim_049: lib_anim_049_img3815
+  tron_lib_anim_050: lib_anim_050_img3903
+  tron_lib_anim_051: lib_anim_051_img3941
+  tron_lib_anim_052: lib_anim_052_img3944
+  tron_lib_anim_053: lib_anim_053_img4007
+  tron_lib_anim_054: lib_anim_054_img4034
+  tron_lib_anim_055: lib_anim_055_img4050
+  tron_lib_anim_056: lib_anim_056_img4074
+  tron_lib_anim_057: lib_anim_057_img4106
+  tron_lib_anim_058: lib_anim_058_img4164
+  tron_lib_anim_059: lib_anim_059_img4176
+  tron_lib_anim_060: lib_anim_060_img4182
+  tron_lib_anim_061: lib_anim_061_img4230
+  tron_lib_anim_062: lib_anim_062_img4244
+  tron_lib_anim_063: lib_anim_063_img4295
+  tron_lib_anim_064: lib_anim_064_img4307
+  tron_lib_anim_065: lib_anim_065_img4342
+  tron_lib_anim_066: lib_anim_066_img4361
+  tron_lib_anim_067: lib_anim_067_img4390
+  tron_lib_anim_068: lib_anim_068_img4430
+  tron_lib_anim_069: lib_anim_069_img4466
+  tron_lib_anim_070: lib_anim_070_img4487
+  tron_lib_anim_071: lib_anim_071_img4501
+  tron_lib_anim_072: lib_anim_072_img4542
+  tron_lib_anim_073: lib_anim_073_img4572
+  tron_lib_anim_074: lib_anim_074_img4629
+  tron_lib_anim_075: lib_anim_075_img4640
+  tron_lib_anim_076: lib_anim_076_img4669
+  tron_lib_anim_077: lib_anim_077_img4692
+  tron_lib_anim_078: lib_anim_078_img4708
+  tron_lib_anim_079: lib_anim_079_img4742
+  tron_lib_anim_080: lib_anim_080_img4753
+  tron_lib_anim_081: lib_anim_081_img4790
+  tron_lib_anim_082: lib_anim_082_img4822
+  tron_lib_anim_083: lib_anim_083_img4884
+  tron_lib_anim_084: lib_anim_084_img4916
+  tron_lib_anim_085: lib_anim_085_img4981
+  tron_lib_anim_086: lib_anim_086_img5010
+  tron_lib_anim_087: lib_anim_087_img5041
+  tron_lib_anim_088: lib_anim_088_img5054
+  tron_lib_anim_089: lib_anim_089_img5065
+  tron_lib_anim_090: lib_anim_090_img5102
+  tron_lib_anim_091: lib_anim_091_img5135
+  tron_lib_anim_092: lib_anim_092_img5202
+  tron_lib_anim_093: lib_anim_093_img5472
+  tron_lib_anim_094: lib_anim_094_img5489
+  tron_lib_anim_095: lib_anim_095_img5524
+  tron_lib_anim_096: lib_anim_096_img5569
+  tron_lib_anim_097: lib_anim_097_img5609
+  tron_lib_anim_098: lib_anim_098_img5626
+  tron_lib_anim_099: lib_anim_099_img5670
+  tron_lib_anim_100: lib_anim_100_img5686
+  tron_lib_anim_101: lib_anim_101_img5851
+  tron_lib_anim_102: lib_anim_102_img5972
+  tron_lib_anim_103: lib_anim_103_img5989
+  tron_lib_anim_104: lib_anim_104_img5998
+  tron_lib_anim_105: lib_anim_105_img6006
+  tron_lib_anim_106: lib_anim_106_img6011
+  tron_lib_anim_107: lib_anim_107_img6018
+  tron_lib_anim_108: lib_anim_108_img6229
+  tron_lib_anim_109: lib_anim_109_img6351
+  tron_lib_anim_110: lib_anim_110_img6355
+  tron_lib_anim_111: lib_anim_111_img6369
+  tron_lib_anim_112: lib_anim_112_img6383
+  tron_lib_anim_113: lib_anim_113_img6443
+  tron_lib_anim_114: lib_anim_114_img6449
+  tron_lib_anim_115: lib_anim_115_img6512
+  tron_lib_anim_116: lib_anim_116_img6677
+  tron_lib_anim_117: lib_anim_117_img6732
+  tron_lib_anim_118: lib_anim_118_img6761
+  tron_lib_anim_119: lib_anim_119_img6798
+  tron_lib_anim_120: lib_anim_120_img6841
+  tron_lib_anim_121: lib_anim_121_img6897
+  tron_lib_anim_122: lib_anim_122_img7009
+  tron_lib_anim_123: lib_anim_123_img7065
+  tron_lib_anim_124: lib_anim_124_img7113
+  tron_lib_anim_125: lib_anim_125_img7159
+  tron_lib_anim_126: lib_anim_126_img7195
+  tron_lib_anim_127: lib_anim_127_img7263
+  tron_lib_anim_128: lib_anim_128_img7314
+  tron_lib_anim_129: lib_anim_129_img7381
+  tron_lib_anim_130: lib_anim_130_img7471
+  tron_lib_anim_131: lib_anim_131_img7510
+  tron_lib_anim_132: lib_anim_132_img7546
+  tron_lib_anim_133: lib_anim_133_img7562
+  tron_lib_anim_134: lib_anim_134_img7670
+  tron_lib_anim_135: lib_anim_135_img7709
+  tron_lib_anim_136: lib_anim_136_img7750
+  tron_lib_anim_137: lib_anim_137_img7813
+  tron_lib_anim_138: lib_anim_138_img7838
+  tron_lib_anim_139: lib_anim_139_img7889
+  tron_lib_anim_140: lib_anim_140_img7911
+  tron_lib_anim_141: lib_anim_141_img7977
+  tron_lib_anim_142: lib_anim_142_img8110
+  tron_lib_anim_143: lib_anim_143_img8131
+  tron_lib_anim_144: lib_anim_144_img8151

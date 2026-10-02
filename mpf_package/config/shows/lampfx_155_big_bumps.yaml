@@ -1,0 +1,7 @@
+#show_version=6
+# ROM lamp effect 155 (leff table 0x040e23e4, function 0x101cb28, priority 194). Captured in emulation.
+# Plays once. 
+# Started by: effect 135 (deff_135_big_bumps)
+- duration: 64ms
+  flashers:
+    f_recognizer: 32ms

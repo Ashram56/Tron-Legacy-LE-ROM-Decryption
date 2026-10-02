@@ -1,0 +1,26 @@
+#show_version=6
+# deff_073_clu_award: CLU hurry-up award value
+# ROM trigger: CLU hurry-up shot made. Timing from emulation.
+# Lamp effect: lampfx_079_clu_award at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_073_clu_award:
+      action: play
+  shows:
+    leff_024:
+      action: play
+      loops: 0
+    lampfx_079_clu_award:
+      action: play
+      loops: 0
+  sounds:
+    call_089:
+      action: play
+- time: 636ms
+  sounds:
+    call_08a:
+      action: play
+- time: 2333ms
+  slides:
+    deff_073_clu_award:
+      action: remove

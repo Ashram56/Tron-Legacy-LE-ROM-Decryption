@@ -1,0 +1,8 @@
+#show_version=6
+# ROM lamp effect 100 (leff table 0x040e23e4, function 0x1015ce8, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: recog_target_hit
+- duration: 146ms
+  lights:
+    (lamp): ffffff

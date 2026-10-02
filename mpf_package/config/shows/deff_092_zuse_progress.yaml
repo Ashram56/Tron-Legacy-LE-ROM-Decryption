@@ -1,0 +1,15 @@
+#show_version=6
+# deff_092_zuse_progress: n MORE FOR FASTSCORING
+# ROM trigger: ZUSE targets. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_092_zuse_progress:
+      action: play
+  shows:
+    leff_027:
+      action: play
+      loops: 0
+- time: 2035ms
+  slides:
+    deff_092_zuse_progress:
+      action: remove

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 71: images 4501-4541, 41 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_071_img4501:
+      action: play
+- time: 2009ms
+  slides:
+    lib_anim_071_img4501:
+      action: remove

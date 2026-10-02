@@ -1,0 +1,18 @@
+#show_version=6
+# deff_075_gem_progress: n MORE TO START FOLLOW GEM
+# ROM trigger: right inner loop (sw39). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_075_gem_progress:
+      action: play
+  shows:
+    leff_016:
+      action: play
+      loops: 0
+  sounds:
+    call_08e:
+      action: play
+- time: 2185ms
+  slides:
+    deff_075_gem_progress:
+      action: remove

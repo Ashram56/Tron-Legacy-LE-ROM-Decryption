@@ -1,0 +1,298 @@
+#show_version=6
+# ROM lamp effect 170 (leff table 0x040e23e4, function 0x1030bec, priority 194). Captured in emulation.
+# Plays once. 
+# Started by: effect 144 (deff_144_portal_jackpot)
+- duration: 81ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 82ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 82ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 80ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 82ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_right_ramp: 48ms
+- duration: 81ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 163ms
+  flashers:
+    f_left_ramp: 48ms
+- duration: 114ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 1ms
+  flashers:
+    f_disc_left: 64ms
+- duration: 112ms
+  flashers:
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 112ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 115ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 114ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 112ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 112ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 114ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 115ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 114ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 114ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 115ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 114ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 115ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 114ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 114ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 113ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms
+- duration: 115ms
+  flashers:
+    f_backpanel: 64ms
+    f_recognizer: 64ms
+- duration: 113ms
+  flashers:
+    f_blue_disc: 64ms
+    f_red_disc: 64ms
+- duration: 114ms
+  flashers:
+    f_video_game: 64ms
+    f_zen_flasher: 64ms
+- duration: 113ms
+  flashers:
+    f_bottom_arch_left: 64ms
+    f_left_ramp: 64ms
+- duration: 114ms
+  flashers:
+    f_bottom_arch_right: 64ms
+    f_right_ramp: 64ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 64ms
+    f_disc_right: 64ms

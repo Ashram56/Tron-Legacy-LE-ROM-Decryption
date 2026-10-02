@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 63: images 4295-4306, 12 frames at 65 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_063_img4295:
+      action: play
+- time: 784ms
+  slides:
+    lib_anim_063_img4295:
+      action: remove

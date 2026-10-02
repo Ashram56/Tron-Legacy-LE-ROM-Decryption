@@ -1,0 +1,11 @@
+#show_version=6
+# deff_035_tournament_qualified: PLAYER n YOU QUALIFIED!
+# ROM trigger: tournament end. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_035_tournament_qualified:
+      action: play
+- time: 1840ms
+  slides:
+    deff_035_tournament_qualified:
+      action: remove

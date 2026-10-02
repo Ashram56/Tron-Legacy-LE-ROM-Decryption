@@ -1,0 +1,35 @@
+#show_version=6
+# ROM lamp effect 141 (leff table 0x040e23e4, function 0x102792c, priority 209). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: sos_stage2_clu_shot
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 49ms
+  lights:
+    (lamp): '000000'

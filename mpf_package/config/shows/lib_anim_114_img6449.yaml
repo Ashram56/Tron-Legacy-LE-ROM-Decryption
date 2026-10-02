@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 114: images 6449-6511, 63 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_114_img6449:
+      action: play
+- time: 3086ms
+  slides:
+    lib_anim_114_img6449:
+      action: remove

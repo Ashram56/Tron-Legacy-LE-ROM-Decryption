@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 110: images 6355-6368, 14 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_110_img6355:
+      action: play
+- time: 686ms
+  slides:
+    lib_anim_110_img6355:
+      action: remove

@@ -1,0 +1,22 @@
+#show_version=6
+# deff_078_gem_award: FOLLOW GEM n FOLLOWINGS
+# ROM trigger: Follow Gem shot made (right inner loop sw39). Timing from emulation.
+# Lamp effect: lampfx_084_gem_award at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_078_gem_award:
+      action: play
+  shows:
+    leff_019:
+      action: play
+      loops: 0
+    lampfx_084_gem_award:
+      action: play
+      loops: 0
+  sounds:
+    call_092:
+      action: play
+- time: 2519ms
+  slides:
+    deff_078_gem_award:
+      action: remove

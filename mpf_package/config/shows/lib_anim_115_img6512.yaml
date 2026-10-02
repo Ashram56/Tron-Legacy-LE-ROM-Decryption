@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 115: images 6512-6676, 165 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_115_img6512:
+      action: play
+- time: 8083ms
+  slides:
+    lib_anim_115_img6512:
+      action: remove

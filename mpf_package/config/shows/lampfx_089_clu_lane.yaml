@@ -1,0 +1,35 @@
+#show_version=6
+# ROM lamp effect 89 (leff table 0x040e23e4, function 0x1017628, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: FUN_01016f14
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 32ms
+  lights:
+    (lamp): '000000'
+- duration: 33ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 48ms
+  lights:
+    (lamp): '000000'

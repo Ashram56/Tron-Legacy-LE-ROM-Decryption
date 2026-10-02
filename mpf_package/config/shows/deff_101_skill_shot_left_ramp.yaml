@@ -1,0 +1,8 @@
+#show_version=6
+# deff_101_skill_shot_left_ramp: SKILL SHOT (left ramp)
+# ROM trigger: skill shot via left ramp exit sw37. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_046:
+      action: play
+- time: 1207ms

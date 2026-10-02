@@ -1,0 +1,58 @@
+# Run with tron_ref patched to poll PinmameGetChangedSolenoids() in sim_step() (the shared binary never sees coils, so no balls move).
+# NOTE: run with a tron_ref that polls PinmameGetSolenoid() each step (the shipped tron_ref gets no coil
+# callbacks for coils 1-32 in this build, so the trough never ejects and "drain" is ignored).
+# Watch file: see the matching .tsv lines at the bottom of this comment block.
+# watch: lc_a_cur 3b280 4
+# watch: lc_a_lvl 3b28c 1
+# watch: lc_a_prev 3b284 4
+# watch: lc_a_prevlvl 3b290 1
+# watch: lc_b_cur 3b294 4
+# watch: lc_b_lvl 3b2a0 1
+# watch: lc_b_prev 3b298 4
+# watch: lc_c_cur 3b2a8 4
+# watch: lc_collected 2111754 1
+# watch: lc_color_idx 211176c 2
+# watch: lc_lit 211189c 1
+# watch: lc_remaining 2111744 1
+# watch: lc_starts 2111764 1
+# watch: lc_super_count 2111768 1
+# watch: lc_super_pts 3b2bc 1
+# watch: lc_total 3b2c0 4
+# watch: q_aab_count 3b364 1
+# watch: q_aab_hits 3b360 1
+# watch: q_double_armed 3b36c 1
+# watch: q_double_secs 3b37c 1
+# watch: q_jackpot 3b374 4
+# watch: q_lit 2111898 1
+# watch: q_progress 21117ac 1
+# watch: q_starts 21117b0 1
+# watch: q_super 3b378 4
+# watch: q_supers 3b370 1
+# watch: q_supers_pp 21117b4 1
+# watch: q_total 3b380 4
+# Repeat Light Cycle needs 6 shots (poke start count), then LC and Quorra both lit (poke) and started by one VUK entry
+start 1
+wait 4
+mark poke_lc_starts_1
+poke 2111764 1 1
+hit 37
+wait 2
+hit 34
+wait 2
+hit 43
+wait 3
+hit 46
+wait 3
+hit 44
+wait 2
+hit 39
+wait 4
+mark poke_quorra_lit
+poke 2111898 1 1
+wait 1
+hit 11
+wait 14
+hit 37
+wait 2
+hit 44
+wait 3

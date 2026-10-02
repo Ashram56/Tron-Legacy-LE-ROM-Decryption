@@ -1,0 +1,109 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Post the event to play the effect: its animation, sounds and ramp tube light show together.
+# Each show is in config/shows/<name>.yaml. Event names are suggestions; see event_map.csv
+# for what triggers each one in the original ROM.
+show_player:
+  tron_volume: deff_002_volume
+  tron_technician_alert: deff_003_technician_alert
+  tron_coil_power_disabled: deff_004_coil_power_disabled
+  tron_bump_n_win: deff_018_bump_n_win
+  tron_bonus: deff_025_bonus
+  tron_shoot_again: deff_026_shoot_again
+  tron_tickets: deff_030_tickets
+  tron_high_score_value: deff_032_high_score_value
+  tron_tournament_qualified: deff_035_tournament_qualified
+  tron_tournament_place: deff_036_tournament_place
+  tron_tournament_rank: deff_037_tournament_rank
+  tron_match: deff_038_match
+  tron_disc_multiball_intro: deff_046_disc_multiball_intro
+  tron_disc_multiball_running: deff_047_disc_multiball_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_disc_multiball_jackpot_as_captured: deff_048_disc_multiball_jackpot
+  tron_disc_multiball_jackpot_2_as_captured: deff_049_disc_multiball_jackpot_2
+  tron_disc_multiball_super_jackpot: deff_050_disc_multiball_super_jackpot
+  tron_disc_multiball_total: deff_051_disc_multiball_total
+  tron_disc_multiball_restart: deff_052_disc_multiball_restart
+  tron_disc_multiball_restart_running: deff_053_disc_multiball_restart_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_disc_multiball_restarted: deff_054_disc_multiball_restarted
+  tron_multiball_lit: deff_055_multiball_lit
+  tron_end_of_line_intro: deff_056_end_of_line_intro
+  tron_end_of_line_running: deff_057_end_of_line_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_end_of_line_jackpot: deff_058_end_of_line_jackpot
+  tron_end_of_line_double_jackpot: deff_059_end_of_line_double_jackpot
+  tron_end_of_line_add_ball: deff_060_end_of_line_add_ball
+  tron_end_of_line_total: deff_061_end_of_line_total
+  tron_quorra_progress: deff_062_quorra_progress
+  tron_quorra_lit: deff_063_quorra_lit
+  tron_quorra_multiball_intro: deff_064_quorra_multiball_intro
+  tron_quorra_multiball_running: deff_065_quorra_multiball_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_quorra_add_ball_progress: deff_066_quorra_add_ball_progress
+  tron_quorra_ball_added: deff_067_quorra_ball_added
+  tron_quorra_jackpot_as_captured: deff_068_quorra_jackpot
+  tron_quorra_super_jackpot_as_captured: deff_069_quorra_super_jackpot
+  tron_quorra_total: deff_070_quorra_total
+  tron_clu_intro: deff_071_clu_intro
+  tron_clu_award: deff_073_clu_award
+  tron_clu_total: deff_074_clu_total
+  tron_gem_progress: deff_075_gem_progress
+  tron_gem_intro: deff_076_gem_intro
+  tron_gem_award: deff_078_gem_award
+  tron_gem_total: deff_079_gem_total
+  tron_hurryup_progress: deff_080_hurryup_progress
+  tron_special_lit: deff_081_special_lit
+  tron_special: deff_082_special
+  tron_light_cycle_progress: deff_083_light_cycle_progress
+  tron_light_cycle_lit: deff_084_light_cycle_lit
+  tron_light_cycle_intro: deff_085_light_cycle_intro
+  tron_light_cycle_running: deff_086_light_cycle_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_light_cycle_jackpot: deff_087_light_cycle_jackpot
+  tron_light_cycle_super_jackpot: deff_088_light_cycle_super_jackpot
+  tron_light_cycle_double_super_jackpot: deff_089_light_cycle_double_super_jackpot
+  tron_light_cycle_total: deff_090_light_cycle_total
+  tron_zuse_collect: deff_091_zuse_collect
+  tron_zuse_progress: deff_092_zuse_progress
+  tron_zuse_ready: deff_093_zuse_ready
+  tron_zuse_intro: deff_094_zuse_intro
+  tron_zuse_running: deff_095_zuse_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_zuse_target_hit: deff_096_zuse_target_hit
+  tron_zuse_all_targets_as_captured: deff_097_zuse_all_targets
+  tron_zuse_time_extended: deff_098_zuse_time_extended
+  tron_zuse_total: deff_099_zuse_total
+  tron_skill_shot_left_ramp: deff_101_skill_shot_left_ramp
+  tron_skill_shot_right_ramp: deff_102_skill_shot_right_ramp
+  tron_skill_shot: deff_103_skill_shot
+  tron_arcade_lit: deff_104_arcade_lit
+  tron_flynns_arcade_award: deff_105_flynns_arcade_award
+  tron_tron_completed: deff_106_tron_completed
+  tron_timed_award: deff_107_timed_award
+  tron_disc_access_progress_as_captured: deff_108_disc_access_progress
+  tron_disc_battle_ready: deff_109_disc_battle_ready
+  tron_disc_multiball_progress_as_captured: deff_111_disc_multiball_progress
+  tron_super_feature: deff_112_super_feature
+  tron_sea_of_simulation_intro: deff_113_sea_of_simulation_intro
+  tron_sea_of_simulation_running: deff_114_sea_of_simulation_running   # loops until stopped: use show_player 'action: stop' when the mode ends
+  tron_sea_of_simulation_value: deff_115_sea_of_simulation_value
+  tron_sea_stage_1_as_captured: deff_116_sea_stage_1
+  tron_sea_stage_2_as_captured: deff_117_sea_stage_2
+  tron_sea_stage_3_as_captured: deff_118_sea_stage_3
+  tron_sea_stage_4_as_captured: deff_119_sea_stage_4
+  tron_sea_stage_5_as_captured: deff_120_sea_stage_5
+  tron_sea_stage_6_as_captured: deff_121_sea_stage_6
+  tron_sea_stage_7_as_captured: deff_122_sea_stage_7
+  tron_sea_stage_8_as_captured: deff_123_sea_stage_8
+  tron_sea_stage_9_as_captured: deff_124_sea_stage_9
+  tron_sea_of_simulation_completed: deff_125_sea_of_simulation_completed
+  tron_sea_of_simulation_total: deff_126_sea_of_simulation_total
+  tron_clip_player_a: deff_128_clip_player_a
+  tron_clip_player_b: deff_129_clip_player_b
+  tron_game_over_disc_progress: deff_130_game_over_disc_progress
+  tron_clu_face: deff_131_clu_face
+  tron_extra_ball_lit: deff_132_extra_ball_lit
+  tron_extra_ball: deff_133_extra_ball
+  tron_find_flynn_intro: deff_136_find_flynn_intro
+  tron_flynn_found: deff_137_flynn_found
+  tron_combo: deff_138_combo
+  tron_end_of_line_jackpot_combo: deff_139_end_of_line_jackpot_combo
+  tron_portal_multiball_intro: deff_140_portal_multiball_intro
+  tron_portal_shot: deff_142_portal_shot
+  tron_portal_super_jackpot: deff_143_portal_super_jackpot
+  tron_portal_jackpot: deff_144_portal_jackpot
+  tron_portal_total: deff_145_portal_total

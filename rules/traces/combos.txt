@@ -1,0 +1,36 @@
+# skill shot B (right ramp) with adj 79 DISABLE PLUNGE POST = 1, then combo chain
+adj 79 1
+start 1
+wait 3
+mark skillB_right_ramp
+hit 38
+wait 0.3
+hit 34
+wait 8
+mark combo_LIL_start
+hit 44 20
+wait 1.5
+mark combo_RR_jarvis
+hit 38
+wait 0.3
+hit 34
+wait 1.5
+mark combo_RO_3man
+hit 46
+wait 1.5
+mark combo_RIL_ricochet
+hit 39
+wait 2
+mark orbit_passthrough_RO_then_LO
+hit 46
+wait 0.8
+hit 43
+wait 9
+mark castor_LR
+hit 35
+wait 0.3
+hit 37
+wait 1.5
+mark castor_LO
+hit 43
+wait 3

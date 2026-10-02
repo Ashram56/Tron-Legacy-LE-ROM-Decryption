@@ -1,0 +1,58 @@
+#show_version=6
+# ROM lamp effect 46 (leff table 0x040e23e4, function 0x10083ec, priority 9). Captured in emulation.
+# Loops until stopped. loops in the ROM until stopped; capture cut at 12 s, show repeats that
+# Started by: rule: while dmb_in_phase2
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 1ms
+  flashers:
+    f_disc_left: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 41ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms

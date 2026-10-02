@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 12: images 2683-2712, 30 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_012_img2683:
+      action: play
+- time: 1470ms
+  slides:
+    lib_anim_012_img2683:
+      action: remove

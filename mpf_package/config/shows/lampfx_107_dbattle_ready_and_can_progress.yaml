@@ -1,0 +1,44 @@
+#show_version=6
+# ROM lamp effect 107 (leff table 0x040e23e4, function 0x1021700, priority 7). Captured in emulation.
+# Plays once. 
+# Started by: rule: while dbattle_ready_and_can_progress
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 131ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 730ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms

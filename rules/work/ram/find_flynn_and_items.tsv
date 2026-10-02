@@ -1,0 +1,14 @@
+0x0003af9c	ff_pos	4	while mode runs	roving arrow current position 0-5
+0x0003afa0	ff_next	4	while mode runs	next position
+0x0003afa4	ff_prev	4	while mode runs	previous position
+0x02111664	ff_started	1	per player	Find Flynn starts this game
+0x02111668	ff_completed	1	per player	Find Flynn finds this game (value = 250k + 25k*n, cap 750k)
+0x02111694	item_flynn	4	per player	byte0 lit count, byte1 collected count (+4 per player)
+0x021116a4	item_gem	4	per player	item stats
+0x021116b4	item_clu	4	per player	item stats
+0x021116c4	item_zuse	4	per player	item stats
+0x021116d4	item_quorra	4	per player	item stats
+0x021116e4	item_disc	4	per player	item stats
+0x021116f4	item_light_cycle	4	per player	item stats
+0x02111704	item_recognizer	4	per player	item stats
+0x02111714	item_tron	4	per player	item stats

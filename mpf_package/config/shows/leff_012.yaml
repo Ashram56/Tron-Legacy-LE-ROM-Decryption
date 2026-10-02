@@ -1,0 +1,12 @@
+#show_version=6
+# Tron LE light effect 12 (ROM function 0x1029454), loop. Generated from ROM emulation.
+- duration: 496ms
+  lights:
+    l_right_ramp_tube:
+      color: 00ffff
+      fade: 500ms
+- duration: 496ms
+  lights:
+    l_right_ramp_tube:
+      color: 000000
+      fade: 500ms

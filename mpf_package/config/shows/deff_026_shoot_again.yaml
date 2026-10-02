@@ -1,0 +1,8 @@
+#show_version=6
+# deff_026_shoot_again: PLAYER n SHOOT AGAIN
+# ROM trigger: extra ball / shoot again. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_11b:
+      action: play
+- time: 1833ms

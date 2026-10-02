@@ -1,0 +1,149 @@
+#show_version=6
+# ROM lamp effect 88 (leff table 0x040e23e4, function 0x1017420, priority 159). Captured in emulation.
+# Plays once. 
+# Started by: code: clu_adv_lane_completion_silent; code: clu_lane_hit
+- duration: 16ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+    l_flynns_arcade: ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 17ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 17ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 17ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 16ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    l_clu_c: ffffff
+    l_clu_l: ffffff
+    l_clu_u: ffffff
+- duration: 48ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'

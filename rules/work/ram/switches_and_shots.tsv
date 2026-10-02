@@ -1,0 +1,25 @@
+0x38180	playfield_multiplier	1	per ball	multiplier applied by score_add
+0x37274	game_state_bits	2	game	bit 0x10 tilt; nonzero blocks playfield switch handlers
+0x3b70c	lspin_pending	1	session	left spins queued (task 0x64 scores one per tick)
+0x3b710	lspin_last	4	session	last left spin points
+0x3b714	lspin_total	4	session	left spin points this session (deff 41)
+0x3b718	rspin_pending	1	session	right orbit spins queued (task 0x65)
+0x3b71c	rspin_last	4	session	last right spin points
+0x3b720	rspin_total	4	session	right spin points this session (deff 42)
+0x2111820	lspin_value	4	per player [p-1]	points per left spin, 10000 at ball start unless flag 0x10
+0x2111830	rspin_value	4	per player [p-1]	points per right orbit spin, 10000 at ball start unless flag 0x11
+0x211179b	pop_hits_left	1	per player [p]	hits until pop level complete
+0x21117a3	pop_levels_done	1	per game [p]	pop difficulty level (hits formula)
+0x21117a7	pop_value_level	1	per ball [p]	pop value 10000+2500*level, reset each ball unless flag 0x19
+0x211179f	pop_level_counter	1	per game [p]	cleared at first ball
+0x36fd8	bumper_busy_ticks	4	live	countdown (156) behind task 0x40 after a pop hit
+0x3b2ec	big_bumps_count	4	while Big Bumps	pop hits during task 0xcb
+0x3b2f0	big_bumps_total	4	while Big Bumps	points during task 0xcb (25000 per hit)
+0x3b4e8	orbit_post_obj	28	object	orbit up-post device (coil 7), adj 78
+0x3b4f0	orbit_post_state	4	live	1 = post up (about 2.04 s after plunge)
+0x372e8	playfield_valid_obj	12	per ball	done byte set after 3 distinct counting switches or an instant switch (os_api is_tilted reads it)
+0x21118bc	zen_count	2	per player [p-1]	ZEN rollover awards
+0x3ae00	eol_switch_value	4	while EOL	End of Line per-switch value (10000..50000)
+0x3ae04	eol_total	4	while EOL	End of Line points accumulated
+0x3b12c	gem_spin_counter	4	while GEM hurry-up	raised by spins (min 5, +1, max 40)
+0x3b49f	recog_motor_pos	1	live	last recognizer position switch (54-56)

@@ -1,0 +1,13 @@
+# Skill shot B: hold the LEFT flipper button while plunging, then make the right ramp (deff 102, 300,000). Holding the right flipper instead gives nothing (checked).
+autoplunge 0
+start 1
+wait 3
+button left -1
+wait 0.5
+plunge
+wait 0.3
+button left 0
+wait 1
+hit 38
+hit 34
+wait 3

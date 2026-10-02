@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 48: images 3771-3814, 44 frames at 65 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_048_img3771:
+      action: play
+- time: 2874ms
+  slides:
+    lib_anim_048_img3771:
+      action: remove

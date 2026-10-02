@@ -1,0 +1,30 @@
+#show_version=6
+# deff_115_sea_of_simulation_value: Sea of Simulation value
+# ROM trigger: Sea of Simulation (captured in emulated play). Timing from emulation.
+# Lamp effect: lampfx_137_sea_of_simulation_value at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_115_sea_of_simulation_value:
+      action: play
+  shows:
+    leff_067:
+      action: play
+      loops: 0
+    lampfx_137_sea_of_simulation_value:
+      action: play
+      loops: 0
+  sounds:
+    call_109:
+      action: play
+- time: 3102ms
+  shows:
+    leff_067:
+      action: play
+      loops: 0
+  sounds:
+    call_109:
+      action: play
+- time: 6388ms
+  slides:
+    deff_115_sea_of_simulation_value:
+      action: remove

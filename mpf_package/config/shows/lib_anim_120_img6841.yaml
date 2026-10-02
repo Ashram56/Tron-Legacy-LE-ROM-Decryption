@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 120: images 6841-6896, 56 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_120_img6841:
+      action: play
+- time: 2743ms
+  slides:
+    lib_anim_120_img6841:
+      action: remove

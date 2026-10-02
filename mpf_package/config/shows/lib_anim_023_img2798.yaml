@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 23: images 2798-2843, 46 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_023_img2798:
+      action: play
+- time: 2254ms
+  slides:
+    lib_anim_023_img2798:
+      action: remove

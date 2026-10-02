@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 104: images 5998-6005, 8 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_104_img5998:
+      action: play
+- time: 392ms
+  slides:
+    lib_anim_104_img5998:
+      action: remove

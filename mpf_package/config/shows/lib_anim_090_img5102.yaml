@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 90: images 5102-5134, 33 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_090_img5102:
+      action: play
+- time: 1617ms
+  slides:
+    lib_anim_090_img5102:
+      action: remove

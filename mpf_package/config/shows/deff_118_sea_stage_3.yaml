@@ -1,0 +1,22 @@
+#show_version=6
+# deff_118_sea_stage_3: Sea of Simulation stage animation 3
+# ROM trigger: Sea of Simulation stage award. Timing from emulation.
+# Lamp effect: lampfx_140_sea_stage_3 at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_118_sea_stage_3:
+      action: play
+  shows:
+    leff_070:
+      action: play
+      loops: 0
+    lampfx_140_sea_stage_3:
+      action: play
+      loops: 0
+  sounds:
+    call_10a:
+      action: play
+- time: 1593ms
+  slides:
+    deff_118_sea_stage_3:
+      action: remove

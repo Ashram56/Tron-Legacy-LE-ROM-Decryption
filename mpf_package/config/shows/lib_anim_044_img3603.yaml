@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 44: images 3603-3622, 20 frames at 82 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_044_img3603:
+      action: play
+- time: 1633ms
+  slides:
+    lib_anim_044_img3603:
+      action: remove

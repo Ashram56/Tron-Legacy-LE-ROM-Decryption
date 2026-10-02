@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 87: images 5041-5053, 13 frames at 98 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_087_img5041:
+      action: play
+- time: 1274ms
+  slides:
+    lib_anim_087_img5041:
+      action: remove

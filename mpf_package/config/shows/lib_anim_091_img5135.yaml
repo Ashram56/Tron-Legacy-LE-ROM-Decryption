@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 91: images 5135-5201, 67 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_091_img5135:
+      action: play
+- time: 3282ms
+  slides:
+    lib_anim_091_img5135:
+      action: remove

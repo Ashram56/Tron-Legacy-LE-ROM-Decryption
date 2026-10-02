@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 52: images 3944-3946, 3 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_052_img3944:
+      action: play
+- time: 147ms
+  slides:
+    lib_anim_052_img3944:
+      action: remove

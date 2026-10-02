@@ -1,0 +1,9 @@
+0x01004cc0	eol_multiball_start
+0x01004ddc	eol_vuk_start_if_lit
+0x01004c68	eol_multiball_can_start
+0x010055d8	eol_background_rule
+0x01005610	eol_background_deff_music
+0x01006298	eol_init_rules
+0x01004c94	task_a6_eol_intro
+0x01005260	deff_056_eol_intro
+0x01005524	deff_057_eol_switches

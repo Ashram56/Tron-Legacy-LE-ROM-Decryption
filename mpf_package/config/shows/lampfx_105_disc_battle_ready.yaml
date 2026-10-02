@@ -1,0 +1,112 @@
+#show_version=6
+# ROM lamp effect 105 (leff table 0x040e23e4, function 0x10214e4, priority 160). Captured in emulation.
+# Plays once. 
+# Started by: effect 109 (deff_109_disc_battle_ready)
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 99ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 96ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 99ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 96ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 99ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 96ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 99ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 96ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 98ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 97ms
+  flashers:
+    f_disc_right: 48ms
+- duration: 99ms
+  flashers:
+    f_disc_left: 48ms
+- duration: 112ms
+  flashers:
+    f_disc_right: 48ms

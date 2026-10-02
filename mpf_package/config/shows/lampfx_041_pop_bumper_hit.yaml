@@ -1,0 +1,48 @@
+#show_version=6
+# ROM lamp effect 41 (leff table 0x040e23e4, function 0x101c79c, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: FUN_0101c3ac; code: pop_bumper_hit
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 16ms
+  lights:
+    (lamp): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 16ms
+  lights:
+    (lamp): '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    (lamp): ffffff
+- duration: 32ms
+  lights:
+    (lamp): '000000'
+- duration: 17ms
+  lights:
+    (lamp): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 48ms
+  lights:
+    (lamp): '000000'

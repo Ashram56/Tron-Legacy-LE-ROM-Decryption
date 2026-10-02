@@ -1,0 +1,379 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# ROM lamp-matrix light effects (leff table 0x040e23e4) as MPF shows: config/shows/lampfx_NNN_*.yaml.
+# These are separate from the ramp tube shows (leff_NNN.yaml). Display-effect shows already start
+# the lamp effect their ROM effect starts. Post these events from your modes for the rest; who starts
+# each one in the ROM is in ../lamp_effects.csv (started_by). Priority is the ROM's (1-254).
+# Token shows: (lamp) is a light name, (lamps) a light tag (rom_group_N in lights.yaml), e.g.
+#   tron_lampfx_038_tron_letter_collect: {lampfx_038_tron_letter_collect: {show_tokens: {lamp: l_tron_t}}}
+show_player:
+  tron_lampfx_001_attract:
+    lampfx_001_attract: {loops: -1, priority: 1}   # code: FUN_000015dc; code: attract_start
+  tron_lampfx_001_attract_stop:
+    lampfx_001_attract:
+      action: stop
+  tron_lampfx_002_attract_lamps_off:
+    lampfx_002_attract_lamps_off: {loops: -1, priority: 253}   # code: FUN_0000f9a8; code: FUN_0000f9b0
+  tron_lampfx_002_attract_lamps_off_stop:
+    lampfx_002_attract_lamps_off:
+      action: stop
+  tron_lampfx_003_test_single_lamp_test:
+    lampfx_003_test_single_lamp_test: {loops: -1, priority: 254}   # code: FUN_010427dc; service menu: single lamp test
+  tron_lampfx_003_test_single_lamp_test_stop:
+    lampfx_003_test_single_lamp_test:
+      action: stop
+  tron_lampfx_004_test_test_all_lamps:
+    lampfx_004_test_test_all_lamps: {loops: -1, priority: 254}   # code: FUN_01041e08; service menu: test all lamps
+  tron_lampfx_004_test_test_all_lamps_stop:
+    lampfx_004_test_test_all_lamps:
+      action: stop
+  tron_lampfx_005_test_lamp_row_test:
+    lampfx_005_test_lamp_row_test: {loops: -1, priority: 254}   # code: FUN_01042fc0; service menu: lamp row test
+  tron_lampfx_005_test_lamp_row_test_stop:
+    lampfx_005_test_lamp_row_test:
+      action: stop
+  tron_lampfx_006_test_lamp_column_test:
+    lampfx_006_test_lamp_column_test: {loops: -1, priority: 254}   # code: FUN_010421e4; service menu: lamp column test
+  tron_lampfx_006_test_lamp_column_test_stop:
+    lampfx_006_test_lamp_column_test:
+      action: stop
+  tron_lampfx_007_test_ordered_lamp_test:
+    lampfx_007_test_ordered_lamp_test: {loops: -1, priority: 254}   # code: FUN_01042b10; service menu: ordered lamp test
+  tron_lampfx_007_test_ordered_lamp_test_stop:
+    lampfx_007_test_ordered_lamp_test:
+      action: stop
+  tron_lampfx_008_test_burn_in:
+    lampfx_008_test_burn_in: {loops: -1, priority: 254}   # code: FUN_0103f7ac; service menu: burn-in
+  tron_lampfx_008_test_burn_in_stop:
+    lampfx_008_test_burn_in:
+      action: stop
+  tron_lampfx_009_tilt_lamps_off:
+    lampfx_009_tilt_lamps_off: {loops: -1, priority: 1}
+  tron_lampfx_009_tilt_lamps_off_stop:
+    lampfx_009_tilt_lamps_off:
+      action: stop
+  tron_lampfx_012_slam_tilt_lamps_off:
+    lampfx_012_slam_tilt_lamps_off: {loops: -1, priority: 251}   # code: slam_tilt
+  tron_lampfx_012_slam_tilt_lamps_off_stop:
+    lampfx_012_slam_tilt_lamps_off:
+      action: stop
+  tron_lampfx_013_ball_save_lamp:
+    lampfx_013_ball_save_lamp: {loops: -1, priority: 129}   # code: FUN_0001ea60
+  tron_lampfx_013_ball_save_lamp_stop:
+    lampfx_013_ball_save_lamp:
+      action: stop
+  tron_lampfx_014_ball_save_lamp_running:
+    lampfx_014_ball_save_lamp_running: {loops: 0, priority: 128}   # code: ball_save_task
+  tron_lampfx_019_flasher_sweep:
+    lampfx_019_flasher_sweep: {loops: 0, priority: 240}   # code: FUN_00021cd8
+  tron_lampfx_020_bonus_lamps_off:
+    lampfx_020_bonus_lamps_off: {loops: 0, priority: 242}   # effect 25 (deff_025_bonus)
+  tron_lampfx_032_bonus_count_task:
+    lampfx_032_bonus_count_task: {loops: 0, priority: 242}   # code: bonus_count_task
+  tron_lampfx_033_left_spinner_score_spin:
+    lampfx_033_left_spinner_score_spin: {loops: 0, priority: 133}   # code: left_spinner_score_spin
+  tron_lampfx_034_right_spinner_score_spin:
+    lampfx_034_right_spinner_score_spin: {loops: 0, priority: 133}   # code: right_spinner_score_spin
+  tron_lampfx_035_vuk_not_lit:
+    lampfx_035_vuk_not_lit: {loops: 0, priority: 158}   # code: FUN_0101bdd0
+  tron_lampfx_036_vuk_lit:
+    lampfx_036_vuk_lit: {loops: 0, priority: 159}   # code: FUN_0101bdd0
+  tron_lampfx_037_tron_letter_collect:
+    lampfx_037_tron_letter_collect: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: tron_letter_collect
+  tron_lampfx_038_tron_letter_collect:
+    lampfx_038_tron_letter_collect: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: tron_letter_collect
+  tron_lampfx_039_tron_letter_collect:
+    lampfx_039_tron_letter_collect: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: tron_letter_collect
+  tron_lampfx_040_task_9f:
+    lampfx_040_task_9f: {loops: 0, priority: 129, show_tokens: {lamps: rom_group_31}}   # code: task_9f
+  tron_lampfx_041_pop_bumper_hit:
+    lampfx_041_pop_bumper_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: FUN_0101c3ac; code: pop_bumper_hit
+  tron_lampfx_042_pop_bumper_hit:
+    lampfx_042_pop_bumper_hit: {loops: 0, priority: 129}   # code: FUN_0101c3ac; code: pop_bumper_hit
+  tron_lampfx_043_unused:
+    lampfx_043_unused: {loops: -1, priority: 7}
+  tron_lampfx_043_unused_stop:
+    lampfx_043_unused:
+      action: stop
+  tron_lampfx_044_disc_multiball_intro:
+    lampfx_044_disc_multiball_intro: {loops: 0, priority: 192}   # effect 46 (deff_046_disc_multiball_intro)
+  tron_lampfx_046_dmb_in_phase2:
+    lampfx_046_dmb_in_phase2: {loops: -1, priority: 9}   # rule: while dmb_in_phase2
+  tron_lampfx_046_dmb_in_phase2_stop:
+    lampfx_046_dmb_in_phase2:
+      action: stop
+  tron_lampfx_047_dmb_in_phase1:
+    lampfx_047_dmb_in_phase1: {loops: -1, priority: 9}   # rule: while dmb_in_phase1
+  tron_lampfx_047_dmb_in_phase1_stop:
+    lampfx_047_dmb_in_phase1:
+      action: stop
+  tron_lampfx_048_disc_multiball_jackpot:
+    lampfx_048_disc_multiball_jackpot: {loops: 0, priority: 193}   # effect 48 (deff_048_disc_multiball_jackpot)
+  tron_lampfx_049_disc_multiball_jackpot_2:
+    lampfx_049_disc_multiball_jackpot_2: {loops: 0, priority: 194}   # effect 49 (deff_049_disc_multiball_jackpot_2)
+  tron_lampfx_050_disc_multiball_super_jackpot:
+    lampfx_050_disc_multiball_super_jackpot: {loops: 0, priority: 195}   # effect 50 (deff_050_disc_multiball_super_jackpot)
+  tron_lampfx_051_disc_multiball_total:
+    lampfx_051_disc_multiball_total: {loops: 0, priority: 207}   # effect 51 (deff_051_disc_multiball_total)
+  tron_lampfx_052_disc_multiball_restart:
+    lampfx_052_disc_multiball_restart: {loops: 0, priority: 192}   # effect 52 (deff_052_disc_multiball_restart)
+  tron_lampfx_054_dmb_restart_display_cond:
+    lampfx_054_dmb_restart_display_cond: {loops: 0, priority: 9}   # rule: while dmb_restart_display_cond
+  tron_lampfx_055_disc_multiball_restarted:
+    lampfx_055_disc_multiball_restarted: {loops: 0, priority: 193}   # effect 54 (deff_054_disc_multiball_restarted)
+  tron_lampfx_057_eol_lit_rule:
+    lampfx_057_eol_lit_rule: {loops: -1, priority: 7}   # rule: while eol_lit_rule
+  tron_lampfx_057_eol_lit_rule_stop:
+    lampfx_057_eol_lit_rule:
+      action: stop
+  tron_lampfx_058_end_of_line_intro:
+    lampfx_058_end_of_line_intro: {loops: -1, priority: 192}   # effect 56 (deff_056_end_of_line_intro)
+  tron_lampfx_058_end_of_line_intro_stop:
+    lampfx_058_end_of_line_intro:
+      action: stop
+  tron_lampfx_060_eol_background_rule:
+    lampfx_060_eol_background_rule: {loops: -1, priority: 9}   # rule: while eol_background_rule
+  tron_lampfx_060_eol_background_rule_stop:
+    lampfx_060_eol_background_rule:
+      action: stop
+  tron_lampfx_061_end_of_line_jackpot:
+    lampfx_061_end_of_line_jackpot: {loops: 0, priority: 196}   # effect 58 (deff_058_end_of_line_jackpot)
+  tron_lampfx_062_end_of_line_double_jackpot:
+    lampfx_062_end_of_line_double_jackpot: {loops: 0, priority: 197}   # effect 59 (deff_059_end_of_line_double_jackpot)
+  tron_lampfx_063_end_of_line_add_ball:
+    lampfx_063_end_of_line_add_ball: {loops: 0, priority: 195}   # effect 60 (deff_060_end_of_line_add_ball)
+  tron_lampfx_064_end_of_line_total:
+    lampfx_064_end_of_line_total: {loops: 0, priority: 207}   # effect 61 (deff_061_end_of_line_total)
+  tron_lampfx_065_quorra_progress:
+    lampfx_065_quorra_progress: {loops: 0, priority: 161}   # effect 62 (deff_062_quorra_progress)
+  tron_lampfx_066_quorra_lit:
+    lampfx_066_quorra_lit: {loops: 0, priority: 161}   # effect 63 (deff_063_quorra_lit)
+  tron_lampfx_067_quorra_multiball_intro:
+    lampfx_067_quorra_multiball_intro: {loops: 0, priority: 194}   # effect 64 (deff_064_quorra_multiball_intro)
+  tron_lampfx_068_quorra_mb_rule_active:
+    lampfx_068_quorra_mb_rule_active: {loops: -1, priority: 10}   # rule: while quorra_mb_rule_active
+  tron_lampfx_068_quorra_mb_rule_active_stop:
+    lampfx_068_quorra_mb_rule_active:
+      action: stop
+  tron_lampfx_069_quorra_add_ball_available:
+    lampfx_069_quorra_add_ball_available: {loops: -1, priority: 10}   # rule: while quorra_add_ball_available
+  tron_lampfx_069_quorra_add_ball_available_stop:
+    lampfx_069_quorra_add_ball_available:
+      action: stop
+  tron_lampfx_070_quorra_add_ball_progress:
+    lampfx_070_quorra_add_ball_progress: {loops: 0, priority: 194}   # effect 66 (deff_066_quorra_add_ball_progress)
+  tron_lampfx_071_quorra_ball_added:
+    lampfx_071_quorra_ball_added: {loops: 0, priority: 194}   # effect 67 (deff_067_quorra_ball_added)
+  tron_lampfx_074_quorra_total:
+    lampfx_074_quorra_total: {loops: 0, priority: 207}   # effect 70 (deff_070_quorra_total)
+  tron_lampfx_075_sw41_disc_opto:
+    lampfx_075_sw41_disc_opto: {loops: 0, priority: 133}   # code: sw41_disc_opto
+  tron_lampfx_076_disc_flasher_cond:
+    lampfx_076_disc_flasher_cond: {loops: -1, priority: 10}   # rule: while leff76_disc_flasher_cond
+  tron_lampfx_076_disc_flasher_cond_stop:
+    lampfx_076_disc_flasher_cond:
+      action: stop
+  tron_lampfx_077_clu_intro:
+    lampfx_077_clu_intro: {loops: 0, priority: 176}   # effect 71 (deff_071_clu_intro)
+  tron_lampfx_078_clu_countdown_running:
+    lampfx_078_clu_countdown_running: {loops: -1, priority: 7}   # rule: while clu_countdown_running
+  tron_lampfx_078_clu_countdown_running_stop:
+    lampfx_078_clu_countdown_running:
+      action: stop
+  tron_lampfx_079_clu_award:
+    lampfx_079_clu_award: {loops: 0, priority: 176}   # effect 73 (deff_073_clu_award)
+  tron_lampfx_080_clu_total:
+    lampfx_080_clu_total: {loops: 0, priority: 178}   # effect 74 (deff_074_clu_total)
+  tron_lampfx_082_gem_intro:
+    lampfx_082_gem_intro: {loops: 0, priority: 177}   # effect 76 (deff_076_gem_intro); code: FUN_010143b8
+  tron_lampfx_083_gem_countdown_running:
+    lampfx_083_gem_countdown_running: {loops: -1, priority: 7}   # rule: while gem_countdown_running
+  tron_lampfx_083_gem_countdown_running_stop:
+    lampfx_083_gem_countdown_running:
+      action: stop
+  tron_lampfx_084_gem_award:
+    lampfx_084_gem_award: {loops: 0, priority: 176}   # effect 78 (deff_078_gem_award)
+  tron_lampfx_085_gem_total:
+    lampfx_085_gem_total: {loops: 0, priority: 178}   # effect 79 (deff_079_gem_total)
+  tron_lampfx_086_clu_lane_hit:
+    lampfx_086_clu_lane_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: clu_lane_hit
+  tron_lampfx_087_clu_lane_hit:
+    lampfx_087_clu_lane_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: clu_lane_hit
+  tron_lampfx_088_clu_lane_hit:
+    lampfx_088_clu_lane_hit: {loops: 0, priority: 159}   # code: clu_adv_lane_completion_silent; code: clu_lane_hit
+  tron_lampfx_089_clu_lane:
+    lampfx_089_clu_lane: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: FUN_01016f14
+  tron_lampfx_093_light_cycle_intro:
+    lampfx_093_light_cycle_intro: {loops: 0, priority: 194}   # effect 85 (deff_085_light_cycle_intro)
+  tron_lampfx_095_light_cycle_jackpot:
+    lampfx_095_light_cycle_jackpot: {loops: -1, priority: 195}   # effect 87 (deff_087_light_cycle_jackpot)
+  tron_lampfx_095_light_cycle_jackpot_stop:
+    lampfx_095_light_cycle_jackpot:
+      action: stop
+  tron_lampfx_096_light_cycle_super_jackpot:
+    lampfx_096_light_cycle_super_jackpot: {loops: 0, priority: 195}   # effect 88 (deff_088_light_cycle_super_jackpot)
+  tron_lampfx_097_light_cycle_double_super_jackpot:
+    lampfx_097_light_cycle_double_super_jackpot: {loops: 0, priority: 195}   # effect 89 (deff_089_light_cycle_double_super_jackpot)
+  tron_lampfx_098_light_cycle_total:
+    lampfx_098_light_cycle_total: {loops: 0, priority: 207}   # effect 90 (deff_090_light_cycle_total)
+  tron_lampfx_099_recog_moving_target_running:
+    lampfx_099_recog_moving_target_running: {loops: -1, priority: 5}   # rule: while recog_moving_target_running
+  tron_lampfx_099_recog_moving_target_running_stop:
+    lampfx_099_recog_moving_target_running:
+      action: stop
+  tron_lampfx_100_recog_target_hit:
+    lampfx_100_recog_target_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: recog_target_hit
+  tron_lampfx_101_recog_target_hit:
+    lampfx_101_recog_target_hit: {loops: 0, priority: 128}   # code: recog_target_hit
+  tron_lampfx_102_unused:
+    lampfx_102_unused: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}
+  tron_lampfx_103_unused:
+    lampfx_103_unused: {loops: 0, priority: 129, show_tokens: {lamps: rom_group_52}}
+  tron_lampfx_104_unused:
+    lampfx_104_unused: {loops: 0, priority: 160}
+  tron_lampfx_105_disc_battle_ready:
+    lampfx_105_disc_battle_ready: {loops: 0, priority: 160}   # effect 109 (deff_109_disc_battle_ready)
+  tron_lampfx_106_dbattle_can_progress:
+    lampfx_106_dbattle_can_progress: {loops: -1, priority: 7}   # rule: while dbattle_can_progress
+  tron_lampfx_106_dbattle_can_progress_stop:
+    lampfx_106_dbattle_can_progress:
+      action: stop
+  tron_lampfx_107_dbattle_ready_and_can_progress:
+    lampfx_107_dbattle_ready_and_can_progress: {loops: 0, priority: 7}   # rule: while dbattle_ready_and_can_progress
+  tron_lampfx_108_dbattle_disc_hit_or_start_multiball:
+    lampfx_108_dbattle_disc_hit_or_start_multiball: {loops: 0, priority: 162}   # code: dbattle_disc_hit_or_start_multiball
+  tron_lampfx_109_skill_shot_ready_1:
+    lampfx_109_skill_shot_ready_1: {loops: -1, priority: 192}   # rule: while LAB_01028bac
+  tron_lampfx_109_skill_shot_ready_1_stop:
+    lampfx_109_skill_shot_ready_1:
+      action: stop
+  tron_lampfx_111_skill_shot_ready_2:
+    lampfx_111_skill_shot_ready_2: {loops: -1, priority: 192}   # rule: while FUN_01028d98
+  tron_lampfx_111_skill_shot_ready_2_stop:
+    lampfx_111_skill_shot_ready_2:
+      action: stop
+  tron_lampfx_113_skill_shot_ready_3:
+    lampfx_113_skill_shot_ready_3: {loops: -1, priority: 192}   # rule: while LAB_01028f30
+  tron_lampfx_113_skill_shot_ready_3_stop:
+    lampfx_113_skill_shot_ready_3:
+      action: stop
+  tron_lampfx_117_zen:
+    lampfx_117_zen: {loops: 0, priority: 160}   # effect 100 (deff_100_zen)
+  tron_lampfx_118_unused:
+    lampfx_118_unused: {loops: 0, priority: 160}
+  tron_lampfx_119_zuse_letter_hit:
+    lampfx_119_zuse_letter_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: zuse_letter_hit
+  tron_lampfx_120_zuse_target_hit:
+    lampfx_120_zuse_target_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: zuse_letter_hit; code: zuse_target_hit
+  tron_lampfx_121_zuse_target_hit:
+    lampfx_121_zuse_target_hit: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}   # code: zuse_letter_hit; code: zuse_target_hit
+  tron_lampfx_122_zuse_letter_hit:
+    lampfx_122_zuse_letter_hit: {loops: 0, priority: 129, show_tokens: {lamps: rom_group_54}}   # code: zuse_complete_set_adv; code: zuse_letter_hit
+  tron_lampfx_123_zuse_intro:
+    lampfx_123_zuse_intro: {loops: 0, priority: 176}   # effect 94 (deff_094_zuse_intro)
+  tron_lampfx_124_zfs_countdown_running:
+    lampfx_124_zfs_countdown_running: {loops: -1, priority: 7}   # rule: while zfs_countdown_running
+  tron_lampfx_124_zfs_countdown_running_stop:
+    lampfx_124_zfs_countdown_running:
+      action: stop
+  tron_lampfx_125_zfs_countdown_running:
+    lampfx_125_zfs_countdown_running: {loops: 0, priority: 7}   # rule: while zfs_countdown_running
+  tron_lampfx_126_unused:
+    lampfx_126_unused: {loops: 0, priority: 159, show_tokens: {lamp: l_tron_t}}
+  tron_lampfx_127_unused:
+    lampfx_127_unused: {loops: 0, priority: 158, show_tokens: {lamp: l_tron_t}}
+  tron_lampfx_128_zuse_time_extended:
+    lampfx_128_zuse_time_extended: {loops: 0, priority: 160}   # effect 98 (deff_098_zuse_time_extended)
+  tron_lampfx_130_zuse_total:
+    lampfx_130_zuse_total: {loops: 0, priority: 178}   # effect 99 (deff_099_zuse_total)
+  tron_lampfx_131_unused:
+    lampfx_131_unused: {loops: 0, priority: 128, show_tokens: {lamp: l_tron_t}}
+  tron_lampfx_132_find_flynn_rule:
+    lampfx_132_find_flynn_rule: {loops: 0, priority: 8}   # rule: while LAB_0100c734
+  tron_lampfx_133_game_over:
+    lampfx_133_game_over: {loops: -1, priority: 246}   # code: game_over_music_task
+  tron_lampfx_133_game_over_stop:
+    lampfx_133_game_over:
+      action: stop
+  tron_lampfx_134_sea_of_simulation_rule:
+    lampfx_134_sea_of_simulation_rule: {loops: -1, priority: 9}   # rule: while FUN_010267fc
+  tron_lampfx_134_sea_of_simulation_rule_stop:
+    lampfx_134_sea_of_simulation_rule:
+      action: stop
+  tron_lampfx_135_sea_of_simulation_intro:
+    lampfx_135_sea_of_simulation_intro: {loops: 0, priority: 208}   # effect 113 (deff_113_sea_of_simulation_intro)
+  tron_lampfx_136_sea_of_simulation_rule_2:
+    lampfx_136_sea_of_simulation_rule_2: {loops: -1, priority: 15}   # rule: while FUN_01026dbc
+  tron_lampfx_136_sea_of_simulation_rule_2_stop:
+    lampfx_136_sea_of_simulation_rule_2:
+      action: stop
+  tron_lampfx_137_sea_of_simulation_value:
+    lampfx_137_sea_of_simulation_value: {loops: 0, priority: 210}   # effect 115 (deff_115_sea_of_simulation_value)
+  tron_lampfx_138_sea_stage_1:
+    lampfx_138_sea_stage_1: {loops: 0, priority: 209}   # effect 116 (deff_116_sea_stage_1)
+  tron_lampfx_139_sea_stage_2:
+    lampfx_139_sea_stage_2: {loops: 0, priority: 209}   # effect 117 (deff_117_sea_stage_2)
+  tron_lampfx_140_sea_stage_3:
+    lampfx_140_sea_stage_3: {loops: 0, priority: 209}   # effect 118 (deff_118_sea_stage_3)
+  tron_lampfx_141_sos_stage2_clu_shot:
+    lampfx_141_sos_stage2_clu_shot: {loops: 0, priority: 209, show_tokens: {lamp: l_tron_t}}   # code: sos_stage2_clu_shot
+  tron_lampfx_142_sos_stage2_clu_shot:
+    lampfx_142_sos_stage2_clu_shot: {loops: 0, priority: 209, show_tokens: {lamp: l_tron_t}}   # code: sos_stage2_clu_shot
+  tron_lampfx_143_sos_stage2_clu_shot:
+    lampfx_143_sos_stage2_clu_shot: {loops: 0, priority: 209, show_tokens: {lamps: rom_group_50}}   # code: sos_stage2_clu_shot
+  tron_lampfx_144_sea_stage_4:
+    lampfx_144_sea_stage_4: {loops: 0, priority: 209}   # effect 119 (deff_119_sea_stage_4)
+  tron_lampfx_145_sea_stage_5:
+    lampfx_145_sea_stage_5: {loops: 0, priority: 209}   # effect 120 (deff_120_sea_stage_5)
+  tron_lampfx_146_sea_stage_6:
+    lampfx_146_sea_stage_6: {loops: 0, priority: 209}   # effect 121 (deff_121_sea_stage_6)
+  tron_lampfx_147_sea_stage_7:
+    lampfx_147_sea_stage_7: {loops: 0, priority: 209}   # effect 122 (deff_122_sea_stage_7)
+  tron_lampfx_148_sea_stage_8:
+    lampfx_148_sea_stage_8: {loops: 0, priority: 209}   # effect 123 (deff_123_sea_stage_8)
+  tron_lampfx_149_sea_stage_9:
+    lampfx_149_sea_stage_9: {loops: 0, priority: 209}   # effect 124 (deff_124_sea_stage_9)
+  tron_lampfx_150_sea_of_simulation_completed:
+    lampfx_150_sea_of_simulation_completed: {loops: 0, priority: 211}   # effect 125 (deff_125_sea_of_simulation_completed)
+  tron_lampfx_151_sea_of_simulation_total:
+    lampfx_151_sea_of_simulation_total: {loops: 0, priority: 212}   # effect 126 (deff_126_sea_of_simulation_total)
+  tron_lampfx_153_extra_ball:
+    lampfx_153_extra_ball: {loops: 0, priority: 181}   # effect 133 (deff_133_extra_ball)
+  tron_lampfx_155_big_bumps:
+    lampfx_155_big_bumps: {loops: 0, priority: 194}   # effect 135 (deff_135_big_bumps)
+  tron_lampfx_157_find_flynn_roving_arrow:
+    lampfx_157_find_flynn_roving_arrow: {loops: -1, priority: 3}   # rule: while FUN_0100d5b4
+  tron_lampfx_157_find_flynn_roving_arrow_stop:
+    lampfx_157_find_flynn_roving_arrow:
+      action: stop
+  tron_lampfx_161_combo_rule:
+    lampfx_161_combo_rule: {loops: -1, priority: 4}   # rule: while LAB_01003914
+  tron_lampfx_161_combo_rule_stop:
+    lampfx_161_combo_rule:
+      action: stop
+  tron_lampfx_163_portal_mb_lit_rule:
+    lampfx_163_portal_mb_lit_rule: {loops: -1, priority: 9}   # rule: while portal_mb_lit_rule
+  tron_lampfx_163_portal_mb_lit_rule_stop:
+    lampfx_163_portal_mb_lit_rule:
+      action: stop
+  tron_lampfx_164_portal_mb_lit_rule:
+    lampfx_164_portal_mb_lit_rule: {loops: 0, priority: 9}   # rule: while portal_mb_lit_rule
+  tron_lampfx_165_portal_multiball_intro:
+    lampfx_165_portal_multiball_intro: {loops: 0, priority: 192}   # effect 140 (deff_140_portal_multiball_intro)
+  tron_lampfx_166_portal_mb_background_rule:
+    lampfx_166_portal_mb_background_rule: {loops: -1, priority: 7}   # rule: while portal_mb_background_rule
+  tron_lampfx_166_portal_mb_background_rule_stop:
+    lampfx_166_portal_mb_background_rule:
+      action: stop
+  tron_lampfx_167_portal_mb_all_shots_done:
+    lampfx_167_portal_mb_all_shots_done: {loops: -1, priority: 7}   # rule: while portal_mb_all_shots_done
+  tron_lampfx_167_portal_mb_all_shots_done_stop:
+    lampfx_167_portal_mb_all_shots_done:
+      action: stop
+  tron_lampfx_168_portal_shot:
+    lampfx_168_portal_shot: {loops: 0, priority: 193}   # effect 142 (deff_142_portal_shot)
+  tron_lampfx_169_portal_super_jackpot:
+    lampfx_169_portal_super_jackpot: {loops: 0, priority: 195}   # effect 143 (deff_143_portal_super_jackpot)
+  tron_lampfx_170_portal_jackpot:
+    lampfx_170_portal_jackpot: {loops: 0, priority: 194}   # effect 144 (deff_144_portal_jackpot)
+  tron_lampfx_171_portal_total:
+    lampfx_171_portal_total: {loops: 0, priority: 196}   # effect 145 (deff_145_portal_total)

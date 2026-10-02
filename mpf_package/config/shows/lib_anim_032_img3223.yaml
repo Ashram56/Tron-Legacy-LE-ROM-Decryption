@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 32: images 3223-3243, 21 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_032_img3223:
+      action: play
+- time: 1029ms
+  slides:
+    lib_anim_032_img3223:
+      action: remove

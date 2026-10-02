@@ -1,0 +1,104 @@
+#show_version=6
+# ROM lamp effect 103 (leff table 0x040e23e4, function 0x1015dfc, priority 129). Captured in emulation.
+# Plays once. 
+# Show token (lamps) = a light tag for the lamp group the caller passes (captured with lamp 33 / group 12 standing in).
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+    l_flynns_arcade: ffffff
+    l_recognizer_pos_1: '000000'
+    l_recognizer_pos_2: '000000'
+    l_recognizer_pos_3: '000000'
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 16ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    (lamps): '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 17ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    (lamps): '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 17ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    (lamps): '000000'
+- duration: 16ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 17ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 16ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    l_flynns_arcade: ffffff

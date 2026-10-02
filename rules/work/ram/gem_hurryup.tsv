@@ -1,0 +1,10 @@
+0x2111678	gem_starts	1	per player	GEM hurry-ups started; 0 -> 3 loops needed, else 5; 0 on event 0x26
+0x211167c	gem_awards	1	per player	loops collected in current hurry-up; award = min(750000+250000*n,2500000); 0 at start
+0x2111680	gem_progress	1	per player	qualifying right inner loops made; 0 at start and event 0x26
+0x2111684	gem_snd_idx	4	per player	sfx variant for deff 75 (call 0x8e)
+0x3b128	gem_shots	4	while running	award shot mask, 8 = right inner loop
+0x3b12c	gem_timer	1	while running	seconds left, 25 at start, spin +1 (min 5, max 40), 40 on MORE TIME
+0x3b130	gem_total	4	while running	running total for deff 79 (starts at 250000)
+0x36fec	gem_award_snd_idx	1	while running	sfx variant for deff 78 (call 0x92)
+0x3b584	gem_timer_bar	2	while running	status panel bar cur/max (0x3b584/0x3b588)
+0x372e8	playfield_valid	1	OS	playfield validated flag; 0 pauses the countdown

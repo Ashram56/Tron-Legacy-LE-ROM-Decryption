@@ -1,0 +1,12 @@
+0x0100d698	on_find_flynn_started
+0x0100d79c	on_find_flynn_completed
+0x0100d890	deff_136_shoot_roving_arrow
+0x0100da04	leff_157_roving_arrow
+0x0100daec	deff_137_flynn_found
+0x01015f7c	item_bonus_value
+0x010160c8	items_clear_lit
+0x01016164	items_clear_all
+0x01016188	item_light_or_collect
+0x010163ec	items_all_lit
+0x0101643c	items_all_collected
+0x010164a0	item_lamps

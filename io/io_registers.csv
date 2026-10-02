@@ -1,0 +1,14 @@
+address,name,direction,rom_pointer_var,what_drives_it
+0x02400020,SOL_A,write,0x37338,coils 9-16 (IO interrupt 0x13360 loop; shadow byte 0x3b97d)
+0x02400021,SOL_B,write,0x37334,coils 1-8 (shadow byte 0x3b97c)
+0x02400022,SOL_C,write,0x3733c,coils 17-24 (shadow byte 0x3b97e)
+0x02400023,FLSH_LMP,write,0x37340,coils/flashers 25-32 (shadow byte 0x3b97f)
+0x02400025,STATUS,read,0x37350,interlocks / zero cross / lamp status
+0x02400026,AUX_DRV,write,0x372c8,8-bit data latch to J2 aux connector (shared by aux coils and both ramp light tubes)
+0x02400027,AUX_IN,read,0x372cc,8-bit input from J3 aux connector
+0x02400028,LMP_STB,write,0x37284,lamp matrix strobe (IO interrupt 0x132e0)
+0x0240002A,LMP_DRV,write,0x37280,lamp matrix row drive (IO interrupt 0x132e0)
+0x0240002B,GI relay + aux strobes,write,0x372d0,"shadow byte 0x3c758; bit0 GI relay (0=on), bit4 CSTB = left ramp light tube, bit5 DSTB = right ramp light tube, bit6 ESTB = aux coils 33-40"
+0x02580000,diagnostic LED,write,0x37344,CPU board LED
+0x01100002,switch strobe,write,0x372d8,switch matrix column select
+0x01100008,DMD page,write,0x372e4,DMD page register

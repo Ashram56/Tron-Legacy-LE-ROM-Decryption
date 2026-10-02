@@ -1,0 +1,26 @@
+#show_version=6
+# deff_070_quorra_total: QUORRA MULTIBALL TOTAL
+# ROM trigger: Quorra Multiball end. Timing from emulation.
+# Lamp effect: lampfx_074_quorra_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_070_quorra_total:
+      action: play
+  shows:
+    leff_040:
+      action: play
+      loops: 0
+    lampfx_074_quorra_total:
+      action: play
+      loops: 0
+  sounds:
+    call_074:
+      action: play
+- time: 1462ms
+  sounds:
+    call_075:
+      action: play
+- time: 2420ms
+  slides:
+    deff_070_quorra_total:
+      action: remove

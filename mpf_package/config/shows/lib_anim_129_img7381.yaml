@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 129: images 7381-7470, 90 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_129_img7381:
+      action: play
+- time: 4409ms
+  slides:
+    lib_anim_129_img7381:
+      action: remove

@@ -1,0 +1,9 @@
+#show_version=6
+# ROM lamp effect 87 (leff table 0x040e23e4, function 0x10171d8, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Holds these lamps off (a blackout layer) for as long as it runs.
+# Started by: code: clu_lane_hit
+- duration: 146ms
+  lights:
+    (lamp): '000000'

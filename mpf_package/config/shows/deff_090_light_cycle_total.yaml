@@ -1,0 +1,26 @@
+#show_version=6
+# deff_090_light_cycle_total: LIGHT CYCLE MULTIBALL TOTAL
+# ROM trigger: Light Cycle Multiball end. Timing from emulation.
+# Lamp effect: lampfx_098_light_cycle_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_090_light_cycle_total:
+      action: play
+  shows:
+    leff_058:
+      action: play
+      loops: 0
+    lampfx_098_light_cycle_total:
+      action: play
+      loops: 0
+  sounds:
+    call_0cc:
+      action: play
+- time: 3026ms
+  sounds:
+    call_0cd:
+      action: play
+- time: 3203ms
+  slides:
+    deff_090_light_cycle_total:
+      action: remove

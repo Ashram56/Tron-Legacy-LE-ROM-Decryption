@@ -1,0 +1,21 @@
+# Find Flynn: started by the ZEN rollover (sw12), collected by a shot at the roving arrow.
+start 1
+wait 3
+mark ZEN rollover starts Find Flynn (arrow at position 0 = left orbit)
+hit 12
+wait 1
+mark left orbit (position 0) finds Flynn: 250,000
+hit 43
+wait 4
+mark second Find Flynn: value 275,000
+hit 12
+wait 1
+hit 43
+wait 4
+mark third Find Flynn started, then drain: does it survive the ball end?
+hit 12
+wait 2
+drain left
+wait 8
+hit 43
+wait 1

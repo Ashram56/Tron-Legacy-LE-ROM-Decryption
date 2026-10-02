@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 4: images 1439-1439, 1 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_004_img1439:
+      action: play
+- time: 49ms
+  slides:
+    lib_anim_004_img1439:
+      action: remove

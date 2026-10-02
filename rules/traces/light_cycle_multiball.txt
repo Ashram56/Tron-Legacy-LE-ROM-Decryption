@@ -1,0 +1,73 @@
+# Run with tron_ref patched to poll PinmameGetChangedSolenoids() in sim_step() (the shared binary never sees coils, so no balls move).
+# NOTE: run with a tron_ref that polls PinmameGetSolenoid() each step (the shipped tron_ref gets no coil
+# callbacks for coils 1-32 in this build, so the trough never ejects and "drain" is ignored).
+# Watch file: see the matching .tsv lines at the bottom of this comment block.
+# watch: lc_a_cur 3b280 4
+# watch: lc_a_prev 3b284 4
+# watch: lc_a_lvl 3b28c 1
+# watch: lc_a_prevlvl 3b290 1
+# watch: lc_b_cur 3b294 4
+# watch: lc_b_prev 3b298 4
+# watch: lc_b_lvl 3b2a0 1
+# watch: lc_c_cur 3b2a8 4
+# watch: lc_super_pts 3b2bc 1
+# watch: lc_total 3b2c0 4
+# watch: lc_lit 211189c 1
+# watch: lc_remaining 2111744 1
+# watch: lc_collected 2111754 1
+# watch: lc_starts 2111764 1
+# watch: lc_super_count 2111768 1
+# watch: lc_color_idx 211176c 2
+# watch: q_lit 2111898 1
+# watch: q_progress 21117ac 1
+# Light Cycle Multiball reference: natural lighting (4 shots), start at VUK, jackpot chain, timeout, end
+start 1
+wait 4
+mark light_cycle_progress
+hit 37
+wait 2
+hit 34
+wait 2
+hit 43
+wait 3
+hit 46
+wait 4
+mark vuk_start
+hit 11
+wait 6
+mark drain_during_ball_save
+drain
+wait 4
+mark jackpot_left_ramp
+hit 37
+wait 2
+mark super_left_inner_loop
+hit 44
+wait 2
+mark double_super_right_inner_loop
+hit 39
+wait 3
+mark jackpot_right_orbit
+hit 46
+wait 2
+mark super_right_ramp
+hit 34
+wait 3
+mark jackpot_right_ramp
+hit 34
+wait 3
+mark jackpot_left_ramp_then_timeout
+hit 37
+wait 6
+mark grace_left_orbit
+hit 43
+wait 3
+mark drain1_ends_multiball
+drain
+wait 3
+mark late_shot_after_end
+hit 46
+wait 8
+mark drain2_end_of_ball
+drain
+wait 8

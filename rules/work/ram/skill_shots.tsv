@@ -1,0 +1,6 @@
+0x370d4	skA_timeout_obj	12	per start	left ramp skill shot 3-switch timeout (slots 0x3b6fc)
+0x370e0	skB_timeout_obj	12	per start	right ramp skill shot timeout (slots 0x3b700)
+0x370ec	skC_timeout_obj	12	per start	VUK skill shot timeout (slots 0x3b704)
+0x2111814	skA_count	1	per game [p-1]	left ramp skill shots collected
+0x2111818	skB_count	1	per game [p-1]	right ramp skill shots collected
+0x211181c	skC_count	1	per game [p-1]	VUK skill shots collected

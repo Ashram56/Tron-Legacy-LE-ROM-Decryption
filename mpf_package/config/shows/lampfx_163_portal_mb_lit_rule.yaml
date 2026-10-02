@@ -1,0 +1,10 @@
+#show_version=6
+# ROM lamp effect 163 (leff table 0x040e23e4, function 0x102f9d8, priority 9). Captured in emulation.
+# Loops until stopped. 
+# Started by: rule: while portal_mb_lit_rule
+- duration: 129ms
+  lights:
+    l_eject_portal: ffffff
+- duration: 130ms
+  lights:
+    l_eject_portal: '000000'

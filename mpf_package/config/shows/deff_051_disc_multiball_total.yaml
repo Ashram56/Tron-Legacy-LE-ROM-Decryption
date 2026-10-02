@@ -1,0 +1,22 @@
+#show_version=6
+# deff_051_disc_multiball_total: Disc Multiball TOTAL
+# ROM trigger: Disc Multiball end. Timing from emulation.
+# Lamp effect: lampfx_051_disc_multiball_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_051_disc_multiball_total:
+      action: play
+  shows:
+    leff_047:
+      action: play
+      loops: 0
+    lampfx_051_disc_multiball_total:
+      action: play
+      loops: 0
+  sounds:
+    call_061:
+      action: play
+- time: 3645ms
+  slides:
+    deff_051_disc_multiball_total:
+      action: remove

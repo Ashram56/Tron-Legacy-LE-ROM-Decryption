@@ -1,0 +1,14 @@
+#show_version=6
+# deff_137_flynn_found: FLYNN FOUND
+# ROM trigger: Find Flynn completed. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_137_flynn_found:
+      action: play
+  sounds:
+    call_0e7:
+      action: play
+- time: 1693ms
+  slides:
+    deff_137_flynn_found:
+      action: remove

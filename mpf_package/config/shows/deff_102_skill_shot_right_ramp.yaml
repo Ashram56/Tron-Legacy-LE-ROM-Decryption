@@ -1,0 +1,8 @@
+#show_version=6
+# deff_102_skill_shot_right_ramp: SKILL SHOT (right ramp)
+# ROM trigger: skill shot via right ramp exit sw34. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_047:
+      action: play
+- time: 1205ms

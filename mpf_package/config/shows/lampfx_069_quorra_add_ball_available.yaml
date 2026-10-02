@@ -1,0 +1,42 @@
+#show_version=6
+# ROM lamp effect 69 (leff table 0x040e23e4, function 0x101f188, priority 10). Captured in emulation.
+# Loops until stopped. loops in the ROM; the first 129 ms (a lead-in before the loop settles) are left out
+# Started by: rule: while quorra_add_ball_available
+- duration: 130ms
+  lights:
+    l_recognizer_pos_1: ffffff
+    l_recognizer_pos_2: ffffff
+    l_recognizer_pos_3: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 130ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_3: ffffff
+- duration: 130ms
+  lights:
+    l_recognizer_pos_2: ffffff
+- duration: 130ms
+  lights:
+    l_recognizer_pos_1: ffffff
+- duration: 130ms
+  lights:
+    l_recognizer_pos_3: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_2: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_1: '000000'
+- duration: 130ms
+  lights:
+    l_recognizer_pos_1: ffffff

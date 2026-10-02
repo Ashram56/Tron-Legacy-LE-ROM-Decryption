@@ -1,0 +1,28 @@
+#show_version=6
+# deff_087_light_cycle_jackpot_level_5_2: JACKPOT, clip anim_040_img3462.
+# Same sounds and tube show as deff_087_light_cycle_jackpot; only the clip differs. clip chosen by Light Cycle multiball level 1-6 and the jackpot count within that level (code: table 0x40d2ffc, fields 0-1 give each level's clip range; past the range the first clip is used).
+# Lamp effect: lampfx_095_light_cycle_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_087_light_cycle_jackpot_level_5_2:
+      action: play
+  shows:
+    leff_055:
+      action: play
+      loops: 0
+    lampfx_095_light_cycle_jackpot:
+      action: play
+      loops: -1
+  sounds:
+    call_0c5:
+      action: play
+- time: 1277ms
+  sounds:
+    call_0c7:
+      action: play
+    call_0c6:
+      action: play
+- time: 2701ms
+  slides:
+    deff_087_light_cycle_jackpot_level_5_2:
+      action: remove

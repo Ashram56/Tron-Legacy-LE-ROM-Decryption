@@ -1,0 +1,17 @@
+#show_version=6
+# deff_054_disc_multiball_restarted: DISC MULTIBALL (restarted)
+# ROM trigger: Disc Multiball restart made. Timing from emulation.
+# Lamp effect: lampfx_055_disc_multiball_restarted at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  shows:
+    leff_050:
+      action: play
+    lampfx_055_disc_multiball_restarted:
+      action: play
+      loops: 0
+  sounds:
+    call_030:
+      action: play
+    call_031:
+      action: play
+- time: 2280ms

@@ -1,0 +1,8 @@
+#show_version=6
+# deff_003_technician_alert: Technician alert / service menu prompt
+# ROM trigger: service. Timing from emulation.
+- time: 0ms
+  sounds:
+    call_00c:
+      action: play
+- time: 12010ms

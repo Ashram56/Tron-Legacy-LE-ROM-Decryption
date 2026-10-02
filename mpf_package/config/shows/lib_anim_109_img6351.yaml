@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 109: images 6351-6354, 4 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_109_img6351:
+      action: play
+- time: 196ms
+  slides:
+    lib_anim_109_img6351:
+      action: remove

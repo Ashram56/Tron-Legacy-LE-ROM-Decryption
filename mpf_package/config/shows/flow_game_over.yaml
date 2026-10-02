@@ -1,0 +1,25 @@
+#show_version=6
+# End of game (observed). After the last ball's bonus, a high score first runs initials entry
+# (effect 31 tron_enter_initials, effect 32 high score value, effect 33 player n) until initials are entered;
+# then this show: the match sequence, then attract mode (effect 1).
+# 20ms effect 38 (MATCH sequence)
+- time: 20ms
+  shows:
+    deff_038_match:
+      action: play
+- time: 4291ms
+  sounds:
+    call_019:
+      action: play
+- time: 7930ms
+  shows:
+    leff_001:
+      action: play
+    lampfx_133_game_over:      # ROM lamp effect 133 with the game-over music (observed 20 ms after attract starts)
+      action: play
+      loops: -1
+- time: 7947ms
+  sounds:
+    call_01d:
+      action: play
+- time: 8109ms

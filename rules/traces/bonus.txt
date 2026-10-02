@@ -1,0 +1,31 @@
+# bonus reference scenario (Tron LE 1.74, factory settings)
+# Run: PINMAME_NOJIT=1 tron_ref bonus.txt bonus.jsonl <watch: see work/ram/bonus.tsv>
+# Uses poke to set item ladder states and Sea of Simulation / Portal counts (player 1).
+start 1
+wait 2.5
+mark valid_playfield
+hit 12
+wait 1
+mark bonus_x_via_sw39 (each R. inner loop hit +1 bonus X; expect 1->4)
+hit 39
+wait 0.5
+hit 39
+wait 0.5
+hit 39
+wait 0.5
+mark poke FLYNN lit (50k), GEM collected (250k), TRON lit+collected (250k), SoS x2 (900k), Portal x1 (2.25M)
+poke 2111694 1 4
+poke 21116a4 256 4
+poke 2111714 258 4
+poke 2111800 2
+poke 21118b8 1
+wait 7
+mark drain_end_of_ball_1 (ball save expired; expect (50k+50k+250k+250k+900k+2.25M)*4 = 15,000,000)
+drain
+wait 12
+mark ball_2_valid (items/SoS/Portal persist, bonus X back to 1: expect 3,750,000)
+hit 12
+wait 10
+mark drain_end_of_ball_2
+drain
+wait 10

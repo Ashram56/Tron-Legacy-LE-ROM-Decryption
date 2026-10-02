@@ -1,0 +1,22 @@
+#show_version=6
+# deff_069_quorra_super_jackpot: (DOUBLE) SUPER JACKPOT
+# ROM trigger: Quorra Multiball super jackpot. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_069_quorra_super_jackpot:
+      action: play
+  shows:
+    leff_039:
+      action: play
+      loops: 0
+  sounds:
+    call_070:
+      action: play
+- time: 2199ms
+  sounds:
+    call_071:
+      action: play
+- time: 4377ms
+  slides:
+    deff_069_quorra_super_jackpot:
+      action: remove

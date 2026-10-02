@@ -1,0 +1,11 @@
+#show_version=6
+# deff_032_high_score_value: High score value
+# ROM trigger: high score entry. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_032_high_score_value:
+      action: play
+- time: 12010ms
+  slides:
+    deff_032_high_score_value:
+      action: remove

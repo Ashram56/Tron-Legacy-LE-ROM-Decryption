@@ -1,0 +1,11 @@
+#show_version=6
+# deff_055_multiball_lit: MULTIBALL IS LIT / n MORE TO LIGHT / EXTRA BALL
+# ROM trigger: ramp exits (sw34/sw37) progress toward End of Line multiball. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_055_multiball_lit:
+      action: play
+- time: 2180ms
+  slides:
+    deff_055_multiball_lit:
+      action: remove

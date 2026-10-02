@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 99: images 5670-5685, 16 frames at 98 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_099_img5670:
+      action: play
+- time: 1568ms
+  slides:
+    lib_anim_099_img5670:
+      action: remove

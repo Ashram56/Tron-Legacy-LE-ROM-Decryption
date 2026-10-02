@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 7: images 1764-2033, 270 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_007_img1764:
+      action: play
+- time: 13227ms
+  slides:
+    lib_anim_007_img1764:
+      action: remove

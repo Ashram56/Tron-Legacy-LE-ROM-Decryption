@@ -1,0 +1,11 @@
+#show_version=6
+# deff_096_zuse_target_hit: Fast scoring target hit value
+# ROM trigger: any target during Fast Scoring. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_096_zuse_target_hit:
+      action: play
+- time: 1063ms
+  slides:
+    deff_096_zuse_target_hit:
+      action: remove

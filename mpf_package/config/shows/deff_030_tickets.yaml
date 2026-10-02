@@ -1,0 +1,18 @@
+#show_version=6
+# deff_030_tickets: n TICKET(S)
+# ROM trigger: ticket dispenser award. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_030_tickets:
+      action: play
+  sounds:
+    call_11c:
+      action: play
+- time: 732ms
+  sounds:
+    call_11d:
+      action: play
+- time: 2182ms
+  slides:
+    deff_030_tickets:
+      action: remove

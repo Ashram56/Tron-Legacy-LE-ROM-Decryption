@@ -1,0 +1,21 @@
+#show_version=6
+# deff_133_extra_ball: EXTRA BALL
+# ROM trigger: extra ball collected. Timing from emulation.
+# Lamp effect: lampfx_153_extra_ball at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_133_extra_ball:
+      action: play
+  sounds:
+    call_119:
+      action: play
+    call_11a:
+      action: play
+  shows:
+    lampfx_153_extra_ball:
+      action: play
+      loops: 0
+- time: 3114ms
+  slides:
+    deff_133_extra_ball:
+      action: remove

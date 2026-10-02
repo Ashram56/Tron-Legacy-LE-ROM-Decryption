@@ -1,0 +1,47 @@
+# game_flow reference scenario (Tron LE 1.74, factory settings: adj 38 ball save 5 s, 3 balls)
+# Run: PINMAME_NOJIT=1 tron_ref game_flow.txt game_flow.jsonl game_flow_watch.tsv
+# sw12 ZEN ROLLOVER is a "force valid playfield" switch: one hit makes the playfield valid.
+start 1
+wait 2.5
+mark B1_valid_playfield
+hit 12
+wait 2
+mark B1_drain_inside_ball_save (expect deff 20 BALL SAVED, new ball auto-launched)
+drain
+wait 4
+mark B1_replacement_ball_valid (this ball gets NO new ball save)
+hit 12
+wait 3
+mark B1_replacement_drain (expect end of ball 1: bonus deff 25)
+drain
+wait 12
+mark B2_valid_playfield
+hit 12
+wait 6.5
+mark B2_drain_inside_grace (timer lamp effect already stopped, grace still saves)
+drain
+wait 4
+mark B2_replacement_valid
+hit 12
+mark poke_light_extra_ball (OS lit count p1 0x3d46c=1, scoop EB lit p1 0x2111894=1)
+poke 3d46c 1
+poke 2111894 1
+wait 0.5
+mark B2_collect_extra_ball_at_vuk (expect deff 133, audit 9, shoot_again=1)
+hit 11
+wait 20
+mark B2_drain (ball search fired during the wait; expect bonus then deff 26 SHOOT AGAIN, same ball number)
+drain
+wait 20
+mark B2_shoot_again_valid
+hit 12
+wait 10
+mark B2_shoot_again_drain (expect bonus, ball 3)
+drain
+wait 12
+mark B3_valid
+hit 12
+wait 10
+mark B3_drain_game_over (expect bonus, match deff 38, game over, attract deff 1)
+drain
+wait 16

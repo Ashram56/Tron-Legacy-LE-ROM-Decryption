@@ -1,0 +1,7 @@
+#show_version=6
+# Tron LE light effect 88 (ROM function 0x10056b8), hold. Generated from ROM emulation.
+# NOTE: some colours in this effect depend on game state and were not reached in emulation: 15/15/15
+- duration: 16ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000

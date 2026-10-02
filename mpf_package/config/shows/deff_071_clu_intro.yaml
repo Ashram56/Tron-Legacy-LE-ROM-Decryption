@@ -1,0 +1,26 @@
+#show_version=6
+# deff_071_clu_intro: TERMINATE CLU / SHOOT CLU HELMET SHOTS
+# ROM trigger: CLU hurry-up start. Timing from emulation.
+# Lamp effect: lampfx_077_clu_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_071_clu_intro:
+      action: play
+  shows:
+    leff_022:
+      action: play
+      loops: 0
+    lampfx_077_clu_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_087:
+      action: play
+- time: 964ms
+  sounds:
+    call_088:
+      action: play
+- time: 2156ms
+  slides:
+    deff_071_clu_intro:
+      action: remove

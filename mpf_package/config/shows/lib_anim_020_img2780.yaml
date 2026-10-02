@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 20: images 2780-2783, 4 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_020_img2780:
+      action: play
+- time: 196ms
+  slides:
+    lib_anim_020_img2780:
+      action: remove

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 101: images 5851-5971, 121 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_101_img5851:
+      action: play
+- time: 5928ms
+  slides:
+    lib_anim_101_img5851:
+      action: remove

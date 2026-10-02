@@ -1,0 +1,98 @@
+#show_version=6
+# ROM lamp effect 66 (leff table 0x040e23e4, function 0x101d894, priority 161). Captured in emulation.
+# Plays once. 
+# Started by: effect 63 (deff_063_quorra_lit)
+- duration: 32ms
+  lights:
+    l_advance_quorra: ffffff
+    l_l_inner_loop_arrow: '000000'
+    l_l_inner_loop_clu: '000000'
+    l_l_inner_loop_disc: '000000'
+    l_l_inner_loop_light_cycle: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_clu: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_l_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_advance_quorra: '000000'
+- duration: 32ms
+  lights:
+    l_l_inner_loop_clu: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_l_inner_loop_disc: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_arrow: '000000'
+- duration: 32ms
+  lights:
+    l_advance_quorra: ffffff
+- duration: 33ms
+  lights:
+    l_l_inner_loop_clu: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_l_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_arrow: ffffff
+- duration: 32ms
+  lights:
+    l_advance_quorra: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_clu: '000000'
+- duration: 32ms
+  lights:
+    l_l_inner_loop_light_cycle: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_disc: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_arrow: '000000'
+- duration: 32ms
+  lights:
+    l_advance_quorra: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_clu: ffffff
+- duration: 33ms
+  lights:
+    l_l_inner_loop_light_cycle: ffffff
+- duration: 32ms
+  lights:
+    l_l_inner_loop_disc: ffffff
+- duration: 33ms
+  lights:
+    l_l_inner_loop_arrow: ffffff
+- duration: 32ms
+  lights:
+    l_advance_quorra: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_clu: '000000'
+- duration: 32ms
+  lights:
+    l_l_inner_loop_light_cycle: '000000'
+- duration: 33ms
+  lights:
+    l_l_inner_loop_disc: '000000'
+- duration: 48ms
+  lights:
+    l_l_inner_loop_arrow: '000000'

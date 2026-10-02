@@ -1,0 +1,840 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Effects that pick a different film clip each time (at random, or by mode level).
+# The ROM's choice is reproduced with one show per clip.
+images:
+  deff_048_disc_multiball_jackpot_v00:
+    file: deff_048_disc_multiball_jackpot/variants/v00.gif
+  deff_048_disc_multiball_jackpot_v01:
+    file: deff_048_disc_multiball_jackpot/variants/v01.gif
+  deff_048_disc_multiball_jackpot_v02:
+    file: deff_048_disc_multiball_jackpot/variants/v02.gif
+  deff_048_disc_multiball_jackpot_v03:
+    file: deff_048_disc_multiball_jackpot/variants/v03.gif
+  deff_048_disc_multiball_jackpot_v04:
+    file: deff_048_disc_multiball_jackpot/variants/v04.gif
+  deff_048_disc_multiball_jackpot_v05:
+    file: deff_048_disc_multiball_jackpot/variants/v05.gif
+  deff_048_disc_multiball_jackpot_v06:
+    file: deff_048_disc_multiball_jackpot/variants/v06.gif
+  deff_048_disc_multiball_jackpot_v07:
+    file: deff_048_disc_multiball_jackpot/variants/v07.gif
+  deff_048_disc_multiball_jackpot_v08:
+    file: deff_048_disc_multiball_jackpot/variants/v08.gif
+  deff_048_disc_multiball_jackpot_v09:
+    file: deff_048_disc_multiball_jackpot/variants/v09.gif
+  deff_048_disc_multiball_jackpot_v10:
+    file: deff_048_disc_multiball_jackpot/variants/v10.gif
+  deff_048_disc_multiball_jackpot_v11:
+    file: deff_048_disc_multiball_jackpot/variants/v11.gif
+  deff_049_disc_multiball_jackpot_2_v00:
+    file: deff_049_disc_multiball_jackpot_2/variants/v00.gif
+  deff_049_disc_multiball_jackpot_2_v01:
+    file: deff_049_disc_multiball_jackpot_2/variants/v01.gif
+  deff_049_disc_multiball_jackpot_2_v02:
+    file: deff_049_disc_multiball_jackpot_2/variants/v02.gif
+  deff_049_disc_multiball_jackpot_2_v03:
+    file: deff_049_disc_multiball_jackpot_2/variants/v03.gif
+  deff_049_disc_multiball_jackpot_2_v04:
+    file: deff_049_disc_multiball_jackpot_2/variants/v04.gif
+  deff_049_disc_multiball_jackpot_2_v05:
+    file: deff_049_disc_multiball_jackpot_2/variants/v05.gif
+  deff_049_disc_multiball_jackpot_2_v06:
+    file: deff_049_disc_multiball_jackpot_2/variants/v06.gif
+  deff_049_disc_multiball_jackpot_2_v07:
+    file: deff_049_disc_multiball_jackpot_2/variants/v07.gif
+  deff_049_disc_multiball_jackpot_2_v08:
+    file: deff_049_disc_multiball_jackpot_2/variants/v08.gif
+  deff_049_disc_multiball_jackpot_2_v09:
+    file: deff_049_disc_multiball_jackpot_2/variants/v09.gif
+  deff_049_disc_multiball_jackpot_2_v10:
+    file: deff_049_disc_multiball_jackpot_2/variants/v10.gif
+  deff_049_disc_multiball_jackpot_2_v11:
+    file: deff_049_disc_multiball_jackpot_2/variants/v11.gif
+  deff_068_quorra_jackpot_v00:
+    file: deff_068_quorra_jackpot/variants/v00.gif
+  deff_068_quorra_jackpot_v01:
+    file: deff_068_quorra_jackpot/variants/v01.gif
+  deff_068_quorra_jackpot_v02:
+    file: deff_068_quorra_jackpot/variants/v02.gif
+  deff_069_quorra_super_jackpot_v00:
+    file: deff_069_quorra_super_jackpot/variants/v00.gif
+  deff_069_quorra_super_jackpot_v01:
+    file: deff_069_quorra_super_jackpot/variants/v01.gif
+  deff_087_light_cycle_jackpot_level_1_1:
+    file: deff_087_light_cycle_jackpot/variants/level_1_1.gif
+  deff_087_light_cycle_jackpot_level_1_2:
+    file: deff_087_light_cycle_jackpot/variants/level_1_2.gif
+  deff_087_light_cycle_jackpot_level_2_1:
+    file: deff_087_light_cycle_jackpot/variants/level_2_1.gif
+  deff_087_light_cycle_jackpot_level_3_1:
+    file: deff_087_light_cycle_jackpot/variants/level_3_1.gif
+  deff_087_light_cycle_jackpot_level_3_2:
+    file: deff_087_light_cycle_jackpot/variants/level_3_2.gif
+  deff_087_light_cycle_jackpot_level_4_1:
+    file: deff_087_light_cycle_jackpot/variants/level_4_1.gif
+  deff_087_light_cycle_jackpot_level_5_1:
+    file: deff_087_light_cycle_jackpot/variants/level_5_1.gif
+  deff_087_light_cycle_jackpot_level_5_2:
+    file: deff_087_light_cycle_jackpot/variants/level_5_2.gif
+  deff_087_light_cycle_jackpot_level_6_1:
+    file: deff_087_light_cycle_jackpot/variants/level_6_1.gif
+  deff_087_light_cycle_jackpot_level_6_2:
+    file: deff_087_light_cycle_jackpot/variants/level_6_2.gif
+  deff_087_light_cycle_jackpot_level_6_3:
+    file: deff_087_light_cycle_jackpot/variants/level_6_3.gif
+  deff_087_light_cycle_jackpot_level_6_4:
+    file: deff_087_light_cycle_jackpot/variants/level_6_4.gif
+  deff_088_light_cycle_super_jackpot_level_1:
+    file: deff_088_light_cycle_super_jackpot/variants/level_1.gif
+  deff_088_light_cycle_super_jackpot_level_2:
+    file: deff_088_light_cycle_super_jackpot/variants/level_2.gif
+  deff_088_light_cycle_super_jackpot_level_3:
+    file: deff_088_light_cycle_super_jackpot/variants/level_3.gif
+  deff_088_light_cycle_super_jackpot_level_4:
+    file: deff_088_light_cycle_super_jackpot/variants/level_4.gif
+  deff_088_light_cycle_super_jackpot_level_5:
+    file: deff_088_light_cycle_super_jackpot/variants/level_5.gif
+  deff_088_light_cycle_super_jackpot_level_6:
+    file: deff_088_light_cycle_super_jackpot/variants/level_6.gif
+  deff_089_light_cycle_double_super_jackpot_level_1:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_1.gif
+  deff_089_light_cycle_double_super_jackpot_level_2:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_2.gif
+  deff_089_light_cycle_double_super_jackpot_level_3:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_3.gif
+  deff_089_light_cycle_double_super_jackpot_level_4:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_4.gif
+  deff_089_light_cycle_double_super_jackpot_level_5:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_5.gif
+  deff_089_light_cycle_double_super_jackpot_level_6:
+    file: deff_089_light_cycle_double_super_jackpot/variants/level_6.gif
+  deff_097_zuse_all_targets_v00:
+    file: deff_097_zuse_all_targets/variants/v00.gif
+  deff_097_zuse_all_targets_v01:
+    file: deff_097_zuse_all_targets/variants/v01.gif
+  deff_108_disc_access_progress_v00:
+    file: deff_108_disc_access_progress/variants/v00.gif
+  deff_108_disc_access_progress_v01:
+    file: deff_108_disc_access_progress/variants/v01.gif
+  deff_108_disc_access_progress_v02:
+    file: deff_108_disc_access_progress/variants/v02.gif
+  deff_108_disc_access_progress_v03:
+    file: deff_108_disc_access_progress/variants/v03.gif
+  deff_111_disc_multiball_progress_v00:
+    file: deff_111_disc_multiball_progress/variants/v00.gif
+  deff_111_disc_multiball_progress_v01:
+    file: deff_111_disc_multiball_progress/variants/v01.gif
+  deff_111_disc_multiball_progress_v02:
+    file: deff_111_disc_multiball_progress/variants/v02.gif
+  deff_111_disc_multiball_progress_v03:
+    file: deff_111_disc_multiball_progress/variants/v03.gif
+  deff_111_disc_multiball_progress_v04:
+    file: deff_111_disc_multiball_progress/variants/v04.gif
+  deff_111_disc_multiball_progress_v05:
+    file: deff_111_disc_multiball_progress/variants/v05.gif
+  deff_111_disc_multiball_progress_v06:
+    file: deff_111_disc_multiball_progress/variants/v06.gif
+  deff_111_disc_multiball_progress_v07:
+    file: deff_111_disc_multiball_progress/variants/v07.gif
+  deff_111_disc_multiball_progress_v08:
+    file: deff_111_disc_multiball_progress/variants/v08.gif
+  deff_111_disc_multiball_progress_v09:
+    file: deff_111_disc_multiball_progress/variants/v09.gif
+  deff_111_disc_multiball_progress_v10:
+    file: deff_111_disc_multiball_progress/variants/v10.gif
+  deff_116_sea_stage_1_v00:
+    file: deff_116_sea_stage_1/variants/v00.gif
+  deff_116_sea_stage_1_v01:
+    file: deff_116_sea_stage_1/variants/v01.gif
+  deff_116_sea_stage_1_alt_v00:
+    file: deff_116_sea_stage_1/variants/alt_v00.gif
+  deff_117_sea_stage_2_v00:
+    file: deff_117_sea_stage_2/variants/v00.gif
+  deff_117_sea_stage_2_v01:
+    file: deff_117_sea_stage_2/variants/v01.gif
+  deff_117_sea_stage_2_alt_v00:
+    file: deff_117_sea_stage_2/variants/alt_v00.gif
+  deff_118_sea_stage_3_v00:
+    file: deff_118_sea_stage_3/variants/v00.gif
+  deff_118_sea_stage_3_v01:
+    file: deff_118_sea_stage_3/variants/v01.gif
+  deff_118_sea_stage_3_alt_v00:
+    file: deff_118_sea_stage_3/variants/alt_v00.gif
+  deff_119_sea_stage_4_v00:
+    file: deff_119_sea_stage_4/variants/v00.gif
+  deff_119_sea_stage_4_v01:
+    file: deff_119_sea_stage_4/variants/v01.gif
+  deff_119_sea_stage_4_alt_v00:
+    file: deff_119_sea_stage_4/variants/alt_v00.gif
+  deff_120_sea_stage_5_v00:
+    file: deff_120_sea_stage_5/variants/v00.gif
+  deff_120_sea_stage_5_v01:
+    file: deff_120_sea_stage_5/variants/v01.gif
+  deff_120_sea_stage_5_alt_v00:
+    file: deff_120_sea_stage_5/variants/alt_v00.gif
+  deff_121_sea_stage_6_v00:
+    file: deff_121_sea_stage_6/variants/v00.gif
+  deff_121_sea_stage_6_v01:
+    file: deff_121_sea_stage_6/variants/v01.gif
+  deff_121_sea_stage_6_alt_v00:
+    file: deff_121_sea_stage_6/variants/alt_v00.gif
+  deff_122_sea_stage_7_v00:
+    file: deff_122_sea_stage_7/variants/v00.gif
+  deff_122_sea_stage_7_v01:
+    file: deff_122_sea_stage_7/variants/v01.gif
+  deff_122_sea_stage_7_alt_v00:
+    file: deff_122_sea_stage_7/variants/alt_v00.gif
+  deff_123_sea_stage_8_v00:
+    file: deff_123_sea_stage_8/variants/v00.gif
+  deff_123_sea_stage_8_v01:
+    file: deff_123_sea_stage_8/variants/v01.gif
+  deff_123_sea_stage_8_alt_v00:
+    file: deff_123_sea_stage_8/variants/alt_v00.gif
+  deff_124_sea_stage_9_v00:
+    file: deff_124_sea_stage_9/variants/v00.gif
+  deff_124_sea_stage_9_v01:
+    file: deff_124_sea_stage_9/variants/v01.gif
+  deff_124_sea_stage_9_alt_v00:
+    file: deff_124_sea_stage_9/variants/alt_v00.gif
+
+slides:
+  deff_048_disc_multiball_jackpot_v00:
+    # clip: anim_074_img4629
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v00
+  deff_048_disc_multiball_jackpot_v01:
+    # clip: anim_079_img4742
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v01
+  deff_048_disc_multiball_jackpot_v02:
+    # clip: anim_080_img4753
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v02
+  deff_048_disc_multiball_jackpot_v03:
+    # clip: anim_081_img4790
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v03
+  deff_048_disc_multiball_jackpot_v04:
+    # clip: anim_082_img4822
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v04
+  deff_048_disc_multiball_jackpot_v05:
+    # clip: anim_082_img4822
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v05
+  deff_048_disc_multiball_jackpot_v06:
+    # clip: anim_083_img4884
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v06
+  deff_048_disc_multiball_jackpot_v07:
+    # clip: anim_084_img4916
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v07
+  deff_048_disc_multiball_jackpot_v08:
+    # clip: anim_085_img4981
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v08
+  deff_048_disc_multiball_jackpot_v09:
+    # clip: anim_075_img4640
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v09
+  deff_048_disc_multiball_jackpot_v10:
+    # clip: anim_076_img4669 + anim_077_img4692
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v10
+  deff_048_disc_multiball_jackpot_v11:
+    # clip: anim_078_img4708
+    - type: image
+      image: deff_048_disc_multiball_jackpot_v11
+  deff_049_disc_multiball_jackpot_2_v00:
+    # clip: anim_074_img4629
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v00
+  deff_049_disc_multiball_jackpot_2_v01:
+    # clip: anim_079_img4742
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v01
+  deff_049_disc_multiball_jackpot_2_v02:
+    # clip: anim_080_img4753
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v02
+  deff_049_disc_multiball_jackpot_2_v03:
+    # clip: anim_081_img4790
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v03
+  deff_049_disc_multiball_jackpot_2_v04:
+    # clip: anim_082_img4822
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v04
+  deff_049_disc_multiball_jackpot_2_v05:
+    # clip: anim_082_img4822
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v05
+  deff_049_disc_multiball_jackpot_2_v06:
+    # clip: anim_083_img4884
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v06
+  deff_049_disc_multiball_jackpot_2_v07:
+    # clip: anim_084_img4916
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v07
+  deff_049_disc_multiball_jackpot_2_v08:
+    # clip: anim_085_img4981
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v08
+  deff_049_disc_multiball_jackpot_2_v09:
+    # clip: anim_075_img4640
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v09
+  deff_049_disc_multiball_jackpot_2_v10:
+    # clip: anim_076_img4669 + anim_077_img4692
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v10
+  deff_049_disc_multiball_jackpot_2_v11:
+    # clip: anim_078_img4708
+    - type: image
+      image: deff_049_disc_multiball_jackpot_2_v11
+  deff_068_quorra_jackpot_v00:
+    # clip: anim_088_img5054
+    - type: image
+      image: deff_068_quorra_jackpot_v00
+  deff_068_quorra_jackpot_v01:
+    # clip: anim_089_img5065
+    - type: image
+      image: deff_068_quorra_jackpot_v01
+  deff_068_quorra_jackpot_v02:
+    # clip: anim_090_img5102
+    - type: image
+      image: deff_068_quorra_jackpot_v02
+  deff_069_quorra_super_jackpot_v00:
+    # clip: anim_095_img5524
+    - type: image
+      image: deff_069_quorra_super_jackpot_v00
+  deff_069_quorra_super_jackpot_v01:
+    # clip: anim_098_img5626
+    - type: image
+      image: deff_069_quorra_super_jackpot_v01
+  deff_087_light_cycle_jackpot_level_1_1:
+    # clip: anim_026_img3008
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_1_1
+  deff_087_light_cycle_jackpot_level_1_2:
+    # clip: anim_026_img3008
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_1_2
+  deff_087_light_cycle_jackpot_level_2_1:
+    # clip: anim_028_img3110
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_2_1
+  deff_087_light_cycle_jackpot_level_3_1:
+    # clip: anim_032_img3223
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_3_1
+  deff_087_light_cycle_jackpot_level_3_2:
+    # clip: anim_035_img3319
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_3_2
+  deff_087_light_cycle_jackpot_level_4_1:
+    # clip: anim_036_img3345
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_4_1
+  deff_087_light_cycle_jackpot_level_5_1:
+    # clip: anim_039_img3428
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_5_1
+  deff_087_light_cycle_jackpot_level_5_2:
+    # clip: anim_040_img3462
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_5_2
+  deff_087_light_cycle_jackpot_level_6_1:
+    # clip: anim_042_img3522
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_6_1
+  deff_087_light_cycle_jackpot_level_6_2:
+    # clip: anim_043_img3573
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_6_2
+  deff_087_light_cycle_jackpot_level_6_3:
+    # clip: anim_044_img3603
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_6_3
+  deff_087_light_cycle_jackpot_level_6_4:
+    # clip: anim_045_img3623
+    - type: image
+      image: deff_087_light_cycle_jackpot_level_6_4
+  deff_088_light_cycle_super_jackpot_level_1:
+    # clip: anim_026_img3008
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_1
+  deff_088_light_cycle_super_jackpot_level_2:
+    # clip: anim_029_img3124
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_2
+  deff_088_light_cycle_super_jackpot_level_3:
+    # clip: anim_033_img3244
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_3
+  deff_088_light_cycle_super_jackpot_level_4:
+    # clip: anim_037_img3364
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_4
+  deff_088_light_cycle_super_jackpot_level_5:
+    # clip: anim_041_img3479
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_5
+  deff_088_light_cycle_super_jackpot_level_6:
+    # clip: anim_046_img3647
+    - type: image
+      image: deff_088_light_cycle_super_jackpot_level_6
+  deff_089_light_cycle_double_super_jackpot_level_1:
+    # clip: anim_027_img3089
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_1
+  deff_089_light_cycle_double_super_jackpot_level_2:
+    # clip: anim_030_img3161
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_2
+  deff_089_light_cycle_double_super_jackpot_level_3:
+    # clip: anim_034_img3272
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_3
+  deff_089_light_cycle_double_super_jackpot_level_4:
+    # clip: anim_038_img3385
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_4
+  deff_089_light_cycle_double_super_jackpot_level_5:
+    # clip: anim_041_img3479
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_5
+  deff_089_light_cycle_double_super_jackpot_level_6:
+    # clip: anim_049_img3815
+    - type: image
+      image: deff_089_light_cycle_double_super_jackpot_level_6
+  deff_097_zuse_all_targets_v00:
+    # clip: anim_097_img5609
+    - type: image
+      image: deff_097_zuse_all_targets_v00
+  deff_097_zuse_all_targets_v01:
+    # clip: anim_099_img5670
+    - type: image
+      image: deff_097_zuse_all_targets_v01
+  deff_108_disc_access_progress_v00:
+    # clip: anim_012_img2683
+    - type: image
+      image: deff_108_disc_access_progress_v00
+  deff_108_disc_access_progress_v01:
+    # clip: anim_013_img2713
+    - type: image
+      image: deff_108_disc_access_progress_v01
+  deff_108_disc_access_progress_v02:
+    # clip: anim_010_img2623
+    - type: image
+      image: deff_108_disc_access_progress_v02
+  deff_108_disc_access_progress_v03:
+    # clip: anim_011_img2653
+    - type: image
+      image: deff_108_disc_access_progress_v03
+  deff_111_disc_multiball_progress_v00:
+    # clip: anim_056_img4074
+    - type: image
+      image: deff_111_disc_multiball_progress_v00
+  deff_111_disc_multiball_progress_v01:
+    # clip: anim_057_img4106 + anim_058_img4164 + anim_059_img4176
+    - type: image
+      image: deff_111_disc_multiball_progress_v01
+  deff_111_disc_multiball_progress_v02:
+    # clip: anim_060_img4182 + anim_061_img4230
+    - type: image
+      image: deff_111_disc_multiball_progress_v02
+  deff_111_disc_multiball_progress_v03:
+    # clip: anim_062_img4244
+    - type: image
+      image: deff_111_disc_multiball_progress_v03
+  deff_111_disc_multiball_progress_v04:
+    # clip: anim_063_img4295 + anim_064_img4307
+    - type: image
+      image: deff_111_disc_multiball_progress_v04
+  deff_111_disc_multiball_progress_v05:
+    # clip: anim_065_img4342
+    - type: image
+      image: deff_111_disc_multiball_progress_v05
+  deff_111_disc_multiball_progress_v06:
+    # clip: anim_066_img4361
+    - type: image
+      image: deff_111_disc_multiball_progress_v06
+  deff_111_disc_multiball_progress_v07:
+    # clip: anim_067_img4390
+    - type: image
+      image: deff_111_disc_multiball_progress_v07
+  deff_111_disc_multiball_progress_v08:
+    # clip: anim_068_img4430
+    - type: image
+      image: deff_111_disc_multiball_progress_v08
+  deff_111_disc_multiball_progress_v09:
+    # clip: anim_070_img4487
+    - type: image
+      image: deff_111_disc_multiball_progress_v09
+  deff_111_disc_multiball_progress_v10:
+    # clip: anim_071_img4501 + anim_072_img4542
+    - type: image
+      image: deff_111_disc_multiball_progress_v10
+  deff_116_sea_stage_1_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_116_sea_stage_1_v00
+  deff_116_sea_stage_1_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_116_sea_stage_1_v01
+  deff_116_sea_stage_1_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_116_sea_stage_1_alt_v00
+  deff_117_sea_stage_2_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_117_sea_stage_2_v00
+  deff_117_sea_stage_2_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_117_sea_stage_2_v01
+  deff_117_sea_stage_2_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_117_sea_stage_2_alt_v00
+  deff_118_sea_stage_3_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_118_sea_stage_3_v00
+  deff_118_sea_stage_3_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_118_sea_stage_3_v01
+  deff_118_sea_stage_3_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_118_sea_stage_3_alt_v00
+  deff_119_sea_stage_4_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_119_sea_stage_4_v00
+  deff_119_sea_stage_4_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_119_sea_stage_4_v01
+  deff_119_sea_stage_4_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_119_sea_stage_4_alt_v00
+  deff_120_sea_stage_5_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_120_sea_stage_5_v00
+  deff_120_sea_stage_5_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_120_sea_stage_5_v01
+  deff_120_sea_stage_5_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_120_sea_stage_5_alt_v00
+  deff_121_sea_stage_6_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_121_sea_stage_6_v00
+  deff_121_sea_stage_6_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_121_sea_stage_6_v01
+  deff_121_sea_stage_6_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_121_sea_stage_6_alt_v00
+  deff_122_sea_stage_7_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_122_sea_stage_7_v00
+  deff_122_sea_stage_7_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_122_sea_stage_7_v01
+  deff_122_sea_stage_7_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_122_sea_stage_7_alt_v00
+  deff_123_sea_stage_8_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_123_sea_stage_8_v00
+  deff_123_sea_stage_8_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_123_sea_stage_8_v01
+  deff_123_sea_stage_8_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_123_sea_stage_8_alt_v00
+  deff_124_sea_stage_9_v00:
+    # clip: anim_117_img6732
+    - type: image
+      image: deff_124_sea_stage_9_v00
+  deff_124_sea_stage_9_v01:
+    # clip: anim_118_img6761
+    - type: image
+      image: deff_124_sea_stage_9_v01
+  deff_124_sea_stage_9_alt_v00:
+    # clip: anim_119_img6798
+    - type: image
+      image: deff_124_sea_stage_9_alt_v00
+
+random_event_player:
+  tron_disc_multiball_jackpot:
+    force_different: true
+    events:
+      - tron_disc_multiball_jackpot_v00
+      - tron_disc_multiball_jackpot_v01
+      - tron_disc_multiball_jackpot_v02
+      - tron_disc_multiball_jackpot_v03
+      - tron_disc_multiball_jackpot_v04
+      - tron_disc_multiball_jackpot_v05
+      - tron_disc_multiball_jackpot_v06
+      - tron_disc_multiball_jackpot_v07
+      - tron_disc_multiball_jackpot_v08
+      - tron_disc_multiball_jackpot_v09
+      - tron_disc_multiball_jackpot_v10
+      - tron_disc_multiball_jackpot_v11
+  tron_disc_multiball_jackpot_2:
+    force_different: true
+    events:
+      - tron_disc_multiball_jackpot_2_v00
+      - tron_disc_multiball_jackpot_2_v01
+      - tron_disc_multiball_jackpot_2_v02
+      - tron_disc_multiball_jackpot_2_v03
+      - tron_disc_multiball_jackpot_2_v04
+      - tron_disc_multiball_jackpot_2_v05
+      - tron_disc_multiball_jackpot_2_v06
+      - tron_disc_multiball_jackpot_2_v07
+      - tron_disc_multiball_jackpot_2_v08
+      - tron_disc_multiball_jackpot_2_v09
+      - tron_disc_multiball_jackpot_2_v10
+      - tron_disc_multiball_jackpot_2_v11
+  tron_quorra_jackpot:
+    force_different: true
+    events:
+      - tron_quorra_jackpot_v00
+      - tron_quorra_jackpot_v01
+      - tron_quorra_jackpot_v02
+  tron_quorra_super_jackpot:
+    force_different: true
+    events:
+      - tron_quorra_super_jackpot_v00
+      - tron_quorra_super_jackpot_v01
+  # effect 87: no random pick; post the tron_light_cycle_jackpot_level_... event for the current Light Cycle level from your mode
+  # effect 88: no random pick; post the tron_light_cycle_super_jackpot_level_... event for the current Light Cycle level from your mode
+  # effect 89: no random pick; post the tron_light_cycle_double_super_jackpot_level_... event for the current Light Cycle level from your mode
+  tron_zuse_all_targets:
+    force_different: true
+    events:
+      - tron_zuse_all_targets_v00
+      - tron_zuse_all_targets_v01
+  tron_disc_access_progress:
+    force_different: true
+    events:
+      - tron_disc_access_progress_v00
+      - tron_disc_access_progress_v01
+      - tron_disc_access_progress_v02
+      - tron_disc_access_progress_v03
+  tron_disc_multiball_progress:
+    force_different: true
+    events:
+      - tron_disc_multiball_progress_v00
+      - tron_disc_multiball_progress_v01
+      - tron_disc_multiball_progress_v02
+      - tron_disc_multiball_progress_v03
+      - tron_disc_multiball_progress_v04
+      - tron_disc_multiball_progress_v05
+      - tron_disc_multiball_progress_v06
+      - tron_disc_multiball_progress_v07
+      - tron_disc_multiball_progress_v08
+      - tron_disc_multiball_progress_v09
+      - tron_disc_multiball_progress_v10
+  tron_sea_stage_1:
+    force_different: true
+    events:
+      - tron_sea_stage_1_v00
+      - tron_sea_stage_1_v01
+  tron_sea_stage_1_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_1_alt_v00
+  tron_sea_stage_2:
+    force_different: true
+    events:
+      - tron_sea_stage_2_v00
+      - tron_sea_stage_2_v01
+  tron_sea_stage_2_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_2_alt_v00
+  tron_sea_stage_3:
+    force_different: true
+    events:
+      - tron_sea_stage_3_v00
+      - tron_sea_stage_3_v01
+  tron_sea_stage_3_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_3_alt_v00
+  tron_sea_stage_4:
+    force_different: true
+    events:
+      - tron_sea_stage_4_v00
+      - tron_sea_stage_4_v01
+  tron_sea_stage_4_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_4_alt_v00
+  tron_sea_stage_5:
+    force_different: true
+    events:
+      - tron_sea_stage_5_v00
+      - tron_sea_stage_5_v01
+  tron_sea_stage_5_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_5_alt_v00
+  tron_sea_stage_6:
+    force_different: true
+    events:
+      - tron_sea_stage_6_v00
+      - tron_sea_stage_6_v01
+  tron_sea_stage_6_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_6_alt_v00
+  tron_sea_stage_7:
+    force_different: true
+    events:
+      - tron_sea_stage_7_v00
+      - tron_sea_stage_7_v01
+  tron_sea_stage_7_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_7_alt_v00
+  tron_sea_stage_8:
+    force_different: true
+    events:
+      - tron_sea_stage_8_v00
+      - tron_sea_stage_8_v01
+  tron_sea_stage_8_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_8_alt_v00
+  tron_sea_stage_9:
+    force_different: true
+    events:
+      - tron_sea_stage_9_v00
+      - tron_sea_stage_9_v01
+  tron_sea_stage_9_alt:
+    force_different: true
+    events:
+      - tron_sea_stage_9_alt_v00
+
+show_player:
+  tron_disc_multiball_jackpot_v00: deff_048_disc_multiball_jackpot_v00
+  tron_disc_multiball_jackpot_v01: deff_048_disc_multiball_jackpot_v01
+  tron_disc_multiball_jackpot_v02: deff_048_disc_multiball_jackpot_v02
+  tron_disc_multiball_jackpot_v03: deff_048_disc_multiball_jackpot_v03
+  tron_disc_multiball_jackpot_v04: deff_048_disc_multiball_jackpot_v04
+  tron_disc_multiball_jackpot_v05: deff_048_disc_multiball_jackpot_v05
+  tron_disc_multiball_jackpot_v06: deff_048_disc_multiball_jackpot_v06
+  tron_disc_multiball_jackpot_v07: deff_048_disc_multiball_jackpot_v07
+  tron_disc_multiball_jackpot_v08: deff_048_disc_multiball_jackpot_v08
+  tron_disc_multiball_jackpot_v09: deff_048_disc_multiball_jackpot_v09
+  tron_disc_multiball_jackpot_v10: deff_048_disc_multiball_jackpot_v10
+  tron_disc_multiball_jackpot_v11: deff_048_disc_multiball_jackpot_v11
+  tron_disc_multiball_jackpot_2_v00: deff_049_disc_multiball_jackpot_2_v00
+  tron_disc_multiball_jackpot_2_v01: deff_049_disc_multiball_jackpot_2_v01
+  tron_disc_multiball_jackpot_2_v02: deff_049_disc_multiball_jackpot_2_v02
+  tron_disc_multiball_jackpot_2_v03: deff_049_disc_multiball_jackpot_2_v03
+  tron_disc_multiball_jackpot_2_v04: deff_049_disc_multiball_jackpot_2_v04
+  tron_disc_multiball_jackpot_2_v05: deff_049_disc_multiball_jackpot_2_v05
+  tron_disc_multiball_jackpot_2_v06: deff_049_disc_multiball_jackpot_2_v06
+  tron_disc_multiball_jackpot_2_v07: deff_049_disc_multiball_jackpot_2_v07
+  tron_disc_multiball_jackpot_2_v08: deff_049_disc_multiball_jackpot_2_v08
+  tron_disc_multiball_jackpot_2_v09: deff_049_disc_multiball_jackpot_2_v09
+  tron_disc_multiball_jackpot_2_v10: deff_049_disc_multiball_jackpot_2_v10
+  tron_disc_multiball_jackpot_2_v11: deff_049_disc_multiball_jackpot_2_v11
+  tron_quorra_jackpot_v00: deff_068_quorra_jackpot_v00
+  tron_quorra_jackpot_v01: deff_068_quorra_jackpot_v01
+  tron_quorra_jackpot_v02: deff_068_quorra_jackpot_v02
+  tron_quorra_super_jackpot_v00: deff_069_quorra_super_jackpot_v00
+  tron_quorra_super_jackpot_v01: deff_069_quorra_super_jackpot_v01
+  tron_light_cycle_jackpot_level_1_1: deff_087_light_cycle_jackpot_level_1_1
+  tron_light_cycle_jackpot_level_1_2: deff_087_light_cycle_jackpot_level_1_2
+  tron_light_cycle_jackpot_level_2_1: deff_087_light_cycle_jackpot_level_2_1
+  tron_light_cycle_jackpot_level_3_1: deff_087_light_cycle_jackpot_level_3_1
+  tron_light_cycle_jackpot_level_3_2: deff_087_light_cycle_jackpot_level_3_2
+  tron_light_cycle_jackpot_level_4_1: deff_087_light_cycle_jackpot_level_4_1
+  tron_light_cycle_jackpot_level_5_1: deff_087_light_cycle_jackpot_level_5_1
+  tron_light_cycle_jackpot_level_5_2: deff_087_light_cycle_jackpot_level_5_2
+  tron_light_cycle_jackpot_level_6_1: deff_087_light_cycle_jackpot_level_6_1
+  tron_light_cycle_jackpot_level_6_2: deff_087_light_cycle_jackpot_level_6_2
+  tron_light_cycle_jackpot_level_6_3: deff_087_light_cycle_jackpot_level_6_3
+  tron_light_cycle_jackpot_level_6_4: deff_087_light_cycle_jackpot_level_6_4
+  tron_light_cycle_super_jackpot_level_1: deff_088_light_cycle_super_jackpot_level_1
+  tron_light_cycle_super_jackpot_level_2: deff_088_light_cycle_super_jackpot_level_2
+  tron_light_cycle_super_jackpot_level_3: deff_088_light_cycle_super_jackpot_level_3
+  tron_light_cycle_super_jackpot_level_4: deff_088_light_cycle_super_jackpot_level_4
+  tron_light_cycle_super_jackpot_level_5: deff_088_light_cycle_super_jackpot_level_5
+  tron_light_cycle_super_jackpot_level_6: deff_088_light_cycle_super_jackpot_level_6
+  tron_light_cycle_double_super_jackpot_level_1: deff_089_light_cycle_double_super_jackpot_level_1
+  tron_light_cycle_double_super_jackpot_level_2: deff_089_light_cycle_double_super_jackpot_level_2
+  tron_light_cycle_double_super_jackpot_level_3: deff_089_light_cycle_double_super_jackpot_level_3
+  tron_light_cycle_double_super_jackpot_level_4: deff_089_light_cycle_double_super_jackpot_level_4
+  tron_light_cycle_double_super_jackpot_level_5: deff_089_light_cycle_double_super_jackpot_level_5
+  tron_light_cycle_double_super_jackpot_level_6: deff_089_light_cycle_double_super_jackpot_level_6
+  tron_zuse_all_targets_v00: deff_097_zuse_all_targets_v00
+  tron_zuse_all_targets_v01: deff_097_zuse_all_targets_v01
+  tron_disc_access_progress_v00: deff_108_disc_access_progress_v00
+  tron_disc_access_progress_v01: deff_108_disc_access_progress_v01
+  tron_disc_access_progress_v02: deff_108_disc_access_progress_v02
+  tron_disc_access_progress_v03: deff_108_disc_access_progress_v03
+  tron_disc_multiball_progress_v00: deff_111_disc_multiball_progress_v00
+  tron_disc_multiball_progress_v01: deff_111_disc_multiball_progress_v01
+  tron_disc_multiball_progress_v02: deff_111_disc_multiball_progress_v02
+  tron_disc_multiball_progress_v03: deff_111_disc_multiball_progress_v03
+  tron_disc_multiball_progress_v04: deff_111_disc_multiball_progress_v04
+  tron_disc_multiball_progress_v05: deff_111_disc_multiball_progress_v05
+  tron_disc_multiball_progress_v06: deff_111_disc_multiball_progress_v06
+  tron_disc_multiball_progress_v07: deff_111_disc_multiball_progress_v07
+  tron_disc_multiball_progress_v08: deff_111_disc_multiball_progress_v08
+  tron_disc_multiball_progress_v09: deff_111_disc_multiball_progress_v09
+  tron_disc_multiball_progress_v10: deff_111_disc_multiball_progress_v10
+  tron_sea_stage_1_v00: deff_116_sea_stage_1_v00
+  tron_sea_stage_1_v01: deff_116_sea_stage_1_v01
+  tron_sea_stage_1_alt_v00: deff_116_sea_stage_1_alt_v00
+  tron_sea_stage_2_v00: deff_117_sea_stage_2_v00
+  tron_sea_stage_2_v01: deff_117_sea_stage_2_v01
+  tron_sea_stage_2_alt_v00: deff_117_sea_stage_2_alt_v00
+  tron_sea_stage_3_v00: deff_118_sea_stage_3_v00
+  tron_sea_stage_3_v01: deff_118_sea_stage_3_v01
+  tron_sea_stage_3_alt_v00: deff_118_sea_stage_3_alt_v00
+  tron_sea_stage_4_v00: deff_119_sea_stage_4_v00
+  tron_sea_stage_4_v01: deff_119_sea_stage_4_v01
+  tron_sea_stage_4_alt_v00: deff_119_sea_stage_4_alt_v00
+  tron_sea_stage_5_v00: deff_120_sea_stage_5_v00
+  tron_sea_stage_5_v01: deff_120_sea_stage_5_v01
+  tron_sea_stage_5_alt_v00: deff_120_sea_stage_5_alt_v00
+  tron_sea_stage_6_v00: deff_121_sea_stage_6_v00
+  tron_sea_stage_6_v01: deff_121_sea_stage_6_v01
+  tron_sea_stage_6_alt_v00: deff_121_sea_stage_6_alt_v00
+  tron_sea_stage_7_v00: deff_122_sea_stage_7_v00
+  tron_sea_stage_7_v01: deff_122_sea_stage_7_v01
+  tron_sea_stage_7_alt_v00: deff_122_sea_stage_7_alt_v00
+  tron_sea_stage_8_v00: deff_123_sea_stage_8_v00
+  tron_sea_stage_8_v01: deff_123_sea_stage_8_v01
+  tron_sea_stage_8_alt_v00: deff_123_sea_stage_8_alt_v00
+  tron_sea_stage_9_v00: deff_124_sea_stage_9_v00
+  tron_sea_stage_9_v01: deff_124_sea_stage_9_v01
+  tron_sea_stage_9_alt_v00: deff_124_sea_stage_9_alt_v00

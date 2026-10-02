@@ -1,0 +1,141 @@
+switch,switch_name,call_id,source,times_heard,hits,generic,samples_heard,all_samples,kinds,wav
+1,(T)RON,0x04c,emulated,2,8,,0x0ac,0x0ab 0x0ac 0x0ad,sfx,samples/sfx/00ac.wav
+1,(T)RON,0x04d,emulated,1,8,,0x0aa,0x0aa,sfx,samples/sfx/00aa.wav
+1,(T)RON,0x0b1,emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+1,(T)RON,0x0e6,emulated,1,8,,0x269,0x352 0x3a9 0x2bc 0x239 0x23e 0x25c 0x262 0x269,speech,samples/speech/0269.wav
+1,(T)RON,0x0ff,emulated,1,8,,0x0b1,0x0b1,sfx,samples/sfx/00b1.wav
+1,(T)RON,0x100,emulated,1,8,,0x1b1,0x16d 0x1b1,speech,samples/speech/01b1.wav
+2,T(R)ON,0x01b,emulated,2,8,,0x45b,0x45b,music,samples/music/045b.wav
+2,T(R)ON,0x04c,emulated,3,8,,0x0ab 0x0ad,0x0ab 0x0ac 0x0ad,sfx,samples/sfx/00ab.wav samples/sfx/00ad.wav
+2,T(R)ON,0x0b1,emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+3,TR(O)N,0x04c,emulated,3,8,,0x0ac 0x0ad,0x0ab 0x0ac 0x0ad,sfx,samples/sfx/00ac.wav samples/sfx/00ad.wav
+3,TR(O)N,0x0b1,emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+4,TRO(N),0x04c,emulated,2,8,,0x0ab,0x0ab 0x0ac 0x0ad,sfx,samples/sfx/00ab.wav
+4,TRO(N),0x04e,emulated,2,8,,0x01b,0x01b,sfx,samples/sfx/001b.wav
+4,TRO(N),0x0b1,emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+4,TRO(N),0x101,emulated,2,8,,0x0b2,0x0b2,sfx,samples/sfx/00b2.wav
+4,TRO(N),0x102,emulated,2,8,,0x169,0x169,speech,samples/speech/0169.wav
+7,(Z)USE,0x0a4,static(depth 1)+emulated,1,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+7,(Z)USE,0x0a5,static(depth 1)+emulated,5,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+7,(Z)USE,0x0a6,static(depth 1)+emulated,2,8,,0x0da 0x0dc,0x0da 0x0db 0x0dc,sfx,samples/sfx/00da.wav samples/sfx/00dc.wav
+7,(Z)USE,0x0a8,static(depth 1),0,8,,,0x0ed,sfx,
+7,(Z)USE,0x0af,emulated,1,8,,0x094,0x094,sfx,samples/sfx/0094.wav
+7,(Z)USE,0x0b0,emulated,1,8,,0x347,0x347 0x385 0x383 0x346 0x349,speech,samples/speech/0347.wav
+7,(Z)USE,0x0b1,static(depth 2)+emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+8,Z(U)SE,0x01b,emulated,1,8,,0x45b,0x45b,music,samples/music/045b.wav
+8,Z(U)SE,0x0a4,static(depth 1)+emulated,1,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+8,Z(U)SE,0x0a5,static(depth 1)+emulated,5,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+8,Z(U)SE,0x0a6,static(depth 1)+emulated,2,8,,0x0da 0x0dc,0x0da 0x0db 0x0dc,sfx,samples/sfx/00da.wav samples/sfx/00dc.wav
+8,Z(U)SE,0x0a8,static(depth 1),0,8,,,0x0ed,sfx,
+8,Z(U)SE,0x0af,emulated,1,8,,0x094,0x094,sfx,samples/sfx/0094.wav
+8,Z(U)SE,0x0b0,emulated,1,8,,0x349,0x347 0x385 0x383 0x346 0x349,speech,samples/speech/0349.wav
+8,Z(U)SE,0x0b1,static(depth 2)+emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+11,VIDEO GAME EJECT,0x0fe,emulated,3,8,,0x08b,0x08b,sfx,samples/sfx/008b.wav
+12,ZEN ROLLOVER,0x0b1,static(depth 2)+emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+12,ZEN ROLLOVER,0x0b4,emulated,1,8,,0x05e,0x05e,sfx,samples/sfx/005e.wav
+12,ZEN ROLLOVER,0x0e5,static(depth 1)+emulated,8,8,,0x051,0x051,sfx,samples/sfx/0051.wav
+12,ZEN ROLLOVER,0x0e6,static(depth 2),0,8,,,0x352 0x3a9 0x2bc 0x239 0x23e 0x25c 0x262 0x269,speech,
+13,ZUS(E),0x0a4,static(depth 1)+emulated,1,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+13,ZUS(E),0x0a5,static(depth 1)+emulated,5,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+13,ZUS(E),0x0a6,static(depth 1)+emulated,2,8,,0x0db 0x0dc,0x0da 0x0db 0x0dc,sfx,samples/sfx/00db.wav samples/sfx/00dc.wav
+13,ZUS(E),0x0a8,static(depth 1),0,8,,,0x0ed,sfx,
+13,ZUS(E),0x0b1,static(depth 2)+emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+14,C(L)U,0x097,emulated,5,8,,0x0de,0x0de,sfx,samples/sfx/00de.wav
+14,C(L)U,0x09a,emulated,3,8,,0x0a6,0x0a6,sfx,samples/sfx/00a6.wav
+14,C(L)U,0x09c,static(depth 1),0,8,,,0x0ed,sfx,
+14,C(L)U,0x0b1,static(depth 2)+emulated,1,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+23,SHOOTER LANE,0x0ea,static(depth 0),0,0,,,0x0d0,sfx,
+24,LEFT OUTLANE,0x09e,static(depth 1),0,8,,,0x0ed,sfx,
+24,LEFT OUTLANE,0x0a2,static(depth 1)+emulated,7,8,,0x0a1 0x0a2 0x0a3,0x0a1 0x0a2 0x0a3 0x0a4,sfx,samples/sfx/00a1.wav samples/sfx/00a2.wav samples/sfx/00a3.wav
+24,LEFT OUTLANE,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+24,LEFT OUTLANE,0x129,static(depth 1)+emulated,1,8,,0x272,0x272 0x1ec 0x1ed 0x1ef 0x1f7 0x221 0x222 0x223 0x34e 0x336,speech,samples/speech/0272.wav
+25,(C)LU,0x096,emulated,5,8,,0x0dd,0x0dd,sfx,samples/sfx/00dd.wav
+25,(C)LU,0x099,emulated,3,8,,0x0a5,0x0a5,sfx,samples/sfx/00a5.wav
+25,(C)LU,0x09c,static(depth 1),0,8,,,0x0ed,sfx,
+25,(C)LU,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+26,LEFT SLINGSHOT,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+26,LEFT SLINGSHOT,0x0e8,static(depth 0)+emulated,8,8,,0x0e2,0x0e2,sfx,samples/sfx/00e2.wav
+27,RIGHT SLINGSHOT,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+27,RIGHT SLINGSHOT,0x0e9,static(depth 0)+emulated,8,8,,0x0e3,0x0e3,sfx,samples/sfx/00e3.wav
+28,CL(U),0x098,emulated,4,8,,0x0df,0x0df,sfx,samples/sfx/00df.wav
+28,CL(U),0x09b,emulated,4,8,,0x0a7,0x0a7,sfx,samples/sfx/00a7.wav
+28,CL(U),0x09c,static(depth 1)+emulated,3,8,,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+28,CL(U),0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+29,RIGHT OUTLANE,0x09e,static(depth 1),0,8,,,0x0ed,sfx,
+29,RIGHT OUTLANE,0x0a2,static(depth 1)+emulated,8,8,,0x0a1 0x0a2 0x0a3 0x0a4,0x0a1 0x0a2 0x0a3 0x0a4,sfx,samples/sfx/00a1.wav samples/sfx/00a2.wav samples/sfx/00a3.wav samples/sfx/00a4.wav
+29,RIGHT OUTLANE,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+30,LEFT BUMPER,0x050,emulated,8,8,,0x077 0x079 0x07a,0x077 0x078 0x079 0x07a,sfx,samples/sfx/0077.wav samples/sfx/0079.wav samples/sfx/007a.wav
+30,LEFT BUMPER,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+31,RIGHT BUMPER,0x050,emulated,8,8,,0x077 0x078 0x079 0x07a,0x077 0x078 0x079 0x07a,sfx,samples/sfx/0077.wav samples/sfx/0078.wav samples/sfx/0079.wav samples/sfx/007a.wav
+31,RIGHT BUMPER,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+32,BOTTOM BUMPER,0x050,emulated,8,8,,0x077 0x078 0x079 0x07a,0x077 0x078 0x079 0x07a,sfx,samples/sfx/0077.wav samples/sfx/0078.wav samples/sfx/0079.wav samples/sfx/007a.wav
+32,BOTTOM BUMPER,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+34,R. RAMP EXIT,0x0bb,emulated,1,8,,0x252,0x251 0x252 0x253 0x24b 0x24c 0x24d 0x254 0x255 0x24f 0x256 0x257,speech,samples/speech/0252.wav
+34,R. RAMP EXIT,0x0bc,emulated,1,8,,0x25a,0x250 0x25a 0x243 0x244 0x245 0x25b,speech,samples/speech/025a.wav
+34,R. RAMP EXIT,0x0eb,emulated,8,8,,0x0cd 0x0ce 0x0cf,0x0cd 0x0ce 0x0cf,sfx,samples/sfx/00cd.wav samples/sfx/00ce.wav samples/sfx/00cf.wav
+35,L. RAMP ENTRANCE,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+35,L. RAMP ENTRANCE,0x0eb,static(depth 0)+emulated,8,8,,0x0cd 0x0ce 0x0cf,0x0cd 0x0ce 0x0cf,sfx,samples/sfx/00cd.wav samples/sfx/00ce.wav samples/sfx/00cf.wav
+36,RIGHT ORBIT SPINNER,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+36,RIGHT ORBIT SPINNER,0x0ee,emulated,8,8,,0x0ca,0x0ca,sfx,samples/sfx/00ca.wav
+37,L. RAMP EXIT,0x0bb,emulated,1,8,,0x253,0x251 0x252 0x253 0x24b 0x24c 0x24d 0x254 0x255 0x24f 0x256 0x257,speech,samples/speech/0253.wav
+37,L. RAMP EXIT,0x0bc,emulated,1,8,,0x243,0x250 0x25a 0x243 0x244 0x245 0x25b,speech,samples/speech/0243.wav
+37,L. RAMP EXIT,0x0eb,emulated,8,8,,0x0cd 0x0ce 0x0cf,0x0cd 0x0ce 0x0cf,sfx,samples/sfx/00cd.wav samples/sfx/00ce.wav samples/sfx/00cf.wav
+37,L. RAMP EXIT,0x116,emulated,1,8,,0x0a9,0x0a9,sfx,samples/sfx/00a9.wav
+37,L. RAMP EXIT,0x117,emulated,1,8,,0x16f,0x16f,speech,samples/speech/016f.wav
+38,R. RAMP ENTRANCE,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+38,R. RAMP ENTRANCE,0x0eb,static(depth 0)+emulated,8,8,,0x0cd 0x0ce 0x0cf,0x0cd 0x0ce 0x0cf,sfx,samples/sfx/00cd.wav samples/sfx/00ce.wav samples/sfx/00cf.wav
+39,RIGHT INNER LOOP,0x08e,emulated,4,8,,0x055 0x056,0x055 0x056 0x057,sfx,samples/sfx/0055.wav samples/sfx/0056.wav
+39,RIGHT INNER LOOP,0x08f,emulated,1,8,,0x451,0x451,music,samples/music/0451.wav
+39,RIGHT INNER LOOP,0x090,emulated,1,8,,0x058,0x058,sfx,samples/sfx/0058.wav
+39,RIGHT INNER LOOP,0x091,emulated,1,8,,0x134,0x133 0x134,speech,samples/speech/0134.wav
+39,RIGHT INNER LOOP,0x092,emulated,1,8,,0x065,0x065 0x066 0x067 0x068,sfx,samples/sfx/0065.wav
+39,RIGHT INNER LOOP,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+41,DISC OPTO,0x052,static(depth 0)+emulated,5,8,,0x0e4 0x0e6 0x0e7,0x0e4 0x0e5 0x0e6 0x0e7,sfx,samples/sfx/00e4.wav samples/sfx/00e6.wav samples/sfx/00e7.wav
+41,DISC OPTO,0x053,emulated,3,8,,0x05f 0x060,0x05f 0x060,sfx,samples/sfx/005f.wav samples/sfx/0060.wav
+41,DISC OPTO,0x054,static(depth 0)+emulated,3,8,,0x0ea 0x0eb,0x0e8 0x0e9 0x0ea 0x0eb,sfx,samples/sfx/00ea.wav samples/sfx/00eb.wav
+41,DISC OPTO,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+41,DISC OPTO,0x0d7,static(depth 1),0,8,,,0x00c,,
+43,LEFT ORBIT,0x053,emulated,2,8,,0x05f,0x05f 0x060,sfx,samples/sfx/005f.wav
+43,LEFT ORBIT,0x0bf,emulated,2,8,,0x0ce 0x0cf,0x0cd 0x0ce 0x0cf,sfx,samples/sfx/00ce.wav samples/sfx/00cf.wav
+43,LEFT ORBIT,0x0c0,emulated,1,8,,0x127,0x127,speech,samples/speech/0127.wav
+43,LEFT ORBIT,0x0ed,static(depth 0)+emulated,5,8,,0x07b 0x07c 0x07d,0x07b 0x07c 0x07d,sfx,samples/sfx/007b.wav samples/sfx/007c.wav samples/sfx/007d.wav
+43,LEFT ORBIT,0x118,emulated,1,8,,0x16f,0x16f,speech,samples/speech/016f.wav
+44,LEFT SPINNER,0x063,emulated,5,8,,0x041,0x041,sfx,samples/sfx/0041.wav
+44,LEFT SPINNER,0x064,emulated,1,8,,0x041,0x041,sfx,samples/sfx/0041.wav
+44,LEFT SPINNER,0x065,emulated,1,8,,0x2bb,0x2a1 0x2bb 0x131,speech,samples/speech/02bb.wav
+44,LEFT SPINNER,0x0b1,static(depth 2),0,8,yes,,0x0ed,sfx,
+44,LEFT SPINNER,0x0c0,emulated,1,8,,0x127,0x127,speech,samples/speech/0127.wav
+44,LEFT SPINNER,0x0ec,emulated,8,8,,0x0cb 0x0cc,0x0cb 0x0cc,sfx,samples/sfx/00cb.wav samples/sfx/00cc.wav
+46,RIGHT ORBIT,0x0ef,static(depth 0)+emulated,5,8,,0x07b 0x07c,0x07b 0x07c 0x07d,sfx,samples/sfx/007b.wav samples/sfx/007c.wav
+48,ZU(S)E,0x0a4,static(depth 1)+emulated,5,8,,0x083,0x083,sfx,samples/sfx/0083.wav
+48,ZU(S)E,0x0a5,static(depth 1),0,8,,,0x083,sfx,
+48,ZU(S)E,0x0a6,static(depth 1)+emulated,1,8,,0x0da,0x0da 0x0db 0x0dc,sfx,samples/sfx/00da.wav
+48,ZU(S)E,0x0a8,static(depth 1)+emulated,2,8,,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+48,ZU(S)E,0x0aa,emulated,2,8,,0x450,0x450,music,samples/music/0450.wav
+48,ZU(S)E,0x0ad,emulated,2,8,,0x00c,0x00c,,
+48,ZU(S)E,0x0ae,emulated,2,8,,0x313 0x317,0x317 0x343 0x215 0x43e 0x313 0x317,speech,samples/speech/0313.wav samples/speech/0317.wav
+48,ZU(S)E,0x0b1,static(depth 2)+emulated,2,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+49,RECOGNIZ. 3-BANK (L),0x029,emulated,1,8,,0x44f,0x44f,music,samples/music/044f.wav
+49,RECOGNIZ. 3-BANK (L),0x094,emulated,1,8,,0x021,0x021,sfx,samples/sfx/0021.wav
+49,RECOGNIZ. 3-BANK (L),0x095,emulated,1,8,,0x00c,0x00c,,
+49,RECOGNIZ. 3-BANK (L),0x0b1,static(depth 2)+emulated,6,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+49,RECOGNIZ. 3-BANK (L),0x0b5,emulated,1,8,,0x00c,0x00c,,
+49,RECOGNIZ. 3-BANK (L),0x0ce,static(depth 1)+emulated,2,8,,0x08a,0x08a,sfx,samples/sfx/008a.wav
+49,RECOGNIZ. 3-BANK (L),0x0d0,static(depth 1)+emulated,4,8,,0x0d9,0x0d9,sfx,samples/sfx/00d9.wav
+49,RECOGNIZ. 3-BANK (L),0x0d3,emulated,2,8,,0x07f,0x07f,sfx,samples/sfx/007f.wav
+49,RECOGNIZ. 3-BANK (L),0x0d8,emulated,2,8,,0x0d9,0x0d9,sfx,samples/sfx/00d9.wav
+49,RECOGNIZ. 3-BANK (L),0x0d9,emulated,2,8,,0x42c,0x42c,speech,samples/speech/042c.wav
+49,RECOGNIZ. 3-BANK (L),0x0da,emulated,2,8,,0x12e 0x185,0x185 0x12e,speech,samples/speech/012e.wav samples/speech/0185.wav
+50,RECOGNIZ. 3-BANK (C),0x0b1,static(depth 2)+emulated,7,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+50,RECOGNIZ. 3-BANK (C),0x0b5,emulated,1,8,,0x00c,0x00c,,
+50,RECOGNIZ. 3-BANK (C),0x0ce,static(depth 1)+emulated,7,8,,0x08a,0x08a,sfx,samples/sfx/008a.wav
+50,RECOGNIZ. 3-BANK (C),0x0d0,static(depth 1)+emulated,1,8,,0x0d9,0x0d9,sfx,samples/sfx/00d9.wav
+51,RECOGNIZ. 3-BANK (R),0x029,emulated,1,8,,0x44f,0x44f,music,samples/music/044f.wav
+51,RECOGNIZ. 3-BANK (R),0x0b1,static(depth 2)+emulated,7,8,yes,0x0ed,0x0ed,sfx,samples/sfx/00ed.wav
+51,RECOGNIZ. 3-BANK (R),0x0b4,emulated,1,8,,0x05e,0x05e,sfx,samples/sfx/005e.wav
+51,RECOGNIZ. 3-BANK (R),0x0ce,static(depth 1)+emulated,7,8,,0x08a,0x08a,sfx,samples/sfx/008a.wav
+51,RECOGNIZ. 3-BANK (R),0x0d0,static(depth 1)+emulated,1,8,,0x0d9,0x0d9,sfx,samples/sfx/00d9.wav
+52,3-BANK MOTOR (DN),0x0b5,emulated,1,2,,0x00c,0x00c,,
+54,RECOG. MOTOR POS. 1,0x00f,static(depth 1),0,2,,,0x00f,,
+55,RECOG. MOTOR POS. 2,0x00f,static(depth 1),0,2,,,0x00f,,
+56,RECOG. MOTOR POS. 3,0x00f,static(depth 1),0,2,,,0x00f,,

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 94: images 5489-5523, 35 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_094_img5489:
+      action: play
+- time: 1715ms
+  slides:
+    lib_anim_094_img5489:
+      action: remove

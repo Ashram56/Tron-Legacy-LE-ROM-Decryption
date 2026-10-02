@@ -1,0 +1,7 @@
+0x0003b624	sos_total	4	while mode runs	points earned in SOS incl. 1M start
+0x0003b628	sos_stage	4	while mode runs	current stage 0-8
+0x0003b62c	sos_needed_mask	4	while mode runs	shot-id bits still needed this stage
+0x0003b630	sos_skip_bonus_value	4	while mode runs	queued skip bonus per stage (stride 8, 9 entries)
+0x0003b634	sos_skip_bonus_paid	1	while mode runs	paid flag per queued skip bonus (stride 8)
+0x02111800	sos_count	1	per player	SOS starts this game
+0x02111804	sos_skip_bonus_flags	2	per player	bit k = skip bonus for stage k given; cleared at game start

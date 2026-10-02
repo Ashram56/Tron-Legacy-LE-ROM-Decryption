@@ -1,0 +1,106 @@
+leff,mpf_show,function,tubes,priority,kind,length_ms,emulation_complete,display_effects,started_by,mode_guess_by_code_location,colours,started_from
+1,mpf/shows/leff_001.yaml,0x1017fdc,both,1,loop,6944,yes,,,,?/?/?,
+2,mpf/shows/leff_002.yaml,0x10179dc,both,2,hold,,yes,,,,0/0/15,
+3,mpf/shows/leff_003.yaml,0x1017a3c,both,2,hold,,yes,,,,15/15/0,
+4,mpf/shows/leff_004.yaml,0x1017a9c,both,2,hold,,yes,,,,0/15/0,
+5,mpf/shows/leff_005.yaml,0x1017afc,both,2,hold,,yes,,,,15/4/0,
+6,mpf/shows/leff_006.yaml,0x1017b60,both,2,hold,,yes,,,,15/0/0,
+7,mpf/shows/leff_007.yaml,0x1017bc0,both,2,hold,,yes,,,,15/15/15,
+8,mpf/shows/leff_008.yaml,0x1017c1c,both,2,hold,,yes,,,,0/15/15,
+9,mpf/shows/leff_009.yaml,0x1017c7c,both,2,hold,,yes,,,,15/8/0,
+10,mpf/shows/leff_010.yaml,0x1023b70,both,1,hold,,yes,,,on_recognizer_battle_started,,
+11,mpf/shows/leff_011.yaml,0x1029244,left,192,loop,992,yes,,,on_l_inner_loop,15/4/0,
+12,mpf/shows/leff_012.yaml,0x1029454,right,192,loop,992,yes,,,on_l_inner_loop,0/15/15,
+13,,0x100da00,both,152,no tube output in emulation,0,yes,deff_136,,on_find_flynn_completed,,0x100d890
+14,,0x100dac0,both,3,no tube output in emulation,,yes,,,on_find_flynn_completed,,
+15,,0x100dc40,both,159,no tube output in emulation,0,yes,deff_137,,on_find_flynn_completed,,0x100daec
+16,mpf/shows/leff_016.yaml,0x10142a0,both,163,once,5376,yes,deff_75,,on_gem_hurryup_awards,0/15/15,0x10140f8
+17,mpf/shows/leff_017.yaml,0x1014520,both,177,once,6016,yes,,FUN_010143b8(caller),on_gem_hurryup_awards,0/15/15,0x10143b8
+18,mpf/shows/leff_018.yaml,0x1014044,both,7,loop,992,yes,,,on_gem_hurryup_awards,0/15/15,
+19,mpf/shows/leff_019.yaml,0x10149e0,both,176,once,2816,yes,deff_78,,on_gem_hurryup_awards,0/15/15,0x101476c
+20,mpf/shows/leff_020.yaml,0x1014d54,both,178,once,3904,yes,deff_79,,on_gem_hurryup_awards,?/?/? 0/15/15,0x1014af4
+21,mpf/shows/leff_021.yaml,0x101745c,both,159,once,768,yes,,FUN_01016b0c(caller),,15/15/0,0x1016b0c
+22,mpf/shows/leff_022.yaml,0x100268c,both,176,once,1888,yes,deff_71,,on_clu_hurryup_awards,15/15/0,0x10022d8
+23,mpf/shows/leff_023.yaml,0x10029c0,both,7,loop,992,yes,,,on_clu_hurryup_awards,15/15/0,
+24,mpf/shows/leff_024.yaml,0x1002c74,both,176,once,2560,yes,deff_73,,on_combo_awards,15/15/0,0x1002a74
+25,mpf/shows/leff_025.yaml,0x1002e9c,both,178,once,3328,yes,deff_74,,on_combo_awards,15/15/0,0x1002d24
+26,mpf/shows/leff_026.yaml,0x1033e70,both,128,once,496,yes,deff_91,,on_zuse_fastscoring_started,15/15/15,0x1033b3c
+27,mpf/shows/leff_027.yaml,0x1034218,both,129,once,1152,yes,deff_92,,on_zuse_fastscoring_started,15/15/15,0x1033fbc
+28,mpf/shows/leff_028.yaml,0x1032338,both,160,once,2560,yes,,,on_zuse_fastscoring_started,15/15/15,
+29,mpf/shows/leff_029.yaml,0x103270c,both,176,once,5120,yes,deff_94,,on_zuse_fastscoring_started,15/15/15,0x1032510
+30,mpf/shows/leff_030.yaml,0x1032118,both,7,loop,992,yes,,,on_zuse_fastscoring_started,15/15/15,
+31,mpf/shows/leff_031.yaml,0x1033338,both,178,once,4608,yes,deff_99,,on_zuse_fastscoring_started,15/15/15,0x10331ac
+32,mpf/shows/leff_032.yaml,0x101d5bc,both,161,once,3056,yes,deff_62,,on_quorra_multiball_started,0/15/0,0x101d33c
+33,mpf/shows/leff_033.yaml,0x101d898,both,161,once,3056,yes,deff_63,,on_quorra_multiball_started,0/15/0,0x101d6b4
+34,mpf/shows/leff_034.yaml,0x101dd98,both,194,loop,256,yes,deff_64,,on_quorra_multiball_started,0/15/0,0x101d990
+35,mpf/shows/leff_035.yaml,0x101f25c,both,10,loop,992,yes,,,on_quorra_multiball_started,0/15/0,
+36,mpf/shows/leff_036.yaml,0x101edb8,both,194,loop,20080,no,deff_66,,on_quorra_multiball_started,0/15/0,0x101ec4c
+37,mpf/shows/leff_037.yaml,0x101efe4,both,194,once,1456,yes,deff_67,,on_quorra_multiball_started,0/15/0,0x101eeb0
+38,mpf/shows/leff_038.yaml,0x101e540,both,195,once,2688,yes,deff_68,,on_quorra_multiball_started,0/15/0,0x101e320
+39,mpf/shows/leff_039.yaml,0x101e88c,both,196,once,2816,yes,deff_69,,on_quorra_multiball_started,0/15/0,0x101e654
+40,mpf/shows/leff_040.yaml,0x101eb28,both,207,once,3584,yes,deff_70,,on_quorra_multiball_started,0/15/0,0x101e9b0
+41,mpf/shows/leff_041.yaml,0x1007990,both,7,loop,992,yes,,,on_disc_multiball_started,15/0/0,
+42,mpf/shows/leff_042.yaml,0x1007e9c,both,192,loop,256,yes,deff_46,,on_disc_multiball_started,0/0/15,0x1007a44
+43,mpf/shows/leff_043.yaml,0x1008430,both,9,loop,992,yes,,,on_disc_multiball_started,0/0/15,
+44,mpf/shows/leff_044.yaml,0x1008b6c,both,193,loop,256,yes,deff_48,,on_disc_multiball_started,0/0/15,0x1008920
+45,mpf/shows/leff_045.yaml,0x1008e68,both,194,loop,256,yes,deff_49,,on_disc_multiball_started,0/0/15,0x1008c1c
+46,mpf/shows/leff_046.yaml,0x10090f8,both,195,loop,256,yes,deff_50,,on_disc_multiball_started,0/0/15,0x1008f18
+47,mpf/shows/leff_047.yaml,0x100937c,both,207,once,3584,yes,deff_51,,on_disc_multiball_started,0/0/15,0x10091a8
+48,mpf/shows/leff_048.yaml,0x1009638,both,192,loop,256,yes,deff_52,,on_disc_multiball_started,0/0/15,0x1009490
+49,mpf/shows/leff_049.yaml,0x10098c4,both,9,loop,992,yes,,,on_disc_multiball_started,0/0/15,
+50,mpf/shows/leff_050.yaml,0x1009b4c,both,193,loop,256,yes,deff_54,,on_disc_multiball_started,0/0/15,0x1009978
+51,mpf/shows/leff_051.yaml,0x1018d88,both,162,once,5376,yes,deff_83,,on_light_cycle_multiball_started,15/15/0,0x1018ba0
+52,mpf/shows/leff_052.yaml,0x10190fc,both,162,once,3328,yes,deff_84,,on_light_cycle_multiball_started,15/15/0,0x1018e48
+53,mpf/shows/leff_053.yaml,0x1019660,both,194,once,5328,yes,deff_85,,on_light_cycle_multiball_started,15/15/0,0x101921c
+54,mpf/shows/leff_054.yaml,0x101b040,both,10,loop,992,yes,,,on_light_cycle_multiball_started,15/15/0,
+55,mpf/shows/leff_055.yaml,0x101a138,both,195,once,2336,yes,deff_87,,on_light_cycle_multiball_started,15/15/0,0x1019e74
+56,mpf/shows/leff_056.yaml,0x101a44c,both,195,once,3328,yes,deff_88,,on_light_cycle_multiball_started,?/?/? 15/15/0,0x101a248
+57,mpf/shows/leff_057.yaml,0x101a7e8,both,195,once,3328,yes,deff_89,,on_light_cycle_multiball_started,?/?/? 15/15/0,0x101a5c0
+58,mpf/shows/leff_058.yaml,0x101ab54,both,207,once,2768,yes,deff_90,,on_light_cycle_multiball_started,15/15/0,0x101a95c
+59,mpf/shows/leff_059.yaml,0x1020a2c,both,128,once,992,yes,deff_108,,on_recognizer_battle_started,15/4/0,0x10209b0
+60,mpf/shows/leff_060.yaml,0x1021570,both,160,once,2560,yes,deff_109,,on_recognizer_battle_started,15/4/0,0x102120c
+61,mpf/shows/leff_061.yaml,0x1021744,both,7,loop,256,yes,,,on_recognizer_battle_started,15/4/0,
+62,mpf/shows/leff_062.yaml,0x1021f58,both,162,loop,256,yes,deff_111,,on_recognizer_battle_started,15/4/0,0x1021bac
+63,mpf/shows/leff_063.yaml,0x102cafc,both,159,once,1280,yes,,,on_right_ramp,0/0/15,
+64,,0x1026898,both,9,no tube output in emulation,,yes,,,,,
+65,mpf/shows/leff_065.yaml,0x1026bd8,both,208,once,10240,yes,deff_113,,on_l_inner_loop,15/15/15,0x10268c4
+66,mpf/shows/leff_066.yaml,0x1026ff0,both,15,loop,992,yes,,,on_l_inner_loop,15/15/15,
+67,mpf/shows/leff_067.yaml,0x1027294,both,210,once,2560,yes,deff_115,,on_l_inner_loop,15/15/15,0x10270a4
+68,mpf/shows/leff_068.yaml,0x1027648,both,209,once,7680,yes,deff_116,,on_l_inner_loop,15/4/0,0x10275d4
+69,mpf/shows/leff_069.yaml,0x1027770,both,209,once,7680,yes,deff_117,,on_l_inner_loop,0/15/15,0x10276fc
+70,mpf/shows/leff_070.yaml,0x1027894,both,209,once,7680,yes,deff_118,,on_l_inner_loop,15/15/0,0x1027820
+71,mpf/shows/leff_071.yaml,0x1027ad8,both,209,once,7680,yes,deff_119,,on_l_inner_loop,15/15/15,0x1027a64
+72,mpf/shows/leff_072.yaml,0x1027bfc,both,209,once,7680,yes,deff_120,,on_l_inner_loop,0/15/0,0x1027b88
+73,mpf/shows/leff_073.yaml,0x1027d20,both,209,once,7680,yes,deff_121,,on_l_inner_loop,0/0/15,0x1027cac
+74,mpf/shows/leff_074.yaml,0x1027e44,both,209,once,7680,yes,deff_122,,on_l_inner_loop,15/15/0,0x1027dd0
+75,mpf/shows/leff_075.yaml,0x1027f68,both,209,once,7680,yes,deff_123,,on_l_inner_loop,15/4/0,0x1027ef4
+76,mpf/shows/leff_076.yaml,0x1028090,both,209,once,7680,yes,deff_124,,on_l_inner_loop,0/0/15,0x102801c
+77,mpf/shows/leff_077.yaml,0x102832c,both,211,once,11520,yes,deff_125,,on_l_inner_loop,15/15/15,0x1028140
+78,mpf/shows/leff_078.yaml,0x10285b4,both,212,loop,256,yes,deff_126,,on_l_inner_loop,15/15/15,0x10283cc
+79,,0x102fac0,both,9,no tube output in emulation,,yes,,,on_portal_multiball_started,,
+80,mpf/shows/leff_080.yaml,0x102fee4,both,192,once,5856,yes,deff_140,,on_portal_multiball_started,15/15/15,0x102faec
+81,mpf/shows/leff_081.yaml,0x1030460,both,7,loop,992,yes,,,on_portal_multiball_started,15/15/15,
+82,mpf/shows/leff_082.yaml,0x1030728,both,193,once,3840,yes,deff_142,,on_zuse_fastscoring_started,15/15/15,0x1030514
+83,mpf/shows/leff_083.yaml,0x1030a28,both,195,once,14080,yes,deff_143,,on_zuse_fastscoring_started,15/15/15,0x10307d8
+84,mpf/shows/leff_084.yaml,0x1030c60,both,194,once,3840,yes,deff_144,,on_zuse_fastscoring_started,15/15/15,0x1030ad8
+85,mpf/shows/leff_085.yaml,0x1030e38,both,196,once,5120,yes,deff_145,,on_zuse_fastscoring_started,15/15/15,0x1030d10
+86,,0x1004ac8,both,159,no tube output in emulation,0,yes,deff_55,,on_daft_punk_multiball_started,,0x100461c
+87,mpf/shows/leff_087.yaml,0x100547c,both,192,once,19840,yes,deff_56,,on_daft_punk_multiball_started,15/15/15,0x1005260
+88,mpf/shows/leff_088.yaml,0x10056b8,both,9,hold,,no,,,on_daft_punk_multiball_started,15/15/15,
+89,mpf/shows/leff_089.yaml,0x1005968,both,196,once,1840,yes,deff_58,,on_daft_punk_multiball_started,15/15/15,0x10057e0
+90,mpf/shows/leff_090.yaml,0x1005bd0,both,197,once,3328,yes,deff_59,,on_daft_punk_multiball_started,?/?/? 15/15/15,0x1005a48
+91,mpf/shows/leff_091.yaml,0x1005f60,both,195,once,512,yes,deff_60,,on_disc_multiball_started,15/15/15,0x1005d44
+92,mpf/shows/leff_092.yaml,0x1006148,both,207,once,2768,yes,deff_61,,on_disc_multiball_started,15/15/15,0x1006010
+93,mpf/shows/leff_093.yaml,0x1001594,both,242,once,992,yes,,,on_clu_hurryup_started,15/4/0,
+94,mpf/shows/leff_094.yaml,0x10015f0,both,242,once,992,yes,,,on_clu_hurryup_started,0/15/0,
+95,mpf/shows/leff_095.yaml,0x1001648,both,242,once,992,yes,,,on_clu_hurryup_started,15/15/0,
+96,mpf/shows/leff_096.yaml,0x10016a0,both,242,once,992,yes,,,on_clu_hurryup_started,15/15/15,
+97,mpf/shows/leff_097.yaml,0x10016f4,both,242,once,992,yes,,,on_clu_hurryup_started,0/15/0,
+98,mpf/shows/leff_098.yaml,0x100174c,both,242,once,992,yes,,,on_clu_hurryup_started,0/0/15,
+99,mpf/shows/leff_099.yaml,0x10017a4,both,242,once,992,yes,,,on_clu_hurryup_started,15/15/0,
+100,mpf/shows/leff_100.yaml,0x10017fc,both,242,once,992,yes,,,on_clu_hurryup_started,15/4/0,
+101,mpf/shows/leff_101.yaml,0x1001858,both,242,once,992,yes,,,on_clu_hurryup_started,0/0/15,
+102,mpf/shows/leff_102.yaml,0x10018b0,both,242,once,992,yes,deff_25,,on_clu_hurryup_started,15/15/15,0x1000e7c
+103,mpf/shows/leff_103.yaml,0x1001904,both,242,once,992,yes,deff_25,,on_clu_hurryup_started,15/15/15,0x1000e7c
+104,mpf/shows/leff_104.yaml,0x100199c,both,242,once,320,yes,deff_25,,on_clu_hurryup_started,15/15/15,0x1000e7c
+105,mpf/shows/leff_105.yaml,0x1001a28,both,242,once,3840,yes,deff_25,,on_clu_hurryup_started,15/15/15,0x1001374

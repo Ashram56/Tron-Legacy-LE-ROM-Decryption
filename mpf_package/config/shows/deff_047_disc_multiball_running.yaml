@@ -1,0 +1,8 @@
+#show_version=6
+# deff_047_disc_multiball_running: DISC MULTIBALL status: shoot recognizer / spinning disc (background)
+# ROM trigger: during Disc Multiball. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_047_disc_multiball_running:
+      action: play
+- time: 12001ms

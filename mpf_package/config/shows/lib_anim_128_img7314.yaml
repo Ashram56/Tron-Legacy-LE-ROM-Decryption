@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 128: images 7314-7380, 67 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_128_img7314:
+      action: play
+- time: 3282ms
+  slides:
+    lib_anim_128_img7314:
+      action: remove

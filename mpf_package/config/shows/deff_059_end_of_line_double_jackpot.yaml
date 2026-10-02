@@ -1,0 +1,22 @@
+#show_version=6
+# deff_059_end_of_line_double_jackpot: DOUBLE JACKPOT
+# ROM trigger: End of Line Multiball double jackpot. Timing from emulation.
+# Lamp effect: lampfx_062_end_of_line_double_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_059_end_of_line_double_jackpot:
+      action: play
+  shows:
+    leff_090:
+      action: play
+      loops: 0
+    lampfx_062_end_of_line_double_jackpot:
+      action: play
+      loops: 0
+  sounds:
+    call_028:
+      action: play
+- time: 2223ms
+  slides:
+    deff_059_end_of_line_double_jackpot:
+      action: remove

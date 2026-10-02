@@ -1,0 +1,15 @@
+#show_version=6
+# deff_111_disc_multiball_progress: n MORE TO START DISC MULTIBALL (random film clip)
+# ROM trigger: disc opto (sw41) shots toward Disc Multiball (captured in emulated play). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_111_disc_multiball_progress:
+      action: play
+- time: 1ms
+  shows:
+    leff_062:
+      action: play
+- time: 4121ms
+  slides:
+    deff_111_disc_multiball_progress:
+      action: remove

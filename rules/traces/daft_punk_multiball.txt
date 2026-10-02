@@ -1,0 +1,43 @@
+# Daft Punk (End of Line) multiball music reference: adj 83 = 1 so one DAFT PUNK set lights it,
+# start at the VUK, then 5 disc hits: music call 0x20 + (level & 3) changes each time; add-a-balls at hits 2 and 5
+adj 83 1
+start 1
+wait 4
+mark daft_punk_letters
+hit 37
+wait 2.5
+hit 34
+wait 2.5
+hit 37
+wait 2.5
+hit 34
+wait 2.5
+hit 37
+wait 2.5
+hit 34
+wait 2.5
+hit 37
+wait 2.5
+hit 34
+wait 2.5
+mark vuk_start
+hit 11
+wait 12
+mark disc_1
+hit 41
+wait 3
+mark disc_2
+hit 41
+wait 3
+mark disc_3
+hit 41
+wait 3
+mark disc_4
+hit 41
+wait 3
+mark disc_5
+hit 41
+wait 3
+mark right_ramp_level5
+hit 34
+wait 3

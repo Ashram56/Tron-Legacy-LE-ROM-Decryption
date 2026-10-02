@@ -1,0 +1,19 @@
+#show_version=6
+# deff_108_disc_access_progress_v01: n MORE TO ACCESS DISC, clip anim_013_img2713.
+# Same sounds and tube show as deff_108_disc_access_progress; only the clip differs. random pick of 4 clips (code: deff_108 switch(random(4)); clips 1-2 full width at 49 ms, clips 3-4 at x=41 at 33 ms).
+- time: 0ms
+  slides:
+    deff_108_disc_access_progress_v01:
+      action: play
+  shows:
+    leff_059:
+      action: play
+      loops: 0
+- time: 975ms
+  sounds:
+    call_0d1:
+      action: play
+- time: 1819ms
+  slides:
+    deff_108_disc_access_progress_v01:
+      action: remove

@@ -1,0 +1,66 @@
+#show_version=6
+# ROM lamp effect 134 (leff table 0x040e23e4, function 0x1026814, priority 9). Rebuilt from code.
+# Loops until stopped. code: same breathing zen/video game flashers (table 0x040d3940, identical values)
+# Started by: rule: while FUN_010267fc
+- duration: 98ms
+  flashers:
+    f_video_game: 88ms
+    f_zen_flasher: 12ms
+- duration: 98ms
+  flashers:
+    f_video_game: 75ms
+    f_zen_flasher: 25ms
+- duration: 98ms
+  flashers:
+    f_video_game: 62ms
+    f_zen_flasher: 38ms
+- duration: 98ms
+  flashers:
+    f_video_game: 50ms
+    f_zen_flasher: 50ms
+- duration: 98ms
+  flashers:
+    f_video_game: 38ms
+    f_zen_flasher: 62ms
+- duration: 98ms
+  flashers:
+    f_video_game: 25ms
+    f_zen_flasher: 75ms
+- duration: 98ms
+  flashers:
+    f_video_game: 12ms
+    f_zen_flasher: 88ms
+- duration: 98ms
+  flashers:
+    f_zen_flasher: 100ms
+- duration: 98ms
+  flashers:
+    f_video_game: 12ms
+    f_zen_flasher: 88ms
+- duration: 98ms
+  flashers:
+    f_video_game: 25ms
+    f_zen_flasher: 75ms
+- duration: 98ms
+  flashers:
+    f_video_game: 38ms
+    f_zen_flasher: 62ms
+- duration: 98ms
+  flashers:
+    f_video_game: 50ms
+    f_zen_flasher: 50ms
+- duration: 98ms
+  flashers:
+    f_video_game: 62ms
+    f_zen_flasher: 38ms
+- duration: 98ms
+  flashers:
+    f_video_game: 75ms
+    f_zen_flasher: 25ms
+- duration: 98ms
+  flashers:
+    f_video_game: 88ms
+    f_zen_flasher: 12ms
+- duration: 98ms
+  flashers:
+    f_video_game: 100ms

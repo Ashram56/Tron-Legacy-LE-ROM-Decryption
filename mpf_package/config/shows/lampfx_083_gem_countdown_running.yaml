@@ -1,0 +1,10 @@
+#show_version=6
+# ROM lamp effect 83 (leff table 0x040e23e4, function 0x1013fe4, priority 7). Captured in emulation.
+# Loops until stopped. 
+# Started by: rule: while gem_countdown_running
+- duration: 64ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 65ms
+  lights:
+    l_r_inner_loop_arrow: '000000'

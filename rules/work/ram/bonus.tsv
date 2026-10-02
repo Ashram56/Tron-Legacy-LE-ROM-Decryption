@@ -1,0 +1,7 @@
+0x21115d4	bonus_x	4	per ball	u8[4] bonus multiplier 1..25; +1 per sw39; reset to 1 at ball start unless game flag 0x2d
+0x21115d8	bonus_unknown_word	8	per ball	u16[4] cleared with bonus_x; purpose unknown
+0x21115e0	bonus_base	16	per ball	u32[4] base bonus, 50,000 every ball
+0x2111694	bonus_item_state	144	per player	u32 at +0x10*item+4*(p-1), 9 items; byte0 lit count (50,000), byte1 collected count (250,000)
+0x2111800	bonus_sos_count	4	per player	u8[4] Sea of Simulation starts x 450,000
+0x21118b8	bonus_portal_count	4	per player	u8[4] Portal multiball starts x 2,250,000; reset only at player's first ball (event 0x26)
+0x3aca4	bonus_insert_mask	4	while mode runs	bit per item already counted (leff 20 reveals inserts); 0x1ff on exit

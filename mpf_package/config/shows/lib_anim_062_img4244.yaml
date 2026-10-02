@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 62: images 4244-4294, 51 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_062_img4244:
+      action: play
+- time: 2498ms
+  slides:
+    lib_anim_062_img4244:
+      action: remove

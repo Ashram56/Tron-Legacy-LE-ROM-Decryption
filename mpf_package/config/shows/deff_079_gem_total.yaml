@@ -1,0 +1,26 @@
+#show_version=6
+# deff_079_gem_total: FOLLOW GEM TOTAL
+# ROM trigger: Follow Gem end. Timing from emulation.
+# Lamp effect: lampfx_085_gem_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_079_gem_total:
+      action: play
+  shows:
+    leff_020:
+      action: play
+      loops: 0
+    lampfx_085_gem_total:
+      action: play
+      loops: 0
+  sounds:
+    call_094:
+      action: play
+- time: 1464ms
+  sounds:
+    call_095:
+      action: play
+- time: 2423ms
+  slides:
+    deff_079_gem_total:
+      action: remove

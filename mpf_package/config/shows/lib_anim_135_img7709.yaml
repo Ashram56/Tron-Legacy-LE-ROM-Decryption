@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 135: images 7709-7749, 41 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_135_img7709:
+      action: play
+- time: 2009ms
+  slides:
+    lib_anim_135_img7709:
+      action: remove

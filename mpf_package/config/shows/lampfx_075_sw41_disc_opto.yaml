@@ -1,0 +1,52 @@
+#show_version=6
+# ROM lamp effect 75 (leff table 0x040e23e4, function 0x102ac1c, priority 133). Captured in emulation.
+# Plays once. 
+# Started by: code: sw41_disc_opto
+- duration: 32ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 33ms
+  flashers:
+    f_disc_right: 24ms
+- duration: 32ms
+  flashers:
+    f_disc_left: 24ms
+- duration: 48ms
+  flashers:
+    f_disc_right: 24ms

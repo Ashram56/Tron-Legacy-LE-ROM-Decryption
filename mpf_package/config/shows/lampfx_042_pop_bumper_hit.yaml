@@ -1,0 +1,388 @@
+#show_version=6
+# ROM lamp effect 42 (leff table 0x040e23e4, function 0x101c8dc, priority 129). Captured in emulation.
+# Plays once. 
+# Started by: code: FUN_0101c3ac; code: pop_bumper_hit
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_flynns_arcade: '000000'
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 33ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 33ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 32ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_flynns_arcade: ffffff
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'
+- duration: 32ms
+  lights:
+    l_bottom_bumper: ffffff
+    l_left_bumper: ffffff
+    l_right_bumper: ffffff
+- duration: 49ms
+  lights:
+    l_bottom_bumper: '000000'
+    l_left_bumper: '000000'
+    l_right_bumper: '000000'

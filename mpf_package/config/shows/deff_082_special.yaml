@@ -1,0 +1,8 @@
+#show_version=6
+# deff_082_special: SPECIAL
+# ROM trigger: special collected at outlane (sw24/sw29). Timing from emulation.
+- time: 2051ms
+  sounds:
+    call_09f:
+      action: play
+- time: 2228ms

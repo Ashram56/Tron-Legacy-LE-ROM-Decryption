@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 34: images 3272-3318, 47 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_034_img3272:
+      action: play
+- time: 2303ms
+  slides:
+    lib_anim_034_img3272:
+      action: remove

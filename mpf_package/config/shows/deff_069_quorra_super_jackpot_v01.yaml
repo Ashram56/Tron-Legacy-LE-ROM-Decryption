@@ -1,0 +1,22 @@
+#show_version=6
+# deff_069_quorra_super_jackpot_v01: (DOUBLE) SUPER JACKPOT, clip anim_098_img5626.
+# Same sounds and tube show as deff_069_quorra_super_jackpot; only the clip differs. random pick of 2 clips.
+- time: 0ms
+  slides:
+    deff_069_quorra_super_jackpot_v01:
+      action: play
+  shows:
+    leff_039:
+      action: play
+      loops: 0
+  sounds:
+    call_070:
+      action: play
+- time: 2199ms
+  sounds:
+    call_071:
+      action: play
+- time: 4377ms
+  slides:
+    deff_069_quorra_super_jackpot_v01:
+      action: remove

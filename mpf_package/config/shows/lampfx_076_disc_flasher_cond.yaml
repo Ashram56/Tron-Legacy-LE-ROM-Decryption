@@ -1,0 +1,7 @@
+#show_version=6
+# ROM lamp effect 76 (leff table 0x040e23e4, function 0x1006660, priority 10). Captured in emulation.
+# Loops until stopped. 
+# Started by: rule: while leff76_disc_flasher_cond
+- duration: 195ms
+  flashers:
+    f_red_disc: 64ms

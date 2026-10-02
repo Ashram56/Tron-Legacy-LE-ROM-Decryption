@@ -1,0 +1,26 @@
+#show_version=6
+# deff_074_clu_total: TERMINATE CLU TOTAL
+# ROM trigger: CLU hurry-up end. Timing from emulation.
+# Lamp effect: lampfx_080_clu_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_074_clu_total:
+      action: play
+  shows:
+    leff_025:
+      action: play
+      loops: 0
+    lampfx_080_clu_total:
+      action: play
+      loops: 0
+  sounds:
+    call_08c:
+      action: play
+- time: 1170ms
+  sounds:
+    call_08d:
+      action: play
+- time: 2422ms
+  slides:
+    deff_074_clu_total:
+      action: remove

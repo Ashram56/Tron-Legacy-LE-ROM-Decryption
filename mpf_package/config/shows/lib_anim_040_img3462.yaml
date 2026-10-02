@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 40: images 3462-3478, 17 frames at 82 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_040_img3462:
+      action: play
+- time: 1388ms
+  slides:
+    lib_anim_040_img3462:
+      action: remove

@@ -1,0 +1,14 @@
+0x21118d4	zuse_letters	4	per player	lit qualifying letters 1 sw7, 2 sw8, 4 sw48, 8 sw13; reset on event 0x26 and each completion
+0x21118e4	zuse_completions	1	per player	Z-U-S-E sets completed; set award = min(250000+25000*n,750000)
+0x21118e8	zuse_needed	1	per player	completions needed for next FS start; 1 on event 0x26, +4 per start
+0x21118c4	zfs_starts	1	per player	FS starts; value = min(10000+5000*starts,50000); 0 on event 0x26
+0x21118c8	zfs_time_ext	1	per player	all-targets time extensions earned; 0 on event 0x26
+0x21118cc	zfs_switch_hits	2	per player, per ball	FS hits scored; 0 on event 0x13
+0x3b8f0	zfs_timer	1	while running	seconds left, adj 66 at start, +10 per target set (cap 45), 45 on MORE TIME
+0x3b8ec	zfs_value	4	while running	points per FS hit, +1000 per new target (cap 50000)
+0x3b8e8	zfs_targets	4	while running	targets hit in current set 1/2/4/8 + 0x10 marker; complete at 0x1f
+0x3b920	zfs_total	4	while running	running total for deff 99 (starts at 100000)
+0x3b8f2	zfs_queue	1	while running	queued hits drained 1 per tick by task 0x80
+0x3b8f4	zfs_recent	40	while running	ring of last 10 hit values for deff 96; index 0x3b91c, end 0x3b91e
+0x3b58c	zfs_timer_bar	2	while running	status panel bar cur/max
+0x372e8	playfield_valid	1	OS	playfield validated flag; 0 pauses the countdown

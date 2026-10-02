@@ -1,0 +1,53 @@
+# Disc Multiball restart reference: early end, countdown, restart, second end (no 2nd window)
+start 1
+wait 3
+mark recognizer targets (5 counts needed; +2 when the lit/moving target is hit)
+hit 49
+wait 1
+hit 50
+wait 1
+hit 51
+wait 1
+hit 49
+wait 1
+hit 50
+wait 1
+mark target hit while battle is lit (1,000 only)
+hit 51
+wait 2
+mark disc hits (debounce 125 ticks, so >2.03 s apart)
+hit 41
+wait 2.5
+hit 41
+wait 0.3
+mark repeat inside debounce (ignored)
+hit 41
+wait 2.2
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+mark 7th disc hit starts Disc Multiball
+hit 41
+wait 3.5
+mark one disc jackpot
+hit 41
+wait 15
+mark drain 2 balls after ball save -> restart window (adj 70 = 10)
+drain
+wait 1
+drain
+wait 13
+mark restart hit during countdown
+hit 41
+wait 4
+mark jackpot after restart (state kept)
+hit 41
+wait 10
+mark drain to end again -> no window, Total shown
+drain
+wait 7

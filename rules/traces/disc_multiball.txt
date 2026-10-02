@@ -1,0 +1,77 @@
+# Disc Multiball full reference (factory settings, 1 player): qualify, start, all 3 phases, end
+start 1
+wait 3
+mark recognizer targets (5 counts needed; +2 when the lit/moving target is hit)
+hit 49
+wait 1
+hit 50
+wait 1
+hit 51
+wait 1
+hit 49
+wait 1
+hit 50
+wait 1
+mark target hit while battle is lit (1,000 only)
+hit 51
+wait 2
+mark disc hits (debounce 125 ticks, so >2.03 s apart)
+hit 41
+wait 2.5
+hit 41
+wait 0.3
+mark repeat inside debounce (ignored)
+hit 41
+wait 2.2
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+mark 7th disc hit starts Disc Multiball
+hit 41
+wait 3.5
+mark blue shots (phase 0): left ramp, right inner loop, right ramp
+hit 37
+wait 1.2
+hit 39
+wait 1.2
+hit 34
+wait 1.2
+mark 6 disc jackpots (adj 68)
+hit 41
+wait 2.2
+hit 41
+wait 2.2
+hit 41
+wait 2.2
+hit 41
+wait 2.2
+hit 41
+wait 2.2
+hit 41
+wait 2.2
+mark disc hit in phase 1 (not lit, no award)
+hit 41
+wait 1.5
+mark 3 Recognizer hits (adj 69)
+hit 50
+wait 1.2
+hit 49
+wait 1.2
+hit 51
+wait 1.5
+mark super jackpot
+hit 41
+wait 2.5
+mark after super: back to phase 0, values keep climbing
+hit 37
+wait 3
+mark drain 2 balls (ball save over)
+drain
+wait 1
+drain
+wait 7

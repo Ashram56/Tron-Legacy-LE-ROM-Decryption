@@ -1,0 +1,26 @@
+#show_version=6
+# deff_063_quorra_lit: QUORRA MULTIBALL IS LIT
+# ROM trigger: Quorra Multiball lit. Timing from emulation.
+# Lamp effect: lampfx_066_quorra_lit at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_063_quorra_lit:
+      action: play
+  shows:
+    leff_033:
+      action: play
+      loops: 0
+    lampfx_066_quorra_lit:
+      action: play
+      loops: 0
+  sounds:
+    call_064:
+      action: play
+- time: 980ms
+  sounds:
+    call_065:
+      action: play
+- time: 2043ms
+  slides:
+    deff_063_quorra_lit:
+      action: remove

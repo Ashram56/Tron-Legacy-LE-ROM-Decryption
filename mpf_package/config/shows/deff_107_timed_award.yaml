@@ -1,0 +1,11 @@
+#show_version=6
+# deff_107_timed_award: COLLECT FOR TIMED AWARD
+# ROM trigger: TRON / right ramp area. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_107_timed_award:
+      action: play
+- time: 2035ms
+  slides:
+    deff_107_timed_award:
+      action: remove

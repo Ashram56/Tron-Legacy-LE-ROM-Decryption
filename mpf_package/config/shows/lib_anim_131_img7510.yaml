@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 131: images 7510-7545, 36 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_131_img7510:
+      action: play
+- time: 1764ms
+  slides:
+    lib_anim_131_img7510:
+      action: remove

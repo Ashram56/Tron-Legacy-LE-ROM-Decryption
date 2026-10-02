@@ -1,0 +1,12 @@
+#show_version=6
+# ROM lamp effect 32 (leff table 0x040e23e4, function 0x1001954, priority 242). Captured in emulation.
+# Plays once. 
+# Started by: code: bonus_count_task
+- duration: 129ms
+  flashers:
+    f_backpanel: 48ms
+    f_right_ramp: 48ms
+- duration: 146ms
+  flashers:
+    f_backpanel: 48ms
+    f_left_ramp: 48ms

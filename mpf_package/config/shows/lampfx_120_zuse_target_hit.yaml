@@ -1,0 +1,41 @@
+#show_version=6
+# ROM lamp effect 120 (leff table 0x040e23e4, function 0x1033de4, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: zuse_letter_hit; code: zuse_target_hit
+- duration: 14ms
+  flashers:
+    f_backpanel: 32ms
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 2ms
+  lights:
+    (lamp): ffffff
+- duration: 30ms
+  flashers:
+    f_backpanel: 32ms
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 35ms
+  lights:
+    (lamp): '000000'

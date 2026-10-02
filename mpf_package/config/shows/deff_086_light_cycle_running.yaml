@@ -1,0 +1,8 @@
+#show_version=6
+# deff_086_light_cycle_running: LIGHT CYCLE MULTIBALL status (background)
+# ROM trigger: during Light Cycle Multiball. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_086_light_cycle_running:
+      action: play
+- time: 12000ms

@@ -1,0 +1,8 @@
+#show_version=6
+# deff_106_tron_completed: n TRON COMPLETED
+# ROM trigger: TRON targets complete (sw1-4). Timing from emulation.
+- time: 1952ms
+  sounds:
+    call_04f:
+      action: play
+- time: 2129ms

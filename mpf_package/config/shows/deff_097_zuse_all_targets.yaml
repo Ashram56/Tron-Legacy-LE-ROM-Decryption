@@ -1,0 +1,18 @@
+#show_version=6
+# deff_097_zuse_all_targets: ALL TARGETS value
+# ROM trigger: Fast Scoring. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_097_zuse_all_targets:
+      action: play
+  sounds:
+    call_0af:
+      action: play
+- time: 979ms
+  sounds:
+    call_0b0:
+      action: play
+- time: 1793ms
+  slides:
+    deff_097_zuse_all_targets:
+      action: remove

@@ -1,0 +1,26 @@
+#show_version=6
+# deff_094_zuse_intro: FAST SCORING: ALL TARGETS SCORE n POINTS
+# ROM trigger: ZUSE Fast Scoring start. Timing from emulation.
+# Lamp effect: lampfx_123_zuse_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_094_zuse_intro:
+      action: play
+  shows:
+    leff_029:
+      action: play
+      loops: 0
+    lampfx_123_zuse_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_0ad:
+      action: play
+- time: 1312ms
+  sounds:
+    call_0ae:
+      action: play
+- time: 4034ms
+  slides:
+    deff_094_zuse_intro:
+      action: remove

@@ -1,0 +1,13 @@
+0x02111898	quorra_lit	1	per player	Quorra MB lit (0/1). bit 2 of lit-items block
+0x021117ac	quorra_progress	1	per player	left inner loops toward lighting (0..5), reset to 0 when lit
+0x021117b0	quorra_starts	1	per player	Quorra MBs started (cap 255); jackpot base = 350000 + 25000*starts_before
+0x021117b4	quorra_supers	1	per player	Quorra super jackpots collected (cap 255)
+0x0003b360	quorra_aab_hits	1	while mode runs	Recognizer 3-bank hits toward add-a-ball (0..2)
+0x0003b364	quorra_aab_count	1	while mode runs	add-a-balls given this MB (max 2)
+0x0003b368	quorra_unused_368	1	while mode runs	cleared at start, never used
+0x0003b36c	quorra_double_armed	1	while mode runs	gate for 'all jackpots doubled' at VUK; only ever cleared (never set) in 1.74
+0x0003b370	quorra_mb_supers	1	while mode runs	supers collected this MB (super base = 1000000 + 250000*this)
+0x0003b374	quorra_jackpot	4	while mode runs	current jackpot value (cap 500000)
+0x0003b378	quorra_super	4	while mode runs	current super jackpot value
+0x0003b37c	quorra_double_secs	1	while mode runs	seconds left in the (unreachable) double window, 7 at start
+0x0003b380	quorra_total	4	while mode runs	points scored by Quorra MB, shown by deff 70

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 93: images 5472-5488, 17 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_093_img5472:
+      action: play
+- time: 833ms
+  slides:
+    lib_anim_093_img5472:
+      action: remove

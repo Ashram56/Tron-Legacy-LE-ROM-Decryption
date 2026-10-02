@@ -1,0 +1,9 @@
+0x0103129c	zen_rollover_hit
+0x01031208	zen_use_charge
+0x01031138	task_cc_zen_flasher
+0x0103116c	zen_player_init
+0x010311ac	zen_ball_start_flasher
+0x01031338	deff_100_zen
+0x01031450	leff_117_zen
+0x0102ac5c	sw12_zen_rollover_handler
+0x0102c588	tron_target_letter_hit

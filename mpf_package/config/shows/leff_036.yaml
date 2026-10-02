@@ -1,0 +1,623 @@
+#show_version=6
+# Tron LE light effect 36 (ROM function 0x101edb8), loop. Generated from ROM emulation.
+# NOTE: no repeat found within 20 s; the show below is the first 20 s.
+- duration: 496ms
+  lights:
+    l_left_ramp_tube:
+      color: 00ff00
+      fade: 500ms
+    l_right_ramp_tube:
+      color: 00ff00
+      fade: 500ms
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 00ff00
+    l_right_ramp_tube: 00ff00
+- duration: 128ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000

@@ -1,0 +1,50 @@
+#show_version=6
+# Tron LE light effect 27 (ROM function 0x1034218), once. Generated from ROM emulation.
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff
+- duration: 96ms
+  lights:
+    l_left_ramp_tube: 000000
+    l_right_ramp_tube: 000000

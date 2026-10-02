@@ -1,0 +1,55 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Shaker motor. The ROM runs it from display effects (and two switch handlers) with
+# shaker_run(strength, min_setting): only when setting shaker_motor (adjustment 86: 0 off, 1-3) is
+# at least min_setting, never while tilted or in game over (gf_state & 0x310). Strength 1/2/3 is
+# about 75/265/1100 ms of motor. Conditions use the machine setting from settings.yaml.
+show_player:
+  tron_disc_multiball_intro{settings.shaker_motor>=2}: shaker_strength_2   # effect 46 deff_046_disc_multiball_intro
+  tron_disc_multiball_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 48 deff_048_disc_multiball_jackpot
+  tron_disc_multiball_jackpot_2{settings.shaker_motor>=2}: shaker_strength_2   # effect 49 deff_049_disc_multiball_jackpot_2
+  tron_disc_multiball_super_jackpot{settings.shaker_motor>=1}: shaker_strength_3   # effect 50 deff_050_disc_multiball_super_jackpot
+  tron_disc_multiball_restarted{settings.shaker_motor>=2}: shaker_strength_2   # effect 54 deff_054_disc_multiball_restarted
+  tron_end_of_line_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 58 deff_058_end_of_line_jackpot
+  tron_end_of_line_double_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 59 deff_059_end_of_line_double_jackpot
+  tron_end_of_line_add_ball{settings.shaker_motor>=2}: shaker_strength_2   # effect 60 deff_060_end_of_line_add_ball
+  tron_quorra_add_ball_progress{settings.shaker_motor>=3}: shaker_strength_1   # effect 66 deff_066_quorra_add_ball_progress
+  tron_quorra_ball_added{settings.shaker_motor>=2}: shaker_strength_2   # effect 67 deff_067_quorra_ball_added
+  tron_quorra_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 68 deff_068_quorra_jackpot
+  tron_quorra_super_jackpot{settings.shaker_motor>=1}: shaker_strength_3   # effect 69 deff_069_quorra_super_jackpot
+  tron_clu_intro{settings.shaker_motor>=2}: shaker_strength_2   # effect 71 deff_071_clu_intro
+  tron_clu_award{settings.shaker_motor>=2}: shaker_strength_2   # effect 73 deff_073_clu_award
+  tron_gem_intro{settings.shaker_motor>=2}: shaker_strength_2   # effect 76 deff_076_gem_intro
+  tron_gem_award{settings.shaker_motor>=2}: shaker_strength_2   # effect 78 deff_078_gem_award
+  tron_light_cycle_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 87 deff_087_light_cycle_jackpot
+  tron_light_cycle_super_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 88 deff_088_light_cycle_super_jackpot
+  tron_light_cycle_double_super_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 89 deff_089_light_cycle_double_super_jackpot
+  tron_zuse_ready{settings.shaker_motor>=2}: shaker_strength_2   # effect 93 deff_093_zuse_ready
+  tron_zuse_intro{settings.shaker_motor>=2}: shaker_strength_2   # effect 94 deff_094_zuse_intro
+  tron_zuse_all_targets{settings.shaker_motor>=2}: shaker_strength_2   # effect 97 deff_097_zuse_all_targets
+  tron_zuse_time_extended{settings.shaker_motor>=2}: shaker_strength_2   # effect 98 deff_098_zuse_time_extended
+  tron_disc_battle_ready{settings.shaker_motor>=2}: shaker_strength_2   # effect 109 deff_109_disc_battle_ready
+  tron_super_feature{settings.shaker_motor>=2}: shaker_strength_2   # effect 112 deff_112_super_feature
+  tron_sea_of_simulation_intro{settings.shaker_motor>=2}: shaker_strength_3   # effect 113 deff_113_sea_of_simulation_intro
+  tron_sea_of_simulation_value{settings.shaker_motor>=2}: shaker_strength_3   # effect 115 deff_115_sea_of_simulation_value
+  tron_sea_stage_1{settings.shaker_motor>=2}: shaker_strength_3   # effect 116 deff_116_sea_stage_1
+  tron_sea_stage_2{settings.shaker_motor>=2}: shaker_strength_3   # effect 117 deff_117_sea_stage_2
+  tron_sea_stage_3{settings.shaker_motor>=2}: shaker_strength_3   # effect 118 deff_118_sea_stage_3
+  tron_sea_stage_4{settings.shaker_motor>=2}: shaker_strength_3   # effect 119 deff_119_sea_stage_4
+  tron_sea_stage_5{settings.shaker_motor>=2}: shaker_strength_3   # effect 120 deff_120_sea_stage_5
+  tron_sea_stage_6{settings.shaker_motor>=2}: shaker_strength_3   # effect 121 deff_121_sea_stage_6
+  tron_sea_stage_7{settings.shaker_motor>=2}: shaker_strength_3   # effect 122 deff_122_sea_stage_7
+  tron_sea_stage_8{settings.shaker_motor>=2}: shaker_strength_3   # effect 123 deff_123_sea_stage_8
+  tron_sea_stage_9{settings.shaker_motor>=2}: shaker_strength_3   # effect 124 deff_124_sea_stage_9
+  tron_sea_of_simulation_completed{settings.shaker_motor>=2}: shaker_strength_3   # effect 125 deff_125_sea_of_simulation_completed
+  tron_sea_of_simulation_total{settings.shaker_motor>=2}: shaker_strength_3   # effect 126 deff_126_sea_of_simulation_total
+  tron_find_flynn_intro{settings.shaker_motor>=3}: shaker_strength_2   # effect 136 deff_136_find_flynn_intro
+  tron_flynn_found{settings.shaker_motor>=3}: shaker_strength_2   # effect 137 deff_137_flynn_found
+  tron_combo{settings.shaker_motor>=3}: shaker_strength_2   # effect 138 deff_138_combo
+  tron_end_of_line_jackpot_combo{settings.shaker_motor>=3}: shaker_strength_2   # effect 139 deff_139_end_of_line_jackpot_combo
+  tron_portal_multiball_intro{settings.shaker_motor>=1}: shaker_strength_3   # effect 140 deff_140_portal_multiball_intro
+  tron_portal_shot{settings.shaker_motor>=2}: shaker_strength_2   # effect 142 deff_142_portal_shot
+  tron_portal_super_jackpot{settings.shaker_motor>=1}: shaker_strength_3   # effect 143 deff_143_portal_super_jackpot
+  tron_portal_jackpot{settings.shaker_motor>=1}: shaker_strength_3   # effect 144 deff_144_portal_jackpot
+  # Switch handlers (post these from your code):
+  tron_shaker_drop_target{settings.shaker_motor>=3}: shaker_strength_1   # drop target bank hit (vtable fn 0x0100b148), not while tilted
+  tron_shaker_zuse_score{settings.shaker_motor>=3}: shaker_strength_1    # every ZUSE Fast Scoring hit (zfs_score_hit)

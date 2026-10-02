@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 130: images 7471-7509, 39 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_130_img7471:
+      action: play
+- time: 1911ms
+  slides:
+    lib_anim_130_img7471:
+      action: remove

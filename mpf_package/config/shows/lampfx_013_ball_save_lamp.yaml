@@ -1,0 +1,10 @@
+#show_version=6
+# ROM lamp effect 13 (leff table 0x040e23e4, function 0x2fd60, priority 129). Captured in emulation.
+# Loops until stopped. 
+# Started by: code: FUN_0001ea60
+- duration: 162ms
+  lights:
+    l_shoot_again: ffffff
+- duration: 163ms
+  lights:
+    l_shoot_again: '000000'

@@ -1,0 +1,15 @@
+# Tron ROM
+- Owner: Vincent. Private project.
+- Repo for final full package: github.com/Ashram56/Tron-Legacy-MPF (Vincent gave it 2026-10-02; it is PUBLIC). Plan: once "Build Tron MPF asset package" finishes, a thread assembles everything (all agent markdown, specs, data, assets) for another agent to build the MPF recreation. Vincent says the ROM media are small enough for plain git.
+- Goal (2026-10-01): extract callouts (speech, sound effects) from the Tron ROM, and above all reverse engineer the ROM code to map which switches trigger each effect. Also: map IO controls, especially whether fiber optic lights have dedicated functions or go via SAM bus routines.
+- Vincent (2026-10-02): the MPF recreation should be as close to the original as possible, including lamp effects, shaker effects, and a service menu with every option the original code has (UI can differ).
+- Vincent's own SAM bus IO analysis: https://github.com/Ashram56/Stern-SAM-Databus-Analysis
+- ROM confirmed: Stern Tron Legacy LE v1.74 (PinMAME set trn_174h, SAM hardware).
+- Outputs in /mnt/project-files/tron/: samples/ (speech, sfx, music WAVs), samples_index.csv, sound_calls.csv, switch_names.json, switch_sound_map.csv, callout_triggers.csv, code/tron_game_decompiled.c (Ghidra pseudo-C), README.md. IO work goes in tron/io/.
+- Threads: "Map Tron callouts to switches" (callouts, decompile); "Map Tron IO and fiber optic lights" (IO); "Build Tron MPF asset package" (DMD animations + MPF package at tron/mpf_package, see tron-dmd-mpf-package.md); "Assess full Tron rules reconstruction" (rules specs, done).
+- Package updates ship as small update zips of changed files only (latest mpf_package_update_2026-10-02c.zip).
+- Emulator: game starts only with trough switches 18-21 held closed (ball count check).
+- Status 2026-10-01: 149 of 298 sound calls traced to a switch or mode; 48 of 93 speech calls have a trigger. Mode labels come from reading code, not emulator play.
+- Sounds fixed 2026-10-02: each ROM sample has a header giving rate + length. Speech is 12 kHz; sfx and music are 24 kHz. All 1,090 WAVs were re-exported in tron/samples, mpf_package/media/sounds and mpf_package.zip.
+- Rules rebuild for MPF (2026-10-02): done, 21 mode specs in tron/rules, see tron-rules-extraction.md.
+- Lamp effects, flashers, shaker, service menu + 88 MPF settings added 2026-10-02 (update zip c), see tron-lampfx-shaker-service.md.

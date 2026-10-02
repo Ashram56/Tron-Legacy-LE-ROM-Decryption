@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 95: images 5524-5568, 45 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_095_img5524:
+      action: play
+- time: 2205ms
+  slides:
+    lib_anim_095_img5524:
+      action: remove

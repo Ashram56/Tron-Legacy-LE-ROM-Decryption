@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 116: images 6677-6731, 55 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_116_img6677:
+      action: play
+- time: 2694ms
+  slides:
+    lib_anim_116_img6677:
+      action: remove

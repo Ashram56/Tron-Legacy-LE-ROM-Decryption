@@ -1,0 +1,52 @@
+#show_version=6
+# ROM lamp effect 35 (leff table 0x040e23e4, function 0x101bf48, priority 158). Captured in emulation.
+# Plays once. 
+# Started by: code: FUN_0101bdd0
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 98ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 98ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 98ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 99ms
+  flashers:
+    f_video_game: 48ms
+- duration: 96ms
+  flashers:
+    f_video_game: 48ms
+- duration: 99ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 97ms
+  flashers:
+    f_video_game: 48ms
+- duration: 98ms
+  flashers:
+    f_video_game: 48ms
+- duration: 114ms
+  flashers:
+    f_video_game: 48ms

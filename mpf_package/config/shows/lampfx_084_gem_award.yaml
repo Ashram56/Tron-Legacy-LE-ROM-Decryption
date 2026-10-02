@@ -1,0 +1,195 @@
+#show_version=6
+# ROM lamp effect 84 (leff table 0x040e23e4, function 0x1014924, priority 176). Captured in emulation.
+# Plays once. 
+# Started by: effect 78 (deff_078_gem_award)
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+    l_r_inner_loop_disc: '000000'
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 15ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 15ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 14ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 19ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 14ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 19ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 14ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 19ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 14ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 15ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 15ms
+  flashers:
+    f_left_ramp: 18ms
+- duration: 32ms
+  lights:
+    l_r_inner_loop_light_cycle: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_disc: ffffff
+- duration: 32ms
+  lights:
+    l_r_inner_loop_arrow: ffffff
+- duration: 33ms
+  lights:
+    l_r_inner_loop_light_cycle: '000000'
+- duration: 32ms
+  lights:
+    l_r_inner_loop_disc: '000000'
+- duration: 18ms
+  lights:
+    l_r_inner_loop_arrow: '000000'
+- duration: 31ms
+  flashers:
+    f_left_ramp: 18ms

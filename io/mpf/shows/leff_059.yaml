@@ -1,0 +1,10 @@
+#show_version=6
+# Tron LE light effect 59 (ROM function 0x1020a2c), once. Generated from ROM emulation.
+- duration: 992ms
+  lights:
+    l_left_ramp_tube:
+      color: 000000
+      fade: 1000ms
+    l_right_ramp_tube:
+      color: 000000
+      fade: 1000ms

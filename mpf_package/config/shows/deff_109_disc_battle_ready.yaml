@@ -1,0 +1,30 @@
+#show_version=6
+# deff_109_disc_battle_ready: DISC BATTLE READY
+# ROM trigger: Recognizer battle lit. Timing from emulation.
+# Lamp effect: lampfx_105_disc_battle_ready at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_109_disc_battle_ready:
+      action: play
+  shows:
+    leff_060:
+      action: play
+      loops: 0
+    lampfx_105_disc_battle_ready:
+      action: play
+      loops: 0
+  sounds:
+    call_0d8:
+      action: play
+- time: 458ms
+  sounds:
+    call_0d9:
+      action: play
+- time: 1865ms
+  sounds:
+    call_0da:
+      action: play
+- time: 3776ms
+  slides:
+    deff_109_disc_battle_ready:
+      action: remove

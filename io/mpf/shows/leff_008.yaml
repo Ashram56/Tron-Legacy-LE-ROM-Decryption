@@ -1,0 +1,6 @@
+#show_version=6
+# Tron LE light effect 8 (ROM function 0x1017c1c), hold. Generated from ROM emulation.
+- duration: 16ms
+  lights:
+    l_left_ramp_tube: 00ffff
+    l_right_ramp_tube: 00ffff

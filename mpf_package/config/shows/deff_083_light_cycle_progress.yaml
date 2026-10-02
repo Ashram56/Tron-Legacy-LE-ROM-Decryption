@@ -1,0 +1,15 @@
+#show_version=6
+# deff_083_light_cycle_progress: n MORE LIGHT CYCLE
+# ROM trigger: right inner loop / orbit / ramp shots toward Light Cycle. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_083_light_cycle_progress:
+      action: play
+  shows:
+    leff_051:
+      action: play
+      loops: 0
+- time: 1986ms
+  slides:
+    deff_083_light_cycle_progress:
+      action: remove

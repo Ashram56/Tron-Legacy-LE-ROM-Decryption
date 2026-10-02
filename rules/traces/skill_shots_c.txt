@@ -1,0 +1,6 @@
+# skill shot C (served ball -> VUK sw11)
+start 1
+wait 3
+mark skillC_vuk
+hit 11
+wait 4

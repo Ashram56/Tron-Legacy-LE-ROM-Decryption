@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 80: images 4753-4789, 37 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_080_img4753:
+      action: play
+- time: 1813ms
+  slides:
+    lib_anim_080_img4753:
+      action: remove

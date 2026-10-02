@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 8: images 2034-2096, 63 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_008_img2034:
+      action: play
+- time: 3086ms
+  slides:
+    lib_anim_008_img2034:
+      action: remove

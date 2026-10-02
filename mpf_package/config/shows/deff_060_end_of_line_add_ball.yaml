@@ -1,0 +1,19 @@
+#show_version=6
+# deff_060_end_of_line_add_ball: BALL ADDED / n MORE FOR ADD-A-BALL
+# ROM trigger: End of Line Multiball add-a-ball (disc, ramps). Timing from emulation.
+# Lamp effect: lampfx_063_end_of_line_add_ball at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_060_end_of_line_add_ball:
+      action: play
+  shows:
+    leff_091:
+      action: play
+      loops: 0
+    lampfx_063_end_of_line_add_ball:
+      action: play
+      loops: 0
+- time: 2225ms
+  slides:
+    deff_060_end_of_line_add_ball:
+      action: remove

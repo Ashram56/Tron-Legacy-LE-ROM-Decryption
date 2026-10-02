@@ -1,0 +1,16 @@
+#show_version=6
+# deff_066_quorra_add_ball_progress: QUORRA MULTIBALL n MORE TO ADD BALL
+# ROM trigger: Quorra Multiball shots. Timing from emulation.
+# Lamp effect: lampfx_070_quorra_add_ball_progress at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  shows:
+    leff_036:
+      action: play
+    lampfx_070_quorra_add_ball_progress:
+      action: play
+      loops: 0
+- time: 519ms
+  sounds:
+    call_069:
+      action: play
+- time: 2050ms

@@ -1,0 +1,43 @@
+#show_version=6
+# ROM lamp effect 109 (leff table 0x040e23e4, function 0x10291b8, priority 192). Captured in emulation.
+# Loops until stopped. loops in the ROM; the first 16 ms (a lead-in before the loop settles) are left out
+# Started by: rule: while LAB_01028bac
+- duration: 81ms
+  lights:
+    l_flynns_arcade: ffffff
+    l_left_ramp_arrow: '000000'
+    l_left_ramp_disc: '000000'
+    l_left_ramp_light_cycle: ffffff
+- duration: 17ms
+  lights:
+    l_left_ramp_disc: ffffff
+- duration: 81ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 16ms
+  lights:
+    l_left_ramp_arrow: ffffff
+- duration: 81ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 16ms
+  lights:
+    l_left_ramp_light_cycle: '000000'
+- duration: 82ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 16ms
+  lights:
+    l_left_ramp_disc: '000000'
+- duration: 81ms
+  lights:
+    l_flynns_arcade: ffffff
+- duration: 17ms
+  lights:
+    l_left_ramp_arrow: '000000'
+- duration: 81ms
+  lights:
+    l_flynns_arcade: '000000'
+- duration: 16ms
+  lights:
+    l_left_ramp_light_cycle: ffffff

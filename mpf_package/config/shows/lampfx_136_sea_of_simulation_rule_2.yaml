@@ -1,0 +1,118 @@
+#show_version=6
+# ROM lamp effect 136 (leff table 0x040e23e4, function 0x1026f74, priority 15). Captured in emulation.
+# Loops until stopped. loops in the ROM; the first 98 ms (a lead-in before the loop settles) are left out
+# Started by: rule: while FUN_01026dbc
+- duration: 97ms
+  lights:
+    l_clu_c: '000000'
+    l_clu_l: '000000'
+    l_clu_u: '000000'
+    l_eject_extra_ball: '000000'
+    l_eject_light_cycle: '000000'
+    l_eject_portal: ffffff
+    l_eject_quorra: ffffff
+- duration: 97ms
+  lights:
+    l_eject_light_cycle: ffffff
+- duration: 97ms
+  lights:
+    l_eject_extra_ball: ffffff
+- duration: 98ms
+  lights:
+    l_eject_portal: '000000'
+- duration: 97ms
+  lights:
+    l_eject_quorra: '000000'
+- duration: 97ms
+  lights:
+    l_eject_light_cycle: '000000'
+- duration: 98ms
+  lights:
+    l_eject_extra_ball: '000000'
+- duration: 97ms
+  lights:
+    l_eject_portal: ffffff
+- duration: 97ms
+  lights:
+    l_eject_quorra: ffffff
+- duration: 97ms
+  lights:
+    l_eject_light_cycle: ffffff
+- duration: 98ms
+  lights:
+    l_eject_extra_ball: ffffff
+- duration: 97ms
+  lights:
+    l_eject_portal: '000000'
+- duration: 97ms
+  lights:
+    l_eject_quorra: '000000'
+- duration: 98ms
+  lights:
+    l_eject_light_cycle: '000000'
+- duration: 97ms
+  lights:
+    l_eject_extra_ball: '000000'
+- duration: 97ms
+  lights:
+    l_eject_portal: ffffff
+- duration: 98ms
+  lights:
+    l_eject_quorra: ffffff
+- duration: 97ms
+  lights:
+    l_eject_light_cycle: ffffff
+- duration: 97ms
+  lights:
+    l_eject_extra_ball: ffffff
+- duration: 98ms
+  lights:
+    l_eject_portal: '000000'
+- duration: 97ms
+  lights:
+    l_eject_quorra: '000000'
+- duration: 97ms
+  lights:
+    l_eject_light_cycle: '000000'
+- duration: 97ms
+  lights:
+    l_eject_extra_ball: '000000'
+- duration: 49ms
+  lights:
+    l_eject_extra_ball: ffffff
+    l_eject_light_cycle: ffffff
+    l_eject_portal: ffffff
+    l_eject_quorra: ffffff
+- duration: 49ms
+  lights:
+    l_eject_extra_ball: '000000'
+    l_eject_light_cycle: '000000'
+    l_eject_portal: '000000'
+    l_eject_quorra: '000000'
+- duration: 48ms
+  lights:
+    l_eject_extra_ball: ffffff
+    l_eject_light_cycle: ffffff
+    l_eject_portal: ffffff
+    l_eject_quorra: ffffff
+- duration: 49ms
+  lights:
+    l_eject_extra_ball: '000000'
+    l_eject_light_cycle: '000000'
+    l_eject_portal: '000000'
+    l_eject_quorra: '000000'
+- duration: 49ms
+  lights:
+    l_eject_extra_ball: ffffff
+    l_eject_light_cycle: ffffff
+    l_eject_portal: ffffff
+    l_eject_quorra: ffffff
+- duration: 48ms
+  lights:
+    l_eject_extra_ball: '000000'
+    l_eject_light_cycle: '000000'
+    l_eject_portal: '000000'
+    l_eject_quorra: '000000'
+- duration: 97ms
+  lights:
+    l_eject_portal: ffffff

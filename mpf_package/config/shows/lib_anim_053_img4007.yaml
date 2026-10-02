@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 53: images 4007-4017, 11 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_053_img4007:
+      action: play
+- time: 539ms
+  slides:
+    lib_anim_053_img4007:
+      action: remove

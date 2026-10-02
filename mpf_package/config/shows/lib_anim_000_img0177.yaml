@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 0: images 177-198, 22 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_000_img0177:
+      action: play
+- time: 1078ms
+  slides:
+    lib_anim_000_img0177:
+      action: remove

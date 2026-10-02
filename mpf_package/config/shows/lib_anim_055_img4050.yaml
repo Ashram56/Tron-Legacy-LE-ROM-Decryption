@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 55: images 4050-4073, 24 frames at 65 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_055_img4050:
+      action: play
+- time: 1568ms
+  slides:
+    lib_anim_055_img4050:
+      action: remove

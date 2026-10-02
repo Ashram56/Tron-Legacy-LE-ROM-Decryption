@@ -1,0 +1,13 @@
+# Tron LE fiber optic ramp tubes as MPF RGB lights.
+# The two tubes are not on the lamp matrix. They hang off the SAM IO board aux bus
+# (data on J2 AUX_DRV, latch strobe on J3), so `number:` depends on the platform
+# that drives that bus. See ../README.md "Driving the tubes" for the protocol.
+lights:
+  l_left_ramp_tube:
+    type: rgb
+    number: aux_strobe_0x10   # strobe bit 0x10 of register 0xB (ESTB, J3 pin 12, per the schematic)
+    label: Left ramp fiber optic tube
+  l_right_ramp_tube:
+    type: rgb
+    number: aux_strobe_0x20   # strobe bit 0x20 of register 0xB (DSTB, J3 pin 11, per the schematic)
+    label: Right ramp fiber optic tube

@@ -1,0 +1,10 @@
+#show_version=6
+# Tron LE light effect 10 (ROM function 0x1023b70), hold. Generated from ROM emulation.
+- duration: 16ms
+  lights:
+    l_left_ramp_tube:
+      color: 000000
+      fade: 250ms
+    l_right_ramp_tube:
+      color: 000000
+      fade: 250ms

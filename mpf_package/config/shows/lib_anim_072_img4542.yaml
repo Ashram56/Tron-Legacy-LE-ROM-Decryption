@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 72: images 4542-4571, 30 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_072_img4542:
+      action: play
+- time: 1470ms
+  slides:
+    lib_anim_072_img4542:
+      action: remove

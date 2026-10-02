@@ -1,0 +1,21 @@
+#show_version=6
+# deff_126_sea_of_simulation_total: SEA OF SIMULATION TOTAL
+# ROM trigger: Sea of Simulation end. Timing from emulation.
+# Lamp effect: lampfx_151_sea_of_simulation_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_126_sea_of_simulation_total:
+      action: play
+  shows:
+    leff_078:
+      action: play
+    lampfx_151_sea_of_simulation_total:
+      action: play
+      loops: 0
+  sounds:
+    call_115:
+      action: play
+- time: 4135ms
+  slides:
+    deff_126_sea_of_simulation_total:
+      action: remove

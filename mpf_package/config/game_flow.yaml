@@ -1,0 +1,30 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Game flow: what the ROM shows and plays at attract, game start, ball start, ball end and game over.
+# Events are MPF's own built-in events, so this works without any extra code. All observed in emulation.
+images:
+  flow_attract_cycle:
+    file: flow_attract_cycle/animation.gif
+slides:
+  flow_attract_cycle:
+    - type: image
+      image: flow_attract_cycle
+show_player:
+  mode_attract_started:
+    flow_attract_dmd:
+      loops: -1
+    flow_attract_lights:
+      loops: -1
+    lampfx_001_attract:      # ROM lamp effect 1, the attract playfield lamp show (observed: started with attract)
+      loops: -1
+      priority: 1
+  mode_attract_stopped:
+    flow_attract_dmd:
+      action: stop
+    flow_attract_lights:
+      action: stop
+    lampfx_001_attract:
+      action: stop
+  game_started: flow_game_start        # music 0x01a, tube show 10 (post tron_arcade_lit when the arcade becomes lit)
+  ball_started{ball>1}: flow_ball_start  # music 0x029, tube show 10 (add tron_arcade_lit / tron_shoot_again when they apply)
+  ball_ending: flow_ball_end_bonus     # bonus count (effect 25) with its music and lamp shows
+  game_ending: flow_game_over          # match (effect 38); high score entry runs first if earned

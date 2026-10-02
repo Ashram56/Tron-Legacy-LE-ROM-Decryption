@@ -1,0 +1,45 @@
+# Sea of Simulation: items are poked to 'lit' to qualify it (poke used to skip ~9 features)
+start 1
+wait 1
+release 18
+hold 23
+wait 0.5
+release 23
+wait 1
+mark poke: all 9 items lit (byte 0 = 1) for player 1, CLU also collected (byte 1 = 1)
+poke 2111694 1
+poke 21116a4 1
+poke 21116b4 1
+poke 21116c4 1
+poke 21116d4 1
+poke 21116e4 1
+poke 21116f4 1
+poke 2111704 1
+poke 2111714 1
+poke 21116b5 1
+wait 1
+mark VUK: Flynn's Arcade award, then SOS starts (all items lit)
+hit 11
+wait 1
+release 11
+wait 14
+mark stage 1 FLYNN: shoot the VUK
+hit 11
+wait 1
+release 11
+wait 6
+mark stage 2 GEM: right inner loop
+hit 39
+wait 5
+mark stage 3 CLU is skipped (CLU already collected); stage 4 ZUSE: Z U S E targets
+hit 7
+wait 1
+hit 8
+wait 1
+hit 48
+wait 1
+hit 13
+wait 5
+mark drain ends SOS
+hold 18
+wait 9

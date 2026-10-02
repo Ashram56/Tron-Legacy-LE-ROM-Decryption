@@ -1,0 +1,19 @@
+#show_version=6
+# deff_108_disc_access_progress: n MORE TO ACCESS DISC
+# ROM trigger: Recognizer 3-bank (sw49-51). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_108_disc_access_progress:
+      action: play
+  shows:
+    leff_059:
+      action: play
+      loops: 0
+- time: 975ms
+  sounds:
+    call_0d1:
+      action: play
+- time: 1819ms
+  slides:
+    deff_108_disc_access_progress:
+      action: remove

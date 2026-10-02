@@ -1,0 +1,14 @@
+#show_version=6
+# ROM lamp effect 68 (leff table 0x040e23e4, function 0x101f0f4, priority 10). Captured in emulation.
+# Loops until stopped. 
+# Started by: rule: while quorra_mb_rule_active
+- duration: 195ms
+  lights:
+    l_advance_quorra: ffffff
+    l_l_inner_loop_arrow: ffffff
+    l_r_inner_loop_arrow: ffffff
+- duration: 195ms
+  lights:
+    l_advance_quorra: '000000'
+    l_l_inner_loop_arrow: '000000'
+    l_r_inner_loop_arrow: '000000'

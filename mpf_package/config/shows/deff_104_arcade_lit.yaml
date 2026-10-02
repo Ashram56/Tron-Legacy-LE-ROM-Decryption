@@ -1,0 +1,14 @@
+#show_version=6
+# deff_104_arcade_lit: FLYNN'S ARCADE IS LIT
+# ROM trigger: Flynn's Arcade becomes lit: the per-player arcade flag changes from off to on (code: FUN_0100ddb0, right orbit sw46 handler). Seen at game start because the arcade starts lit. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_104_arcade_lit:
+      action: play
+  sounds:
+    call_0df:
+      action: play
+- time: 3254ms
+  slides:
+    deff_104_arcade_lit:
+      action: remove

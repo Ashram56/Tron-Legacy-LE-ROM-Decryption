@@ -1,0 +1,9 @@
+#show_version=6
+# End of ball (observed): bonus count. Before it, the ROM shows a total for each mode that ran
+# during the ball (effects 70, 74, 79, 90, 99 and others), each with its own show.
+# 20ms effect 25 (TOTAL BONUS)
+- time: 20ms
+  shows:
+    deff_025_bonus:
+      action: play
+- time: 1580ms

@@ -1,0 +1,155 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# Lamp matrix: 66 named lamps of 80 (numbers as in the ROM's lamp test; 41, 44 and 67-80 are NOT USED).
+# Letter lamps are named by their letter: lamp 1 is TRO(N) = l_tron_n. The two ramp fiber optic tubes
+# are not matrix lamps; they come from ../io (aux bus RGB, see README).
+lights:
+  l_tron_n:
+    number: 1   # TRO(N)
+    tags: rom_group_31
+  l_tron_o:
+    number: 2   # TR(O)N
+    tags: rom_group_31
+  l_tron_r:
+    number: 3   # T(R)ON
+    tags: rom_group_31
+  l_tron_t:
+    number: 4   # (T)RON
+    tags: rom_group_31
+  l_double_scoring:
+    number: 5   # DOUBLE SCORING
+  l_bumpers:
+    number: 6   # BUMPERS
+  l_spinners:
+    number: 7   # SPINNERS
+  l_left_outlane:
+    number: 8   # LEFT OUTLANE
+  l_clu_c:
+    number: 9   # (C)LU
+    tags: rom_group_50
+  l_zuse_u:
+    number: 10   # Z(U)SE
+    tags: rom_group_54
+  l_left_ramp_light_cycle:
+    number: 11   # LEFT RAMP (LIGHT CYCLE)
+  l_zuse_z:
+    number: 12   # (Z)USE
+    tags: rom_group_54
+  l_left_orbit_clu:
+    number: 13   # LEFT ORBIT (CLU)
+  l_left_orbit_light_cycle:
+    number: 14   # LEFT ORBIT (LIGHT CYCLE)
+  l_left_orbit_disc:
+    number: 15   # LEFT ORBIT (DISC)
+  l_l_loop_arrow:
+    number: 16   # L. LOOP ARROW
+  l_center_portal:
+    number: 17   # CENTER PORTAL
+  l_center_tron:
+    number: 18   # CENTER TRON
+  l_center_recognizer:
+    number: 19   # CENTER RECOGNIZER
+  l_center_light_cycle:
+    number: 20   # CENTER LIGHT CYCLE
+  l_center_disc:
+    number: 21   # CENTER DISC
+  l_center_quorra:
+    number: 22   # CENTER QUORRA
+  l_center_zuse:
+    number: 23   # CENTER ZUSE
+  l_center_clu:
+    number: 24   # CENTER CLU
+  l_center_gem:
+    number: 25   # CENTER GEM
+  l_shoot_again:
+    number: 26   # SHOOT AGAIN
+  l_center_flynn:
+    number: 27   # CENTER FLYNN
+  l_eject_clu:
+    number: 28   # EJECT: CLU
+  l_zuse_e:
+    number: 29   # ZUS(E)
+    tags: rom_group_54
+  l_clu_l:
+    number: 30   # C(L)U
+    tags: rom_group_50
+  l_clu_u:
+    number: 31   # CL(U)
+    tags: rom_group_50
+  l_right_outlane:
+    number: 32   # RIGHT OUTLANE
+  l_r_loop_arrow:
+    number: 33   # R. LOOP ARROW
+  l_right_orbit_disc:
+    number: 34   # RIGHT ORBIT (DISC)
+  l_right_orbit_light_cycle:
+    number: 35   # RIGHT ORBIT (LIGHT CYCLE)
+  l_right_orbit_clu:
+    number: 36   # RIGHT ORBIT (CLU)
+  l_eject_extra_ball:
+    number: 37   # EJECT: EXTRA BALL
+  l_eject_light_cycle:
+    number: 38   # EJECT: LIGHT CYCLE
+  l_eject_quorra:
+    number: 39   # EJECT: QUORRA
+  l_eject_portal:
+    number: 40   # EJECT: PORTAL
+  l_r_ramp_light_cycle:
+    number: 42   # R. RAMP (LIGHT CYCLE)
+  l_zuse_s:
+    number: 43   # ZU(S)E
+    tags: rom_group_54
+  l_flynns_arcade:
+    number: 45   # FLYNN'S ARCADE
+  l_left_bumper:
+    number: 46   # LEFT BUMPER
+  l_right_bumper:
+    number: 47   # RIGHT BUMPER
+  l_bottom_bumper:
+    number: 48   # BOTTOM BUMPER
+  l_left_ramp_arrow:
+    number: 49   # LEFT RAMP ARROW
+  l_left_ramp_disc:
+    number: 50   # LEFT RAMP (DISC)
+  l_recognizer_pos_1:
+    number: 51   # RECOGNIZER POS. 1
+    tags: rom_group_52
+  l_recognizer_pos_2:
+    number: 52   # RECOGNIZER POS. 2
+    tags: rom_group_52
+  l_recognizer_pos_3:
+    number: 53   # RECOGNIZER POS. 3
+    tags: rom_group_52
+  l_recognizer_3_bank:
+    number: 54   # RECOGNIZER 3-BANK
+  l_right_ramp_disc:
+    number: 55   # RIGHT RAMP (DISC)
+  l_r_ramp_arrow:
+    number: 56   # R. RAMP ARROW
+  l_r_inner_loop_arrow:
+    number: 57   # R. INNER LOOP ARROW
+  l_r_inner_loop_disc:
+    number: 58   # R. INNER LOOP (DISC)
+  l_r_inner_loop_light_cycle:
+    number: 59   # R. INNER LOOP (LIGHT CYCLE)
+  l_advance_quorra:
+    number: 60   # ADVANCE QUORRA
+  l_l_inner_loop_clu:
+    number: 61   # L. INNER LOOP (CLU)
+  l_l_inner_loop_light_cycle:
+    number: 62   # L. INNER LOOP (LIGHT CYCLE)
+  l_l_inner_loop_disc:
+    number: 63   # L. INNER LOOP (DISC)
+  l_l_inner_loop_arrow:
+    number: 64   # L. INNER LOOP ARROW
+  l_start_button:
+    number: 65   # START BUTTON
+  l_tournament_start_button:
+    number: 66   # TOURNAMENT START BUTTON
+  l_left_ramp_tube:
+    type: rgb
+    number: aux_strobe_0x10   # strobe bit 0x10 of register 0xB (ESTB, J3 pin 12, per the schematic)
+    label: Left ramp fiber optic tube
+  l_right_ramp_tube:
+    type: rgb
+    number: aux_strobe_0x20   # strobe bit 0x20 of register 0xB (DSTB, J3 pin 11, per the schematic)
+    label: Right ramp fiber optic tube

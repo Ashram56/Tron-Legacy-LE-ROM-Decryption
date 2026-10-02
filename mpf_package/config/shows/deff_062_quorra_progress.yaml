@@ -1,0 +1,22 @@
+#show_version=6
+# deff_062_quorra_progress: n TO LIGHT QUORRA MULTIBALL
+# ROM trigger: Quorra advance (left spinner sw44 area). Timing from emulation.
+# Lamp effect: lampfx_065_quorra_progress at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_062_quorra_progress:
+      action: play
+  shows:
+    leff_032:
+      action: play
+      loops: 0
+    lampfx_065_quorra_progress:
+      action: play
+      loops: 0
+  sounds:
+    call_063:
+      action: play
+- time: 2052ms
+  slides:
+    deff_062_quorra_progress:
+      action: remove

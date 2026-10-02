@@ -1,0 +1,15 @@
+#show_version=6
+# deff_091_zuse_collect: COLLECT FOR FASTSCORING / SOS ITEM
+# ROM trigger: ZUSE targets (sw7, sw8, sw13, sw48). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_091_zuse_collect:
+      action: play
+  shows:
+    leff_026:
+      action: play
+      loops: 0
+- time: 2052ms
+  slides:
+    deff_091_zuse_collect:
+      action: remove

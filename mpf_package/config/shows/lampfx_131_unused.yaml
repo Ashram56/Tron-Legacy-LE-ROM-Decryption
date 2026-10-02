@@ -1,0 +1,34 @@
+#show_version=6
+# ROM lamp effect 131 (leff table 0x040e23e4, function 0x100d158, priority 128). Captured in emulation.
+# Plays once. 
+# Show token (lamp) = the lamp the caller passes (captured with lamp 33 / group 12 standing in).
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 33ms
+  lights:
+    (lamp): '000000'
+- duration: 32ms
+  lights:
+    (lamp): ffffff
+- duration: 49ms
+  lights:
+    (lamp): '000000'

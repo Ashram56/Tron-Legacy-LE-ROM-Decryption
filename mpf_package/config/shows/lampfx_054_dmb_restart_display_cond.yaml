@@ -1,0 +1,236 @@
+#show_version=6
+# ROM lamp effect 54 (leff table 0x040e23e4, function 0x1009880, priority 9). Captured in emulation.
+# Plays once. 
+# Started by: rule: while dmb_restart_display_cond
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 131ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 131ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 129ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 130ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms
+- duration: 617ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms

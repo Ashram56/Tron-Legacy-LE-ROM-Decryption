@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 142: images 8110-8130, 21 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_142_img8110:
+      action: play
+- time: 1029ms
+  slides:
+    lib_anim_142_img8110:
+      action: remove

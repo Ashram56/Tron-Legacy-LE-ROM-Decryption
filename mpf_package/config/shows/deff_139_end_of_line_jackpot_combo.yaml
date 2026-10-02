@@ -1,0 +1,11 @@
+#show_version=6
+# deff_139_end_of_line_jackpot_combo: END OF LINE JACKPOT
+# ROM trigger: combo / End of Line jackpot. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_139_end_of_line_jackpot_combo:
+      action: play
+- time: 1694ms
+  slides:
+    deff_139_end_of_line_jackpot_combo:
+      action: remove

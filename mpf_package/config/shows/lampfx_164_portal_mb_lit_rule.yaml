@@ -1,0 +1,34 @@
+#show_version=6
+# ROM lamp effect 164 (leff table 0x040e23e4, function 0x102fa7c, priority 9). Captured in emulation.
+# Plays once. 
+# Started by: rule: while portal_mb_lit_rule
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 129ms
+  flashers:
+    f_video_game: 32ms
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 131ms
+  flashers:
+    f_video_game: 32ms
+- duration: 129ms
+  flashers:
+    f_video_game: 32ms
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 130ms
+  flashers:
+    f_video_game: 32ms
+- duration: 731ms
+  flashers:
+    f_video_game: 32ms

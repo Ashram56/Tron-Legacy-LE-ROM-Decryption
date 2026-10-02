@@ -1,0 +1,11 @@
+#show_version=6
+# deff_130_game_over_disc_progress: GAME OVER / n MORE TO ACCESS DISC
+# ROM trigger: end of game hint. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_130_game_over_disc_progress:
+      action: play
+- time: 2269ms
+  slides:
+    deff_130_game_over_disc_progress:
+      action: remove

@@ -1,0 +1,8 @@
+#show_version=6
+# deff_053_disc_multiball_restart_running: DISC MULTIBALL RESTART / SHOOT DISC n (background)
+# ROM trigger: during multiball restart. Timing from emulation (looping background effect, cut at 12 s).
+- time: 0ms
+  slides:
+    deff_053_disc_multiball_restart_running:
+      action: play
+- time: 12003ms

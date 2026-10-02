@@ -1,0 +1,26 @@
+#show_version=6
+# deff_113_sea_of_simulation_intro: SEA OF SIMULATION: COMPLETE ALL STAGES TO REACH THE PORTAL
+# ROM trigger: Sea of Simulation start. Timing from emulation.
+# Lamp effect: lampfx_135_sea_of_simulation_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_113_sea_of_simulation_intro:
+      action: play
+  shows:
+    leff_065:
+      action: play
+      loops: 0
+    lampfx_135_sea_of_simulation_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_107:
+      action: play
+- time: 1764ms
+  sounds:
+    call_106:
+      action: play
+- time: 7142ms
+  slides:
+    deff_113_sea_of_simulation_intro:
+      action: remove

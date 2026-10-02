@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 100: images 5686-5850, 165 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_100_img5686:
+      action: play
+- time: 8083ms
+  slides:
+    lib_anim_100_img5686:
+      action: remove

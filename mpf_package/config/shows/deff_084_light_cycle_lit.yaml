@@ -1,0 +1,22 @@
+#show_version=6
+# deff_084_light_cycle_lit: LIGHT CYCLE IS LIT
+# ROM trigger: Light Cycle Multiball lit. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_084_light_cycle_lit:
+      action: play
+  shows:
+    leff_052:
+      action: play
+      loops: 0
+  sounds:
+    call_0bf:
+      action: play
+- time: 2659ms
+  sounds:
+    call_0c0:
+      action: play
+- time: 4065ms
+  slides:
+    deff_084_light_cycle_lit:
+      action: remove

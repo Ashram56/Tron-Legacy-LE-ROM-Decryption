@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 51: images 3941-3943, 3 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_051_img3941:
+      action: play
+- time: 147ms
+  slides:
+    lib_anim_051_img3941:
+      action: remove

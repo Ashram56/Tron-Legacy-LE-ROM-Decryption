@@ -1,0 +1,25 @@
+#show_version=6
+# deff_064_quorra_multiball_intro: QUORRA MULTIBALL intro
+# ROM trigger: Quorra Multiball start. Timing from emulation.
+# Lamp effect: lampfx_067_quorra_multiball_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_064_quorra_multiball_intro:
+      action: play
+  shows:
+    leff_034:
+      action: play
+    lampfx_067_quorra_multiball_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_066:
+      action: play
+- time: 1904ms
+  sounds:
+    call_067:
+      action: play
+- time: 3860ms
+  slides:
+    deff_064_quorra_multiball_intro:
+      action: remove

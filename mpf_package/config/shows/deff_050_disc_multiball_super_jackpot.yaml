@@ -1,0 +1,23 @@
+#show_version=6
+# deff_050_disc_multiball_super_jackpot: SUPER JACKPOT
+# ROM trigger: Disc Multiball super jackpot. Timing from emulation.
+# Lamp effect: lampfx_050_disc_multiball_super_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  shows:
+    leff_046:
+      action: play
+    lampfx_050_disc_multiball_super_jackpot:
+      action: play
+      loops: 0
+  sounds:
+    call_05e:
+      action: play
+- time: 1467ms
+  sounds:
+    call_05f:
+      action: play
+- time: 1956ms
+  sounds:
+    call_060:
+      action: play
+- time: 3018ms

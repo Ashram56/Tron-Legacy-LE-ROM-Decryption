@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 36: images 3345-3363, 19 frames at 82 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_036_img3345:
+      action: play
+- time: 1551ms
+  slides:
+    lib_anim_036_img3345:
+      action: remove

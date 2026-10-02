@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 9: images 2097-2174, 78 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_009_img2097:
+      action: play
+- time: 3821ms
+  slides:
+    lib_anim_009_img2097:
+      action: remove

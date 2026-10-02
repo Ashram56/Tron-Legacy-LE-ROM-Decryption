@@ -1,0 +1,141 @@
+# Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
+# number: the SAM switch number (Stern numbering, 1-64). Replace with your platform's
+# address. Flipper buttons, EOS and coin door are SAM dedicated switches and are not in the ROM's
+# switch table; add them for your hardware.
+switches:
+  s_tron_t:
+    number: 1   # (T)RON
+    tags: playfield_active
+  s_tron_r:
+    number: 2   # T(R)ON
+    tags: playfield_active
+  s_tron_o:
+    number: 3   # TR(O)N
+    tags: playfield_active
+  s_tron_n:
+    number: 4   # TRO(N)
+    tags: playfield_active
+  s_zuse_z:
+    number: 7   # (Z)USE
+    tags: playfield_active
+  s_zuse_u:
+    number: 8   # Z(U)SE
+    tags: playfield_active
+  s_video_game_eject:
+    number: 11   # VIDEO GAME EJECT
+  s_zen_rollover:
+    number: 12   # ZEN ROLLOVER
+    tags: playfield_active
+  s_zuse_e:
+    number: 13   # ZUS(E)
+    tags: playfield_active
+  s_clu_l:
+    number: 14   # C(L)U
+    tags: playfield_active
+  s_tournament_start:
+    number: 15   # TOURNAMENT START
+    tags: tournament_start
+  s_start_button:
+    number: 16   # START BUTTON
+    tags: start
+  s_trough_4_l:
+    number: 18   # TROUGH #4 (L)
+    tags: trough
+  s_trough_3:
+    number: 19   # TROUGH #3
+    tags: trough
+  s_trough_2:
+    number: 20   # TROUGH #2
+    tags: trough
+  s_trough_1_r:
+    number: 21   # TROUGH #1 (R)
+    tags: trough
+    # ROM switch descriptor (0x040f3574, word +0x10) sets bit 0x80 only on switches 21, 22 and 41; it may mean opto/inverted (not verified). Check on hardware.
+  s_trough_jam:
+    number: 22   # TROUGH JAM
+    tags: trough_jam
+    # ROM switch descriptor (0x040f3574, word +0x10) sets bit 0x80 only on switches 21, 22 and 41; it may mean opto/inverted (not verified). Check on hardware.
+  s_shooter_lane:
+    number: 23   # SHOOTER LANE
+    tags: shooter_lane
+  s_left_outlane:
+    number: 24   # LEFT OUTLANE
+    tags: playfield_active
+  s_clu_c:
+    number: 25   # (C)LU
+    tags: playfield_active
+  s_left_slingshot:
+    number: 26   # LEFT SLINGSHOT
+    tags: playfield_active
+  s_right_slingshot:
+    number: 27   # RIGHT SLINGSHOT
+    tags: playfield_active
+  s_clu_u:
+    number: 28   # CL(U)
+    tags: playfield_active
+  s_right_outlane:
+    number: 29   # RIGHT OUTLANE
+    tags: playfield_active
+  s_left_bumper:
+    number: 30   # LEFT BUMPER
+    tags: playfield_active
+  s_right_bumper:
+    number: 31   # RIGHT BUMPER
+    tags: playfield_active
+  s_bottom_bumper:
+    number: 32   # BOTTOM BUMPER
+    tags: playfield_active
+  s_r_ramp_exit:
+    number: 34   # R. RAMP EXIT
+    tags: playfield_active
+  s_l_ramp_entrance:
+    number: 35   # L. RAMP ENTRANCE
+    tags: playfield_active
+  s_right_orbit_spinner:
+    number: 36   # RIGHT ORBIT SPINNER
+    tags: playfield_active
+  s_l_ramp_exit:
+    number: 37   # L. RAMP EXIT
+    tags: playfield_active
+  s_r_ramp_entrance:
+    number: 38   # R. RAMP ENTRANCE
+    tags: playfield_active
+  s_right_inner_loop:
+    number: 39   # RIGHT INNER LOOP
+    tags: playfield_active
+  s_disc_opto:
+    number: 41   # DISC OPTO
+    tags: playfield_active
+    type: NC   # disc opto: the ROM's ball search runs unless it reads closed (inferred from emulation)
+    # ROM switch descriptor (0x040f3574, word +0x10) sets bit 0x80 only on switches 21, 22 and 41; it may mean opto/inverted (not verified). Check on hardware.
+  s_left_orbit:
+    number: 43   # LEFT ORBIT
+    tags: playfield_active
+  s_left_spinner:
+    number: 44   # LEFT SPINNER
+    tags: playfield_active
+  s_right_orbit:
+    number: 46   # RIGHT ORBIT
+    tags: playfield_active
+  s_zuse_s:
+    number: 48   # ZU(S)E
+    tags: playfield_active
+  s_recogniz_3_bank_l:
+    number: 49   # RECOGNIZ. 3-BANK (L)
+    tags: playfield_active
+  s_recogniz_3_bank_c:
+    number: 50   # RECOGNIZ. 3-BANK (C)
+    tags: playfield_active
+  s_recogniz_3_bank_r:
+    number: 51   # RECOGNIZ. 3-BANK (R)
+    tags: playfield_active
+  s_3_bank_motor_dn:
+    number: 52   # 3-BANK MOTOR (DN)
+  s_3_bank_motor_up:
+    number: 53   # 3-BANK MOTOR (UP)
+  s_recog_motor_pos_1:
+    number: 54   # RECOG. MOTOR POS. 1
+  s_recog_motor_pos_2:
+    number: 55   # RECOG. MOTOR POS. 2
+  s_recog_motor_pos_3:
+    number: 56   # RECOG. MOTOR POS. 3

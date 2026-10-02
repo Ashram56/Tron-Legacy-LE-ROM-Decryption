@@ -1,0 +1,55 @@
+# Portal Multiball end-game reference (state jump): all 9 items poked to 'collected', start at VUK,
+# then shot counters poked to 'one left orbit missing'; last shot lights the super; super at the disc;
+# all-shots phase; drain to one ball; grace shot; total; end-of-ball bonus
+start 1
+wait 4
+mark poke_all_items_collected
+poke 2111695 1
+poke 21116a5 1
+poke 21116b5 1
+poke 21116c5 1
+poke 21116d5 1
+poke 21116e5 1
+poke 21116f5 1
+poke 2111705 1
+poke 2111715 1
+wait 1
+mark vuk_start
+hit 11
+wait 20
+mark poke_shot_counts_3_3_5_3_3_4
+poke 3b85c 3
+poke 3b860 3
+poke 3b864 5
+poke 3b868 3
+poke 3b86c 3
+poke 3b870 4
+wait 0.5
+mark last_left_orbit_lights_super
+hit 43
+wait 4
+mark super_lit_left_ramp_no_score
+hit 37
+wait 2.5
+mark disc_super_jackpot
+hit 41
+wait 9.5
+mark all_shots_left_ramp
+hit 37
+wait 2.5
+mark all_shots_disc
+hit 41
+wait 3
+mark drain_to_one_ball
+drain
+wait 1
+drain
+wait 1
+drain
+wait 2
+mark grace_left_ramp
+hit 37
+wait 7
+mark drain_last
+drain
+wait 14

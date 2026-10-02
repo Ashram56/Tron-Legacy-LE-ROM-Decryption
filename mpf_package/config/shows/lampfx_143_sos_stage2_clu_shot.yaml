@@ -1,0 +1,77 @@
+#show_version=6
+# ROM lamp effect 143 (leff table 0x040e23e4, function 0x10279e8, priority 209). Captured in emulation.
+# Plays once. 
+# Show token (lamps) = a light tag for the lamp group the caller passes (captured with lamp 33 / group 12 standing in).
+# Started by: code: sos_stage2_clu_shot
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 33ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 32ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 33ms
+  lights:
+    (lamps): '000000'
+- duration: 32ms
+  lights:
+    (lamps): ffffff
+- duration: 49ms
+  lights:
+    (lamps): '000000'

@@ -1,0 +1,22 @@
+#show_version=6
+# deff_099_zuse_total: FAST SCORING TOTAL
+# ROM trigger: Fast Scoring end (captured in emulated play). Timing from emulation.
+# Lamp effect: lampfx_130_zuse_total at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_099_zuse_total:
+      action: play
+  shows:
+    leff_031:
+      action: play
+      loops: 0
+    lampfx_130_zuse_total:
+      action: play
+      loops: 0
+  sounds:
+    call_0b4:
+      action: play
+- time: 2696ms
+  slides:
+    deff_099_zuse_total:
+      action: remove

@@ -1,0 +1,11 @@
+#show_version=6
+# deff_018_bump_n_win: BUMP 'N' WIN score
+# ROM trigger: Bump'n'Win feature (operator option). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_018_bump_n_win:
+      action: play
+- time: 4096ms
+  slides:
+    deff_018_bump_n_win:
+      action: remove

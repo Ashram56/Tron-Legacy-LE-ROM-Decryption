@@ -1,0 +1,20 @@
+0x02111848	tron_letters	1	per player	collected TRON letters mask T=1 R=2 O=4 N=8
+0x02111840	tron_completions	2	per player	times TRON completed (cap 0xffff)
+0x0211163c	tron_award_lit	1	per player	lit timed award 1 DS 2 BUMPERS 4 SPINNERS; set to BUMPERS each ball
+0x02111640	tron_award_running	1	per player	running timed awards mask; cleared each ball
+0x02111644	tron_award_started_set	1	per player	awards started since last TRON item collect; at 7 -> item collected
+0x02111648	tron_item_count	1	per player	times all three awards started
+0x0211164c	tron_unknown_counter_a	2	per player	cleared at game start with award state (meaning unknown)
+0x02111654	tron_unknown_counter_b	2	per player	cleared at game start (meaning unknown)
+0x0211165c	tron_unknown_counter_c	2	per player	cleared at game start (meaning unknown)
+0x0211184c	tron_bank_player_state	4	per player	drop bank per-player state (bank object 0x3b744)
+0x0003af58	tron_ds_secs	1	while mode runs	DOUBLE SCORING seconds left
+0x0003af5c	tron_ds_secs_start	1	while mode runs	DS start value (adj 74)
+0x0003af60	tron_bumpers_secs	1	while mode runs	SUPER POPS seconds left
+0x0003af64	tron_bumpers_secs_start	1	while mode runs	BUMPERS start value (adj 73)
+0x0003af68	tron_spinners_secs	1	while mode runs	SUPER SPINNERS seconds left
+0x0003af6c	tron_spinners_secs_start	1	while mode runs	SPINNERS start value (adj 72)
+0x0003b740	tron_repeat_sound_flag	1	machine	selects 0x04a/0x04b for already-collected letter
+0x0003b744	tron_drop_bank	obj	machine	generic drop-bank object (vtable 0x39a28)
+0x00038180	tron_bank_multiplier	4	per ball (inferred)	multiplier for the 30-point drop value
+0x021118bc	zen_count	1	per player	ZEN spots available; decremented when ZEN completes TRON

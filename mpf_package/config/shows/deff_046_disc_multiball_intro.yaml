@@ -1,0 +1,21 @@
+#show_version=6
+# deff_046_disc_multiball_intro: DISC MULTIBALL intro animation
+# ROM trigger: Disc Multiball start. Timing from emulation.
+# Lamp effect: lampfx_044_disc_multiball_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_046_disc_multiball_intro:
+      action: play
+  shows:
+    leff_042:
+      action: play
+    lampfx_044_disc_multiball_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_056:
+      action: play
+- time: 5144ms
+  slides:
+    deff_046_disc_multiball_intro:
+      action: remove

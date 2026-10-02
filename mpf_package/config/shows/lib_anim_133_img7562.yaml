@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 133: images 7562-7669, 108 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_133_img7562:
+      action: play
+- time: 5291ms
+  slides:
+    lib_anim_133_img7562:
+      action: remove

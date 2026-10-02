@@ -1,0 +1,11 @@
+# combo/End of Line jackpot: right ramp lights it, VUK collects
+start 1
+wait 3
+mark right_ramp_lights_jackpot
+hit 38
+wait 0.3
+hit 34
+wait 1.0
+mark vuk_collects
+hit 11
+wait 4

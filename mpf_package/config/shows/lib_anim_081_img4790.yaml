@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 81: images 4790-4821, 32 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_081_img4790:
+      action: play
+- time: 1568ms
+  slides:
+    lib_anim_081_img4790:
+      action: remove

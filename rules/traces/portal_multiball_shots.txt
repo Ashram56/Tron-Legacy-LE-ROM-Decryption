@@ -1,0 +1,95 @@
+# Portal Multiball reference: all 9 items poked to 'collected' (state jump), start at VUK, every shot to completion,
+# super jackpot at the disc, all-shots phase, drain to one ball, grace shot, total, end-of-ball bonus
+start 1
+wait 4
+mark poke_all_items_collected
+poke 2111695 1
+poke 21116a5 1
+poke 21116b5 1
+poke 21116c5 1
+poke 21116d5 1
+poke 21116e5 1
+poke 21116f5 1
+poke 2111705 1
+poke 2111715 1
+wait 1
+mark vuk_start
+hit 11
+wait 18
+mark left_orbit_x4
+hit 43
+wait 3.2
+hit 43
+wait 3.2
+hit 43
+wait 3.2
+hit 43
+wait 3.2
+mark left_ramp_x3_plus_one_extra
+hit 37
+wait 2.5
+hit 37
+wait 2.5
+hit 37
+wait 2.5
+hit 37
+wait 2.5
+mark left_inner_loop_x5
+hit 44
+wait 2
+hit 44
+wait 2
+hit 44
+wait 2
+hit 44
+wait 2
+hit 44
+wait 2
+mark right_inner_loop_x3
+hit 39
+wait 2.5
+hit 39
+wait 2.5
+hit 39
+wait 2.5
+mark right_ramp_x3
+hit 34
+wait 2.5
+hit 34
+wait 2.5
+hit 34
+wait 2.5
+mark right_orbit_x4
+hit 46
+wait 3.2
+hit 46
+wait 3.2
+hit 46
+wait 3.2
+hit 46
+wait 3.2
+mark super_lit_left_ramp_no_score
+hit 37
+wait 2.5
+mark disc_super_jackpot
+hit 41
+wait 4
+mark all_shots_left_ramp
+hit 37
+wait 2.5
+mark all_shots_disc
+hit 41
+wait 3
+mark drain_to_one_ball
+drain
+wait 1
+drain
+wait 1
+drain
+wait 2
+mark grace_left_ramp
+hit 37
+wait 7
+mark drain_last
+drain
+wait 14

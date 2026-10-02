@@ -1,0 +1,6 @@
+#show_version=6
+# Tron LE light effect 102 (ROM function 0x10018b0), once. Generated from ROM emulation.
+- duration: 992ms
+  lights:
+    l_left_ramp_tube: ffffff
+    l_right_ramp_tube: ffffff

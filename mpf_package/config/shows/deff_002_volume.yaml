@@ -1,0 +1,11 @@
+#show_version=6
+# deff_002_volume: VOLUME n
+# ROM trigger: volume buttons (service). Timing from emulation.
+- time: 0ms
+  slides:
+    deff_002_volume:
+      action: play
+- time: 5025ms
+  slides:
+    deff_002_volume:
+      action: remove

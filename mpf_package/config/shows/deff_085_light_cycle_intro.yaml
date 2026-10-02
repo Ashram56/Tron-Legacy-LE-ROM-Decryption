@@ -1,0 +1,27 @@
+#show_version=6
+# deff_085_light_cycle_intro: LIGHT CYCLE intro
+# ROM trigger: Light Cycle Multiball start (captured in emulated play). Timing from emulation.
+# Lamp effect: lampfx_093_light_cycle_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_085_light_cycle_intro:
+      action: play
+  shows:
+    leff_053:
+      action: play
+      loops: 0
+    lampfx_093_light_cycle_intro:
+      action: play
+      loops: 0
+- time: 323ms
+  sounds:
+    call_0c3:
+      action: play
+- time: 780ms
+  sounds:
+    call_0c1:
+      action: play
+- time: 5475ms
+  slides:
+    deff_085_light_cycle_intro:
+      action: remove

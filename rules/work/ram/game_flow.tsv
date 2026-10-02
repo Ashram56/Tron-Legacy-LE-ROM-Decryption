@@ -1,0 +1,29 @@
+0x37274	gf_state	2	machine	game state bits: 0x01 bonus, 0x02 cleared at drain, 0x04 end of ball, 0x08 game over seq, 0x10 attract, 0x20 starting, 0x80 match, 0x200 tilt (attract 16, play 0, bonus 5, tilt 512, match 152)
+0x2110900	gf_num_players	1	per game	players in game 1-4
+0x3817c	gf_cur_player	1	per game	player up 1-4
+0x3817d	gf_ball	1	per game	ball number
+0x21109e4	gf_scores	16	per game	u32[4] player scores
+0x38180	gf_pf_mult	1	per ball	playfield multiplier used by score_add; set to 1 at ball start and before bonus, nothing else writes it (always 1)
+0x38181	gf_ball_scored	1	per ball	0 at serve; first score clears flag 9 (shoot again) and posts event 0x50
+0x38182	gf_score_activity	2	per ball	set to 500 on every score (inferred activity timer)
+0x372e8	gf_pf_valid	1	per ball	valid playfield flag (misnamed is_tilted/tilt_set in os_api)
+0x3c94c	gf_pf_valid_switch_list	?	per ball	distinct valid switches seen this ball
+0x372f0	gf_pf_valid_needed	1	machine	distinct valid switches needed (3)
+0x3d4f8	gf_tilt_warnings	1	per ball	DANGER warnings this ball (vs adj 32)
+0x37420	gf_ball_search_delay	4	machine	ticks to next ball search; reload 620 (10 s), 15 s after tilt
+0x39018	gf_ball_search_secs	1	machine	ball search delay in seconds (10)
+0x3741c	gf_ball_search_count	2	per ball	consecutive ball searches; 5th with adj 63 = lost ball (deff 13)
+0x3901c	gf_eob_mode_wait	1	machine	max ticks (169) the end of ball waits for flag-0x2000 tasks (mode totals)
+0x3d46c	gf_eb_lit_player	4	per game	u8[4] extra balls lit per player
+0x3d468	gf_eb_lit_shared	1	per game	extra balls lit for whoever is up
+0x3d470	gf_eb_collected	4	per game	u8[4] extra balls collected (vs adj 26)
+0x37430	gf_shoot_again_pending	1	per game	extra balls earned, not yet played
+0x2111894	gf_eb_scoop_lit	4	per player	u8[4] game-side extra ball lit at the VUK scoop (lamp 37); reset at event 0x26
+0x36f62	gf_shoot_again_lamp	1	machine	lamp number of SHOOT AGAIN (26)
+0x3d4ec	gf_special_lit_shared	1	per game	specials lit (shared)
+0x3d4ef	gf_special_lit_player	4	per game	u8[4] specials lit per player
+0x3d4f3	gf_special_collected	4	per game	u8[4] specials collected (vs adj 22)
+0x36f6c	gf_eb_over_limit_score	4	machine	points given instead of an EB over the adj 26 limit (3,000,000)
+0x36f70	gf_special_over_limit_score	4	machine	points given instead of a special over the limit (5,000,000)
+0x2110984	gf_replay_levels	80	per game	per player replay thresholds, stride 0x14; awarded flags at 0x2110994+
+0x37364	gf_tick_counter	4	machine	OS hardware tick counter (16.26 ms nominal; 16.28 in game, 16.00 in attract in emulation)

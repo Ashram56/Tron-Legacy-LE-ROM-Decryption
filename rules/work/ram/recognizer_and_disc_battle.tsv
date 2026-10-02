@@ -1,0 +1,16 @@
+0x021117b8	rec_targets_disabled_mask	1	per player	[player-1]; bit0=L(sw49) bit1=C(sw50) bit2=R(sw51) set for target switches the OS has disabled (switch errors); recomputed at battle end and battle start; disabled targets lamp solid and are skipped by the moving lit target
+0x021117bc	rec_hits	1	per player	[player-1]; Recognizer 3-bank counts toward DISC BATTLE (needs 5); +1 per hit, +2 on the lit target; reset to 0 when battle starts/ends and at game start
+0x021117c0	rec_hits_stat	1	per player	[player-1]; lifetime count of counting Recognizer hits this game (saturates at 255); reset at game start; not read by rules
+0x021117c4	rec_battles_qualified	1	per player	[player-1]; number of times DISC BATTLE was lit this game (saturates 255); not read by rules
+0x021117c8	rec_unused_mask_c8	1	per player	[player-1]; cleared at battle start/end; only read by FUN_01020ae8 (popcount of bits 0-2) which has no caller
+0x021117cc	rec_unused_cc	1	per player	[player-1]; cleared at battle start/end; never read
+0x021117d0	dbattle_award_level	1	per player	[player-1]; j in start award 2,000,000+1,000,000*j (max 4,000,000); reset to 0 at game start and never incremented in 1.74 (award is always 2,000,000)
+0x021117d4	dbattle_difficulty	1	per player	[player-1]; k = adj 67 at game start, +1 each Disc Multiball start (sat. 255); hits-to-start = min(4+2k,10)
+0x021117d8	dbattle_need	1	per player	[player-1]; value of min(4+2k,10) when battle was lit (display only)
+0x021117dc	dbattle_remaining	1	per player	[player-1]; disc hits still needed before the start hit; 0 = next disc hit starts Disc Multiball; ROM shows remaining+1
+0x021117e0	bank_motor_nvram	?	machine	NVRAM record of the 3-bank motor driver object (0x3b404); error/status (inferred)
+0x021117e4	recog_motor_nvram	?	machine	NVRAM record of the Recognizer motor driver object (0x3b47c) (inferred)
+0x0003b3f4	rec_next_pos	4	while targets active	index 0-3 into table 0x040d32b4 the moving lit target heads to (set at tick 46 of each 93-tick step); drives the Recognizer motor target
+0x0003b3f8	rec_lit_pos	4	while targets active	index 0-3 of the currently lit (double-value) target; order 0=L,1=C,2=R,3=C
+0x0003b3fc	rec_prev_pos	4	while targets active	previous lit index, still worth +2 for the first 10 ticks after a step
+0x0003b400	rec_motor_target	1	game	Recognizer head target position as switch number 0x36/0x37/0x38 (sw54/55/56)

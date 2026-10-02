@@ -1,0 +1,31 @@
+#show_version=6
+# ROM lamp effect 125 (leff table 0x040e23e4, function 0x10321b4, priority 7). Captured in emulation.
+# Plays once. 
+# Started by: rule: while zfs_countdown_running
+- duration: 64ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 65ms
+  flashers:
+    f_backpanel: 150ms
+- duration: 17ms
+  flashers:
+    f_backpanel: 150ms

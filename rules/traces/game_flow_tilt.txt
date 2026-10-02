@@ -1,0 +1,30 @@
+# tilt warnings and tilt (button tilt = plumb bob), then a drain inside ball save on ball 2 (flipper hold there is a no-op; the bonus skip is in bonus_skip.txt)
+start 1
+wait 2.5
+mark B1_valid
+hit 12
+wait 1
+mark B1_tilt1
+button tilt
+wait 1.5
+mark B1_tilt2
+button tilt
+wait 1.5
+mark B1_tilt3
+button tilt
+wait 3
+mark B1_drain_tilted
+drain
+wait 10
+mark B2_valid
+hit 12
+wait 3
+mark B2_drain_hold_flippers
+drain
+wait 0.6
+button left -1
+button right -1
+wait 4
+button left 0
+button right 0
+wait 8

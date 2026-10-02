@@ -1,0 +1,11 @@
+#show_version=6
+# deff_131_clu_face: CLU face animation
+# ROM trigger: CLU feature. Timing from emulation.
+- time: 0ms
+  slides:
+    deff_131_clu_face:
+      action: play
+- time: 2715ms
+  slides:
+    deff_131_clu_face:
+      action: remove

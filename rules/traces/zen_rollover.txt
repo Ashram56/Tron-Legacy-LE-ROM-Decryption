@@ -1,0 +1,38 @@
+# ZEN rollover (sw12): each hit = 42,000 + one "ZEN charge"; a charge turns the next TRON target hit
+# that would light a new letter into a full T-R-O-N completion. Charges survive the end of ball.
+start 1
+wait 4
+mark validate
+hit 30
+wait 2
+mark tron_T_normal
+hit 1
+wait 2
+mark zen_1
+hit 12
+wait 2
+mark zen_2
+hit 12
+wait 3
+mark tron_R_uses_charge
+hit 2
+wait 4
+mark tron_O_uses_charge
+hit 3
+wait 4
+mark tron_N_normal
+hit 4
+wait 2
+mark zen_3
+hit 12
+wait 2
+mark drain
+drain
+wait 8
+mark ball2
+hit 30
+wait 3
+mark tron_T_ball2
+hit 1
+wait 4
+mark end

@@ -1,0 +1,8 @@
+#show_version=6
+# ROM lamp effect 167 (leff table 0x040e23e4, function 0x103041c, priority 7). Rebuilt from code.
+# Loops until stopped. code: disc flashers (coil group 14) pulsed 32 ms every 8 ticks
+# Started by: rule: while portal_mb_all_shots_done
+- duration: 131ms
+  flashers:
+    f_disc_left: 32ms
+    f_disc_right: 32ms

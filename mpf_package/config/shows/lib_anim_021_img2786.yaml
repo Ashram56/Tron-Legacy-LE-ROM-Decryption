@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 21: images 2786-2786, 1 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_021_img2786:
+      action: play
+- time: 49ms
+  slides:
+    lib_anim_021_img2786:
+      action: remove

@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 73: images 4572-4628, 57 frames at 49 ms (ROM timing).
+- time: 0ms
+  slides:
+    lib_anim_073_img4572:
+      action: play
+- time: 2792ms
+  slides:
+    lib_anim_073_img4572:
+      action: remove

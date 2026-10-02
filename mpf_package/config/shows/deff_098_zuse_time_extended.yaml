@@ -1,0 +1,23 @@
+#show_version=6
+# deff_098_zuse_time_extended: TIME EXTENDED
+# ROM trigger: Fast Scoring time extended. Timing from emulation.
+# Lamp effect: lampfx_128_zuse_time_extended at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_098_zuse_time_extended:
+      action: play
+  sounds:
+    call_0b2:
+      action: play
+  shows:
+    lampfx_128_zuse_time_extended:
+      action: play
+      loops: 0
+- time: 490ms
+  sounds:
+    call_0b3:
+      action: play
+- time: 1534ms
+  slides:
+    deff_098_zuse_time_extended:
+      action: remove

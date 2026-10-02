@@ -1,0 +1,22 @@
+#show_version=6
+# deff_068_quorra_jackpot_v01: (DOUBLE) JACKPOT, clip anim_089_img5065.
+# Same sounds and tube show as deff_068_quorra_jackpot; only the clip differs. random pick of 3 clips.
+- time: 0ms
+  slides:
+    deff_068_quorra_jackpot_v01:
+      action: play
+  shows:
+    leff_038:
+      action: play
+      loops: 0
+  sounds:
+    call_06c:
+      action: play
+- time: 1806ms
+  sounds:
+    call_06d:
+      action: play
+- time: 3844ms
+  slides:
+    deff_068_quorra_jackpot_v01:
+      action: remove

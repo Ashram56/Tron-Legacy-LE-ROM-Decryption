@@ -1,0 +1,30 @@
+#show_version=6
+# deff_143_portal_super_jackpot: SUPER JACKPOT
+# ROM trigger: Portal Multiball super jackpot. Timing from emulation.
+# Lamp effect: lampfx_169_portal_super_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_143_portal_super_jackpot:
+      action: play
+  shows:
+    leff_083:
+      action: play
+      loops: 0
+    lampfx_169_portal_super_jackpot:
+      action: play
+      loops: 0
+  sounds:
+    call_07b:
+      action: play
+- time: 5284ms
+  sounds:
+    call_07c:
+      action: play
+- time: 6262ms
+  sounds:
+    call_07d:
+      action: play
+- time: 8938ms
+  slides:
+    deff_143_portal_super_jackpot:
+      action: remove

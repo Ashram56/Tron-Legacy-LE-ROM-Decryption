@@ -1,0 +1,51 @@
+#show_version=6
+# Attract mode lamp/tube cycle (observed): tube show 1 (reset) then shows 2-9, one every 1.536 s, repeating.
+- time: 0ms
+  shows:
+    leff_001:
+      action: play
+    leff_002:
+      action: play
+- time: 1536ms
+  shows:
+    leff_001:
+      action: play
+    leff_003:
+      action: play
+- time: 3072ms
+  shows:
+    leff_001:
+      action: play
+    leff_004:
+      action: play
+- time: 4608ms
+  shows:
+    leff_001:
+      action: play
+    leff_005:
+      action: play
+- time: 6144ms
+  shows:
+    leff_001:
+      action: play
+    leff_006:
+      action: play
+- time: 7680ms
+  shows:
+    leff_001:
+      action: play
+    leff_007:
+      action: play
+- time: 9216ms
+  shows:
+    leff_001:
+      action: play
+    leff_008:
+      action: play
+- time: 10752ms
+  shows:
+    leff_001:
+      action: play
+    leff_009:
+      action: play
+- time: 12288ms

@@ -1,0 +1,26 @@
+#show_version=6
+# deff_076_gem_intro: Follow Gem intro (hand, SHOOT RIGHT INNER LOOP)
+# ROM trigger: Follow Gem hurry-up start. Timing from emulation.
+# Lamp effect: lampfx_082_gem_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_076_gem_intro:
+      action: play
+  shows:
+    leff_017:
+      action: play
+      loops: 0
+    lampfx_082_gem_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_090:
+      action: play
+- time: 976ms
+  sounds:
+    call_091:
+      action: play
+- time: 2529ms
+  slides:
+    deff_076_gem_intro:
+      action: remove

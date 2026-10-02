@@ -1,0 +1,10 @@
+#show_version=6
+# Library animation 124: images 7113-7158, 46 frames at 49 ms (default timing, not found in code).
+- time: 0ms
+  slides:
+    lib_anim_124_img7113:
+      action: play
+- time: 2254ms
+  slides:
+    lib_anim_124_img7113:
+      action: remove

@@ -1,0 +1,26 @@
+#show_version=6
+# deff_140_portal_multiball_intro: PORTAL MULTIBALL intro (Sea of Simulation bonus)
+# ROM trigger: Portal Multiball start. Timing from emulation.
+# Lamp effect: lampfx_165_portal_multiball_intro at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_140_portal_multiball_intro:
+      action: play
+  shows:
+    leff_080:
+      action: play
+      loops: 0
+    lampfx_165_portal_multiball_intro:
+      action: play
+      loops: 0
+  sounds:
+    call_077:
+      action: play
+- time: 3222ms
+  sounds:
+    call_078:
+      action: play
+- time: 5295ms
+  slides:
+    deff_140_portal_multiball_intro:
+      action: remove

@@ -1,0 +1,29 @@
+#show_version=6
+# deff_048_disc_multiball_jackpot_v08: DISC MULTIBALL JACKPOT, clip anim_085_img4981.
+# Same sounds and tube show as deff_048_disc_multiball_jackpot; only the clip differs. random pick of 12 clips (code: FUN_0000c6b4(12) at 0x1008920).
+# Lamp effect: lampfx_048_disc_multiball_jackpot at 0 ms (observed in emulation when forced; code otherwise). Stops with this show.
+- time: 0ms
+  slides:
+    deff_048_disc_multiball_jackpot_v08:
+      action: play
+  shows:
+    leff_044:
+      action: play
+    lampfx_048_disc_multiball_jackpot:
+      action: play
+      loops: 0
+  sounds:
+    call_05a:
+      action: play
+- time: 587ms
+  sounds:
+    call_05c:
+      action: play
+- time: 1420ms
+  sounds:
+    call_05b:
+      action: play
+- time: 2823ms
+  slides:
+    deff_048_disc_multiball_jackpot_v08:
+      action: remove
