@@ -1,0 +1,1601 @@
+[
+ {
+  "anim": 0,
+  "first_image": 177,
+  "last_image": 198,
+  "frames": 22,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_000_img0177"
+ },
+ {
+  "anim": 1,
+  "first_image": 208,
+  "last_image": 209,
+  "frames": 2,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [
+   18,
+   37
+  ],
+  "name": "anim_001_img0208"
+ },
+ {
+  "anim": 2,
+  "first_image": 210,
+  "last_image": 211,
+  "frames": 2,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [
+   35
+  ],
+  "name": "anim_002_img0210"
+ },
+ {
+  "anim": 3,
+  "first_image": 212,
+  "last_image": 213,
+  "frames": 2,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [
+   18
+  ],
+  "name": "anim_003_img0212"
+ },
+ {
+  "anim": 4,
+  "first_image": 1439,
+  "last_image": 1439,
+  "frames": 1,
+  "w": 128,
+  "h": 73,
+  "seen_in_deffs": [],
+  "name": "anim_004_img1439"
+ },
+ {
+  "anim": 5,
+  "first_image": 1440,
+  "last_image": 1476,
+  "frames": 37,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_005_img1440"
+ },
+ {
+  "anim": 6,
+  "first_image": 1531,
+  "last_image": 1763,
+  "frames": 233,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_006_img1531"
+ },
+ {
+  "anim": 7,
+  "first_image": 1764,
+  "last_image": 2033,
+  "frames": 270,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_007_img1764"
+ },
+ {
+  "anim": 8,
+  "first_image": 2034,
+  "last_image": 2096,
+  "frames": 63,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   104
+  ],
+  "name": "anim_008_img2034"
+ },
+ {
+  "anim": 9,
+  "first_image": 2097,
+  "last_image": 2174,
+  "frames": 78,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_009_img2097"
+ },
+ {
+  "anim": 10,
+  "first_image": 2623,
+  "last_image": 2652,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   108,
+   130
+  ],
+  "name": "anim_010_img2623"
+ },
+ {
+  "anim": 11,
+  "first_image": 2653,
+  "last_image": 2682,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   108
+  ],
+  "name": "anim_011_img2653"
+ },
+ {
+  "anim": 12,
+  "first_image": 2683,
+  "last_image": 2712,
+  "frames": 30,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [
+   108
+  ],
+  "name": "anim_012_img2683"
+ },
+ {
+  "anim": 13,
+  "first_image": 2713,
+  "last_image": 2742,
+  "frames": 30,
+  "w": 128,
+  "h": 32,
+  "seen_in_deffs": [
+   108
+  ],
+  "name": "anim_013_img2713"
+ },
+ {
+  "anim": 14,
+  "first_image": 2743,
+  "last_image": 2746,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   74,
+   131
+  ],
+  "name": "anim_014_img2743"
+ },
+ {
+  "anim": 15,
+  "first_image": 2747,
+  "last_image": 2761,
+  "frames": 15,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   51
+  ],
+  "name": "anim_015_img2747"
+ },
+ {
+  "anim": 16,
+  "first_image": 2762,
+  "last_image": 2765,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   136,
+   137
+  ],
+  "name": "anim_016_img2762"
+ },
+ {
+  "anim": 17,
+  "first_image": 2766,
+  "last_image": 2769,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   79
+  ],
+  "name": "anim_017_img2766"
+ },
+ {
+  "anim": 18,
+  "first_image": 2770,
+  "last_image": 2773,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   70
+  ],
+  "name": "anim_018_img2770"
+ },
+ {
+  "anim": 19,
+  "first_image": 2774,
+  "last_image": 2779,
+  "frames": 6,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_019_img2774"
+ },
+ {
+  "anim": 20,
+  "first_image": 2780,
+  "last_image": 2783,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   99
+  ],
+  "name": "anim_020_img2780"
+ },
+ {
+  "anim": 21,
+  "first_image": 2786,
+  "last_image": 2786,
+  "frames": 1,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   62,
+   63
+  ],
+  "name": "anim_021_img2786"
+ },
+ {
+  "anim": 22,
+  "first_image": 2787,
+  "last_image": 2797,
+  "frames": 11,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   47,
+   53
+  ],
+  "name": "anim_022_img2787"
+ },
+ {
+  "anim": 23,
+  "first_image": 2798,
+  "last_image": 2843,
+  "frames": 46,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   95,
+   96,
+   98
+  ],
+  "name": "anim_023_img2798"
+ },
+ {
+  "anim": 24,
+  "first_image": 2844,
+  "last_image": 2956,
+  "frames": 113,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   128
+  ],
+  "name": "anim_024_img2844"
+ },
+ {
+  "anim": 25,
+  "first_image": 2957,
+  "last_image": 3007,
+  "frames": 51,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   84
+  ],
+  "name": "anim_025_img2957"
+ },
+ {
+  "anim": 26,
+  "first_image": 3008,
+  "last_image": 3088,
+  "frames": 81,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   87,
+   88
+  ],
+  "name": "anim_026_img3008"
+ },
+ {
+  "anim": 27,
+  "first_image": 3089,
+  "last_image": 3109,
+  "frames": 21,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   89
+  ],
+  "name": "anim_027_img3089"
+ },
+ {
+  "anim": 28,
+  "first_image": 3110,
+  "last_image": 3123,
+  "frames": 14,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_028_img3110"
+ },
+ {
+  "anim": 29,
+  "first_image": 3124,
+  "last_image": 3160,
+  "frames": 37,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_029_img3124"
+ },
+ {
+  "anim": 30,
+  "first_image": 3161,
+  "last_image": 3204,
+  "frames": 44,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_030_img3161"
+ },
+ {
+  "anim": 31,
+  "first_image": 3205,
+  "last_image": 3222,
+  "frames": 18,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_031_img3205"
+ },
+ {
+  "anim": 32,
+  "first_image": 3223,
+  "last_image": 3243,
+  "frames": 21,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_032_img3223"
+ },
+ {
+  "anim": 33,
+  "first_image": 3244,
+  "last_image": 3271,
+  "frames": 28,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_033_img3244"
+ },
+ {
+  "anim": 34,
+  "first_image": 3272,
+  "last_image": 3318,
+  "frames": 47,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_034_img3272"
+ },
+ {
+  "anim": 35,
+  "first_image": 3319,
+  "last_image": 3344,
+  "frames": 26,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_035_img3319"
+ },
+ {
+  "anim": 36,
+  "first_image": 3345,
+  "last_image": 3363,
+  "frames": 19,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_036_img3345"
+ },
+ {
+  "anim": 37,
+  "first_image": 3364,
+  "last_image": 3384,
+  "frames": 21,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_037_img3364"
+ },
+ {
+  "anim": 38,
+  "first_image": 3385,
+  "last_image": 3427,
+  "frames": 43,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_038_img3385"
+ },
+ {
+  "anim": 39,
+  "first_image": 3428,
+  "last_image": 3461,
+  "frames": 34,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_039_img3428"
+ },
+ {
+  "anim": 40,
+  "first_image": 3462,
+  "last_image": 3478,
+  "frames": 17,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_040_img3462"
+ },
+ {
+  "anim": 41,
+  "first_image": 3479,
+  "last_image": 3521,
+  "frames": 43,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_041_img3479"
+ },
+ {
+  "anim": 42,
+  "first_image": 3522,
+  "last_image": 3572,
+  "frames": 51,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_042_img3522"
+ },
+ {
+  "anim": 43,
+  "first_image": 3573,
+  "last_image": 3602,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_043_img3573"
+ },
+ {
+  "anim": 44,
+  "first_image": 3603,
+  "last_image": 3622,
+  "frames": 20,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_044_img3603"
+ },
+ {
+  "anim": 45,
+  "first_image": 3623,
+  "last_image": 3646,
+  "frames": 24,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_045_img3623"
+ },
+ {
+  "anim": 46,
+  "first_image": 3647,
+  "last_image": 3710,
+  "frames": 64,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   38
+  ],
+  "name": "anim_046_img3647"
+ },
+ {
+  "anim": 47,
+  "first_image": 3711,
+  "last_image": 3770,
+  "frames": 60,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_047_img3711"
+ },
+ {
+  "anim": 48,
+  "first_image": 3771,
+  "last_image": 3814,
+  "frames": 44,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_048_img3771"
+ },
+ {
+  "anim": 49,
+  "first_image": 3815,
+  "last_image": 3902,
+  "frames": 88,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_049_img3815"
+ },
+ {
+  "anim": 50,
+  "first_image": 3903,
+  "last_image": 3940,
+  "frames": 38,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_050_img3903"
+ },
+ {
+  "anim": 51,
+  "first_image": 3941,
+  "last_image": 3943,
+  "frames": 3,
+  "w": 80,
+  "h": 32,
+  "seen_in_deffs": [
+   83
+  ],
+  "name": "anim_051_img3941"
+ },
+ {
+  "anim": 52,
+  "first_image": 3944,
+  "last_image": 3946,
+  "frames": 3,
+  "w": 80,
+  "h": 32,
+  "seen_in_deffs": [
+   83
+  ],
+  "name": "anim_052_img3944"
+ },
+ {
+  "anim": 53,
+  "first_image": 4007,
+  "last_image": 4017,
+  "frames": 11,
+  "w": 88,
+  "h": 32,
+  "seen_in_deffs": [
+   86
+  ],
+  "name": "anim_053_img4007"
+ },
+ {
+  "anim": 54,
+  "first_image": 4034,
+  "last_image": 4049,
+  "frames": 16,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   86
+  ],
+  "name": "anim_054_img4034"
+ },
+ {
+  "anim": 55,
+  "first_image": 4050,
+  "last_image": 4073,
+  "frames": 24,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   109
+  ],
+  "name": "anim_055_img4050"
+ },
+ {
+  "anim": 56,
+  "first_image": 4074,
+  "last_image": 4105,
+  "frames": 32,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_056_img4074"
+ },
+ {
+  "anim": 57,
+  "first_image": 4106,
+  "last_image": 4163,
+  "frames": 58,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_057_img4106"
+ },
+ {
+  "anim": 58,
+  "first_image": 4164,
+  "last_image": 4175,
+  "frames": 12,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_058_img4164"
+ },
+ {
+  "anim": 59,
+  "first_image": 4176,
+  "last_image": 4181,
+  "frames": 6,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_059_img4176"
+ },
+ {
+  "anim": 60,
+  "first_image": 4182,
+  "last_image": 4229,
+  "frames": 48,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_060_img4182"
+ },
+ {
+  "anim": 61,
+  "first_image": 4230,
+  "last_image": 4243,
+  "frames": 14,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_061_img4230"
+ },
+ {
+  "anim": 62,
+  "first_image": 4244,
+  "last_image": 4294,
+  "frames": 51,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_062_img4244"
+ },
+ {
+  "anim": 63,
+  "first_image": 4295,
+  "last_image": 4306,
+  "frames": 12,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_063_img4295"
+ },
+ {
+  "anim": 64,
+  "first_image": 4307,
+  "last_image": 4341,
+  "frames": 35,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_064_img4307"
+ },
+ {
+  "anim": 65,
+  "first_image": 4342,
+  "last_image": 4360,
+  "frames": 19,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_065_img4342"
+ },
+ {
+  "anim": 66,
+  "first_image": 4361,
+  "last_image": 4389,
+  "frames": 29,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_066_img4361"
+ },
+ {
+  "anim": 67,
+  "first_image": 4390,
+  "last_image": 4429,
+  "frames": 40,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_067_img4390"
+ },
+ {
+  "anim": 68,
+  "first_image": 4430,
+  "last_image": 4465,
+  "frames": 36,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_068_img4430"
+ },
+ {
+  "anim": 69,
+  "first_image": 4466,
+  "last_image": 4486,
+  "frames": 21,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_069_img4466"
+ },
+ {
+  "anim": 70,
+  "first_image": 4487,
+  "last_image": 4500,
+  "frames": 14,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_070_img4487"
+ },
+ {
+  "anim": 71,
+  "first_image": 4501,
+  "last_image": 4541,
+  "frames": 41,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_071_img4501"
+ },
+ {
+  "anim": 72,
+  "first_image": 4542,
+  "last_image": 4571,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   111
+  ],
+  "name": "anim_072_img4542"
+ },
+ {
+  "anim": 73,
+  "first_image": 4572,
+  "last_image": 4628,
+  "frames": 57,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   46
+  ],
+  "name": "anim_073_img4572"
+ },
+ {
+  "anim": 74,
+  "first_image": 4629,
+  "last_image": 4639,
+  "frames": 11,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   129
+  ],
+  "name": "anim_074_img4629"
+ },
+ {
+  "anim": 75,
+  "first_image": 4640,
+  "last_image": 4668,
+  "frames": 29,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   48,
+   129
+  ],
+  "name": "anim_075_img4640"
+ },
+ {
+  "anim": 76,
+  "first_image": 4669,
+  "last_image": 4691,
+  "frames": 23,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   49,
+   129
+  ],
+  "name": "anim_076_img4669"
+ },
+ {
+  "anim": 77,
+  "first_image": 4692,
+  "last_image": 4707,
+  "frames": 16,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   49,
+   129
+  ],
+  "name": "anim_077_img4692"
+ },
+ {
+  "anim": 78,
+  "first_image": 4708,
+  "last_image": 4741,
+  "frames": 34,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   129
+  ],
+  "name": "anim_078_img4708"
+ },
+ {
+  "anim": 79,
+  "first_image": 4742,
+  "last_image": 4752,
+  "frames": 11,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_079_img4742"
+ },
+ {
+  "anim": 80,
+  "first_image": 4753,
+  "last_image": 4789,
+  "frames": 37,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_080_img4753"
+ },
+ {
+  "anim": 81,
+  "first_image": 4790,
+  "last_image": 4821,
+  "frames": 32,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_081_img4790"
+ },
+ {
+  "anim": 82,
+  "first_image": 4822,
+  "last_image": 4883,
+  "frames": 62,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_082_img4822"
+ },
+ {
+  "anim": 83,
+  "first_image": 4884,
+  "last_image": 4915,
+  "frames": 32,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_083_img4884"
+ },
+ {
+  "anim": 84,
+  "first_image": 4916,
+  "last_image": 4980,
+  "frames": 65,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_084_img4916"
+ },
+ {
+  "anim": 85,
+  "first_image": 4981,
+  "last_image": 5009,
+  "frames": 29,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_085_img4981"
+ },
+ {
+  "anim": 86,
+  "first_image": 5010,
+  "last_image": 5040,
+  "frames": 31,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   64
+  ],
+  "name": "anim_086_img5010"
+ },
+ {
+  "anim": 87,
+  "first_image": 5041,
+  "last_image": 5053,
+  "frames": 13,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_087_img5041"
+ },
+ {
+  "anim": 88,
+  "first_image": 5054,
+  "last_image": 5064,
+  "frames": 11,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_088_img5054"
+ },
+ {
+  "anim": 89,
+  "first_image": 5065,
+  "last_image": 5101,
+  "frames": 37,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   68
+  ],
+  "name": "anim_089_img5065"
+ },
+ {
+  "anim": 90,
+  "first_image": 5102,
+  "last_image": 5134,
+  "frames": 33,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_090_img5102"
+ },
+ {
+  "anim": 91,
+  "first_image": 5135,
+  "last_image": 5201,
+  "frames": 67,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_091_img5135"
+ },
+ {
+  "anim": 92,
+  "first_image": 5202,
+  "last_image": 5471,
+  "frames": 270,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_092_img5202"
+ },
+ {
+  "anim": 93,
+  "first_image": 5472,
+  "last_image": 5488,
+  "frames": 17,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_093_img5472"
+ },
+ {
+  "anim": 94,
+  "first_image": 5489,
+  "last_image": 5523,
+  "frames": 35,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_094_img5489"
+ },
+ {
+  "anim": 95,
+  "first_image": 5524,
+  "last_image": 5568,
+  "frames": 45,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   69
+  ],
+  "name": "anim_095_img5524"
+ },
+ {
+  "anim": 96,
+  "first_image": 5569,
+  "last_image": 5608,
+  "frames": 40,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_096_img5569"
+ },
+ {
+  "anim": 97,
+  "first_image": 5609,
+  "last_image": 5625,
+  "frames": 17,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   97
+  ],
+  "name": "anim_097_img5609"
+ },
+ {
+  "anim": 98,
+  "first_image": 5626,
+  "last_image": 5669,
+  "frames": 44,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_098_img5626"
+ },
+ {
+  "anim": 99,
+  "first_image": 5670,
+  "last_image": 5685,
+  "frames": 16,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_099_img5670"
+ },
+ {
+  "anim": 100,
+  "first_image": 5686,
+  "last_image": 5850,
+  "frames": 165,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_100_img5686"
+ },
+ {
+  "anim": 101,
+  "first_image": 5851,
+  "last_image": 5971,
+  "frames": 121,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_101_img5851"
+ },
+ {
+  "anim": 102,
+  "first_image": 5972,
+  "last_image": 5988,
+  "frames": 17,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_102_img5972"
+ },
+ {
+  "anim": 103,
+  "first_image": 5989,
+  "last_image": 5997,
+  "frames": 9,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_103_img5989"
+ },
+ {
+  "anim": 104,
+  "first_image": 5998,
+  "last_image": 6005,
+  "frames": 8,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   65
+  ],
+  "name": "anim_104_img5998"
+ },
+ {
+  "anim": 105,
+  "first_image": 6006,
+  "last_image": 6010,
+  "frames": 5,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   139
+  ],
+  "name": "anim_105_img6006"
+ },
+ {
+  "anim": 106,
+  "first_image": 6011,
+  "last_image": 6017,
+  "frames": 7,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_106_img6011"
+ },
+ {
+  "anim": 107,
+  "first_image": 6018,
+  "last_image": 6228,
+  "frames": 211,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_107_img6018"
+ },
+ {
+  "anim": 108,
+  "first_image": 6229,
+  "last_image": 6350,
+  "frames": 122,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_108_img6229"
+ },
+ {
+  "anim": 109,
+  "first_image": 6351,
+  "last_image": 6354,
+  "frames": 4,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   75
+  ],
+  "name": "anim_109_img6351"
+ },
+ {
+  "anim": 110,
+  "first_image": 6355,
+  "last_image": 6368,
+  "frames": 14,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   71
+  ],
+  "name": "anim_110_img6355"
+ },
+ {
+  "anim": 111,
+  "first_image": 6369,
+  "last_image": 6382,
+  "frames": 14,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   73
+  ],
+  "name": "anim_111_img6369"
+ },
+ {
+  "anim": 112,
+  "first_image": 6383,
+  "last_image": 6412,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   133
+  ],
+  "name": "anim_112_img6383"
+ },
+ {
+  "anim": 113,
+  "first_image": 6443,
+  "last_image": 6448,
+  "frames": 6,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   114,
+   126
+  ],
+  "name": "anim_113_img6443"
+ },
+ {
+  "anim": 114,
+  "first_image": 6449,
+  "last_image": 6511,
+  "frames": 63,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_114_img6449"
+ },
+ {
+  "anim": 115,
+  "first_image": 6512,
+  "last_image": 6676,
+  "frames": 165,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   125
+  ],
+  "name": "anim_115_img6512"
+ },
+ {
+  "anim": 116,
+  "first_image": 6677,
+  "last_image": 6731,
+  "frames": 55,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   113
+  ],
+  "name": "anim_116_img6677"
+ },
+ {
+  "anim": 117,
+  "first_image": 6732,
+  "last_image": 6760,
+  "frames": 29,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   116,
+   117,
+   118,
+   120,
+   121,
+   122,
+   123,
+   124
+  ],
+  "name": "anim_117_img6732"
+ },
+ {
+  "anim": 118,
+  "first_image": 6761,
+  "last_image": 6797,
+  "frames": 37,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   119
+  ],
+  "name": "anim_118_img6761"
+ },
+ {
+  "anim": 119,
+  "first_image": 6798,
+  "last_image": 6840,
+  "frames": 43,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_119_img6798"
+ },
+ {
+  "anim": 120,
+  "first_image": 6841,
+  "last_image": 6896,
+  "frames": 56,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_120_img6841"
+ },
+ {
+  "anim": 121,
+  "first_image": 6897,
+  "last_image": 7008,
+  "frames": 112,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   140
+  ],
+  "name": "anim_121_img6897"
+ },
+ {
+  "anim": 122,
+  "first_image": 7009,
+  "last_image": 7064,
+  "frames": 56,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   140
+  ],
+  "name": "anim_122_img7009"
+ },
+ {
+  "anim": 123,
+  "first_image": 7065,
+  "last_image": 7112,
+  "frames": 48,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_123_img7065"
+ },
+ {
+  "anim": 124,
+  "first_image": 7113,
+  "last_image": 7158,
+  "frames": 46,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_124_img7113"
+ },
+ {
+  "anim": 125,
+  "first_image": 7159,
+  "last_image": 7194,
+  "frames": 36,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_125_img7159"
+ },
+ {
+  "anim": 126,
+  "first_image": 7195,
+  "last_image": 7262,
+  "frames": 68,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_126_img7195"
+ },
+ {
+  "anim": 127,
+  "first_image": 7263,
+  "last_image": 7313,
+  "frames": 51,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_127_img7263"
+ },
+ {
+  "anim": 128,
+  "first_image": 7314,
+  "last_image": 7380,
+  "frames": 67,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_128_img7314"
+ },
+ {
+  "anim": 129,
+  "first_image": 7381,
+  "last_image": 7470,
+  "frames": 90,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_129_img7381"
+ },
+ {
+  "anim": 130,
+  "first_image": 7471,
+  "last_image": 7509,
+  "frames": 39,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_130_img7471"
+ },
+ {
+  "anim": 131,
+  "first_image": 7510,
+  "last_image": 7545,
+  "frames": 36,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   142
+  ],
+  "name": "anim_131_img7510"
+ },
+ {
+  "anim": 132,
+  "first_image": 7546,
+  "last_image": 7561,
+  "frames": 16,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_132_img7546"
+ },
+ {
+  "anim": 133,
+  "first_image": 7562,
+  "last_image": 7669,
+  "frames": 108,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_133_img7562"
+ },
+ {
+  "anim": 134,
+  "first_image": 7670,
+  "last_image": 7708,
+  "frames": 39,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_134_img7670"
+ },
+ {
+  "anim": 135,
+  "first_image": 7709,
+  "last_image": 7749,
+  "frames": 41,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_135_img7709"
+ },
+ {
+  "anim": 136,
+  "first_image": 7750,
+  "last_image": 7812,
+  "frames": 63,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_136_img7750"
+ },
+ {
+  "anim": 137,
+  "first_image": 7813,
+  "last_image": 7837,
+  "frames": 25,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_137_img7813"
+ },
+ {
+  "anim": 138,
+  "first_image": 7838,
+  "last_image": 7888,
+  "frames": 51,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_138_img7838"
+ },
+ {
+  "anim": 139,
+  "first_image": 7889,
+  "last_image": 7910,
+  "frames": 22,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_139_img7889"
+ },
+ {
+  "anim": 140,
+  "first_image": 7911,
+  "last_image": 7976,
+  "frames": 66,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [],
+  "name": "anim_140_img7911"
+ },
+ {
+  "anim": 141,
+  "first_image": 7977,
+  "last_image": 8109,
+  "frames": 133,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   143
+  ],
+  "name": "anim_141_img7977"
+ },
+ {
+  "anim": 142,
+  "first_image": 8110,
+  "last_image": 8130,
+  "frames": 21,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   76,
+   78
+  ],
+  "name": "anim_142_img8110"
+ },
+ {
+  "anim": 143,
+  "first_image": 8131,
+  "last_image": 8150,
+  "frames": 20,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   30
+  ],
+  "name": "anim_143_img8131"
+ },
+ {
+  "anim": 144,
+  "first_image": 8151,
+  "last_image": 8180,
+  "frames": 30,
+  "w": 87,
+  "h": 32,
+  "seen_in_deffs": [
+   56,
+   57,
+   58,
+   59,
+   60
+  ],
+  "name": "anim_144_img8151"
+ }
+]
