@@ -38,6 +38,7 @@ media and names (it was corrected after the specs were written, see "Known gaps"
 | [io/](io/) | IO controls: coils, lamps, IO registers, and the ramp light tube (fiber optic) driver with its effect table and call sites; `io/mpf/` is the original tube-show export (the same shows are in `mpf_package/config/shows/leff_NNN.yaml`) |
 | [callouts/](callouts/) | First-pass sound analysis: every sound call, the samples it picks from, and which switches or modes trigger it (`switch_sound_map.csv`, `callout_triggers.csv`, `sound_calls.csv`, `samples_index.csv`, `switch_names.json`) |
 | [code/](code/) | Ghidra pseudo-C of the whole game: `tron_game_decompiled_v2.c` is the annotated one to use (named functions and RAM variables, decoded sound/message/lamp/deff comments); `tron_game_decompiled.c` is the older first pass and mislabels some functions |
+| [AGENTS.md](AGENTS.md) | Reusable guide for agents reverse engineering any Stern SAM ROM: methods, tools, table layouts, and the mistakes made on this one (Tron values as worked examples) |
 | [docs/agent_notes/](docs/agent_notes/) | Condensed notes the agents kept while working: ROM format (memory map, image and sound formats), DMD capture method, IO and lighting, lamp effects/shaker/service capture, rules extraction |
 
 ### Paths inside the documents
