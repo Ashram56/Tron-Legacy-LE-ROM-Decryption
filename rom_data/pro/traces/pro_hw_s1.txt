@@ -1,0 +1,108 @@
+# Pro hw study: attract, game start, forced flasher leffs, direct pulses, shaker
+wait 20
+mark game start
+start 1
+wait 6
+mark shaker 1
+inject 0x10203ac 1 1
+wait 1.5
+mark shaker 2
+inject 0x10203ac 2 1
+wait 1.5
+mark shaker 3
+inject 0x10203ac 3 1
+wait 2.5
+mark leff 34
+inject 0x7d88 34 0 0 0
+wait 3
+mark leff 43
+inject 0x7d88 43 0 0 0
+wait 3
+mark leff 65
+inject 0x7d88 65 0 0 0
+wait 3
+mark leff 73
+inject 0x7d88 73 0 0 0
+wait 3
+mark leff 84
+inject 0x7d88 84 0 0 0
+wait 3
+mark leff 85
+inject 0x7d88 85 0 0 0
+wait 3
+mark leff 86
+inject 0x7d88 86 0 0 0
+wait 3
+mark leff 94
+inject 0x7d88 94 0 0 0
+wait 3
+mark leff 106
+inject 0x7d88 106 0 0 0
+wait 3
+mark leff 107
+inject 0x7d88 107 0 0 0
+wait 3
+mark leff 114
+inject 0x7d88 114 0 0 0
+wait 3
+mark leff 115
+inject 0x7d88 115 0 0 0
+wait 3
+mark leff 119
+inject 0x7d88 119 0 0 0
+wait 3
+mark coil_pulse 17 48
+inject 0x5f98 17 48
+wait 0.5
+mark coil_pulse 18 48
+inject 0x5f98 18 48
+wait 0.5
+mark coil_pulse 19 48
+inject 0x5f98 19 48
+wait 0.5
+mark coil_pulse 20 48
+inject 0x5f98 20 48
+wait 0.5
+mark coil_pulse 21 48
+inject 0x5f98 21 48
+wait 0.5
+mark coil_pulse 22 48
+inject 0x5f98 22 48
+wait 0.5
+mark coil_pulse 23 48
+inject 0x5f98 23 48
+wait 0.5
+mark coil_pulse 25 48
+inject 0x5f98 25 48
+wait 0.5
+mark coil_pulse 26 48
+inject 0x5f98 26 48
+wait 0.5
+mark coil_pulse 27 48
+inject 0x5f98 27 48
+wait 0.5
+mark coil_pulse 28 48
+inject 0x5f98 28 48
+wait 0.5
+mark coil_pulse 29 48
+inject 0x5f98 29 48
+wait 0.5
+mark coil_pulse 31 48
+inject 0x5f98 31 48
+wait 0.5
+mark coil_pulse 32 48
+inject 0x5f98 32 48
+wait 0.5
+mark eject lane
+hit 11
+wait 5
+mark loops
+hit 43
+wait 1
+hit 46
+wait 1
+hit 34
+wait 1
+hit 37
+wait 3
+dump

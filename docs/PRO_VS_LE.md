@@ -1,7 +1,7 @@
 # Tron Legacy Pro 1.74 vs LE 1.74
 
 The LE 1.74 ROM (`trn_174h.bin`) has no Pro mode: no model flag, no "PRO" string, and no code path
-for Pro hardware. Stern's Pro 1.74 is a separate image. The two Pro downloads Stern offers
+for Pro hardware. Stern's Pro 1.74 is a separate image (PinMAME set `trn_17402`). The two Pro downloads Stern offers
 (TRNenglish00 and TRNenglish02) hold byte-identical binaries (`TRN174VP.BIN` = `TRN17402.BIN`, SHA1
 `5026e33a8bb00c83caf06891727b8439d1274fbb`). The only difference is one README line in the 02 zip:
 "CPU [Part #520-5246-02]", a revision of the SAM CPU board. So both Pro builds share one IO map. The
@@ -55,6 +55,17 @@ These are the same on both models:
 - **Ticket outputs:** aux coils 33-35.
 - **All other switches.**
 
+## Pro coil data (decompile and emulator)
+
+The Pro 1.74 has been decompiled (`code/tron_pro_decompiled.c`) and its coil data extracted to
+[rom_data/pro/](../rom_data/pro/README.md). Coil timing is the same as on the LE.
+
+- **Paired calls:** every coil call that pairs with an LE call uses the same ms and pattern.
+- **Shaker:** coil 8, 200 / 384 / 1024 ms.
+- **Back/lower flashers:** the Pro flashers 19 / 22 / 23 / 25 get the same 48 ms pulses, 50 ms pattern
+  flashes and 32 ms group pulses as the LE ramp flashers 19 / 25 in the same effects.
+- **Emulator check:** run as PinMAME `trn_17402`, a 48 ms pulse measures 48.0-48.3 ms on every Pro flasher.
+
 ## Rules and adjustments
 
 | Area | LE 1.74 only | Pro 1.74 only |
@@ -75,7 +86,6 @@ These are the same on both models:
 
 - **How names were matched:** by number, from each ROM's own name tables. The rules comparison uses
   uppercase strings in the first 0x120000 bytes of each ROM and the Pro README.
-- **Pro not decompiled:** the Pro has not been decompiled.
 - **Pro lamp matrix:** Pro lamp numbers are not yet mapped to matrix row and column.
 - **Model and board checks:** the hardware/software mismatch and country checks are only noted here.
   They are not analysed.

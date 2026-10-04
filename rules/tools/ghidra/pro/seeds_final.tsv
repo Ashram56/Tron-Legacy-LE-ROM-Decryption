@@ -1,0 +1,2420 @@
+00000010	DataAbort
+00000014	NotUsed
+00000018	IRQ
+0000001c	FIQ
+00000084	
+000001a4	
+000001ac	Reset
+000001bc	
+000001d8	thunk_FUN_00010ce8
+00000300	
+00000308	
+00000340	
+0000038c	
+00000448	tubeshow_086
+000004b8	adj_get
+00000550	
+000005b4	
+000006a8	
+00000710	
+00000740	
+0000082c	thunk_FUN_00001278
+00000830	
+000008a0	
+000008e4	
+00000950	
+00000bfc	attract_start
+00000c04	
+00000c48	
+00000c74	audit_get
+00000db4	audit_add
+00000f28	
+00000fb0	thunk_FUN_00001b40
+00000fb4	
+00001008	
+00001078	
+000010e8	
+00001168	
+000011ec	
+00001264	
+0000126c	
+000012cc	
+00001378	
+00001440	
+000015fc	
+000019bc	
+000019f0	
+00001d54	checksum8
+00001dc8	checksum16
+00001e38	
+00001e6c	
+00001e90	
+00001ea8	
+00001f00	
+00001f1c	
+00001fc8	
+00002008	
+00002044	
+00002088	
+000020e8	
+00002188	
+000021f0	
+0000227c	
+000022d8	
+00002340	
+00002408	
+00002484	
+0000255c	
+000025e4	
+0000265c	
+000026d0	
+00002760	
+0000279c	
+00002978	
+000029c8	
+00002a64	
+00002aa8	
+00002b88	
+00002c74	
+00002cb0	
+00002cf4	
+00002d30	
+00002d78	
+00002db4	
+00002f60	
+00002fac	
+00003034	
+00003074	
+000030b4	
+00003190	
+000031cc	
+0000320c	
+00003248	
+00003284	
+000032c0	
+00003458	
+000034a8	
+000035b0	
+00003690	
+000037c8	
+000037dc	
+000037f0	
+00003804	
+00003818	
+000038d0	
+000039cc	
+00003a54	
+00003da4	
+00003da8	
+00003dd8	
+00003e20	
+00003e54	
+00003eb8	
+00003f50	
+00003f94	
+00003fb4	
+00003fb8	
+00003ff0	
+00003ff4	
+00004020	
+00004028	
+00004078	
+000042dc	
+00004318	
+0000434c	
+00004370	
+00004498	
+0000449c	
+000044b0	
+000044b4	
+000044c4	
+00004540	
+000045dc	
+0000461c	
+0000471c	
+000047c4	
+000047dc	
+000047e0	
+000047f0	
+0000480c	
+0000489c	
+000048ac	
+000048dc	
+00004a20	
+00004b14	
+00004b60	
+00004ba8	
+00004bac	
+00004bf0	
+00004e80	
+00004ee0	
+00004f70	
+00004ff0	
+0000502c	
+00005040	
+0000506c	default
+000050d0	fatal_halt
+000050dc	
+000050f0	error_log
+00005100	
+00005130	
+00005188	
+000051f8	
+00005208	
+00005244	
+0000529c	
+000052b0	
+000054c8	
+00005504	
+00005554	
+00005618	
+00005684	
+0000571c	
+00005738	
+0000577c	
+0000578c	
+000057a8	
+00005890	
+0000589c	
+00005900	
+00005908	
+0000595c	
+00005988	
+000059e8	
+00005acc	
+00005bb0	game_flag_clear
+00005c00	game_flag_set
+00005c50	
+00005cd0	game_flag_test
+00005d28	
+00005d6c	
+00005d70	
+00005e98	
+00005f98	coil_pulse
+00005fe8	coil_pulse_fn
+00006048	
+00006088	
+0000609c	
+00006100	
+0000614c	coilgroup_pulse
+0000615c	
+000061bc	
+00006234	
+0000623c	
+00006294	
+00006308	thunk_FUN_00006ef8
+0000630c	
+00006520	
+000065b4	
+00006608	
+00006624	
+00006668	
+000066b8	
+00006700	
+0000673c	
+000067e0	
+0000681c	
+000068f0	
+0000692c	flipper_buttons_held
+000069a0	
+000069b8	
+000069c8	
+000069d8	
+000069f0	
+00006a0c	
+00006a2c	
+00006a64	
+00006bd4	
+00006c08	
+00006c70	
+00006dac	
+00006e4c	
+00006eec	
+00006f20	event_hook_add
+00006fc8	event_post
+00007030	object_dtor_stub
+00007034	
+00007044	
+0000704c	
+00007160	
+000071c4	
+00007200	
+000072bc	
+00007324	
+00007378	lamp_layer_create
+00007484	
+00007494	
+00007544	
+00007674	
+00007678	
+000076f0	lamp_lookup
+00007744	
+0000777c	
+000077d4	lamp_off
+00007848	lamp_bit_clear
+0000788c	lamp_off_all
+00007918	lamp_on
+0000798c	lamp_bit_set
+000079d0	lamp_on_solid
+00007a54	lamp_toggle
+00007ad4	lamp_bit_toggle
+00007b24	lamp_test
+00007bd0	lamp_bit_test
+00007c1c	
+00007c9c	
+00007cec	
+00007d0c	
+00007d64	
+00007d88	leff_start
+00007f68	
+00008094	leff_current_priority
+000080d8	
+000082ec	
+0000833c	
+0000836c	leff_current_info
+000083bc	
+0000840c	
+00008554	lampgroup_count
+000085b8	
+00008644	lampgroup_off
+000086b4	lampgroup_bit_clear
+000087dc	lampgroup_on
+0000884c	lampgroup_bit_set
+00008974	lampgroup_toggle
+000089e4	
+00008a4c	
+00008adc	
+00008b64	
+00008d2c	
+00008e58	
+0000904c	
+000092dc	
+00009594	
+000096e8	
+0000975c	
+000097c0	
+00009818	
+00009834	
+00009864	
+000098a4	
+000098b8	
+0000994c	
+00009990	
+000099b4	
+000099c8	
+00009a00	language_get
+00009a1c	lang_select
+00009a38	
+00009a74	
+00009a98	
+00009ad8	
+00009b20	
+00009b68	msg_get
+00009bac	
+00009bf8	
+00009c64	
+00009c6c	
+00009ccc	
+00009d84	
+00009dc8	
+00009e20	
+00009fb0	
+0000a040	nvram_unlock
+0000a088	nvram_lock
+0000a0b4	nvram_lock_restore
+0000a0b8	
+0000a0d8	
+0000a0dc	
+0000a13c	
+0000a170	
+0000a5b0	
+0000a5b4	
+0000a648	
+0000a754	
+0000a758	
+0000a858	
+0000a90c	
+0000a9c4	
+0000aa14	
+0000aa88	
+0000aad0	
+0000ab34	
+0000ab7c	task_create
+0000ac70	task_create_unique
+0000ac74	
+0000acc4	task_recreate
+0000ad60	task_timer_restart
+0000ad98	task_spawn_child
+0000ae74	task_sleep
+0000aedc	
+0000af5c	task_exit
+0000af94	task_kill
+0000b030	task_kill_ptr
+0000b098	task_kill_range
+0000b128	task_kill_list
+0000b1cc	
+0000b244	task_suspend
+0000b2dc	
+0000b2e0	
+0000b344	task_resume
+0000b3c0	task_running
+0000b424	task_running_range
+0000b498	
+0000b4a0	
+0000b528	
+0000b59c	
+0000b5f0	
+0000b628	task_set_id
+0000b654	
+0000b6ac	
+0000b6e4	
+0000b710	task_set_exit_handler
+0000b714	
+0000b7c0	
+0000b7cc	
+0000b810	
+0000b874	
+0000b8f8	
+0000b95c	leff_stop
+0000b9e0	
+0000bbc0	
+0000bbcc	
+0000bbdc	
+0000bc0c	
+0000bc2c	
+0000bc60	bag_weighted_pick
+0000bd80	
+0000bda4	bag_run_award
+0000bdfc	
+0000be34	
+0000be6c	
+0000bee0	
+0000bf34	
+0000bfb4	
+0000bfb8	
+0000bfec	
+0000c050	
+0000c07c	
+0000c0a8	
+0000c108	
+0000c16c	
+0000c19c	
+0000c1e0	
+0000c220	
+0000c260	
+0000c2a4	
+0000c2e8	
+0000c318	
+0000c360	
+0000c414	
+0000c4c4	
+0000c4f4	
+0000c788	
+0000c79c	
+0000c80c	
+0000c974	
+0000c990	
+0000c9b8	
+0000ca4c	
+0000ca64	
+0000ca7c	
+0000cb28	
+0000cb4c	
+0000cb78	
+0000cbfc	
+0000cc18	
+0000cc34	
+0000cc50	
+0000cd70	
+0000d420	
+0000d434	
+0000d44c	
+0000d4f0	
+0000d50c	
+0000d560	
+0000d5dc	
+0000d5f8	sw_is_disabled
+0000d694	
+0000d70c	
+0000d784	
+0000d7c0	
+0000d838	
+0000d878	
+0000d934	
+0000d9a4	
+0000da18	
+0000da24	playfield_is_valid
+0000da3c	playfield_set_valid
+0000da5c	
+0000daa8	
+0000daec	
+0000db68	
+0000dc8c	
+0000ddbc	switch_dispatch_debounce
+0000e03c	
+0000e0b0	
+0000e0bc	
+0000e1e4	
+0000e1fc	
+0000e230	
+0000e3a8	
+0000e3dc	
+0000e4c0	
+0000e4ec	
+0000e518	array_elem
+0000e554	
+0000e5f0	
+0000e5f8	
+0000e650	
+0000e6d8	
+0000e7a8	
+0000e818	
+0000e88c	
+0000e890	
+0000e8a0	debug_printf
+0000e8a4	
+0000e8d8	
+0000e8f0	
+0000e994	
+0000ec64	
+0000ec68	
+0000ec78	
+0000ecb4	
+0000ee30	
+0000ee74	snd_play_009
+0000ee84	snd_play_00a
+0000ee94	snd_play_00b
+0000eea4	snd_play_00c
+0000eeb4	
+0000eec4	
+0000eed4	
+0000ef08	
+0000ef10	
+0000ef94	
+0000ef9c	
+0000f030	
+0000f070	
+0000f130	key_repeat_reset
+0000f148	key_repeat_reset_all
+0000f180	
+0000f188	
+0000f420	
+0000f450	
+0000f4bc	
+0000f4f0	
+0000f4f8	
+0000f538	
+0000f5f8	
+0000f5fc	
+0000f658	
+0000f714	
+0000f7bc	
+0000f818	
+0000f8b8	
+0000f8e0	
+0000f908	
+0000f998	
+0000fa00	
+0000fb38	
+0000fb7c	
+0000fc04	
+0000fe98	
+0000ff28	
+0000ff68	
+0000ff74	
+0000ffb0	
+00010034	
+00010078	
+000100d8	
+00010168	switch_timeout_obj_clear
+00010180	
+00010194	switch_timeout_obj_expire
+000101d0	switch_timeout_obj_add
+000101d8	
+00010248	
+00010298	
+000102dc	
+0001049c	
+000104dc	
+00010578	
+000105b8	
+00010654	
+00010664	
+000109fc	
+00010a14	
+00010ad4	
+00010ad8	
+00010af4	
+00010b20	
+00010b88	
+00010bb0	
+00010bd8	thunk_FUN_00011594
+00010bdc	
+00010c54	
+00010cb8	
+00010cd8	
+00010d50	
+00010e50	
+00010eb0	
+00010ee4	
+00010f1c	
+00011034	
+000110b4	
+0001114c	
+00011164	
+000111e4	
+00011264	
+000112d4	
+000112e4	
+000112ec	
+000113ec	flash_bank_select
+00011418	
+000114c4	
+000114e0	
+000114e4	irq_disable
+00011500	
+0001151c	irq_restore
+00011574	
+00011628	
+000129f8	
+00012a3c	
+00012c04	
+00012cec	
+00012cfc	
+00012d0c	
+00012d3c	
+00012d4c	
+00012da0	
+00012df0	
+00012e38	
+00012e74	
+00012eb4	
+00012ef4	
+00012f30	
+00012f74	
+00012fb4	
+00012fc8	
+00013074	
+00013130	
+000132e4	
+000133a8	
+000133f0	
+000133f4	
+00013438	
+00013498	
+000134b8	
+00013528	
+00013594	
+0001364c	
+00013684	
+000136cc	
+0001370c	
+00013784	
+00013810	
+00013878	
+000138d0	
+00013910	
+00013984	
+00013a20	
+00013a40	
+00013a80	
+00013b14	
+00013b50	
+00013b60	
+00013b68	
+00013b70	
+00013b94	
+00013bb8	
+00013bf4	
+00013cac	
+00013ce4	
+00013ed0	
+00013f84	
+00014000	
+000140ac	
+000140f4	
+000141d8	
+00014228	
+0001429c	
+0001446c	
+00014550	
+000145a0	
+000145b0	
+000145e8	
+0001461c	
+0001469c	
+000148dc	
+0001495c	
+000149e8	
+00014bf4	
+00014bfc	
+00014df8	
+00014e7c	
+00014e88	
+00014ea0	
+0001501c	
+00015068	
+00015170	
+00015188	
+000151a0	
+000151b8	
+000151d4	
+00015204	
+00015254	pio_shift_byte
+000152ac	
+0001530c	pio_shift_idle
+0001534c	
+00015360	
+00015380	
+000153a0	
+000153d4	
+00015410	
+0001542c	
+00015448	
+00015464	
+00015480	
+0001549c	
+000154b8	
+000154d4	
+000154d8	
+000154f4	
+000154f8	
+00015514	
+00015518	
+00015534	
+00015538	
+00015554	
+00015558	
+00015574	
+00015578	
+00015594	
+00015598	
+000155b4	
+000155e4	
+000155ec	
+00015630	
+00015680	
+00015814	
+000158f8	
+000159a0	
+00015a58	
+00015b04	
+00015b7c	
+00015c18	
+00015c34	
+00015cf4	
+00015d90	
+00015dcc	
+00016070	
+00016094	
+00016098	
+000160c0	
+000160fc	
+00016148	
+00016188	
+000161c0	
+00016200	
+00016240	
+000163cc	
+00016464	
+000164b0	
+000164ec	
+00016538	
+0001660c	
+000166cc	
+00016734	
+0001679c	
+000167e8	task_2b_2
+00016930	
+00016970	
+00016a08	
+00016a3c	
+00016b04	
+00016b60	
+00016bb4	
+00016bb8	
+00016bec	
+00016d7c	
+00016f30	
+00016f4c	
+00016fac	
+00017004	
+00017070	
+000170c4	
+00017124	
+0001717c	
+000171e8	
+00017240	
+000172a0	
+000172fc	
+0001736c	
+0001739c	
+000173cc	
+000174ac	
+00017734	rule_obj_init
+000177b4	
+00017818	
+00017864	
+00017884	rules_refresh_request
+00017898	
+000178c4	
+000178cc	
+00017920	
+0001795c	
+0001797c	
+000179d8	leff_rule_dtor
+000179e8	
+00017a68	lamp_rule_init
+00017ad4	
+00017ae4	
+00017bc4	
+00017c10	
+00017c5c	ball_save_task
+00017d00	ball_save_arm
+00017d48	
+00017d58	
+00017d70	ball_save_try
+00017e18	
+00017e20	
+00017e34	
+00017e58	
+00017e60	
+00017e94	ball_search_tick
+00017f60	
+00017f94	ball_search_reset
+00017fd8	
+00017fe8	
+00018018	lc_mb_running
+0001801c	
+0001804c	
+000180d4	
+00018108	
+0001815c	
+000181d4	
+00018210	
+00018250	shoot_again_lamp_update
+00018270	
+000182c4	
+000182fc	eb_light
+000183a4	eb_award
+00018438	eb_collect
+000184b8	
+000184e0	
+000185e0	
+00018670	
+00018694	
+000186b4	
+0001872c	
+00018790	
+000187fc	
+00018878	
+000188e8	
+00018904	
+00018964	
+000189e8	
+00018a64	
+00018b78	
+00018bd0	
+00018d00	
+00018db8	
+00018dc4	
+00018e24	
+00018e74	
+00018f08	
+00019058	high_score_entry
+000193c0	
+00019418	
+00019430	
+00019440	
+00019450	
+000195ec	instant_info_cancel
+0001962c	
+0001963c	
+0001967c	
+000196ac	
+000196f8	
+00019724	
+00019838	
+0001996c	match
+00019b78	match_award
+00019c60	
+00019c8c	
+00019cc0	
+00019d10	
+00019e2c	
+00019f68	game_init
+00019f70	
+0001a034	ball_start
+0001a03c	
+0001a148	end_of_ball
+0001a414	
+0001a448	game_over
+0001a4e0	game_start
+0001a640	
+0001a6f8	start_button_handler
+0001a700	start_button
+0001a9e8	sw16_start_button
+0001aa00	sw15_tournament_start
+0001aa18	
+0001aa38	
+0001aa64	
+0001aa70	
+0001aab8	
+0001ac2c	player_check
+0001ac38	
+0001ac50	num_players
+0001ac84	
+0001ac90	
+0001accc	
+0001ace8	
+0001ad44	current_player
+0001ad78	
+0001ada0	
+0001ada4	
+0001add0	
+0001ade8	
+0001ae20	
+0001ae54	
+0001ae8c	
+0001aeb8	next_up
+0001afb8	
+0001afcc	
+0001b038	
+0001b090	
+0001b0f8	
+0001b150	
+0001b1a4	
+0001b204	
+0001b264	
+0001b2c0	
+0001b320	
+0001b378	
+0001b3a4	
+0001b3c4	
+0001b3ec	
+0001b438	
+0001b480	
+0001b4a0	thunk_FUN_00021a04
+0001b4a4	
+0001b4f4	
+0001b51c	
+0001b64c	
+0001b674	
+0001b6c0	
+0001b76c	
+0001b798	
+0001b838	
+0001b928	
+0001b9f0	score_award_check
+0001ba5c	
+0001bb74	
+0001bb78	
+0001bbc8	
+0001bd34	
+0001beb4	thunk_FUN_0002234c
+0001beb8	
+0001bec8	
+0001bf30	
+0001c0d0	
+0001c160	
+0001c1b4	
+0001c258	
+0001c2d4	
+0001c32c	
+0001c380	
+0001c478	
+0001c520	
+0001c5bc	
+0001c5cc	
+0001c5f0	
+0001c668	
+0001c714	replay_award
+0001c900	replay_check
+0001c9bc	
+0001cb8c	
+0001cdb0	
+0001ce50	score_add
+0001ce6c	score_add_player
+0001d038	
+0001d054	
+0001d08c	pf_mult_set
+0001d098	
+0001d0c8	
+0001d0d8	
+0001d10c	
+0001d1b8	
+0001d1cc	pf_mult_reset
+0001d1f0	
+0001d204	
+0001d3d4	
+0001d5a0	
+0001d788	
+0001d8f0	
+0001d934	slam_reset_task
+0001d938	
+0001d95c	slam_tilt
+0001da4c	
+0001da7c	
+0001da90	
+0001dae4	
+0001db30	special_light
+0001dbc8	special_award
+0001dd34	special_collect
+0001ddb4	
+0001de3c	
+0001de60	
+0001deb4	tilt_warning
+0001df68	tilt
+0001e03c	task_2e
+0001e080	tilt_switch
+0001e13c	
+0001e16c	
+0001e1b4	
+0001e1b8	
+0001e1e8	
+0001e228	
+0001e2a8	
+0001e454	
+0001e500	
+0001e5bc	tournament_bumpnwin_check
+0001e674	
+0001e6c8	
+0001e70c	
+0001e750	
+0001ec38	
+0001ece8	tournament_get_type
+0001ed5c	
+0001edbc	
+0001ede0	
+0001ede4	
+0001ef9c	
+0001f058	tournament_get
+0001f0b4	
+0001f13c	
+0001f190	
+0001f220	
+0001f2a0	
+0001f380	
+0001f384	
+0001f42c	
+0001f488	
+0001f4b8	
+0001f4d8	
+0001f598	
+0001f5d8	
+0001f6b8	
+0001f748	
+0001f768	thunk_FUN_00025c2c
+0001f76c	
+0001f978	
+0001f98c	
+0001fa5c	
+0001fc98	
+0001fe14	
+0001ff84	
+00020100	
+0002027c	
+00020404	
+00020580	
+000206e8	
+0002084c	
+00020ad4	
+00020b28	
+00020bd8	dmd_hline
+00020c1c	dmd_hline_buf
+00020c20	
+00020c90	
+00020cd4	
+00020cd8	
+00020d48	
+00020d78	
+00020d90	dmd_clear_work1
+00020dac	dmd_clear_work0
+00020dc8	
+00020e00	
+00020e0c	
+00020e40	dmd_copy_rect
+00020ea8	
+00020edc	
+00020ef8	
+00020f1c	dmd_fill_work0
+00020f40	
+00020f88	dmd_fill_rect
+00020fdc	
+000210cc	
+00021128	
+000211ec	dmd_page_alloc
+000212b8	dmd_page_alloc_pair
+0002134c	dmd_show_pages
+000213d4	dmd_flip
+00021408	
+00021438	deff_frame_sleep
+0002145c	
+000214b0	
+000214e0	
+00021504	
+0002158c	
+000215a4	
+000215e8	
+000215ec	
+00021650	
+00021690	
+000216b0	
+000219e0	
+00021b0c	
+00021bcc	deff_start
+00021be0	
+00021bec	
+00021c30	
+00021ca8	deff_running
+00021d10	
+00021d40	
+00021db8	
+00021dfc	
+00021f14	
+00021f84	
+00022040	
+00022060	
+0002209c	
+000220dc	
+00022120	
+000222a4	
+000222c0	
+000222f0	
+0002245c	font_height
+000224ac	
+000224fc	
+00022520	
+00022540	
+00022544	
+00022590	text_width
+000226fc	
+00022738	
+00022788	
+000227c4	text_draw_msg
+00022824	
+00022878	text_printf_msg
+00022880	
+000228fc	
+00022964	text_draw_msg_fit
+000229cc	
+000229d4	
+00022a50	text_draw_str_page
+00022a90	text_draw_str
+00022c90	
+00022c94	
+00022d04	
+00022d64	
+00022da8	text_draw_str_fit
+00022ea4	
+00022f18	
+000230b8	
+000230fc	
+0002311c	
+00023164	
+000231ac	
+00023208	
+00023270	
+000233d4	
+0002353c	
+00023698	
+00023800	
+00023c88	
+00023dc4	
+00023f78	
+00024384	
+000245dc	
+00024970	
+000249a0	
+00024a84	
+00024aa0	
+00024ba0	
+00024ba8	
+00024bb0	bitmap_width
+00024c2c	
+00024c34	bitmap_height
+00024cb0	bitmap_blit
+00024d2c	
+00024dbc	bitmap_blit_masked
+00024e48	
+00024e94	bitmap_draw
+00024f40	bitmap_draw_masked
+00024ff4	
+00025070	palette_identity
+00025088	palette_fill
+000250b0	
+000250cc	
+00025114	
+00025118	
+00025138	
+00025148	
+00025158	
+00025178	
+000251d0	
+00025280	
+000252b0	
+000252d4	
+00025450	
+00025540	
+00025698	
+00025738	
+00025800	
+0002586c	
+000258e8	
+0002595c	
+000259d8	
+00025a6c	
+00025b6c	
+00025c8c	
+00025cc8	snd_next_handle
+00025ce4	snd_start_sample
+00026244	snd_resolve_call
+000263f4	snd_play
+00026424	snd_play_arg
+00026450	snd_play2
+00026484	snd_play_after
+0002651c	snd_play_chain
+00026540	
+00026564	
+0002659c	
+00026600	
+000266b4	
+000267d4	
+0002682c	
+00026890	
+000269b4	
+00026a10	
+00026b24	
+00026be8	
+00026c14	
+00026c78	
+00026c80	
+00026cf8	
+00026d3c	
+00026dd0	
+00026e3c	
+00026e68	
+00026e9c	
+00026ed0	
+00026f14	
+00026f54	
+00026fc4	
+00026fd4	
+00027030	
+0002706c	
+00027090	
+00027144	
+000271b0	
+000271b8	
+00027308	
+000273b4	
+0002773c	thunk_FUN_00020448
+00027740	
+0002774c	
+00027750	
+00027778	
+00027780	
+00027790	
+00027794	
+000277a0	
+000277c0	
+000279a4	
+000279b4	
+000279dc	
+00027a5c	
+00027a6c	
+00027a8c	
+00027bc0	
+00027c04	
+00027d7c	
+00027dbc	
+00027df4	
+00027e08	
+00027e54	
+00027ea0	
+00027ef4	
+00027f40	
+00027f84	
+00027fc8	
+00028040	
+0002804c	
+000280a4	
+000280d4	
+0002812c	
+000281c4	
+000282a4	
+00028314	
+000284b4	
+00028520	
+0002858c	
+000285f8	
+00028668	
+00028688	
+000286a8	
+000286c8	
+000286e4	
+000287e8	
+00028820	
+00028944	
+00028978	
+00028990	
+000289c8	
+000289e0	
+00028a18	
+00028a30	
+00028a68	
+00028a80	
+00028ab8	
+00028ae8	
+00028be8	
+00028c20	
+00028d60	
+00028fb4	
+00028fe8	
+000291dc	
+00029214	
+00029240	
+00029278	
+000292a4	
+000292dc	
+00029308	
+00029340	
+0002936c	
+000293b8	
+000294a0	
+00029550	
+000296e0	
+000297c0	
+00029860	leff_013
+000298f8	leff_015
+0002991c	leff_014
+00029a04	
+00029a4c	
+00029aa8	
+00029b5c	
+00029b78	
+00029b94	
+00029bbc	
+00029d18	
+00029d3c	
+00029d60	
+00029d84	
+00029da8	
+00029e84	
+00029ebc	
+00029ef4	
+00029f2c	
+00029f68	
+00029fa0	
+0002a004	
+0002a0d4	
+0002a208	
+0002a24c	
+0002a290	
+0002a2d4	
+0002a318	
+0002a35c	
+0002a3e4	
+0002a750	
+0002b4a8	
+0002b844	
+0002b874	
+0002b924	
+0002b934	
+0002b954	
+0002b960	
+0002bab4	
+0002bb04	
+0002bb54	
+0002c1f4	
+0002c298	
+0002c574	
+0002c5c4	
+0002c660	
+0002c6f0	
+0002c780	
+0002c7f0	
+0002c930	leff_002
+0002c96c	
+0002c9ac	
+0002ca04	
+0002cabc	thunk_FUN_01047bf8
+0002cb70	
+0002cb8c	
+0002cbdc	
+0002ccac	
+0002ccdc	
+0002cd2c	
+0002ce00	
+0002cee8	
+0002cf08	
+0002cfd4	
+0002d2dc	
+0002d308	
+0002d33c	
+0002d448	
+0002d450	
+0002d4b8	
+0002d4bc	
+0002d510	
+0002d700	
+0002d718	
+0002d728	
+0002d72c	
+0002d778	
+0002d77c	
+0002d7f4	
+0002d7f8	
+0002d824	
+0002d828	
+0002dda8	
+0002de58	
+0002de5c	
+0002de60	
+0002e3cc	
+0002e3d0	
+0002e8b4	__udivsi3
+0002e94c	
+0002e950	
+0002ee1c	__umodsi3
+0002eed0	atoi
+0002eed4	
+0002ef94	
+0002efc8	
+0002f08c	
+0002f0bc	
+0002f10c	
+0002f1b4	
+0002f1f4	memcpy
+0002f1f8	
+0002f22c	memset
+0002f258	sprintf
+0002f25c	
+0002f278	
+0002f2ac	strcmp
+0002f2dc	strcpy
+0002f2f8	strlen
+0002f314	
+0002f354	
+0002f39c	vsprintf
+01000000	deff_010
+01000128	attr_page_credits
+010001f0	attr_page_logo_scroll
+010002d8	
+01000304	attr_page_clock
+0100055c	attr_page_high_score
+01000760	attr_page_last_score
+01000890	attr_page_first_pass_only
+010008a0	attr_page_game_over
+01000944	
+01000978	
+010009a0	tube_set_rgb
+01000a80	bonus_ball_reset
+01000b20	bonus_x_add
+01000b74	
+01000bc4	
+01000bf8	
+01000c58	
+01000ca4	
+01000ca8	bonus_sos_value
+01000ccc	bonus_portal_value
+01000cf0	bonus_total
+01000d58	bonus_total_provider
+01000d70	bonus_total_frames
+01000e20	bonus_count_exit
+01000e58	bonus_count_task
+010012e4	deff_025_bonus
+01001434	leff_020
+01001524	
+0100152c	
+01001590	
+01001618	
+010016c8	
+01001748	clu_on_end_of_ball
+01001758	clu_start_allowed
+010017b8	clu_try_start_at_vuk
+01001814	clu_running_incl_grace
+0100183c	gem_queue_total_deff79
+010018b4	clu_end_show_total
+0100199c	clu_base_value
+010019f8	on_clu_hurryup_started
+01001b14	clu_award_value
+01001b58	clu_collect_shot
+01001c88	clu_more_time
+01001cf4	clu_end_now
+01001d28	clu_collect_first_lit
+01001d88	deff_071_terminate_clu
+010020b0	leff_077
+010022d8	
+010022e8	leff_078_clu_shot_lamps
+010023c4	deff_073_clu_award
+01002580	
+010025a4	
+010028e0	combo_first_ball_base
+01002910	combo_ball_start_reset
+0100296c	combo_shot_entry
+010029f8	
+01002a00	
+01002a18	combo_window_allowed
+01002a50	combo_base_raise_unused
+01002aa8	
+01002abc	
+01002ad4	combo_shot_is_lit
+01002b20	
+01002b28	task_cd_combo_window
+01002bb0	combo_value
+01002c08	
+01002c10	combo_history_trim
+01002d24	combo_history_append
+01002d7c	combo_named_match
+01002e54	combo_append_and_match
+01002e78	on_combo_shot
+01003078	
+0100308c	
+01003094	
+010030a4	
+01003144	eol_combo_jackpot_collect
+010031d8	leff159_combo_arrows
+01003354	
+01003394	deff138_way_combo
+01003598	
+0100359c	leff_161
+010038b8	
+010038f4	disc_motor_disabled_adj77
+01003910	task_a8_disc_motor_run
+01003980	
+010039f8	disc_motor_stop
+01003a34	
+01003ab8	leff76_disc_flasher_cond
+01003af0	disc_motor_direction_toggle_task
+01003b2c	rule_disc_motor
+01003c04	
+01003c14	
+01003c38	
+01003c88	
+01003ce4	
+01003cf0	
+01003ff4	
+01004198	
+01004244	dmb_shot_entry
+01004278	dmb_bank_state
+010042b8	dmb_disc_is_target
+0100431c	dmb_running
+01004330	dmb_running_or_ending
+01004364	dmb_running_or_end_task
+010043bc	
+01004404	dmb_jackpot_seed_value
+01004448	dmb_blue_shot_value
+01004474	dmb_enter_phase0
+010044a4	adj68_disc_shots
+010044b4	dmb_enter_phase1
+010044e8	adj69_recognizer_shots
+010044f8	dmb_enter_phase2
+0100452c	task_88_queue_intro_deff46
+01004530	
+01004558	dmb_start
+01004674	dmb_shot
+01004988	dmb_show_total
+01004a0c	task_89_queue_restart_deff52
+01004a10	
+01004a38	task_ad_restart_countdown
+01004acc	dmb_open_restart_window
+01004b44	dmb_end
+01004bdc	
+01004bf0	
+01004c08	dmb_restart_window_open
+01004c20	task_8a_queue_restarted_deff54
+01004c24	
+01004c4c	dmb_restart_on_disc_hit
+01004cf8	dmb_cancel_restart_window
+01004d00	
+01004dd0	deff_046_disc
+01005028	
+0100507c	
+010050d0	
+01005188	leff_055
+01005238	deff_047_disc_multiball
+010054f8	
+01005508	leff_045
+010057b0	
+0100584c	
+010058e8	
+01005938	
+010059d4	
+010062a4	leff_051
+01006414	leff_052
+01006488	deff_053_disc_multiball
+010065ec	leff_053
+010067a0	leff_044
+01006850	
+01006a60	
+01006ad4	
+01006af4	
+01006b40	
+01006b7c	
+01006bc8	
+01006bf4	
+01006c40	
+01006cd0	
+01006d44	
+01006d9c	
+01006e10	
+01006e84	
+01006ef8	
+01006f6c	
+01006fe0	
+0100702c	task_2b_3
+01007104	
+01007160	
+010071a0	
+010071b4	
+010071e0	orbit_post_raise
+01007220	
+01007244	
+010072e0	
+010072f0	
+01007324	
+010073d4	
+01007410	
+01007480	
+010074cc	
+01007538	
+0100758c	
+01007694	
+01007870	
+01007b08	tron_award_game_start_clear
+01007ba0	tron_award_ball_start
+01007c34	
+01007c3c	
+01007c94	
+01007cec	tron_award_lamps
+01007ebc	tron_award_rotate_lit
+01007f60	super_pops_lamp_chase
+01007f8c	
+01007fa4	tron_award_timer_task
+0100817c	tron_award_start_lit
+010083d4	tron_award_clear_all_unused
+01008878	
+01008a8c	deff_112_super
+01008b40	
+01008cb8	clu_countdown_running
+01008ce0	tron_award_refill_time_a
+01008d24	tron_award_refill_time_b
+01008d68	tron_award_refill_time_c
+01008efc	
+01008f10	task_d1
+01008f9c	
+01008fd4	on_find_flynn_started
+01009088	
+010090d8	on_find_flynn_completed
+01009320	tubeshow_013
+01009324	leff_157_roving_arrow
+01009534	
+0100961c	arcade_ball_start_light
+01009630	
+01009650	
+01009668	arcade_set_lit
+010096dc	arcade_is_lit
+010096f4	arcade_try_collect
+01009774	arcade_pick_and_award
+010097f4	arcade_lamp_rule
+01009854	
+0100987c	arcade_award_500k
+0100997c	arcade_award_quorra
+010099e4	arcade_award_disc
+01009a3c	arcade_award_light_cycle
+01009af8	arcade_weight_sos
+01009afc	
+01009b94	
+01009bf0	arcade_award_extra_ball
+01009c0c	
+01009d58	
+0100a104	
+0100a694	
+0100a6c4	
+0100a734	
+0100a768	
+0100a854	
+0100a910	
+0100a964	
+0100a968	
+0100a9a4	
+0100aa5c	
+0100aa6c	player_up_reminder_task
+0100aa74	
+0100aae0	
+0100aaf8	
+0100aafc	
+0100ab38	game_over_music_task
+0100ac9c	
+0100accc	leff_133
+0100ad74	
+0100adac	
+0100ae00	
+0100ae30	
+0100ae64	
+0100aea0	deff_040_player
+0100afb4	
+0100aff4	bumper_busy_window_start
+0100b054	
+0100b088	
+0100b148	multiballs_running_count
+0100b19c	any_multiball_running
+0100b1b4	any_timed_mode_running
+0100b210	more_time_refill_all
+0100b25c	
+0100b394	
+0100b434	queue_fullscreen_deff
+0100b750	wait_display_idle
+0100b78c	
+0100b7e8	timed_mode_paused
+0100b824	
+0100b8bc	
+0100b9d4	
+0100c290	
+0100c328	
+0100c390	
+0100c3a4	
+0100c3e0	
+0100c418	deff_127
+0100cbb4	deff_128
+0100d688	deff_129
+0100d6c8	deff_130_game_over
+0100d814	deff_131
+0100d894	on_extra_balls_lit
+0100d93c	task_c9
+0100d9f4	eb_light_game
+0100da8c	eb_collect_game
+0100dd94	
+0100dd98	
+0100dea4	deff_028
+0100df34	deff_029_bump_n_win_award
+0100dfb0	
+0100dfc8	
+0100e010	
+0100e020	outlane_insult_speech
+0100e0b0	
+0100e350	
+0100e354	
+0100e3b8	
+0100ea6c	gem_qualify_enabled
+0100eaf4	gem_qualify_loop
+0100ebbc	clu_queue_total_deff74
+0100ec34	gem_end_show_total
+0100ec48	gem_countdown_running
+0100ec5c	gem_running_incl_grace
+0100ec64	
+0100ed48	on_gem_hurryup_started
+0100ee94	on_gem_hurryup_awards
+0100f020	gem_more_time
+0100f0c0	gem_status_panel_register
+0100f138	deff_075_gem_more_to_start
+0100f2e0	deff_076_gem_intro
+0100f580	deff_078_gem_award
+0100f95c	
+0100fb78	
+0100fbd4	
+0100fbfc	
+0100fc54	
+0100fd50	
+0100fdb0	
+0100fde0	
+0100fe30	
+0100fe64	
+0100feac	
+0100ff30	
+0100ff68	
+0100ffb8	
+0100ffc8	
+0100fff8	
+01010028	
+01010038	
+010103f0	
+01010418	
+01010510	
+01010684	
+010106c4	
+01010708	
+01010764	
+01010790	
+010107ec	
+010109c8	
+01010a58	
+01010a8c	bonus_item_mask
+01010aa8	
+01010ac8	
+01010ae4	bonus_item_value
+01010b70	
+01010b90	
+01010bc8	items_player_reset
+01010bd8	items_clear_lit
+01010c74	items_clear_all
+01010c98	item_level_add
+01010db8	
+01010e58	
+01010efc	items_all_lit
+01010f4c	items_all_collected
+01010fb0	item_lamps
+0101107c	
+01011188	
+010112bc	clu_lane_entry
+010112f0	
+01011304	clu_lanes_player_init
+0101139c	clu_lanes_active
+010113c8	clu_lane_lamps_rule
+01011560	
+010115b4	clu_lane_completion_value
+01011604	clu_lane_hit
+01011804	clu_adv_lane_completion_silent
+01011948	outlane_special_collect
+01011a04	
+01011aa0	
+01011ab0	clu_lanes_rotate_toward_c
+01011b64	clu_lanes_rotate_toward_u
+01011c18	sling_lamp_rotate
+01011d20	deff_080_more_to_light_hurryup
+01011f10	leff_088
+01011fe8	deff_082_special
+01012358	leff_001_chase_task
+010123a8	
+01012438	
+01012440	leff_001_attract
+01012d0c	lc_progress_reset
+01012d54	lc_player_init
+01012dd8	eol_multiball_running
+01012dec	eol_running_or_grace_a
+01012e20	eol_running_or_grace
+01012e58	popcount8
+01012f38	lc_chain_a_advance
+01012f40	
+010130dc	lc_chain_b_advance
+010130e4	
+010131a0	
+010131a4	lc_progress_allowed
+01013204	lc_progress_shot_open
+01013248	light_cycle_target
+01013390	light_cycle_mb_shot
+0101371c	deff_083_more
+01013904	deff_084_light_cycle
+01013bb8	deff_085_light_cycle
+01013ea4	
+01013f30	leff_093
+01014008	
+01014028	deff_086_light_cycle
+01014c10	deff_089_double
+01015070	
+010153ec	leff_094
+0101543c	lc_can_start
+010154bc	lc_chains_init
+010155cc	lc_mb_start
+010156c8	lc_vuk_start_if_lit
+010157a4	lc_mb_end_to_one_ball
+010157e8	lc_mb_resume_in_end_window
+0101582c	eol_end_of_ball
+0101585c	lc_progress_lamps_rule
+01015ad0	
+01015b8c	
+01015bfc	multiballs_one_ball_left
+01015c14	sw11_video_game_eject
+01015c54	
+01015cc4	
+01015cdc	
+01015e54	leff_035
+01015f80	
+01015fe0	
+01016044	
+010160a8	
+0101616c	
+01016200	pop_hits_for_next_level
+01016248	pop_first_ball_reset
+010162c8	pop_value_ball_reset
+01016304	
+01016314	
+01016360	eol_shot_score
+01016368	
+010167bc	deff_044_level_completed
+01016898	leff_042
+010169f4	deff_135_big_bump1_s
+01016ae4	
+01016ae8	
+01016b10	leff_154
+01016b80	task_cb
+01016bc0	
+01016cac	
+01016d38	eol_game_reset
+01016d98	quorra_shots_to_light
+01016dec	quorra_mb_running_or_end_window
+01016e1c	quorra_mb_scoring_active
+01016e4c	quorra_add_ball_state
+01016e80	quorra_double_window_running
+01016e94	quorra_double_active
+01016e9c	
+01016eac	
+01016ebc	task_5c_quorra_double_window
+01016f0c	quorra_double_window_start
+01016f68	quorra_double_window_kill
+01016f74	quorra_jackpot_init
+01016fcc	quorra_jackpot_raise
+01016ff4	quorra_super_reset
+0101703c	quorra_mb_shot
+010172b4	deff_062_to_light
+0101771c	tubeshow_020
+01017a24	
+01017a74	
+01017a78	
+01017b1c	deff_065_quorra_multiball
+01018700	leff_070
+01018734	deff_067_quorra_multiball
+01018860	dmb_restart_display_cond
+01018898	
+010188a8	leff_068
+0101893c	quorra_can_start
+010189bc	quorra_progress_allowed
+01018a3c	quorra_progress_shot
+01018b88	quorra_mb_start
+01018cb4	quorra_vuk
+01018d20	
+01018d40	eol_show_total
+01018dc4	quorra_mb_end_to_one_ball
+01018e14	quorra_mb_resume_in_end_window
+01018e88	quorra_advance_lamp_rule
+010192b0	
+01019328	recog_reset_player_at_game_start
+010193e0	recog_targets_count_active
+01019c18	
+01019c94	dbattle_is_lit
+01019ca8	dbattle_can_progress
+01019d90	dbattle_set_hits_needed
+01019df4	dbattle_start_award_value
+01019e40	task86_skillC_deff
+01019e44	
+01019e6c	dbattle_light
+01019ef8	dbattle_disc_hit_or_start_multiball
+01019ff4	dbattle_reset_target_state
+0101a060	dbattle_clear
+0101a148	leff_099
+0101a29c	leff_101
+0101a2f0	leff_104
+0101a34c	deff_109_disc
+0101a61c	leff_105
+0101a7e0	
+0101ad0c	
+0101ad10	
+0101b080	
+0101b0f0	
+0101b210	
+0101b24c	
+0101b374	bank_motor_init
+0101b454	
+0101b4b8	
+0101b4d4	
+0101b4e4	
+0101b4f4	
+0101b508	
+0101b544	
+0101b558	
+0101b594	
+0101b5a8	
+0101b5e4	deff_draw_status_panel
+0101bad0	
+0101bb20	
+0101bb6c	
+0101bc00	
+0101bc9c	
+0101bd54	
+0101bda8	
+0101be2c	
+0101be3c	
+0101bf94	deff_019
+0101c06c	
+0101c0c0	
+0101c14c	
+0101c480	anim_play_pal
+0101c5a8	
+0101c63c	deff_status_frames
+0101c6cc	
+0101c8fc	deff_hold_frames
+0101ca80	
+0101caac	
+0101cadc	task_9d
+0101cae0	
+0101cb08	
+0101cb3c	sos_stage0_flynn_setup
+0101cd2c	sos_stage0_flynn_shot
+0101cdf8	sos_stage0_flynn_spot
+0101ce00	sos_stage1_gem_setup
+0101cff0	sos_stage1_gem_shot
+0101d0bc	
+0101d0c4	sos_stage2_clu_setup
+0101d1a8	
+0101d2c8	
+0101d2cc	
+0101d2dc	
+0101d2f0	
+0101d374	sos_stage2_clu_shot
+0101d598	sos_stage3_zuse_setup
+0101d738	task_a0
+0101d73c	
+0101d764	sos_stage3_zuse_shot
+0101d898	sos_stage4_quorra_setup
+0101da8c	sos_stage4_quorra_shot
+0101db58	
+0101db60	sos_stage5_disc_setup
+0101dd04	task_a2
+0101dd08	
+0101dd30	sos_stage5_disc_shot
+0101deb4	sos_stage6_light_cycle_setup
+0101df98	
+0101e064	task_a1
+0101e068	
+0101e090	sos_stage6_light_cycle_shot
+0101e238	sos_stage7_recognizer_setup
+0101e378	task_a1_2
+0101e37c	
+0101e3a4	sos_stage7_recognizer_shot
+0101e490	
+0101e498	sos_stage8_tron_setup
+0101e63c	task_a1_3
+0101e640	
+0101e668	sos_stage8_tron_shot
+0101e79c	
+0101e7d0	sos_count_get
+0101e7f0	
+0101e830	wizard_flag34_set
+0101e870	sos_complete
+0101e884	
+0101e8d0	sos_stage_setup
+0101e960	sos_start
+0101e964	
+0101ea34	sos_try_start_at_vuk
+0101ea48	simulation_shot
+0101eb64	
+0101eb94	
+0101ebc4	
+0101ebd4	sos_tilt_pay_skip_bonuses
+0101ec54	leff_057_eol_lit_flashers
+0101efc8	
+0101efcc	
+0101f178	
+0101f1ac	
+0101f21c	
+0101f28c	
+0101f2b4	leff_136
+0101f338	deff_115
+0101f51c	
+0101f55c	
+0101f660	
+0101fce0	deff_125_sea_of
+010200ac	
+01020318	
+010203f4	skill_count_switch
+01020478	skill_instant_switch
+010204f8	skill_timeout_expired
+010205b4	
+0102065c	skillA_value
+010206ac	skillA_collect_left_ramp
+0102071c	skillA_kill
+01020738	
+01020754	skillA_start_from_zen
+0102078c	
+010207a0	
+01020848	skillB_value
+01020898	skillB_collect_right_ramp
+01020908	skillB_kill
+01020928	
+01020938	
+01020990	skillC_start
+010209e0	skillC_value
+01020a5c	skillC_collect_vuk
+01020ad4	skillC_kill
+01020b3c	skill_on_serve
+01020b98	skill_kill_all
+01021254	spinner_values_ball_start_reset
+0102162c	leff_033
+0102198c	leff_034
+010219bc	
+01021a1c	base_score_if_not_tilted
+01021a48	
+01021b18	
+01021b28	
+01021b84	
+01021bb0	sw23_shooter_lane
+01021cc8	sw30_left_bumper
+01021d38	sw31_right_bumper
+01021da8	sw32_bottom_bumper
+01021e18	sw26_left_slingshot
+01021e84	sw27_right_slingshot
+01022030	left_orbit_shot_hooks
+01022098	right_orbit_arcade_light
+01022240	on_left_ramp_made
+01022248	
+01022340	on_right_ramp_made
+01022348	
+0102244c	sw41_disc_opto
+010224f0	leff_075
+01022558	sw24_left_outlane
+0102267c	sw29_right_outlane
+010226f8	sw39_right_inner_loop
+01022700	sw39_right_inner_loop_shot
+01022780	sw49_recogniz_3_bank_l
+010227f4	sw52_3_bank_motor_dn
+01022840	sw53_3_bank_motor_up
+01022844	sw07_z_use
+01022888	sw08_z_u_se
+010228cc	sw48_zu_s_e
+01022910	sw13_zus_e
+01022960	
+010229c0	
+01022c28	
+01022c30	
+01022c7c	
+01022e98	
+010230d4	
+01023aa4	tron_letters_reset
+01023b00	
+01023bf0	tron_letters_enabled_always_true
+01023c00	task_9f
+01023cc4	tron_letter_collect
+01023ec8	
+01023f20	tron_spot_letter_unused
+01023fac	deff_107_collect
+010242d0	
+010242d4	
+01024460	deff_038_match
+01024774	
+0102480c	
+010248c8	
+01024918	
+01024970	
+010249ec	
+01024b18	
+01024cd0	
+01024df4	
+01024ef4	
+010250e4	
+010251b0	
+01025334	
+01025344	
+010253e4	deff_045_end
+01025b48	
+01025b68	
+01025c04	task_a3
+01025c18	leff_043
+01025d6c	
+01025d74	
+01025d98	
+01025f54	vuk_lit_item_add
+01026138	vuk_lit_item_take
+010262cc	vuk_lit_item_test
+01026470	on_vuk
+010266b0	vuk_eject_lamps_rule
+010269a0	portal_mb_add_a_ball
+010269d8	portal_mb_shot_entry
+01026a08	portal_mb_all_shots_done
+01026a74	portal_count_get
+01026ac0	portal_mb_can_start
+01026b00	portal_mb_start
+01026c80	portal_mb_award_value
+01026ce0	portal_mb_super_lit
+01026d20	portal_mb_running_or_grace
+01026d54	portal_mb_shot
+01026f88	portal_mb_restart_from_grace
+01027064	leff_047
+01027154	deff_140_portal_intro
+01027494	
+01027498	
+01027544	deff_141_portal_status
+01027730	
+01027740	leff_166_portal_shot_lamps
+01027a10	deff_142_portal_award
+01027c24	deff_143_portal_super_jackpot
+01027df8	
+01027e70	deff_054_disc
+01028318	task_cc_zen_flasher
+010283e8	zen_use_charge
+0102847c	zen_award
+01028518	deff_100_zen
+01028670	leff_118
+010286b0	
+01028738	zfs_target_entry
+01028768	zfs_targets_reset
+01028844	zfs_on_end_of_ball
+010288fc	zfs_end_show_total
+01028910	task_59_zfs_countdown
+0102899c	
+010289e4	
+01028a68	zfs_start_if_ready_unused
+01028a8c	on_zuse_fastscoring_started
+01028c3c	zfs_value_raise
+01028c98	zfs_add_time
+01028d3c	zfs_countdown_running
+01028d58	
+01028d68	zfs_score_hit
+01028ea0	task_80_zfs_hit_queue
+01028eec	
+01029008	leff_126
+010290e8	zfs_more_time
+0102916c	zfs_end_now
+010291f8	zfs_status_panel_register
+01029208	leff_124_zfs_target_lamps
+010292f8	leff_125_zfs_chase
+0102947c	
+010295ac	deff_094_zfs_intro
+010297a0	
+010297bc	
+010297d4	deff_095_zfs_background
+010298fc	
+01029a28	
+01029bc8	deff_096_zfs_hit_popup
+01029ca4	
+01029ca8	
+01029eb4	deff_098_zfs_time_extended
+0102a2f0	leff_130
+0102a4dc	zuse_letters_reset
+0102a538	zuse_player_init
+0102a5c4	zuse_set_value
+0102a5fc	zuse_qualify_enabled
+0102a63c	zuse_letter_hit
+0102a8a8	zuse_complete_set_adv
+0102ac24	
+0102ac60	leff_120
+0102acec	zuse_letter_lamps_rule
+0102b0b0	
+0102b14c	
+0102b160	
+0102b170	
+0102b1c8	ball_dev_call
+0102b224	balldev_count_switches
+0102b288	
+0102b2e0	
+0102b340	
+0102b398	
+0102b3a8	
+0102b3b8	
+0102b3dc	
+0102b448	balls_count_all
+0102b4fc	
+0102b560	
+0102b608	
+0102b664	
+0102b6a0	
+0102b6e8	
+0102b744	
+0102b8e4	
+0102b994	
+0102bce0	
+0102bd04	
+0102bd40	
+0102bd98	
+0102c034	
+0102c054	
+0102c16c	
+0102c400	
+0102c41c	
+0102c78c	
+0102ca70	
+0102ca78	
+0102ca98	
+0102ce08	
+0102d0c4	sw18_trough_4_l
+0102d160	
+0102d1a8	
+0102d210	
+0102d3a0	
+0102d3cc	
+0102d3d0	
+0102d4c0	trough_drain_check
+0102d70c	
+0102d774	balls_installed_max
+0102d7b0	
+0102d814	
+0102d858	
+0102d8ac	
+0102d9ac	
+0102d9f8	
+0102da50	
+0102dabc	no_balldev_tasks
+0102dadc	
+0102db30	
+0102db84	
+0102dbd8	balls_in_play
+0102dcbc	task_17
+0102dd44	
+0102dd90	task_16
+0102ddc4	
+0102dde8	
+0102de34	
+0102de68	
+0102e048	
+0102e158	
+0102e190	
+0102e4ac	multiball_start
+0102e5e0	multiball_add_balls
+0102e634	
+0102e714	
+0102e988	serve_ball
+0102ea98	
+0102eae8	
+0102eba0	
+0102ebd0	task_ball_search
+0102ed64	
+0102ee2c	
+0102ee88	
+0102ee98	
+0102eecc	ball_search_start
+0102eed4	
+0102efb8	
+0102f174	
+0102f18c	
+0102f220	
+0102f27c	
+0102f2e0	
+0102f348	
+0102f3c4	
+0102f478	
+0102f504	
+0102f5e8	
+0102f5ec	
+0102f660	
+0102f6a4	
+0102f6dc	
+0102f70c	
+0102f7d4	
+0102f894	
+0102f9d4	deff_012_operator_alert
+0102fb70	deff_001_attract_pages
+0102fce4	deff_014
+0102fce8	
+0102fd00	deff_020_ball_saved
+0102fdc8	deff_011_locating_pinballs
+0102fe70	
+0102fef4	deff_032
+01030544	deff_031_player
+01030688	
+01030798	deff_033_player
+0103089c	deff_027
+01030a20	
+01030ac0	
+01030b7c	
+01030c3c	
+01030edc	
+01030eec	
+010312b0	
+010312dc	
+010313ac	deff_022
+010314b8	deff_016_tournament_game
+010316a4	deff_018_bump_n_win
+010318bc	deff_035_qualified
+010319f4	
+01031a1c	
+01031b14	deff_036_place
+01031fac	
+01032034	deff_037_winner
+010320d4	deff_034_not_qualified
+01032350	deff_009
+01032414	
+010324c4	deff_004_50v_20v_disabled
+010325e4	deff_005
+01032b30	
+01032f3c	
+01033014	deff_003_technician_alert
+01033704	deff_002_use_to_adjust_volume
+01033810	
+01033974	
+01034624	
+01034b08	
+01034b34	
+01034b98	
+01034d30	
+01034e60	
+01035368	
+01035760	
+01035a58	
+01035a60	
+01036a6c	
+01036fb8	
+0103752c	
+01037534	
+0103841c	
+01038628	
+01038660	
+010386a0	
+01038ee8	
+01038f08	
+01038f38	
+01039074	
+010390fc	
+01039198	
+0103919c	
+010391e8	
+01039240	
+0103932c	
+01039be0	
+01039c2c	
+01039c64	
+01039cbc	
+0103a0b4	
+0103a15c	
+0103a1bc	
+0103a5a0	
+0103a610	
+0103a670	
+0103aaac	
+0103ab60	
+0103acc0	leff_008
+0103ad20	
+0103addc	
+0103b174	
+0103b378	
+0103b3ac	
+0103b5c0	
+0103b604	
+0103bed0	
+0103c1c0	
+0103c498	
+0103c508	
+0103c8ec	
+0103c96c	
+0103c9dc	
+0103d034	
+0103d3d0	leff_004
+0103d418	
+0103d6dc	
+0103d71c	
+0103d764	
+0103d7f4	
+0103dbe0	
+0103dd1c	
+0103ddec	
+0103e120	
+0103e51c	
+0103e534	
+0103e540	
+0103e5d0	
+0103e968	
+0103eb08	
+0103eca8	
+0103ee4c	
+0103efe4	
+0103f080	
+0103f5dc	
+01040028	
+010400ac	
+010401a8	
+01040208	
+01040870	
+010408bc	
+010408ec	
+01040900	
+01040958	
+01041074	
+01041094	
+010410e0	
+01041140	
+01043c38	
+01043f14	
+010444d4	
+01044520	
+0104453c	
+01044588	
+010445a0	

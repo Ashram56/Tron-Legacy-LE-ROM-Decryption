@@ -42,6 +42,7 @@ media and names (it was corrected after the specs were written, see "Known gaps"
 | [AGENTS.md](AGENTS.md) | Reusable guide for agents reverse engineering any Stern SAM ROM: methods, tools, table layouts, and the mistakes made on this one (Tron values as worked examples) |
 | [docs/agent_notes/](docs/agent_notes/) | Condensed notes the agents kept while working: ROM format (memory map, image and sound formats), DMD capture method, IO and lighting, lamp effects/shaker/service capture, rules extraction |
 | [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) | Tron Pro 1.74 vs LE 1.74: switch, coil, lamp and aux differences, rule and adjustment differences, Pro table addresses (`io/pro_vs_le_io_map.csv`, `io/le_vs_pro_io.csv`) |
+| [rom_data/pro/](rom_data/pro/README.md) | Tron Pro 1.74 coil data (descriptors, every coil call, LE pairing, emulator on-times) and the Pro decompile `code/tron_pro_decompiled.c` |
 
 ### Paths inside the documents
 

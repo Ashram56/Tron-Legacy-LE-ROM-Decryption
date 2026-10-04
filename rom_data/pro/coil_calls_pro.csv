@@ -1,0 +1,211 @@
+call_site,kind,caller_fn,caller_name,api,api_addr,coil,group,group_coils,group_source,leff_ids,ms,pattern,pattern_bits,on_ms,off_ms,strength,min_setting,start_fn,end_fn,sync,waits,unresolved_args,decompile,tag
+0x3f0,bl,0x3cc,FUN_000003cc,coil_drive_pulse,0x21f0,,,,,,64,,,,,,,,0x404,1,0,coil arg,"FUN_000021f0(*param_1,0x40,0,0x404,param_1,1);",code
+0x21b0,bl,0x2188,FUN_00002188,coil_queue_pulse,0x20e8,,,,,,,,,,,,,,,,0,coil ms start_fn end_fn arg sync,"FUN_000020e8(param_1,param_2,param_3,param_4,param_5,param_6);",code
+0x2300,bl,0x22d8,FUN_000022d8,coil_drive_pulse,0x21f0,,,,,,,,,,,,,,,,0,coil ms start_fn end_fn arg sync,"FUN_000021f0(param_1,param_2,param_3,param_4,param_5,param_6);",code
+0x2444,bl,0x2408,FUN_00002408,coil_drive_pattern,0x2340,,,,,,,,,,,,,,,,0,coil ms pattern bits start_fn end_fn arg sync,"FUN_00002340(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);",code
+0x25a4,bl,0x255c,FUN_0000255c,coil_drive_onoff,0x2484,,,,,,,,,,,,,,,,0,coil ms on_ms off_ms start_fn end_fn arg sync,"FUN_00002484(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);",code
+0x2754,bl,0x26d0,FUN_000026d0,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(param_1,*(short *)((int)puVar1 + 0x12),0,0,0,1);",code
+0x2c58,bl,0x2b88,FUN_00002b88,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(iVar1 + 0x23),*(short *)((int)pvVar3 + 0x12),0,0,0,1);",code
+0x3178,bl,0x30b4,FUN_000030b4,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(iVar3 + 0x1b),*(short *)((int)pvVar2 + 0x12),0,0,0,1);",code
+0x3678,bl,0x35b0,FUN_000035b0,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(iVar3 + 0x17),*(short *)((int)pvVar2 + 0x12),0,0,0,1);",code
+0x3abc,bl,0x3a54,FUN_00003a54,coil_drive_pulse,0x21f0,,,,,,,,,,,,,,,1,0,coil ms,"FUN_000021f0(uVar2 & 0xff,uVar3 & 0xffff,0,0,0,1);",code
+0x3b98,bl,0x3a54,FUN_00003a54,coil_drive_pattern,0x2340,,,,,,,,,,,,,0x1,0x1,1,0,coil ms pattern bits,"FUN_00002340(uVar3 & 0xff,uVar4 & 0xffff,uVar2,uVar5 & 0xff,0,0,0,1);",code
+0x3c20,bl,0x3a54,FUN_00003a54,coil_drive_onoff,0x2484,,,,,,,,,,,,,,,1,0,coil ms on_ms off_ms start_fn end_fn arg,"FUN_00002484(uVar2 & 0xff,uVar3 & 0xffff,uVar4 & 0xffff,uVar5 & 0xffff,0,0,0,1);",code
+0x3c58,bl,0x3a54,FUN_00003a54,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(uVar2 & 0xff);,code
+0x3ca4,bl,0x3a54,FUN_00003a54,coil_on,0x265c,,,,,,,,,,,,,,,,0,coil,FUN_0000265c(uVar2 & 0xff);,code
+0x5f80,bl,0x5e98,FUN_00005e98,coil_pulse_stop,0x6048,,,,,,,,,,,,,,,,0,coil,FUN_00006048(*(undefined1 *)(puVar9 + 1));,code
+0x5fd8,bl,0x5f98,coil_pulse,coil_drive_pulse,0x21f0,,,,,,,,,,,,,,,0,0,coil ms,"FUN_000021f0(coil,time,0,0,0,0);",code
+0x6038,bl,0x5fe8,coil_pulse_fn,coil_drive_pattern,0x2340,,,,,,,,32,,,,,,,0,0,coil ms pattern,"FUN_00002340(coil,time,p3,0x20,0,0,0,0);",code
+0x6074,bl,0x6048,FUN_00006048,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(param_1);,code
+0x61a0,bl,0x615c,FUN_0000615c,coil_pulse,0x5f98,,,,,,,,,,,,,,,0,0,coil ms,"coil_pulse(*pbVar3,param_2);",code
+0x6218,bl,0x61bc,FUN_000061bc,coil_pulse_fn,0x5fe8,,,,,,,,,,,,,,,0,0,coil ms pattern,"coil_pulse_fn(*pbVar3,param_2,param_3);",code
+0x6278,bl,0x623c,FUN_0000623c,coil_pulse_stop,0x6048,,,,,,,,,,,,,,,,0,coil,FUN_00006048(*pcVar3);,code
+0x68dc,bl,0x681c,FUN_0000681c,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(iVar2 + 0x2a),*(short *)((int)pvVar1 + 0x12),0,0,0,1);",code
+0x7ff4,bl,0x7f68,FUN_00007f68,coilgroup_stop,0x6234,,,,,,,,,,,,,,,,0,group,FUN_00006234(*(short *)(&DAT_040c76b8 + uVar5 * 0xc));,code
+0x9ec0,bl,0x9e20,FUN_00009e20,coil_drive_pulse,0x21f0,,,,,,,,,,,,,,,,0,coil ms start_fn end_fn arg sync,"FUN_000021f0((&UNK_040c740e)[iVar4],*(undefined2 *)(&UNK_040c740a + iVar4),0,0,0,1
+                              );",code
+0xfb00,bl,0xfa00,FUN_0000fa00,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4((&DAT_040d8fcc)[iVar1]);,code
+0xfb08,bl,0xfa00,FUN_0000fa00,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4((&DAT_040d8fcd)[iVar1]);,code
+0x197b4,bl,0x19724,FUN_00019724,coil_drive_pulse,0x21f0,,,,,,64,,,,,,,,,1,0,coil start_fn end_fn arg,"FUN_000021f0(DAT_0002fd54,0x40,0,0,0,1);",code
+0x1d6b4,bl,0x1d5a0,FUN_0001d5a0,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,,code
+0x1d6bc,bl,0x1d5a0,FUN_0001d5a0,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,,code
+0x1d6dc,bl,0x1d5a0,FUN_0001d5a0,coil_drive_pulse,0x21f0,,,,,,1024,,,,,,,,,1,0,coil start_fn end_fn arg,,code
+0x1d770,bl,0x1d5a0,FUN_0001d5a0,coil_drive_pulse,0x21f0,,,,,,360,,,,,,,,,1,0,coil start_fn end_fn arg,,code
+0x1d838,bl,0x1d788,FUN_0001d788,coil_drive_pulse_wait,0x22d8,,,,,,360,,,,,,,,,1,1,coil,"FUN_000022d8(*(undefined1 *)(puVar2 + 2),0x168,0,0,0,1);",code
+0x1d884,bl,0x1d788,FUN_0001d788,coil_drive_pulse_wait,0x22d8,,,,,,360,,,,,,,,,1,1,coil,"FUN_000022d8(*(undefined1 *)((int)puVar2 + 10),0x168,0,0,0,1);",code
+0x1d8d0,bl,0x1d788,FUN_0001d788,coil_drive_pulse_wait,0x22d8,,,,,,1024,,,,,,,,,1,1,coil,"FUN_000022d8(*(undefined1 *)((int)puVar2 + 9),0x400,0,0,0,1);",code
+0x1001530,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,,,,,,,,,,,,,,,0,0,coil ms,"coil_pulse(param_1,param_2);",code
+0x100153c,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,25,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x19,0x30);",code
+0x1001548,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,23,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x17,0x30);",code
+0x100155c,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1001568,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,22,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x16,0x30);",code
+0x1001574,bl,0x100152c,FUN_0100152c,coil_pulse,0x5f98,19,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x13,0x30);",code
+0x1001dc8,bl,0x1001d88,deff_071_terminate_clu,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1002024,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1002030,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,22,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x16,0x30);",code
+0x1002044,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1002050,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,19,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x13,0x30);",code
+0x1002064,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1002070,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,23,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x17,0x30);",code
+0x1002084,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1002090,bl,0x1002014,FUN_01002014,coil_pulse,0x5f98,25,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x19,0x30);",code
+0x10023f8,bl,0x10023c4,deff_073_clu_award,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x10033c4,bl,0x1003394,deff138_way_combo,shaker_run,0x10203ac,8,,,,,384,,,,,2,3,,,,0,,"FUN_010203ac(2,3);",code
+0x10035dc,bl,0x100359c,leff_161,coilgroup_pulse_fn,0x61bc,,9,17 18,leff table +8 (leff_current_info 0x8d90): leff 149 -> group 9,149,200,,,,,,,,,0,0,pattern,"FUN_000061bc(uVar3,200,*puVar1);",code
+0x1003650,bl,0x100359c,leff_161,shaker_run,0x10203ac,8,,,,149,384,,,,,2,3,,,,0,,,code
+0x1003934,bl,0x1003910,task_a8_disc_motor_run,coil_on,0x265c,30,,,,,,,,,,,,,,,0,,FUN_0000265c(0x1e);,code
+0x1003964,bl,0x1003910,task_a8_disc_motor_run,coil_drive_pulse_wait,0x22d8,5,,,,,,,,,,,,,,,1,ms start_fn end_fn arg sync,"FUN_000022d8(5,(uint)bVar1 * 0x3e80000 >> 0x10,0,0,0,0);",code
+0x1003974,bl,0x1003910,task_a8_disc_motor_run,coil_on,0x265c,5,,,,,,,,,,,,,,,0,,FUN_0000265c(5);,code
+0x10039a4,bl,0x1003980,FUN_01003980,coil_off,0x25e4,3,,,,,,,,,,,,,,,0,,FUN_000025e4(3);,code
+0x10039b0,bl,0x1003980,FUN_01003980,coil_on,0x265c,3,,,,,,,,,,,,,,,0,,FUN_0000265c(3);,code
+0x1003a1c,bl,0x10039f8,disc_motor_stop,coil_off,0x25e4,5,,,,,,,,,,,,,,,0,,,code
+0x1003a24,bl,0x10039f8,disc_motor_stop,coil_off,0x25e4,30,,,,,,,,,,,,,,,0,,,code
+0x1003a30,b (tail call),0x10039f8,disc_motor_stop,coil_off,0x25e4,3,,,,,,,,,,,,,,,0,,,code
+0x1003aa0,bl,0x1003a5c,FUN_01003a5c,coil_pulse,0x5f98,,,,,65,64,,,,,,,,,0,0,coil,"coil_pulse(bVar2,0x40);",code
+0x1004d84,bl,0x1004d4c,FUN_01004d4c,coil_pulse,0x5f98,19,,,,43,32,,,,,,,,,0,0,,"coil_pulse(0x13,0x20);",code
+0x1004d9c,bl,0x1004d4c,FUN_01004d4c,coil_pulse_fn,0x5fe8,22,,,,43,100,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x16,100,*piVar1);",code
+0x1004e00,bl,0x1004dd0,deff_046_disc,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1005044,bl,0x1005028,FUN_01005028,coil_pulse_fn,0x5fe8,26,,,,,250,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1a,0xfa,*(int *)(&DAT_040bb894 + *param_1 * 4));",code
+0x1005058,bl,0x1005028,FUN_01005028,coil_pulse_fn,0x5fe8,27,,,,,250,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1b,0xfa,*(int *)(&DAT_040bb894 + *param_1 * 4));",code
+0x1005098,bl,0x100507c,FUN_0100507c,coil_pulse_fn,0x5fe8,31,,,,,250,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1f,0xfa,*(int *)(&DAT_040bb894 + *param_1 * 4));",code
+0x10050ac,bl,0x100507c,FUN_0100507c,coil_pulse_fn,0x5fe8,32,,,,,250,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x20,0xfa,*(int *)(&DAT_040bb894 + *param_1 * 4));",code
+0x10050fc,bl,0x10050d0,FUN_010050d0,coil_pulse,0x5f98,23,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x17,0x30);",code
+0x1005108,bl,0x10050d0,FUN_010050d0,coil_pulse,0x5f98,19,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x13,0x30);",code
+0x100512c,bl,0x10050d0,FUN_010050d0,coil_pulse,0x5f98,28,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x1c,0x30);",code
+0x1005150,bl,0x10050d0,FUN_010050d0,coil_pulse,0x5f98,25,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x19,0x30);",code
+0x100515c,bl,0x10050d0,FUN_010050d0,coil_pulse,0x5f98,22,,,,,48,,,,,,,,,0,0,,"coil_pulse(0x16,0x30);",code
+0x1005648,bl,0x1005618,FUN_01005618,coilgroup_pulse,0x614c,,22,26 27,leff table +8 (leff_current_info 0x8d90): leff 46 -> group 22,46,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x1005adc,bl,0x1005a40,FUN_01005a40,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x1005ca4,bl,0x1005a40,FUN_01005a40,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x1005d24,bl,0x1005a40,FUN_01005a40,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x1005ef4,bl,0x1005a40,FUN_01005a40,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x1005f80,bl,0x1005a40,FUN_01005a40,shaker_run,0x10203ac,8,,,,,1024,,,,,3,1,,,,0,,,code
+0x10060d4,bl,0x1005a40,FUN_01005a40,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x10062b4,bl,0x10062a4,leff_051,coil_pulse,0x5f98,26,,,,50,32,,,,,,,,,0,0,,,code
+0x10062c0,bl,0x10062a4,leff_051,coil_pulse,0x5f98,27,,,,50,32,,,,,,,,,0,0,,,code
+0x1006668,bl,0x1006638,FUN_01006638,coilgroup_pulse,0x614c,,23,26 27,leff table +8 (leff_current_info 0x8d90): leff 53 -> group 23,53,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x10066c4,bl,0x1006638,FUN_01006638,shaker_run,0x10203ac,8,,,,53,384,,,,,2,2,,,,0,,,code
+0x1007534,b (tail call),0x10074cc,FUN_010074cc,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,,code
+0x1007638,bl,0x1007614,FUN_01007614,coil_drive_pulse,0x21f0,,,,,,128,,,,,,,,0x100764c,1,0,coil arg,"FUN_000021f0(*param_1,0x80,0,&LAB_0100764c,param_1,1);",code
+0x1008514,bl,0x1008468,FUN_01008468,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x100871c,bl,0x1008670,FUN_01008670,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x1008930,bl,0x1008878,FUN_01008878,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x1009200,bl,0x10091bc,FUN_010091bc,shaker_run,0x10203ac,8,,,,,384,,,,,2,3,,,,0,,"FUN_010203ac(2,3);",code
+0x100942c,bl,0x10093e8,FUN_010093e8,shaker_run,0x10203ac,8,,,,,384,,,,,2,3,,,,0,,"FUN_010203ac(2,3);",code
+0x100e388,bl,0x100e354,FUN_0100e354,coil_pulse,0x5f98,,,,,,64,,,,,,,,,0,0,coil,"coil_pulse(coil,0x40);",code
+0x100f334,bl,0x100f2e0,deff_076_gem_intro,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x100f5c0,bl,0x100f580,deff_078_gem_award,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x100f7d8,bl,0x100f730,FUN_0100f730,coil_pulse,0x5f98,19,,,,73,18,,,,,,,,,0,0,,"coil_pulse(0x13,0x12);",code
+0x1010740,bl,0x1010708,FUN_01010708,coil_drive_pulse_wait,0x22d8,,,,,,32,,,,,,,,,1,1,coil,"FUN_000022d8(uVar1,0x20,0,0,0,1);",code
+0x10107d0,bl,0x1010790,FUN_01010790,coil_pulse_fn,0x5fe8,,,,,,1000,,,,,,,,,0,0,coil pattern,"coil_pulse_fn(param_4,1000,*(int *)(&DAT_0002fde4 + (uint)*pbVar1 * 4));",code
+0x1010834,bl,0x10107ec,FUN_010107ec,coilgroup_pulse_fn,0x61bc,,,,,,1000,,,,,,,,,0,0,group pattern,"FUN_000061bc(param_1,1000,*(undefined4 *)(&DAT_0002fde4 + (uint)*pbVar1 * 4));",code
+0x1010a1c,bl,0x10109c8,FUN_010109c8,coil_pulse,0x5f98,,,,,,64,,,,,,,,,0,0,coil,"coil_pulse(coil,0x40);",code
+0x1013e48,bl,0x1013bb8,deff_085_light_cycle,coil_pulse,0x5f98,22,,,,,48,,,,,,,,,0,0,,,code
+0x1013e54,bl,0x1013bb8,deff_085_light_cycle,coil_pulse,0x5f98,25,,,,,48,,,,,,,,,0,0,,,code
+0x1013e74,bl,0x1013bb8,deff_085_light_cycle,coil_pulse,0x5f98,19,,,,,48,,,,,,,,,0,0,,,code
+0x1013e80,bl,0x1013bb8,deff_085_light_cycle,coil_pulse,0x5f98,23,,,,,48,,,,,,,,,0,0,,,code
+0x1013eec,bl,0x1013ea4,FUN_01013ea4,coil_pulse_fn,0x5fe8,28,,,,,750,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1c,0x2ee,*piVar1);",code
+0x1013f0c,bl,0x1013ea4,FUN_01013ea4,coil_pulse,0x5f98,28,,,,,64,,,,,,,,,0,0,,"coil_pulse(0x1c,0x40);",code
+0x1014720,bl,0x10146f0,FUN_010146f0,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x10148f0,bl,0x10148d0,FUN_010148d0,coil_pulse_fn,0x5fe8,22,,,,84,50,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x16,0x32,iVar2);",code
+0x1014900,bl,0x10148d0,FUN_010148d0,coil_pulse_fn,0x5fe8,23,,,,84,50,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x17,0x32,iVar2);",code
+0x101492c,bl,0x10148d0,FUN_010148d0,coil_pulse_fn,0x5fe8,25,,,,84,50,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x19,0x32,iVar2);",code
+0x101493c,bl,0x10148d0,FUN_010148d0,coil_pulse_fn,0x5fe8,19,,,,84,50,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x13,0x32,iVar2);",code
+0x1014964,bl,0x10148d0,FUN_010148d0,coil_pulse_fn,0x5fe8,28,,,,84,50,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1c,0x32,*piVar1);",code
+0x101498c,bl,0x10148d0,FUN_010148d0,coil_pulse,0x5f98,22,,,,84,48,,,,,,,,,0,0,,"coil_pulse(0x16,0x30);",code
+0x1014998,bl,0x10148d0,FUN_010148d0,coil_pulse,0x5f98,25,,,,84,48,,,,,,,,,0,0,,"coil_pulse(0x19,0x30);",code
+0x10149b8,bl,0x10148d0,FUN_010148d0,coil_pulse,0x5f98,19,,,,84,48,,,,,,,,,0,0,,"coil_pulse(0x13,0x30);",code
+0x10149c4,bl,0x10148d0,FUN_010148d0,coil_pulse,0x5f98,23,,,,84,48,,,,,,,,,0,0,,"coil_pulse(0x17,0x30);",code
+0x1014a30,bl,0x10148d0,FUN_010148d0,shaker_run,0x10203ac,8,,,,84,384,,,,,2,2,,,,0,,,code
+0x1014ba8,bl,0x1014b98,FUN_01014b98,coil_pulse,0x5f98,22,,,,85,48,,,,,,,,,0,0,,,code
+0x1014bb4,bl,0x1014b98,FUN_01014b98,coil_pulse,0x5f98,23,,,,85,48,,,,,,,,,0,0,,,code
+0x1014bc8,bl,0x1014b98,FUN_01014b98,coil_pulse,0x5f98,25,,,,85,48,,,,,,,,,0,0,,,code
+0x1014bd4,bl,0x1014b98,FUN_01014b98,coil_pulse,0x5f98,19,,,,85,48,,,,,,,,,0,0,,,code
+0x1014be8,bl,0x1014b98,FUN_01014b98,coil_pulse,0x5f98,28,,,,85,48,,,,,,,,,0,0,,,code
+0x1014c4c,bl,0x1014c10,deff_089_double,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1014de8,bl,0x1014dd8,FUN_01014dd8,coil_pulse,0x5f98,22,,,,86,48,,,,,,,,,0,0,,,code
+0x1014df4,bl,0x1014dd8,FUN_01014dd8,coil_pulse,0x5f98,23,,,,86,48,,,,,,,,,0,0,,,code
+0x1014e08,bl,0x1014dd8,FUN_01014dd8,coil_pulse,0x5f98,25,,,,86,48,,,,,,,,,0,0,,,code
+0x1014e14,bl,0x1014dd8,FUN_01014dd8,coil_pulse,0x5f98,19,,,,86,48,,,,,,,,,0,0,,,code
+0x1014e28,bl,0x1014dd8,FUN_01014dd8,coil_pulse,0x5f98,28,,,,86,48,,,,,,,,,0,0,,,code
+0x1015b68,bl,0x1015ad0,FUN_01015ad0,coil_queue_pulse_wait,0x2188,1,,,,,64,,,,,,,,,1,1,,"FUN_00002188(1,0x40,0,0,0,1);",code
+0x1015be4,bl,0x1015b8c,FUN_01015b8c,coil_queue_pulse_wait,0x2188,2,,,,,64,,,,,,,0x1015b7c,,1,1,,"FUN_00002188(2,0x40,&LAB_01015b7c,0,uVar1,1);",code
+0x1015e38,bl,0x1015cdc,FUN_01015cdc,coil_drive_onoff,0x2484,4,,,,,64,,,1,1,,,,,1,0,,"FUN_00002484(4,0x40,1,1,0,0,0,1);",code
+0x1015e6c,bl,0x1015e54,leff_035,coilgroup_pulse,0x614c,18,5,18,leff table +8 (leff_current_info 0x8d90): leff 35 -> group 5,35,48,,,,,,,,,0,0,,"coilgroup_pulse(group,0x30);",code
+0x1015ea8,bl,0x1015e84,FUN_01015e84,coilgroup_pulse_fn,0x61bc,18,5,18,leff table +8 (leff_current_info 0x8d90): leff 36 -> group 5,36,100,,,,,,,,,0,0,pattern,"FUN_000061bc(uVar2,100,*puVar1);",code
+0x1016b0c,b (tail call),0x1016ae8,FUN_01016ae8,coil_pulse,0x5f98,,,,,,32,,,,,,,,,0,0,coil,,code
+0x10179c8,bl,0x101771c,tubeshow_020,coil_pulse,0x5f98,22,,,,,48,,,,,,,,,0,0,,,code
+0x10179d4,bl,0x101771c,tubeshow_020,coil_pulse,0x5f98,25,,,,,48,,,,,,,,,0,0,,,code
+0x10179f4,bl,0x101771c,tubeshow_020,coil_pulse,0x5f98,19,,,,,48,,,,,,,,,0,0,,,code
+0x1017a00,bl,0x101771c,tubeshow_020,coil_pulse,0x5f98,23,,,,,48,,,,,,,,,0,0,,,code
+0x1017a4c,bl,0x1017a24,FUN_01017a24,coil_pulse_fn,0x5fe8,28,,,,,750,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x1c,0x2ee,*piVar1);",code
+0x1018030,bl,0x1017fb8,FUN_01017fb8,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,,code
+0x1018250,bl,0x101821c,FUN_0101821c,shaker_run,0x10203ac,8,,,,,1024,,,,,3,1,,,,0,,,code
+0x1018608,bl,0x101821c,FUN_0101821c,shaker_run,0x10203ac,8,,,,,200,,,,,1,3,,,,0,,,code
+0x1018710,bl,0x1018700,leff_070,coil_pulse,0x5f98,29,,,,59,24,,,,,,,,,0,0,,"coil_pulse(0x1d,0x18);",code
+0x1018774,bl,0x1018734,deff_067_quorra_multiball,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x101a2d0,bl,0x101a29c,leff_101,coilgroup_pulse_fn,0x61bc,29,6,29,leff table +8 (leff_current_info 0x8d90): leff 90 -> group 6,90,100,,,,,,,,,0,0,pattern,"FUN_000061bc(uVar2,100,*puVar1);",code
+0x101a300,bl,0x101a2f0,leff_104,coil_pulse,0x5f98,29,,,,93,24,,,,,,,,,0,0,,"coil_pulse(0x1d,0x18);",code
+0x101a314,bl,0x101a2f0,leff_104,coil_pulse,0x5f98,26,,,,93,24,,,,,,,,,0,0,,"coil_pulse(0x1a,0x18);",code
+0x101a328,bl,0x101a2f0,leff_104,coil_pulse,0x5f98,27,,,,93,24,,,,,,,,,0,0,,"coil_pulse(0x1b,0x18);",code
+0x101a388,bl,0x101a34c,deff_109_disc,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x101a680,bl,0x101a61c,leff_105,coil_pulse,0x5f98,,,,,94,48,,,,,,,,,0,0,coil,"coil_pulse(coil,0x30);",code
+0x101a7cc,bl,0x101a79c,FUN_0101a79c,coilgroup_pulse,0x614c,,16,26 27,leff table +8 (leff_current_info 0x8d90): leff 96 -> group 16,96,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x101ad28,bl,0x101ad10,FUN_0101ad10,coil_pulse,0x5f98,26,,,,,24,,,,,,,,,0,0,,"coil_pulse(0x1a,0x18);",code
+0x101ad3c,bl,0x101ad10,FUN_0101ad10,coil_pulse,0x5f98,27,,,,,24,,,,,,,,,0,0,,"coil_pulse(0x1b,0x18);",code
+0x101ec90,bl,0x101ec54,leff_057_eol_lit_flashers,coil_pulse_fn,0x5fe8,17,,,,122,200,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x11,200,*piVar1);",code
+0x101eca4,bl,0x101ec54,leff_057_eol_lit_flashers,coil_pulse_fn,0x5fe8,18,,,,122,200,,,,,,,,,0,0,pattern,"coil_pulse_fn(0x12,200,*piVar1);",code
+0x101ed20,bl,0x101ece0,FUN_0101ece0,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,"FUN_010203ac(3,2);",code
+0x101f368,bl,0x101f338,deff_115,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,"FUN_010203ac(3,2);",code
+0x101f7d8,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101f84c,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101f8c0,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fa54,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fac8,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fb3c,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fbb0,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fc24,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fc98,bl,0x101f660,FUN_0101f660,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,,code
+0x101fd20,bl,0x101fce0,deff_125_sea_of,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,"FUN_010203ac(3,2);",code
+0x101ff10,bl,0x101fecc,FUN_0101fecc,shaker_run,0x10203ac,8,,,,,1024,,,,,3,2,,,,0,,"FUN_010203ac(3,2);",code
+0x1020390,bl,0x1020318,FUN_01020318,coil_drive_pulse,0x21f0,8,,,,,,,,,,,,,,1,0,ms,"FUN_000021f0(8,*(undefined2 *)(&DAT_040bc8e0 + param_1 * 4),0,0,0,1);",code
+0x1021640,bl,0x102162c,leff_033,coilgroup_pulse,0x614c,26,3,26,leff table +8 (leff_current_info 0x8d90): leff 33 -> group 3,33,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x10219a0,bl,0x102198c,leff_034,coilgroup_pulse,0x614c,19,4,19,leff table +8 (leff_current_info 0x8d90): leff 34 -> group 4,34,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x1022500,bl,0x10224f0,leff_075,coil_pulse,0x5f98,26,,,,64,24,,,,,,,,,0,0,,"coil_pulse(0x1a,0x18);",code
+0x1022514,bl,0x10224f0,leff_075,coil_pulse,0x5f98,27,,,,64,24,,,,,,,,,0,0,,"coil_pulse(0x1b,0x18);",code
+0x1027138,bl,0x1027108,FUN_01027108,coilgroup_pulse,0x614c,18,13,18,leff table +8 (leff_current_info 0x8d90): leff 152 -> group 13,152,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x1027194,bl,0x1027154,deff_140_portal_intro,shaker_run,0x10203ac,8,,,,,1024,,,,,3,1,,,,0,,"FUN_010203ac(3,1);",code
+0x10274f8,bl,0x1027498,FUN_01027498,coil_pulse,0x5f98,18,,,,,48,,,,,,,,,0,0,,,code
+0x10279f4,bl,0x10279c4,FUN_010279c4,coilgroup_pulse,0x614c,,14,26 27,leff table +8 (leff_current_info 0x8d90): leff 155 -> group 14,155,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x1027a54,bl,0x1027a10,deff_142_portal_award,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1027be4,bl,0x1027a10,deff_142_portal_award,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x1027c64,bl,0x1027c24,deff_143_portal_super_jackpot,shaker_run,0x10203ac,8,,,,,1024,,,,,3,1,,,,0,,"FUN_010203ac(3,1);",code
+0x1027e30,bl,0x1027df8,FUN_01027df8,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x1027eac,bl,0x1027e70,deff_054_disc,shaker_run,0x10203ac,8,,,,,1024,,,,,3,1,,,,0,,"FUN_010203ac(3,1);",code
+0x1027fb8,bl,0x1027e70,deff_054_disc,coil_pulse,0x5f98,,,,,,48,,,,,,,,,0,0,coil,,code
+0x1028338,bl,0x1028318,task_cc_zen_flasher,coil_pulse,0x5f98,17,,,,,18,,,,,,,,,0,0,,"coil_pulse(0x11,0x12);",code
+0x1028654,bl,0x1028630,FUN_01028630,coilgroup_pulse_fn,0x61bc,,8,20 21 17,leff table +8 (leff_current_info 0x8d90): leff 106 -> group 8,106,100,,,,,,,,,0,0,pattern,"FUN_000061bc(uVar2,100,*puVar1);",code
+0x1028688,bl,0x1028670,leff_118,coilgroup_pulse,0x614c,,8,20 21 17,leff table +8 (leff_current_info 0x8d90): leff 107 -> group 8,107,64,,,,,,,,,0,0,,"coilgroup_pulse(group,0x40);",code
+0x1028e84,b (tail call),0x1028d68,zfs_score_hit,shaker_run,0x10203ac,8,,,,,200,,,,,1,3,,,,0,,,code
+0x102901c,bl,0x1029008,leff_126,coilgroup_pulse,0x614c,28,12,28,leff table +8 (leff_current_info 0x8d90): leff 115 -> group 12,115,32,,,,,,,,,0,0,,"coilgroup_pulse(group,0x20);",code
+0x1029340,bl,0x10292f8,leff_125_zfs_chase,coilgroup_pulse_fn,0x61bc,28,11,28,leff table +8 (leff_current_info 0x8d90): leff 114 -> group 11,114,150,,,,,,,,,0,0,pattern,"FUN_000061bc(uVar3,0x96,*(undefined4 *)(&DAT_040bfe58 + iVar1));",code
+0x1029384,bl,0x102936c,FUN_0102936c,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x10295e4,bl,0x10295ac,deff_094_zfs_intro,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1029d48,bl,0x1029d30,FUN_01029d30,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x1029ef0,bl,0x1029eb4,deff_098_zfs_time_extended,shaker_run,0x10203ac,8,,,,,384,,,,,2,2,,,,0,,"FUN_010203ac(2,2);",code
+0x102a300,bl,0x102a2f0,leff_130,coil_pulse,0x5f98,28,,,,119,32,,,,,,,,,0,0,,,code
+0x102ac44,bl,0x102ac24,FUN_0102ac24,coilgroup_pulse,0x614c,,,,,,32,,,,,,,,,0,0,group,"coilgroup_pulse(group,0x20);",code
+0x103a150,bl,0x103a104,FUN_0103a104,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(DAT_000300b0 + 0x30),
+                 *(undefined2 *)(*(int *)(DAT_000300b0 + 0x34) + 0x10),0,0,0,1);",code
+0x103a520,bl,0x103a1bc,FUN_0103a1bc,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(uVar4);,code
+0x103a594,bl,0x103a548,FUN_0103a548,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(DAT_000300b0 + 0x30),
+                 *(undefined2 *)(*(int *)(DAT_000300b0 + 0x34) + 0x10),0,0,0,1);",code
+0x103aa60,bl,0x103a670,FUN_0103a670,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(uVar4);,code
+0x103ab28,bl,0x103aaac,FUN_0103aaac,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(DAT_0003239a);,code
+0x103b114,bl,0x103addc,FUN_0103addc,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(DAT_0003239a);,code
+0x103c48c,bl,0x103c440,FUN_0103c440,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(DAT_000300b0 + 0x30),
+                 *(undefined2 *)(*(int *)(DAT_000300b0 + 0x34) + 0x10),0,0,0,1);",code
+0x103c86c,bl,0x103c508,FUN_0103c508,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(uVar4);,code
+0x103c8e0,bl,0x103c894,FUN_0103c894,coil_drive_pulse_wait,0x22d8,,,,,,,,,,,,,,,1,1,coil ms start_fn end_fn arg,"FUN_000022d8(*(undefined1 *)(DAT_000300b0 + 0x30),
+                 *(undefined2 *)(*(int *)(DAT_000300b0 + 0x34) + 0x10),0,0,0,1);",code
+0x103cdcc,bl,0x103c9dc,FUN_0103c9dc,coil_off,0x25e4,,,,,,,,,,,,,,,,0,coil,FUN_000025e4(uVar4);,code

@@ -1,0 +1,199 @@
+le_call_site,le_caller,le_api,le_coil,le_group_coils,le_ms,le_pattern,pro_call_site,pro_caller_fn,pro_api,pro_coil,pro_group_coils,pro_ms,pro_pattern,same_timing,same_coil,pairing,tag
+0xa9c,FUN_00000a78,coil_drive_pulse,,,64,,,,,,,,,,,no Pro function match,code
+0x2b88,FUN_00002b60,coil_queue_pulse,,,,,0x21b0,0x2188,coil_queue_pulse,,,,,yes,yes,paired,code
+0x2cd8,FUN_00002cb0,coil_drive_pulse,,,,,0x2300,0x22d8,coil_drive_pulse,,,,,yes,yes,paired,code
+0x2e1c,FUN_00002de0,coil_drive_pattern,,,,,0x2444,0x2408,coil_drive_pattern,,,,,yes,yes,paired,code
+0x2f7c,FUN_00002f34,coil_drive_onoff,,,,,0x25a4,0x255c,coil_drive_onoff,,,,,yes,yes,paired,code
+0x312c,FUN_000030a8,coil_drive_pulse_wait,,,,,0x2754,0x26d0,coil_drive_pulse_wait,,,,,yes,yes,paired,code
+0x3630,FUN_00003560,coil_drive_pulse_wait,,,,,0x2c58,0x2b88,coil_drive_pulse_wait,,,,,yes,yes,paired,code
+0x3b50,FUN_00003a8c,coil_drive_pulse_wait,,,,,0x3178,0x30b4,coil_drive_pulse_wait,,,,,yes,yes,paired,code
+0x4050,FUN_00003f88,coil_drive_pulse_wait,,,,,0x3678,0x35b0,coil_drive_pulse_wait,,,,,yes,yes,paired,code
+0x4494,FUN_0000442c,coil_drive_pulse,,,,,0x3abc,0x3a54,coil_drive_pulse,,,,,yes,yes,paired,code
+0x4570,FUN_0000442c,coil_drive_pattern,,,,,0x3b98,0x3a54,coil_drive_pattern,,,,,yes,yes,paired,code
+0x45f8,FUN_0000442c,coil_drive_onoff,,,,,0x3c20,0x3a54,coil_drive_onoff,,,,,yes,yes,paired,code
+0x4630,FUN_0000442c,coil_off,,,,,0x3c58,0x3a54,coil_off,,,,,yes,yes,paired,code
+0x467c,FUN_0000442c,coil_on,,,,,0x3ca4,0x3a54,coil_on,,,,,yes,yes,paired,code
+0x6958,FUN_00006870,coil_pulse_stop,,,,,0x5f80,0x5e98,coil_pulse_stop,,,,,yes,yes,paired,code
+0x69b0,coil_pulse,coil_drive_pulse,,,,,0x5fd8,0x5f98,coil_drive_pulse,,,,,yes,yes,paired,code
+0x6a10,coil_pulse_fn,coil_drive_pattern,,,,,0x6038,0x5fe8,coil_drive_pattern,,,,,yes,yes,paired,code
+0x6a4c,FUN_00006a20,coil_off,,,,,0x6074,0x6048,coil_off,,,,,yes,yes,paired,code
+0x6b78,FUN_00006b34,coil_pulse,,,,,0x61a0,0x615c,coil_pulse,,,,,yes,yes,paired,code
+0x6bf0,FUN_00006b94,coil_pulse_fn,,,,,0x6218,0x61bc,coil_pulse_fn,,,,,yes,yes,paired,code
+0x6c50,FUN_00006c14,coil_pulse_stop,,,,,0x6278,0x623c,coil_pulse_stop,,,,,yes,yes,paired,code
+0x72b4,FUN_000071f4,coil_drive_pulse_wait,,,,,0x68dc,0x681c,coil_drive_pulse_wait,,,,,yes,yes,paired,code
+0x8a18,FUN_0000898c,coilgroup_stop,,,,,0x7ff4,0x7f68,coilgroup_stop,,,,,yes,yes,paired,code
+0xa8e4,FUN_0000a844,coil_drive_pulse,,,,,0x9ec0,0x9e20,coil_drive_pulse,,,,,yes,yes,paired,code
+0x105a0,FUN_000104a0,coil_off,,,,,0xfb00,0xfa00,coil_off,,,,,yes,yes,paired,code
+0x105a8,FUN_000104a0,coil_off,,,,,0xfb08,0xfa00,coil_off,,,,,yes,yes,paired,code
+0x1b4a8,FUN_0001b418,coil_drive_pulse,,,64,,0x197b4,0x19724,coil_drive_pulse,,,64,,yes,yes,paired,code
+0x23b98,FUN_00023a84,coil_off,,,,,0x1d6b4,0x1d5a0,coil_off,,,,,yes,yes,paired,code
+0x23ba0,FUN_00023a84,coil_off,,,,,0x1d6bc,0x1d5a0,coil_off,,,,,yes,yes,paired,code
+0x23bc0,FUN_00023a84,coil_drive_pulse,,,1024,,0x1d6dc,0x1d5a0,coil_drive_pulse,,,1024,,yes,yes,paired,code
+0x23c54,FUN_00023a84,coil_drive_pulse,,,360,,0x1d770,0x1d5a0,coil_drive_pulse,,,360,,yes,yes,paired,code
+0x23d1c,FUN_00023c6c,coil_drive_pulse_wait,,,360,,0x1d838,0x1d788,coil_drive_pulse_wait,,,360,,yes,yes,paired,code
+0x23d68,FUN_00023c6c,coil_drive_pulse_wait,,,360,,0x1d884,0x1d788,coil_drive_pulse_wait,,,360,,yes,yes,paired,code
+0x23db4,FUN_00023c6c,coil_drive_pulse_wait,,,1024,,0x1d8d0,0x1d788,coil_drive_pulse_wait,,,1024,,yes,yes,paired,code
+0x1001960,FUN_0100195c,coil_pulse,,,,,,,,,,,,,,no Pro function match,code
+0x100196c,FUN_0100195c,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x1001980,FUN_0100195c,coil_pulse,28,,48,,,,,,,,,,,no Pro function match,code
+0x100198c,FUN_0100195c,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x1002320,deff_071_terminate_clu,shaker_run,8,,384,,0x1001dc8,0x1001d88,shaker_run,8,,384,,yes,yes,paired,code
+0x1002584,FUN_01002574,coil_pulse,28,,48,,,,,,,,,,,no Pro function match,code
+0x1002590,FUN_01002574,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x10025a4,FUN_01002574,coil_pulse,28,,48,,,,,,,,,,,no Pro function match,code
+0x10025b0,FUN_01002574,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x1002ab0,deff_073_clu_award,shaker_run,8,,384,,0x10023f8,0x10023c4,shaker_run,8,,384,,yes,yes,paired,code
+0x1003c60,deff138_way_combo,shaker_run,8,,384,,0x10033c4,0x1003394,shaker_run,8,,384,,yes,yes,paired,code
+0x1003e80,leff_161,coilgroup_pulse_fn,,17 18,200,,,0x100359c,,,,,,,,"call count differs (1 LE, 2 Pro)",code
+0x1003ef4,deff139_eol_jackpot,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1005200,leff_057_eol_lit_flashers,coil_pulse_fn,17,,200,,0x101ec90,0x101ec54,coil_pulse_fn,17,,200,,yes,yes,paired,code
+0x1005214,leff_057_eol_lit_flashers,coil_pulse_fn,18,,200,,0x101eca4,0x101ec54,coil_pulse_fn,18,,200,,yes,yes,paired,code
+0x1005690,leff_060_eol_disc_flashers,coil_pulse,31,,32,,,,,,,,,,,no Pro function match,code
+0x10056a0,leff_060_eol_disc_flashers,coil_pulse,32,,32,,,,,,,,,,,no Pro function match,code
+0x1005828,deff_058_eol_jackpot,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1005a90,deff_059_eol_double_jackpot,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1005d90,deff_060_eol_disc_add_a_ball,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x10064e8,task_a8_disc_motor_run,coil_on,30,,,,0x1003934,0x1003910,coil_on,30,,,,yes,yes,paired,code
+0x1006518,task_a8_disc_motor_run,coil_drive_pulse_wait,5,,,,0x1003964,0x1003910,coil_drive_pulse_wait,5,,,,yes,yes,paired,code
+0x1006528,task_a8_disc_motor_run,coil_on,5,,,,0x1003974,0x1003910,coil_on,5,,,,yes,yes,paired,code
+0x1006558,FUN_01006534,coil_off,22,,,,0x10039a4,0x1003980,coil_off,3,,,,yes,no,paired,code
+0x1006564,FUN_01006534,coil_on,22,,,,0x10039b0,0x1003980,coil_on,3,,,,yes,no,paired,code
+0x10065d0,disc_motor_stop,coil_off,5,,,,0x1003a1c,0x10039f8,coil_off,5,,,,yes,yes,paired,code
+0x10065d8,disc_motor_stop,coil_off,30,,,,0x1003a24,0x10039f8,coil_off,30,,,,yes,yes,paired,code
+0x10065e4,disc_motor_stop,coil_off,22,,,,0x1003a30,0x10039f8,coil_off,3,,,,yes,no,paired,code
+0x1006670,leff_076,coil_pulse,,,64,,,,,,,,,,,no Pro function match,code
+0x1007958,leff_043,coil_pulse_fn,26,,100,,,0x1025c18,,,,,,,,"call count differs (2 LE, 0 Pro)",code
+0x1007968,leff_043,coil_pulse_fn,27,,100,,,0x1025c18,,,,,,,,"call count differs (2 LE, 0 Pro)",code
+0x1007a7c,deff_046_disc,shaker_run,8,,384,,0x1004e00,0x1004dd0,shaker_run,8,,384,,yes,yes,paired,code
+0x1007cc0,FUN_01007ca4,coil_pulse_fn,26,,250,,0x1005044,0x1005028,coil_pulse_fn,26,,250,,yes,yes,paired,code
+0x1007cd4,FUN_01007ca4,coil_pulse_fn,27,,250,,0x1005058,0x1005028,coil_pulse_fn,27,,250,,yes,yes,paired,code
+0x1007d14,FUN_01007cf8,coil_pulse_fn,31,,250,,0x1005098,0x100507c,coil_pulse_fn,31,,250,,yes,yes,paired,code
+0x1007d28,FUN_01007cf8,coil_pulse_fn,31,,250,,0x10050ac,0x100507c,coil_pulse_fn,32,,250,,yes,no,paired,code
+0x1007d78,FUN_01007d4c,coil_pulse,19,,48,,,0x10050d0,,,,,,,,"call count differs (3 LE, 5 Pro)",code
+0x1007d9c,FUN_01007d4c,coil_pulse,28,,48,,,0x10050d0,,,,,,,,"call count differs (3 LE, 5 Pro)",code
+0x1007dc0,FUN_01007d4c,coil_pulse,25,,48,,,0x10050d0,,,,,,,,"call count differs (3 LE, 5 Pro)",code
+0x100841c,leff_046,coilgroup_pulse,,26 27,32,,,,,,,,,,,no Pro function match,code
+0x100896c,deff_048_disc_multiball,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1008b34,FUN_01008afc,coil_pulse,,,48,,,,,,,,,,,no Pro function match,code
+0x1008c60,deff_049_disc_multiball,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1008e30,FUN_01008df8,coil_pulse,,,48,,,,,,,,,,,no Pro function match,code
+0x1008f6c,deff_050_super_jackpot,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x10090c0,FUN_01009088,coil_pulse,,,48,,,,,,,,,,,no Pro function match,code
+0x1009350,leff_051,coil_pulse,26,,32,,0x10062b4,0x10062a4,coil_pulse,26,,32,,yes,yes,paired,code
+0x100935c,leff_051,coil_pulse,27,,32,,0x10062c0,0x10062a4,coil_pulse,27,,32,,yes,yes,paired,code
+0x10098b0,leff_054,coilgroup_pulse,,26 27,32,,,,,,,,,,,no Pro function match,code
+0x10099bc,deff_054_disc,shaker_run,8,,384,,,0x1027e70,,,,,,,,"call count differs (1 LE, 2 Pro)",code
+0x100a968,FUN_0100a900,coil_off,,,,,0x1007534,0x10074cc,coil_off,,,,,yes,yes,paired,code
+0x100aa6c,FUN_0100aa48,coil_drive_pulse,,,128,,,,,,,,,,,no Pro function match,code
+0x100b170,FUN_0100b148,shaker_run,8,,200,,,,,,,,,,,no Pro function match,code
+0x100be98,FUN_0100be74,coil_drive_pulse,,,64,,,,,,,,,,,no Pro function match,code
+0x100c784,leff_132,coil_pulse_fn,20,,100,,,,,,,,,,,no Pro function match,code
+0x100c794,leff_132,coil_pulse_fn,21,,100,,,,,,,,,,,no Pro function match,code
+0x100cb60,FUN_0100cb50,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x100cd78,FUN_0100cd68,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x100cfa4,FUN_0100cf94,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x100d8dc,deff_136_shoot_roving_arrow,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x100db38,deff_137_flynn_found,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1012b20,FUN_01012aec,coil_pulse,,,64,,0x100e388,0x100e354,coil_pulse,,,64,,yes,yes,paired,code
+0x1014410,FUN_010143b8,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x10147b4,deff_078_gem_award,shaker_run,8,,384,,0x100f5c0,0x100f580,shaker_run,8,,384,,yes,yes,paired,code
+0x10149cc,leff_084,coil_pulse,19,,18,,,,,,,,,,,no Pro function match,code
+0x1015bd8,FUN_01015ba0,coil_drive_pulse_wait,,,32,,0x1010740,0x1010708,coil_drive_pulse_wait,,,32,,yes,yes,paired,code
+0x1015c68,FUN_01015c28,coil_pulse_fn,,,1000,,0x10107d0,0x1010790,coil_pulse_fn,,,1000,,yes,yes,paired,code
+0x1015ccc,FUN_01015c84,coilgroup_pulse_fn,,,1000,,0x1010834,0x10107ec,coilgroup_pulse_fn,,,1000,,yes,yes,paired,code
+0x1015eb4,FUN_01015e60,coil_pulse,,,64,,0x1010a1c,0x10109c8,coil_pulse,,,64,,yes,yes,paired,code
+0x10194b8,FUN_010194a4,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x10194d8,FUN_010194a4,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x1019544,FUN_010194fc,coil_pulse_fn,28,,750,,0x1013eec,0x1013ea4,coil_pulse_fn,28,,750,,yes,yes,paired,code
+0x1019564,FUN_010194fc,coil_pulse,28,,64,,0x1013f0c,0x1013ea4,coil_pulse,28,,64,,yes,yes,paired,code
+0x1019eac,deff_087_jackpot,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x101a078,leff_095,coil_pulse_fn,19,,50,,,,,,,,,,,no Pro function match,code
+0x101a0a0,leff_095,coil_pulse_fn,25,,50,,,,,,,,,,,no Pro function match,code
+0x101a0c8,leff_095,coil_pulse_fn,28,,50,,,,,,,,,,,no Pro function match,code
+0x101a0f0,leff_095,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x101a110,leff_095,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x101a28c,deff_088_super_jackpot,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x101a404,leff_096,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x101a418,leff_096,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x101a42c,leff_096,coil_pulse,28,,48,,,,,,,,,,,no Pro function match,code
+0x101a604,deff_089_double,shaker_run,8,,384,,0x1014c4c,0x1014c10,shaker_run,8,,384,,yes,yes,paired,code
+0x101a7a0,leff_097,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x101a7b4,leff_097,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x101a7c8,leff_097,coil_pulse,28,,48,,,,,,,,,,,no Pro function match,code
+0x101bc58,FUN_0101bbc0,coil_queue_pulse_wait,1,,64,,0x1015b68,0x1015ad0,coil_queue_pulse_wait,1,,64,,yes,yes,paired,code
+0x101bcd4,FUN_0101bc7c,coil_queue_pulse_wait,2,,64,,0x1015be4,0x1015b8c,coil_queue_pulse_wait,2,,64,,yes,yes,paired,code
+0x101bf2c,FUN_0101bdd0,coil_drive_onoff,4,,64,,0x1015e38,0x1015cdc,coil_drive_onoff,4,,64,,yes,yes,paired,code
+0x101bf60,leff_035,coilgroup_pulse,18,18,48,,0x1015e6c,0x1015e54,coilgroup_pulse,18,18,48,,yes,yes,paired,code
+0x101bf9c,leff_036,coilgroup_pulse_fn,18,18,100,,,,,,,,,,,no Pro function match,code
+0x101cb50,FUN_0101cb2c,coil_pulse,,,32,,0x1016b0c,0x1016ae8,coil_pulse,,,32,,yes,yes,paired,code
+0x101dc44,FUN_0101dc30,coil_pulse,19,,48,,,,,,,,,,,no Pro function match,code
+0x101dc50,FUN_0101dc30,coil_pulse,21,,48,,,,,,,,,,,no Pro function match,code
+0x101dc70,FUN_0101dc30,coil_pulse,25,,48,,,,,,,,,,,no Pro function match,code
+0x101dc7c,FUN_0101dc30,coil_pulse,20,,48,,,,,,,,,,,no Pro function match,code
+0x101dcc8,FUN_0101dca0,coil_pulse_fn,28,,750,,0x1017a4c,0x1017a24,coil_pulse_fn,28,,750,,yes,yes,paired,code
+0x101e35c,deff_068_double,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x101e690,deff_069_double,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x101ec90,deff_066_quorra_multiball,shaker_run,8,,200,,,,,,,,,,,no Pro function match,code
+0x101ed9c,leff_070,coil_pulse,29,,24,,0x1018710,0x1018700,coil_pulse,29,,24,,yes,yes,paired,code
+0x101eef8,deff_067_quorra_multiball,shaker_run,8,,384,,0x1018774,0x1018734,shaker_run,8,,384,,yes,yes,paired,code
+0x1021180,leff_101,coilgroup_pulse_fn,29,29,100,,0x101a2d0,0x101a29c,coilgroup_pulse_fn,29,29,100,,yes,yes,paired,code
+0x10211b0,leff_104,coil_pulse,29,,24,,0x101a300,0x101a2f0,coil_pulse,29,,24,,yes,yes,paired,code
+0x10211c4,leff_104,coil_pulse,26,,24,,0x101a314,0x101a2f0,coil_pulse,26,,24,,yes,yes,paired,code
+0x10211d8,leff_104,coil_pulse,27,,24,,0x101a328,0x101a2f0,coil_pulse,27,,24,,yes,yes,paired,code
+0x1021250,deff_109_disc,shaker_run,8,,384,,0x101a388,0x101a34c,shaker_run,8,,384,,yes,yes,paired,code
+0x1021548,leff_105,coil_pulse,,,48,,0x101a680,0x101a61c,coil_pulse,,,48,,yes,yes,paired,code
+0x1021730,leff_107,coilgroup_pulse,,26 27,32,,,,,,,,,,,no Pro function match,code
+0x1021d60,FUN_01021d48,coil_pulse,26,,24,,0x101ad28,0x101ad10,coil_pulse,26,,24,,yes,yes,paired,code
+0x1021d74,FUN_01021d48,coil_pulse,27,,24,,0x101ad3c,0x101ad10,coil_pulse,27,,24,,yes,yes,paired,code
+0x1026850,leff_134,coil_pulse_fn,17,,200,,,,,,,,,,,no Pro function match,code
+0x1026864,leff_134,coil_pulse_fn,18,,200,,,,,,,,,,,no Pro function match,code
+0x102690c,deff_113_sea_of,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x10270e0,deff_115,shaker_run,8,,1024,,0x101f368,0x101f338,shaker_run,8,,1024,,yes,yes,paired,code
+0x1027608,deff_116,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027730,deff_117,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027854,deff_118,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027a98,deff_119,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027bbc,deff_120,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027ce0,deff_121,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027e04,deff_122,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1027f28,deff_123,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1028050,deff_124,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1028188,deff_125_sea_of,shaker_run,8,,1024,,0x101fd20,0x101fce0,shaker_run,8,,1024,,yes,yes,paired,code
+0x1028418,deff_126_sea_of,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x102899c,FUN_01028924,coil_drive_pulse,8,,,,0x1020390,0x1020318,coil_drive_pulse,8,,,,yes,yes,paired,code
+0x1029da8,leff_033,coilgroup_pulse,26,26,32,,0x1021640,0x102162c,coilgroup_pulse,26,26,32,,yes,yes,paired,code
+0x102a10c,leff_034,coilgroup_pulse,19,19,32,,0x10219a0,0x102198c,coilgroup_pulse,19,19,32,,yes,yes,paired,code
+0x102ac2c,leff_075,coil_pulse,26,,24,,0x1022500,0x10224f0,coil_pulse,26,,24,,yes,yes,paired,code
+0x102ac40,leff_075,coil_pulse,27,,24,,0x1022514,0x10224f0,coil_pulse,27,,24,,yes,yes,paired,code
+0x102faac,leff_164_portal_lit_flasher,coilgroup_pulse,18,18,32,,,,,,,,,,,no Pro function match,code
+0x102fb34,deff_140_portal_intro,shaker_run,8,,1024,,0x1027194,0x1027154,shaker_run,8,,1024,,yes,yes,paired,code
+0x102fe98,FUN_0102fe38,coil_pulse,18,,48,,0x10274f8,0x1027498,coil_pulse,18,,48,,yes,yes,paired,code
+0x103044c,leff_167_portal_super_flashers,coilgroup_pulse,,26 27,32,,,,,,,,,,,no Pro function match,code
+0x1030560,deff_142_portal_award,shaker_run,8,,384,,,0x1027a10,,,,,,,,"call count differs (1 LE, 2 Pro)",code
+0x10306f0,FUN_010306b8,coil_pulse,,,48,,,,,,,,,,,no Pro function match,code
+0x1030820,deff_143_portal_super_jackpot,shaker_run,8,,1024,,0x1027c64,0x1027c24,shaker_run,8,,1024,,yes,yes,paired,code
+0x10309f0,FUN_010309b8,coil_pulse,,,48,,0x1027e30,0x1027df8,coil_pulse,,,48,,yes,yes,paired,code
+0x1030b1c,deff_144_portal_bonus_award,shaker_run,8,,1024,,,,,,,,,,,no Pro function match,code
+0x1030c28,FUN_01030bf0,coil_pulse,,,48,,,,,,,,,,,no Pro function match,code
+0x1031158,task_cc_zen_flasher,coil_pulse,17,,18,,0x1028338,0x1028318,coil_pulse,17,,18,,yes,yes,paired,code
+0x1031474,leff_117_zen,coilgroup_pulse_fn,,20 21 17,100,,,,,,,,,,,no Pro function match,code
+0x10314a8,leff_118,coilgroup_pulse,,20 21 17,64,,0x1028688,0x1028670,coilgroup_pulse,,20 21 17,64,,yes,yes,paired,code
+0x1031ca4,zfs_score_hit,shaker_run,8,,200,,0x1028e84,0x1028d68,shaker_run,8,,200,,yes,yes,paired,code
+0x1031e3c,leff_126,coilgroup_pulse,28,28,32,,0x102901c,0x1029008,coilgroup_pulse,28,28,32,,yes,yes,paired,code
+0x10321fc,leff_125_zfs_chase,coilgroup_pulse_fn,28,28,150,,0x1029340,0x10292f8,coilgroup_pulse_fn,28,28,150,,yes,yes,paired,code
+0x1032240,deff_093_zuse_ready_unused,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1032550,deff_094_zfs_intro,shaker_run,8,,384,,0x10295e4,0x10295ac,shaker_run,8,,384,,yes,yes,paired,code
+0x1032d50,deff_097_zfs_all_targets_value,shaker_run,8,,384,,,,,,,,,,,no Pro function match,code
+0x1032ef8,deff_098_zfs_time_extended,shaker_run,8,,384,,0x1029ef0,0x1029eb4,shaker_run,8,,384,,yes,yes,paired,code
+0x1033318,leff_130,coil_pulse,28,,32,,0x102a300,0x102a2f0,coil_pulse,28,,32,,yes,yes,paired,code
+0x1033dc8,FUN_01033da8,coilgroup_pulse,,,32,,0x102ac44,0x102ac24,coilgroup_pulse,,,32,,yes,yes,paired,code
+0x103eb20,FUN_0103ead4,coil_drive_pulse_wait,,,,,,,,,,,,,,no Pro function match,code
+0x103eef0,FUN_0103eb8c,coil_off,,,,,0x103a520,0x103a1bc,coil_off,,,,,yes,yes,paired,code
+0x103ef64,FUN_0103ef18,coil_drive_pulse_wait,,,,,,,,,,,,,,no Pro function match,code
+0x103f430,FUN_0103f040,coil_off,,,,,0x103aa60,0x103a670,coil_off,,,,,yes,yes,paired,code
+0x103f4f8,FUN_0103f47c,coil_off,,,,,0x103ab28,0x103aaac,coil_off,,,,,yes,yes,paired,code
+0x103fae4,FUN_0103f7ac,coil_off,,,,,0x103b114,0x103addc,coil_off,,,,,yes,yes,paired,code
+0x1040e60,FUN_01040e14,coil_drive_pulse_wait,,,,,,,,,,,,,,no Pro function match,code
+0x1041240,FUN_01040edc,coil_off,,,,,0x103c86c,0x103c508,coil_off,,,,,yes,yes,paired,code
+0x10412b4,FUN_01041268,coil_drive_pulse_wait,,,,,,,,,,,,,,no Pro function match,code
+0x10417a0,FUN_010413b0,coil_off,,,,,0x103cdcc,0x103c9dc,coil_off,,,,,yes,yes,paired,code
