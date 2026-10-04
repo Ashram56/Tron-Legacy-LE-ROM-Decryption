@@ -1,0 +1,1044 @@
+{
+ "facts": [
+  {
+   "id": "sos_poke",
+   "fact": "Reached with pokes on player 1: all 9 item lit bytes = 1 and items 0-3 collected (0x2111694 + 0x10*i, byte 0 lit, byte 1 collected), then VUK. Stages 0-3 are skipped and each pays its one-time (k+1) M skip bonus (deff 115, sound 0x109) - the 3 M and 4 M were still being paid after stage 4 was already complete",
+   "value": null,
+   "address": "0x2111694",
+   "tag": "observed",
+   "evidence": "traces/sos_stages_4_to_8.jsonl t 15.02 - 34.74"
+  },
+  {
+   "id": "sos_stage4",
+   "fact": "Stage 4 QUORRA: mask 0x10000 (left inner loop, sw44 first spin). One shot: 500,000, deff 120",
+   "value": {
+    "mask": "0x10000",
+    "points": 500000,
+    "deff": 120
+   },
+   "address": "0x1025458, 0x102564c",
+   "tag": "observed",
+   "evidence": "t 31.44"
+  },
+  {
+   "id": "sos_stage5",
+   "fact": "Stage 5 DISC: mask 0xfc000 = all six major shots, 600,000 each, deff 121. The disc opto sw41 spots the next needed shot (here the last one, right orbit)",
+   "value": {
+    "mask": "0xfc000",
+    "points": 600000,
+    "deff": 121
+   },
+   "address": "0x1025720, 0x10258f0, 0x1025a0c",
+   "tag": "observed",
+   "evidence": "t 36.61 - 48.08"
+  },
+  {
+   "id": "sos_stage6",
+   "fact": "Stage 6 LIGHT CYCLE: starts with mask 0xc8000 (left ramp, right ramp, right orbit); each made shot ADDS its chained shots from table 0x040d3748 and every shot already made this stage is removed; the stage ends when the mask is empty. In practice all six major shots are needed once. 700,000 each, deff 122",
+   "value": {
+    "start_mask": "0xc8000",
+    "points": 700000,
+    "deff": 122,
+    "chain_table": [
+     {
+      "shot_id": 14,
+      "shot_bit": "0x4000",
+      "adds_when_made": "0x0",
+      "lamp": 14
+     },
+     {
+      "shot_id": 15,
+      "shot_bit": "0x8000",
+      "adds_when_made": "0x14000",
+      "lamp": 11
+     },
+     {
+      "shot_id": 16,
+      "shot_bit": "0x10000",
+      "adds_when_made": "0x60000",
+      "lamp": 62
+     },
+     {
+      "shot_id": 17,
+      "shot_bit": "0x20000",
+      "adds_when_made": "0x0",
+      "lamp": 59
+     },
+     {
+      "shot_id": 18,
+      "shot_bit": "0x40000",
+      "adds_when_made": "0x0",
+      "lamp": 42
+     },
+     {
+      "shot_id": 19,
+      "shot_bit": "0x80000",
+      "adds_when_made": "0x60000",
+      "lamp": 35
+     }
+    ]
+   },
+   "address": "0x1025a74, 0x1025c50, 0x040d3748",
+   "tag": "observed",
+   "evidence": "t 53.17 - 64.59 (46, 34, 37, 39, 44, 43)"
+  },
+  {
+   "id": "sos_stage6_doc",
+   "fact": "sea_of_simulation.md lists stage 6 as 'right orbit, right ramp, left ramp (0xc8000), chained': true for the start mask, but the chain adds right inner loop, left orbit and left inner loop, so 3 shots are not enough (first run of this scenario stalled at mask 0x34000)",
+   "value": null,
+   "address": "0x1025c50",
+   "tag": "observed",
+   "evidence": "contradiction / clarification"
+  },
+  {
+   "id": "sos_stage7",
+   "fact": "Stage 7 RECOGNIZER: mask 0x2000 (shot 13 = recognizer bank, posted by sw49-51 when task 0x7b is not running); 6 counted hits (counter 0x3b680), 800,000 each, deff 123",
+   "value": {
+    "hits": 6,
+    "points": 800000,
+    "deff": 123
+   },
+   "address": "0x1025df8, 0x1025f64",
+   "tag": "observed",
+   "evidence": "t 69.75 - 76.64"
+  },
+  {
+   "id": "sos_stage8",
+   "fact": "Stage 8 TRON: mask 0x3c (T R O N drop targets, shots 2-5), 900,000 each, deff 124",
+   "value": {
+    "mask": "0x3c",
+    "points": 900000,
+    "deff": 124
+   },
+   "address": "0x1026058, 0x1026228",
+   "tag": "observed",
+   "evidence": "t 81.81 - 85.97"
+  },
+  {
+   "id": "sos_complete",
+   "fact": "Completion (0x1026430): game flag 0x36 set, then sos_end 0x1026754 clears flag 0x34 and creates task 0x56 which shows deff 126 'TOTAL' (sound 0x115) via 0x100f7f0 - the same display as a drain. Audit 121. deff 125 'SEA OF SIMULATION COMPLETED' has no deff_start site and no deff rule in 1.74 (unreached; its speech 0x113 is inside deff 125, so it never plays)",
+   "value": {
+    "deff": 126,
+    "sound": "0x115"
+   },
+   "address": "0x1026430, 0x1026754, 0x1026714",
+   "tag": "observed",
+   "evidence": "t 85.97 flag 54 set, flag 52 clear; 88.25 deff 126"
+  },
+  {
+   "id": "sos_complete_doc",
+   "fact": "sea_of_simulation.md says completion shows deff 125 with speech 0x113: not observed and no code path found",
+   "value": null,
+   "address": "0x1028140",
+   "tag": "code",
+   "evidence": "contradiction"
+  },
+  {
+   "id": "sos_after",
+   "fact": "After completion the ball stays in normal play; the drain shows bonus as usual",
+   "value": null,
+   "address": "",
+   "tag": "observed",
+   "evidence": "t 94.1 drain"
+  }
+ ],
+ "observed": [
+  {
+   "t": 1.0076,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 0,
+   "old": -1
+  },
+  {
+   "t": 1.0076,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 0,
+   "old": -1
+  },
+  {
+   "t": 1.0076,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 0,
+   "old": -1
+  },
+  {
+   "t": 13.2512,
+   "ev": "mark",
+   "text": "poke: all 9 items lit, items 0-3 collected (player 1)"
+  },
+  {
+   "t": 14.2552,
+   "ev": "mark",
+   "text": "VUK: arcade award, then SOS starts (stages 0-3 skipped)"
+  },
+  {
+   "t": 15.0212,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 1000000,
+   "old": 0
+  },
+  {
+   "t": 15.0212,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 4,
+   "old": 0
+  },
+  {
+   "t": 15.0212,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 65536,
+   "old": 0
+  },
+  {
+   "t": 18.4444,
+   "ev": "deff_start",
+   "id": 113,
+   "caller": "0x100fa70"
+  },
+  {
+   "t": 18.4515,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 25.432,
+   "ev": "deff_start",
+   "id": 115,
+   "caller": "0x100fa70"
+  },
+  {
+   "t": 25.4398,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 2000000,
+   "old": 1000000
+  },
+  {
+   "t": 25.4402,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 28.0465,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 28.533,
+   "ev": "deff_start",
+   "id": 115,
+   "caller": "0x100fa70"
+  },
+  {
+   "t": 28.5406,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 4000000,
+   "old": 2000000
+  },
+  {
+   "t": 28.5411,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 31.1477,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 31.4295,
+   "ev": "mark",
+   "text": "stage 4 QUORRA: left inner loop (left spinner sw44, first spin of a session)"
+  },
+  {
+   "t": 31.4402,
+   "ev": "deff_start",
+   "id": 120,
+   "caller": "0x10256e0"
+  },
+  {
+   "t": 31.4411,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 4500000,
+   "old": 4000000
+  },
+  {
+   "t": 31.4411,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 5,
+   "old": 4
+  },
+  {
+   "t": 31.4411,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 1032192,
+   "old": 65536
+  },
+  {
+   "t": 31.4442,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 31.6342,
+   "ev": "deff_start",
+   "id": 115,
+   "caller": "0x100fa70"
+  },
+  {
+   "t": 31.6419,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 7500000,
+   "old": 4500000
+  },
+  {
+   "t": 31.6424,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 34.2477,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 34.7344,
+   "ev": "deff_start",
+   "id": 115,
+   "caller": "0x100fa70"
+  },
+  {
+   "t": 34.742,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 11500000,
+   "old": 7500000
+  },
+  {
+   "t": 34.7425,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 36.6004,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 36.6102,
+   "ev": "mark",
+   "text": "stage 5 DISC: left orbit 43, left ramp 37, left inner loop 44, right inner loop 39, right ramp 34"
+  },
+  {
+   "t": 36.6269,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 36.6277,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 12100000,
+   "old": 11500000
+  },
+  {
+   "t": 36.6277,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 1015808,
+   "old": 1032192
+  },
+  {
+   "t": 36.6311,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 37.3525,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 37.843,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 37.8592,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 38.7984,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 38.7994,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 12700000,
+   "old": 12100000
+  },
+  {
+   "t": 38.7994,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 983040,
+   "old": 1015808
+  },
+  {
+   "t": 38.8096,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 40.7843,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 40.9805,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 40.9819,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 13300000,
+   "old": 12700000
+  },
+  {
+   "t": 40.9819,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 917504,
+   "old": 983040
+  },
+  {
+   "t": 40.9902,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 42.9589,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 43.6584,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 43.6594,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 13900000,
+   "old": 13300000
+  },
+  {
+   "t": 43.6594,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 786432,
+   "old": 917504
+  },
+  {
+   "t": 43.6658,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 45.2394,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 45.8414,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 45.8423,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 14500000,
+   "old": 13900000
+  },
+  {
+   "t": 45.8423,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 524288,
+   "old": 786432
+  },
+  {
+   "t": 45.8505,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 47.8183,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 47.9969,
+   "ev": "mark",
+   "text": "stage 5: disc opto sw41 spots the last needed shot (right orbit)"
+  },
+  {
+   "t": 48.079,
+   "ev": "deff_start",
+   "id": 121,
+   "caller": "0x10259d0"
+  },
+  {
+   "t": 48.08,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 15100000,
+   "old": 14500000
+  },
+  {
+   "t": 48.08,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 6,
+   "old": 5
+  },
+  {
+   "t": 48.08,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 819200,
+   "old": 524288
+  },
+  {
+   "t": 48.0905,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 48.4144,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 50.3627,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 53.1711,
+   "ev": "mark",
+   "text": "stage 6 LIGHT CYCLE: needs right orbit 46, right ramp 34, left ramp 37 (mask 0xc8000); each made shot adds its chained shots (table 0x040d3748)"
+  },
+  {
+   "t": 53.1879,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 53.189,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 15800000,
+   "old": 15100000
+  },
+  {
+   "t": 53.189,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 425984,
+   "old": 819200
+  },
+  {
+   "t": 53.1992,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 55.1781,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 55.3734,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 55.375,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 16500000,
+   "old": 15800000
+  },
+  {
+   "t": 55.375,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 163840,
+   "old": 425984
+  },
+  {
+   "t": 55.3854,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 57.3562,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 57.5514,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 57.5525,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 17200000,
+   "old": 16500000
+  },
+  {
+   "t": 57.5525,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 212992,
+   "old": 163840
+  },
+  {
+   "t": 57.5625,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 57.9583,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 59.1489,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 59.7184,
+   "ev": "mark",
+   "text": "stage 6: chained shots added by the first three: right inner loop 39, left inner loop 44, left orbit 43"
+  },
+  {
+   "t": 59.7352,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 59.736,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 17900000,
+   "old": 17200000
+  },
+  {
+   "t": 59.736,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 81920,
+   "old": 212992
+  },
+  {
+   "t": 59.7439,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 61.7092,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 61.9054,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 61.9064,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 18600000,
+   "old": 17900000
+  },
+  {
+   "t": 61.9064,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 16384,
+   "old": 81920
+  },
+  {
+   "t": 61.9148,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 63.8874,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 64.5862,
+   "ev": "deff_start",
+   "id": 122,
+   "caller": "0x1025d54"
+  },
+  {
+   "t": 64.5875,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 19300000,
+   "old": 18600000
+  },
+  {
+   "t": 64.5875,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 7,
+   "old": 6
+  },
+  {
+   "t": 64.5875,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 8192,
+   "old": 16384
+  },
+  {
+   "t": 64.5918,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 69.7461,
+   "ev": "mark",
+   "text": "stage 7 RECOGNIZER: 6 bank hits"
+  },
+  {
+   "t": 69.7629,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 69.7642,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 20100000,
+   "old": 19300000
+  },
+  {
+   "t": 69.7727,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 71.1352,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 71.1369,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 20900000,
+   "old": 20100000
+  },
+  {
+   "t": 71.1474,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 72.5095,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 72.5109,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 21700000,
+   "old": 20900000
+  },
+  {
+   "t": 72.5212,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 73.8904,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 73.8919,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 22500000,
+   "old": 21700000
+  },
+  {
+   "t": 73.9024,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 75.2645,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 75.2659,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 23300000,
+   "old": 22500000
+  },
+  {
+   "t": 75.2764,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 76.6426,
+   "ev": "deff_start",
+   "id": 123,
+   "caller": "0x1026014"
+  },
+  {
+   "t": 76.6442,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 24100000,
+   "old": 23300000
+  },
+  {
+   "t": 76.6442,
+   "ev": "var",
+   "name": "sos_stage",
+   "value": 8,
+   "old": 7
+  },
+  {
+   "t": 76.6442,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 60,
+   "old": 8192
+  },
+  {
+   "t": 76.6551,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 78.9103,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 81.8093,
+   "ev": "mark",
+   "text": "stage 8 TRON: T R O N targets"
+  },
+  {
+   "t": 81.8423,
+   "ev": "deff_start",
+   "id": 124,
+   "caller": "0x10262bc"
+  },
+  {
+   "t": 81.8437,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 25000000,
+   "old": 24100000
+  },
+  {
+   "t": 81.8437,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 56,
+   "old": 60
+  },
+  {
+   "t": 81.854,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 83.2133,
+   "ev": "deff_start",
+   "id": 124,
+   "caller": "0x10262bc"
+  },
+  {
+   "t": 83.2149,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 25900000,
+   "old": 25000000
+  },
+  {
+   "t": 83.2149,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 48,
+   "old": 56
+  },
+  {
+   "t": 83.2255,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 84.578,
+   "ev": "deff_start",
+   "id": 124,
+   "caller": "0x10262bc"
+  },
+  {
+   "t": 84.58,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 26800000,
+   "old": 25900000
+  },
+  {
+   "t": 84.58,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 32,
+   "old": 48
+  },
+  {
+   "t": 84.5905,
+   "ev": "deff_start",
+   "id": 114,
+   "caller": "0x19944"
+  },
+  {
+   "t": 85.9728,
+   "ev": "deff_start",
+   "id": 124,
+   "caller": "0x10262bc"
+  },
+  {
+   "t": 85.9742,
+   "ev": "deff_start",
+   "id": 112,
+   "caller": "0x100c8fc"
+  },
+  {
+   "t": 85.977,
+   "ev": "var",
+   "name": "sos_total",
+   "value": 27700000,
+   "old": 26800000
+  },
+  {
+   "t": 85.977,
+   "ev": "var",
+   "name": "sos_needed_mask",
+   "value": 0,
+   "old": 32
+  },
+  {
+   "t": 88.2457,
+   "ev": "deff_start",
+   "id": 126,
+   "caller": "0x100f86c"
+  },
+  {
+   "t": 94.1117,
+   "ev": "mark",
+   "text": "drain after completion"
+  }
+ ]
+}

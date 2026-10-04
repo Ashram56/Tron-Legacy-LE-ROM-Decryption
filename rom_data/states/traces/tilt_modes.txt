@@ -1,0 +1,71 @@
+# Tilt cancels: ball save, a running multiball (Disc Multiball) and modes; then slam is in slam_tilt.txt.
+# states_ref with event tracing (event_post ids: 0x65 tilt hooks, 0x66 tilt, 0x67 after tilt, 0x1d end-of-ball stop).
+# Factory settings (adj 32 TILT WARNINGS = 2, adj 38 BALL SAVE 5 s).
+trace events on
+start 1
+wait 1
+dump_rules
+dump_events
+wait 1.5
+mark B1 valid, then tilt inside the ball save (3 bobs, 1.7 s apart)
+hit 12
+wait 1
+button tilt
+wait 1.7
+button tilt
+wait 1.7
+button tilt
+wait 1
+mark B1 drain inside the (cancelled) ball save: expect no BALL SAVED, no bonus
+drain
+wait 8
+mark B2 valid; qualify Disc Multiball (recognizer 5 counts, 7 disc hits)
+hit 12
+wait 1
+hit 49
+wait 1
+hit 50
+wait 1
+hit 51
+wait 1
+hit 49
+wait 1
+hit 50
+wait 2
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+hit 41
+wait 2.5
+mark 7th disc hit starts Disc Multiball
+hit 41
+wait 6
+mark a multiball jackpot shot
+hit 37
+wait 2
+mark tilt during Disc Multiball (3 bobs)
+button tilt
+wait 1.7
+button tilt
+wait 1.7
+button tilt
+wait 3
+mark all balls drain (no saves expected)
+drain
+wait 1
+drain
+wait 1
+drain
+wait 1
+drain
+wait 10
+mark B3
+hit 12
+wait 3

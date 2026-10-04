@@ -1,0 +1,19 @@
+dumpram /tmp/claude-0/work_settings/ram_usa.bin
+credits
+callstr 4ff4 0 0 0
+call e90 28 0 0 0
+call e90 10 0 0 0
+key 3
+wait 1
+credits
+key 4
+wait 1
+credits
+key 5
+wait 1
+credits
+key 6
+wait 1
+credits
+callstr 4ff4 1 0 0
+callstr 4ff4 0 0 0

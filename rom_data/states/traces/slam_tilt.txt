@@ -1,0 +1,32 @@
+# Slam tilt during a game (states_ref: button slam = PinMAME key HOME = dedicated switch D18).
+# Expect deff 24, leff 12 (GI off), sound 0x018, then a machine reset (~5 s); credits and the game are lost.
+pretrace gi on
+pretracepc 23e40 sw_slam_tilt
+pretracepc 23e18 slam_task_39
+pretracepc 4cf0 credit_add
+start 1
+mark extra credit before the game: 3 coins
+button coin 300
+wait 0.3
+button coin 300
+wait 0.3
+button coin 300
+wait 1
+wait 2
+mark B1_valid
+hit 12
+wait 1
+hit 7
+wait 1
+mark B1_slam
+button slam
+wait 14
+mark after the watchdog reset the ball still on the playfield drains into the trough
+drain
+wait 10
+mark after reset: attract
+dump_tasks
+wait 6
+mark slam in attract
+button slam
+wait 12

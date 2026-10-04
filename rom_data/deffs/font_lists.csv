@@ -1,0 +1,67 @@
+address,fonts,count,used_by,tag
+0x40d225c,"15,10",2,10:10000a0 (font_fit_msgs) 10:10000ec (font_fit_msgs) 15:10000a0 (font_fit_msgs) 15:10000ec (font_fit_msgs) 17:10000a0 (font_fit_msgs) 17:10000ec (font_fit_msgs) font_fit_msgs@0x1000024,code
+0x40d2268,"15,12,10,6",4,1:1000190 1:1000190 (observed) 1:10001cc (text_draw_str_fit_page) text_draw_str_fit_page@0x1000190,observed
+0x40d22a4,"12,10,6",3,1:1000610 1:1000610 (observed) text_draw_str_fit_page@0x1000610,observed
+0x40d22b4,"15,12,10,6",4,1:100082c 1:100082c (observed) 1:1000854 1:1000854 (observed) text_draw_str_fit_page@0x100082c text_draw_str_fit_page@0x1000854,observed
+0x40d22c8,"15,12,10,6",4,1:1000928 1:1000928 (observed) text_draw_msg_fit@0x1000928,observed
+0x40d2834,"33,1",2,51:1009268 51:1009268 (observed) text_draw_msg_fit@0x1009268,observed
+0x40d2aa4,"15,12,10,8,4",5,40:100f6b0 40:100f6b0 (observed) text_draw_msg_fit@0x100f6b0,observed
+0x40d302c,"39,38,37,36,34,33",6,83:1018ce0 83:1018ce0 (observed) 84:1018f88 84:1018f88 (observed) 84:1019070 84:1019070 (observed) 85:101937c 85:101937c (observed) 85:1019468 85:1019468 (observed) text_draw_msg_fit@0x1018ce0 text_draw_msg_fit@0x1018f88 text_draw_msg_fit@0x1019070 text_draw_msg_fit@0x101937c text_draw_msg_fit@0x1019468,observed
+0x40d31d4,"10,4,6",3,134:101c9a4 134:101c9a4 (observed) 134:101c9cc 134:101c9cc (observed) 134:101c9f4 134:101c9f4 (observed) text_draw_msg_fit@0x101c9a4 text_draw_msg_fit@0x101c9cc text_draw_msg_fit@0x101c9f4,observed
+0x40d3358,"13,11,5,3,7,1",6,text_draw_msg_fit@0x1021850,code
+0x40d33a8,"11,5,3,7,1",5,111:1021d00 111:1021d00 (observed) text_draw_msg_fit@0x1021d00,observed
+0x40d6f6c,"17,15,12,10,4,6",6,94:10324a0 (font_fit_msgs) font_fit_msgs@0x10323e8,code
+0x40d6ff4,"16,13,11,7,1",5,99:10332c0 99:10332c0 (observed) text_printf_msg_fit@0x10332c0,observed
+0x40d89bc,"12,10",2,1:2f404 text_draw_msg_fit@0x2f404,code
+0x40d89c8,"12,10",2,1:2f5e8 (font_fit_str) font_fit_str@0x2f57c,code
+0x40d89d8,"15,12",2,27:2fd3c 27:2fd3c (observed) font_fit_msgs@0x2fcdc text_draw_msg_fit@0x2fd3c,observed
+0x40d89ec,"12,10",2,11:1034610 (font_fit_msgs) 11:1034638 (font_fit_msgs) font_fit_msgs@0x10345e4,code
+0x40d89f8,2,1,32:1034820 32:1034820 (observed) text_printf_msg_fit@0x1034820,observed
+0x40d8a24,"4,2",2,32:103485c text_draw_str_fit_page@0x103485c,code
+0x40d8a3c,"15,12",2,31:1034db4 (font_fit_msgs) 31:1034de4 (font_fit_msgs) 31:1034e10 (font_fit_msgs) font_fit_msgs@0x1034d48,code
+0x40d8a48,"4,2",2,33:1034ebc 33:1034ebc (observed) text_draw_str_fit_page@0x1034ebc,observed
+0x40d8a60,"8,6",2,12:1035174 (font_fit_msgs) 12:10351e0 (font_fit_msgs) font_fit_msgs@0x1035118,code
+0x40d8a74,"10,2",2,18:10360ac 18:10360ac (observed) text_draw_str_fit_page@0x10360ac,observed
+0x40d8a80,"12,10,2",3,35:10362a0 35:10362a0 (observed) 35:10362d8 (text_draw_msg_fit) 35:103631c (text_draw_msg_fit) text_draw_msg_fit@0x10362a0,observed
+0x40d8abc,"12,10,2",3,34:1036af4 (font_fit_msgs) 34:1036b24 (font_fit_msgs) 34:1036b54 (font_fit_msgs) 34:1036bac (font_fit_msgs) 34:1036bd4 (font_fit_msgs) font_fit_msgs@0x1036a78,code
+0x40d8b4c,2,1,text_draw_msg_fit@0x1038768,code
+0x40d8bbc,2,1,text_draw_msg_fit@0x1039950 text_draw_msg_fit@0x10399f4,code
+0x40d8bc8,"8,6",2,text_draw_msg_fit@0x1039ac4 text_draw_msg_fit@0x1039b60,code
+0x40d8bd4,2,1,text_draw_msg_fit@0x1039bac,code
+0x40d8be0,"8,6",2,text_draw_msg_fit@0x1039c64 text_draw_msg_fit@0x1039cf8,code
+0x40d8bec,2,1,text_draw_msg_fit@0x1039d40,code
+0x40d8c00,2,1,text_draw_msg_fit@0x103a390 text_draw_msg_fit@0x103a434,code
+0x40d8c18,2,1,text_draw_msg_fit@0x103b2e0,code
+0x40d8c4c,2,1,text_draw_msg_fit@0x103d800,code
+0x40d9094,2,1,text_draw_msg_fit@0x3268c,code
+0x40d9150,2,1,4:1036eb8 (font_fit_msgs) 4:1036edc (font_fit_msgs) 4:1036f00 (font_fit_msgs) font_fit_msgs@0x1036e88,code
+0x40d917c,2,1,3:1037a44 3:1037a44 (observed) 3:1037bcc text_draw_msg_fit@0x1037a44 text_draw_msg_fit@0x1037bcc,observed
+0x40d9188,"15,12",2,3:1037a04 3:1037a04 (observed) text_draw_str_fit_page@0x1037a04,observed
+0x40d9194,2,1,2:1038208 2:1038208 (observed) text_draw_msg_fit@0x1038208,observed
+0x40d91ac,2,1,text_draw_str_fit_page@0x103e188,code
+0x40d91c8,2,1,text_draw_msg_fit@0x103f9b4,code
+0x40d91d0,2,1,text_draw_msg_fit@0x103fed8,code
+0x40d91d8,2,1,text_printf_msg_fit@0x104011c,code
+0x40d91e4,2,1,text_draw_msg_fit@0x1040cbc,code
+0x40d91fc,"8,6",2,text_draw_msg_fit@0x10418cc text_draw_msg_fit@0x104195c,code
+0x40d9208,2,1,text_draw_msg_fit@0x10419ac,code
+0x40d9214,"8,6",2,text_draw_msg_fit@0x1041aa8 text_draw_msg_fit@0x1041ba4,code
+0x40d9220,2,1,text_draw_msg_fit@0x1041c08,code
+0x40d9234,2,1,text_draw_msg_fit@0x10422dc,code
+0x40d924c,2,1,font_fit_msgs@0x1042b30,code
+0x40d9264,2,1,text_draw_msg_fit@0x10430bc,code
+0x40d926c,"8,6",2,text_draw_msg_fit@0x10433b0 text_draw_msg_fit@0x1043444,code
+0x40d9278,2,1,text_draw_msg_fit@0x1043494,code
+0x40d9284,"8,6",2,text_draw_msg_fit@0x1043550 text_draw_msg_fit@0x10435e8,code
+0x40d9290,2,1,text_draw_msg_fit@0x1043634,code
+0x40d929c,2,1,text_draw_msg_fit@0x10437d8,code
+0x40d92a8,"8,6",2,text_draw_msg_fit@0x1043890 text_draw_msg_fit@0x1043928,code
+0x40d92b4,2,1,text_draw_msg_fit@0x1043970,code
+0x40d92c8,2,1,text_draw_msg_fit@0x1043c90,code
+0x40d92ec,2,1,text_draw_msg_fit@0x104422c,code
+0x40d92fc,2,1,text_draw_msg_fit@0x1044e4c,code
+0x40d9334,2,1,text_draw_msg_fit@0x1045574 text_draw_msg_fit@0x10459e8,code
+0x40d9348,2,1,text_draw_msg_fit@0x1045eac,code
+0x40d9428,2,1,text_draw_msg_fit@0x1045f98 text_draw_msg_fit@0x10461a0 text_draw_msg_fit@0x1046774,code
+0x40d9460,2,1,text_draw_msg_fit@0x1046984 text_draw_msg_fit@0x1046b38 text_draw_msg_fit@0x1046fc4 text_draw_msg_fit@0x104739c text_draw_msg_fit@0x104764c,code
+0x40d9488,2,1,text_draw_msg_fit@0x1047740 text_draw_msg_fit@0x1047828,code

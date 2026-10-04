@@ -1,0 +1,66 @@
+# Two-player game (states_ref, factory settings): rotation, per-player state, shoot again in a
+# multi-player game, a short START press on ball 2 (adj 36 GAME RESTART needs a 1 s hold), end of game.
+# Poke used: player 1 extra ball lit on ball 2 (as in rules/traces/game_flow.txt).
+# adj 38 BALL SAVE TIME = 0 (operator setting) so that every drain ends the ball and the rotation is easy to follow.
+pretrace events on
+adj 38 0
+start 2
+wait 2.5
+mark P1_B1 valid (ZEN), a few shots
+hit 12
+wait 1
+hit 37
+wait 1
+hit 7
+wait 1
+button left 150
+wait 4
+mark P1_B1 drain (expect bonus, then player 2 up)
+drain
+wait 10
+mark P2_B1 valid, shots
+hit 12
+wait 1
+hit 34
+wait 1
+hit 8
+wait 6
+mark P2_B1 drain
+drain
+wait 10
+mark P1_B2 valid; short START press (no restart expected)
+hit 12
+wait 1
+button start 150
+wait 1
+mark poke: light extra ball for player 1 (OS lit count 0x3d46c = 1, scoop EB lit p1 0x2111894 = 1)
+poke 3d46c 1
+poke 2111894 1
+wait 0.5
+mark P1_B2 collect extra ball at VUK
+hit 11
+wait 8
+mark P1_B2 drain (expect bonus, then SHOOT AGAIN for player 1, not player 2)
+drain
+wait 10
+mark P1_B2 shoot-again ball valid
+hit 12
+wait 7
+mark P1_B2 shoot-again drain (expect player 2 next)
+drain
+wait 10
+mark P2_B2
+hit 12
+wait 7
+drain
+wait 10
+mark P1_B3
+hit 12
+wait 7
+drain
+wait 10
+mark P2_B3 (last ball: expect bonus, high score check, match, game over)
+hit 12
+wait 7
+drain
+wait 25

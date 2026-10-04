@@ -1,0 +1,126 @@
+# hw study 2: service-style coil test pulses (FUN_00002bc8 coil, desc+0x10 ms, sync=1) in attract, then ball search
+wait 2
+mark test 1
+inject 0x2bc8 1 64 0 0 0 1
+wait 0.4
+mark test 2
+inject 0x2bc8 2 64 0 0 0 1
+wait 0.4
+mark test 3
+inject 0x2bc8 3 64 0 0 0 1
+wait 0.4
+mark test 4
+inject 0x2bc8 4 64 0 0 0 1
+wait 0.4
+mark test 7
+inject 0x2bc8 7 64 0 0 0 1
+wait 0.4
+mark test 8
+inject 0x2bc8 8 1000 0 0 0 1
+wait 1.6
+mark test 9
+inject 0x2bc8 9 64 0 0 0 1
+wait 0.4
+mark test 10
+inject 0x2bc8 10 64 0 0 0 1
+wait 0.4
+mark test 11
+inject 0x2bc8 11 64 0 0 0 1
+wait 0.4
+mark test 12
+inject 0x2bc8 12 64 0 0 0 1
+wait 0.4
+mark test 13
+inject 0x2bc8 13 64 0 0 0 1
+wait 0.4
+mark test 14
+inject 0x2bc8 14 64 0 0 0 1
+wait 0.4
+mark test 15
+inject 0x2bc8 15 64 0 0 0 1
+wait 0.4
+mark test 16
+inject 0x2bc8 16 64 0 0 0 1
+wait 0.4
+mark test 17
+inject 0x2bc8 17 64 0 0 0 1
+wait 0.4
+mark test 18
+inject 0x2bc8 18 64 0 0 0 1
+wait 0.4
+mark test 19
+inject 0x2bc8 19 64 0 0 0 1
+wait 0.4
+mark test 20
+inject 0x2bc8 20 64 0 0 0 1
+wait 0.4
+mark test 21
+inject 0x2bc8 21 64 0 0 0 1
+wait 0.4
+mark test 22
+inject 0x2bc8 22 64 0 0 0 1
+wait 0.4
+mark test 23
+inject 0x2bc8 23 64 0 0 0 1
+wait 0.4
+mark test 25
+inject 0x2bc8 25 64 0 0 0 1
+wait 0.4
+mark test 26
+inject 0x2bc8 26 64 0 0 0 1
+wait 0.4
+mark test 27
+inject 0x2bc8 27 64 0 0 0 1
+wait 0.4
+mark test 28
+inject 0x2bc8 28 64 0 0 0 1
+wait 0.4
+mark test 29
+inject 0x2bc8 29 64 0 0 0 1
+wait 0.4
+mark test 30
+inject 0x2bc8 30 64 0 0 0 1
+wait 0.4
+mark test 31
+inject 0x2bc8 31 64 0 0 0 1
+wait 0.4
+mark test 32
+inject 0x2bc8 32 64 0 0 0 1
+wait 0.4
+mark test 33
+inject 0x2bc8 33 64 0 0 0 1
+wait 0.4
+mark test 34
+inject 0x2bc8 34 64 0 0 0 1
+wait 0.4
+mark test 35
+inject 0x2bc8 35 64 0 0 0 1
+wait 0.4
+mark coil_pulse_unsynced
+inject 0x6970 17 48
+wait 0.3
+inject 0x6970 17 48
+wait 0.3
+mark coil_pulse_fn pattern
+inject 0x69c0 18 200 0x55555555
+wait 0.5
+inject 0x69c0 18 200 0x11111111
+wait 0.5
+mark shaker
+inject 0x10289b8 1 1
+wait 1
+inject 0x10289b8 2 1
+wait 1
+inject 0x10289b8 3 1
+wait 2
+mark disc motor test fn
+inject 0x10067d8
+wait 3
+mark game
+start 1
+wait 5
+hit 26
+wait 1
+mark ballsearch_idle
+wait 75
+dump

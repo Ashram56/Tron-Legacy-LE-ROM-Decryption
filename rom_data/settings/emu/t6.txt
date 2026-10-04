@@ -1,0 +1,25 @@
+peek 21100d8 4
+country 7
+call 5ea0
+call e90 28
+call e90 7
+call e90 35
+call e90 10
+call f28 28
+callstr 2e0fc B 24
+key 4
+wait 1
+credits
+callstr 4ff4 1 B
+key 5
+wait 1
+credits
+callstr 4ff4 1 B
+country 19
+call e90 28
+call e90 25
+call e90 13
+call e90 10
+country 0
+call e90 28
+call e90 10

@@ -1,0 +1,735 @@
+{
+ "light_tubes": [
+  {
+   "id": "tube_objects",
+   "fact": "Two tube driver objects; the constructor's 2nd argument is the IO strobe bit",
+   "value": {
+    "left": {
+     "obj": "0x3b1d8",
+     "strobe": "0x10",
+     "ctor": "0x340",
+     "ctor_call": "0x4f0",
+     "rgb_bits": {
+      "r": 32,
+      "g": 16,
+      "b": 8
+     }
+    },
+    "right": {
+     "obj": "0x3b504",
+     "strobe": "0x20",
+     "ctor": "0xb64",
+     "ctor_call": "0xd14"
+    }
+   },
+   "address": "0x4f0, 0xd14",
+   "tag": "code",
+   "evidence": "regs at the ctor BLs: r0=obj, r1=strobe, r2/r3/[sp]=R/G/B bit"
+  },
+  {
+   "id": "tube_console",
+   "fact": "Console command names: 'lrlt' = 'perform left ramp light tube operations' -> handler 0x390 (object 0x3b1d8, strobe 0x10); 'rrlt' = right -> handler 0xbb4 (object 0x3b504, strobe 0x20)",
+   "value": {
+    "lrlt": "0x390",
+    "rrlt": "0xbb4"
+   },
+   "address": "0xd2fcc, 0xd2fd4, 0x514",
+   "tag": "code",
+   "evidence": "strings in the OS image; registration call at 0x514"
+  },
+  {
+   "id": "tube_service_test",
+   "fact": "Service test 'FIBER OPTIC LIGHT TUBE TEST' (fn 0x1012b50): row 'L. RAMP:' (msg 0x51e) drives object 0x3b1d8 (strobe 0x10), row 'R. RAMP:' (msg 0x51f) drives 0x3b504 (strobe 0x20). Keys: MINUS/PLUS move the cursor, SELECT toggles R/G/B of the row, BACK exits",
+   "value": null,
+   "address": "0x1012b50, msgs 0x51b-0x525",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "tube_show_masks",
+   "fact": "Tube show table 0x040e3c88 (106 x 12 B, mask byte +6): 103 shows use both tubes (3), show 11 uses mask 1 only, show 12 mask 2 only, show 0 is empty. tube_show_start maps mask 1 -> 0x3b1d8, mask 2 -> 0x3b504",
+   "value": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 103
+   },
+   "address": "0x040e3c88, 0x0101b824",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "tube_skill_shot_link",
+   "fact": "Tube rule id 11 (show 11, mask 1 = object 0x3b1d8) runs while task 0x70 runs (cond 0x1028bac); task 0x70 = skill shot A = LEFT ramp (sw37). Tube rule id 12 (show 12, mask 2 = object 0x3b504) runs while task 0x72 runs (cond 0x1028d98); task 0x72 = skill shot B = RIGHT ramp (sw34). So the game itself pairs strobe 0x10 with the left ramp shot and 0x20 with the right",
+   "value": null,
+   "address": "0x102976c, 0x1028bac, 0x1028d98",
+   "tag": "code",
+   "evidence": "rule list 4 dump (traces/tilt_modes.jsonl ev=rule list 4: ids 11 and 12); skill_shots.md"
+  },
+  {
+   "id": "tube_pinmame",
+   "fact": "PinMAME sam.c labels CSTB (0x10, lamps 101-103) 'Right RGB ramp' and DSTB (0x20, lamps 104-106) 'Left RGB ramp'. The labels came in commit 4440bcc4 (2024-02-09, 'PWM: rewrite all SAM aux board') with no cited source; older code had no side names",
+   "value": {
+    "0x10": "right (PinMAME)",
+    "0x20": "left (PinMAME)"
+   },
+   "address": "pinmame/src/wpc/sam.c 917-921",
+   "tag": "code",
+   "evidence": "external source, not the ROM"
+  },
+  {
+   "id": "tube_vincent",
+   "fact": "Owner schematic notes (Vincent's repo): Clk_input_aux bit4 = ESTB (J3 pin 12), bit5 = DSTB (J3 pin 11), bit6 = CSTB (pin 10), bit7 = BSTB (pin 9); strobes B-E drive the 'Tron LE fiber optic ramps'. No left/right is given. Note the letters differ from PinMAME's (PinMAME calls bit4 CSTB)",
+   "value": {
+    "0x10": "ESTB J3-12",
+    "0x20": "DSTB J3-11"
+   },
+   "address": "external",
+   "tag": "code",
+   "evidence": "external source"
+  },
+  {
+   "id": "tube_verdict",
+   "fact": "Most likely: strobe 0x10 = LEFT ramp tube, 0x20 = RIGHT. Three independent ROM sources agree (console names, service test labels, skill-shot pairing); only PinMAME's unsourced comment says the opposite. Not proven on hardware",
+   "value": {
+    "0x10": "left",
+    "0x20": "right"
+   },
+   "address": "see tube_* rows",
+   "tag": "inferred",
+   "evidence": ""
+  },
+  {
+   "id": "tube_real_machine_test",
+   "fact": "Test on the machine: service menu -> FIBER OPTIC LIGHT TUBE TEST; put the cursor on 'L. RAMP:' R and press SELECT: the LEFT ramp tube should turn red. Electrical check: the line that pulses when L. RAMP is lit is J3 pin 12 (Vincent: bit4/0x10 = ESTB). If the right ramp lights, the ROM labels are swapped relative to the wiring and PinMAME is right",
+   "value": null,
+   "address": "0x1012b50",
+   "tag": "inferred",
+   "evidence": ""
+  }
+ ],
+ "gi": [
+  {
+   "id": "gi_bit",
+   "fact": "GI relay = bit 0 of the IO strobe/aux register 0x0240002B, ACTIVE LOW: 0 = GI on, 1 = GI off. The ROM keeps a shadow at RAM 0x3c758 and the IRQ writes it to the register every interrupt",
+   "value": {
+    "bit": 0,
+    "on": 0,
+    "off": 1
+   },
+   "address": "0x3c758, IRQ 0x133e8-0x13418",
+   "tag": "code",
+   "evidence": "PinMAME: coreGlobals.gi[0] = (~data & 1) ? 9 : 0; Vincent: bit0 = RLY_DRV"
+  },
+  {
+   "id": "gi_init",
+   "fact": "Power-up: 0xc914 sets AUX_DRV = 0, shadow = 0xfe and writes 0xfe -> GI ON from the first IO write. Observed at t 0.3665 s (caller 0x7aa4); PinMAME GI output 9 (on) from t 1.0",
+   "value": {
+    "shadow": "0xfe"
+   },
+   "address": "0xc914",
+   "tag": "observed",
+   "evidence": "traces/gi_and_tilt.jsonl ev=gi_write init=1"
+  },
+  {
+   "id": "gi_set_clear",
+   "fact": "0xc958 shadow |= 1 (GI off); 0xc970 shadow &= ~1 (GI on). Both reached only through the ownership API below",
+   "value": null,
+   "address": "0xc958, 0xc970",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "gi_ownership",
+   "fact": "One task owns GI at a time: owner pointer RAM 0x372d4, current task 0x372c0. gi_off 0xcaf8 / gi_on 0xcb24 act only when the calling task is the owner. claim 0xc9dc(prio) takes it by priority; claim_if_free 0xc988 only when nobody owns it; release 0xca5c clears the owner and turns GI ON; it is called from the leff cleanup 0x898c (call at 0x8a30), so GI comes back when the owning lamp effect ends or is killed",
+   "value": null,
+   "address": "0x372d4, 0xc9dc, 0xc988, 0xca5c, 0xcaf8, 0xcb24",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "gi_states",
+   "fact": "GI per machine state",
+   "value": {
+    "power_up": "on (0xfe)",
+    "attract": "on, except leff 133 game-over show (GI off ~10 s after match)",
+    "game": "on; short GI-off flashes by game leffs",
+    "tilt_warning": "off 15 ticks (leff 11)",
+    "tilt": "off until the end-of-ball task 0x2a releases it at the drain (leff 9)",
+    "slam": "off until the reset (leff 12)",
+    "after_reset": "on (re-init)"
+   },
+   "address": "0x2ffa4, 0x2ff44, 0x2fefc",
+   "tag": "observed",
+   "evidence": "traces/gi_and_tilt, slam_tilt, multiplayer_4p (leff 133)"
+  },
+  {
+   "id": "gi_call_sites",
+   "fact": "Every static call site of the GI API (BL scan of the whole ROM)",
+   "value": {
+    "gi_off": {
+     "count": 27,
+     "sites": [
+      "0x2ff28 FUN_0002ff04",
+      "0x2ff70 FUN_0002ff4c",
+      "0x2ffb0 FUN_0002ffa8",
+      "0x10014dc leff_020",
+      "0x10025f4 leff_077",
+      "0x1002c40 FUN_01002c38",
+      "0x1005430 FUN_01005428",
+      "0x1005958 FUN_01005950",
+      "0x1005bc0 FUN_01005bb8",
+      "0x1005f50 FUN_01005f48",
+      "0x1007e70 leff_044",
+      "0x1008b18 FUN_01008afc",
+      "0x1008e14 FUN_01008df8",
+      "0x10090a4 FUN_01009088",
+      "0x1009610 leff_052",
+      "0x1009b20 leff_055",
+      "0x100f4bc leff_133",
+      "0x101253c FUN_01012534",
+      "0x10195dc leff_093",
+      "0x101dcfc FUN_0101dcf4",
+      "0x1021d50 FUN_01021d48",
+      "0x1026bc8 FUN_01026bc0",
+      "0x102fe40 FUN_0102fe38",
+      "0x10306d4 FUN_010306b8",
+      "0x10309d4 FUN_010309b8",
+      "0x1030c0c FUN_01030bf0",
+      "0x1032cb8 FUN_01032cb0"
+     ]
+    },
+    "gi_on": {
+     "count": 14,
+     "sites": [
+      "0x2ff8c FUN_0002ff4c",
+      "0x1002614 leff_077",
+      "0x1007e78 leff_044",
+      "0x1008b20 FUN_01008afc",
+      "0x1008e1c FUN_01008df8",
+      "0x10090ac FUN_01009088",
+      "0x1009618 leff_052",
+      "0x1009b28 leff_055",
+      "0x10195f0 leff_093",
+      "0x101dd30 FUN_0101dcf4",
+      "0x1021d88 FUN_01021d48",
+      "0x10306dc FUN_010306b8",
+      "0x10309dc FUN_010309b8",
+      "0x1030c14 FUN_01030bf0"
+     ]
+    },
+    "gi_claim": {
+     "count": 24,
+     "sites": [
+      "0x10014d8 leff_020",
+      "0x10025f0 leff_077",
+      "0x1002c3c FUN_01002c38",
+      "0x100542c FUN_01005428",
+      "0x1005954 FUN_01005950",
+      "0x1005bbc FUN_01005bb8",
+      "0x1005f4c FUN_01005f48",
+      "0x1007df4 leff_044",
+      "0x1008b00 FUN_01008afc",
+      "0x1008dfc FUN_01008df8",
+      "0x100908c FUN_01009088",
+      "0x10095cc leff_052",
+      "0x1009aa4 leff_055",
+      "0x100f4b8 leff_133",
+      "0x1012538 FUN_01012534",
+      "0x10195d8 leff_093",
+      "0x101dcf8 FUN_0101dcf4",
+      "0x1021d4c FUN_01021d48",
+      "0x1026bc4 FUN_01026bc0",
+      "0x102fe3c FUN_0102fe38",
+      "0x10306bc FUN_010306b8",
+      "0x10309bc FUN_010309b8",
+      "0x1030bf4 FUN_01030bf0",
+      "0x1032cb4 FUN_01032cb0"
+     ]
+    },
+    "gi_claim_if_free": {
+     "count": 3,
+     "sites": [
+      "0x2ff24 FUN_0002ff04",
+      "0x2ff6c FUN_0002ff4c",
+      "0x2ffac FUN_0002ffa8"
+     ]
+    },
+    "gi_release": {
+     "count": 1,
+     "sites": [
+      "0x8a2c FUN_0000898c"
+     ]
+    },
+    "gi_hw_init": {
+     "count": 1,
+     "sites": [
+      "0x7aa0 FUN_00007a70"
+     ]
+    }
+   },
+   "address": "0xcaf8, 0xcb24, 0xc9dc, 0xc988, 0xca5c, 0xc914",
+   "tag": "code",
+   "evidence": "states_static.py static_calls.json"
+  },
+  {
+   "id": "gi_os_leffs",
+   "fact": "OS lamp effects that own GI: leff 12 (0x2fefc) blackout + GI off forever = SLAM; leff 9 (0x2ff44) GI off, then waits for task 0x2b (ball search) and turns GI on = TILT; leff 11 (0x2ffa4) GI off 15 ticks = tilt WARNING",
+   "value": {
+    "9": "tilt",
+    "11": "tilt warning",
+    "12": "slam"
+   },
+   "address": "0x2fefc, 0x2ff44, 0x2ffa4",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "gi_game_leffs",
+   "fact": "Game leffs whose code turns GI off (claim + gi_off): 20 (bonus), 44, 48-50, 52, 55, 58, 61-63, 67, 77, 79, 93, 108, 129, 133 (game over), 135, 153, 165, 168-170",
+   "value": [
+    20,
+    44,
+    48,
+    49,
+    50,
+    52,
+    55,
+    58,
+    61,
+    62,
+    63,
+    67,
+    77,
+    79,
+    93,
+    108,
+    129,
+    133,
+    135,
+    153,
+    165,
+    168,
+    169,
+    170
+   ],
+   "address": "gi_claim call sites",
+   "tag": "code",
+   "evidence": "callers of 0xc9dc / 0xcaf8 inside leff functions (static_calls.json)"
+  },
+  {
+   "id": "gi_observed_transitions",
+   "fact": "Every PinMAME GI output change in the GI-traced scenarios",
+   "value": {
+    "count": 70,
+    "rows": [
+     {
+      "trace": "gi_and_tilt",
+      "t": 1.0076,
+      "gi": "on"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 24.4947,
+      "gi": "off"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 24.7348,
+      "gi": "on"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 26.171,
+      "gi": "off"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 26.4112,
+      "gi": "on"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 27.8641,
+      "gi": "off"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 31.6437,
+      "gi": "on"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 42.4578,
+      "gi": "off"
+     },
+     {
+      "trace": "gi_and_tilt",
+      "t": 42.698,
+      "gi": "on"
+     },
+     {
+      "trace": "slam_tilt",
+      "t": 1.0076,
+      "gi": "on"
+     },
+     {
+      "trace": "slam_tilt",
+      "t": 17.8978,
+      "gi": "off"
+     },
+     {
+      "trace": "slam_tilt",
+      "t": 23.9888,
+      "gi": "on"
+     },
+     {
+      "trace": "slam_tilt",
+      "t": 54.1625,
+      "gi": "off"
+     },
+     {
+      "trace": "slam_tilt",
+      "t": 60.7321,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 1.0076,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 24.977,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 26.5578,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 34.5374,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 36.1497,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 44.8125,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 47.7654,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 51.7496,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 53.321,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 60.2185,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 62.1452,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 69.6235,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 71.1974,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 78.4909,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 80.0649,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 88.0452,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 89.6204,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 97.5731,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 99.1553,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 107.1412,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 108.732,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 116.6679,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 118.2417,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 126.2225,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 127.7985,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 136.2652,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 137.8315,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 145.7972,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 147.3684,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 170.2572,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_4p",
+      "t": 180.2576,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 1.0076,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 22.9068,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 24.4897,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 31.1908,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 31.4308,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 33.0798,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 33.32,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 34.9829,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 38.6717,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 48.0164,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 49.5955,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 60.7269,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 62.3008,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 69.2997,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 70.877,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 78.1002,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 79.6799,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 86.8877,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 88.4667,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 95.6915,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 97.2714,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 104.493,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 106.0695,
+      "gi": "on"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 112.3362,
+      "gi": "off"
+     },
+     {
+      "trace": "multiplayer_3p",
+      "t": 122.3367,
+      "gi": "on"
+     }
+    ]
+   },
+   "address": "PinmameGetChangedGIs",
+   "tag": "observed",
+   "evidence": "traces/*.jsonl ev=gi_out"
+  },
+  {
+   "id": "gi_doc_note",
+   "fact": "io/README.md says the Vincent capture value 0xbe means 'bit 6 low, GI on'. GI-on is bit 0 = 0 (0xbe and 0xfe both have bit 0 = 0); bit 6 is the aux latch pulse the IRQ toggles when it writes coils",
+   "value": null,
+   "address": "0x133e8-0x13418",
+   "tag": "code",
+   "evidence": "contradiction with io/README.md wording"
+  }
+ ],
+ "dedicated_switches": [
+  {
+   "id": "ded_table",
+   "fact": "Dedicated switch table 0x040f4074: 32 records x 32 B (table of tables entry 0x36dd4). ROM switch number of Dn = 128 + n (dispatcher loop 0x81..0xa0). Rows: dedicated_switches.csv",
+   "value": {
+    "ptr": "0x40f4074",
+    "count": 32,
+    "record_size": 32,
+    "tot_addr": "0x36dd4"
+   },
+   "address": "0x040f4074, 0x36dd4",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "ded_22_23",
+   "fact": "D22 = MINUS, D23 = PLUS. Evidence: (1) ROM names in the table; (2) the shared handler 0xfea8 passes mask 2 for D22 and 4 for D23 to 0xfc20, and the service code uses mask 2 to move back / volume down, 4 forward / up; (3) PinMAME's input port maps key 8 'Minus' to bit 0x200 (D22) and key 9 'Plus' to 0x400 (D23); (4) emulator: key 8 -> 0xfc20(r0 = 0x96 = switch 150 = D22, mask 2), key 9 -> 0x97 (151, D23, mask 4). Only the comment block in PinMAME sam.c ('D21 - DED #22 - Plus, D22 - DED #23 - Minus') says otherwise; it is wrong",
+   "value": {
+    "D21": "BACK (1)",
+    "D22": "MINUS (2)",
+    "D23": "PLUS (4)",
+    "D24": "SELECT (8)"
+   },
+   "address": "0x040f4074, 0xfea8, 0xfc20",
+   "tag": "observed",
+   "evidence": "traces/coin_door_buttons.jsonl ev=call name=coin_door_key"
+  },
+  {
+   "id": "ded_back_attract",
+   "fact": "BACK in attract (when the volume display is not running) adds a SERVICE CREDIT (audit 0x24, deff 17)",
+   "value": null,
+   "address": "0xfea8",
+   "tag": "observed",
+   "evidence": "traces/coin_door_buttons.jsonl credits 0 -> 1"
+  },
+  {
+   "id": "ded_harness_limits",
+   "fact": "In libpinmame the keyboard handler rewrites switch column 0 (D17-D24) every frame, so PinmameSetSwitch on those numbers is ignored; use the keys. The left flipper (PinMAME 84) did not reach handler 0x102a1b4 via SetSwitch while 82/88 did (keyboard flipper mapping), not investigated further",
+   "value": null,
+   "address": "harness",
+   "tag": "observed",
+   "evidence": "states_ref dsw command"
+  }
+ ]
+}

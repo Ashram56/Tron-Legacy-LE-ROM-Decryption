@@ -1,0 +1,2945 @@
+{
+"note": "coil driver bursts measured by rom_data/tools/hw_trace.cpp (shadow 0x3b97c sampled at every IO interrupt 0x12070, ~0.25 ms resolution); run with PINMAME_NOJIT=1 hw_trace hw_scenarios/<scenario>.txt; summarised by hw_pulses.py",
+"bursts": [
+{
+"coil": 1,
+"t": 12.4256,
+"first_on_ms": 65.51,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 1,
+"t": 35.1089,
+"first_on_ms": 65.4,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "drain",
+"after_dt_ms": 4514.4,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 31.276,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.03,
+"tail_duty": 0.493,
+"total_ms": 64.0,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "drain",
+"after_dt_ms": 681.6,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 13.5423,
+"first_on_ms": 68.6,
+"n_pulses": 276,
+"tail_on_ms": 1.02,
+"tail_period_ms": 7.13,
+"tail_duty": 0.143,
+"total_ms": 2029.7,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 36.2095,
+"first_on_ms": 68.01,
+"n_pulses": 276,
+"tail_on_ms": 1.02,
+"tail_period_ms": 7.15,
+"tail_duty": 0.143,
+"total_ms": 2034.6,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"after": "drain",
+"after_dt_ms": 5615.1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 19.7608,
+"first_on_ms": 49.45,
+"n_pulses": 1,
+"after": "sw 30",
+"after_dt_ms": 2.6,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 21.0953,
+"first_on_ms": 33.32,
+"n_pulses": 1,
+"after": "sw 30",
+"after_dt_ms": 2.8,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 21.707,
+"first_on_ms": 31.84,
+"n_pulses": 1,
+"after": "sw 30",
+"after_dt_ms": 2.0,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 21.824,
+"first_on_ms": 30.5,
+"n_pulses": 1,
+"after": "sw 30",
+"after_dt_ms": 1.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 20.2055,
+"first_on_ms": 49.31,
+"n_pulses": 1,
+"after": "sw 31",
+"after_dt_ms": 2.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 20.6506,
+"first_on_ms": 49.23,
+"n_pulses": 1,
+"after": "sw 32",
+"after_dt_ms": 2.7,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 16.7618,
+"first_on_ms": 33.5,
+"n_pulses": 1,
+"after": "sw 26",
+"after_dt_ms": 1.4,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 18.0523,
+"first_on_ms": 33.75,
+"n_pulses": 1,
+"after": "sw 26",
+"after_dt_ms": 1.2,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 18.9718,
+"first_on_ms": 33.81,
+"n_pulses": 1,
+"after": "sw 26",
+"after_dt_ms": 1.3,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 17.4118,
+"first_on_ms": 33.75,
+"n_pulses": 1,
+"after": "sw 27",
+"after_dt_ms": 1.3,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 15,
+"t": 22.4841,
+"first_on_ms": 40.42,
+"n_pulses": 1,
+"after": "button left",
+"after_dt_ms": 23.9,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 15,
+"t": 23.1174,
+"first_on_ms": 41.17,
+"n_pulses": 63,
+"tail_on_ms": 1.01,
+"tail_period_ms": 12.25,
+"tail_duty": 0.082,
+"total_ms": 796.7,
+"after": "button left",
+"after_dt_ms": 30.4,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 16,
+"t": 24.4675,
+"first_on_ms": 40.0,
+"n_pulses": 2,
+"tail_on_ms": 1.0,
+"tail_period_ms": null,
+"total_ms": 46.0,
+"after": "button right",
+"after_dt_ms": 26.9,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 16,
+"t": 25.0843,
+"first_on_ms": 40.51,
+"n_pulses": 63,
+"tail_on_ms": 1.03,
+"tail_period_ms": 12.14,
+"tail_duty": 0.085,
+"total_ms": 788.8,
+"after": "button right",
+"after_dt_ms": 29.2,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 30.5313,
+"first_on_ms": 48.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 4115.3,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 30.6243,
+"first_on_ms": 48.71,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 29.9,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 30.7218,
+"first_on_ms": 48.5,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 127.3,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 30.819,
+"first_on_ms": 48.8,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 224.6,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 30.9165,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 322.1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 31.0141,
+"first_on_ms": 48.74,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 419.6,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 31.1116,
+"first_on_ms": 48.69,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 517.1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 31.209,
+"first_on_ms": 48.77,
+"n_pulses": 129,
+"tail_on_ms": 2.13,
+"tail_period_ms": 4.08,
+"tail_duty": 0.522,
+"total_ms": 586.8,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "drain",
+"after_dt_ms": 614.6,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 1.6836,
+"first_on_ms": 18.93,
+"n_pulses": 1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 11.9025,
+"first_on_ms": 1537.75,
+"n_pulses": 1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 15.7208,
+"first_on_ms": 19.06,
+"n_pulses": 1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 17.2319,
+"first_on_ms": 526.73,
+"n_pulses": 1,
+"after": "sw 26",
+"after_dt_ms": 471.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 21.8175,
+"first_on_ms": 7.75,
+"n_pulses": 1,
+"after": "sw 30",
+"after_dt_ms": 112.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 23.3503,
+"first_on_ms": 524.26,
+"n_pulses": 1,
+"after": "button left",
+"after_dt_ms": 263.3,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 27.8831,
+"first_on_ms": 18.71,
+"n_pulses": 1,
+"after": "sw 11",
+"after_dt_ms": 1467.1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 29.4025,
+"first_on_ms": 525.0,
+"n_pulses": 1,
+"after": "sw 11",
+"after_dt_ms": 2986.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 34.4783,
+"first_on_ms": 18.82,
+"n_pulses": 1,
+"after": "drain",
+"after_dt_ms": 3883.8,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 35.2668,
+"first_on_ms": 530.47,
+"n_pulses": 1,
+"after": "drain",
+"after_dt_ms": 4672.4,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 38.3125,
+"first_on_ms": 19.0,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 1594.1,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 39.8236,
+"first_on_ms": 521.95,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 3105.2,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 44.3559,
+"first_on_ms": 18.36,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 7637.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 45.8664,
+"first_on_ms": 521.92,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 9147.9,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 50.3986,
+"first_on_ms": 18.4,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 13680.2,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 51.9091,
+"first_on_ms": 521.95,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 15190.7,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 56.4409,
+"first_on_ms": 18.35,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 19722.5,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 57.9516,
+"first_on_ms": 521.95,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 21233.2,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 62.4842,
+"first_on_ms": 18.36,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 25765.7,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 63.9949,
+"first_on_ms": 521.93,
+"n_pulses": 1,
+"after": "ballsearch",
+"after_dt_ms": 27276.4,
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 11.0095,
+"first_on_ms": 80.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 11.2426,
+"first_on_ms": 80.72,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 12.0093,
+"first_on_ms": 81.73,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s1_game",
+"tag": "observed"
+},
+{
+"coil": 1,
+"t": 10.0088,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 1",
+"after_dt_ms": 3.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 10.4258,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 2",
+"after_dt_ms": 4.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 11.0428,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x101bc6c",
+"a3": "0x0",
+"s0": "0x1",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "test 3",
+"after_dt_ms": 221.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 35.1428,
+"first_on_ms": 64.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x101bc6c",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "game",
+"after_dt_ms": 2200.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 45.0755,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x101bc6c",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3186.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 55.0425,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x101bc6c",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13153.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 2,
+"t": 64.976,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x101bc6c",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23086.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 3,
+"t": 10.8258,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 3",
+"after_dt_ms": 4.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 11.226,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 4",
+"after_dt_ms": 4.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 35.026,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.03,
+"tail_period_ms": 2.03,
+"tail_duty": 0.507,
+"total_ms": 64.0,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "game",
+"after_dt_ms": 2084.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 44.9755,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.0,
+"tail_duty": 0.5,
+"total_ms": 63.0,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3086.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 54.9255,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.0,
+"tail_duty": 0.5,
+"total_ms": 63.0,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13036.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 64.876,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.0,
+"tail_duty": 0.5,
+"total_ms": 63.0,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 22986.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 5,
+"t": 29.9493,
+"first_on_ms": 943.5,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 1000,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x2cdc"
+},
+"after": "disc motor test fn",
+"after_dt_ms": 16.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 35.4335,
+"first_on_ms": 627.75,
+"n_pulses": 1,
+"after": "game",
+"after_dt_ms": 2491.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 37.5974,
+"first_on_ms": 629.4,
+"n_pulses": 1,
+"after": "game",
+"after_dt_ms": 4655.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 45.3938,
+"first_on_ms": 625.75,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 3504.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 47.5415,
+"first_on_ms": 627.5,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 5652.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 55.337,
+"first_on_ms": 625.75,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 13447.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 57.4843,
+"first_on_ms": 627.0,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 15595.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 65.2765,
+"first_on_ms": 625.75,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 23387.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 6,
+"t": 67.4238,
+"first_on_ms": 627.0,
+"n_pulses": 1,
+"after": "ballsearch_idle",
+"after_dt_ms": 25534.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 11.642,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 7",
+"after_dt_ms": 20.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 35.426,
+"first_on_ms": 66.78,
+"n_pulses": 203,
+"tail_on_ms": 1.01,
+"tail_period_ms": 7.05,
+"tail_duty": 0.143,
+"total_ms": 1490.3,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"after": "game",
+"after_dt_ms": 2484.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 45.3925,
+"first_on_ms": 66.0,
+"n_pulses": 202,
+"tail_on_ms": 1.0,
+"tail_period_ms": 7.01,
+"tail_duty": 0.143,
+"total_ms": 1475.0,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3503.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 55.3258,
+"first_on_ms": 66.0,
+"n_pulses": 203,
+"tail_on_ms": 1.0,
+"tail_period_ms": 7.01,
+"tail_duty": 0.143,
+"total_ms": 1481.7,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13436.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 65.2753,
+"first_on_ms": 66.0,
+"n_pulses": 202,
+"tail_on_ms": 1.0,
+"tail_period_ms": 7.01,
+"tail_duty": 0.143,
+"total_ms": 1474.8,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23386.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 8,
+"t": 12.059,
+"first_on_ms": 1000.0,
+"n_pulses": 1,
+"after": "test 8",
+"after_dt_ms": 21.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 13.6593,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 9",
+"after_dt_ms": 21.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 35.0088,
+"first_on_ms": 65.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 2066.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 44.9595,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3070.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 54.9095,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13020.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 9,
+"t": 64.8591,
+"first_on_ms": 63.99,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 22969.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 14.0593,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 10",
+"after_dt_ms": 21.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 35.092,
+"first_on_ms": 64.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 2150.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 45.0425,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3153.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 54.9925,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13103.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 10,
+"t": 64.926,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23036.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 14.4593,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 11",
+"after_dt_ms": 21.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 35.159,
+"first_on_ms": 64.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 2217.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 45.1255,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3236.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 55.0755,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13186.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 11,
+"t": 65.009,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23119.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 12,
+"t": 14.8593,
+"first_on_ms": 63.99,
+"n_pulses": 1,
+"after": "test 12",
+"after_dt_ms": 5.4,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 15.2595,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 13",
+"after_dt_ms": 5.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 34.842,
+"first_on_ms": 64.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 1900.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 35.2421,
+"first_on_ms": 64.72,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 2300.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 44.7923,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 2903.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 45.2095,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3320.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 54.7593,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 12870.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 55.1595,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13270.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 64.6928,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 22803.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 13,
+"t": 65.092,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23202.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 15.6755,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 14",
+"after_dt_ms": 21.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 34.9255,
+"first_on_ms": 64.28,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 1983.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 35.326,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "game",
+"after_dt_ms": 2384.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 44.8753,
+"first_on_ms": 64.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 2986.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 45.2925,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 3403.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 54.8253,
+"first_on_ms": 64.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 12936.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 55.2255,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 13336.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 64.7758,
+"first_on_ms": 64.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 22886.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 14,
+"t": 65.176,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2cdc"
+},
+"after": "ballsearch_idle",
+"after_dt_ms": 23286.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 15,
+"t": 16.0755,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 15",
+"after_dt_ms": 21.4,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 16,
+"t": 16.4755,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 16",
+"after_dt_ms": 21.4,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 17,
+"t": 16.8925,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 17",
+"after_dt_ms": 22.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 17,
+"t": 24.282,
+"first_on_ms": 48.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coil_pulse_unsynced",
+"after_dt_ms": 0.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 17,
+"t": 24.604,
+"first_on_ms": 48.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coil_pulse_unsynced",
+"after_dt_ms": 322.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 17.2928,
+"first_on_ms": 64.02,
+"n_pulses": 1,
+"after": "test 18",
+"after_dt_ms": 22.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 24.8898,
+"first_on_ms": 1.0,
+"n_pulses": 100,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.01,
+"tail_duty": 0.498,
+"total_ms": 199.5,
+"call": {
+"fn": "0x2d18",
+"ms": 200,
+"pattern": "0x55555555",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coil_pulse_fn pattern",
+"after_dt_ms": 0.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 25.4043,
+"first_on_ms": 1.0,
+"n_pulses": 50,
+"tail_on_ms": 1.0,
+"tail_period_ms": 4.01,
+"tail_duty": 0.249,
+"total_ms": 197.5,
+"call": {
+"fn": "0x2d18",
+"ms": 200,
+"pattern": "0x11111111",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coil_pulse_fn pattern",
+"after_dt_ms": 515.0,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 19,
+"t": 17.6928,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 19",
+"after_dt_ms": 22.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 20,
+"t": 18.0928,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 20",
+"after_dt_ms": 22.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 21,
+"t": 18.4928,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 21",
+"after_dt_ms": 6.6,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 22,
+"t": 18.9258,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 22",
+"after_dt_ms": 23.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 1.6836,
+"first_on_ms": 18.93,
+"n_pulses": 1,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 19.3095,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 23",
+"after_dt_ms": 3.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 35.4335,
+"first_on_ms": 1032.75,
+"n_pulses": 3,
+"tail_on_ms": 472.35,
+"tail_period_ms": 501.5,
+"tail_duty": 0.942,
+"total_ms": 2037.0,
+"after": "game",
+"after_dt_ms": 2491.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 45.3938,
+"first_on_ms": 18.75,
+"n_pulses": 3,
+"tail_on_ms": 483.0,
+"tail_period_ms": 512.0,
+"tail_duty": 0.943,
+"total_ms": 1043.8,
+"after": "ballsearch_idle",
+"after_dt_ms": 3504.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 55.337,
+"first_on_ms": 18.77,
+"n_pulses": 3,
+"tail_on_ms": 482.92,
+"tail_period_ms": 512.15,
+"tail_duty": 0.943,
+"total_ms": 1043.8,
+"after": "ballsearch_idle",
+"after_dt_ms": 13447.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 65.2765,
+"first_on_ms": 18.75,
+"n_pulses": 3,
+"tail_on_ms": 482.78,
+"tail_period_ms": 512.19,
+"tail_duty": 0.943,
+"total_ms": 1043.5,
+"after": "ballsearch_idle",
+"after_dt_ms": 23387.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 33.8586,
+"first_on_ms": 80.7,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"after": "game",
+"after_dt_ms": 916.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 34.1093,
+"first_on_ms": 80.21,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"after": "game",
+"after_dt_ms": 1167.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 34.8593,
+"first_on_ms": 80.46,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"after": "game",
+"after_dt_ms": 1917.3,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 25,
+"t": 19.7428,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 25",
+"after_dt_ms": 17.1,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 26,
+"t": 20.159,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 26",
+"after_dt_ms": 13.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 27,
+"t": 20.5753,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 27",
+"after_dt_ms": 10.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 28,
+"t": 20.9925,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 28",
+"after_dt_ms": 8.6,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 29,
+"t": 21.4088,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 29",
+"after_dt_ms": 5.4,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 30,
+"t": 21.826,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 30",
+"after_dt_ms": 3.7,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 30,
+"t": 29.9485,
+"first_on_ms": 944.25,
+"n_pulses": 1,
+"call": {
+"fn": "coil_on",
+"lr": "0x10064ec"
+},
+"after": "disc motor test fn",
+"after_dt_ms": 15.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 31,
+"t": 22.2423,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 31",
+"after_dt_ms": 1.4,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 32,
+"t": 22.6755,
+"first_on_ms": 64.5,
+"n_pulses": 1,
+"after": "test 32",
+"after_dt_ms": 15.8,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 33,
+"t": 23.0923,
+"first_on_ms": 64.25,
+"n_pulses": 1,
+"after": "test 33",
+"after_dt_ms": 14.5,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 34,
+"t": 23.4925,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 34",
+"after_dt_ms": 13.1,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 35,
+"t": 23.8928,
+"first_on_ms": 64.0,
+"n_pulses": 1,
+"after": "test 35",
+"after_dt_ms": 12.6,
+"scenario": "hw_s2_test_ballsearch",
+"tag": "observed"
+},
+{
+"coil": 1,
+"t": 10.4423,
+"first_on_ms": 65.27,
+"n_pulses": 1,
+"call": {
+"fn": "0x2ac0",
+"ms": 64,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x2b8c"
+},
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 4,
+"t": 27.6755,
+"first_on_ms": 1.0,
+"n_pulses": 32,
+"tail_on_ms": 1.0,
+"tail_period_ms": 2.03,
+"tail_duty": 0.493,
+"total_ms": 64.1,
+"call": {
+"fn": "0x2e5c",
+"ms": 64,
+"on": 1,
+"off": 1,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 1,
+"lr": "0x101bf30"
+},
+"after": "sw 11",
+"after_dt_ms": 4388.4,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 7,
+"t": 11.5595,
+"first_on_ms": 68.06,
+"n_pulses": 276,
+"tail_on_ms": 1.02,
+"tail_period_ms": 7.13,
+"tail_duty": 0.143,
+"total_ms": 2030.5,
+"call": {
+"fn": "0x2bc8",
+"ms": 64,
+"cb": "0x0",
+"a3": "0xab0",
+"s0": "0x3b4e8",
+"sync": 1,
+"lr": "0xaa0"
+},
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 8,
+"t": 15.7753,
+"first_on_ms": 203.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 200,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x10289a0"
+},
+"after": "shaker 1",
+"after_dt_ms": 24.1,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 8,
+"t": 17.276,
+"first_on_ms": 390.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 384,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x10289a0"
+},
+"after": "shaker 2",
+"after_dt_ms": 15.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 8,
+"t": 18.776,
+"first_on_ms": 1039.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 1024,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0x10289a0"
+},
+"after": "shaker 3",
+"after_dt_ms": 4.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 17,
+"t": 21.2736,
+"first_on_ms": 48.66,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.0,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 26.92,
+"first_on_ms": 48.0,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 3632.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.016,
+"first_on_ms": 48.49,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 3728.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.1104,
+"first_on_ms": 48.22,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 3823.2,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.2073,
+"first_on_ms": 48.77,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 3920.2,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.3048,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 4017.7,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.4023,
+"first_on_ms": 48.5,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 4115.2,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.4996,
+"first_on_ms": 48.71,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 4212.5,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 18,
+"t": 27.5968,
+"first_on_ms": 48.5,
+"n_pulses": 127,
+"tail_on_ms": 2.16,
+"tail_period_ms": 4.14,
+"tail_duty": 0.522,
+"total_ms": 586.0,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "sw 11",
+"after_dt_ms": 4309.7,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 19,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 20,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 21,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 1.6836,
+"first_on_ms": 18.93,
+"n_pulses": 1,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 9.9168,
+"first_on_ms": 1537.75,
+"n_pulses": 1,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 13.7356,
+"first_on_ms": 18.96,
+"n_pulses": 1,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 15.2461,
+"first_on_ms": 522.18,
+"n_pulses": 1,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 19.7789,
+"first_on_ms": 18.64,
+"n_pulses": 1,
+"after": "shaker 3",
+"after_dt_ms": 1007.8,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 21.2894,
+"first_on_ms": 522.19,
+"n_pulses": 1,
+"after": "coilgroup 1 48",
+"after_dt_ms": 16.7,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 25.8398,
+"first_on_ms": 15.13,
+"n_pulses": 1,
+"after": "sw 11",
+"after_dt_ms": 2552.7,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 27.3528,
+"first_on_ms": 521.79,
+"n_pulses": 1,
+"after": "sw 11",
+"after_dt_ms": 4065.7,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 23,
+"t": 31.8861,
+"first_on_ms": 18.45,
+"n_pulses": 1,
+"after": "sw 51",
+"after_dt_ms": 3100.2,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 9.026,
+"first_on_ms": 80.3,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 9.2595,
+"first_on_ms": 80.25,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 24,
+"t": 10.0255,
+"first_on_ms": 81.82,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 80,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 1,
+"lr": "0xa8e8"
+},
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 25,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 26,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 26,
+"t": 22.2808,
+"first_on_ms": 4.0,
+"n_pulses": 13,
+"tail_on_ms": 4.0,
+"tail_period_ms": 8.14,
+"tail_duty": 0.491,
+"total_ms": 101.5,
+"call": {
+"fn": "0x2d18",
+"ms": 100,
+"pattern": "0x0f0f0f0f",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coilgroup_fn 2 100 0x0f0f0f0f",
+"after_dt_ms": 0.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 27,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 27,
+"t": 22.2808,
+"first_on_ms": 4.0,
+"n_pulses": 13,
+"tail_on_ms": 4.0,
+"tail_period_ms": 8.14,
+"tail_duty": 0.491,
+"total_ms": 101.5,
+"call": {
+"fn": "0x2d18",
+"ms": 100,
+"pattern": "0x0f0f0f0f",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coilgroup_fn 2 100 0x0f0f0f0f",
+"after_dt_ms": 0.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 28,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 29,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 29,
+"t": 28.4834,
+"first_on_ms": 28.69,
+"n_pulses": 128,
+"tail_on_ms": 1.9,
+"tail_period_ms": 3.86,
+"tail_duty": 0.492,
+"total_ms": 517.4,
+"call": {
+"fn": "0x2d18",
+"ms": 100,
+"pattern": "0xffffffff",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "sw 49",
+"after_dt_ms": 27.4,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 31,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 31,
+"t": 22.2808,
+"first_on_ms": 4.0,
+"n_pulses": 13,
+"tail_on_ms": 4.0,
+"tail_period_ms": 8.14,
+"tail_duty": 0.491,
+"total_ms": 101.5,
+"call": {
+"fn": "0x2d18",
+"ms": 100,
+"pattern": "0x0f0f0f0f",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coilgroup_fn 2 100 0x0f0f0f0f",
+"after_dt_ms": 0.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 32,
+"t": 21.2745,
+"first_on_ms": 48.75,
+"n_pulses": 1,
+"call": {
+"fn": "0x2bc8",
+"ms": 48,
+"cb": "0x0",
+"a3": "0x0",
+"s0": "0x0",
+"sync": 0,
+"lr": "0x69b4"
+},
+"after": "coilgroup 1 48",
+"after_dt_ms": 1.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+},
+{
+"coil": 32,
+"t": 22.2808,
+"first_on_ms": 4.0,
+"n_pulses": 13,
+"tail_on_ms": 4.0,
+"tail_period_ms": 8.14,
+"tail_duty": 0.491,
+"total_ms": 101.5,
+"call": {
+"fn": "0x2d18",
+"ms": 100,
+"pattern": "0x0f0f0f0f",
+"bits": 32,
+"cb": "0x0",
+"s1": "0x0",
+"s2": "0x0",
+"sync": 0,
+"lr": "0x6a14"
+},
+"after": "coilgroup_fn 2 100 0x0f0f0f0f",
+"after_dt_ms": 0.9,
+"scenario": "hw_s3_shaker_groups",
+"tag": "observed"
+}
+],
+"runtime_dumps": [
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "hwrule",
+"i": 1,
+"hex": "08000000000400000100000080000000000000000000000008000000000800000200020001030328000810008b8c00000000000000000000000001000b0a0100"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "hwrule",
+"i": 2,
+"hex": "0800000000100000010000000800000000000000000000000000000000000000020001000103032800080c008d0000000000000000000000000001000b020100"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "bumper",
+"i": 1,
+"hex": "01000000002000000100000001000000000020001000001002021e0901000000"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "bumper",
+"i": 2,
+"hex": "01000000004000000100000002000000000020001000001002021f0a01000000"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "bumper",
+"i": 3,
+"hex": "0100000000800000010000000400000000002000100000100202200b01000000"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "sling",
+"i": 1,
+"hex": "0100000000020000010000001000000000002000c0001a0d01000000"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "sling",
+"i": 2,
+"hex": "0100000000040000010000002000000000002000c0001b0e01000000"
+},
+{
+"t": 67.22717,
+"ev": "dump",
+"what": "power",
+"v3727c": "0x80303",
+"mask": "00008000",
+"zc_ok": 1,
+"zc_per_s": 61
+}
+]
+}

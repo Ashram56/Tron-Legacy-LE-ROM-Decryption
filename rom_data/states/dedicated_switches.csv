@@ -1,0 +1,35 @@
+dedicated,rom_switch_number,pinmame_switch,pinmame_input,name,handler,handler_arg,function,descriptor_flags_0x10,word_0x18,id_byte,address,tag
+D1,129,65,IPT_COIN1 key 3,LEFT COIN SLOT,0x20560,0,"coin switch (OS coin handler, slot index in +4)",0x1a,0x2010036,1,0x40f4074,code
+D2,130,66,IPT_COIN2 key 4,CENTER COIN SLOT,0x20560,1,"coin switch (OS coin handler, slot index in +4)",0x1a,0x2020036,2,0x40f4094,code
+D3,131,67,IPT_COIN3 key 5,RIGHT COIN SLOT,0x20560,2,"coin switch (OS coin handler, slot index in +4)",0x1a,0x2030036,3,0x40f40b4,code
+D4,132,68,IPT_COIN4 key 6,FOURTH COIN SLOT,0x20560,3,"coin switch (OS coin handler, slot index in +4)",0x1a,0x2040036,4,0x40f40d4,code
+D5,133,69,,FIFTH COIN SLOT,0x20560,4,"coin switch (OS coin handler, slot index in +4)",0x1a,0x2050036,5,0x40f40f4,code
+D6,134,70,,NOT USED,,0,,0x70,0x60036,6,0x40f4114,code
+D7,135,71,,NOT USED,,0,,0x70,0x70036,7,0x40f4134,code
+D8,136,72,,NOT USED,,0,,0x70,0x80036,8,0x40f4154,code
+D9,137,84,left flipper key (LSHIFT),L. FLIPPER BUTTON,0x102a1b4,0,left flipper button handler (game),0x30013,0x1090036,9,0x40f4174,code
+D10,138,83,,LEFT FLIPPER E.O.S.,,0,,0x30013,0xa0036,10,0x40f4194,code
+D11,139,82,right flipper key (RSHIFT),R. FLIPPER BUTTON,0x102a294,0,right flipper button handler (game),0x30013,0x10b0036,11,0x40f41b4,code
+D12,140,81,,RIGHT FLIPPER E.O.S.,,0,,0x30013,0xc0036,12,0x40f41d4,code
+D13,141,88,,U.L. FLIPPER BUTTON,0x102a2f0,0,upper left flipper button handler (game),0x30013,0x10d0036,13,0x40f41f4,code
+D14,142,87,,NOT USED,,0,,0x70,0xe0036,14,0x40f4214,code
+D15,143,86,,NOT USED,,0,,0x70,0xf0036,15,0x40f4234,code
+D16,144,85,,NOT USED,,0,,0x70,0x100036,16,0x40f4254,code
+D17,145,-7,IPT_TILT key INSERT (port bit 0x0010),TILT PENDULUM,0x24564,0,tilt pendulum: DANGER warning / TILT (game_flow.md 5.3),0x12c0012,0x1110036,17,0x40f4274,code
+D18,146,-6,'Slam Tilt' key HOME (0x0020),SLAM TILT,0x23e40,0,"slam tilt: deff 24, leff 12, snd 0x018, task 0x39 -> watchdog reset 311 ticks later",0x12,0x120036,18,0x40f4294,code
+D19,147,-5,'Ticket Notch' key K (0x0040),TICKET NOTCH,0x109c8,1,ticket notch (ticket dispenser feedback),0x12,0x2130036,19,0x40f42b4,code
+D20,148,-4,'Dedicated Sw#20' key L (0x0080),NOT USED,,0,,0x70,0x140036,20,0x40f42d4,code
+D21,149,-3,'Back' key 7 (0x0100),BACK,0xfea8,1,"coin door button -> 0xfc20(switch, mask): BACK 1 -> RAM 0x3c950, MINUS 2 -> 0x3c960, PLUS 4 -> 0x3c970, SELECT 8 -> 0x3c980",0x12,0x2150036,21,0x40f42f4,code
+D22,150,-2,'Minus' key 8 (0x0200),MINUS,0xfea8,2,"coin door button -> 0xfc20(switch, mask): BACK 1 -> RAM 0x3c950, MINUS 2 -> 0x3c960, PLUS 4 -> 0x3c970, SELECT 8 -> 0x3c980",0x12,0x2160036,22,0x40f4314,code
+D23,151,-1,'Plus' key 9 (0x0400),PLUS,0xfea8,4,"coin door button -> 0xfc20(switch, mask): BACK 1 -> RAM 0x3c950, MINUS 2 -> 0x3c960, PLUS 4 -> 0x3c970, SELECT 8 -> 0x3c980",0x12,0x2170036,23,0x40f4334,code
+D24,152,0,'Select' key 0 (0x0800),SELECT,0xfea8,8,"coin door button -> 0xfc20(switch, mask): BACK 1 -> RAM 0x3c950, MINUS 2 -> 0x3c960, PLUS 4 -> 0x3c970, SELECT 8 -> 0x3c980",0x12,0x2180036,24,0x40f4354,code
+D25,153,,,DIP SW. (1)2345678,0x60f0,1,DIP switch reader,0x10,0xa190000,25,0x40f4374,code
+D26,154,,,DIP SW. 1(2)345678,0x60f0,2,DIP switch reader,0x10,0xa1a0000,26,0x40f4394,code
+D27,155,,,DIP SW. 12(3)45678,0x60f0,3,DIP switch reader,0x10,0xa1b0000,27,0x40f43b4,code
+D28,156,,,DIP SW. 123(4)5678,0x60f0,4,DIP switch reader,0x10,0xa1c0000,28,0x40f43d4,code
+D29,157,,,DIP SW. 1234(5)678,0x60f0,5,DIP switch reader,0x10,0xa1d0000,29,0x40f43f4,code
+D30,158,,,DIP SW. 12345(6)78,0x60f0,6,DIP switch reader,0x10,0xa1e0000,30,0x40f4414,code
+D31,159,,,DIP SW. 123456(7)8,0x60f0,7,DIP switch reader,0x10,0xa1f0000,31,0x40f4434,code
+D32,160,,,DIP SW. 1234567(8),0x60f0,8,DIP switch reader,0x14,0xa200000,32,0x40f4454,code
+matrix,15,15,'Tournament Start' key 2 (port bit 0x4000),TOURNAMENT START,0x2101c,0,tournament start (OS 0x2101c),0x2,0x20f001b,15,0x40f3734,code
+matrix,16,16,'Start Button' key 1 (0x8000),START BUTTON,0x21004,0,"start button (OS 0x21004, game_flow.md 4.1)",0x2,0x210001c,16,0x40f3754,code

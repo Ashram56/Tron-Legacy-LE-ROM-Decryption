@@ -1,0 +1,41 @@
+# GI relay from power-on through attract, game, tilt warnings, tilt and the next ball (states_ref).
+# GI hooks: gi_write = the strobe-register shadow 0x3c758 bit 0 is changed (0xc958 sets it = GI off,
+# 0xc970 clears it = GI on, 0xc914 = power-up init 0xfe); gi_req = a task asks for GI off/on (0xcaf8 / 0xcb24);
+# gi_out = PinMAME's GI output (core_write_pwm_output_8b(CORE_MODOUT_GI0, ~data & 1)).
+pretrace gi on
+pretrace ticks on
+pretracepc c9dc gi_claim
+pretracepc c988 gi_claim_if_free
+pretracepc ca5c gi_release
+dump_events
+dump_tasks
+mark attract 10 s
+wait 10
+start 1
+wait 2.5
+mark B1_valid
+hit 12
+wait 1
+mark B1_tilt_warning_1
+button tilt
+wait 1.5
+mark B1_tilt_warning_2
+button tilt
+wait 1.5
+mark B1_tilt
+button tilt
+wait 3
+mark B1_drain_tilted
+drain
+wait 8
+mark B2_valid
+hit 12
+wait 3
+mark B2_tilt_bob_inside_debounce (second bob 0.5 s after the first: ignored for 62 ticks)
+button tilt
+wait 0.5
+button tilt
+wait 3
+mark B2_drain_in_ball_save_after_one_warning
+drain
+wait 6

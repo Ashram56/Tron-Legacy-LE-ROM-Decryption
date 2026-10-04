@@ -1,0 +1,83 @@
+# Sea of Simulation stages 4-8 (QUORRA, DISC, LIGHT CYCLE, RECOGNIZER, TRON) - POKED scenario (states_ref/tron_ref).
+# Pokes: all 9 item "lit" bytes = 1 and items 0-3 (FLYNN, GEM, CLU, ZUSE) "collected" bytes = 1 for player 1
+# (item i at 0x2111694 + 0x10*i: byte 0 lit, byte 1 collected; see rules/modes/sea_of_simulation.md), so the VUK
+# starts SOS and stages 0-3 are skipped (each pays its one-time skip bonus (k+1) M) and play begins at stage 4.
+# Watch: sos_watch.tsv.
+start 1
+wait 2.5
+mark poke: all 9 items lit, items 0-3 collected (player 1)
+poke 2111694 1
+poke 21116a4 1
+poke 21116b4 1
+poke 21116c4 1
+poke 21116d4 1
+poke 21116e4 1
+poke 21116f4 1
+poke 2111704 1
+poke 2111714 1
+poke 2111695 1
+poke 21116a5 1
+poke 21116b5 1
+poke 21116c5 1
+wait 1
+mark VUK: arcade award, then SOS starts (stages 0-3 skipped)
+hit 11
+wait 1
+release 11
+wait 16
+mark stage 4 QUORRA: left inner loop (left spinner sw44, first spin of a session)
+hit 44
+wait 5
+mark stage 5 DISC: left orbit 43, left ramp 37, left inner loop 44, right inner loop 39, right ramp 34
+hit 43
+wait 2
+hit 37
+wait 2
+hit 44
+wait 2.5
+hit 39
+wait 2
+hit 34
+wait 2
+mark stage 5: disc opto sw41 spots the last needed shot (right orbit)
+hit 41
+wait 5
+mark stage 6 LIGHT CYCLE: needs right orbit 46, right ramp 34, left ramp 37 (mask 0xc8000); each made shot adds its chained shots (table 0x040d3748)
+hit 46
+wait 2
+hit 34
+wait 2
+hit 37
+wait 2
+mark stage 6: chained shots added by the first three: right inner loop 39, left inner loop 44, left orbit 43
+hit 39
+wait 2
+hit 44
+wait 2.5
+hit 43
+wait 5
+mark stage 7 RECOGNIZER: 6 bank hits
+hit 49
+wait 1.2
+hit 50
+wait 1.2
+hit 51
+wait 1.2
+hit 49
+wait 1.2
+hit 50
+wait 1.2
+hit 51
+wait 5
+mark stage 8 TRON: T R O N targets
+hit 1
+wait 1.2
+hit 2
+wait 1.2
+hit 3
+wait 1.2
+hit 4
+wait 8
+mark drain after completion
+drain
+wait 12

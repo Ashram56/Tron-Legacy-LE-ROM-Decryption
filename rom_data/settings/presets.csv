@@ -1,0 +1,121 @@
+kind,preset,item,list,list_address,adj,name,value,label,applied_by,tag
+install,INSTALL EXTRA EASY,71,os,0x394a8,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36f7c)",code
+install,INSTALL EASY,72,os,0x394a0,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36f84)",code
+install,INSTALL MEDIUM,73,os,0x394d0,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36f8c)",code
+install,INSTALL HARD,74,os,0x394b8,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36f94)",code
+install,INSTALL EXTRA HARD,75,os,0x394b0,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36f9c)",code
+install,INSTALL DIRECTOR'S CUT,76,os,0x39498,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x36fa4)",code
+install,INSTALL HOME PLAY,77,os,0x394c0,,(empty list: changes nothing),,,"0x1041a10 -> adj_apply_list 0x10e8 (os list, then game list 0x394c8)",code
+install,INSTALL 3-BALL,102,os,0x39248,31,BALLS PER GAME,3,3,0x1041a10 -> 0x10e8,code
+install,INSTALL 5-BALL,103,os,0x39258,31,BALLS PER GAME,5,5,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,10,PLAYER LANGUAGE SELECT,0,NO,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,32,TILT WARNINGS,2,2,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,34,FREE PLAY,1,YES,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,36,GAME RESTART,0,NO,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,41,COINDOOR BALL SAVER,1,YES,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,42,COMPETITION MODE,1,YES,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,63,LOST BALL RECOVERY,0,NO,0x1041a10 -> 0x10e8,code
+install,INSTALL COMPETITION,104,os,0x392c8,64,COIN DOOR DISABLE TILT,1,YES,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,11,REPLAY TYPE,0,NONE,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,23,SPECIAL AWARD,3,POINTS,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,25,FREE GAME LIMIT,0,NO FREE GAMES,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,26,EXTRA BALL LIMIT,0,NO EXTRA BALLS,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,30,MATCH PERCENTAGE,11,OFF,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,55,GRAND CHAMPION AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,56,HIGH SCORE #1 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,57,HIGH SCORE #2 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,58,HIGH SCORE #3 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL NOVELTY,105,os,0x39318,59,HIGH SCORE #4 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,13,REPLAY AWARD,3,EXTRA BALL,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,23,SPECIAL AWARD,4,EXTRA BALL,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,25,FREE GAME LIMIT,0,NO FREE GAMES,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,26,EXTRA BALL LIMIT,9,9,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,30,MATCH PERCENTAGE,11,OFF,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,55,GRAND CHAMPION AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,56,HIGH SCORE #1 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,57,HIGH SCORE #2 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,58,HIGH SCORE #3 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL ADD-A-BALL,106,os,0x39268,59,HIGH SCORE #4 AWARDS,0,0,0x1041a10 -> 0x10e8,code
+install,INSTALL FACTORY,78,,,all,every adjustment,factory default,,0x1041874 -> 0x1278 (0x1080 for ids 1-88: country override else table default),code
+country,U.S.A.,DIP 0,os,0x38fd4,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,AUSTRIA,DIP 1,os,0x38734,28,GAME PRICING,19,EURO 9,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,AUSTRIA,DIP 1,os,0x38734,7,LANGUAGE,1,DEUTSCH,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,BELGIUM,DIP 2,os,0x38780,28,GAME PRICING,11,EURO 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,BELGIUM,DIP 2,os,0x38780,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CANADA 1,DIP 3,os,0x387cc,28,GAME PRICING,6,CANADA 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CANADA 1,DIP 3,os,0x387cc,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,NETHERLANDS,DIP 4,os,0x38c90,28,GAME PRICING,13,EURO 3,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,NETHERLANDS,DIP 4,os,0x38c90,36,GAME RESTART,0,NO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FINLAND,DIP 5,os,0x38a18,28,GAME PRICING,18,EURO 8,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,28,GAME PRICING,20,EURO 10,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,15,AUTO REPLAY START,30000000,"30,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,12,REPLAY PERCENTAGE,20,20%,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,30,MATCH PERCENTAGE,10,10%,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,27,EXTRA BALL PERCENTAGE,10,10%,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,61,HSTD RESET COUNT,1000,1000,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,36,GAME RESTART,0,NO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,39,TIMED PLUNGER,60,1:00,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,os,0x38a5c,7,LANGUAGE,2,FRANCAIS,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,game,0x36fbc,87,MUSIC VOLUME,40,40,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,FRANCE,DIP 6,game,0x36fbc,88,SPEECH VOLUME,40,40,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,GERMANY,DIP 7,os,0x38ae0,28,GAME PRICING,24,GERMANY 2,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,GERMANY,DIP 7,os,0x38ae0,35,KNOCKER VOLUME,1,LOW,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,GERMANY,DIP 7,os,0x38ae0,7,LANGUAGE,1,DEUTSCH,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,ITALY,DIP 8,os,0x38b78,28,GAME PRICING,26,ITALY 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,ITALY,DIP 8,os,0x38b78,7,LANGUAGE,4,ITALIANO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,DENMARK,DIP 9,os,0x389d4,28,GAME PRICING,9,DENMARK 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,NORWAY,DIP 10,os,0x38d20,28,GAME PRICING,34,NORWAY 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,NORWAY,DIP 10,os,0x38d20,36,GAME RESTART,0,NO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SWEDEN,DIP 11,os,0x38e8c,28,GAME PRICING,42,SWEDEN 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SWEDEN,DIP 11,os,0x38e8c,36,GAME RESTART,0,NO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SWITZERLAND,DIP 12,os,0x38ed8,28,GAME PRICING,44,SWITZERLAND 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SWITZERLAND,DIP 12,os,0x38ed8,7,LANGUAGE,1,DEUTSCH,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SWITZERLAND,DIP 12,os,0x38ed8,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,AUSTRALIA,DIP 13,os,0x386f0,28,GAME PRICING,2,AUSTRALIA 3,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,U.K.,DIP 14,os,0x38f70,28,GAME PRICING,51,UK 5,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,U.K.,DIP 14,os,0x38f70,56,HIGH SCORE #1 AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,U.K.,DIP 14,os,0x38f70,33,CREDIT LIMIT,9,9,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,U.K.,DIP 14,os,0x38f70,9,MUSIC VOLUME,2,2,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,U.K.,DIP 14,os,0x38f70,60,HSTD INITIALS,1,10 LETTER NAME,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,GREECE,DIP 15,os,0x38b34,28,GAME PRICING,18,EURO 8,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,NEW ZEALAND,DIP 16,os,0x38cdc,28,GAME PRICING,32,NEW ZEALAND 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,PORTUGAL,DIP 17,os,0x38d6c,28,GAME PRICING,38,PORTUGAL,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,PORTUGAL,DIP 17,os,0x38d6c,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SPAIN,DIP 18,os,0x38e40,28,GAME PRICING,18,EURO 8,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SPAIN,DIP 18,os,0x38e40,7,LANGUAGE,3,ESPANOL,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,11,REPLAY TYPE,2,DYNAMIC,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,12,REPLAY PERCENTAGE,2,2%,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,13,REPLAY AWARD,1,TICKET,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,25,FREE GAME LIMIT,1,1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,26,EXTRA BALL LIMIT,9,9,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,28,GAME PRICING,53,USA 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",observed
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,30,MATCH PERCENTAGE,11,OFF,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,33,CREDIT LIMIT,10,10,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,55,GRAND CHAMPION AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,56,HIGH SCORE #1 AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,57,HIGH SCORE #2 AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,58,HIGH SCORE #3 AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,59,HIGH SCORE #4 AWARDS,0,0,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,49,GRAND CHAMPION SCORE,5000000,"5,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,50,HIGH SCORE #1,4000000,"4,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,51,HIGH SCORE #2,3000000,"3,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,52,HIGH SCORE #3,2000000,"2,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,53,HIGH SCORE #4,1000000,"1,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,61,HSTD RESET COUNT,4000,4000,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,60,HSTD INITIALS,1,10 LETTER NAME,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,36,GAME RESTART,0,NO,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,38,BALL SAVE TIME,5, 0:05,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,39,TIMED PLUNGER,60,1:00,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,40,FLIPPER BALL LAUNCH,2,RIGHT FLIPPER,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,41,COINDOOR BALL SAVER,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,45,TICKET DISPENSER,1,DELTRONIC DL-1275 WIDE,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CHUCK-E-CHEESE,DIP 19,os,0x3887c,16,DYNAMIC REPLAY START,50000000,"50,000,000","factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,SOUTH AFRICA,DIP 20,os,0x38dfc,28,GAME PRICING,40,SOUTH AFRICA 1,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,JAPAN,DIP 21,os,0x38bc4,28,GAME PRICING,29,JAPAN 2,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CROATIA,DIP 22,os,0x38990,28,GAME PRICING,8,CROATIA,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,MIDDLE EAST,DIP 23,os,0x38c4c,28,GAME PRICING,31,MIDDLE EAST,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,TAIWAN,DIP 24,os,0x38f2c,28,GAME PRICING,46,TAIWAN,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,RUSSIA,DIP 25,os,0x38db8,28,GAME PRICING,39,RUSSIA,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CANADA 2,DIP 26,os,0x38818,28,GAME PRICING,7,CANADA 2,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,CANADA 2,DIP 26,os,0x38818,10,PLAYER LANGUAGE SELECT,1,YES,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code
+country,LITHUANIA,DIP 27,os,0x38c08,28,GAME PRICING,30,LITHUANIA,"factory default 0xf28 -> 0x5f2c (country NVRAM 0x21100d8, set from the DIP at boot by 0x605c)",code

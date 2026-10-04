@@ -1,0 +1,141 @@
+8.0048 ready dip0=0x80
+8.0048 mark boot_done
+8.0048 key 3
+8.0528 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.0532 coin_task_run slot=0 credsys=1
+8.4208 key 3
+8.4688 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.4689 coin_task_run slot=0 credsys=1
+8.5331 audit_add counter=2 n=1 lr=0x4b34
+8.5331 audit_add counter=7 n=1 lr=0x4b98
+8.5337 event_post 0x1a arg0=0x3c701 lr=0x4ca4
+8.8387 key 3
+8.8869 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.8887 coin_task_run slot=0 credsys=1
+8.9514 audit_add counter=2 n=1 lr=0x4b34
+8.9514 audit_add counter=7 n=1 lr=0x4b98
+8.9522 event_post 0x1a arg0=0x1 lr=0x4ca4
+9.2596 key 3
+9.3081 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+9.3100 coin_task_run slot=0 credsys=1
+9.3726 audit_add counter=2 n=1 lr=0x4b34
+9.3727 audit_add counter=7 n=1 lr=0x4b98
+9.3732 audit_add counter=1 n=1 lr=0x4c30
+9.3734 event_post 0x19 arg0=0x101 lr=0x4c58
+9.7933 audit_add counter=2 n=1 lr=0x4b34
+9.7933 audit_add counter=7 n=1 lr=0x4b98
+9.7940 event_post 0x1a arg0=0x1 lr=0x4ca4
+10.6855 credits pos=3 credits=1 chk=0xfb
+10.7018 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 "CREDITS 1 1/3"
+10.7018 mark press_start
+10.7018 key 1
+10.7652 audit_add counter=17 n=1 lr=0x20bb4
+11.7776 audit_add counter=59 n=1 lr=0x25ce0
+11.7777 audit_add counter=62 n=1 lr=0x25da0
+12.8098 audit_add counter=59 n=1 lr=0x25ce0
+12.8098 audit_add counter=62 n=1 lr=0x25da0
+13.8233 audit_add counter=59 n=1 lr=0x25ce0
+13.8233 audit_add counter=62 n=1 lr=0x25da0
+14.8442 audit_add counter=59 n=1 lr=0x25ce0
+14.8442 audit_add counter=62 n=1 lr=0x25da0
+15.8517 audit_add counter=59 n=1 lr=0x25ce0
+15.8517 audit_add counter=62 n=1 lr=0x25da0
+16.8749 audit_add counter=59 n=1 lr=0x25ce0
+16.8749 audit_add counter=62 n=1 lr=0x25da0
+17.1346 mark ball1
+17.8899 audit_add counter=59 n=1 lr=0x25ce0
+17.8899 audit_add counter=62 n=1 lr=0x25da0
+18.2355 audit_add counter=102 n=1 lr=0x102edf0
+18.2375 audit_add counter=83 n=1 lr=0xc89c
+18.4974 audit_add counter=60 n=1 lr=0x25d18
+18.4974 audit_add counter=61 n=1 lr=0x25d6c
+18.4975 audit_add counter=63 n=1 lr=0x25dd8
+18.4975 audit_add counter=64 n=1 lr=0x25e18
+18.9231 audit_add counter=59 n=1 lr=0x25ce0
+18.9231 audit_add counter=62 n=1 lr=0x25da0
+19.5119 audit_add counter=60 n=1 lr=0x25d18
+19.5119 audit_add counter=61 n=1 lr=0x25d6c
+19.5119 audit_add counter=63 n=1 lr=0x25dd8
+19.5119 audit_add counter=64 n=1 lr=0x25e18
+19.9373 audit_add counter=59 n=1 lr=0x25ce0
+19.9373 audit_add counter=62 n=1 lr=0x25da0
+20.5403 audit_add counter=60 n=1 lr=0x25d18
+20.5403 audit_add counter=61 n=1 lr=0x25d6c
+20.5404 audit_add counter=63 n=1 lr=0x25dd8
+20.5404 audit_add counter=64 n=1 lr=0x25e18
+20.6384 drain in_play=0
+20.9650 audit_add counter=59 n=1 lr=0x25ce0
+20.9650 audit_add counter=62 n=1 lr=0x25da0
+21.5521 audit_add counter=60 n=1 lr=0x25d18
+21.5522 audit_add counter=61 n=1 lr=0x25d6c
+21.5522 audit_add counter=63 n=1 lr=0x25dd8
+21.5523 audit_add counter=64 n=1 lr=0x25e18
+21.9762 audit_add counter=59 n=1 lr=0x25ce0
+21.9762 audit_add counter=62 n=1 lr=0x25da0
+22.5805 audit_add counter=60 n=1 lr=0x25d18
+22.5805 audit_add counter=61 n=1 lr=0x25d6c
+22.5805 audit_add counter=63 n=1 lr=0x25dd8
+22.5805 audit_add counter=64 n=1 lr=0x25e18
+23.0019 audit_add counter=59 n=1 lr=0x25ce0
+23.0019 audit_add counter=62 n=1 lr=0x25da0
+23.5864 audit_add counter=60 n=1 lr=0x25d18
+23.5865 audit_add counter=61 n=1 lr=0x25d6c
+23.5865 audit_add counter=63 n=1 lr=0x25dd8
+23.5865 audit_add counter=64 n=1 lr=0x25e18
+24.0089 audit_add counter=59 n=1 lr=0x25ce0
+24.0089 audit_add counter=62 n=1 lr=0x25da0
+24.6102 audit_add counter=60 n=1 lr=0x25d18
+24.6102 audit_add counter=61 n=1 lr=0x25d6c
+24.6102 audit_add counter=63 n=1 lr=0x25dd8
+24.6102 audit_add counter=64 n=1 lr=0x25e18
+25.0326 audit_add counter=59 n=1 lr=0x25ce0
+25.0326 audit_add counter=62 n=1 lr=0x25da0
+25.2442 audit_add counter=43 n=1 lr=0x19bd4
+25.6136 audit_add counter=60 n=1 lr=0x25d18
+25.6136 audit_add counter=61 n=1 lr=0x25d6c
+25.6136 audit_add counter=63 n=1 lr=0x25dd8
+25.6137 audit_add counter=64 n=1 lr=0x25e18
+26.0316 audit_add counter=59 n=1 lr=0x25ce0
+26.0316 audit_add counter=62 n=1 lr=0x25da0
+26.7556 mark ball2
+26.7556 drain in_play=0
+27.0449 audit_add counter=59 n=1 lr=0x25ce0
+27.0449 audit_add counter=62 n=1 lr=0x25da0
+28.0438 audit_add counter=59 n=1 lr=0x25ce0
+28.0438 audit_add counter=62 n=1 lr=0x25da0
+29.0661 audit_add counter=59 n=1 lr=0x25ce0
+29.0661 audit_add counter=62 n=1 lr=0x25da0
+30.0737 audit_add counter=59 n=1 lr=0x25ce0
+30.0737 audit_add counter=62 n=1 lr=0x25da0
+31.0975 audit_add counter=59 n=1 lr=0x25ce0
+31.0975 audit_add counter=62 n=1 lr=0x25da0
+32.0999 audit_add counter=59 n=1 lr=0x25ce0
+32.0999 audit_add counter=62 n=1 lr=0x25da0
+32.8731 mark ball3
+32.8731 drain in_play=0
+33.1168 audit_add counter=59 n=1 lr=0x25ce0
+33.1169 audit_add counter=62 n=1 lr=0x25da0
+34.1233 audit_add counter=59 n=1 lr=0x25ce0
+34.1233 audit_add counter=62 n=1 lr=0x25da0
+35.1421 audit_add counter=59 n=1 lr=0x25ce0
+35.1421 audit_add counter=62 n=1 lr=0x25da0
+36.1496 audit_add counter=59 n=1 lr=0x25ce0
+36.1496 audit_add counter=62 n=1 lr=0x25da0
+37.1734 audit_add counter=59 n=1 lr=0x25ce0
+37.1734 audit_add counter=62 n=1 lr=0x25da0
+38.1733 audit_add counter=59 n=1 lr=0x25ce0
+38.1733 audit_add counter=62 n=1 lr=0x25da0
+39.1880 audit_add counter=59 n=1 lr=0x25ce0
+39.1881 audit_add counter=62 n=1 lr=0x25da0
+40.1856 audit_add counter=59 n=1 lr=0x25ce0
+40.1856 audit_add counter=62 n=1 lr=0x25da0
+40.9779 mark after_game
+41.2031 audit_add counter=59 n=1 lr=0x25ce0
+41.2031 audit_add counter=62 n=1 lr=0x25da0
+42.2013 audit_add counter=59 n=1 lr=0x25ce0
+42.2013 audit_add counter=62 n=1 lr=0x25da0
+43.2151 audit_add counter=59 n=1 lr=0x25ce0
+43.2151 audit_add counter=62 n=1 lr=0x25da0
+44.2126 audit_add counter=59 n=1 lr=0x25ce0
+44.2126 audit_add counter=62 n=1 lr=0x25da0
+45.1946 end

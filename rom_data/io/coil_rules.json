@@ -1,0 +1,737 @@
+{
+ "note": "Automatic coil rules of Tron LE 1.74, decoded from the ROM tables. Times are in coil-service ticks: one tick = 4 IO interrupts; nominal 1 ms (PinMAME: IO interrupt every 250 us), measured 1.00-1.02 ms in the emulator.",
+ "timebase": {
+  "service": "FUN_00012070 runs every IO interrupt; coil slots, flipper, bumper, sling and device blocks run every 4th (counters 0x37370/0x37380/0x3738c/0x37388/0x37390 reload 4)",
+  "unit_ms_nominal": 1.0,
+  "unit_ms_observed": "1.00-1.024",
+  "tag": "code+observed"
+ },
+ "flippers": {
+  "table": "0x40e204c",
+  "count_addr": "0x36ca0",
+  "count": 3,
+  "record_size": 12,
+  "builder": "0x00006ce4 (from 0x0100f090)",
+  "irq_service": "0x00012070 (block at 0x12920-0x12b98, every 4th IO interrupt = 1 ms)",
+  "runtime": "RAM ptr 0x3726c, count 0x37270, 0x40-byte entries",
+  "fields": {
+   "type": "byte 0 -> runtime +0x22 (1 = left side, 2 = right side; no reader found) [code/inferred]",
+   "switch": "byte 1: flipper button (Stern dedicated switch 0x81+n = D(n)); runtime +0x2c",
+   "switch_alt": "byte 2: used instead of byte 1 when sw_is_disabled(byte 1) at build time (FUN_00006ce4 0x6d74)",
+   "coil": "byte 3: coil number; runtime +0x2a",
+   "eos_switch": "byte 5: end-of-stroke switch (0 = none); runtime +0x2d",
+   "pulse_ms": "byte 6: power pulse length in 1 ms units; runtime +0x27",
+   "eos_cut_ms": "byte 7: if the EOS (closed at the start) opens during the power pulse, the pulse is cut to at most this many ms more and an EOS re-pulse is armed; runtime +0x29",
+   "hold_on_ms": "byte 8: hold PWM on time (ms); runtime +0x3a",
+   "hold_off_ms": "byte 9: hold PWM off time (ms); runtime +0x3c. Phases of the flippers are staggered: +0x3d = index*(on+off)/count"
+  },
+  "behaviour": [
+   "Button debounce: closed for switch-descriptor +0x1b ms (1 for D8/D10/D12) arms, open for +0x1c ms (3) releases (runtime +0x24/+0x26) [code; values from the runtime dump, observed]",
+   "On arm: coil on for pulse_ms (40), then PWM hold hold_on/hold_off (1/11 ms = 8.3 %) until the button is released, then off [code; observed 40.4-41.2 ms + 1.0 ms every 12.1-12.2 ms]",
+   "EOS: the EOS state is sampled at arm time (+0x30). If it was closed and is seen open (debounced) during the power pulse, the remaining pulse is cut to <= eos_cut_ms (8) and flag +0x38 is set; during hold, if flag set and EOS closes again, up to 2 re-pulses of pulse_ms are given (+0x39 = 2) [code, decompile of 0x12070; EOS polarity inferred]",
+   "Rules are enabled per entry by FUN_00007090 (game play, ball in play) and disabled by FUN_00006ffc (tilt, game over); FUN_00007114 asks event 0x28 hooks first [code]"
+  ],
+  "rules": [
+   {
+    "index": 0,
+    "addr": "0x40e204c",
+    "raw": "0189890f008a2808010b0000",
+    "type": 1,
+    "switch": 137,
+    "switch_alt": 137,
+    "coil": 15,
+    "byte4": 0,
+    "eos_switch": 138,
+    "pulse_ms": 40,
+    "eos_cut_ms": 8,
+    "hold_on_ms": 1,
+    "hold_off_ms": 11,
+    "hold_duty": 0.0833,
+    "switch_name": "SAM dedicated D8 (DED #9)",
+    "tag": "code"
+   },
+   {
+    "index": 1,
+    "addr": "0x40e2058",
+    "raw": "028b8b10008c2808010b0000",
+    "type": 2,
+    "switch": 139,
+    "switch_alt": 139,
+    "coil": 16,
+    "byte4": 0,
+    "eos_switch": 140,
+    "pulse_ms": 40,
+    "eos_cut_ms": 8,
+    "hold_on_ms": 1,
+    "hold_off_ms": 11,
+    "hold_duty": 0.0833,
+    "switch_name": "SAM dedicated D10 (DED #11)",
+    "tag": "code"
+   },
+   {
+    "index": 2,
+    "addr": "0x40e2064",
+    "raw": "018d890c00002808010b0000",
+    "type": 1,
+    "switch": 141,
+    "switch_alt": 137,
+    "coil": 12,
+    "byte4": 0,
+    "eos_switch": 0,
+    "pulse_ms": 40,
+    "eos_cut_ms": 8,
+    "hold_on_ms": 1,
+    "hold_off_ms": 11,
+    "hold_duty": 0.0833,
+    "switch_name": "SAM dedicated D12 (DED #13)",
+    "tag": "code"
+   }
+  ]
+ },
+ "bumpers": {
+  "table": "0x40f0a5c",
+  "records": "1..3 (record 0 empty), 12 B",
+  "builder": "0x0000378c",
+  "runtime": "RAM ptr 0x37254, 0x20 B each",
+  "irq_service": "0x00012070 (block after 0x12b98, every 4th IO interrupt = 1 ms)",
+  "enable": "FUN_00003984(i, on) (bumper_enable); all on/off: 0x3a4c/0x3a0c; ball search FUN_00003a8c pulses the coil for desc +0x12 ms",
+  "behaviour": [
+   "Idle: switch closed for debounce_ms (2) -> counter = pulse+recycle (48), coil on [code]",
+   "While counter > recycle: counter--, coil stays on; if the switch opens: counter = recycle and the coil stays on extend_ms (16) more [code]",
+   "Then coil off; counter holds at recycle while the switch stays closed, then counts down recycle_ms (16) before the next shot [code]",
+   "Net: on-time = 32 ms if the switch is held >= 32 ms, else (release time + 16 ms); observed 30.5-49 ms [observed]"
+  ],
+  "rules": [
+   {
+    "index": 1,
+    "addr": "0x40f0a68",
+    "raw": "2000100010001e0902000000",
+    "pulse_ms": 32,
+    "recycle_ms": 16,
+    "extend_ms": 16,
+    "byte5": 0,
+    "switch": 30,
+    "coil": 9,
+    "debounce_ms": 2,
+    "tag": "code"
+   },
+   {
+    "index": 2,
+    "addr": "0x40f0a74",
+    "raw": "2000100010001f0a02000000",
+    "pulse_ms": 32,
+    "recycle_ms": 16,
+    "extend_ms": 16,
+    "byte5": 0,
+    "switch": 31,
+    "coil": 10,
+    "debounce_ms": 2,
+    "tag": "code"
+   },
+   {
+    "index": 3,
+    "addr": "0x40f0a80",
+    "raw": "200010001000200b02000000",
+    "pulse_ms": 32,
+    "recycle_ms": 16,
+    "extend_ms": 16,
+    "byte5": 0,
+    "switch": 32,
+    "coil": 11,
+    "debounce_ms": 2,
+    "tag": "code"
+   }
+  ]
+ },
+ "slingshots": {
+  "table": "0x40f0a8c",
+  "records": "1..2 (record 0 empty), 8 B",
+  "builder": "0x00003c98",
+  "runtime": "RAM ptr 0x37258, 0x1c B each",
+  "enable": "FUN_00003e80(i, on) (sling_enable); ball search FUN_00003f88 pulses desc +0x12 ms",
+  "behaviour": [
+   "Switch closed (no debounce stage) -> counter = pulse+recycle (224), coil on [code]",
+   "Coil on for pulse_ms (32), then off; counter holds at recycle while the switch is closed and counts down recycle_ms (192) after it opens before the next shot [code]",
+   "Observed 33.5-33.8 ms per hit [observed]"
+  ],
+  "rules": [
+   {
+    "index": 1,
+    "addr": "0x40f0a94",
+    "raw": "2000c0001a0d0000",
+    "pulse_ms": 32,
+    "recycle_ms": 192,
+    "switch": 26,
+    "coil": 13,
+    "tag": "code"
+   },
+   {
+    "index": 2,
+    "addr": "0x40f0a9c",
+    "raw": "2000c0001b0e0000",
+    "pulse_ms": 32,
+    "recycle_ms": 192,
+    "switch": 27,
+    "coil": 14,
+    "tag": "code"
+   }
+  ]
+ },
+ "counter_queues": {
+  "table": "0x40e2130",
+  "count": 3,
+  "record_size": 20,
+  "service": "FUN_0000a844 (task): while the NVRAM counter is non-zero, FUN_00002bc8(coil, pulse_ms, sync=1), decrement, wait gap_raw>>4 ticks",
+  "meaning": "record 1 = knocker (coil 24), record 2 = meter (coil 34) [inferred from the coils]",
+  "records": [
+   {
+    "index": 1,
+    "addr": "0x40e2144",
+    "raw": "141011020cab0300000000002c00500080001800",
+    "pending_counter_nvram": "0x2111014",
+    "state_ram": "0x3ab0c",
+    "pulse_ms": 80,
+    "gap_ticks": 8,
+    "gap_raw": 128,
+    "coil": 24,
+    "tag": "code"
+   },
+   {
+    "index": 2,
+    "addr": "0x40e2158",
+    "raw": "1810110218ab0300000000000000640000012200",
+    "pending_counter_nvram": "0x2111018",
+    "state_ram": "0x3ab18",
+    "pulse_ms": 100,
+    "gap_ticks": 16,
+    "gap_raw": 256,
+    "coil": 34,
+    "tag": "code"
+   }
+  ]
+ },
+ "ticket_device": {
+  "table": "0x040f4544 (24 B records, record 1 used)",
+  "addr": "0x40f455c",
+  "raw": "c8151102e8ab0300d01511022c450f040000020023219300",
+  "coil_enable": 35,
+  "coil_advance": 33,
+  "notch_switch": 147,
+  "init": "FUN_000104a0",
+  "irq_service": "0x00012070 loop over 0x040f4548 runtime objects",
+  "behaviour": "while active: enable coil held on; advance coil on while the countdown +0x18 is 0, notch switch (DED #19 = 0x93) edges counted [code]",
+  "tag": "code"
+ },
+ "ball_devices": {
+  "table": "0x040e41f4 (table-of-tables 0x36d44: 4 x 36 B)",
+  "note": "device 0 empty, 1 trough, 2 shooter lane, 3 video game eject; +0x10/+0x14/+0x18 timing fields not decoded",
+  "devices": [
+   {
+    "index": 0,
+    "addr": "0x40e41f4",
+    "raw": "1c1011020000000080410e040000000000000000000000000000000084410e0400000000",
+    "switches": [],
+    "kick_fn": null,
+    "kick_coil": null,
+    "kick_ms": null,
+    "kick_how": null,
+    "u32_10": 0,
+    "u32_14": 0,
+    "u32_18": 0,
+    "byte_20": 0,
+    "tag": "code"
+   },
+   {
+    "index": 1,
+    "addr": "0x40e4218",
+    "raw": "34101102000000009c410e04c0bb01011f0000001f0000001f000000a4410e0405000000",
+    "switches": [
+     22,
+     21,
+     20,
+     19,
+     18
+    ],
+    "kick_fn": "0x101bbc0",
+    "kick_coil": 1,
+    "kick_ms": 64,
+    "kick_how": "FUN_00002b60 queued, sync",
+    "u32_10": 31,
+    "u32_14": 31,
+    "u32_18": 31,
+    "byte_20": 5,
+    "tag": "code"
+   },
+   {
+    "index": 2,
+    "addr": "0x40e423c",
+    "raw": "4c10110200000000bc410e047cbc01011f0000002e0000001f000000c0410e0401001e1e",
+    "switches": [
+     23
+    ],
+    "kick_fn": "0x101bc7c",
+    "kick_coil": 2,
+    "kick_ms": 64,
+    "kick_how": "FUN_00002b60 queued, sync",
+    "u32_10": 31,
+    "u32_14": 46,
+    "u32_18": 31,
+    "byte_20": 1,
+    "tag": "code"
+   },
+   {
+    "index": 3,
+    "addr": "0x40e4260",
+    "raw": "6410110200000000d8410e04d0bd01012e0000005d0000001f000000dc410e0408000c0f",
+    "switches": [
+     11
+    ],
+    "kick_fn": "0x101bdd0",
+    "kick_coil": 4,
+    "kick_ms": 64,
+    "kick_how": "FUN_00002e5c on 1 / off 1, sync",
+    "u32_10": 46,
+    "u32_14": 93,
+    "u32_18": 31,
+    "byte_20": 8,
+    "tag": "code"
+   }
+  ]
+ },
+ "coil_groups": {
+  "table": "0x040e20c4 (table-of-tables 0x36ca8: 27 x 4 B)",
+  "note": "coilgroup_pulse 0x6b24 / coilgroup_pulse_fn 0x6b94 / coilgroup_stop 0x6c0c; also the coil-group field (+8) of each lamp-matrix leff record (stopped at leff end)",
+  "groups": [
+   {
+    "group": 0,
+    "ptr": "0x40e2070",
+    "coils": [],
+    "names": [],
+    "tag": "code"
+   },
+   {
+    "group": 1,
+    "ptr": "0x40e2071",
+    "coils": [
+     17,
+     18,
+     19,
+     20,
+     21,
+     25,
+     26,
+     27,
+     28,
+     29,
+     31,
+     32
+    ],
+    "names": [
+     "ZEN FLASHER",
+     "FLASH: VIDEO GAME",
+     "FLASH: LEFT RAMP",
+     "FLASH: BOTTOM ARCH (LEFT)",
+     "FLASH: BOTTOM ARCH (RIGHT)",
+     "FLASH: RIGHT RAMP",
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)",
+     "FLASH: BACKPANEL",
+     "FLASH: RECOGNIZER",
+     "FLASH: RED DISC",
+     "FLASH: BLUE DISC"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 2,
+    "ptr": "0x40e207e",
+    "coils": [
+     26,
+     27,
+     31,
+     32
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)",
+     "FLASH: RED DISC",
+     "FLASH: BLUE DISC"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 3,
+    "ptr": "0x40e2083",
+    "coils": [
+     26
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 4,
+    "ptr": "0x40e2085",
+    "coils": [
+     19
+    ],
+    "names": [
+     "FLASH: LEFT RAMP"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 5,
+    "ptr": "0x40e2087",
+    "coils": [
+     18
+    ],
+    "names": [
+     "FLASH: VIDEO GAME"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 6,
+    "ptr": "0x40e2089",
+    "coils": [
+     29
+    ],
+    "names": [
+     "FLASH: RECOGNIZER"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 7,
+    "ptr": "0x40e208b",
+    "coils": [
+     29
+    ],
+    "names": [
+     "FLASH: RECOGNIZER"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 8,
+    "ptr": "0x40e208d",
+    "coils": [
+     20,
+     21,
+     17
+    ],
+    "names": [
+     "FLASH: BOTTOM ARCH (LEFT)",
+     "FLASH: BOTTOM ARCH (RIGHT)",
+     "ZEN FLASHER"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 9,
+    "ptr": "0x40e2091",
+    "coils": [
+     17,
+     18
+    ],
+    "names": [
+     "ZEN FLASHER",
+     "FLASH: VIDEO GAME"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 10,
+    "ptr": "0x40e2094",
+    "coils": [
+     28
+    ],
+    "names": [
+     "FLASH: BACKPANEL"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 11,
+    "ptr": "0x40e2096",
+    "coils": [
+     28
+    ],
+    "names": [
+     "FLASH: BACKPANEL"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 12,
+    "ptr": "0x40e2098",
+    "coils": [
+     28
+    ],
+    "names": [
+     "FLASH: BACKPANEL"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 13,
+    "ptr": "0x40e209a",
+    "coils": [
+     18
+    ],
+    "names": [
+     "FLASH: VIDEO GAME"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 14,
+    "ptr": "0x40e209c",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 15,
+    "ptr": "0x40e209f",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 16,
+    "ptr": "0x40e20a2",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 17,
+    "ptr": "0x40e20a5",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 18,
+    "ptr": "0x40e20a8",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 19,
+    "ptr": "0x40e20ab",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 20,
+    "ptr": "0x40e20ae",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 21,
+    "ptr": "0x40e20b1",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 22,
+    "ptr": "0x40e20b4",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 23,
+    "ptr": "0x40e20b7",
+    "coils": [
+     26,
+     27
+    ],
+    "names": [
+     "FLASH: DISC (LEFT)",
+     "FLASH: DISC (RIGHT)"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 24,
+    "ptr": "0x40e20ba",
+    "coils": [
+     17,
+     18
+    ],
+    "names": [
+     "ZEN FLASHER",
+     "FLASH: VIDEO GAME"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 25,
+    "ptr": "0x40e20bd",
+    "coils": [
+     17,
+     18
+    ],
+    "names": [
+     "ZEN FLASHER",
+     "FLASH: VIDEO GAME"
+    ],
+    "tag": "code"
+   },
+   {
+    "group": 26,
+    "ptr": "0x40e20c0",
+    "coils": [
+     31,
+     32
+    ],
+    "names": [
+     "FLASH: RED DISC",
+     "FLASH: BLUE DISC"
+    ],
+    "tag": "code"
+   }
+  ]
+ },
+ "motors": [
+  {
+   "coil": 6,
+   "object": "RAM 0x3b404",
+   "class_init": "FUN_00018004 via FUN_010221ec",
+   "init_call": "0x01022544",
+   "switches": {
+    "up": 53,
+    "down": 52
+   },
+   "nvram": "0x021117e0",
+   "tag": "code"
+  },
+  {
+   "coil": 23,
+   "object": "RAM 0x3b47c",
+   "class_init": "FUN_00016c40 via FUN_010225cc",
+   "init_call": "0x01022f08",
+   "position_switches": [
+    54,
+    55,
+    56
+   ],
+   "nvram": "0x021117e4",
+   "tag": "code"
+  },
+  {
+   "coils": [
+    5,
+    30,
+    22
+   ],
+   "what": "disc: relay 30 on, direction relay 22 on (dir 0) / off (dir 1), power 5 on (or for secs*1000 ms)",
+   "code": "FUN_01006534, task_a8_disc_motor_run 0x010064c4, disc_motor_stop 0x010065ac; disabled by adj 77",
+   "tag": "code"
+  },
+  {
+   "coil": 8,
+   "what": "shaker_run(strength, min_setting) 0x010289b8 -> FUN_01028924: if gf_state & 0x310 == 0 and the slot has less time left, FUN_00002bc8(8, ms, sync=1)",
+   "ms_by_strength": {
+    "1": 200,
+    "2": 384,
+    "3": 1024
+   },
+   "table": "0x040d3998",
+   "gate": "adj 86 SHAKER MOTOR >= min_setting",
+   "tag": "code",
+   "observed_ms": {
+    "1": 203,
+    "2": 390,
+    "3": 1040
+   }
+  }
+ ],
+ "ball_search": {
+  "task": "task_ball_search 0x0001f4a0 / FUN_0001f634",
+  "order": [
+   "FUN_00003138: every coil 1..35 whose flags & 0xa0dc == 0 (low 16 bits): call desc +0x08 fn, else FUN_00002cb0(coil, desc +0x12 ms, sync=1) -> slings 13, 14 (64 ms)",
+   "FUN_000072c8: flipper rules -> desc +0x12 of the flipper coil (0 = nothing)",
+   "FUN_0001fd48: ball devices (trough is not kicked; shooter 2 and VUK 4 are)",
+   "FUN_00003b68: bumper rules -> FUN_00002cb0(coil, desc +0x12 = 64 ms, sync=1)",
+   "FUN_00004068: sling rules -> desc +0x12 (64 ms) (second sling pulse observed)"
+  ],
+  "observed": "deff 11 every ~10 s with the ball idle; pulses 13,14 (64), 9,10,11 (64), 13,14 again, 2 (64), 4 (1/1 x 64), 7 post, 6 motor [observed hw_s2]",
+  "tag": "code+observed"
+ },
+ "coil_test": {
+  "menu": "COIL TEST FUN_0103f040, CYCLING COIL TEST FUN_0103eb8c, cycling task FUN_0103f47c; child FUN_0103ead4/0103ef18",
+  "pulse": "desc +0x04 fn if set (coil 5: 0x010067d8 disc motor 1 s each way; coil 6: 0x01022398 bank motor), else FUN_00002cb0(coil, desc +0x10 ms, sync=1)",
+  "skips": "flags 0x800 (coil test), 0x400 (cycling task); flash test lists (flags & 0x1004) == 4",
+  "observed": "injected FUN_00002bc8(coil, desc+0x10, sync=1) for every coil: 64.0-64.5 ms (shaker 1000 ms), start 1-24 ms after the call (zero-cross sync) [observed hw_s2]",
+  "tag": "code+observed"
+ },
+ "zero_cross_sync": {
+  "what": "A drive call with sync=1 leaves slot +0x25 = 0; the slot starts only when the zero-cross input (bit 2 of *(RAM 0x37350)) has just gone high (DAT_0003c9ac != 0 and the ms-since-edge counter 0x3c9a8 == slot +0x24 = 0). Sync is only used once 0x37310 is set (edge count per second stable within +-3 for 3 s; 60/s in the emulator).",
+  "tag": "code+observed"
+ }
+}

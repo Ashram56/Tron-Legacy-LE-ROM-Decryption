@@ -1,0 +1,117 @@
+{
+ "facts": [
+  {
+   "id": "match_skip",
+   "fact": "Match 0x1b660 runs at game over unless adj 30 MATCH PERCENTAGE = 11 (off) or tournament mode (0x252a0(1))",
+   "value": null,
+   "address": "0x1b660-0x1b694",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "match_number",
+   "fact": "The number is drawn FIRST, always: m = random(10) * 10 (call at 0x1b6ac) -> 00, 10, ..., 90",
+   "value": null,
+   "address": "0x1b6ac",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "match_rate",
+   "fact": "rate = audit 0xf (TOTAL MATCHES) * 100 / audit 0x11 (GAMES STARTED), read via 0x164c(id, 0xc0); rate = 0 if no games",
+   "value": null,
+   "address": "0x1b6b8-0x1b6f8",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "match_win_branch",
+   "fact": "If rate < adj 30: every player p (1..players) whose score % 100 == m wins: bit p set in a mask (-> deff +0x30) and the winner count 0x3743e increments",
+   "value": null,
+   "address": "0x1b700-0x1b76c",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "match_loss_branch",
+   "fact": "Else (rate >= adj 30): forced loss - m steps +10 (99 -> 0) and is re-checked against all players until nobody matches; it ALWAYS moves at least once, so the shown number is never the drawn one; error log 0xb1 if it cycles back",
+   "value": null,
+   "address": "0x1b770-0x1b7e4",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "match_odds",
+   "fact": "Per player the natural chance is 1/10 when rate < adj 30 and 0 otherwise, so the lifetime match rate settles just under adj 30 percent (factory 9 %) per game; a score's last two digits are always x0 in this game (all awards are multiples of 10)",
+   "value": null,
+   "address": "0x1b660",
+   "tag": "inferred",
+   "evidence": ""
+  },
+  {
+   "id": "match_display",
+   "fact": "deff 38 gets the winner mask (+0x30) and the number (+0x34); music 0x01c at start, sfx 0x041, 0x03f, 0x040, 0x042 (identical in win and loss); a win adds 0x043 when the award is given and 0x045 1.6 s later",
+   "value": null,
+   "address": "0x1b7f0-0x1b80c",
+   "tag": "observed",
+   "evidence": "traces/match_win.jsonl vs match_natural.jsonl"
+  },
+  {
+   "id": "match_award",
+   "fact": "After the deff, per winner every 31 ticks (0x1b954 -> match_award 0x1b86c): adj 29 MATCH AWARD 0 -> credit 0x4cf0(0x36f66) + knocker 0x1b370(1,1) (sound 0x019); 1 -> ticket 0x100f8; 2 -> nothing. Audit 0xf",
+   "value": null,
+   "address": "0x1b86c",
+   "tag": "observed",
+   "evidence": "traces/match_win.jsonl t 37.86 audit 15, credits 0 -> 1, sound 0x019"
+  },
+  {
+   "id": "match_timing",
+   "fact": "deff 38 lasts 6.24 s on a loss and 7.84 s on a win, then attract deff 1",
+   "value": null,
+   "address": "",
+   "tag": "observed",
+   "evidence": "match_natural 33.67 -> 39.91; match_win 33.67 -> 41.51"
+  },
+  {
+   "id": "match_force",
+   "fact": "Forcing in the emulator: pokeat 1b6ac 372c4 SEED 4 writes the seed just before random(10). SEED = (next - 1) * inverse(0x19660d) mod 2^32 with next in [d * 2^32 / 10, (d + 1) * 2^32 / 10) for the wanted digit d. d = 4 -> SEED 0xa7bf957a (next 0x73333333)",
+   "value": {
+    "seed": "0xa7bf957a",
+    "digit": 4
+   },
+   "address": "0x372c4",
+   "tag": "observed",
+   "evidence": "traces/match_win.txt"
+  },
+  {
+   "id": "match_runs",
+   "fact": "Scenario results (same play, final score 757,740 -> 40)",
+   "value": {
+    "match_natural": {
+     "draw": 50,
+     "winners": 0,
+     "credit_award": false,
+     "final_score": 757740,
+     "seed_before": "0xdc7f07ea"
+    },
+    "match_win": {
+     "draw": 40,
+     "winners": 1,
+     "credit_award": true,
+     "final_score": 757740,
+     "seed_before": "0xa7bf957a"
+    },
+    "match_forced_loss": {
+     "draw": 40,
+     "winners": 0,
+     "credit_award": false,
+     "final_score": 757740,
+     "seed_before": "0xa7bf957a"
+    }
+   },
+   "address": "0x1b660",
+   "tag": "observed",
+   "evidence": "traces/match_natural|match_win|match_forced_loss.jsonl"
+  }
+ ]
+}

@@ -1,0 +1,3486 @@
+{
+ "source": "leff table 0x040e23e4 (RAM 0x36cf0: 172 x 12 B); see README.md",
+ "tick_ms": 16.26,
+ "leffs": [
+  {
+   "leff": 1,
+   "fn": "0x1017dbc",
+   "fn_name": "FUN_01017dbc",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 1,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "attract lamp show (captured as lampfx_001); leaves the start-button lamps out of its layer",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d2f00",
+    "0x40d2f38"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x36f64",
+     "name": "start_button_lamp",
+     "meaning": "lamp number of the START button; ROM-initialised to 65 (file 0x36f64)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x36f65",
+     "name": "tournament_button_lamp",
+     "meaning": "lamp number of the TOURNAMENT START button; ROM-initialised to 66",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3908c",
+     "name": "extra_button_lamp",
+     "meaning": "a lamp number left visible by the attract/tilt layers; 0 at power-up (file 0x3908c), set at run time (inferred: a third button lamp)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    62,
+    1,
+    24,
+    24,
+    4,
+    4,
+    12,
+    12,
+    5,
+    3,
+    3
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1017dbc",
+    "0x10178fc",
+    "0x1017d0c"
+   ],
+   "exit": "loops (attract)",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 1); mask all lamps; unmask lamps in 0x3908c, 0x36f64 (65), 0x36f65 (66)",
+    "fill the 15 groups of table 0x040d2f00 one step at a time; spawn leff_001_chase_task (rotates the 15 groups every 5 ticks)",
+    "30 x sleep 62; then group_flash_task: 3 x 8 groups of 0x040d2f38 flash 16 x (3 on/3 off) with tube shows of 0x040d2f3a",
+    "blink cycles: blink time 24 -> 4, then 10 x 4, then 5 x 12"
+   ],
+   "note": "Deterministic apart from the lamp numbers in RAM; the exported show is usable if the start lamps are left to their own rule.",
+   "started_by": [
+    {
+     "site": "0x160c",
+     "caller": "FUN_000015dc",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1017dfc lamp_bit_clear lamp",
+    "0x1017e18 lamp_bit_clear lamp",
+    "0x1017e34 lamp_bit_clear lamp",
+    "0x1017e5c lampgroup_fill group",
+    "0x1017928 lampgroup_rotate group",
+    "0x1017d60 lampgroup_on group",
+    "0x1017d78 lampgroup_off group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 3,
+   "fn": "0x1042578",
+   "fn_name": "leff_003",
+   "same_code_as": "",
+   "kind": "service",
+   "priority": 254,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "lamp test, single lamp: every other lamp masked off, the lamp toggles every 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1042578"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 254); mask all lamps (image all off)",
+    "L = task+0x30",
+    "forever: toggle L; sleep 8"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10427ec",
+     "caller": "FUN_010427dc",
+     "param": "var"
+    },
+    {
+     "site": "0x1042a38",
+     "caller": "FUN_010427dc",
+     "param": "var"
+    },
+    {
+     "site": "0x1042a7c",
+     "caller": "FUN_010427dc",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x10425bc lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 5,
+   "fn": "0x1042f3c",
+   "fn_name": "leff_005",
+   "same_code_as": "",
+   "kind": "service",
+   "priority": 254,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "lamp test, one matrix column: lamps (c-1)*8+1 .. c*8 toggle every 8 ticks",
+   "param": "task+0x30 u8 = column c (helpers 0x01042f0c / 0x01042f24 / 0x01042f30)",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1042f3c",
+    "0x1042f0c",
+    "0x1042f30",
+    "0x1042f24"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 254); mask all lamps",
+    "c = task+0x30",
+    "forever: for L in first(c)..last(c): toggle L; sleep 8"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10430c8",
+     "caller": "FUN_01042fc0",
+     "param": "var"
+    },
+    {
+     "site": "0x10432ac",
+     "caller": "FUN_01042fc0",
+     "param": "var"
+    },
+    {
+     "site": "0x10432f0",
+     "caller": "FUN_01042fc0",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1042f8c lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 6,
+   "fn": "0x1042160",
+   "fn_name": "leff_006",
+   "same_code_as": "",
+   "kind": "service",
+   "priority": 254,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "lamp test, one matrix row: lamps r, r+8, r+16 ... toggle every 8 ticks",
+   "param": "task+0x30 u8 = row r (helpers 0x010420cc / 0x0104210c / 0x01042154)",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1042160",
+    "0x10420cc",
+    "0x1042154",
+    "0x104210c"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 254); mask all lamps",
+    "r = task+0x30",
+    "forever: for L in r, r+8, ... : toggle L; sleep 8"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10422e8",
+     "caller": "FUN_010421e4",
+     "param": "var"
+    },
+    {
+     "site": "0x10424cc",
+     "caller": "FUN_010421e4",
+     "param": "var"
+    },
+    {
+     "site": "0x1042510",
+     "caller": "FUN_010421e4",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x10421b0 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 7,
+   "fn": "0x1042ab8",
+   "fn_name": "leff_007",
+   "same_code_as": "",
+   "kind": "service",
+   "priority": 254,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "lamp test, single lamp (same code shape as leff 3)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1042ab8"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 254); mask all lamps",
+    "L = task+0x30",
+    "forever: toggle L; sleep 8"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1042c58",
+     "caller": "FUN_01042b10",
+     "param": "var"
+    },
+    {
+     "site": "0x1042e40",
+     "caller": "FUN_01042b10",
+     "param": "var"
+    },
+    {
+     "site": "0x1042e88",
+     "caller": "FUN_01042b10",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1042afc lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 9,
+   "fn": "0x2ff44",
+   "fn_name": "",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 1,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "all lamps off and GI off until task 0x2b runs, then GI back on and hold",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    6,
+    937
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (if free)",
+    "gi_off",
+    "gi_on"
+   ],
+   "functions": [
+    "0x2ff44"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, 1); mask all lamps (all off)",
+    "gi_claim_if_free; gi_off",
+    "sleep 6 until task_running(0x2b)",
+    "gi_on",
+    "forever sleep 937"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 11,
+   "fn": "0x2ffa4",
+   "fn_name": "",
+   "same_code_as": "",
+   "kind": "gi_only",
+   "priority": 241,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "GI off for 15 ticks (no lamps)",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    15
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (if free)",
+    "gi_off"
+   ],
+   "functions": [
+    "0x2ffa4"
+   ],
+   "exit": "after 15 ticks",
+   "pseudo": [
+    "gi_claim_if_free; gi_off; sleep 15; exit"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 13,
+   "fn": "0x2fd60",
+   "fn_name": "leff_013",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 129,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "SHOOT AGAIN lamp blinks faster as a timer runs down",
+   "param": "task+0x30 = pointer to a u32 tick counter (leff_start site 0x0001ea60.. stores &0x3d4b8)",
+   "param_values_at_leff_start": [
+    "0x3d4b8"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x36f62",
+     "name": "gf_shoot_again_lamp",
+     "meaning": "lamp number of SHOOT AGAIN (26)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3d4b8",
+     "name": "ball_save_like_timer",
+     "meaning": "u32 tick counter passed to leff 13 as task+0x30 (inferred: remaining time)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    "var"
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x2fd60"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "L = gf_shoot_again_lamp (0x36f62); if L == 0: exit",
+    "layer = lamp_layer_create(0, 0x81); mask L",
+    "p = task+0x30 (pointer)",
+    "forever: toggle L; t = (*p < 312) ? *p / 31 : 10; sleep max(t, 2)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1ea70",
+     "caller": "FUN_0001ea60",
+     "param": "0x3d4b8"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x2fd90 lamp_bit_set lamp",
+    "0x2fdac lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 14,
+   "fn": "0x2fe1c",
+   "fn_name": "leff_014",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 128,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "ball-save SHOOT AGAIN blink: waits for a valid playfield, then blinks faster as the ball-save time runs down",
+   "param": "task+0x30 = pointer to the ball_save_task local tick counter (set at 0x00019a20 ball_save_task)",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x36f62",
+     "name": "gf_shoot_again_lamp",
+     "meaning": "lamp number of SHOOT AGAIN (26)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    2,
+    "var"
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x2fe1c"
+   ],
+   "exit": "when ball_save_task (id 0x31) ends",
+   "pseudo": [
+    "L = gf_shoot_again_lamp; if L == 0: exit",
+    "layer = lamp_layer_create(0, 0x80)",
+    "while not FUN_00023638() and not playfield_is_valid(): sleep 2",
+    "mask L; p = task+0x30",
+    "while task_running(0x31 ball_save_task): toggle L; t = (*p < 312) ? *p / 31 : 10; sleep max(t, 2)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x19a44",
+     "caller": "ball_save_task",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x2fe78 lamp_bit_set lamp",
+    "0x2fe94 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 20,
+   "fn": "0x10014cc",
+   "fn_name": "leff_020",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 242,
+   "flags_hex": "0x0002",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "bonus count: the 9 bonus-item lamps show which items were collected; GI off",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    108
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x3aca4",
+     "name": "bonus_insert_mask",
+     "meaning": "bit per item already counted (leff 20 reveals inserts); 0x1ff on exit",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (by leff priority)",
+    "gi_off"
+   ],
+   "functions": [
+    "0x10014cc",
+    "0x1015f60",
+    "0x1015f24"
+   ],
+   "exit": "after 121 x 3 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(group 108, prio); invert mask",
+    "for i in 0..8: L = FUN_01015f60(i) (item lamp, table 0x040d2dd0); if bonus_insert_mask & bonus_item_mask(i) == 0: lamp on (mask set) else mask clear",
+    "gi_claim; gi_off",
+    "repeat 121: sleep 3"
+   ],
+   "note": "bonus_insert_mask / bonus_item_mask: see rules/work/ram/bonus.tsv",
+   "started_by": [
+    {
+     "site": "0x100139c",
+     "caller": "deff_025_bonus",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1001554 lamp_bit_clear lamp",
+    "0x1001564 lamp_bit_set lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 37,
+   "fn": "0x1015ce8",
+   "fn_name": "leff_037",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp ON for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015ce8"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L on",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x102c758",
+     "caller": "tron_letter_collect",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015d1c lamp_bit_set lamp",
+    "0x1015d2c lamp_on lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 38,
+   "fn": "0x1015d40",
+   "fn_name": "leff_038",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015d40"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x102c68c",
+     "caller": "tron_letter_collect",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015d78 lamp_bit_set lamp",
+    "0x1015d88 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 39,
+   "fn": "0x1015da4",
+   "fn_name": "leff_039",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015da4"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x102c5e4",
+     "caller": "tron_letter_collect",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015dd8 lamp_bit_set lamp",
+    "0x1015de8 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 40,
+   "fn": "0x1015dfc",
+   "fn_name": "leff_040",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 129,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink a lamp group given by the caller: 24 toggles, 2 ticks each (12 flashes, 48 ticks)",
+   "param": "task+0x30 u16 = lamp group",
+   "param_values_at_leff_start": [
+    "0x1f"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015dfc"
+   ],
+   "exit": "after 24 toggles",
+   "pseudo": [
+    "G = task+0x30 (u16)",
+    "layer = lamp_layer_create(G, prio)  # owns G",
+    "repeat 24: toggle G; sleep 2",
+    "exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x102c548",
+     "caller": "task_9f",
+     "param": "0x1f"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015e24 lamp_layer_create group",
+    "0x1015e44 lampgroup_toggle group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 41,
+   "fn": "0x101c79c",
+   "fn_name": "leff_041",
+   "same_code_as": "0x1015d40",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 33,
+   "lamp_group_lamps": [
+    46,
+    47,
+    48
+   ],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x101c79c"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x101c5f0",
+     "caller": "FUN_0101c3ac",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x101c7d4 lamp_bit_set lamp",
+    "0x101c7e4 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 43,
+   "fn": "0x100791c",
+   "fn_name": "leff_043",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 7,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 20,
+   "coil_group_coils": [
+    26,
+    27
+   ],
+   "what": "flashers 26+27 pattern loop (14-step table 0x040d2760, 100 ms patterns) while the playfield is valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [
+    26,
+    27
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d2760"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    4
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x100791c"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "i = 0; forever: if playfield_is_valid() and not task_running(0x2b):",
+    "  p = table[i++]; coil_pulse_fn(26, 100, p); coil_pulse_fn(27, 100, p); if i > 13: i = 0",
+    "else i = 0",
+    "sleep 4"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 45,
+   "fn": "0x1008208",
+   "fn_name": "leff_045",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 9,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "disc multiball shot lamps: groups of the lit shots blink (3 ticks), others released",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d26c0"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3af08",
+     "name": "dmb_lit_mask",
+     "meaning": "bitmask of lit shots (table 0x040d26c0 masks): 0xBF phase 0, 0x40 phase 1, 0x80 phase 2",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1008208"
+   ],
+   "exit": "until stopped (rule)",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio) (retry every 6 ticks)",
+    "on = true",
+    "forever: for rec in table 0x040d26c0 (8 x {u16 mask, u16 group, ..}, 10 bytes):",
+    "  if dmb_lit_mask & rec.mask: mask rec.group; group on if on else off",
+    "  else: unmask rec.group",
+    "  sleep 3; on = !on"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1009c84"
+   ],
+   "unresolved_args": [
+    "0x100826c lampgroup_bit_set group",
+    "0x1008284 lampgroup_on group",
+    "0x1008298 lampgroup_off group",
+    "0x10082a8 lampgroup_bit_clear group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 46,
+   "fn": "0x10083ec",
+   "fn_name": "leff_046",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 9,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 22,
+   "coil_group_coils": [
+    26,
+    27
+   ],
+   "what": "coil group (leff +8) pulsed 32 ms every 8 ticks while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10083ec"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: if valid and no ball search: coilgroup_pulse(g, 32 ms); sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1009cc4"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 54,
+   "fn": "0x1009880",
+   "fn_name": "leff_054",
+   "same_code_as": "0x10083ec",
+   "kind": "conditional",
+   "priority": 9,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 23,
+   "coil_group_coils": [
+    26,
+    27
+   ],
+   "what": "coil group (leff +8) pulsed 32 ms every 8 ticks while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1009880"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: if valid and no ball search: coilgroup_pulse(g, 32 ms); sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1009d4c"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 57,
+   "fn": "0x10051c4",
+   "fn_name": "leff_057_eol_lit_flashers",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 7,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 25,
+   "coil_group_coils": [
+    17,
+    18
+   ],
+   "what": "flasher pattern loop from table 0x040d25c0 while the playfield is valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [
+    17,
+    18
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d25c0"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10051c4"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "same shape as leff 43 with table 0x040d25c0, sleep 6"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1006304"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 60,
+   "fn": "0x1005658",
+   "fn_name": "leff_060_eol_disc_flashers",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 9,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 26,
+   "coil_group_coils": [
+    31,
+    32
+   ],
+   "what": "End of Line disc flasher: pulses flasher 31 (even eol_level) or 32 (odd) for 32 ms every 8 ticks",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [
+    31,
+    32
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x3adf4",
+     "name": "eol_level",
+     "meaning": "Disc hits this multiball (jackpot level); also picks the music (call 0x20 + level&3)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1005658"
+   ],
+   "exit": "until stopped (rule)",
+   "pseudo": [
+    "forever: if playfield_is_valid() and not task_running(0x2b ball search):",
+    "  coil_pulse(eol_level & 1 ? 32 : 31, 32 ms)",
+    "  sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1006378"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 68,
+   "fn": "0x101f0f4",
+   "fn_name": "leff_068",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 10,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Quorra lamps blink; fast (2 ticks) while the double window runs, else 12 ticks",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [
+    57,
+    60,
+    64
+   ],
+   "lamp_names": [
+    "R. INNER LOOP ARROW",
+    "ADVANCE QUORRA",
+    "L. INNER LOOP ARROW"
+   ],
+   "groups_touched": [
+    37
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x3b37c",
+     "name": "quorra_double_secs",
+     "meaning": "seconds left in the (unreachable) double window, 7 at start",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    "var"
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x101f0f4"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "forever: t = quorra_double_secs ? 2 : 12",
+    "  mask lamps 60, 64, 57; toggle group 37; sleep t"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x101fba8"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 76,
+   "fn": "0x1006660",
+   "fn_name": "leff_076",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 10,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "disc flasher: flasher 32 while any multiball runs, else flasher 31; 64 ms every 12 ticks",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    12
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1006660",
+    "0x1006648"
+   ],
+   "exit": "until stopped (leff rule 0x01006610 leff76_disc_flasher_cond)",
+   "pseudo": [
+    "forever: c = any_multiball_running() ? 32 : 31 (FUN_01006648); coil_pulse(c, 64 ms); sleep 12"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1006c10"
+   ],
+   "unresolved_args": [
+    "0x1006670 coil_pulse coil"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 78,
+   "fn": "0x10028ec",
+   "fn_name": "leff_078_clu_shot_lamps",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 7,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "CLU hurry-up shot lamps: the 4 shot groups blink when lit in clu_shots, else off",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d22dc"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3acfc",
+     "name": "clu_shots",
+     "meaning": "lit shots 0x001 L orbit, 0x004 L inner loop, 0x080 R orbit, 0x100 VUK; 0x185 at start",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10028ec"
+   ],
+   "exit": "until stopped (rule)",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); mask the 4 groups of table 0x040d22dc",
+    "forever: for i in 0..3: if clu_shots & table[i].mask: toggle table[i].group else group off",
+    "  sleep 3"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x100303c"
+   ],
+   "unresolved_args": [
+    "0x1002934 lampgroup_bit_set group",
+    "0x1002978 lampgroup_toggle group",
+    "0x100298c lampgroup_off group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 86,
+   "fn": "0x1017174",
+   "fn_name": "leff_086",
+   "same_code_as": "0x1015d40",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1017174"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1016ba8",
+     "caller": "clu_lane_hit",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x10171ac lamp_bit_set lamp",
+    "0x10171bc lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 87,
+   "fn": "0x10171d8",
+   "fn_name": "leff_087",
+   "same_code_as": "0x1015da4",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10171d8"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1016b64",
+     "caller": "clu_lane_hit",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x101720c lamp_bit_set lamp",
+    "0x101721c lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 89,
+   "fn": "0x1017628",
+   "fn_name": "leff_089",
+   "same_code_as": "0x1015d40",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "0x8"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1017628"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1016f8c",
+     "caller": "FUN_01016f14",
+     "param": "0x8"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1017660 lamp_bit_set lamp",
+    "0x1017670 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 93,
+   "fn": "0x1019588",
+   "fn_name": "leff_093",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 194,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 1,
+   "coil_group_coils": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    25,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32
+   ],
+   "what": "GI-off lamp show; the parameter picks the flasher child",
+   "param": "task+0x30 u16: < 2 -> children 0x010194a0 + 0x010194fc, else child 0x01019580",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    38,
+    39
+   ],
+   "coils_touched": [
+    19,
+    25,
+    28
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d3070"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b134",
+     "name": "flasher_step_counter",
+     "meaning": "loop counter of the flasher-chase tails (deterministic, shared scratch)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3,
+    8,
+    8,
+    1,
+    31,
+    8,
+    7
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (by leff priority)",
+    "gi_off",
+    "gi_on"
+   ],
+   "functions": [
+    "0x1019588",
+    "0x10194a0",
+    "0x10194fc",
+    "0x1019580",
+    "0x1015e60"
+   ],
+   "exit": "after 121 x 3 ticks",
+   "pseudo": [
+    "if task+0x30 < 2: spawn 0x010194a0, spawn 0x010194fc (flasher 28: 5 pattern pulses then 41 x 64 ms @8)",
+    "else: spawn 0x01019580",
+    "gi_claim; gi_off",
+    "layer = lamp_layer_create(group 38, prio); invert mask  # owns every lamp except group 38",
+    "for i in 0..120: if i == 65: gi_on; toggle group 39; sleep 3"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1019240",
+     "caller": "deff_085_light_cycle",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015eb4 coil_pulse coil"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 94,
+   "fn": "0x101aff0",
+   "fn_name": "leff_094",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 10,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Light Cycle multiball chain lamps: three children draw the A/B/C chain shot lamps",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    40
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d3104"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b280",
+     "name": "lc_a_lit_mask",
+     "meaning": "chain A lit shots (start 0x02 left ramp)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b288",
+     "name": "lc_a_timer",
+     "meaning": "chain A remaining ticks (312, -7 per 7 ticks)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b294",
+     "name": "lc_b_lit_mask",
+     "meaning": "chain B lit shots (start 0x80 right orbit)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b29c",
+     "name": "lc_b_timer",
+     "meaning": "chain B remaining ticks",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b2a8",
+     "name": "lc_c_lit_mask",
+     "meaning": "always-lit jackpot shots (0x40 right ramp)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b2b0",
+     "name": "lc_c_timer",
+     "meaning": "unused (always 0; task 0xbe never created)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    8,
+    "var",
+    6,
+    "var",
+    6,
+    "var",
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x101aff0",
+    "0x101ac84",
+    "0x101ada8",
+    "0x101aecc"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "spawn lc_leff_chain_a_lamps / _b_ / _c_ (0x0101ac84 / 0x0101ada8 / 0x0101aecc); forever sleep 8",
+    "each child: layer = lamp_layer_create(group 40, prio+2)",
+    "  forever: for i in 0..5 (table 0x040d3104: {mask, lamp}): if lit_mask & mask: mask lamp; on/off by phase",
+    "           else unmask lamp",
+    "    if task_running(0xba/0xbc/0xbe): t = timer < 312 ? timer/31 : 10; sleep max(t,2) else sleep 6; flip phase"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x101b640"
+   ],
+   "unresolved_args": [
+    "0x101ace8 lamp_bit_set lamp",
+    "0x101ad00 lamp_on lamp",
+    "0x101ad14 lamp_off lamp",
+    "0x101ad24 lamp_bit_clear lamp",
+    "0x101ae0c lamp_bit_set lamp",
+    "0x101ae24 lamp_on lamp",
+    "0x101ae38 lamp_off lamp",
+    "0x101ae48 lamp_bit_clear lamp",
+    "0x101af30 lamp_bit_set lamp",
+    "0x101af48 lamp_on lamp",
+    "0x101af5c lamp_off lamp",
+    "0x101af6c lamp_bit_clear lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 99,
+   "fn": "0x1020ff8",
+   "fn_name": "leff_099",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 5,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Recognizer target lamps for the current player: disabled targets solid, the lit (double) target blinks, the previous lit target plane 1 only, others off",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    52
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d32b4"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b3f8",
+     "name": "rec_lit_pos",
+     "meaning": "index 0-3 of the currently lit (double-value) target; order 0=L,1=C,2=R,3=C",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b3fc",
+     "name": "rec_prev_pos",
+     "meaning": "previous lit index, still worth +2 for the first 10 ticks after a step",
+     "tag": "code"
+    },
+    {
+     "addr": "0x21117b7",
+     "name": "",
+     "meaning": "",
+     "tag": "code (address only)"
+    },
+    {
+     "addr": "0x21117b8",
+     "name": "rec_targets_disabled_mask",
+     "meaning": "[player-1]; bit0=L(sw49) bit1=C(sw50) bit2=R(sw51) set for target switches the OS has disabled (switch errors); recomputed at battle end and battle start; disabled targets lamp solid and are skipped by the moving lit target",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1020ff8"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); mask group 52",
+    "blink = true",
+    "forever: seen = 0; for i in 0..3 (table 0x040d32b4: {u8 bit, .., .., u8 lamp}):",
+    "  if bit & seen: continue",
+    "  if rec_targets_disabled_mask[current_player] (byte 0x21117b7 + player, player 1-4) & bit: lamp on (solid)",
+    "  elif bit == table[rec_lit_pos].bit: lamp on if blink else off",
+    "  elif bit == table[rec_prev_pos].bit: lamp plane 2 off, plane 1 on",
+    "  else lamp off",
+    "  seen |= bit",
+    "sleep 3; blink = !blink"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1022098"
+   ],
+   "unresolved_args": [
+    "0x10210a4 lamp_on lamp",
+    "0x10210b8 lamp_off lamp",
+    "0x10210e0 lamp_off lamp",
+    "0x10210f0 lamp_on lamp",
+    "0x1021104 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 100,
+   "fn": "0x1015ce8",
+   "fn_name": "leff_037",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp ON for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015ce8"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L on",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1020350",
+     "caller": "recog_target_hit",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015d1c lamp_bit_set lamp",
+    "0x1015d2c lamp_on lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 101,
+   "fn": "0x102114c",
+   "fn_name": "leff_101",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 6,
+   "coil_group_coils": [
+    29
+   ],
+   "what": "coil group (leff +8) pattern run plus a child that blinks the caller's lamp",
+   "param": "task+0x30 u8 = lamp number, read by the child leff_038 code (task_spawn_child copies task+0x30..+0x47 to the child)",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d32dc"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2,
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x102114c",
+    "0x1015d40"
+   ],
+   "exit": "after 17 x 2 ticks",
+   "pseudo": [
+    "spawn leff_038 code (0x01015d40): blink lamp task+0x30, 10 toggles @2 ticks",
+    "g = leff coil group; for i in 0..16: coilgroup_pulse_fn(g, 100 ms, table 0x040d32dc[i]); sleep 2"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10202b4",
+     "caller": "recog_target_hit",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015d78 lamp_bit_set lamp",
+    "0x1015d88 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 102,
+   "fn": "0x1015da4",
+   "fn_name": "leff_039",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015da4"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015dd8 lamp_bit_set lamp",
+    "0x1015de8 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 103,
+   "fn": "0x1015dfc",
+   "fn_name": "leff_040",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 129,
+   "flags_hex": "0x0006",
+   "lamp_group": 52,
+   "lamp_group_lamps": [
+    51,
+    52,
+    53
+   ],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink a lamp group given by the caller: 24 toggles, 2 ticks each (12 flashes, 48 ticks)",
+   "param": "task+0x30 u16 = lamp group",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015dfc"
+   ],
+   "exit": "after 24 toggles",
+   "pseudo": [
+    "G = task+0x30 (u16)",
+    "layer = lamp_layer_create(G, prio)  # owns G",
+    "repeat 24: toggle G; sleep 2",
+    "exit"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015e24 lamp_layer_create group",
+    "0x1015e44 lampgroup_toggle group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 107,
+   "fn": "0x1021700",
+   "fn_name": "leff_107",
+   "same_code_as": "0x10083ec",
+   "kind": "conditional",
+   "priority": 7,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 16,
+   "coil_group_coils": [
+    26,
+    27
+   ],
+   "what": "coil group (leff +8) pulsed 32 ms every 8 ticks while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1021700"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: if valid and no ball search: coilgroup_pulse(g, 32 ms); sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x10220dc"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 119,
+   "fn": "0x1015ce8",
+   "fn_name": "leff_037",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp ON for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015ce8"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L on",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10339c0",
+     "caller": "zuse_letter_hit",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015d1c lamp_bit_set lamp",
+    "0x1015d2c lamp_on lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 120,
+   "fn": "0x1033de4",
+   "fn_name": "leff_120",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 10,
+   "coil_group_coils": [
+    28
+   ],
+   "what": "flash the leff coil group twice and blink one lamp (10 toggles @2 ticks)",
+   "param": "task+0x30 u8 = lamp number; the child gets the coil group (leff table +8) in its own task+0x30",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2,
+    5
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1033de4",
+    "0x1033da8"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "child = spawn 0x01033da8 with child+0x30 = leff coil group",
+    "  child: repeat 2: coilgroup_pulse(group, 32 ms); sleep 5",
+    "layer = lamp_layer_create(0, prio); L = task+0x30; mask L",
+    "repeat 10: toggle L; sleep 2"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1031d78",
+     "caller": "zuse_target_hit",
+     "param": "var"
+    },
+    {
+     "site": "0x1033840",
+     "caller": "zuse_letter_hit",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1033e40 lamp_bit_set lamp",
+    "0x1033e50 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 121,
+   "fn": "0x1015da4",
+   "fn_name": "leff_039",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015da4"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1031d54",
+     "caller": "zuse_target_hit",
+     "param": null
+    },
+    {
+     "site": "0x10337f4",
+     "caller": "zuse_letter_hit",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015dd8 lamp_bit_set lamp",
+    "0x1015de8 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 122,
+   "fn": "0x1015dfc",
+   "fn_name": "leff_040",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 129,
+   "flags_hex": "0x0006",
+   "lamp_group": 54,
+   "lamp_group_lamps": [
+    12,
+    10,
+    43,
+    29
+   ],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink a lamp group given by the caller: 24 toggles, 2 ticks each (12 flashes, 48 ticks)",
+   "param": "task+0x30 u16 = lamp group",
+   "param_values_at_leff_start": [
+    "0x36"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015dfc"
+   ],
+   "exit": "after 24 toggles",
+   "pseudo": [
+    "G = task+0x30 (u16)",
+    "layer = lamp_layer_create(G, prio)  # owns G",
+    "repeat 24: toggle G; sleep 2",
+    "exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x10338ec",
+     "caller": "zuse_letter_hit",
+     "param": null
+    },
+    {
+     "site": "0x1033a64",
+     "caller": "zuse_complete_set_adv",
+     "param": "0x36"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015e24 lamp_layer_create group",
+    "0x1015e44 lampgroup_toggle group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 124,
+   "fn": "0x1032028",
+   "fn_name": "leff_124_zfs_target_lamps",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 7,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Zuse fast scoring target lamps: unhit targets blink (5 ticks), hit targets off",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d6ef0"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b8e8",
+     "name": "zfs_targets",
+     "meaning": "targets hit in current set 1/2/4/8 + 0x10 marker; complete at 0x1f",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    5,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1032028"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "forever: for i in 0..3 (table 0x040d6ef0, 8 bytes: u16 mask @0, lamp @5):",
+    "  mask lamp; if zfs_targets & mask: off else on/off by phase",
+    "  sleep 5; flip phase"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x10334f8"
+   ],
+   "unresolved_args": [
+    "0x1032094 lamp_bit_set lamp",
+    "0x10320a4 lamp_off lamp",
+    "0x10320b4 lamp_bit_set lamp",
+    "0x10320cc lamp_on lamp",
+    "0x10320e0 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 125,
+   "fn": "0x10321b4",
+   "fn_name": "leff_125_zfs_chase",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 7,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 11,
+   "coil_group_coils": [
+    28
+   ],
+   "what": "coil group (leff +8) chase, 14-step table 0x040d6f18, 150 ms; pauses while the playfield is not valid or ball search runs",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d6f18"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    4,
+    4
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10321b4"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: wait (sleep 4) until valid and no ball search;",
+    "  for i in 0..13: coilgroup_pulse_fn(g, 150, t[i]); sleep 4"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1033538"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 126,
+   "fn": "0x1031e28",
+   "fn_name": "leff_126",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 159,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 12,
+   "coil_group_coils": [
+    28
+   ],
+   "what": "flash the leff coil group once (32 ms) and blink one lamp (10 toggles @2 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1031e28"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "coilgroup_pulse(leff coil group, 32 ms)",
+    "layer = lamp_layer_create(0, prio); L = task+0x30; mask L",
+    "repeat 10: toggle L; sleep 2"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1031e74 lamp_bit_set lamp",
+    "0x1031e84 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 127,
+   "fn": "0x1015da4",
+   "fn_name": "leff_039",
+   "same_code_as": "",
+   "kind": "parametric",
+   "priority": 158,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1015da4"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1015dd8 lamp_bit_set lamp",
+    "0x1015de8 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 129,
+   "fn": "0x1032cac",
+   "fn_name": "FUN_01032cac",
+   "same_code_as": "",
+   "kind": "gi_only",
+   "priority": 176,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "GI off for 2 ticks (a GI blink; no lamps)",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (by leff priority)",
+    "gi_off"
+   ],
+   "functions": [
+    "0x1032cac"
+   ],
+   "exit": "after 2 ticks",
+   "pseudo": [
+    "gi_claim; gi_off; sleep 2; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1031c94",
+     "caller": "zfs_score_hit",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 131,
+   "fn": "0x100d158",
+   "fn_name": "leff_131",
+   "same_code_as": "0x1015d40",
+   "kind": "parametric",
+   "priority": 128,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x100d158"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x100d190 lamp_bit_set lamp",
+    "0x100d1a0 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 132,
+   "fn": "0x100c748",
+   "fn_name": "leff_132",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 8,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "flashers 20+21 pattern loop (14-step table 0x040d2890, 100 ms) while the playfield is valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [
+    20,
+    21
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d2890"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    4
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x100c748"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "same shape as leff 43: coil_pulse_fn(20/21, 100, table[i]); sleep 4"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x100d4a8"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 133,
+   "fn": "0x100f430",
+   "fn_name": "leff_133",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 246,
+   "flags_hex": "0x0000",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 1,
+   "coil_group_coils": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    25,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32
+   ],
+   "what": "tilt/flasher show with GI off: every lamp masked off except the start-button lamps, flashers of coil group 1 chase 512 steps",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [
+    {
+     "addr": "0x36f64",
+     "name": "start_button_lamp",
+     "meaning": "lamp number of the START button; ROM-initialised to 65 (file 0x36f64)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x36f65",
+     "name": "tournament_button_lamp",
+     "meaning": "lamp number of the TOURNAMENT START button; ROM-initialised to 66",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3908c",
+     "name": "extra_button_lamp",
+     "meaning": "a lamp number left visible by the attract/tilt layers; 0 at power-up (file 0x3908c), set at run time (inferred: a third button lamp)",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3b134",
+     "name": "flasher_step_counter",
+     "meaning": "loop counter of the flasher-chase tails (deterministic, shared scratch)",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    7
+   ],
+   "tick_ms": 16.26,
+   "gi": [
+    "gi_claim (by leff priority)",
+    "gi_off"
+   ],
+   "functions": [
+    "0x100f430",
+    "0x1015e60"
+   ],
+   "exit": "after 512 x 7 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); mask all lamps (all off); unmask 0x3908c, 0x36f64, 0x36f65",
+    "gi_claim; gi_off",
+    "repeat 512: 2 flashers of coil group (leff +8) 64 ms, next index; sleep 7"
+   ],
+   "note": "Deterministic apart from the button lamps; exported show is usable.",
+   "started_by": [
+    {
+     "site": "0x100f368",
+     "caller": "game_over_music_task",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x100f478 lamp_bit_clear lamp",
+    "0x100f494 lamp_bit_clear lamp",
+    "0x100f4b0 lamp_bit_clear lamp",
+    "0x1015eb4 coil_pulse coil"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 134,
+   "fn": "0x1026814",
+   "fn_name": "leff_134",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 9,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 24,
+   "coil_group_coils": [
+    17,
+    18
+   ],
+   "what": "flashers 17 and 18 run the 16-step table 0x040d3940 half a cycle apart (200 ms patterns) while the playfield is valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [
+    17,
+    18
+   ],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d3940"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1026814"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "a = 0; b = 8; forever: if valid and no ball search: coil_pulse_fn(17, 200, t[a++]); coil_pulse_fn(18, 200, t[b++]) (wrap at 16)",
+    "else a = 0; b = 8",
+    "sleep 6"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1028768"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 136,
+   "fn": "0x1026f74",
+   "fn_name": "leff_136",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 15,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Sea of Simulation: runs the per-stage lamp child from table 0x040d37d8 (9 x 0x28 bytes, fn at +0x10) and restarts when the stage changes",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    76
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d37d8"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b628",
+     "name": "sos_stage",
+     "meaning": "current stage 0-8",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    1
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1026f74",
+    "0x102635c"
+   ],
+   "exit": "when sos_stage changes",
+   "pseudo": [
+    "layer = lamp_layer_create(group 76, prio)",
+    "s = sos_stage",
+    "rec = 0x040d37d8 + s*0x28 (FUN_0102635c); if rec.fn(+0x10): spawn rec.fn",
+    "wait (sleep 1) until sos_stage != s; task_exit (the rule restarts the leff)"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x10287d8"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 141,
+   "fn": "0x102792c",
+   "fn_name": "leff_141",
+   "same_code_as": "0x1015d40",
+   "kind": "parametric",
+   "priority": 209,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink one lamp given by the caller: 10 toggles, 2 ticks each (5 flashes, 20 ticks)",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x102792c"
+   ],
+   "exit": "after 10 toggles",
+   "pseudo": [
+    "layer = lamp_layer_create(0, leff priority)",
+    "L = task+0x30 (byte)",
+    "mask L",
+    "repeat 10: toggle L; sleep 2",
+    "exit (layer freed with the task)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1024fb4",
+     "caller": "sos_stage2_clu_shot",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1027964 lamp_bit_set lamp",
+    "0x1027974 lamp_toggle lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 142,
+   "fn": "0x1027990",
+   "fn_name": "leff_142",
+   "same_code_as": "0x1015da4",
+   "kind": "parametric",
+   "priority": 209,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one lamp forced OFF for 8 ticks",
+   "param": "task+0x30 u8 = lamp number",
+   "param_values_at_leff_start": [
+    "var"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1027990"
+   ],
+   "exit": "after 8 ticks",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "L = task+0x30",
+    "mask L; L off",
+    "sleep 8; exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1024f8c",
+     "caller": "sos_stage2_clu_shot",
+     "param": "var"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x10279c4 lamp_bit_set lamp",
+    "0x10279d4 lamp_off lamp"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 143,
+   "fn": "0x10279e8",
+   "fn_name": "leff_143",
+   "same_code_as": "0x1015dfc",
+   "kind": "parametric",
+   "priority": 209,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink a lamp group given by the caller: 24 toggles, 2 ticks each (12 flashes, 48 ticks)",
+   "param": "task+0x30 u16 = lamp group",
+   "param_values_at_leff_start": [
+    "0x32"
+   ],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    2
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x10279e8"
+   ],
+   "exit": "after 24 toggles",
+   "pseudo": [
+    "G = task+0x30 (u16)",
+    "layer = lamp_layer_create(G, prio)  # owns G",
+    "repeat 24: toggle G; sleep 2",
+    "exit"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x1025030",
+     "caller": "sos_stage2_clu_shot",
+     "param": "0x32"
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x1027a10 lamp_layer_create group",
+    "0x1027a30 lampgroup_toggle group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 154,
+   "fn": "0x101cb54",
+   "fn_name": "leff_154",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 193,
+   "flags_hex": "0x0006",
+   "lamp_group": 63,
+   "lamp_group_lamps": [
+    16
+   ],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "blink the leff lamp group (table +6 = 63, L. LOOP ARROW) every 4 ticks while the big-bumps window task 0xca runs",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    4
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x101cb54"
+   ],
+   "exit": "when task 0xca ends (left ramp -> bumpers window, FUN_0101cc04)",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); G = leff lamp group; mask G",
+    "while task_running(0xca): toggle G; sleep 4"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x101cc44",
+     "caller": "FUN_0101cc04",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x101cb84 lampgroup_bit_set group",
+    "0x101cb98 lampgroup_toggle group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 155,
+   "fn": "0x101cb28",
+   "fn_name": "FUN_0101cb28",
+   "same_code_as": "",
+   "kind": "random",
+   "priority": 194,
+   "flags_hex": "0x0006",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "one random coil of coil group 1 pulsed 32 ms (FUN_0000c6b4 = random(n), through the 6-slot limiter)",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [
+    1
+   ],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x101cb28"
+   ],
+   "exit": "immediately",
+   "pseudo": [
+    "n = coilgroup_count(1); c = coilgroup_member(1, random(n)); limiter slot = coil_drive_pulse(c, 32 ms)"
+   ],
+   "note": "",
+   "started_by": [
+    {
+     "site": "0x101ca70",
+     "caller": "deff_135_big_bump1_s",
+     "param": null
+    }
+   ],
+   "leff_rules": [],
+   "unresolved_args": [
+    "0x101cb50 coil_pulse coil"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 157,
+   "fn": "0x100da04",
+   "fn_name": "leff_157_roving_arrow",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 3,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Flynn's arcade roving arrow: only the group at position ff_pos is shown (on)",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d2948"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3af9c",
+     "name": "ff_pos",
+     "meaning": "roving arrow current position 0-5",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    3,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x100da04"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio)",
+    "forever: p = ff_pos",
+    "  for i in 0..5 (table 0x040d294c, 8 bytes, u16 group): if i == p: mask group; group on else unmask group",
+    "  sleep 3"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x100dca0"
+   ],
+   "unresolved_args": [
+    "0x100da6c lampgroup_bit_set group",
+    "0x100da7c lampgroup_on group",
+    "0x100da8c lampgroup_bit_clear group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 159,
+   "fn": "0x1003a74",
+   "fn_name": "leff159_combo_arrows",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 4,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "combo arrows: lit combo shots blink, rate from combo_timer while the combo window (task 0xcd) runs",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d2324"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3ad58",
+     "name": "combo_starters",
+     "meaning": "0x36: shots that may open a window",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3ad5c",
+     "name": "combo_lit",
+     "meaning": "shot masks that combo now",
+     "tag": "code"
+    },
+    {
+     "addr": "0x3ad60",
+     "name": "combo_timer",
+     "meaning": "312 at open, -7 per 7 ticks",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    "var",
+    6,
+    6,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1003a74",
+    "0x100329c",
+    "0x1003344"
+   ],
+   "exit": "until stopped (leff rule 0x01003bf0)",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); blink = true",
+    "forever: starters = combo_starters != 0; window = task_running(0xcd)",
+    "  for i in 0..5 (table 0x040d2324, 6 bytes: u32 mask, u16 group):",
+    "    if window and combo_lit & mask: mask group; on if blink else off",
+    "    elif window or starters: unmask group (combo_starters & mask with no window also unmasks)",
+    "  sleep window ? max(2, combo_timer < 312 ? combo_timer/31 : 10) : 6; blink = !blink"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1004090"
+   ],
+   "unresolved_args": [
+    "0x1003ae4 lampgroup_bit_set group",
+    "0x1003afc lampgroup_on group",
+    "0x1003b10 lampgroup_off group",
+    "0x1003b3c lampgroup_bit_clear group",
+    "0x1003b4c lampgroup_bit_clear group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 161,
+   "fn": "0x1003e40",
+   "fn_name": "leff_161",
+   "same_code_as": "",
+   "kind": "conditional",
+   "priority": 4,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 9,
+   "coil_group_coils": [
+    17,
+    18
+   ],
+   "what": "coil group (leff +8) pattern loop, 16-step table 0x040d248c, 200 ms, while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d248c"
+   ],
+   "ram_read": [],
+   "sleeps_ticks": [
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1003e40"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; i = 0; forever: if valid and no ball search: coilgroup_pulse_fn(g, 200, t[i++]) (wrap 16) else i = 0; sleep 6"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x10040b0"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 164,
+   "fn": "0x102fa7c",
+   "fn_name": "leff_164_portal_lit_flasher",
+   "same_code_as": "0x10083ec",
+   "kind": "conditional",
+   "priority": 9,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 13,
+   "coil_group_coils": [
+    18
+   ],
+   "what": "coil group (leff +8) pulsed 32 ms every 8 ticks while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x102fa7c"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: if valid and no ball search: coilgroup_pulse(g, 32 ms); sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1030f70"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  },
+  {
+   "leff": 166,
+   "fn": "0x1030198",
+   "fn_name": "leff_166_portal_shot_lamps",
+   "same_code_as": "",
+   "kind": "state",
+   "priority": 7,
+   "flags_hex": "0x0001",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 0,
+   "coil_group_coils": [],
+   "what": "Portal multiball shot lamps by phase: 0 = per-shot progress bars (count from RAM via table pointers), 1 = group 95 drains/fills, 2 = all shot groups blink",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [
+    95
+   ],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [
+    "0x40d6e14"
+   ],
+   "ram_read": [
+    {
+     "addr": "0x3b878",
+     "name": "pm_phase",
+     "meaning": "0 = collect shots, 1 = super jackpot lit at disc, 2 = all shots 1,000,000",
+     "tag": "code"
+    }
+   ],
+   "sleeps_ticks": [
+    8,
+    8,
+    3,
+    6
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x1030198"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "layer = lamp_layer_create(0, prio); blink = true",
+    "forever: if pm_phase == 1: unmask the 7 groups of table 0x040d6e18; mask group 95;",
+    "            drain group 95 one lamp per 8 ticks until empty, then fill one per 8 ticks until full",
+    "  elif pm_phase == 0: mask+on group 95; for each of 7 records {u16 group, u8* count}:",
+    "            n = *count; lamps [0..n) on, lamp n blinks, the rest off",
+    "  elif pm_phase == 2: mask+on group 95; every record group on/off with blink",
+    "  sleep 3; blink = !blink"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1030fe4"
+   ],
+   "unresolved_args": [
+    "0x1030248 lampgroup_bit_set group",
+    "0x103025c lampgroup_count group",
+    "0x1030274 lampgroup_member group",
+    "0x103029c lamp_on lamp",
+    "0x10302ac lamp_off lamp",
+    "0x10302bc lamp_off lamp",
+    "0x1030300 lampgroup_bit_clear group",
+    "0x10303ac lampgroup_bit_set group",
+    "0x10303c8 lampgroup_on group",
+    "0x10303dc lampgroup_off group"
+   ],
+   "tag": "code"
+  },
+  {
+   "leff": 167,
+   "fn": "0x103041c",
+   "fn_name": "leff_167_portal_super_flashers",
+   "same_code_as": "0x10083ec",
+   "kind": "conditional",
+   "priority": 7,
+   "flags_hex": "0x0005",
+   "lamp_group": 0,
+   "lamp_group_lamps": [],
+   "coil_group": 14,
+   "coil_group_coils": [
+    26,
+    27
+   ],
+   "what": "coil group (leff +8) pulsed 32 ms every 8 ticks while valid and no ball search",
+   "param": "",
+   "param_values_at_leff_start": [],
+   "lamps_touched": [],
+   "lamp_names": [],
+   "groups_touched": [],
+   "coils_touched": [],
+   "coil_groups_touched": [],
+   "rom_tables": [],
+   "ram_read": [],
+   "sleeps_ticks": [
+    8
+   ],
+   "tick_ms": 16.26,
+   "gi": [],
+   "functions": [
+    "0x103041c"
+   ],
+   "exit": "until stopped",
+   "pseudo": [
+    "g = leff coil group; forever: if valid and no ball search: coilgroup_pulse(g, 32 ms); sleep 8"
+   ],
+   "note": "",
+   "started_by": [],
+   "leff_rules": [
+    "0x1031004"
+   ],
+   "unresolved_args": [],
+   "tag": "code"
+  }
+ ]
+}

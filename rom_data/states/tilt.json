@@ -1,0 +1,194 @@
+{
+ "facts": [
+  {
+   "id": "tilt_warning",
+   "fact": "Tilt bob (D17, handler 0x24564): a bob within 62 ticks of the last accepted one is ignored. Each accepted bob below adj 32 (TILT WARNINGS, default 2): warnings+1 (0x3d4f8), event 0x68, deff 23 'DANGER', leff 11 (GI off 15 ticks), sound 0x016, event 0x69; sound 0x03d 0.5 s later",
+   "value": null,
+   "address": "0x24564, 0x24404-0x24444",
+   "tag": "observed",
+   "evidence": "traces/tilt_modes.jsonl t 14.48, 16.35; gi_and_tilt.jsonl"
+  },
+  {
+   "id": "tilt_tilt",
+   "fact": "The bob that reaches the limit TILTS (0x2444c): event 0x66 (0x24490), audit 42, event 0x65 (0x244dc), deff 21 'TILT', leff 9 (GI off), sound 0x017, event 0x67 (0x24510); gf_state |= 0x200 (512); class-8 game flags reset (flag 46); sound 0x03e 1 s later",
+   "value": null,
+   "address": "0x2444c",
+   "tag": "observed",
+   "evidence": "traces/tilt_modes.jsonl t 18.23, 63.85"
+  },
+  {
+   "id": "tilt_switches",
+   "fact": "While tilted the switch gate blocks every switch whose descriptor flags lack 0x200, so playfield switches score nothing (base_score_if_not_tilted 0x102a188 checks again)",
+   "value": null,
+   "address": "0xe85c, 0x102a188",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "tilt_ball_save",
+   "fact": "Tilt inside the ball-save window: the drain is NOT saved (no BALL SAVED, no re-serve); event 0x1e -> 0x1d, audit 8, no bonus, next ball",
+   "value": null,
+   "address": "0x20764",
+   "tag": "observed",
+   "evidence": "traces/tilt_modes.jsonl t 18.23 tilt at 5 s ball save, drain 20.01 -> ball 2 at 21.93"
+  },
+  {
+   "id": "tilt_no_bonus",
+   "fact": "End of ball when tilted: 0x20764 skips the bonus (gf_state & 0x200) - deff 25 does not run; ball start clears 0x200 and the tilt warnings",
+   "value": null,
+   "address": "0x2089c-0x208a4, 0x209b0",
+   "tag": "observed",
+   "evidence": "traces/tilt_modes.jsonl, gi_and_tilt.jsonl, multiplayer_3p.jsonl"
+  },
+  {
+   "id": "tilt_multiball",
+   "fact": "Tilt during Disc Multiball: the tilt does not drain balls; the multiball keeps running until the balls drain, then its normal end display runs (deff 52, leff 52 - which also takes GI ownership while tilted - sound 0x02c) and the end of ball follows with no bonus",
+   "value": null,
+   "address": "0x10076e8",
+   "tag": "observed",
+   "evidence": "traces/tilt_modes.jsonl t 63.85 tilt, 68.70 MB end, 69.83 end of ball, 71.53 ball 3"
+  },
+  {
+   "id": "tilt_gi",
+   "fact": "GI off from the tilt until the end-of-ball task 0x2a releases the leff at the drain",
+   "value": null,
+   "address": "0x2ff44",
+   "tag": "observed",
+   "evidence": "traces/gi_and_tilt.jsonl t 27.85 -> 31.64"
+  },
+  {
+   "id": "tilt_modes_cancel",
+   "fact": "Modes stop on event 0x1d (end of ball) as usual; mode-specific tilt hooks on 0x65/0x66 (e.g. SOS pays unpaid skip bonuses on 0x66) run at the tilt itself",
+   "value": null,
+   "address": "0x01026794",
+   "tag": "code",
+   "evidence": "sea_of_simulation.md"
+  },
+  {
+   "id": "slam",
+   "fact": "Slam (D18, 0x23e40): ignored in service mode; event 0x55 veto; gf_state |= 0x200 (512 in game, 528 in attract); kill tasks; event 0x54; task 0x39 slam_reset_task 0x23e18; deff 24, leff 12 (blackout + GI off), sound 0x018. After 0xda + 0x5d = 311 ticks (4.99 s measured) it calls 0x10ce8: 0x16a94(1) then an endless loop waiting for the hardware watchdog -> full machine reset. The game in progress is lost; credits survive (NVRAM)",
+   "value": null,
+   "address": "0x23e40, 0x23e18, 0x10ce8",
+   "tag": "observed",
+   "evidence": "traces/slam_tilt.jsonl t 17.88 -> reset_request 22.87"
+  },
+  {
+   "id": "slam_attract",
+   "fact": "Slam in attract also resets the machine",
+   "value": null,
+   "address": "0x23e40",
+   "tag": "observed",
+   "evidence": "traces/slam_tilt.jsonl t 54.15 -> 59.14"
+  },
+  {
+   "id": "slam_harness",
+   "fact": "PinMAME does not emulate the SAM watchdog: without help the emulator spins in 0x10ce8 forever. states_ref resets the machine (PinmameReset) when the ROM reaches 0x10ce8",
+   "value": null,
+   "address": "0x10ce8",
+   "tag": "observed",
+   "evidence": "states_ref.cpp watchdog emulation"
+  }
+ ],
+ "observed_event_sequence": [
+  {
+   "t": 14.4832,
+   "event": "0x68",
+   "caller": "0x24404"
+  },
+  {
+   "t": 14.4835,
+   "event": "0x69",
+   "caller": "0x24444"
+  },
+  {
+   "t": 16.345,
+   "event": "0x68",
+   "caller": "0x24404"
+  },
+  {
+   "t": 16.3452,
+   "event": "0x69",
+   "caller": "0x24444"
+  },
+  {
+   "t": 18.2315,
+   "event": "0x66",
+   "caller": "0x24490"
+  },
+  {
+   "t": 18.232,
+   "event": "0x65",
+   "caller": "0x244dc"
+  },
+  {
+   "t": 18.2322,
+   "event": "0x67",
+   "caller": "0x24510"
+  },
+  {
+   "t": 20.0079,
+   "event": "0x1e",
+   "caller": "0x207ac"
+  },
+  {
+   "t": 20.0079,
+   "event": "0x1d",
+   "caller": "0x207e8"
+  },
+  {
+   "t": 21.9282,
+   "event": "0x1f",
+   "caller": "0x209d4"
+  },
+  {
+   "t": 60.0822,
+   "event": "0x68",
+   "caller": "0x24404"
+  },
+  {
+   "t": 60.0825,
+   "event": "0x69",
+   "caller": "0x24444"
+  },
+  {
+   "t": 61.9425,
+   "event": "0x68",
+   "caller": "0x24404"
+  },
+  {
+   "t": 61.9427,
+   "event": "0x69",
+   "caller": "0x24444"
+  },
+  {
+   "t": 63.8492,
+   "event": "0x66",
+   "caller": "0x24490"
+  },
+  {
+   "t": 63.8495,
+   "event": "0x65",
+   "caller": "0x244dc"
+  },
+  {
+   "t": 63.8498,
+   "event": "0x67",
+   "caller": "0x24510"
+  },
+  {
+   "t": 69.8295,
+   "event": "0x1e",
+   "caller": "0x207ac"
+  },
+  {
+   "t": 69.8296,
+   "event": "0x1d",
+   "caller": "0x207e8"
+  },
+  {
+   "t": 71.5334,
+   "event": "0x1f",
+   "caller": "0x209d4"
+  }
+ ]
+}

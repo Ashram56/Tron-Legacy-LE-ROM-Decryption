@@ -1,0 +1,45 @@
+# hw study 1: slings, bumpers, flippers, VUK, drain, ball search
+wait 2
+dump
+start 1
+wait 4
+mark slings
+hit 26 30
+wait 0.5
+hit 27 30
+wait 0.5
+hit 26 300
+wait 0.5
+hit 26 30
+hit 26 30
+wait 0.5
+mark bumpers
+hit 30 30
+wait 0.3
+hit 31 30
+wait 0.3
+hit 32 30
+wait 0.3
+hit 30 200
+wait 0.3
+hit 30 5
+hit 30 5
+wait 0.5
+mark flippers
+button left 50
+wait 0.5
+button left 800
+wait 0.5
+button right 50
+wait 0.5
+button right 800
+wait 0.5
+mark vuk
+hit 11
+wait 4
+mark drain
+drain
+wait 6
+mark ballsearch
+wait 30
+dump

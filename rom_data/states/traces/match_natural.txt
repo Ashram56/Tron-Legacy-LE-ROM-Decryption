@@ -1,0 +1,25 @@
+# Match, natural draw (states_ref, factory settings except adj 38 BALL SAVE TIME = 0 so each drain ends the ball).
+# trace rng logs every random(n) call: the match number is random(10)*10 at 0x1b6ac (caller 0x1b6b0).
+adj 38 0
+start 1
+trace rng on
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 34
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 7
+wait 1
+mark last drain: bonus, match
+drain
+wait 16

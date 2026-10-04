@@ -1,0 +1,27 @@
+# Match, FORCED LOSS (states_ref): as match_win.txt but adj 30 MATCH PERCENTAGE = 0, so rate 0 >= 0 takes the
+# no-win branch at 0x1b770: the drawn number 40 (which would match) is stepped +10 to 50 until no player matches.
+adj 38 0
+adj 30 0
+start 1
+trace rng on
+pokeat 1b6ac 372c4 2814350714 4
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 34
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 7
+wait 1
+mark last drain: bonus, match
+drain
+wait 16

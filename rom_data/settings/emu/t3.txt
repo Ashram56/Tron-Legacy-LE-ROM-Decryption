@@ -1,0 +1,29 @@
+key 3
+key 3
+key 3
+wait 1
+key 1
+wait 4
+mark INJ_replay
+adjlog 1
+call 22d2c 1 1 0 0
+adjlog 0
+wait 3
+credits
+mark INJ_special
+adjlog 1
+call 240ac 0 0 0 0
+adjlog 0
+wait 3
+credits
+mark INJ_eb
+adjlog 1
+call 1a168 0 0 0 0
+adjlog 0
+wait 2
+mark INJ_replay2
+adjlog 1
+call 22d2c 1 2 0 0
+adjlog 0
+wait 2
+credits

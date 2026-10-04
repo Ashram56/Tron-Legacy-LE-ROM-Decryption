@@ -1,0 +1,27 @@
+adjlog 1
+mark boot_done
+key 3
+key 3
+key 3
+key 3
+wait 1
+credits
+callstr 4ff4 1 B
+mark press_start
+key 1
+wait 6
+mark ball1
+hit 30
+hit 31
+hit 11
+wait 3
+drain
+wait 6
+mark ball2
+drain
+wait 6
+mark ball3
+drain
+wait 8
+mark after_game
+wait 4

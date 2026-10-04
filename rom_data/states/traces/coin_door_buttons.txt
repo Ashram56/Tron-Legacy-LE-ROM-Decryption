@@ -1,0 +1,46 @@
+# Coin door service buttons and dedicated switches (states_ref; factory settings, attract mode).
+# Proves which PinMAME input reaches which ROM key: the coin door dispatcher 0xfc20 is called with
+# r0 = the button mask from the dedicated switch table 0x040f4074 (BACK 1, MINUS 2, PLUS 4, SELECT 8).
+pretracepc fc20 coin_door_key
+pretracepc 102a1b4 sw_left_flipper_button
+pretracepc 102a294 sw_right_flipper_button
+pretracepc 102a2f0 sw_upper_left_flipper_button
+pretracepc 24564 sw_tilt_pendulum
+pretracepc 23e40 sw_slam_tilt
+wait 3
+mark key 8 (PinMAME port bit 0x200 "Minus") in attract: expect mask 2, volume down
+button minus 200
+wait 2
+mark key 9 (PinMAME port bit 0x400 "Plus"): expect mask 4, volume up
+button plus 200
+wait 2
+mark PinmameSetSwitch -2 (col 0 bit 5): expect mask 2 if libpinmame switch numbers reach the dedicated column
+dsw -2 200
+wait 2
+mark PinmameSetSwitch -1 (col 0 bit 6): expect mask 4
+dsw -1 200
+wait 2
+mark flipper buttons by PinMAME switch number: 84 = D9 left, 82 = D11 right, 88 = D13 upper left
+dsw 84 150
+wait 1.5
+dsw 82 150
+wait 1.5
+dsw 88 150
+wait 1.5
+mark key 0 (port bit 0x800 "Select"): expect mask 8, service menu opens
+button select 200
+wait 3
+mark plus, plus, minus inside the menu
+button plus 200
+wait 1.5
+button plus 200
+wait 1.5
+button minus 200
+wait 1.5
+mark key 7 (port bit 0x100 "Back"): expect mask 1, leave the menu
+button back 200
+wait 2
+button back 200
+wait 2
+button back 200
+wait 4

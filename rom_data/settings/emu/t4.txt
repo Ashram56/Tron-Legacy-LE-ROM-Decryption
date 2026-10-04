@@ -1,0 +1,518 @@
+call f754 1 257664
+peek 3ee80 48
+call f754 2 257664
+peek 3ee80 48
+call f754 3 257664
+peek 3ee80 48
+call f754 4 257664
+peek 3ee80 48
+call f754 5 257664
+peek 3ee80 48
+call f754 6 257664
+peek 3ee80 48
+call f754 7 257664
+peek 3ee80 48
+call f754 8 257664
+peek 3ee80 48
+call f754 9 257664
+peek 3ee80 48
+call f754 10 257664
+peek 3ee80 48
+call f754 11 257664
+peek 3ee80 48
+call f754 12 257664
+peek 3ee80 48
+call f754 13 257664
+peek 3ee80 48
+call f754 14 257664
+peek 3ee80 48
+call f754 15 257664
+peek 3ee80 48
+call f754 16 257664
+peek 3ee80 48
+call f754 17 257664
+peek 3ee80 48
+call e90 1
+call f28 1
+call e90 2
+call f28 2
+call e90 3
+call f28 3
+call e90 4
+call f28 4
+call e90 5
+call f28 5
+call e90 6
+call f28 6
+call e90 7
+call f28 7
+call e90 8
+call f28 8
+call e90 9
+call f28 9
+call e90 10
+call f28 10
+call e90 11
+call f28 11
+call e90 12
+call f28 12
+call e90 13
+call f28 13
+call e90 14
+call f28 14
+call e90 15
+call f28 15
+call e90 16
+call f28 16
+call e90 17
+call f28 17
+call e90 18
+call f28 18
+call e90 19
+call f28 19
+call e90 20
+call f28 20
+call e90 21
+call f28 21
+call e90 22
+call f28 22
+call e90 23
+call f28 23
+call e90 24
+call f28 24
+call e90 25
+call f28 25
+call e90 26
+call f28 26
+call e90 27
+call f28 27
+call e90 28
+call f28 28
+call e90 29
+call f28 29
+call e90 30
+call f28 30
+call e90 31
+call f28 31
+call e90 32
+call f28 32
+call e90 33
+call f28 33
+call e90 34
+call f28 34
+call e90 35
+call f28 35
+call e90 36
+call f28 36
+call e90 37
+call f28 37
+call e90 38
+call f28 38
+call e90 39
+call f28 39
+call e90 40
+call f28 40
+call e90 41
+call f28 41
+call e90 42
+call f28 42
+call e90 43
+call f28 43
+call e90 44
+call f28 44
+call e90 45
+call f28 45
+call e90 46
+call f28 46
+call e90 47
+call f28 47
+call e90 48
+call f28 48
+call e90 49
+call f28 49
+call e90 50
+call f28 50
+call e90 51
+call f28 51
+call e90 52
+call f28 52
+call e90 53
+call f28 53
+call e90 54
+call f28 54
+call e90 55
+call f28 55
+call e90 56
+call f28 56
+call e90 57
+call f28 57
+call e90 58
+call f28 58
+call e90 59
+call f28 59
+call e90 60
+call f28 60
+call e90 61
+call f28 61
+call e90 62
+call f28 62
+call e90 63
+call f28 63
+call e90 64
+call f28 64
+call e90 65
+call f28 65
+call e90 66
+call f28 66
+call e90 67
+call f28 67
+call e90 68
+call f28 68
+call e90 69
+call f28 69
+call e90 70
+call f28 70
+call e90 71
+call f28 71
+call e90 72
+call f28 72
+call e90 73
+call f28 73
+call e90 74
+call f28 74
+call e90 75
+call f28 75
+call e90 76
+call f28 76
+call e90 77
+call f28 77
+call e90 78
+call f28 78
+call e90 79
+call f28 79
+call e90 80
+call f28 80
+call e90 81
+call f28 81
+call e90 82
+call f28 82
+call e90 83
+call f28 83
+call e90 84
+call f28 84
+call e90 85
+call f28 85
+call e90 86
+call f28 86
+call e90 87
+call f28 87
+call e90 88
+call f28 88
+audit 1
+audit 2
+audit 3
+audit 4
+audit 5
+audit 6
+audit 7
+audit 8
+audit 9
+audit 10
+audit 11
+audit 12
+audit 13
+audit 14
+audit 15
+audit 16
+audit 17
+audit 18
+audit 19
+audit 20
+audit 21
+audit 22
+audit 23
+audit 24
+audit 25
+audit 26
+audit 27
+audit 28
+audit 29
+audit 30
+audit 31
+audit 32
+audit 33
+audit 34
+audit 35
+audit 36
+audit 37
+audit 38
+audit 39
+audit 40
+audit 41
+audit 42
+audit 43
+audit 44
+audit 45
+audit 46
+audit 47
+audit 48
+audit 49
+audit 50
+audit 51
+audit 52
+audit 53
+audit 54
+audit 55
+audit 56
+audit 57
+audit 58
+audit 59
+audit 60
+audit 61
+audit 62
+audit 63
+audit 64
+audit 65
+audit 66
+audit 67
+audit 68
+audit 69
+audit 70
+audit 71
+audit 72
+audit 73
+audit 74
+audit 75
+audit 76
+audit 77
+audit 78
+audit 79
+audit 80
+audit 81
+audit 82
+audit 83
+audit 84
+audit 85
+audit 86
+audit 87
+audit 88
+audit 89
+audit 90
+audit 91
+audit 92
+audit 93
+audit 94
+audit 95
+audit 96
+audit 97
+audit 98
+audit 99
+audit 100
+audit 101
+audit 102
+audit 103
+audit 104
+audit 105
+audit 106
+audit 107
+audit 108
+audit 109
+audit 110
+audit 111
+audit 112
+audit 113
+audit 114
+audit 115
+audit 116
+audit 117
+audit 118
+audit 119
+audit 120
+audit 121
+audit 122
+audit 123
+audit 124
+audit 125
+audit 126
+audit 127
+audit 128
+audit 129
+audit 130
+audit 131
+audit 132
+audit 133
+audit 134
+audit 135
+audit 136
+audit 137
+audit 138
+audit 139
+audit 140
+audit 141
+audit 142
+audit 143
+audit 144
+audit 145
+audit 146
+audit 147
+audit 148
+audit 149
+audit 150
+audit 1 0x90
+audit 5 0x90
+audit 6 0x90
+audit 7 0x90
+audit 8 0x90
+audit 9 0x90
+audit 10 0x90
+audit 11 0x90
+audit 12 0x90
+mark POKE
+call 178c 17 40
+call 178c 18 10
+call 178c 14 2
+call 178c 15 4
+call 178c 16 5
+call 178c 10 3
+call 178c 11 2
+call 178c 12 1
+call 178c 13 1
+call 178c 9 7
+call 178c 8 120
+call 178c 40 30
+call 178c 41 25
+call 178c 63 9000
+call 178c 60 10000
+call 178c 2 5
+call 178c 3 2
+call 178c 4 1
+call 178c 5 1
+call 178c 7 13
+call 178c 1 6
+call 178c 65 17
+call 178c 66 77
+audit 1
+audit 2
+audit 3
+audit 4
+audit 5
+audit 6
+audit 7
+audit 8
+audit 9
+audit 10
+audit 11
+audit 12
+audit 13
+audit 14
+audit 15
+audit 16
+audit 17
+audit 21
+audit 22
+audit 23
+audit 24
+audit 25
+audit 26
+audit 27
+audit 28
+audit 29
+audit 47
+audit 53
+audit 72
+audit 73
+audit 74
+audit 1 0x90
+audit 5 0x90
+audit 10 0x90
+audit 11 0x90
+audit 12 0x90
+mark PRICING_USA10
+credits
+key 3
+key 3
+key 3
+wait 1
+credits
+callstr 4ff4 1 B
+key 4
+wait 1
+credits
+callstr 4ff4 1 B
+audit 11
+audit 10
+audit 12
+mark GERMANY2
+adjset 28 24
+credits
+callstr 2e0fc B 24
+key 4
+wait 1
+credits
+callstr 4ff4 1 B
+key 5
+wait 1
+credits
+callstr 4ff4 1 B
+key 3
+wait 1
+credits
+callstr 4ff4 1 B
+audit 11
+mark EURO3
+adjset 28 13
+credits
+key 3
+wait 1
+credits
+callstr 4ff4 1 B
+key 3
+wait 1
+credits
+callstr 4ff4 1 B
+key 4
+wait 1
+credits
+callstr 4ff4 1 B
+mark FREEPLAY
+adjset 34 1
+callstr 4ff4 1 B
+adjset 34 0
+mark CREDITLIMIT
+call 4e88 1
+credits
+adjset 28 62
+adjset 33 4
+key 4
+wait 1
+key 4
+wait 1
+credits
+key 4
+wait 1
+credits
+callstr 4ff4 1 B
+adjset 33 30
+mark COINDELAY_OFF
+adjset 62 61
+key 3
+wait 1
+credits
+adjset 62 30
+mark ADJ25
+call 4e88 1
+key 4
+wait 1
+credits
+key 1
+wait 4
+adjpoke 25 0
+call e90 25
+credits
+call 22d2c 1 1
+wait 2
+credits
+call 22d2c 1 2
+wait 2
+credits
+mark END

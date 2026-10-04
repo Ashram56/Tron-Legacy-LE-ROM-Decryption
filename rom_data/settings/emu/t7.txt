@@ -1,0 +1,384 @@
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 226944 20
+callstr 2e0fc B 0
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 226988 10
+callstr 2e0fc B 1
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 227024 20
+callstr 2e0fc B 2
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 227068 50
+callstr 2e0fc B 3
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 227144 100
+callstr 2e0fc B 4
+poke 3f400 1007 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226920 227268 30
+callstr 2e0fc B 5
+poke 3f400 1015 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227324 227360 4
+callstr 2e0fc B 6
+poke 3f400 1015 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227336 227388 2
+callstr 2e0fc B 7
+poke 3f400 1103 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229228 229252 5
+callstr 2e0fc B 8
+poke 3f400 1023 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227416 227440 5
+callstr 2e0fc B 9
+poke 3f400 1023 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227416 227472 10
+callstr 2e0fc B 10
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228312 5
+callstr 2e0fc B 11
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228344 20
+callstr 2e0fc B 12
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228388 10
+callstr 2e0fc B 13
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228424 20
+callstr 2e0fc B 14
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228468 20
+callstr 2e0fc B 15
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228512 5
+callstr 2e0fc B 16
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228544 40
+callstr 2e0fc B 17
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228608 20
+callstr 2e0fc B 18
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228652 20
+callstr 2e0fc B 19
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228696 30
+callstr 2e0fc B 20
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228752 20
+callstr 2e0fc B 21
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228288 228796 40
+callstr 2e0fc B 22
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228916 228940 5
+callstr 2e0fc B 23
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228916 228972 20
+callstr 2e0fc B 24
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228916 229016 20
+callstr 2e0fc B 25
+poke 3f400 1031 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227508 227532 5
+callstr 2e0fc B 26
+poke 3f400 1031 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227508 227564 20
+callstr 2e0fc B 27
+poke 3f400 1095 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229148 229172 1
+callstr 2e0fc B 28
+poke 3f400 1095 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229148 229200 2
+callstr 2e0fc B 29
+poke 3f400 1135 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229444 229468 2
+callstr 2e0fc B 30
+poke 3f400 1111 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229284 229308 1
+callstr 2e0fc B 31
+poke 3f400 1039 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227608 227632 1
+callstr 2e0fc B 32
+poke 3f400 1039 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227608 227660 2
+callstr 2e0fc B 33
+poke 3f400 1047 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227688 227712 2
+callstr 2e0fc B 34
+poke 3f400 1047 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227688 227740 4
+callstr 2e0fc B 35
+poke 3f400 1047 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227688 227768 4
+callstr 2e0fc B 36
+poke 3f400 1047 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227688 227796 8
+callstr 2e0fc B 37
+poke 3f400 1079 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228860 228884 5
+callstr 2e0fc B 38
+poke 3f400 1127 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229388 229412 5
+callstr 2e0fc B 39
+poke 3f400 1087 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229060 229084 4
+callstr 2e0fc B 40
+poke 3f400 1087 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229060 229112 10
+callstr 2e0fc B 41
+poke 3f400 1055 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227828 227852 20
+callstr 2e0fc B 42
+poke 3f400 1055 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227828 227896 5
+callstr 2e0fc B 43
+poke 3f400 1063 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227928 227952 5
+callstr 2e0fc B 44
+poke 3f400 1063 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 227928 227984 5
+callstr 2e0fc B 45
+poke 3f400 1119 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 229336 229360 1
+callstr 2e0fc B 46
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228040 20
+callstr 2e0fc B 47
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228084 10
+callstr 2e0fc B 48
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228120 20
+callstr 2e0fc B 49
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228164 10
+callstr 2e0fc B 50
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228200 20
+callstr 2e0fc B 51
+poke 3f400 1071 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 228016 228244 20
+callstr 2e0fc B 52
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226596 1
+callstr 2e0fc B 53
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226624 4
+callstr 2e0fc B 54
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226652 2
+callstr 2e0fc B 55
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226500 226680 2
+callstr 2e0fc B 56
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226708 8
+callstr 2e0fc B 57
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226572 226740 2
+callstr 2e0fc B 58
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226768 8
+callstr 2e0fc B 59
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226800 4
+callstr 2e0fc B 60
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226828 4
+callstr 2e0fc B 61
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226856 8
+callstr 2e0fc B 62
+poke 3f400 999 4
+poke 3f404 0 4
+poke 3f408 128 4
+poke 3f40c 4294967295 4
+callstr ac18 B 226536 226888 8
+callstr 2e0fc B 63

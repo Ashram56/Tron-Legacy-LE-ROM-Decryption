@@ -1,0 +1,3185 @@
+{
+ "facts": [
+  {
+   "id": "mp_add_players",
+   "fact": "Players are added by START (with credit) while the current ball number is 1 - also after the playfield is valid on ball 1; num_players 0x2110900 increments, audit 0x11, one credit taken. On ball 2 the same press does nothing (credit kept)",
+   "value": null,
+   "address": "0x20c5c, 0x20d14",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_3p.jsonl t 19.02 (3rd player on ball 1 after valid) and t 57.70 (no 4th player on ball 2)"
+  },
+  {
+   "id": "mp_rotation",
+   "fact": "End of ball -> 0x214d0: event 0x47 (veto); if an extra ball is pending (0x1a27c) flag 9 (shoot again) is set and the SAME player shoots again; else next = player + 1; past the last player -> player 1 and ball + 1; past the balls-per-game limit (adj 31, or the tournament value) -> game over 0x20a64. Then save the old player's flags/lamps, set 0x3817c, restore the new player's, event 0x48",
+   "value": null,
+   "address": "0x214d0, 0x21404, 0x213bc",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "mp_rotation_observed_4p",
+   "fact": "4 players, 3 balls: P1 P2 P3 P3(shoot again: deff 26 + leff 16, same ball) P4 | P1 ...; ball_num changes when player 1 comes up",
+   "value": null,
+   "address": "0x3817c, 0x3817d",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_4p.jsonl"
+  },
+  {
+   "id": "mp_rotation_observed_2p",
+   "fact": "2 players: P1 B1, P2 B1, P1 B2 (extra ball collected) -> P1 shoot again -> P2 B2, P1 B3, P2 B3 -> match -> attract",
+   "value": null,
+   "address": "0x3817c",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_2p.jsonl"
+  },
+  {
+   "id": "mp_events",
+   "fact": "Ball start order (0x20650): 0x12 veto -> kill tasks flag 0x80 -> first = (ball == 1 and not flag 9) -> reset class-4 flags -> ... -> if first: event 0x26 (per-player init, ONLY on that player's first ball) -> 0x11 (every ball) -> 0x27 -> if shoot again: deff 26 + leff 16 (arg = player) -> deff 19 score display -> 0x13",
+   "value": null,
+   "address": "0x20650-0x20760",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_2p.jsonl ev=event ids 18, 38, 17, 39, 19"
+  },
+  {
+   "id": "mp_player_up_media",
+   "fact": "There is no dedicated 'PLAYER n UP' display effect: the score display (deff 19) shows the current player and the ball-start music call 0x01a plays for every ball. deff 104 'ARCADE IS LIT' (leff 115, sound 0x0df) appears at a player's first ball because the per-player arcade flag goes 0 -> 1 there; it is not a player-up screen. Shoot again shows deff 26 + leff 16 + sound 0x11b",
+   "value": null,
+   "address": "0x20650, 0x100de10",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_2p.jsonl, multiplayer_4p.jsonl"
+  },
+  {
+   "id": "mp_extra_ball",
+   "fact": "Extra ball in multi-player: collected EB sets shoot_again_pending 0x37430 and eb_collected[p]; at that player's drain the bonus runs, then the same player gets a new ball on the SAME ball number (deff 26 SHOOT AGAIN); after it drains play passes to the next player normally",
+   "value": null,
+   "address": "0x1a27c, 0x37430",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_2p.jsonl t 56.18 -> 66.75 -> 83.00"
+  },
+  {
+   "id": "mp_tilt_in_mp",
+   "fact": "A tilt ends only the tilting player's ball: no bonus, warnings reset at the next ball start, the next player is up",
+   "value": null,
+   "address": "0x2444c",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_3p.jsonl t 34.97 -> 38.67 (P2 tilts, P3 up)"
+  },
+  {
+   "id": "mp_end_of_game",
+   "fact": "End of game after the last player's last bonus: per-player audit 46 (one per player) and 32 -> sound 0x039 -> high-score check: deff 31 then initials entry deff 32 per qualifying player (START presses, sound 0x035; after the last letter audit 16, sound 0x036, deff 33, high-score credit award + knocker 0x019) -> match deff 38 (game state 152, music 0x01c) -> attract deff 1, leff 1, then game-over music 0x01d with leff 133",
+   "value": null,
+   "address": "0x20a64, 0x1ad4c, 0x1b660, 0x100f29c",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_4p.jsonl t 140-171"
+  },
+  {
+   "id": "mp_replay_in_mp",
+   "fact": "A replay score reached by one player in a multi-player game: credit + knocker 0x019 + deff 28 + leff 17 at that player's bonus end",
+   "value": null,
+   "address": "0x22cac",
+   "tag": "observed",
+   "evidence": "traces/multiplayer_4p.jsonl (P3 poked to 60 M)"
+  },
+  {
+   "id": "mp_game_over_speech",
+   "fact": "Speech 0x01e plays at some game overs (attract countdown 0x3afec, random 4-6 games)",
+   "value": null,
+   "address": "0x100f29c",
+   "tag": "observed",
+   "evidence": "match_natural / multiplayer_2p: 0x01e after deff 1"
+  },
+  {
+   "id": "flags_block",
+   "fact": "Game flags live in one 8-byte block (pointer RAM 0x37268, 56 flags 0..55) plus four 8-byte save slots (pointers 0x3c188[0..3]), allocated by 0x64a4",
+   "value": null,
+   "address": "0x37268, 0x3c188, 0x64a4",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "flags_swap",
+   "fact": "On a player change (0x214d0) the ROM saves the block to the old player's slot (0x6700) and restores the new player's slot (0x6744) for every flag whose descriptor bit 0 is CLEAR; flags with bit 0 SET are global and keep the current value. Descriptor table 0x040e1f6c, 4 B per flag {u16 class, u8 default}",
+   "value": {
+    "per_player_flags": [
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     32,
+     33,
+     34,
+     35,
+     38,
+     40,
+     44,
+     45,
+     47,
+     48,
+     49,
+     51
+    ]
+   },
+   "address": "0x214d0, 0x6700, 0x6744, 0x040e1f6c",
+   "tag": "code",
+   "evidence": "developer_guide.md said 'inferred, not tested with 2 players'; now read from code"
+  },
+  {
+   "id": "flags_reset",
+   "fact": "0x63c0(class) resets every flag whose class has that bit to its default (all defaults are 0): class 2 at game start (0x205f4; also in all 4 player slots for per-player flags), class 4 at every ball start (0x206ac), class 8 at tilt (0x2444c)",
+   "value": null,
+   "address": "0x63c0, 0x205f4, 0x206ac",
+   "tag": "code",
+   "evidence": ""
+  },
+  {
+   "id": "lamps_swap",
+   "fact": "Lamp state is swapped per player too: 0x21080 saves 20 B from 0x3c204 and 10 B from 0x3c218 to 0x21108ed + 0x14*p / 0x2110947 + 10*p; 0x210d4 restores every lamp except those whose lamp-table byte (0x040e3390 + 12*lamp + 5) has bit 0 set: lamps 26 SHOOT AGAIN, 65 START BUTTON, 66 TOURNAMENT START",
+   "value": {
+    "global_lamps": [
+     26,
+     65,
+     66
+    ]
+   },
+   "address": "0x21080, 0x210d4, 0x040e3390",
+   "tag": "code",
+   "evidence": ""
+  }
+ ],
+ "state_scope": [
+  {
+   "mode": "attract_and_service",
+   "address": "0x36e10",
+   "name": "attr_page_table",
+   "size": "?",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "attract_and_service",
+   "address": "0x3afec",
+   "name": "attr_gameover_countdown",
+   "size": "4",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "attract_and_service",
+   "address": "0x3aff0",
+   "name": "attr_gameover_countdown_init",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x21115d4",
+   "name": "bonus_x",
+   "size": "4",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x21115d8",
+   "name": "bonus_unknown_word",
+   "size": "8",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x21115e0",
+   "name": "bonus_base",
+   "size": "16",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x2111694",
+   "name": "bonus_item_state",
+   "size": "144",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x2111800",
+   "name": "bonus_sos_count",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x21118b8",
+   "name": "bonus_portal_count",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "bonus",
+   "address": "0x3aca4",
+   "name": "bonus_insert_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x2111724",
+   "name": "clu_lane_bits",
+   "size": "4",
+   "scope_text": "per player, per ball",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x2111734",
+   "name": "clu_lane_completions",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x211173c",
+   "name": "clu_lights",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x21118a4",
+   "name": "clu_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x21115f0",
+   "name": "clu_starts",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x21115f4",
+   "name": "clu_awards_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x21115f8",
+   "name": "clu_completed_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3ad00",
+   "name": "clu_timer",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3acfc",
+   "name": "clu_shots",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3ad08",
+   "name": "clu_base",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3ad04",
+   "name": "clu_hits",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3ad0c",
+   "name": "clu_total",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x36f18",
+   "name": "clu_award_snd_idx",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x3b57c",
+   "name": "clu_timer_bar",
+   "size": "2",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "clu_hurryup",
+   "address": "0x372e8",
+   "name": "playfield_valid",
+   "size": "1",
+   "scope_text": "OS",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad58",
+   "name": "combo_starters",
+   "size": "4",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad5c",
+   "name": "combo_lit",
+   "size": "4",
+   "scope_text": "window",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad54",
+   "name": "combo_count",
+   "size": "4",
+   "scope_text": "chain",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad60",
+   "name": "combo_timer",
+   "size": "4",
+   "scope_text": "window",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad64",
+   "name": "combo_history",
+   "size": "20",
+   "scope_text": "chain",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad78",
+   "name": "combo_history_len",
+   "size": "4",
+   "scope_text": "chain",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x3ad10",
+   "name": "combo_base",
+   "size": "4",
+   "scope_text": "per player [p-1] (RAM)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x21115fc",
+   "name": "combo_total",
+   "size": "2",
+   "scope_text": "per game [p-1]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x2111608",
+   "name": "eol_combo_jackpot",
+   "size": "4",
+   "scope_text": "per ball [p-1]",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "combos",
+   "address": "0x2111604",
+   "name": "eol_jackpot_collected",
+   "size": "1",
+   "scope_text": "per ball [p-1]",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0211162c",
+   "name": "eol_starts_this_ball",
+   "size": "1 x4",
+   "scope_text": "per player (reset at start of each player turn, event 0x26)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003adf0",
+   "name": "eol_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003adf4",
+   "name": "eol_level",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003adf8",
+   "name": "eol_aab_left",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003adfc",
+   "name": "eol_aab_count",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003ae00",
+   "name": "eol_switch_value",
+   "size": "4",
+   "scope_text": "while mode runs (stale value stays after end)",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003ae04",
+   "name": "eol_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "daft_punk_multiball",
+   "address": "0x0003adf4",
+   "name": "dp_music_level",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af04",
+   "name": "dmb_phase",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af08",
+   "name": "dmb_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af0c",
+   "name": "dmb_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af10",
+   "name": "dmb_disc_count",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af14",
+   "name": "dmb_recog_count",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af18",
+   "name": "dmb_jackpot",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af1c",
+   "name": "dmb_super",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af20",
+   "name": "dmb_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af24",
+   "name": "dmb_deff_variant",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003af28",
+   "name": "dmb_restart_secs",
+   "size": "1",
+   "scope_text": "restart window",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x02111630",
+   "name": "dmb_started_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x02111634",
+   "name": "dmb_supers_collected",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x02111638",
+   "name": "dmb_unused_638",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "disc_multiball",
+   "address": "0x0003ae3c",
+   "name": "disc_motor_direction",
+   "size": "1",
+   "scope_text": "game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x02111618",
+   "name": "eol_letters_left",
+   "size": "1 x4",
+   "scope_text": "per player (reset when a set completes, and at game start)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0211161c",
+   "name": "eol_letters_right",
+   "size": "1 x4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x02111620",
+   "name": "eol_times_lit",
+   "size": "1 x4",
+   "scope_text": "per game per player (reset at game start)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x02111624",
+   "name": "eol_sets",
+   "size": "1 x4",
+   "scope_text": "per game per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x02111628",
+   "name": "eol_sets_total",
+   "size": "1 x4",
+   "scope_text": "per game per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0211162c",
+   "name": "eol_starts_this_ball",
+   "size": "1 x4",
+   "scope_text": "per player (reset at start of each player turn, event 0x26)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003adf0",
+   "name": "eol_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003adf4",
+   "name": "eol_level",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003adf8",
+   "name": "eol_aab_left",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003adfc",
+   "name": "eol_aab_count",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003ae00",
+   "name": "eol_switch_value",
+   "size": "4",
+   "scope_text": "while mode runs (stale value stays after end)",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "end_of_line_multiball",
+   "address": "0x0003ae04",
+   "name": "eol_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x0003af9c",
+   "name": "ff_pos",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x0003afa0",
+   "name": "ff_next",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x0003afa4",
+   "name": "ff_prev",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x02111664",
+   "name": "ff_started",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x02111668",
+   "name": "ff_completed",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x02111694",
+   "name": "item_flynn",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116a4",
+   "name": "item_gem",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116b4",
+   "name": "item_clu",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116c4",
+   "name": "item_zuse",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116d4",
+   "name": "item_quorra",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116e4",
+   "name": "item_disc",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x021116f4",
+   "name": "item_light_cycle",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x02111704",
+   "name": "item_recognizer",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "find_flynn_and_items",
+   "address": "0x02111714",
+   "name": "item_tron",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0211166c",
+   "name": "arcade_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x00036d68",
+   "name": "arcade_bag",
+   "size": "obj",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003aba6",
+   "name": "arcade_w_500k",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003aba8",
+   "name": "arcade_w_gem",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abaa",
+   "name": "arcade_w_clu",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abac",
+   "name": "arcade_w_zuse",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abae",
+   "name": "arcade_w_quorra",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abb0",
+   "name": "arcade_w_disc",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abb2",
+   "name": "arcade_w_lightcycle",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abb4",
+   "name": "arcade_w_recognizer",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abb6",
+   "name": "arcade_w_sos",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abb8",
+   "name": "arcade_w_more_time",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abba",
+   "name": "arcade_w_extra_ball",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0003abbc",
+   "name": "arcade_w_special",
+   "size": "2",
+   "scope_text": "per pick",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x02111894",
+   "name": "vuk_extra_ball_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x02111898",
+   "name": "vuk_quorra_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x0211189c",
+   "name": "vuk_light_cycle_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x021118a0",
+   "name": "vuk_portal_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "flynns_arcade",
+   "address": "0x021118a4",
+   "name": "vuk_clu_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x37274",
+   "name": "gf_state",
+   "size": "2",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x2110900",
+   "name": "gf_num_players",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3817c",
+   "name": "gf_cur_player",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3817d",
+   "name": "gf_ball",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x21109e4",
+   "name": "gf_scores",
+   "size": "16",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x38180",
+   "name": "gf_pf_mult",
+   "size": "1",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x38181",
+   "name": "gf_ball_scored",
+   "size": "1",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x38182",
+   "name": "gf_score_activity",
+   "size": "2",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x372e8",
+   "name": "gf_pf_valid",
+   "size": "1",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3c94c",
+   "name": "gf_pf_valid_switch_list",
+   "size": "?",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x372f0",
+   "name": "gf_pf_valid_needed",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d4f8",
+   "name": "gf_tilt_warnings",
+   "size": "1",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x37420",
+   "name": "gf_ball_search_delay",
+   "size": "4",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x39018",
+   "name": "gf_ball_search_secs",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3741c",
+   "name": "gf_ball_search_count",
+   "size": "2",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3901c",
+   "name": "gf_eob_mode_wait",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d46c",
+   "name": "gf_eb_lit_player",
+   "size": "4",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d468",
+   "name": "gf_eb_lit_shared",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d470",
+   "name": "gf_eb_collected",
+   "size": "4",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x37430",
+   "name": "gf_shoot_again_pending",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x2111894",
+   "name": "gf_eb_scoop_lit",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x36f62",
+   "name": "gf_shoot_again_lamp",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d4ec",
+   "name": "gf_special_lit_shared",
+   "size": "1",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d4ef",
+   "name": "gf_special_lit_player",
+   "size": "4",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x3d4f3",
+   "name": "gf_special_collected",
+   "size": "4",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x36f6c",
+   "name": "gf_eb_over_limit_score",
+   "size": "4",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x36f70",
+   "name": "gf_special_over_limit_score",
+   "size": "4",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x2110984",
+   "name": "gf_replay_levels",
+   "size": "80",
+   "scope_text": "per game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "game_flow",
+   "address": "0x37364",
+   "name": "gf_tick_counter",
+   "size": "4",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x2111678",
+   "name": "gem_starts",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x211167c",
+   "name": "gem_awards",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x2111680",
+   "name": "gem_progress",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x2111684",
+   "name": "gem_snd_idx",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x3b128",
+   "name": "gem_shots",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x3b12c",
+   "name": "gem_timer",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x3b130",
+   "name": "gem_total",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x36fec",
+   "name": "gem_award_snd_idx",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x3b584",
+   "name": "gem_timer_bar",
+   "size": "2",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "gem_hurryup",
+   "address": "0x372e8",
+   "name": "playfield_valid",
+   "size": "1",
+   "scope_text": "OS",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0211189c",
+   "name": "lc_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x02111744",
+   "name": "lc_remaining_mask",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x02111754",
+   "name": "lc_collected_mask",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x02111764",
+   "name": "lc_starts",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x02111768",
+   "name": "lc_super_points",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0211176c",
+   "name": "lc_clip_level",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x02111774",
+   "name": "lc_clip_index",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b280",
+   "name": "lc_a_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b284",
+   "name": "lc_a_prev_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b288",
+   "name": "lc_a_timer",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b28c",
+   "name": "lc_a_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b290",
+   "name": "lc_a_prev_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b294",
+   "name": "lc_b_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b298",
+   "name": "lc_b_prev_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b29c",
+   "name": "lc_b_timer",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2a0",
+   "name": "lc_b_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2a4",
+   "name": "lc_b_prev_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2a8",
+   "name": "lc_c_lit_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2ac",
+   "name": "lc_c_prev_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2b0",
+   "name": "lc_c_timer",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2b4",
+   "name": "lc_c_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2b8",
+   "name": "lc_c_prev_level",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2bc",
+   "name": "lc_mb_super_points",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "light_cycle_multiball",
+   "address": "0x0003b2c0",
+   "name": "lc_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b854",
+   "name": "pm_super_value",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b858",
+   "name": "pm_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b85c",
+   "name": "pm_cnt_left_orbit",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b860",
+   "name": "pm_cnt_left_ramp",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b864",
+   "name": "pm_cnt_l_inner_loop",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b868",
+   "name": "pm_cnt_r_inner_loop",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b86c",
+   "name": "pm_cnt_right_ramp",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b870",
+   "name": "pm_cnt_right_orbit",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b874",
+   "name": "pm_cnt_disc",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x0003b878",
+   "name": "pm_phase",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x021118b8",
+   "name": "pm_starts_this_ball",
+   "size": "1 x4",
+   "scope_text": "per player (reset at start of each player turn, event 0x26)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x021118a0",
+   "name": "pm_eject_lit",
+   "size": "1 x4",
+   "scope_text": "per player (reset event 0x26)",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x021118a8",
+   "name": "pm_unknown_game",
+   "size": "4 x4",
+   "scope_text": "per game (cleared at game start, event 0x2e)",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "portal_multiball",
+   "address": "0x02111690",
+   "name": "items_table",
+   "size": "4 x4 x9",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x02111898",
+   "name": "quorra_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x021117ac",
+   "name": "quorra_progress",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x021117b0",
+   "name": "quorra_starts",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x021117b4",
+   "name": "quorra_supers",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b360",
+   "name": "quorra_aab_hits",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b364",
+   "name": "quorra_aab_count",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b368",
+   "name": "quorra_unused_368",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b36c",
+   "name": "quorra_double_armed",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b370",
+   "name": "quorra_mb_supers",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b374",
+   "name": "quorra_jackpot",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b378",
+   "name": "quorra_super",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b37c",
+   "name": "quorra_double_secs",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "quorra_multiball",
+   "address": "0x0003b380",
+   "name": "quorra_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117b8",
+   "name": "rec_targets_disabled_mask",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117bc",
+   "name": "rec_hits",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117c0",
+   "name": "rec_hits_stat",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117c4",
+   "name": "rec_battles_qualified",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117c8",
+   "name": "rec_unused_mask_c8",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117cc",
+   "name": "rec_unused_cc",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117d0",
+   "name": "dbattle_award_level",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117d4",
+   "name": "dbattle_difficulty",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117d8",
+   "name": "dbattle_need",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117dc",
+   "name": "dbattle_remaining",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117e0",
+   "name": "bank_motor_nvram",
+   "size": "?",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x021117e4",
+   "name": "recog_motor_nvram",
+   "size": "?",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x0003b3f4",
+   "name": "rec_next_pos",
+   "size": "4",
+   "scope_text": "while targets active",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x0003b3f8",
+   "name": "rec_lit_pos",
+   "size": "4",
+   "scope_text": "while targets active",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x0003b3fc",
+   "name": "rec_prev_pos",
+   "size": "4",
+   "scope_text": "while targets active",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "recognizer_and_disc_battle",
+   "address": "0x0003b400",
+   "name": "rec_motor_target",
+   "size": "1",
+   "scope_text": "game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x0003b624",
+   "name": "sos_total",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x0003b628",
+   "name": "sos_stage",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x0003b62c",
+   "name": "sos_needed_mask",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x0003b630",
+   "name": "sos_skip_bonus_value",
+   "size": "4",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x0003b634",
+   "name": "sos_skip_bonus_paid",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x02111800",
+   "name": "sos_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "sea_of_simulation",
+   "address": "0x02111804",
+   "name": "sos_skip_bonus_flags",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x370d4",
+   "name": "skA_timeout_obj",
+   "size": "12",
+   "scope_text": "per start",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x370e0",
+   "name": "skB_timeout_obj",
+   "size": "12",
+   "scope_text": "per start",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x370ec",
+   "name": "skC_timeout_obj",
+   "size": "12",
+   "scope_text": "per start",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x2111814",
+   "name": "skA_count",
+   "size": "1",
+   "scope_text": "per game [p-1]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x2111818",
+   "name": "skB_count",
+   "size": "1",
+   "scope_text": "per game [p-1]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "skill_shots",
+   "address": "0x211181c",
+   "name": "skC_count",
+   "size": "1",
+   "scope_text": "per game [p-1]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x38180",
+   "name": "playfield_multiplier",
+   "size": "1",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x37274",
+   "name": "game_state_bits",
+   "size": "2",
+   "scope_text": "game",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b70c",
+   "name": "lspin_pending",
+   "size": "1",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b710",
+   "name": "lspin_last",
+   "size": "4",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b714",
+   "name": "lspin_total",
+   "size": "4",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b718",
+   "name": "rspin_pending",
+   "size": "1",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b71c",
+   "name": "rspin_last",
+   "size": "4",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b720",
+   "name": "rspin_total",
+   "size": "4",
+   "scope_text": "session",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x2111820",
+   "name": "lspin_value",
+   "size": "4",
+   "scope_text": "per player [p-1]",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x2111830",
+   "name": "rspin_value",
+   "size": "4",
+   "scope_text": "per player [p-1]",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x211179b",
+   "name": "pop_hits_left",
+   "size": "1",
+   "scope_text": "per player [p]",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x21117a3",
+   "name": "pop_levels_done",
+   "size": "1",
+   "scope_text": "per game [p]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x21117a7",
+   "name": "pop_value_level",
+   "size": "1",
+   "scope_text": "per ball [p]",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x211179f",
+   "name": "pop_level_counter",
+   "size": "1",
+   "scope_text": "per game [p]",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x36fd8",
+   "name": "bumper_busy_ticks",
+   "size": "4",
+   "scope_text": "live",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b2ec",
+   "name": "big_bumps_count",
+   "size": "4",
+   "scope_text": "while Big Bumps",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b2f0",
+   "name": "big_bumps_total",
+   "size": "4",
+   "scope_text": "while Big Bumps",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b4e8",
+   "name": "orbit_post_obj",
+   "size": "28",
+   "scope_text": "object",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b4f0",
+   "name": "orbit_post_state",
+   "size": "4",
+   "scope_text": "live",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x372e8",
+   "name": "playfield_valid_obj",
+   "size": "12",
+   "scope_text": "per ball",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x21118bc",
+   "name": "zen_count",
+   "size": "2",
+   "scope_text": "per player [p-1]",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3ae00",
+   "name": "eol_switch_value",
+   "size": "4",
+   "scope_text": "while EOL",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3ae04",
+   "name": "eol_total",
+   "size": "4",
+   "scope_text": "while EOL",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b12c",
+   "name": "gem_spin_counter",
+   "size": "4",
+   "scope_text": "while GEM hurry-up",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "switches_and_shots",
+   "address": "0x3b49f",
+   "name": "recog_motor_pos",
+   "size": "1",
+   "scope_text": "live",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111848",
+   "name": "tron_letters",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111840",
+   "name": "tron_completions",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0211163c",
+   "name": "tron_award_lit",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111640",
+   "name": "tron_award_running",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111644",
+   "name": "tron_award_started_set",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111648",
+   "name": "tron_item_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0211164c",
+   "name": "tron_unknown_counter_a",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x02111654",
+   "name": "tron_unknown_counter_b",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0211165c",
+   "name": "tron_unknown_counter_c",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0211184c",
+   "name": "tron_bank_player_state",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af58",
+   "name": "tron_ds_secs",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af5c",
+   "name": "tron_ds_secs_start",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af60",
+   "name": "tron_bumpers_secs",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af64",
+   "name": "tron_bumpers_secs_start",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af68",
+   "name": "tron_spinners_secs",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003af6c",
+   "name": "tron_spinners_secs_start",
+   "size": "1",
+   "scope_text": "while mode runs",
+   "class": "transient_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003b740",
+   "name": "tron_repeat_sound_flag",
+   "size": "1",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x0003b744",
+   "name": "tron_drop_bank",
+   "size": "obj",
+   "scope_text": "machine",
+   "class": "shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x00038180",
+   "name": "tron_bank_multiplier",
+   "size": "4",
+   "scope_text": "per ball (inferred)",
+   "class": "per_ball_shared",
+   "tag": "code"
+  },
+  {
+   "mode": "tron_targets",
+   "address": "0x021118bc",
+   "name": "zen_count",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zen_rollover",
+   "address": "0x21118bc",
+   "name": "zen_charges",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zen_rollover",
+   "address": "0x2111848",
+   "name": "tron_letters",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zen_rollover",
+   "address": "0x2111840",
+   "name": "tron_completions",
+   "size": "2",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zen_rollover",
+   "address": "0x372e8",
+   "name": "playfield_valid",
+   "size": "1",
+   "scope_text": "OS",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118d4",
+   "name": "zuse_letters",
+   "size": "4",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118e4",
+   "name": "zuse_completions",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118e8",
+   "name": "zuse_needed",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118c4",
+   "name": "zfs_starts",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118c8",
+   "name": "zfs_time_ext",
+   "size": "1",
+   "scope_text": "per player",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x21118cc",
+   "name": "zfs_switch_hits",
+   "size": "2",
+   "scope_text": "per player, per ball",
+   "class": "per_player",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b8f0",
+   "name": "zfs_timer",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b8ec",
+   "name": "zfs_value",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b8e8",
+   "name": "zfs_targets",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b920",
+   "name": "zfs_total",
+   "size": "4",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b8f2",
+   "name": "zfs_queue",
+   "size": "1",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b8f4",
+   "name": "zfs_recent",
+   "size": "40",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x3b58c",
+   "name": "zfs_timer_bar",
+   "size": "2",
+   "scope_text": "while running",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "zuse_fast_scoring",
+   "address": "0x372e8",
+   "name": "playfield_valid",
+   "size": "1",
+   "scope_text": "OS",
+   "class": "other",
+   "tag": "code"
+  },
+  {
+   "mode": "os",
+   "address": "0x37268 / 0x3c188",
+   "name": "game flags",
+   "size": "8",
+   "scope_text": "per player except class-bit-0 flags (see os_model.json game_flags)",
+   "class": "per_player_swapped",
+   "tag": "code"
+  },
+  {
+   "mode": "os",
+   "address": "0x3c204 / 0x3c218",
+   "name": "lamp states",
+   "size": "30",
+   "scope_text": "per player except lamps 26, 65, 66",
+   "class": "per_player_swapped",
+   "tag": "code"
+  },
+  {
+   "mode": "os",
+   "address": "0x3d4f8",
+   "name": "tilt warnings",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "per_ball_shared",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x372e8",
+   "name": "valid playfield",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "per_ball_shared",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x37430",
+   "name": "shoot again pending",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "shared",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x3d46c",
+   "name": "extra balls lit [p-1]",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "per_player",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x3d470",
+   "name": "extra balls collected [p-1]",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "per_player",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x2110900",
+   "name": "players in game",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "shared",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x3817c",
+   "name": "current player",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "shared",
+   "tag": "observed"
+  },
+  {
+   "mode": "os",
+   "address": "0x3817d",
+   "name": "ball number",
+   "size": "",
+   "scope_text": "states watch list",
+   "class": "shared",
+   "tag": "observed"
+  }
+ ],
+ "rotation": {
+  "multiplayer_2p": [
+   {
+    "t": 1.0076,
+    "num_players": 1
+   },
+   {
+    "t": 1.0076,
+    "cur_player": 1
+   },
+   {
+    "t": 1.0076,
+    "ball_num": 1
+   },
+   {
+    "t": 1.0076,
+    "tilt_warnings": 0
+   },
+   {
+    "t": 12.6507,
+    "num_players": 2
+   },
+   {
+    "t": 15.9959,
+    "mark": "P1_B1 valid (ZEN), a few shots"
+   },
+   {
+    "t": 23.7581,
+    "mark": "P1_B1 drain (expect bonus, then player 2 up)"
+   },
+   {
+    "t": 25.8904,
+    "cur_player": 2
+   },
+   {
+    "t": 33.8766,
+    "mark": "P2_B1 valid, shots"
+   },
+   {
+    "t": 42.3924,
+    "mark": "P2_B1 drain"
+   },
+   {
+    "t": 44.5144,
+    "cur_player": 1
+   },
+   {
+    "t": 44.5144,
+    "ball_num": 2
+   },
+   {
+    "t": 52.5136,
+    "mark": "P1_B2 valid; short START press (no restart expected)"
+   },
+   {
+    "t": 54.9154,
+    "mark": "poke: light extra ball for player 1 (OS lit count 0x3d46c = 1, scoop EB lit p1 0x2111894 = 1)"
+   },
+   {
+    "t": 55.4193,
+    "mark": "P1_B2 collect extra ball at VUK"
+   },
+   {
+    "t": 63.593,
+    "mark": "P1_B2 drain (expect bonus, then SHOOT AGAIN for player 1, not player 2)"
+   },
+   {
+    "t": 66.7544,
+    "shoot_again_deff_26": true
+   },
+   {
+    "t": 73.7012,
+    "mark": "P1_B2 shoot-again ball valid"
+   },
+   {
+    "t": 80.8784,
+    "mark": "P1_B2 shoot-again drain (expect player 2 next)"
+   },
+   {
+    "t": 83.0042,
+    "cur_player": 2
+   },
+   {
+    "t": 91.0009,
+    "mark": "P2_B2"
+   },
+   {
+    "t": 100.3036,
+    "cur_player": 1
+   },
+   {
+    "t": 100.3036,
+    "ball_num": 3
+   },
+   {
+    "t": 108.3036,
+    "mark": "P1_B3"
+   },
+   {
+    "t": 117.6067,
+    "cur_player": 2
+   },
+   {
+    "t": 125.6052,
+    "mark": "P2_B3 (last ball: expect bonus, high score check, match, game over)"
+   }
+  ],
+  "multiplayer_3p": [
+   {
+    "t": 1.0076,
+    "num_players": 1
+   },
+   {
+    "t": 1.0076,
+    "cur_player": 1
+   },
+   {
+    "t": 1.0076,
+    "ball_num": 1
+   },
+   {
+    "t": 1.0076,
+    "tilt_warnings": 0
+   },
+   {
+    "t": 12.6507,
+    "num_players": 2
+   },
+   {
+    "t": 14.5017,
+    "mark": "P1_B1 valid, then 3 coins + START adds player 3 during ball 1"
+   },
+   {
+    "t": 19.0184,
+    "num_players": 3
+   },
+   {
+    "t": 24.4897,
+    "cur_player": 2
+   },
+   {
+    "t": 28.4553,
+    "mark": "P2_B1 valid, then TILT (3 bobs, adj 32 = 2 warnings)"
+   },
+   {
+    "t": 31.1746,
+    "tilt_warnings": 1
+   },
+   {
+    "t": 33.0639,
+    "tilt_warnings": 2
+   },
+   {
+    "t": 37.1749,
+    "mark": "P2_B1 tilted drain (expect no bonus, P3 up, tilt warnings reset)"
+   },
+   {
+    "t": 38.6717,
+    "cur_player": 3
+   },
+   {
+    "t": 38.6717,
+    "tilt_warnings": 0
+   },
+   {
+    "t": 43.2876,
+    "mark": "P3_B1"
+   },
+   {
+    "t": 49.5955,
+    "cur_player": 1
+   },
+   {
+    "t": 49.5955,
+    "ball_num": 2
+   },
+   {
+    "t": 53.254,
+    "mark": "P1_B2: 3 coins + START (expect no 4th player on ball 2)"
+   },
+   {
+    "t": 62.3008,
+    "cur_player": 2
+   },
+   {
+    "t": 66.0563,
+    "mark": "P2_B2"
+   },
+   {
+    "t": 70.877,
+    "cur_player": 3
+   },
+   {
+    "t": 74.8577,
+    "mark": "P3_B2"
+   },
+   {
+    "t": 79.6799,
+    "cur_player": 1
+   },
+   {
+    "t": 79.6799,
+    "ball_num": 3
+   },
+   {
+    "t": 83.6484,
+    "mark": "P1_B3"
+   },
+   {
+    "t": 88.4667,
+    "cur_player": 2
+   },
+   {
+    "t": 92.4484,
+    "mark": "P2_B3"
+   },
+   {
+    "t": 97.2714,
+    "cur_player": 3
+   },
+   {
+    "t": 101.2516,
+    "mark": "P3_B3 (last ball of the game)"
+   }
+  ],
+  "multiplayer_4p": [
+   {
+    "t": 1.0076,
+    "num_players": 1
+   },
+   {
+    "t": 1.0076,
+    "cur_player": 1
+   },
+   {
+    "t": 1.0076,
+    "ball_num": 1
+   },
+   {
+    "t": 1.0076,
+    "tilt_warnings": 0
+   },
+   {
+    "t": 16.3105,
+    "num_players": 2
+   },
+   {
+    "t": 17.2352,
+    "num_players": 3
+   },
+   {
+    "t": 18.1292,
+    "num_players": 4
+   },
+   {
+    "t": 19.9961,
+    "mark": "P1_B1"
+   },
+   {
+    "t": 26.5578,
+    "cur_player": 2
+   },
+   {
+    "t": 29.5513,
+    "mark": "P2_B1"
+   },
+   {
+    "t": 36.1497,
+    "cur_player": 3
+   },
+   {
+    "t": 39.092,
+    "mark": "P3_B1"
+   },
+   {
+    "t": 43.5214,
+    "mark": "poke: light extra ball for player 3"
+   },
+   {
+    "t": 53.3154,
+    "shoot_again_deff_26": true
+   },
+   {
+    "t": 55.2918,
+    "mark": "P3_B1 shoot again (same player, same ball)"
+   },
+   {
+    "t": 62.1452,
+    "cur_player": 4
+   },
+   {
+    "t": 63.9645,
+    "mark": "P4_B1"
+   },
+   {
+    "t": 71.1974,
+    "cur_player": 1
+   },
+   {
+    "t": 71.1974,
+    "ball_num": 2
+   },
+   {
+    "t": 73.5067,
+    "mark": "P1_B2"
+   },
+   {
+    "t": 80.0649,
+    "cur_player": 2
+   },
+   {
+    "t": 83.0558,
+    "mark": "P2_B2"
+   },
+   {
+    "t": 89.6204,
+    "cur_player": 3
+   },
+   {
+    "t": 92.5989,
+    "mark": "P3_B2"
+   },
+   {
+    "t": 99.1553,
+    "cur_player": 4
+   },
+   {
+    "t": 102.1467,
+    "mark": "P4_B2"
+   },
+   {
+    "t": 108.732,
+    "cur_player": 1
+   },
+   {
+    "t": 108.732,
+    "ball_num": 3
+   },
+   {
+    "t": 111.6913,
+    "mark": "P1_B3"
+   },
+   {
+    "t": 118.2417,
+    "cur_player": 2
+   },
+   {
+    "t": 121.2333,
+    "mark": "P2_B3"
+   },
+   {
+    "t": 127.7985,
+    "cur_player": 3
+   },
+   {
+    "t": 130.7768,
+    "mark": "P3_B3"
+   },
+   {
+    "t": 135.208,
+    "mark": "poke: player 3 score = 60,000,000"
+   },
+   {
+    "t": 140.4875,
+    "cur_player": 4
+   },
+   {
+    "t": 140.8234,
+    "mark": "P4_B3"
+   },
+   {
+    "t": 150.3465,
+    "mark": "end of game: bonus P4, high score entry for player 3 (press START 3 times to enter initials)"
+   },
+   {
+    "t": 173.7451,
+    "mark": "game over"
+   }
+  ]
+ }
+}

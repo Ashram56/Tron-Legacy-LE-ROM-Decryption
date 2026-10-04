@@ -1,0 +1,142 @@
+adj,accessor,site,call,function,function_name,id_source,what,observed_calls,tag
+any,adj_get 0xe90,0x1064,bl,0xf8c,FUN_00000f8c,any id (generic code),adj_set 0xf8c: read back after write (all ids),,code
+any,adj_get 0xe90,0x10cc,bl,0x1080,FUN_00001080,any id (generic code),adj_reset 0x1080: compare with default (all ids),,code
+any,adj_get 0xe90,0x1154,bl,0x1118,FUN_00001118,any id (generic code),install preset check 0x1118: compares current values with a preset list,,code
+any,adj_get 0xe90,0x11b8,bl,0x1118,FUN_00001118,any id (generic code),install preset check 0x1118,,code
+33,adj_get 0xe90,0x48c8,bl,0x4890,FUN_00004890,from data structure,credits_add 0x4890: credit system +0x1e = adj 33; caps credits at CREDIT LIMIT,4,observed
+28,adj_get 0xe90,0x49ac,bl,0x4990,FUN_00004990,from data structure,pricing_current 0x4990/0x498c: credit system +0x18 = adj 28; selects the pricing record,1075,observed
+62,adj_get 0xe90,0x4ab8,bl,0x4a50,FUN_00004a50,from data structure,"coin task 0x4a50: credit system +0x1a = adj 62; wait N ticks re-checking the coin lockout, 61 = OFF (no wait)",4,observed
+34,adj_get 0xe90,0x4fdc,bl,0x4fb4,FUN_00004fb4,from data structure,"free_play 0x4fb4: credit system +0x1c = adj 34; YES -> ""FREE PLAY"", starts need no credit",1093,observed
+10,adj_get 0xe90,0xa264,bl,0xa258,FUN_0000a258,r0 constant,"player language select: when YES, start-of-game language choice is offered (0xa288 counts languages)",1,observed
+7,adj_get 0xe90,0xa300,bl,0xa2dc,FUN_0000a2dc,r0 constant,"sets the active display language at game start (falls back to factory default, then 0x2d39c)",,code
+7,adj_get 0xe90,0xa3d0,b,0xa3b4,FUN_0000a3b4,r0 constant,language_get: current language for msg_get when no override (RAM 0x372a0 == 5),,code
+44,adj_get 0xe90,0xa744,bl,0xa6f0,FUN_0000a6f0,from data structure,meter_add 0xa6f0: meter table 0x40e2130 +0xc = adj 44; software coin meter counts only when Q24 OPTION = COIN METER,4,observed
+3,adj_get 0xe90,0xd774,bl,0xd6f8,FUN_0000d6f8,r0 constant,date/time text: 12-hour (AM/PM) or 24-hour clock,,code
+3,adj_get 0xe90,0xd840,bl,0xd814,FUN_0000d814,r0 constant,date/time editor: 12/24-hour display,,code
+81,adj_get 0xe90,0x17c38,bl,0x17c20,FUN_00017c20,from data structure,device disable predicate 0x17c20 (device struct +0x1a); observed id 81 DISABLE RECOGNIZER MOTOR,28,observed
+76,adj_get 0xe90,0x19178,bl,0x19160,FUN_00019160,from data structure,device disable predicate 0x19160 (struct +0x16); observed id 76 DISABLE RECOGNIZER 3-BANK MOTOR,32,observed
+38,adj_get 0xe90,0x19ad0,bl,0x19ac4,ball_save_arm,r0 constant,"ball_save_arm: 0 = no ball save, else start ball_save_task with this time",1,observed
+42,adj_get 0xe90,0x19ea4,bl,0x19e98,FUN_00019e98,r0 constant,competition mode (or game flag 0xf): returns 1 = competition rules (no random awards),1,observed
+46,adj_get 0xe90,0x19eec,bl,0x19ecc,FUN_00019ecc,r0 constant,player competition: in a game (gf_state&0x118==0x10) and YES -> allow buy-in/competition prompt,,code
+26,adj_get 0xe90,0x1a04c,bl,0x1a034,FUN_0001a034,r0 constant,"extra ball award: refused if player tilted (0x252a0) or player EB count >= limit (0 = none, 10 = unlimited)",2,observed
+61,adj_get 0xe90,0x1a460,bl,0x1a458,FUN_0001a458,r0 constant,HSTD reset count: reload the games-until-reset counter (NVRAM 0x2110800),,code
+61,adj_get 0xe90,0x1a4f8,bl,0x1a4f0,FUN_0001a4f0,r0 constant,HSTD reset count: 0 = OFF; else count down per game and reset high scores at 0,1,observed
+48,adj_get 0xe90,0x1a508,bl,0x1a4f0,FUN_0001a4f0,r0 constant,allow high scores: when not YES skip high-score processing,1,observed
+48,adj_get 0xe90,0x1a6b4,bl,0x1a6ac,FUN_0001a6ac,r0 constant,allow high scores: predicate,,code
+60,adj_get 0xe90,0x1a748,bl,0x1a728,FUN_0001a728,r0 constant,HSTD initials: 3 initials vs 10-letter name when storing an entry,,code
+49,adj_get 0xe90,0x1a780,bl,0x1a728,FUN_0001a728,from data structure,HS entry save 0x1a728: HS table 0x40e21fc +0x1a (adj 49-53) stored with the entry as its reset score,,code
+50,adj_get 0xe90,0x1a780,bl,0x1a728,FUN_0001a728,from data structure,HS entry save 0x1a728: HS table 0x40e21fc +0x1a (adj 49-53) stored with the entry as its reset score,,code
+51,adj_get 0xe90,0x1a780,bl,0x1a728,FUN_0001a728,from data structure,HS entry save 0x1a728: HS table 0x40e21fc +0x1a (adj 49-53) stored with the entry as its reset score,,code
+52,adj_get 0xe90,0x1a780,bl,0x1a728,FUN_0001a728,from data structure,HS entry save 0x1a728: HS table 0x40e21fc +0x1a (adj 49-53) stored with the entry as its reset score,,code
+53,adj_get 0xe90,0x1a780,bl,0x1a728,FUN_0001a728,from data structure,HS entry save 0x1a728: HS table 0x40e21fc +0x1a (adj 49-53) stored with the entry as its reset score,,code
+55,adj_get 0xe90,0x1ac4c,bl,0x1abfc,FUN_0001abfc,from data structure,HS award 0x1abfc: HS table +0x1e = number of awards for that place,,code
+56,adj_get 0xe90,0x1ac4c,bl,0x1abfc,FUN_0001abfc,from data structure,HS award 0x1abfc: HS table +0x1e = number of awards for that place,,code
+57,adj_get 0xe90,0x1ac4c,bl,0x1abfc,FUN_0001abfc,from data structure,HS award 0x1abfc: HS table +0x1e = number of awards for that place,,code
+58,adj_get 0xe90,0x1ac4c,bl,0x1abfc,FUN_0001abfc,from data structure,HS award 0x1abfc: HS table +0x1e = number of awards for that place,,code
+59,adj_get 0xe90,0x1ac4c,bl,0x1abfc,FUN_0001abfc,from data structure,HS award 0x1abfc: HS table +0x1e = number of awards for that place,,code
+54,adj_get 0xe90,0x1ac5c,bl,0x1abfc,FUN_0001abfc,from data structure,"HS award 0x1abfc: HS table +0x1c = HIGH SCORE AWARD (0 credit, 1 ticket)",,code
+60,adj_get 0xe90,0x1af84,bl,0x1ad4c,high_score_entry,r0 constant,high_score_entry: 3 or 10 characters to enter,,code
+44,adj_get 0xe90,0x1b390,bl,0x1b370,FUN_0001b370,r0 constant,"Q24 option stored for the award knocker/meter output (coin meter, token dispenser or knocker)",3,observed
+35,adj_get 0xe90,0x1b4b8,bl,0x1b418,FUN_0001b418,r0 constant,"knocker volume: 0 = off, else knocker strength",3,observed
+30,adj_get 0xe90,0x1b678,bl,0x1b660,match,r0 constant,"match: OFF (11) disables match, else percentage",,code
+29,adj_get 0xe90,0x1b8b8,bl,0x1b86c,match_award,r0 constant,"match_award: 0 credit, 1 ticket, 2 token",,code
+39,adj_get 0xe90,0x1e62c,bl,0x1e614,FUN_0001e614,r0 constant,"timed plunger: 0 = off, else auto-plunge after N seconds",4,observed
+41,adj_get 0xe90,0x1ea34,bl,0x1ea28,FUN_0001ea28,r0 constant,"coin-door ball saver: when YES and door open, drains are saved",,code
+63,adj_get 0xe90,0x1f7b4,bl,0x1f7a4,FUN_0001f7a4,r0 constant,lost ball recovery: when YES the OS re-feeds a lost ball (0x1e080),,code
+36,adj_get 0xe90,0x20f28,bl,0x20d1c,start_button,r0 constant,start button during a game: GAME RESTART YES allows a restart by holding start,,code
+31,adj_get 0xe90,0x213e0,bl,0x213c0,FUN_000213c0,r0 constant,balls per game (getter used everywhere),1061,observed
+16,adj_get 0xe90,0x22818,bl,0x227cc,FUN_000227cc,r0 constant,dynamic replay: reset dynamic start score (NVRAM 0x2102f8c),,code
+14,adj_get 0xe90,0x229c0,bl,0x22998,FUN_00022998,r0 constant,replay score: levels beyond REPLAY LEVELS give no replay,16,observed
+11,adj_get 0xe90,0x229d0,bl,0x22998,FUN_00022998,r0 constant,replay score: branch on replay type,4,observed
+15,adj_get 0xe90,0x229f8,bl,0x22998,FUN_00022998,r0 constant,replay score (AUTO): level n = n x AUTO REPLAY START (x boost),4,observed
+21,adj_get 0xe90,0x22a04,bl,0x22998,FUN_00022998,r0 constant,replay boost: add boost count x score,4,observed
+17,adj_get 0xe90,0x22a58,bl,0x22998,FUN_00022998,from data structure,replay score 0x22998 (FIXED): adj 16+level = REPLAY LEVEL #n,,code
+18,adj_get 0xe90,0x22a58,bl,0x22998,FUN_00022998,from data structure,replay score 0x22998 (FIXED): adj 16+level = REPLAY LEVEL #n,,code
+19,adj_get 0xe90,0x22a58,bl,0x22998,FUN_00022998,from data structure,replay score 0x22998 (FIXED): adj 16+level = REPLAY LEVEL #n,,code
+20,adj_get 0xe90,0x22a58,bl,0x22998,FUN_00022998,from data structure,replay score 0x22998 (FIXED): adj 16+level = REPLAY LEVEL #n,,code
+21,adj_get 0xe90,0x22a64,bl,0x22998,FUN_00022998,r0 constant,replay boost: add boost count x score,,code
+13,adj_get 0xe90,0x22b80,bl,0x22b38,FUN_00022b38,r0 constant,replay award text: msg 0x301 + REPLAY AWARD,,code
+13,adj_get 0xe90,0x22d74,bl,0x22d2c,replay_award,r0 constant,"replay_award: 0 credit, 1 ticket, 3 extra ball",2,observed
+11,adj_get 0xe90,0x22e04,bl,0x22d2c,replay_award,r0 constant,replay_award: DYNAMIC raises the dynamic level,2,observed
+16,adj_get 0xe90,0x22e28,bl,0x22d2c,replay_award,r0 constant,replay_award (DYNAMIC): add DYNAMIC REPLAY START to the dynamic level,,code
+12,adj_get 0xe90,0x23054,bl,0x22fd4,FUN_00022fd4,r0 constant,auto replay percentage adjust (target %),,code
+16,adj_get 0xe90,0x23280,bl,0x231a4,FUN_000231a4,r0 constant,auto/dynamic replay adjust at game end,,code
+12,adj_get 0xe90,0x2328c,bl,0x231a4,FUN_000231a4,r0 constant,auto/dynamic replay percentage,,code
+22,adj_get 0xe90,0x23f8c,bl,0x23f74,FUN_00023f74,r0 constant,special allowed: refused when tilted or player specials >= SPECIAL LIMIT,2,observed
+23,adj_get 0xe90,0x240e0,bl,0x240ac,special_award,r0 constant,"special_award: 0 credit, 1 ticket, 2 token, 3 points, 4 extra ball",1,observed
+64,adj_get 0xe90,0x2435c,bl,0x24344,FUN_00024344,r0 constant,tilt: coin door open + COIN DOOR DISABLE TILT YES ignores tilt,,code
+32,adj_get 0xe90,0x243b4,bl,0x24398,tilt_warning,r0 constant,tilt_warning: warnings before tilt,,code
+31,adj_get 0xe90,0x25918,bl,0x25910,FUN_00025910,r0 constant,balls per game (end-of-ball/game check),,code
+40,adj_get 0xe90,0x2dcf4,bl,0x2dcc0,FUN_0002dcc0,r0 constant,flipper ball launch: which flipper launches the ball,,code
+40,adj_get 0xe90,0x2dd04,bl,0x2dcc0,FUN_0002dcc0,r0 constant,flipper ball launch,,code
+40,adj_get 0xe90,0x2dde0,bl,0x2dcc0,FUN_0002dcc0,r0 constant,flipper ball launch,,code
+11,adj_get 0xe90,0x34214,bl,0x34124,FUN_00034124,r0 constant,adjustment menu visibility (adj 12),,code
+11,adj_get 0xe90,0x34230,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 13),,code
+11,adj_get 0xe90,0x34240,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 13/14),,code
+11,adj_get 0xe90,0x34258,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 15),,code
+11,adj_get 0xe90,0x34270,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 16),,code
+11,adj_get 0xe90,0x34288,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 17-20),,code
+14,adj_get 0xe90,0x342a8,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 17-20),,code
+11,adj_get 0xe90,0x342c0,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 21),,code
+30,adj_get 0xe90,0x342ec,bl,0x34124,FUN_00034124,r0 constant,visibility (adj 29),,code
+48,adj_get 0xe90,0x34300,bl,0x34124,FUN_00034124,r0 constant,"visibility (adj 23/24 by 22, 27 by 26, 49-61 by 48)",,code
+2,adj_get 0xe90,0x10002e8,bl,0x10002dc,FUN_010002dc,r0 constant,attract: show the custom message when CUSTOM MESSAGE = ON,,code
+27,adj_get 0xe90,0x1000a10,bl,0x10009a8,FUN_010009a8,r0 constant,bonus/extra-ball percentage control (compare recent EB % with EXTRA BALL PERCENTAGE),,code
+85,adj_get 0xe90,0x100425c,bl,0x1004238,eol_extra_ball_check,r0 constant,End of Line: light extra ball at the configured EOL multiball count,,code
+85,adj_get 0xe90,0x10043e4,bl,0x10042d0,eol_letters_ramp,r0 constant,End of Line letters ramp: EOL extra ball setting,,code
+83,adj_get 0xe90,0x1004414,bl,0x10042d0,eol_letters_ramp,r0 constant,End of Line letters needed (1st multiball),,code
+84,adj_get 0xe90,0x1004420,bl,0x10042d0,eol_letters_ramp,r0 constant,End of Line letters needed (2nd+ multiball),,code
+77,adj_get 0xe90,0x10064b0,bl,0x10064a8,disc_motor_disabled_adj77,r0 constant,disc motor disabled predicate,32,observed
+68,adj_get 0xe90,0x1007080,b,0x1007074,adj68_disc_shots,r0 constant,Disc multiball: disc shots needed,,code
+69,adj_get 0xe90,0x10070c4,b,0x10070b8,adj69_recognizer_shots,r0 constant,Disc multiball: Recognizer shots needed,,code
+70,adj_get 0xe90,0x10076a8,bl,0x100769c,dmb_open_restart_window,r0 constant,Disc MB restart window timer (NONE = no restart),,code
+71,adj_get 0xe90,0x1007844,bl,0x100781c,dmb_restart_on_disc_hit,r0 constant,Disc MB restart autofire time (0 = none),,code
+78,adj_get 0xe90,0x100aad0,bl,0x100aac8,FUN_0100aac8,from data structure,post/device predicate 0x100aac8 (struct +2); observed id 78 DISABLE ORBIT UP-POST,40,observed
+80,adj_get 0xe90,0x100b928,bl,0x100b910,FUN_0100b910,from data structure,drop target predicate 0x100b910 (struct +0x12); observed id 80 DISABLE DROP TARGETS,1,observed
+74,adj_get 0xe90,0x100c5ac,bl,0x100c558,tron_award_timer_task,r0 constant,TRON award timer: double scoring seconds,,code
+73,adj_get 0xe90,0x100c5d0,bl,0x100c558,tron_award_timer_task,r0 constant,TRON award timer: bumpers seconds,,code
+72,adj_get 0xe90,0x100c5f4,bl,0x100c558,tron_award_timer_task,r0 constant,TRON award timer: spinners seconds,,code
+74,adj_get 0xe90,0x100d378,bl,0x100d35c,tron_award_refill_time_a,r0 constant,refill double scoring time,,code
+73,adj_get 0xe90,0x100d3bc,bl,0x100d3a0,tron_award_refill_time_b,r0 constant,refill bumpers time,,code
+72,adj_get 0xe90,0x100d400,bl,0x100d3e4,tron_award_refill_time_c,r0 constant,refill spinners time,,code
+27,adj_get 0xe90,0x100e30c,bl,0x100e2e0,FUN_0100e2e0,r0 constant,Flynn's Arcade: extra ball weight vs EXTRA BALL PERCENTAGE,1,observed
+24,adj_get 0xe90,0x100e384,bl,0x100e358,FUN_0100e358,r0 constant,Flynn's Arcade: special weight vs SPECIAL PERCENTAGE,1,observed
+88,adj_get 0xe90,0x100f0f4,bl,0x100f0cc,FUN_0100f0cc,r0 constant,,2,observed
+75,adj_get 0xe90,0x100fbfc,bl,0x100fbb8,FUN_0100fbb8,r0 constant,flipper aborts animations: NONE/ONE/ALL,2,observed
+75,adj_get 0xe90,0x100fdc4,bl,0x100fd88,FUN_0100fd88,r0 constant,abort animations,,code
+82,adj_get 0xe90,0x10127d8,bl,0x10127c0,outlane_insult_speech,r0 constant,outlane insult speech when INSULT LEVEL > 0,,code
+65,adj_get 0xe90,0x101c24c,bl,0x101c244,pop_hits_for_next_level,r0 constant,pop bumper hits for next level = (difficulty + levels done) x 5 + 20,1,observed
+67,adj_get 0xe90,0x101fdb8,bl,0x101fd94,recog_reset_player_at_game_start,r0 constant,Recognizer difficulty copied per player at game start,1,observed
+13,adj_get 0xe90,0x102374c,bl,0x1023704,FUN_01023704,r0 constant,replay award text: msg 0x526 + REPLAY AWARD,349,observed
+86,adj_get 0xe90,0x10289cc,bl,0x10289b8,shaker_run,r0 constant,shaker_run: run only when SHAKER MOTOR != NONE and >= min_setting,,code
+79,adj_get 0xe90,0x1029180,bl,0x1029148,skill_on_serve,r0 constant,skill shot on serve: plunge post disabled -> alternate skill shot,1,observed
+79,adj_get 0xe90,0x102a3b0,bl,0x102a31c,sw23_shooter_lane,r0 constant,shooter lane: raise plunge post unless disabled,4,observed
+66,adj_get 0xe90,0x10318f0,bl,0x10318ac,on_zuse_fastscoring_started,r0 constant,Zuse fast scoring timer start value,,code
+66,adj_get 0xe90,0x1031adc,bl,0x1031ab8,zfs_add_time,r0 constant,Zuse fast scoring add time,,code
+4,adj_get 0xe90,0x1037048,bl,0x103703c,deff_005,r0 constant,deff_005 (boot): FAST BOOT skips the long boot checks,,code
+any,adj_get 0xe90,0x103de4c,bl,0x103dd00,FUN_0103dd00,any id (generic code),adjustment menu 0x103dd00: value shown,,code
+any,adj_get 0xe90,0x103e26c,bl,0x103dd00,FUN_0103dd00,any id (generic code),adjustment menu: value after SELECT,,code
+any,adj_get 0xe90,0x103e3c0,bl,0x103dd00,FUN_0103dd00,any id (generic code),adjustment menu: next item,,code
+any,adj_get 0xe90,0x103e4b4,bl,0x103dd00,FUN_0103dd00,any id (generic code),adjustment menu: previous item,,code
+any,adj_get 0xe90,0x103e55c,bl,0x103dd00,FUN_0103dd00,any id (generic code),adjustment menu: BACK restores the stored value,,code
+any,adj_default 0xf28,0xf10,bl,0xe90,adj_get,any id (generic code),factory default = country override (0x5f2c) else table default,,code
+any,adj_default 0xf28,0x10b4,bl,0x1080,FUN_00001080,any id (generic code),factory default = country override (0x5f2c) else table default,,code
+any,adj_default 0xf28,0x5358,bl,0x52b4,FUN_000052b4,any id (generic code),factory default = country override (0x5f2c) else table default,,code
+7,adj_default 0xf28,0xa318,bl,0xa2dc,FUN_0000a2dc,r0 constant,factory default = country override (0x5f2c) else table default,,code
+any,adj_default 0xf28,0x103e10c,bl,0x103dd00,FUN_0103dd00,any id (generic code),factory default = country override (0x5f2c) else table default,,code
+any,adj_set 0xf8c,0x10c4,bl,0x1080,FUN_00001080,any id (generic code),write value (event 4 may veto; event 5 after),,code
+any,adj_set 0xf8c,0x1104,bl,0x10e8,FUN_000010e8,any id (generic code),write value (event 4 may veto; event 5 after),,code
+any,adj_set 0xf8c,0x14ec,bl,0x1328,FUN_00001328,any id (generic code),write value (event 4 may veto; event 5 after),,code
+45,adj_set 0xf8c,0x21c54,bl,0x21b34,FUN_00021b34,r0 constant,write value (event 4 may veto; event 5 after),,code
+15,adj_set 0xf8c,0x23118,bl,0x22fd4,FUN_00022fd4,r0 constant,write value (event 4 may veto; event 5 after),,code
+any,adj_set 0xf8c,0x1010718,bl,0x1010150,FUN_01010150,any id (generic code),write value (event 4 may veto; event 5 after),,code
+28,adj_set 0xf8c,0x103d8d8,b,0x103d8bc,FUN_0103d8bc,r0 constant,write value (event 4 may veto; event 5 after),,code
+any,adj_set 0xf8c,0x103e248,bl,0x103dd00,FUN_0103dd00,any id (generic code),write value (event 4 may veto; event 5 after),,code
+2,adj_set 0xf8c,0x1045a94,b,0x1045a78,FUN_01045a78,r0 constant,write value (event 4 may veto; event 5 after),,code
+any,adj_reset 0x1080,0x12a0,bl,0x1278,FUN_00001278,any id (generic code),reset one adjustment to its factory default,,code
+any,adj_reset 0x1080,0x147c,bl,0x1328,FUN_00001328,any id (generic code),reset one adjustment to its factory default,,code
+any,adj_apply_list 0x10e8,0x1041b4c,bl,0x1041a10,FUN_01041a10,any id (generic code),"apply an install-preset (adj,value) list",,code
+any,adj_apply_list 0x10e8,0x1041b54,bl,0x1041a10,FUN_01041a10,any id (generic code),"apply an install-preset (adj,value) list",,code
+any,adj_list_installed 0x1118,0x1041ab0,bl,0x1041a10,FUN_01041a10,any id (generic code),check whether a preset is installed,,code
+any,adj_list_installed 0x1118,0x1041b5c,bl,0x1041a10,FUN_01041a10,any id (generic code),check whether a preset is installed,,code
+52,country_override 0x5f2c,0xf74,bl,0xf28,FUN_00000f28,r0 constant,country/game override lists,,code

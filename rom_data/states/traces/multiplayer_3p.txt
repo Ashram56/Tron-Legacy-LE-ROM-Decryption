@@ -1,0 +1,90 @@
+# Three-player game (states_ref). adj 38 BALL SAVE TIME = 0 so that every drain ends the ball (operator setting).
+# Starts as a 2-player game; player 3 is added with coins + START after P1's ball 1 is in play (playfield valid).
+# Then: player 2 tilts on ball 1 (the tilt ends only P2's ball, P3 is next); an attempt to add a 4th player on
+# ball 2 (expected: refused, players can only be added on ball 1). No pokes.
+pretrace gi on
+trace events on
+adj 38 0
+start 2
+wait 1
+mark P1_B1 valid, then 3 coins + START adds player 3 during ball 1
+wait 1.5
+hit 12
+wait 1
+button coin 150
+wait 0.3
+button coin 150
+wait 0.3
+button coin 150
+wait 0.5
+button start 150
+wait 2
+hit 37
+wait 1
+drain
+wait 6
+mark P2_B1 valid, then TILT (3 bobs, adj 32 = 2 warnings)
+wait 1.5
+hit 12
+wait 1
+button tilt
+wait 1.7
+button tilt
+wait 1.7
+button tilt
+wait 2
+mark P2_B1 tilted drain (expect no bonus, P3 up, tilt warnings reset)
+drain
+wait 6
+mark P3_B1
+wait 1.5
+hit 12
+wait 1
+hit 34
+wait 1
+drain
+wait 6
+mark P1_B2: 3 coins + START (expect no 4th player on ball 2)
+wait 1.5
+hit 12
+wait 1
+button coin 150
+wait 0.3
+button coin 150
+wait 0.3
+button coin 150
+wait 0.5
+button start 150
+wait 2
+drain
+wait 6
+mark P2_B2
+wait 1.5
+hit 12
+wait 1
+drain
+wait 6
+mark P3_B2
+wait 1.5
+hit 12
+wait 1
+drain
+wait 6
+mark P1_B3
+wait 1.5
+hit 12
+wait 1
+drain
+wait 6
+mark P2_B3
+wait 1.5
+hit 12
+wait 1
+drain
+wait 6
+mark P3_B3 (last ball of the game)
+wait 1.5
+hit 12
+wait 1
+drain
+wait 20

@@ -1,0 +1,158 @@
+# Four-player game (states_ref). adj 38 BALL SAVE TIME = 0 so that every drain ends the ball (operator setting).
+# Pokes: player 3 extra ball lit on ball 1 (0x3d46e, 0x2111896); player 3 score = 60,000,000 on ball 3
+# (beats HIGH SCORE #1 55 M) to show the high-score entry in a multi-player end of game.
+pretrace gi on
+adj 38 0
+start 4
+wait 1
+dump_events
+dump_tasks
+mark P1_B1
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 0.7
+hit 7
+wait 0.7
+drain
+wait 5
+mark P2_B1
+wait 1.5
+hit 12
+wait 1
+hit 34
+wait 0.7
+hit 8
+wait 0.7
+drain
+wait 5
+mark P3_B1
+wait 1.5
+hit 12
+wait 1
+hit 43
+wait 0.7
+hit 48
+wait 0.7
+mark poke: light extra ball for player 3
+poke 3d46e 1
+poke 2111896 1
+wait 0.5
+hit 11
+wait 6
+drain
+wait 5
+mark P3_B1 shoot again (same player, same ball)
+wait 1.5
+hit 12
+wait 1
+hit 39
+wait 0.7
+drain
+wait 5
+mark P4_B1
+wait 1.5
+hit 12
+wait 1
+hit 46
+wait 0.7
+hit 13
+wait 0.7
+drain
+wait 5
+mark P1_B2
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 0.7
+hit 7
+wait 0.7
+drain
+wait 5
+mark P2_B2
+wait 1.5
+hit 12
+wait 1
+hit 34
+wait 0.7
+hit 8
+wait 0.7
+drain
+wait 5
+mark P3_B2
+wait 1.5
+hit 12
+wait 1
+hit 43
+wait 0.7
+hit 48
+wait 0.7
+drain
+wait 5
+mark P4_B2
+wait 1.5
+hit 12
+wait 1
+hit 46
+wait 0.7
+hit 13
+wait 0.7
+drain
+wait 5
+mark P1_B3
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 0.7
+hit 7
+wait 0.7
+drain
+wait 5
+mark P2_B3
+wait 1.5
+hit 12
+wait 1
+hit 34
+wait 0.7
+hit 8
+wait 0.7
+drain
+wait 5
+mark P3_B3
+wait 1.5
+hit 12
+wait 1
+hit 43
+wait 0.7
+hit 48
+wait 0.7
+mark poke: player 3 score = 60,000,000
+poke 21109ec 60000000 4
+wait 0.5
+drain
+wait 5
+mark P4_B3
+wait 1.5
+hit 12
+wait 1
+hit 46
+wait 0.7
+hit 13
+wait 0.7
+drain
+wait 5
+mark end of game: bonus P4, high score entry for player 3 (press START 3 times to enter initials)
+wait 6
+button start 150
+wait 1.5
+button start 150
+wait 1.5
+button start 150
+wait 1.5
+button start 150
+wait 12
+mark game over
+wait 15

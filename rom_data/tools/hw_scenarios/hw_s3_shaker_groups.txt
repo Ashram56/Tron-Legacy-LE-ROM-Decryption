@@ -1,0 +1,27 @@
+# hw study 3: in-game shaker strengths, coil groups, flipper hold with upper flipper
+start 1
+wait 5
+mark shaker 1
+inject 0x10289b8 1 1
+wait 1.5
+mark shaker 2
+inject 0x10289b8 2 1
+wait 1.5
+mark shaker 3
+inject 0x10289b8 3 1
+wait 2.5
+mark coilgroup 1 48
+inject 0x6b24 1 48
+wait 1
+mark coilgroup_fn 2 100 0x0f0f0f0f
+inject 0x6b94 2 100 0x0f0f0f0f
+wait 1
+mark eject lane
+hit 11
+wait 5
+mark targets
+hit 49
+hit 50
+hit 51
+wait 3
+dump

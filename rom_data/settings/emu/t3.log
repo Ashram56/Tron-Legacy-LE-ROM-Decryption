@@ -1,0 +1,95 @@
+8.0048 ready dip0=0x80
+8.0048 key 3
+8.0528 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.0532 coin_task_run slot=0 credsys=1
+8.4208 key 3
+8.4688 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.4689 coin_task_run slot=0 credsys=1
+8.5331 audit_add counter=2 n=1 lr=0x4b34
+8.5331 audit_add counter=7 n=1 lr=0x4b98
+8.5337 event_post 0x1a arg0=0x3c701 lr=0x4ca4
+8.8387 key 3
+8.8869 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.8887 coin_task_run slot=0 credsys=1
+8.9514 audit_add counter=2 n=1 lr=0x4b34
+8.9514 audit_add counter=7 n=1 lr=0x4b98
+8.9522 event_post 0x1a arg0=0x1 lr=0x4ca4
+9.3724 audit_add counter=2 n=1 lr=0x4b34
+9.3724 audit_add counter=7 n=1 lr=0x4b98
+9.3730 audit_add counter=1 n=1 lr=0x4c30
+9.3731 event_post 0x19 arg0=0x101 lr=0x4c58
+10.2614 key 1
+10.3089 audit_add counter=17 n=1 lr=0x20bb4
+14.6799 mark INJ_replay
+14.6799 adj_get id=13 lr=0x22d78
+14.6799 adj_get id=33 lr=0x48cc
+14.6800 adj_get id=34 lr=0x4fe0
+14.6801 adj_get id=44 lr=0x1b394
+14.6801 adj_get id=11 lr=0x22e08
+14.6801 audit_add counter=10 n=1 lr=0x22ec8
+14.6807 adj_get id=7 lr=0xa44c
+14.6807 adj_get id=7 lr=0xa44c
+14.6808 adj_get id=7 lr=0xa44c
+14.6811 adj_get id=31 lr=0x213e4
+14.6811 adj_get id=7 lr=0xa44c
+14.6812 adj_get id=34 lr=0x4fe0
+14.6812 adj_get id=28 lr=0x49b0
+14.6812 adj_get id=7 lr=0xa44c
+14.6962 adj_get id=35 lr=0x1b4bc
+14.6962 adj_get id=7 lr=0x2c214
+14.6962 adj_get id=7 lr=0x2d5a8
+14.6963 call 0x22d2c(1,1,0,0) = 1 (0x1)
+17.6992 credits pos=2 credits=1 chk=0xfc
+17.6992 mark INJ_special
+17.6992 adj_get id=22 lr=0x23f90
+17.6992 adj_get id=23 lr=0x240e4
+17.6992 adj_get id=33 lr=0x48cc
+17.6992 adj_get id=34 lr=0x4fe0
+17.6994 adj_get id=44 lr=0x1b394
+17.6994 audit_add counter=14 n=1 lr=0x241cc
+17.6999 adj_get id=7 lr=0xa44c
+17.7000 adj_get id=7 lr=0xa44c
+17.7002 adj_get id=7 lr=0xa44c
+17.7010 adj_get id=31 lr=0x213e4
+17.7010 adj_get id=7 lr=0xa44c
+17.7012 adj_get id=34 lr=0x4fe0
+17.7012 adj_get id=28 lr=0x49b0
+17.7012 adj_get id=7 lr=0xa44c
+17.7154 adj_get id=35 lr=0x1b4bc
+17.7154 adj_get id=7 lr=0x2c214
+17.7154 adj_get id=7 lr=0x2d5a8
+17.7155 call 0x240ac(0,0,0,0) = 1 (0x1)
+20.7197 credits pos=2 credits=2 chk=0xfb
+20.7197 mark INJ_eb
+20.7197 adj_get id=26 lr=0x1a050
+20.7197 audit_add counter=9 n=1 lr=0x1a1c0
+20.7202 adj_get id=7 lr=0xa44c
+20.7203 adj_get id=7 lr=0xa44c
+20.7205 adj_get id=7 lr=0xa44c
+20.7214 adj_get id=31 lr=0x213e4
+20.7214 adj_get id=7 lr=0xa44c
+20.7215 adj_get id=34 lr=0x4fe0
+20.7215 adj_get id=28 lr=0x49b0
+20.7215 adj_get id=7 lr=0xa44c
+20.7359 call 0x1a168(0,0,0,0) = 1 (0x1)
+22.7496 mark INJ_replay2
+22.7497 adj_get id=13 lr=0x22d78
+22.7497 adj_get id=33 lr=0x48cc
+22.7497 adj_get id=34 lr=0x4fe0
+22.7499 adj_get id=44 lr=0x1b394
+22.7499 adj_get id=11 lr=0x22e08
+22.7499 audit_add counter=11 n=1 lr=0x22ec8
+22.7504 adj_get id=7 lr=0xa44c
+22.7504 adj_get id=7 lr=0xa44c
+22.7507 adj_get id=7 lr=0xa44c
+22.7516 adj_get id=31 lr=0x213e4
+22.7516 adj_get id=7 lr=0xa44c
+22.7517 adj_get id=34 lr=0x4fe0
+22.7517 adj_get id=28 lr=0x49b0
+22.7517 adj_get id=7 lr=0xa44c
+22.7659 adj_get id=35 lr=0x1b4bc
+22.7659 adj_get id=7 lr=0x2c214
+22.7659 adj_get id=7 lr=0x2d5a8
+22.7661 call 0x22d2c(1,2,0,0) = 1 (0x1)
+24.7674 credits pos=2 credits=3 chk=0xfa
+24.9769 end

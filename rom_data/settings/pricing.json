@@ -1,0 +1,6420 @@
+{
+ "credit_system": {
+  "address": "0x40e0bd8",
+  "state_nvram": "0x2111008",
+  "pricing_table_ram": "0x38078",
+  "custom_record_nvram": "0x2110808",
+  "custom_coin_door_nvram": "0x2110824",
+  "custom_ladder_nvram": "0x211089c",
+  "slot_audit_list": "0x40e0ba2",
+  "adj_pricing": 28,
+  "adj_coin_input_delay": 62,
+  "adj_free_play": 34,
+  "adj_credit_limit": 33,
+  "meter_id": 1,
+  "units_counter": 7,
+  "credits_counter": 1,
+  "lockout_id": 5,
+  "tag": "code"
+ },
+ "coin_slots": [
+  {
+   "slot": 0,
+   "audit_counter": 2,
+   "audit": 5,
+   "audit_name": "COINS THROUGH LEFT SLOT",
+   "pinmame_input": "COIN1 (PinMAME key 3)",
+   "tag": "observed"
+  },
+  {
+   "slot": 1,
+   "audit_counter": 3,
+   "audit": 7,
+   "audit_name": "COINS THROUGH CENTER SLOT",
+   "pinmame_input": "COIN2 (key 4)",
+   "tag": "observed"
+  },
+  {
+   "slot": 2,
+   "audit_counter": 4,
+   "audit": 6,
+   "audit_name": "COINS THROUGH RIGHT SLOT",
+   "pinmame_input": "COIN3 (key 5)",
+   "tag": "observed"
+  },
+  {
+   "slot": 3,
+   "audit_counter": 5,
+   "audit": 8,
+   "audit_name": "COINS THROUGH FOURTH SLOT",
+   "pinmame_input": "COIN4 (key 6)",
+   "tag": "observed"
+  },
+  {
+   "slot": 4,
+   "audit_counter": 6,
+   "audit": 9,
+   "audit_name": "COINS THROUGH FIFTH SLOT",
+   "pinmame_input": null,
+   "tag": "code"
+  }
+ ],
+ "presets": [
+  {
+   "adj_value": 0,
+   "name": "AUSTRALIA 1",
+   "name_msg": "0x299",
+   "record": "0x37694",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37680",
+   "ladder_length": 20,
+   "cycle_money": "$2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "$1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "$2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "$1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 1",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 1,
+   "name": "AUSTRALIA 2",
+   "name_msg": "0x29a",
+   "record": "0x376b8",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x376ac",
+   "ladder_length": 10,
+   "cycle_money": "$1.00",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 10,
+     "money": "$1.00",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "$1.00",
+   "service_summary": "1/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 2,
+   "name": "AUSTRALIA 3",
+   "name_msg": "0x29b",
+   "record": "0x376e4",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x376d0",
+   "ladder_length": 20,
+   "cycle_money": "$2.00",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 20,
+     "money": "$2.00",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 20,
+   "first_credit_money": "$2.00",
+   "service_summary": "1/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 3",
+   "factory_default_for": [
+    "AUSTRALIA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 3,
+   "name": "AUSTRALIA 4",
+   "name_msg": "0x29c",
+   "record": "0x37730",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x376fc",
+   "ladder_length": 50,
+   "cycle_money": "$5.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 20,
+     "money": "$2.00",
+     "credits_total": 1
+    },
+    {
+     "units": 40,
+     "money": "$4.00",
+     "credits_total": 2
+    },
+    {
+     "units": 50,
+     "money": "$5.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 20,
+   "first_credit_money": "$2.00",
+   "service_summary": "1/2.00 2/4.00 3/5.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 4",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 4,
+   "name": "AUSTRALIA 5",
+   "name_msg": "0x29d",
+   "record": "0x377ac",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37748",
+   "ladder_length": 100,
+   "cycle_money": "$10.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 30,
+     "money": "$3.00",
+     "credits_total": 1
+    },
+    {
+     "units": 50,
+     "money": "$5.00",
+     "credits_total": 2
+    },
+    {
+     "units": 80,
+     "money": "$8.00",
+     "credits_total": 3
+    },
+    {
+     "units": 100,
+     "money": "$10.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 30,
+   "first_credit_money": "$3.00",
+   "service_summary": "1/3.00 2/5.00 3/8.00 5/10.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 5",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 5,
+   "name": "AUSTRALIA 6",
+   "name_msg": "0x29e",
+   "record": "0x377e4",
+   "coin_door": "0x37668",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      2,
+      10,
+      20,
+      50,
+      5
+     ],
+     "address": "0x37668"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "AUD %d.%02d",
+    "msg_ids": [
+     "0x3ef",
+     "0x3f0",
+     "0x3f1"
+    ]
+   },
+   "slot_units": [
+    2,
+    10,
+    20,
+    50,
+    5
+   ],
+   "slot_money": [
+    "$0.20",
+    "$1.00",
+    "$2.00",
+    "$5.00",
+    "$0.50"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x377c4",
+   "ladder_length": 30,
+   "cycle_money": "$3.00",
+   "cycle_credits": 2,
+   "awards": [
+    {
+     "units": 20,
+     "money": "$2.00",
+     "credits_total": 1
+    },
+    {
+     "units": 30,
+     "money": "$3.00",
+     "credits_total": 2
+    }
+   ],
+   "first_credit_units": 20,
+   "first_credit_money": "$2.00",
+   "service_summary": "1/2.00 2/3.00",
+   "service_summary_tag": "observed",
+   "name_observed": "AUSTRALIA 6",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 6,
+   "name": "CANADA 1",
+   "name_msg": "0x29f",
+   "record": "0x37824",
+   "coin_door": "0x377fc",
+   "unit_table": [
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      1,
+      4,
+      8,
+      0
+     ],
+     "address": "0x377fc"
+    },
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     "address": "0x37808"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "CAD %d.%02d",
+    "msg_ids": [
+     "0x3f7",
+     "0x3f8",
+     "0x3f9"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    4,
+    8,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$0.25",
+    "$1.00",
+    "$2.00",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1,
+    1,
+    1
+   ],
+   "ladder_address": "0x37820",
+   "ladder_length": 4,
+   "cycle_money": "$1.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 3,
+     "money": "$0.75",
+     "credits_total": 2
+    },
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50 2/0.75 3/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "CANADA 1",
+   "factory_default_for": [
+    "CANADA 1"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 7,
+   "name": "CANADA 2",
+   "name_msg": "0x2a0",
+   "record": "0x37840",
+   "coin_door": "0x377fc",
+   "unit_table": [
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      1,
+      4,
+      8,
+      0
+     ],
+     "address": "0x377fc"
+    },
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     "address": "0x37808"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "$%d.%02d",
+    "long": "CAD %d.%02d",
+    "msg_ids": [
+     "0x3f7",
+     "0x3f8",
+     "0x3f9"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    2,
+    2,
+    0
+   ],
+   "slot_money": [
+    "$1.00",
+    "$1.00",
+    "$2.00",
+    "$2.00",
+    "$0.00"
+   ],
+   "ladder": [
+    1,
+    2
+   ],
+   "ladder_address": "0x3783c",
+   "ladder_length": 2,
+   "cycle_money": "$2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 1,
+     "money": "$1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 2,
+     "money": "$2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "$1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "CANADA 2",
+   "factory_default_for": [
+    "CANADA 2"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 8,
+   "name": "CROATIA",
+   "name_msg": "0x2a1",
+   "record": "0x37f8c",
+   "coin_door": "0x37f6c",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      2,
+      5,
+      1,
+      0
+     ],
+     "address": "0x37f6c"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d HRK",
+    "long": "%d HRK",
+    "msg_ids": [
+     "0x44f",
+     "0x450",
+     "0x451"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 HRK",
+    "2 HRK",
+    "5 HRK",
+    "1 HRK",
+    "0 HRK"
+   ],
+   "ladder": [
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ladder_address": "0x37f84",
+   "ladder_length": 5,
+   "cycle_money": "5 HRK",
+   "cycle_credits": 2,
+   "awards": [
+    {
+     "units": 3,
+     "money": "3 HRK",
+     "credits_total": 1
+    },
+    {
+     "units": 5,
+     "money": "5 HRK",
+     "credits_total": 2
+    }
+   ],
+   "first_credit_units": 3,
+   "first_credit_money": "3 HRK",
+   "service_summary": "1/3 2/5",
+   "service_summary_tag": "observed",
+   "name_observed": "CROATIA",
+   "factory_default_for": [
+    "CROATIA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 9,
+   "name": "DENMARK 1",
+   "name_msg": "0x2a2",
+   "record": "0x37878",
+   "coin_door": "0x37858",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      5,
+      10,
+      20,
+      0
+     ],
+     "address": "0x37858"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d DKK",
+    "long": "%d DKK",
+    "msg_ids": [
+     "0x3ff",
+     "0x400",
+     "0x401"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    20,
+    0
+   ],
+   "slot_money": [
+    "1 DKK",
+    "5 DKK",
+    "10 DKK",
+    "20 DKK",
+    "0 DKK"
+   ],
+   "ladder": [
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ladder_address": "0x37870",
+   "ladder_length": 5,
+   "cycle_money": "5 DKK",
+   "cycle_credits": 2,
+   "awards": [
+    {
+     "units": 3,
+     "money": "3 DKK",
+     "credits_total": 1
+    },
+    {
+     "units": 5,
+     "money": "5 DKK",
+     "credits_total": 2
+    }
+   ],
+   "first_credit_units": 3,
+   "first_credit_money": "3 DKK",
+   "service_summary": "1/3 2/5",
+   "service_summary_tag": "observed",
+   "name_observed": "DENMARK 1",
+   "factory_default_for": [
+    "DENMARK"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 10,
+   "name": "DENMARK 2",
+   "name_msg": "0x2a3",
+   "record": "0x3789c",
+   "coin_door": "0x37858",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      5,
+      10,
+      20,
+      0
+     ],
+     "address": "0x37858"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d DKK",
+    "long": "%d DKK",
+    "msg_ids": [
+     "0x3ff",
+     "0x400",
+     "0x401"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    20,
+    0
+   ],
+   "slot_money": [
+    "1 DKK",
+    "5 DKK",
+    "10 DKK",
+    "20 DKK",
+    "0 DKK"
+   ],
+   "ladder": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    2
+   ],
+   "ladder_address": "0x37890",
+   "ladder_length": 10,
+   "cycle_money": "10 DKK",
+   "cycle_credits": 7,
+   "awards": [
+    {
+     "units": 2,
+     "money": "2 DKK",
+     "credits_total": 1
+    },
+    {
+     "units": 4,
+     "money": "4 DKK",
+     "credits_total": 2
+    },
+    {
+     "units": 5,
+     "money": "5 DKK",
+     "credits_total": 3
+    },
+    {
+     "units": 7,
+     "money": "7 DKK",
+     "credits_total": 4
+    },
+    {
+     "units": 9,
+     "money": "9 DKK",
+     "credits_total": 5
+    },
+    {
+     "units": 10,
+     "money": "10 DKK",
+     "credits_total": 7
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "2 DKK",
+   "service_summary": "1/2 2/4 3/5 4/7 5/9 7/10",
+   "service_summary_tag": "observed",
+   "name_observed": "DENMARK 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 11,
+   "name": "EURO 1",
+   "name_msg": "0x2a4",
+   "record": "0x37be0",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37bd8",
+   "ladder_length": 5,
+   "cycle_money": "EUR 0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 1",
+   "factory_default_for": [
+    "BELGIUM"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 12,
+   "name": "EURO 2",
+   "name_msg": "0x2a5",
+   "record": "0x37c0c",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37bf8",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 5/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 13,
+   "name": "EURO 3",
+   "name_msg": "0x2a6",
+   "record": "0x37c30",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37c24",
+   "ladder_length": 10,
+   "cycle_money": "EUR 1.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 3/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 3",
+   "factory_default_for": [
+    "NETHERLANDS"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 14,
+   "name": "EURO 4",
+   "name_msg": "0x2a7",
+   "record": "0x37c5c",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37c48",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 6,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 6
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 6/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 4",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 15,
+   "name": "EURO 5",
+   "name_msg": "0x2a8",
+   "record": "0x37c88",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37c74",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 7,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 3
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 4
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 7
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 3/1.00 4/1.50 7/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 5",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 16,
+   "name": "EURO 6",
+   "name_msg": "0x2a9",
+   "record": "0x37ca8",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37ca0",
+   "ladder_length": 5,
+   "cycle_money": "EUR 0.50",
+   "cycle_credits": 2,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 2
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "2/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 6",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 17,
+   "name": "EURO 7",
+   "name_msg": "0x2aa",
+   "record": "0x37ce8",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37cc0",
+   "ladder_length": 40,
+   "cycle_money": "EUR 4.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 2
+    },
+    {
+     "units": 30,
+     "money": "EUR 3.00",
+     "credits_total": 3
+    },
+    {
+     "units": 40,
+     "money": "EUR 4.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 2/2.00 3/3.00 5/4.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 7",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 18,
+   "name": "EURO 8",
+   "name_msg": "0x2ab",
+   "record": "0x37d14",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37d00",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 8",
+   "factory_default_for": [
+    "FINLAND",
+    "GREECE",
+    "SPAIN"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 19,
+   "name": "EURO 9",
+   "name_msg": "0x2ac",
+   "record": "0x37d40",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37d2c",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 2
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 2/1.50 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 9",
+   "factory_default_for": [
+    "AUSTRIA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 20,
+   "name": "EURO 10",
+   "name_msg": "0x2ad",
+   "record": "0x37d78",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "ladder_address": "0x37d58",
+   "ladder_length": 30,
+   "cycle_money": "EUR 3.00",
+   "cycle_credits": 7,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 3
+    },
+    {
+     "units": 30,
+     "money": "EUR 3.00",
+     "credits_total": 7
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 3/2.00 7/3.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 10",
+   "factory_default_for": [
+    "FRANCE"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 21,
+   "name": "EURO 11",
+   "name_msg": "0x2ae",
+   "record": "0x37da4",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37d90",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 4,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 4
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 4/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 11",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 22,
+   "name": "EURO 12",
+   "name_msg": "0x2af",
+   "record": "0x37de4",
+   "coin_door": "0x37bc0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      2,
+      0
+     ],
+     "address": "0x37bc0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    2,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 0.20",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37dbc",
+   "ladder_length": 40,
+   "cycle_money": "EUR 4.00",
+   "cycle_credits": 9,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 4
+    },
+    {
+     "units": 30,
+     "money": "EUR 3.00",
+     "credits_total": 6
+    },
+    {
+     "units": 40,
+     "money": "EUR 4.00",
+     "credits_total": 9
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "2/1.00 4/2.00 6/3.00 9/4.00",
+   "service_summary_tag": "observed",
+   "name_observed": "EURO 12",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 23,
+   "name": "GERMANY 1",
+   "name_msg": "0x2b0",
+   "record": "0x37e54",
+   "coin_door": "0x37e34",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      50,
+      0
+     ],
+     "address": "0x37e34"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    50,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 5.00",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37e4c",
+   "ladder_length": 5,
+   "cycle_money": "EUR 0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "GERMANY 1",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 24,
+   "name": "GERMANY 2",
+   "name_msg": "0x2b1",
+   "record": "0x37e80",
+   "coin_door": "0x37e34",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      50,
+      0
+     ],
+     "address": "0x37e34"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    50,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 5.00",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37e6c",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 5/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "GERMANY 2",
+   "factory_default_for": [
+    "GERMANY"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 25,
+   "name": "GERMANY 3",
+   "name_msg": "0x2b2",
+   "record": "0x37eac",
+   "coin_door": "0x37e34",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      10,
+      20,
+      50,
+      0
+     ],
+     "address": "0x37e34"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    10,
+    20,
+    50,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 1.00",
+    "EUR 2.00",
+    "EUR 5.00",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37e98",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 6,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 15,
+     "money": "EUR 1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 6
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 6/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "GERMANY 3",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 26,
+   "name": "ITALY 1",
+   "name_msg": "0x2b3",
+   "record": "0x378d4",
+   "coin_door": "0x378b4",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      1,
+      5,
+      1,
+      0
+     ],
+     "address": "0x378b4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x407",
+     "0x408",
+     "0x409"
+    ]
+   },
+   "slot_units": [
+    5,
+    1,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x378cc",
+   "ladder_length": 5,
+   "cycle_money": "EUR 0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "ITALY 1",
+   "factory_default_for": [
+    "ITALY"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 27,
+   "name": "ITALY 2",
+   "name_msg": "0x2b4",
+   "record": "0x37900",
+   "coin_door": "0x378b4",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      1,
+      5,
+      1,
+      0
+     ],
+     "address": "0x378b4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x407",
+     "0x408",
+     "0x409"
+    ]
+   },
+   "slot_units": [
+    5,
+    1,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x378ec",
+   "ladder_length": 20,
+   "cycle_money": "EUR 2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "EUR 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "EUR 2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "EUR 1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "ITALY 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 28,
+   "name": "JAPAN 1",
+   "name_msg": "0x2b5",
+   "record": "0x37f38",
+   "coin_door": "0x37f1c",
+   "unit_table": [
+    {
+     "unit_value": 10000,
+     "slot_units": [
+      1,
+      1,
+      1,
+      1,
+      0
+     ],
+     "address": "0x37f1c"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10000,
+   "money_formats": {
+    "plain": "%d",
+    "short": "JPY %d",
+    "long": "JPY %d",
+    "msg_ids": [
+     "0x447",
+     "0x448",
+     "0x449"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "JPY 100",
+    "JPY 100",
+    "JPY 100",
+    "JPY 100",
+    "JPY 0"
+   ],
+   "ladder": [
+    1
+   ],
+   "ladder_address": "0x37f34",
+   "ladder_length": 1,
+   "cycle_money": "JPY 100",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 1,
+     "money": "JPY 100",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "JPY 100",
+   "service_summary": "1/100",
+   "service_summary_tag": "observed",
+   "name_observed": "JAPAN 1",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 29,
+   "name": "JAPAN 2",
+   "name_msg": "0x2b6",
+   "record": "0x37f54",
+   "coin_door": "0x37f1c",
+   "unit_table": [
+    {
+     "unit_value": 10000,
+     "slot_units": [
+      1,
+      1,
+      1,
+      1,
+      0
+     ],
+     "address": "0x37f1c"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10000,
+   "money_formats": {
+    "plain": "%d",
+    "short": "JPY %d",
+    "long": "JPY %d",
+    "msg_ids": [
+     "0x447",
+     "0x448",
+     "0x449"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "JPY 100",
+    "JPY 100",
+    "JPY 100",
+    "JPY 100",
+    "JPY 0"
+   ],
+   "ladder": [
+    1,
+    2
+   ],
+   "ladder_address": "0x37f50",
+   "ladder_length": 2,
+   "cycle_money": "JPY 200",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 1,
+     "money": "JPY 100",
+     "credits_total": 1
+    },
+    {
+     "units": 2,
+     "money": "JPY 200",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "JPY 100",
+   "service_summary": "1/100 3/200",
+   "service_summary_tag": "observed",
+   "name_observed": "JAPAN 2",
+   "factory_default_for": [
+    "JAPAN"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 30,
+   "name": "LITHUANIA",
+   "name_msg": "0x2b7",
+   "record": "0x38060",
+   "coin_door": "0x38044",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      2,
+      5,
+      0,
+      0
+     ],
+     "address": "0x38044"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d LTL",
+    "long": "%d LTL",
+    "msg_ids": [
+     "0x46f",
+     "0x470",
+     "0x471"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    5,
+    0,
+    0
+   ],
+   "slot_money": [
+    "1 LTL",
+    "2 LTL",
+    "5 LTL",
+    "0 LTL",
+    "0 LTL"
+   ],
+   "ladder": [
+    0,
+    1
+   ],
+   "ladder_address": "0x3805c",
+   "ladder_length": 2,
+   "cycle_money": "2 LTL",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 2,
+     "money": "2 LTL",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "2 LTL",
+   "service_summary": "1/2",
+   "service_summary_tag": "observed",
+   "name_observed": "LITHUANIA",
+   "factory_default_for": [
+    "LITHUANIA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 31,
+   "name": "MIDDLE EAST",
+   "name_msg": "0x2b8",
+   "record": "0x37fc0",
+   "coin_door": "0x37fa4",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      1,
+      1,
+      1,
+      0
+     ],
+     "address": "0x37fa4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d TOKEN(S)",
+    "long": "%d TOKEN(S)",
+    "msg_ids": [
+     "0x457",
+     "0x458",
+     "0x459"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 TOKEN(S)",
+    "1 TOKEN(S)",
+    "1 TOKEN(S)",
+    "1 TOKEN(S)",
+    "0 TOKEN(S)"
+   ],
+   "ladder": [
+    1
+   ],
+   "ladder_address": "0x37fbc",
+   "ladder_length": 1,
+   "cycle_money": "1 TOKEN(S)",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 1,
+     "money": "1 TOKEN(S)",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "1 TOKEN(S)",
+   "service_summary": "1/1",
+   "service_summary_tag": "observed",
+   "name_observed": "MIDDLE EAST",
+   "factory_default_for": [
+    "MIDDLE EAST"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 32,
+   "name": "NEW ZEALAND 1",
+   "name_msg": "0x2b9",
+   "record": "0x37934",
+   "coin_door": "0x37918",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      1,
+      2,
+      1,
+      0
+     ],
+     "address": "0x37918"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "NZD %d",
+    "long": "NZD %d",
+    "msg_ids": [
+     "0x40f",
+     "0x410",
+     "0x411"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    2,
+    1,
+    0
+   ],
+   "slot_money": [
+    "NZD 1",
+    "NZD 1",
+    "NZD 2",
+    "NZD 1",
+    "NZD 0"
+   ],
+   "ladder": [
+    1
+   ],
+   "ladder_address": "0x37930",
+   "ladder_length": 1,
+   "cycle_money": "NZD 1",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 1,
+     "money": "NZD 1",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "NZD 1",
+   "service_summary": "1/1",
+   "service_summary_tag": "observed",
+   "name_observed": "NEW ZEALAND 1",
+   "factory_default_for": [
+    "NEW ZEALAND"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 33,
+   "name": "NEW ZEALAND 2",
+   "name_msg": "0x2ba",
+   "record": "0x37950",
+   "coin_door": "0x37918",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      1,
+      2,
+      1,
+      0
+     ],
+     "address": "0x37918"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "NZD %d",
+    "long": "NZD %d",
+    "msg_ids": [
+     "0x40f",
+     "0x410",
+     "0x411"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    2,
+    1,
+    0
+   ],
+   "slot_money": [
+    "NZD 1",
+    "NZD 1",
+    "NZD 2",
+    "NZD 1",
+    "NZD 0"
+   ],
+   "ladder": [
+    1,
+    2
+   ],
+   "ladder_address": "0x3794c",
+   "ladder_length": 2,
+   "cycle_money": "NZD 2",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 1,
+     "money": "NZD 1",
+     "credits_total": 1
+    },
+    {
+     "units": 2,
+     "money": "NZD 2",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "NZD 1",
+   "service_summary": "1/1 3/2",
+   "service_summary_tag": "observed",
+   "name_observed": "NEW ZEALAND 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 34,
+   "name": "NORWAY 1",
+   "name_msg": "0x2bb",
+   "record": "0x37984",
+   "coin_door": "0x37968",
+   "unit_table": [
+    {
+     "unit_value": 500,
+     "slot_units": [
+      2,
+      1,
+      4,
+      2,
+      0
+     ],
+     "address": "0x37968"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 500,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d NOK",
+    "long": "%d NOK",
+    "msg_ids": [
+     "0x417",
+     "0x418",
+     "0x419"
+    ]
+   },
+   "slot_units": [
+    2,
+    1,
+    4,
+    2,
+    0
+   ],
+   "slot_money": [
+    "10 NOK",
+    "5 NOK",
+    "20 NOK",
+    "10 NOK",
+    "0 NOK"
+   ],
+   "ladder": [
+    0,
+    1
+   ],
+   "ladder_address": "0x37980",
+   "ladder_length": 2,
+   "cycle_money": "10 NOK",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 2,
+     "money": "10 NOK",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "10 NOK",
+   "service_summary": "1/10",
+   "service_summary_tag": "observed",
+   "name_observed": "NORWAY 1",
+   "factory_default_for": [
+    "NORWAY"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 35,
+   "name": "NORWAY 2",
+   "name_msg": "0x2bc",
+   "record": "0x379a0",
+   "coin_door": "0x37968",
+   "unit_table": [
+    {
+     "unit_value": 500,
+     "slot_units": [
+      2,
+      1,
+      4,
+      2,
+      0
+     ],
+     "address": "0x37968"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 500,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d NOK",
+    "long": "%d NOK",
+    "msg_ids": [
+     "0x417",
+     "0x418",
+     "0x419"
+    ]
+   },
+   "slot_units": [
+    2,
+    1,
+    4,
+    2,
+    0
+   ],
+   "slot_money": [
+    "10 NOK",
+    "5 NOK",
+    "20 NOK",
+    "10 NOK",
+    "0 NOK"
+   ],
+   "ladder": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "ladder_address": "0x3799c",
+   "ladder_length": 4,
+   "cycle_money": "20 NOK",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 2,
+     "money": "10 NOK",
+     "credits_total": 1
+    },
+    {
+     "units": 4,
+     "money": "20 NOK",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "10 NOK",
+   "service_summary": "1/10 3/20",
+   "service_summary_tag": "observed",
+   "name_observed": "NORWAY 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 36,
+   "name": "NORWAY 3",
+   "name_msg": "0x2bd",
+   "record": "0x379bc",
+   "coin_door": "0x37968",
+   "unit_table": [
+    {
+     "unit_value": 500,
+     "slot_units": [
+      2,
+      1,
+      4,
+      2,
+      0
+     ],
+     "address": "0x37968"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 500,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d NOK",
+    "long": "%d NOK",
+    "msg_ids": [
+     "0x417",
+     "0x418",
+     "0x419"
+    ]
+   },
+   "slot_units": [
+    2,
+    1,
+    4,
+    2,
+    0
+   ],
+   "slot_money": [
+    "10 NOK",
+    "5 NOK",
+    "20 NOK",
+    "10 NOK",
+    "0 NOK"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x379b8",
+   "ladder_length": 4,
+   "cycle_money": "20 NOK",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 4,
+     "money": "20 NOK",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 4,
+   "first_credit_money": "20 NOK",
+   "service_summary": "1/20",
+   "service_summary_tag": "observed",
+   "name_observed": "NORWAY 3",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 37,
+   "name": "NORWAY 4",
+   "name_msg": "0x2be",
+   "record": "0x379dc",
+   "coin_door": "0x37968",
+   "unit_table": [
+    {
+     "unit_value": 500,
+     "slot_units": [
+      2,
+      1,
+      4,
+      2,
+      0
+     ],
+     "address": "0x37968"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 500,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d NOK",
+    "long": "%d NOK",
+    "msg_ids": [
+     "0x417",
+     "0x418",
+     "0x419"
+    ]
+   },
+   "slot_units": [
+    2,
+    1,
+    4,
+    2,
+    0
+   ],
+   "slot_money": [
+    "10 NOK",
+    "5 NOK",
+    "20 NOK",
+    "10 NOK",
+    "0 NOK"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x379d4",
+   "ladder_length": 8,
+   "cycle_money": "40 NOK",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 4,
+     "money": "20 NOK",
+     "credits_total": 1
+    },
+    {
+     "units": 8,
+     "money": "40 NOK",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 4,
+   "first_credit_money": "20 NOK",
+   "service_summary": "1/20 3/40",
+   "service_summary_tag": "observed",
+   "name_observed": "NORWAY 4",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 38,
+   "name": "PORTUGAL",
+   "name_msg": "0x2bf",
+   "record": "0x37e1c",
+   "coin_door": "0x37dfc",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      5,
+      1,
+      5,
+      1,
+      0
+     ],
+     "address": "0x37dfc"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "EUR %d.%02d",
+    "long": "EUR %d.%02d",
+    "msg_ids": [
+     "0x437",
+     "0x438",
+     "0x439"
+    ]
+   },
+   "slot_units": [
+    5,
+    1,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.50",
+    "EUR 0.10",
+    "EUR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37e14",
+   "ladder_length": 5,
+   "cycle_money": "EUR 0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "EUR 0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "EUR 0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "PORTUGAL",
+   "factory_default_for": [
+    "PORTUGAL"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 39,
+   "name": "RUSSIA",
+   "name_msg": "0x2c0",
+   "record": "0x3802c",
+   "coin_door": "0x3800c",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      10,
+      5,
+      1,
+      1,
+      0
+     ],
+     "address": "0x3800c"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d RUB",
+    "long": "%d RUB",
+    "msg_ids": [
+     "0x467",
+     "0x468",
+     "0x469"
+    ]
+   },
+   "slot_units": [
+    10,
+    5,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "10 RUB",
+    "5 RUB",
+    "1 RUB",
+    "1 RUB",
+    "0 RUB"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x38024",
+   "ladder_length": 5,
+   "cycle_money": "5 RUB",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "5 RUB",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "5 RUB",
+   "service_summary": "1/5",
+   "service_summary_tag": "observed",
+   "name_observed": "RUSSIA",
+   "factory_default_for": [
+    "RUSSIA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 40,
+   "name": "SOUTH AFRICA 1",
+   "name_msg": "0x2c1",
+   "record": "0x37ee0",
+   "coin_door": "0x37ec4",
+   "unit_table": [
+    {
+     "unit_value": 50,
+     "slot_units": [
+      1,
+      2,
+      4,
+      10,
+      0
+     ],
+     "address": "0x37ec4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 50,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "ZAR %d.%02d",
+    "long": "ZAR %d.%02d",
+    "msg_ids": [
+     "0x43f",
+     "0x440",
+     "0x441"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    4,
+    10,
+    0
+   ],
+   "slot_money": [
+    "ZAR 0.50",
+    "ZAR 1.00",
+    "ZAR 2.00",
+    "ZAR 5.00",
+    "ZAR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37edc",
+   "ladder_length": 4,
+   "cycle_money": "ZAR 2.00",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 4,
+     "money": "ZAR 2.00",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 4,
+   "first_credit_money": "ZAR 2.00",
+   "service_summary": "1/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "SOUTH AFRICA 1",
+   "factory_default_for": [
+    "SOUTH AFRICA"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 41,
+   "name": "SOUTH AFRICA 2",
+   "name_msg": "0x2c2",
+   "record": "0x37f04",
+   "coin_door": "0x37ec4",
+   "unit_table": [
+    {
+     "unit_value": 50,
+     "slot_units": [
+      1,
+      2,
+      4,
+      10,
+      0
+     ],
+     "address": "0x37ec4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 50,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "ZAR %d.%02d",
+    "long": "ZAR %d.%02d",
+    "msg_ids": [
+     "0x43f",
+     "0x440",
+     "0x441"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    4,
+    10,
+    0
+   ],
+   "slot_money": [
+    "ZAR 0.50",
+    "ZAR 1.00",
+    "ZAR 2.00",
+    "ZAR 5.00",
+    "ZAR 0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37ef8",
+   "ladder_length": 10,
+   "cycle_money": "ZAR 5.00",
+   "cycle_credits": 2,
+   "awards": [
+    {
+     "units": 6,
+     "money": "ZAR 3.00",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "ZAR 5.00",
+     "credits_total": 2
+    }
+   ],
+   "first_credit_units": 6,
+   "first_credit_money": "ZAR 3.00",
+   "service_summary": "1/3.00 2/5.00",
+   "service_summary_tag": "observed",
+   "name_observed": "SOUTH AFRICA 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 42,
+   "name": "SWEDEN 1",
+   "name_msg": "0x2c3",
+   "record": "0x37a20",
+   "coin_door": "0x379f4",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      5,
+      10,
+      1,
+      0
+     ],
+     "address": "0x379f4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d SEK",
+    "long": "%d SEK",
+    "msg_ids": [
+     "0x41f",
+     "0x420",
+     "0x421"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 SEK",
+    "5 SEK",
+    "10 SEK",
+    "1 SEK",
+    "0 SEK"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37a0c",
+   "ladder_length": 20,
+   "cycle_money": "20 SEK",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "10 SEK",
+     "credits_total": 1
+    },
+    {
+     "units": 15,
+     "money": "15 SEK",
+     "credits_total": 2
+    },
+    {
+     "units": 20,
+     "money": "20 SEK",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "10 SEK",
+   "service_summary": "1/10 2/15 3/20",
+   "service_summary_tag": "observed",
+   "name_observed": "SWEDEN 1",
+   "factory_default_for": [
+    "SWEDEN"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 43,
+   "name": "SWEDEN 2",
+   "name_msg": "0x2c4",
+   "record": "0x37a40",
+   "coin_door": "0x379f4",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      5,
+      10,
+      1,
+      0
+     ],
+     "address": "0x379f4"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d SEK",
+    "long": "%d SEK",
+    "msg_ids": [
+     "0x41f",
+     "0x420",
+     "0x421"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 SEK",
+    "5 SEK",
+    "10 SEK",
+    "1 SEK",
+    "0 SEK"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x37a38",
+   "ladder_length": 5,
+   "cycle_money": "5 SEK",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 5,
+     "money": "5 SEK",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "5 SEK",
+   "service_summary": "1/5",
+   "service_summary_tag": "observed",
+   "name_observed": "SWEDEN 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 44,
+   "name": "SWITZERLAND 1",
+   "name_msg": "0x2c5",
+   "record": "0x37a78",
+   "coin_door": "0x37a58",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      2,
+      5,
+      1,
+      0
+     ],
+     "address": "0x37a58"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d CHF",
+    "long": "%d CHF",
+    "msg_ids": [
+     "0x427",
+     "0x428",
+     "0x429"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 CHF",
+    "2 CHF",
+    "5 CHF",
+    "1 CHF",
+    "0 CHF"
+   ],
+   "ladder": [
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "ladder_address": "0x37a70",
+   "ladder_length": 5,
+   "cycle_money": "5 CHF",
+   "cycle_credits": 6,
+   "awards": [
+    {
+     "units": 1,
+     "money": "1 CHF",
+     "credits_total": 1
+    },
+    {
+     "units": 2,
+     "money": "2 CHF",
+     "credits_total": 2
+    },
+    {
+     "units": 3,
+     "money": "3 CHF",
+     "credits_total": 3
+    },
+    {
+     "units": 4,
+     "money": "4 CHF",
+     "credits_total": 4
+    },
+    {
+     "units": 5,
+     "money": "5 CHF",
+     "credits_total": 6
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "1 CHF",
+   "service_summary": "1/1 2/2 3/3 4/4 6/5",
+   "service_summary_tag": "observed",
+   "name_observed": "SWITZERLAND 1",
+   "factory_default_for": [
+    "SWITZERLAND"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 45,
+   "name": "SWITZERLAND 2",
+   "name_msg": "0x2c6",
+   "record": "0x37a98",
+   "coin_door": "0x37a58",
+   "unit_table": [
+    {
+     "unit_value": 100,
+     "slot_units": [
+      1,
+      2,
+      5,
+      1,
+      0
+     ],
+     "address": "0x37a58"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 100,
+   "money_formats": {
+    "plain": "%d",
+    "short": "%d CHF",
+    "long": "%d CHF",
+    "msg_ids": [
+     "0x427",
+     "0x428",
+     "0x429"
+    ]
+   },
+   "slot_units": [
+    1,
+    2,
+    5,
+    1,
+    0
+   ],
+   "slot_money": [
+    "1 CHF",
+    "2 CHF",
+    "5 CHF",
+    "1 CHF",
+    "0 CHF"
+   ],
+   "ladder": [
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ladder_address": "0x37a90",
+   "ladder_length": 5,
+   "cycle_money": "5 CHF",
+   "cycle_credits": 9,
+   "awards": [
+    {
+     "units": 1,
+     "money": "1 CHF",
+     "credits_total": 1
+    },
+    {
+     "units": 2,
+     "money": "2 CHF",
+     "credits_total": 3
+    },
+    {
+     "units": 3,
+     "money": "3 CHF",
+     "credits_total": 5
+    },
+    {
+     "units": 4,
+     "money": "4 CHF",
+     "credits_total": 7
+    },
+    {
+     "units": 5,
+     "money": "5 CHF",
+     "credits_total": 9
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "1 CHF",
+   "service_summary": "1/1 3/2 5/3 7/4 9/5",
+   "service_summary_tag": "observed",
+   "name_observed": "SWITZERLAND 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 46,
+   "name": "TAIWAN",
+   "name_msg": "0x2c7",
+   "record": "0x37ff4",
+   "coin_door": "0x37fd8",
+   "unit_table": [
+    {
+     "unit_value": 1000,
+     "slot_units": [
+      1,
+      1,
+      1,
+      1,
+      0
+     ],
+     "address": "0x37fd8"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 1000,
+   "money_formats": {
+    "plain": "%d",
+    "short": "TWD %d",
+    "long": "TWD %d",
+    "msg_ids": [
+     "0x45f",
+     "0x460",
+     "0x461"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "TWD 10",
+    "TWD 10",
+    "TWD 10",
+    "TWD 10",
+    "TWD 0"
+   ],
+   "ladder": [
+    1
+   ],
+   "ladder_address": "0x37ff0",
+   "ladder_length": 1,
+   "cycle_money": "TWD 10",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 1,
+     "money": "TWD 10",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "TWD 10",
+   "service_summary": "1/10",
+   "service_summary_tag": "observed",
+   "name_observed": "TAIWAN",
+   "factory_default_for": [
+    "TAIWAN"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 47,
+   "name": "UK 1",
+   "name_msg": "0x2c8",
+   "record": "0x37adc",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "ladder_address": "0x37ac8",
+   "ladder_length": 20,
+   "cycle_money": "GBP 2.00",
+   "cycle_credits": 7,
+   "awards": [
+    {
+     "units": 10,
+     "money": "GBP 1.00",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "GBP 2.00",
+     "credits_total": 7
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "GBP 1.00",
+   "service_summary": "3/1.00 7/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 1",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 48,
+   "name": "UK 2",
+   "name_msg": "0x2c9",
+   "record": "0x37b00",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "ladder_address": "0x37af4",
+   "ladder_length": 10,
+   "cycle_money": "GBP 1.00",
+   "cycle_credits": 4,
+   "awards": [
+    {
+     "units": 10,
+     "money": "GBP 1.00",
+     "credits_total": 4
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "GBP 1.00",
+   "service_summary": "4/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 49,
+   "name": "UK 3",
+   "name_msg": "0x2ca",
+   "record": "0x37b2c",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37b18",
+   "ladder_length": 20,
+   "cycle_money": "GBP 2.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 5,
+     "money": "GBP 0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 10,
+     "money": "GBP 1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 15,
+     "money": "GBP 1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 20,
+     "money": "GBP 2.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 5,
+   "first_credit_money": "GBP 0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 5/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 3",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 50,
+   "name": "UK 4",
+   "name_msg": "0x2cb",
+   "record": "0x37b50",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "ladder_address": "0x37b44",
+   "ladder_length": 10,
+   "cycle_money": "GBP 1.00",
+   "cycle_credits": 4,
+   "awards": [
+    {
+     "units": 3,
+     "money": "GBP 0.30",
+     "credits_total": 1
+    },
+    {
+     "units": 6,
+     "money": "GBP 0.60",
+     "credits_total": 2
+    },
+    {
+     "units": 9,
+     "money": "GBP 0.90",
+     "credits_total": 3
+    },
+    {
+     "units": 10,
+     "money": "GBP 1.00",
+     "credits_total": 4
+    }
+   ],
+   "first_credit_units": 3,
+   "first_credit_money": "GBP 0.30",
+   "service_summary": "1/0.30 2/0.60 3/0.90 4/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 4",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 51,
+   "name": "UK 5",
+   "name_msg": "0x2cc",
+   "record": "0x37b7c",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37b68",
+   "ladder_length": 20,
+   "cycle_money": "GBP 2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 10,
+     "money": "GBP 1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 20,
+     "money": "GBP 2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 10,
+   "first_credit_money": "GBP 1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 5",
+   "factory_default_for": [
+    "U.K."
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 52,
+   "name": "UK 6",
+   "name_msg": "0x2cd",
+   "record": "0x37ba8",
+   "coin_door": "0x37ab0",
+   "unit_table": [
+    {
+     "unit_value": 10,
+     "slot_units": [
+      1,
+      5,
+      10,
+      2,
+      20
+     ],
+     "address": "0x37ab0"
+    }
+   ],
+   "unit_index": 0,
+   "unit_value_minor": 10,
+   "money_formats": {
+    "plain": "%d.%02d",
+    "short": "GBP %d.%02d",
+    "long": "GBP %d.%02d",
+    "msg_ids": [
+     "0x42f",
+     "0x430",
+     "0x431"
+    ]
+   },
+   "slot_units": [
+    1,
+    5,
+    10,
+    2,
+    20
+   ],
+   "slot_money": [
+    "GBP 0.10",
+    "GBP 0.50",
+    "GBP 1.00",
+    "GBP 0.20",
+    "GBP 2.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ladder_address": "0x37b94",
+   "ladder_length": 20,
+   "cycle_money": "GBP 2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 20,
+     "money": "GBP 2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 20,
+   "first_credit_money": "GBP 2.00",
+   "service_summary": "3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "UK 6",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 53,
+   "name": "USA 1",
+   "name_msg": "0x2ce",
+   "record": "0x37528",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    1
+   ],
+   "ladder_address": "0x37524",
+   "ladder_length": 1,
+   "cycle_money": "$0.25",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 1,
+     "money": "$0.25",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 1,
+   "first_credit_money": "$0.25",
+   "service_summary": "1/0.25",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 1",
+   "factory_default_for": [
+    "CHUCK-E-CHEESE"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 54,
+   "name": "USA 2",
+   "name_msg": "0x2cf",
+   "record": "0x37544",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1,
+    1,
+    1
+   ],
+   "ladder_address": "0x37540",
+   "ladder_length": 4,
+   "cycle_money": "$1.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 3,
+     "money": "$0.75",
+     "credits_total": 2
+    },
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50 2/0.75 3/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 2",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 55,
+   "name": "USA 3",
+   "name_msg": "0x2d0",
+   "record": "0x37560",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1
+   ],
+   "ladder_address": "0x3755c",
+   "ladder_length": 2,
+   "cycle_money": "$0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 3",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 56,
+   "name": "USA 4",
+   "name_msg": "0x2d1",
+   "record": "0x3757c",
+   "coin_door": "0x374b8",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      5,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374b8"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      1,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374c4"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$0.25",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1
+   ],
+   "ladder_address": "0x37578",
+   "ladder_length": 2,
+   "cycle_money": "$0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 4",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 57,
+   "name": "USA 5",
+   "name_msg": "0x2d2",
+   "record": "0x3759c",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    2
+   ],
+   "ladder_address": "0x37594",
+   "ladder_length": 8,
+   "cycle_money": "$2.00",
+   "cycle_credits": 5,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 6,
+     "money": "$1.50",
+     "credits_total": 3
+    },
+    {
+     "units": 8,
+     "money": "$2.00",
+     "credits_total": 5
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50 2/1.00 3/1.50 5/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 5",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 58,
+   "name": "USA 6",
+   "name_msg": "0x2d3",
+   "record": "0x375b8",
+   "coin_door": "0x37500",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      30,
+      5,
+      5,
+      0
+     ],
+     "address": "0x37500"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      6,
+      1,
+      1,
+      0
+     ],
+     "address": "0x3750c"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    6,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.50",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1
+   ],
+   "ladder_address": "0x375b4",
+   "ladder_length": 2,
+   "cycle_money": "$0.50",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 6",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 59,
+   "name": "USA 7",
+   "name_msg": "0x2d4",
+   "record": "0x375d8",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    2,
+    0,
+    2
+   ],
+   "ladder_address": "0x375d0",
+   "ladder_length": 8,
+   "cycle_money": "$2.00",
+   "cycle_credits": 6,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 2
+    },
+    {
+     "units": 6,
+     "money": "$1.50",
+     "credits_total": 4
+    },
+    {
+     "units": 8,
+     "money": "$2.00",
+     "credits_total": 6
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50 2/1.00 4/1.50 6/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 7",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 60,
+   "name": "USA 8",
+   "name_msg": "0x2d5",
+   "record": "0x375f4",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "ladder_address": "0x375f0",
+   "ladder_length": 4,
+   "cycle_money": "$1.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 2,
+     "money": "$0.50",
+     "credits_total": 1
+    },
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 2,
+   "first_credit_money": "$0.50",
+   "service_summary": "1/0.50 3/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 8",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 61,
+   "name": "USA 9",
+   "name_msg": "0x2d6",
+   "record": "0x37610",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "ladder_address": "0x3760c",
+   "ladder_length": 4,
+   "cycle_money": "$1.00",
+   "cycle_credits": 1,
+   "awards": [
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 1
+    }
+   ],
+   "first_credit_units": 4,
+   "first_credit_money": "$1.00",
+   "service_summary": "1/1.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 9",
+   "factory_default_for": [],
+   "tag": "code"
+  },
+  {
+   "adj_value": 62,
+   "name": "USA 10",
+   "name_msg": "0x2d7",
+   "record": "0x37630",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ladder_address": "0x37628",
+   "ladder_length": 8,
+   "cycle_money": "$2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 3,
+     "money": "$0.75",
+     "credits_total": 1
+    },
+    {
+     "units": 6,
+     "money": "$1.50",
+     "credits_total": 2
+    },
+    {
+     "units": 8,
+     "money": "$2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 3,
+   "first_credit_money": "$0.75",
+   "service_summary": "1/0.75 2/1.50 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 10",
+   "factory_default_for": [
+    "(table default; U.S.A. has no override)"
+   ],
+   "tag": "code"
+  },
+  {
+   "adj_value": 63,
+   "name": "USA 11",
+   "name_msg": "0x2d8",
+   "record": "0x37650",
+   "coin_door": "0x374dc",
+   "unit_table": [
+    {
+     "unit_value": 5,
+     "slot_units": [
+      5,
+      20,
+      5,
+      5,
+      0
+     ],
+     "address": "0x374dc"
+    },
+    {
+     "unit_value": 25,
+     "slot_units": [
+      1,
+      4,
+      1,
+      1,
+      0
+     ],
+     "address": "0x374e8"
+    }
+   ],
+   "unit_index": 1,
+   "unit_value_minor": 25,
+   "money_formats": {
+    "plain": "%,d.%02d",
+    "short": "$%,d.%02d",
+    "long": "USD %,d.%02d",
+    "msg_ids": [
+     "0x3e7",
+     "0x3e8",
+     "0x3e9"
+    ]
+   },
+   "slot_units": [
+    1,
+    4,
+    1,
+    1,
+    0
+   ],
+   "slot_money": [
+    "$0.25",
+    "$1.00",
+    "$0.25",
+    "$0.25",
+    "$0.00"
+   ],
+   "ladder": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "ladder_address": "0x37648",
+   "ladder_length": 8,
+   "cycle_money": "$2.00",
+   "cycle_credits": 3,
+   "awards": [
+    {
+     "units": 4,
+     "money": "$1.00",
+     "credits_total": 1
+    },
+    {
+     "units": 8,
+     "money": "$2.00",
+     "credits_total": 3
+    }
+   ],
+   "first_credit_units": 4,
+   "first_credit_money": "$1.00",
+   "service_summary": "1/1.00 3/2.00",
+   "service_summary_tag": "observed",
+   "name_observed": "USA 11",
+   "factory_default_for": [],
+   "tag": "code"
+  }
+ ],
+ "custom": {
+  "adj_value": 64,
+  "name": "CUSTOM",
+  "name_msg": "0x26e",
+  "record": "NVRAM 0x2110808 (0x1a bytes + ~checksum16): {coin-door ptr -> 0x2110824 (10 x 12 B unit table), unit index, ladder ptr -> 0x211089c (<= 100 B), ladder length, u16 name msg 0x26e, u16 money formats x3, u8 valid}",
+  "editor": "SET CUSTOM PRICING (item 107, 0x103d8bc -> 0x103d070); also opened from GAME PRICING = CUSTOM (event 6 hook 0x103d8dc)",
+  "how": "0x52b4 copies the current preset (unit table, unit index, money formats) with an empty ladder; the operator sets, step by step, the credits (0-10) given at each unit (shown as \"N CREDIT(S) AT: <money>\", money = unit_value x step / 100), up to 100 steps; INSTALL saves it with 0x53f8 (trailing zero steps are trimmed) and sets adj 28 = 64",
+  "factory": "empty (0x51e4 clears it): no units table, no ladder -> coins give no credits until it is set up",
+  "tag": "code"
+ },
+ "algorithm": "credit system #1 = 0x040e0bd8 (table 0x040e0bb0 + id*0x28, id = RAM 0x36f66 = 1)\n  state  NVRAM 0x2111008: s32 pos (-1 = start), u8 credits, u8 ~checksum8(5)   [0x482c validates, 0x47f8 resets]\non coin switch (dedicated coin switch -> task_create(0x13, coin_task 0x4a50); 0x4cb4 is the creator; task+0x38 = slot 0-4, +0x30 = credit system):\n  coin_task 0x4a50:\n    if slot >= 5: error_log(100); return\n    if coin lockout (0x49f8: gf_state&0x100, 0x2dc78 coin-door check, or lockout output 5 via 0x10ad4): return     # coin ignored\n    d = adj_get(62 COIN INPUT DELAY); if d != 61 (OFF): repeat d times { task_sleep(1); if lockout: return }   # ~0.49 s at 30 (observed)\n    audit_add(slot_counter[slot] = 2,3,4,5,6 (LEFT,CENTER,RIGHT,FOURTH,FIFTH), 1)\n    P = pricing[adj_get(28 GAME PRICING)]       # 0x498c; RAM table 0x38078, 64 presets + CUSTOM (NVRAM)\n    units = P.coin_door[P.unit_index].slot_units[slot]   # byte at coin_door + unit_index*12 + 4 + slot\n    if units == 0: return\n    meter_add(1, units) 0xa6f0                  # software coin meter (counter at NVRAM 0x2111014) only when adj 44 Q24 OPTION = COIN METER\n    audit_add(7 units counter = METER CLICKS / TOTAL EARNINGS, units)\n    0x2dc40 -> 0x21abc(...)                      # game hook (credit/coin accepted)\n    repeat units times:\n        pos = pos + 1; if pos >= P.ladder_len: pos = 0      # the ladder repeats\n        c = P.ladder[pos]\n        if c: n = credits_add(c) 0x4890            # capped: credits + c <= adj_get(33 CREDIT LIMIT) (byte arithmetic)\n              audit_add(1 TOTAL PAID CREDITS, c)    # note: counts c, not the capped n\n              event_post(0x19, {cs, n})             # credit added -> start lamp, sounds\n        deff_start(10)                              # coin/credit display effect\n    if no credit was added: event_post(0x1a, {cs})  # coin accepted, partial credit\ndisplay: 0x4ff4 -> \"FREE PLAY\" when adj 34 = YES, else \"CREDITS %d\" / \"CREDITS %d/%d\" / \"CREDITS %d %d/%d\"\n         fraction (0x4d48) = units since the last ladder award / units between that award and the next, reduced by gcd.\npricing change (event 5 hook 0x50f4 on adj 28): pos = -1 (credits kept)       [observed]\n0x4f18 (called from 0x5538 and 0x2157c): keep only the units after the last award: pos = pos - last_award_index - 1\nfree play (adj 34 = YES): start needs no credit; coin units still counted and still credited.\nservice credit: BACK/MINUS/PLUS/SELECT handler 0xfc20 case 1 in attract: credits_add(1), audit_add(36 SERVICE CREDITS, 1)\nreplay/special/match/high-score credits use credits_add 0x4cf0 (same cap); FREE GAME LIMIT (adj 25) is not checked (see adjustments).",
+ "countries": [
+  {
+   "code": 0,
+   "name": "U.S.A.",
+   "record": "0x40e17e0",
+   "os_overrides": [
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38fd4",
+   "game_list": "0x39478",
+   "redemption_defaults": "0x38fe4"
+  },
+  {
+   "code": 1,
+   "name": "AUSTRIA",
+   "record": "0x40e1800",
+   "os_overrides": [
+    [
+     28,
+     19
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38734",
+   "game_list": "0x393a8",
+   "redemption_defaults": "0x3874c"
+  },
+  {
+   "code": 2,
+   "name": "BELGIUM",
+   "record": "0x40e1820",
+   "os_overrides": [
+    [
+     28,
+     11
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38780",
+   "game_list": "0x393b8",
+   "redemption_defaults": "0x38798"
+  },
+  {
+   "code": 3,
+   "name": "CANADA 1",
+   "record": "0x40e1840",
+   "os_overrides": [
+    [
+     28,
+     6
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x387cc",
+   "game_list": "0x393c0",
+   "redemption_defaults": "0x387e4"
+  },
+  {
+   "code": 4,
+   "name": "NETHERLANDS",
+   "record": "0x40e1860",
+   "os_overrides": [
+    [
+     28,
+     13
+    ],
+    [
+     36,
+     0
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38c90",
+   "game_list": "0x39420",
+   "redemption_defaults": "0x38ca8"
+  },
+  {
+   "code": 5,
+   "name": "FINLAND",
+   "record": "0x40e1880",
+   "os_overrides": [
+    [
+     28,
+     18
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38a18",
+   "game_list": "0x393e8",
+   "redemption_defaults": "0x38a28"
+  },
+  {
+   "code": 6,
+   "name": "FRANCE",
+   "record": "0x40e18a0",
+   "os_overrides": [
+    [
+     28,
+     20
+    ],
+    [
+     15,
+     30000000
+    ],
+    [
+     12,
+     20
+    ],
+    [
+     30,
+     10
+    ],
+    [
+     27,
+     10
+    ],
+    [
+     61,
+     1000
+    ],
+    [
+     36,
+     0
+    ],
+    [
+     39,
+     60
+    ],
+    [
+     7,
+     2
+    ]
+   ],
+   "game_overrides": [
+    [
+     87,
+     40
+    ],
+    [
+     88,
+     40
+    ]
+   ],
+   "os_list": "0x38a5c",
+   "game_list": "0x36fbc",
+   "redemption_defaults": "0x38aac"
+  },
+  {
+   "code": 7,
+   "name": "GERMANY",
+   "record": "0x40e18c0",
+   "os_overrides": [
+    [
+     28,
+     24
+    ],
+    [
+     35,
+     1
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38ae0",
+   "game_list": "0x393f0",
+   "redemption_defaults": "0x38b00"
+  },
+  {
+   "code": 8,
+   "name": "ITALY",
+   "record": "0x40e18e0",
+   "os_overrides": [
+    [
+     28,
+     26
+    ],
+    [
+     7,
+     4
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38b78",
+   "game_list": "0x39400",
+   "redemption_defaults": "0x38b90"
+  },
+  {
+   "code": 9,
+   "name": "DENMARK",
+   "record": "0x40e1900",
+   "os_overrides": [
+    [
+     28,
+     9
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x389d4",
+   "game_list": "0x393e0",
+   "redemption_defaults": "0x389e4"
+  },
+  {
+   "code": 10,
+   "name": "NORWAY",
+   "record": "0x40e1920",
+   "os_overrides": [
+    [
+     28,
+     34
+    ],
+    [
+     36,
+     0
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38d20",
+   "game_list": "0x39430",
+   "redemption_defaults": "0x38d38"
+  },
+  {
+   "code": 11,
+   "name": "SWEDEN",
+   "record": "0x40e1940",
+   "os_overrides": [
+    [
+     28,
+     42
+    ],
+    [
+     36,
+     0
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38e8c",
+   "game_list": "0x39458",
+   "redemption_defaults": "0x38ea4"
+  },
+  {
+   "code": 12,
+   "name": "SWITZERLAND",
+   "record": "0x40e1960",
+   "os_overrides": [
+    [
+     28,
+     44
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38ed8",
+   "game_list": "0x39460",
+   "redemption_defaults": "0x38ef8"
+  },
+  {
+   "code": 13,
+   "name": "AUSTRALIA",
+   "record": "0x40e1980",
+   "os_overrides": [
+    [
+     28,
+     2
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x386f0",
+   "game_list": "0x393b0",
+   "redemption_defaults": "0x38700"
+  },
+  {
+   "code": 14,
+   "name": "U.K.",
+   "record": "0x40e19a0",
+   "os_overrides": [
+    [
+     28,
+     51
+    ],
+    [
+     56,
+     0
+    ],
+    [
+     33,
+     9
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     60,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38f70",
+   "game_list": "0x39470",
+   "redemption_defaults": "0x38fa0"
+  },
+  {
+   "code": 15,
+   "name": "GREECE",
+   "record": "0x40e19c0",
+   "os_overrides": [
+    [
+     28,
+     18
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38b34",
+   "game_list": "0x393f8",
+   "redemption_defaults": "0x38b44"
+  },
+  {
+   "code": 16,
+   "name": "NEW ZEALAND",
+   "record": "0x40e19e0",
+   "os_overrides": [
+    [
+     28,
+     32
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38cdc",
+   "game_list": "0x39428",
+   "redemption_defaults": "0x38cec"
+  },
+  {
+   "code": 17,
+   "name": "PORTUGAL",
+   "record": "0x40e1a00",
+   "os_overrides": [
+    [
+     28,
+     38
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38d6c",
+   "game_list": "0x39438",
+   "redemption_defaults": "0x38d84"
+  },
+  {
+   "code": 18,
+   "name": "SPAIN",
+   "record": "0x40e1a20",
+   "os_overrides": [
+    [
+     28,
+     18
+    ],
+    [
+     7,
+     3
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38e40",
+   "game_list": "0x39450",
+   "redemption_defaults": "0x38e58"
+  },
+  {
+   "code": 19,
+   "name": "CHUCK-E-CHEESE",
+   "record": "0x40e1a40",
+   "os_overrides": [
+    [
+     11,
+     2
+    ],
+    [
+     12,
+     2
+    ],
+    [
+     13,
+     1
+    ],
+    [
+     25,
+     1
+    ],
+    [
+     26,
+     9
+    ],
+    [
+     28,
+     53
+    ],
+    [
+     30,
+     11
+    ],
+    [
+     33,
+     10
+    ],
+    [
+     55,
+     0
+    ],
+    [
+     56,
+     0
+    ],
+    [
+     57,
+     0
+    ],
+    [
+     58,
+     0
+    ],
+    [
+     59,
+     0
+    ],
+    [
+     49,
+     5000000
+    ],
+    [
+     50,
+     4000000
+    ],
+    [
+     51,
+     3000000
+    ],
+    [
+     52,
+     2000000
+    ],
+    [
+     53,
+     1000000
+    ],
+    [
+     61,
+     4000
+    ],
+    [
+     60,
+     1
+    ],
+    [
+     36,
+     0
+    ],
+    [
+     38,
+     5
+    ],
+    [
+     39,
+     60
+    ],
+    [
+     40,
+     2
+    ],
+    [
+     41,
+     1
+    ],
+    [
+     45,
+     1
+    ],
+    [
+     16,
+     50000000
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x3887c",
+   "game_list": "0x393d0",
+   "redemption_defaults": "0x3895c"
+  },
+  {
+   "code": 20,
+   "name": "SOUTH AFRICA",
+   "record": "0x40e1a60",
+   "os_overrides": [
+    [
+     28,
+     40
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38dfc",
+   "game_list": "0x39448",
+   "redemption_defaults": "0x38e0c"
+  },
+  {
+   "code": 21,
+   "name": "JAPAN",
+   "record": "0x40e1a80",
+   "os_overrides": [
+    [
+     28,
+     29
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38bc4",
+   "game_list": "0x39408",
+   "redemption_defaults": "0x38bd4"
+  },
+  {
+   "code": 22,
+   "name": "CROATIA",
+   "record": "0x40e1aa0",
+   "os_overrides": [
+    [
+     28,
+     8
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38990",
+   "game_list": "0x393d8",
+   "redemption_defaults": "0x389a0"
+  },
+  {
+   "code": 23,
+   "name": "MIDDLE EAST",
+   "record": "0x40e1ac0",
+   "os_overrides": [
+    [
+     28,
+     31
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38c4c",
+   "game_list": "0x39418",
+   "redemption_defaults": "0x38c5c"
+  },
+  {
+   "code": 24,
+   "name": "TAIWAN",
+   "record": "0x40e1ae0",
+   "os_overrides": [
+    [
+     28,
+     46
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38f2c",
+   "game_list": "0x39468",
+   "redemption_defaults": "0x38f3c"
+  },
+  {
+   "code": 25,
+   "name": "RUSSIA",
+   "record": "0x40e1b00",
+   "os_overrides": [
+    [
+     28,
+     39
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38db8",
+   "game_list": "0x39440",
+   "redemption_defaults": "0x38dc8"
+  },
+  {
+   "code": 26,
+   "name": "CANADA 2",
+   "record": "0x40e1b20",
+   "os_overrides": [
+    [
+     28,
+     7
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38818",
+   "game_list": "0x393c8",
+   "redemption_defaults": "0x38830"
+  },
+  {
+   "code": 27,
+   "name": "LITHUANIA",
+   "record": "0x40e1b40",
+   "os_overrides": [
+    [
+     28,
+     30
+    ]
+   ],
+   "game_overrides": [],
+   "os_list": "0x38c08",
+   "game_list": "0x39410",
+   "redemption_defaults": "0x38c18"
+  }
+ ],
+ "related_adjustments": {
+  "28": "GAME PRICING: 0-63 presets below, 64 = CUSTOM",
+  "33": "CREDIT LIMIT 4-50",
+  "34": "FREE PLAY",
+  "62": "COIN INPUT DELAY 30-60 ticks, 61 = OFF",
+  "44": "Q24 OPTION (coin meter)",
+  "37": "BILL VALIDATOR (no adj_get reader in 1.74)"
+ },
+ "verification_log": [
+  "19.8548 mark POKE",
+  "21.5969 mark PRICING_USA10",
+  "21.5969 credits pos=-1 credits=0 chk=0x03",
+  "23.8515 credits pos=2 credits=1 chk=0xfc",
+  "23.8689 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 1\"",
+  "25.2892 credits pos=6 credits=2 chk=0xf7",
+  "25.3044 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 2 1/2\"",
+  "25.4025 mark GERMANY2",
+  "25.4499 adjset 28=24 -> adj_get=24",
+  "25.4499 credits pos=-1 credits=2 chk=0x01",
+  "26.8950 credits pos=9 credits=4 chk=0xf2",
+  "26.9113 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 4\"",
+  "28.3405 credits pos=9 credits=9 chk=0xed",
+  "28.3568 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 9\"",
+  "29.7910 credits pos=14 credits=10 chk=0xe7",
+  "29.8073 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 10\"",
+  "29.8398 mark EURO3",
+  "29.8717 adjset 28=13 -> adj_get=13",
+  "29.8717 credits pos=-1 credits=10 chk=0xf9",
+  "31.3065 credits pos=4 credits=11 chk=0xf0",
+  "31.3225 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 11\"",
+  "32.7560 credits pos=9 credits=13 chk=0xe9",
+  "32.7720 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 13\"",
+  "34.2002 credits pos=9 credits=16 chk=0xe6",
+  "34.2163 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 16\"",
+  "34.2163 mark FREEPLAY",
+  "34.2645 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"FREE PLAY\"",
+  "34.2970 mark CREDITLIMIT",
+  "34.3133 credits pos=-1 credits=0 chk=0x03",
+  "34.3455 adjset 28=62 -> adj_get=62",
+  "37.2407 credits pos=7 credits=3 chk=0xf5",
+  "38.6750 credits pos=3 credits=4 chk=0xf8",
+  "38.6910 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"CREDITS 4 1/3\"",
+  "38.7236 mark COINDELAY_OFF",
+  "40.1743 credits pos=4 credits=4 chk=0xf7",
+  "40.2062 mark ADJ25",
+  "41.6567 credits pos=3 credits=1 chk=0xfb",
+  "46.0895 credits pos=3 credits=0 chk=0xfc",
+  "48.1104 credits pos=3 credits=1 chk=0xfb",
+  "50.1381 credits pos=3 credits=2 chk=0xfa",
+  "50.1381 mark END",
+  "8.0531 country 7 -> 0x5ea0 returns 7",
+  "9.6515 credits pos=9 credits=2 chk=0xf4",
+  "9.6678 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"KREDITE 2\"",
+  "11.0965 credits pos=9 credits=7 chk=0xef",
+  "11.1128 callstr 0x4ff4(1,257664,0,0) buf=r1 = 1 \"KREDITE 7\"",
+  "11.1467 country 19 -> 0x5ea0 returns 19",
+  "11.2585 country 0 -> 0x5ea0 returns 0",
+  "8.0035 credits pos=-1 credits=0 chk=0x03",
+  "8.0196 callstr 0x4ff4(buf,0,0,0) = 0 \"\"",
+  "9.4834 credits pos=0 credits=0 chk=0xff",
+  "10.9175 credits pos=4 credits=1 chk=0xfa",
+  "12.3542 credits pos=5 credits=2 chk=0xf8",
+  "13.7895 credits pos=6 credits=2 chk=0xf7",
+  "13.8072 callstr 0x4ff4(buf,1,0,0) = 0 \"\"",
+  "13.8397 callstr 0x4ff4(buf,0,0,0) = 0 \"\""
+ ]
+}

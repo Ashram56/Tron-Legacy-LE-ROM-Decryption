@@ -1,0 +1,39 @@
+8.0035 ready dip0=0x80
+8.0035 dumpram /tmp/claude-0/work_settings/ram_usa.bin
+8.0035 credits pos=-1 credits=0 chk=0x03
+8.0196 callstr 0x4ff4(buf,0,0,0) = 0 ""
+8.0355 call 0xe90(28,0,0,0) = 62 (0x3e)
+8.0515 call 0xe90(10,0,0,0) = 1 (0x1)
+8.0515 key 3
+8.1155 coin_task_create task=0x13 r1=129 slot=0 credsys=1 lr=0x15a38
+8.1156 coin_task_run slot=0 credsys=1
+8.5955 audit_add counter=2 n=1 lr=0x4b34
+8.5956 audit_add counter=7 n=1 lr=0x4b98
+8.5962 event_post 0x1a arg0=0x1 lr=0x4ca4
+9.4834 credits pos=0 credits=0 chk=0xff
+9.4834 key 4
+9.5465 coin_task_create task=0x13 r1=130 slot=1 credsys=1 lr=0x15a38
+9.5481 coin_task_run slot=1 credsys=1
+10.0340 audit_add counter=3 n=1 lr=0x4b34
+10.0340 audit_add counter=7 n=4 lr=0x4b98
+10.0346 audit_add counter=1 n=1 lr=0x4c30
+10.0346 event_post 0x19 arg0=0x101 lr=0x4c58
+10.9175 credits pos=4 credits=1 chk=0xfa
+10.9175 key 5
+10.9823 coin_task_create task=0x13 r1=131 slot=2 credsys=1 lr=0x15a38
+10.9839 coin_task_run slot=2 credsys=1
+11.4690 audit_add counter=4 n=1 lr=0x4b34
+11.4691 audit_add counter=7 n=1 lr=0x4b98
+11.4696 audit_add counter=1 n=1 lr=0x4c30
+11.4697 event_post 0x19 arg0=0x101 lr=0x4c58
+12.3542 credits pos=5 credits=2 chk=0xf8
+12.3542 key 6
+12.4013 coin_task_create task=0x13 r1=132 slot=3 credsys=1 lr=0x15a38
+12.4032 coin_task_run slot=3 credsys=1
+12.8894 audit_add counter=5 n=1 lr=0x4b34
+12.8895 audit_add counter=7 n=1 lr=0x4b98
+12.8900 event_post 0x1a arg0=0x1 lr=0x4ca4
+13.7895 credits pos=6 credits=2 chk=0xf7
+13.8072 callstr 0x4ff4(buf,1,0,0) = 0 ""
+13.8397 callstr 0x4ff4(buf,0,0,0) = 0 ""
+14.0488 end

@@ -1,0 +1,22 @@
+# watch list for rom_data/states traces: name hexaddr size (states_ref / tron_ref watch.tsv format)
+game_state 37274 2
+num_players 2110900 1
+cur_player 3817c 1
+ball_num 3817d 1
+tilt_warnings 3d4f8 1
+pf_valid 372e8 1
+shoot_again_pending 37430 1
+eb_lit_p1 3d46c 1
+eb_lit_p2 3d46d 1
+eb_lit_p3 3d46e 1
+eb_lit_p4 3d46f 1
+eb_collected_p1 3d470 1
+eb_collected_p2 3d471 1
+credits 211100c 1
+match_winners 3743e 1
+gi_strobe_shadow 3c758 1
+gi_owner_task 372d4 4
+key_back 3c950 4
+key_minus 3c960 4
+key_plus 3c970 4
+key_select 3c980 4

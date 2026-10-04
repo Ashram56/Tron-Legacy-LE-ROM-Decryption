@@ -1,0 +1,27 @@
+# Match, forced WIN (states_ref, factory settings except adj 38 BALL SAVE TIME = 0). Same play as match_natural.txt
+# (final score 757,740 -> last two digits 40). pokeat writes RNG seed 0xa7bf957a just before random(10) at 0x1b6ac,
+# so the LCG gives next=0x73333333 and random(10)=4 -> match number 40 = score%100 -> P1 wins (rate 0 < adj 30 = 9).
+adj 38 0
+start 1
+trace rng on
+pokeat 1b6ac 372c4 2814350714 4
+wait 1.5
+hit 12
+wait 1
+hit 37
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 34
+wait 1
+drain
+wait 6
+hit 12
+wait 1
+hit 7
+wait 1
+mark last drain: bonus, match
+drain
+wait 16
