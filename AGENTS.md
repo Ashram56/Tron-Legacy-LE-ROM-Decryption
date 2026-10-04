@@ -433,6 +433,40 @@ their own times (Tron descriptor `+0x10` / `+0x12`), which differ from what game
    `pwm` settings, `allow_enable` for motors and relays), and say which values came from the ROM and
    which are platform choices.
 
+**Lessons from doing this on Tron:**
+- **Zero-cross sync.** Many kicks pass `sync = 1`, which waits for the next AC zero-cross edge (Tron:
+  input bit 2 of `*(0x37350)`, 60 per second) before firing. A 64 ms request then measures about
+  64-66 ms of on-time, and the start is delayed by up to one half-cycle. Record the sync flag per call
+  and don't mistake the extra ms for a different pulse length.
+- **Repeats are part of the behaviour.** The drop bank reset fires again about every 0.25 s while a
+  drop target still reads down, and pops and slings have a recycle time. Record repeat and recycle rules,
+  not only the single pulse.
+- **Variable-time calls.** 87 Tron call sites take their time or pattern from a variable or table
+  (mostly flasher patterns), so static reading leaves them blank. Only run-time hooks on the coil API
+  give their values; list them as unresolved until seen.
+- **Untestable outputs.** Some outputs cannot be exercised in the emulator: Tron's upper left flipper
+  has no emulator button, and the ticket outputs never fire at factory settings. Mark these
+  code-only, and say how they could be measured (a different setting, a poke, real hardware).
+- **API variants.** The driver API has plain pulse, pulse-and-wait, pattern, PWM and serialised-queue
+  variants (Tron `0x2bc8`, `0x2cb0`, `0x2d18`, `0x2e5c`, `0x2b60`); hook all of them, or calls slip through.
+
+**Tron worked example** (`rom_data/io/coils.csv`, `coil_calls.csv`, `coil_rules.json`; commit 8cd7439):
+
+| Output | In-game drive |
+|---|---|
+| Trough kicker, auto launch, drop bank reset | 64 ms (zero-cross synced, ~64-66 ms on); drop reset repeats ~0.25 s while a target reads down |
+| Scoop (VUK) | soft kick: 1 ms on / 1 ms off for 64 ms |
+| Orbit up/down post | 64 ms, then hold 1 ms on / 6 ms off for 1.5-2 s |
+| Pop bumpers | 32 ms, recycle 16 ms |
+| Slingshots | 32 ms, recycle 192 ms |
+| Flippers | 40 ms, then hold 1 ms on / 11 ms off |
+| Knocker | 80 ms per count |
+| Ticket meter | 100 ms per count (code only) |
+| Shaker | 200 / 384 / 1024 ms by strength |
+| Motors and relays | held by code, or until a position switch |
+| Flashers | set per effect, mostly 24 / 32 / 48 ms; some patterned runs of 50-750 ms |
+| Coil test / ball search | separate values in the descriptor (`+0x10` / `+0x12`); not the in-game times |
+
 The same applies to other hardware the ROM drives: GI (bit, polarity, power-up state), aux-bus outputs
 (strobe, data bits, refresh rate), and dedicated switches (D1-D24 meanings, which differ from PinMAME's
 labels on Tron).
@@ -528,6 +562,7 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 | Adj 10 default taken from the adjustment table | USA factory default differs (YES) | Read the per-country install lists |
 | Service menu numbers taken as table ids | Audit #1 is not audit 1 | Export menu position and table id |
 | PinMAME labels trusted (tube sides, D22/D23) | Both reversed vs the ROM | Prefer the ROM's own strings and tests |
+| Coil times not extracted until the MPF build asked | Build guessed pulse times for real hardware | Section 8.1 as a required step |
 
 ---
 
