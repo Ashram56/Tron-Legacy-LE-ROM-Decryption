@@ -57,7 +57,11 @@ conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
     CSV or JSON with its ROM address and an observed/code/inferred tag. See section 14 for the list.
 13. **Close the loop on audits.** Once a finding is fixed, mark it RESOLVED where it was reported. Stale
     audit notes made the next agent work around defects that were already gone.
-14. **Hardware labels disagree between sources.** PinMAME, the ROM's own console strings and the
+14. **Hardware data is a required deliverable, not a side note.** A rebuild that drives real coils
+    needs the ROM's own drive parameters for every output, in game play, measured at 1 ms. On Tron they
+    were left out at first, the MPF build had to guess them, and the shaker shipped with wrong times.
+    Section 8.1 is the procedure.
+15. **Hardware labels disagree between sources.** PinMAME, the ROM's own console strings and the
     owner's schematic analysis gave three different left/right and strobe-letter namings for the RGB
     tubes. Report all of them and flag "check on the real machine"; do not silently pick one.
 
@@ -405,6 +409,34 @@ D22 Minus and D23 Plus; PinMAME's labels are reversed, as are its ramp tube left
 
 ---
 
+### 8.1 Required: hardware drive data for every output
+
+Do this as its own step (section 13, step 8), for every coil, flasher, motor, relay and aux output, and
+ship it as one CSV row per output. Test-menu values are not enough: the coil test and ball search use
+their own times (Tron descriptor `+0x10` / `+0x12`), which differ from what game play fires.
+
+1. **Static read.** For each output, read its descriptor (flags: flasher, drivable with HV off, hidden
+   from test), its coil rule if it has one (flippers, bumpers, slings: initial pulse, then hold pattern
+   or PWM), and every `coil_pulse` call site with its constant time or pattern argument and any
+   argument tables (Tron: shaker `0x040d3998`). Record the address of each value.
+2. **Decode the driver.** Find the coil driver tick (Tron: every 1 ms from the coil IRQ `0x12070`) and
+   how it interprets each request: plain pulse in ms, 32-bit repeating pattern, on/off PWM, or held
+   until released. Note any global scaling, such as a COIL PULSE POWER adjustment.
+3. **Measure in game play at 1 ms.** Sample the coil shadow bytes (Tron `0x3b97c`) inside the coil IRQ
+   and log every on/off edge per coil while a scripted game exercises each output (flippers held and
+   tapped, every kicker, every flasher effect, motors, shaker at each strength). Do not poll from the
+   host loop: 5 ms polling produced shaker times that were 2-4x too short.
+4. **Reconcile.** Each output gets: pulse ms, hold pattern or PWM duty, max on-time, source address,
+   static value, measured value, and tag (code / observed / inferred). Static and measured must agree
+   within a tick; investigate any that do not.
+5. **Map to the rebuild.** Give MPF the values directly (`default_pulse_ms`, `default_hold_power` or
+   `pwm` settings, `allow_enable` for motors and relays), and say which values came from the ROM and
+   which are platform choices.
+
+The same applies to other hardware the ROM drives: GI (bit, polarity, power-up state), aux-bus outputs
+(strobe, data bits, refresh rate), and dedicated switches (D1-D24 meanings, which differ from PinMAME's
+labels on Tron).
+
 ## 9. Rules extraction
 
 How the full rules came out (21 feature specs, about 60 reference traces):
@@ -527,9 +559,11 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 5. Run Ghidra with seeds and OS signatures; annotate constants. Iterate names as you learn.
 6. Find `deff_start` and the image table; decode images; capture every effect by injection.
 7. Inventory every effect table (lamp, display, game-specific outputs) and capture each.
-8. Adjustments, formatters, audits, service menu.
-9. Build the trace recorder, then write rules specs mode by mode, anchored on audit counters.
-10. Package; run the duplicate-key, reference and count checks; ship; then audit the package against
+8. **Hardware drive data for every output** (section 8.1): descriptors, coil rules, call-site
+   arguments, driver decode, and a 1 ms in-game measurement per coil. Required, not optional.
+9. Adjustments, formatters, audits, service menu.
+10. Build the trace recorder, then write rules specs mode by mode, anchored on audit counters.
+11. Package; run the duplicate-key, reference and count checks; ship; then audit the package against
     the ROM with fresh eyes (on Tron that audit found 8 real errors).
 
 ---
@@ -553,7 +587,9 @@ every row the ROM address it came from and an observed/code/inferred tag.
 
 **Deliverables:**
 1. **IO:** switches (matrix plus dedicated D1-D24), coils with **decoded pulse and hold times**, lamps,
-   flashers, aux-bus outputs. One CSV each, SAM numbers, no duplicate names.
+   flashers, aux-bus outputs. One CSV each, SAM numbers, no duplicate names. For every output, the
+   in-game drive parameters (pulse ms, hold pattern or PWM, max on-time) from the ROM **and** a 1 ms
+   measurement, per section 8.1.
 2. **Fonts:** the font table as JSON (character ranges, glyph image id, x/y offset, height, spacing per font).
 3. **Deffs:** one row per deff: priority, run length, background flag, hold, function address, screens
    (selector → draw calls with font or font list, flags, x, y, format string, argument sources), the
