@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # number: the SAM coil/driver number (1-40). FLASH: entries are flashers (driver outputs),
 # 33-35 are the ticket outputs on the aux bus (ESTB). Motors and relays (5, 6, 8, 22, 23, 30) are held

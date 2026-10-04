@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # Lamp matrix: 66 named lamps of 80 (numbers as in the ROM's lamp test; 41, 44 and 67-80 are NOT USED).
 # Letter lamps are named by their letter: lamp 1 is TRO(N) = l_tron_n. The two ramp fiber optic tubes

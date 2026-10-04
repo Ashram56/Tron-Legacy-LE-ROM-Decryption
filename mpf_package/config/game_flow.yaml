@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # Game flow: what the ROM shows and plays at attract, game start, ball start, ball end and game over.
 # Events are MPF's own built-in events, so this works without any extra code. All observed in emulation.

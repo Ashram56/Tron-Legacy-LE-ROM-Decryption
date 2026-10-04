@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # One entry per decoded ROM sample (mono WAV). Most speech is 12 kHz; 53 speech samples, all sfx and all
 # music are 24 kHz. Each file's own header carries its rate. Files live in media/sounds/<kind>/.

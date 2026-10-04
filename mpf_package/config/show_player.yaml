@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # Post the event to play the effect: its animation, sounds and ramp tube light show together.
 # Each show is in config/shows/<name>.yaml. Event names are suggestions; see event_map.csv

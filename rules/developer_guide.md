@@ -216,24 +216,29 @@ Each mode file explains how its settings are used.
 The full list of 88 adjustments, with names, defaults and ranges, can be read from the ROM with
 `tools/ghidra/romtables.py` (`adj(i)`).
 
-## 6. Media: what to use from the asset package, and what to fix
+## 6. Media: what to use from the asset package
 
-The asset package (`tron/mpf_package`) has the right media, but some labels and gaps are wrong.
-Before using it, read [work/asset_audit.md](work/asset_audit.md). In short:
+The asset package (`tron/mpf_package`) was corrected after this guide was first written. The defects
+listed in [work/asset_audit.md](work/asset_audit.md) are **fixed** there (the audit marks each one
+RESOLVED), so don't work around them:
 
-- **Deff 105 is the Flynn's Arcade award reveal**, not a video mode intro. Build it from the chosen
-  award: three cabinets, two decoy awards, and the chosen award blinking.
-- **Duplicate YAML keys** in `switches.yaml` and `lights.yaml` silently drop 8 switches and 8 lamps
-  (TRON, ZUSE, CLU). Lamp letter order is the reverse of switch order.
-- **17 audio streams were never exported** (samples 0x09-0x14 and 0x16-0x19, and music 0x44d), so
-  44 sound calls have no pool.
-- **Two light-effect systems.** The package's `leff_NNN` are **ramp tube shows** (table 0x040e3c88).
-  The ROM also has **172 lamp-matrix light effects** (table 0x040e23e4, `leff_start` 0x87ac), which
-  70 display effects and many modes start. These were not exported.
+- **Deff 105 is the Flynn's Arcade award reveal** (`deff_105_flynns_arcade_award`), not a video mode
+  intro. Build it from the chosen award with the parts in `media/dmd/deff_105_flynns_arcade_award/parts/`:
+  three cabinets, two decoy awards, and the chosen award blinking.
+- **No duplicate YAML keys remain.** Letter switches and lamps are named by letter (`s_tron_t`,
+  `l_tron_n`). Lamp letter order is the reverse of switch order.
+- **All audio streams are exported**, including samples 0x09-0x14, 0x16-0x19 and music 0x44d (290 pools).
+- **Two light-effect systems, two names.** The package's `leff_NNN` shows are **ramp tube shows** (table
+  0x040e3c88); the name was kept because downstream projects pin these paths. The **lamp-matrix light
+  effects** (table 0x040e23e4, `leff_start` 0x87ac) are the `lampfx_NNN_*` shows.
   - In the specs, "leff N" always means the lamp-matrix table and "tube show N" the ramp tubes.
-- **`mode_by_code_location` in `event_map.csv` is often wrong.** Use the mode files instead.
+- **Mode guesses by code location are unreliable.** `event_map.csv` no longer has that column; the
+  `feature_guess_by_code_location` column of `callouts/callout_triggers.csv` and
+  `mode_guess_by_code_location` of `io/light_effects.csv` are guesses. Use the mode files instead.
 - **Deff 108 has 4 random clips** and deff 22 is empty.
 - **Effect 104** is "FLYNN'S ARCADE IS LIT", not a game-start animation.
+
+Still open from the audit: music looping (M10) and whether switches 21/22 are normally closed like 41 (M7).
 
 Lamps 1-80 are numbered as in `tron/io/lamps.csv` (66 are used). Lamp groups are 0-terminated lists
 in table 0x040e3acc. Sound calls are in `tron/sound_calls.csv`. Each call picks one sample from its list.

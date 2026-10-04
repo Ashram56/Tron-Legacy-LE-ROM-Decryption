@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # Effects that pick a different film clip each time (at random, or by mode level).
 # The ROM's choice is reproduced with one show per clip.

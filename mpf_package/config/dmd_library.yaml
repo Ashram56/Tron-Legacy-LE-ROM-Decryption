@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # Every full-size animation in the ROM as a 128x32 slide (87x32 animations sit at x=41, as the
 # ROM draws them). Frame time is the ROM's own (player ticks x 16.3 ms) where the code gives it.

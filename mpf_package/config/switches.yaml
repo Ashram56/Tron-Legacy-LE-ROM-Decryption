@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # number: the SAM switch number (Stern numbering, 1-64). Replace with your platform's
 # address. Flipper buttons, EOS and coin door are SAM dedicated switches and are not in the ROM's

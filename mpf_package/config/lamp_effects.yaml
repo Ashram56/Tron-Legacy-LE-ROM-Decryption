@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../README.md.
 # ROM lamp-matrix light effects (leff table 0x040e23e4) as MPF shows: config/shows/lampfx_NNN_*.yaml.
 # These are separate from the ramp tube shows (leff_NNN.yaml). Display-effect shows already start

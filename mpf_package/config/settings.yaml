@@ -1,3 +1,4 @@
+#config_version=6
 # Generated from the Stern Tron Legacy LE v1.74 ROM (trn_174h). See ../service_menu.md.
 # All 88 operator adjustments, as MPF machine settings. Keys are the ROM names in snake case.
 # setting_type: standard = the ROM's STANDARD ADJUSTMENTS menu, feature = FEATURE ADJUSTMENTS (Tron).

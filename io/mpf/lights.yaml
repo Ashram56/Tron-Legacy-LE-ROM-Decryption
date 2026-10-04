@@ -1,3 +1,4 @@
+#config_version=6
 # Tron LE fiber optic ramp tubes as MPF RGB lights.
 # The two tubes are not on the lamp matrix. They hang off the SAM IO board aux bus
 # (data on J2 AUX_DRV, latch strobe on J3), so `number:` depends on the platform

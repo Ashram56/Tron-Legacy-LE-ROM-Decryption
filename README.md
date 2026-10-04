@@ -72,8 +72,20 @@ Read `tron/X` as `X` from the repo root. Two moves were made when assembling the
   are **fixed** in this `mpf_package`: deff renames (22, 105, 111, 127, 128, 129), duplicate
   TRON/ZUSE/CLU switch and lamp names (now `s_tron_t`, `l_tron_n`, ...), the 17 missing audio
   streams (now decoded, 290 pools), deff 108's four clip variants, and the lamp-matrix effects
-  (now exported). The same stale points are repeated in section 6 of `rules/developer_guide.md`.
-  The `mode_by_code_location` column of `event_map.csv` is still unreliable; use the mode specs.
+  (now exported). The audit now marks each of these **RESOLVED**, and section 6 of
+  `rules/developer_guide.md` was rewritten to match.
+  The `mode_by_code_location` column was removed from `event_map.csv`; the remaining location-based
+  guesses (`feature_guess_by_code_location` in `callouts/callout_triggers.csv`,
+  `mode_guess_by_code_location` in `io/light_effects.csv`) are unreliable, so use the mode specs.
+- **Naming:** `leff_NNN` shows in `mpf_package/config/shows/` and `io/mpf/shows/` are **ramp tube shows**
+  (table 0x040e3c88), not lamp-matrix leffs; the lamp-matrix effects are `lampfx_NNN_*`. The names are
+  kept because the MPF repo pins these paths.
+- Every generated MPF config file now starts with `#config_version=6` (shows with `#show_version=6`).
+- **Data the MPF build had to recover or guess** (from its feedback, 2026-10-04; not extracted here yet):
+  the font table (RAM 0x36f48), per-deff text layout and argument sources, per-deff screen selection,
+  decoded coil pulse/hold times (coil table 0xe0c00), named lamp groups (0x040e3acc), pricing tables other
+  than USA 10, a few service texts and audit formulas, and multi-player / rare-state traces.
+  See section 14 of [AGENTS.md](AGENTS.md).
 - Display effects not captured: 27 (instant info, needs flipper buttons held) and 45 (no caller in
   v1.74). 24 library animations are never referenced by v1.74 code (likely unused).
 - Lamp effects: 34 are empty in v1.74 and 7 draw from live mode state, so they are not shows; your

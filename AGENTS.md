@@ -52,7 +52,12 @@ conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
 11. **Emulator runs are slow; plan them.** With the per-instruction hook a run is about real time.
     Keep scenarios short, use RAM pokes to jump to late states (and say so), run at most a few in
     parallel, and filter logs line by line (loading a 25-minute play log whole ran out of memory).
-12. **Hardware labels disagree between sources.** PinMAME, the ROM's own console strings and the
+12. **Machine-readable first.** The downstream MPF build read prose specs once but read tables on
+    every build. Every fact a rebuild needs (fonts, text layout, coil timings, deff screens) belongs in a
+    CSV or JSON with its ROM address and an observed/code/inferred tag. See section 14 for the list.
+13. **Close the loop on audits.** Once a finding is fixed, mark it RESOLVED where it was reported. Stale
+    audit notes made the next agent work around defects that were already gone.
+14. **Hardware labels disagree between sources.** PinMAME, the ROM's own console strings and the
     owner's schematic analysis gave three different left/right and strobe-letter namings for the RGB
     tubes. Report all of them and flag "check on the real machine"; do not silently pick one.
 
@@ -295,7 +300,18 @@ and log every image draw (`bitmap_blit` / `bitmap_blit_masked`, Tron `0x2b194` /
 image record), frame flip (`dmd_show_pages` `0x27830`), sound call and tube colour. That gives frames,
 real per-frame timing, sounds and light shows with offsets. Also save a full-screen reference capture
 (text and score panel included), because **text is not in the images**: the ROM draws it with its fonts,
-so export the strings per effect.
+so export the strings per effect. Better still, export the **text layout** itself: for each deff,
+every draw call (font or font list, flags, x, baseline y, fit width), its format string, and where each
+argument comes from (RAM address, order). The MPF build had to parse this out of the decompile two call
+levels deep. Also export the **font table** (Tron: RAM `0x36f48`, 0x14-byte records: character ranges,
+glyph image ids, x/y offsets, height, spacing); the build had to fit offsets to captures by hand.
+
+**Capture hygiene** (each of these cost the downstream build time):
+- Record the arguments and RNG state that produced each capture, so a variant can be reproduced.
+- Keep exactly one run of the effect per capture (deff 115 was captured running twice, so its sounds
+  appeared twice).
+- Record the status-panel region and its live content; captures with a frozen panel (score 00) can only
+  be compared outside that region.
 
 **What forcing misses:**
 - Effects that check game state quit at once when forced (7 on Tron). Run long automated play
@@ -376,6 +392,13 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 
 ## 10. Packaging for MPF (or another engine)
 
+- **Valid MPF files:** every config file starts with `#config_version=6` and every show file with
+  `#show_version=6`, or MPF refuses to load it. Unique keys everywhere. Ideally add a CI job that loads
+  the config with `mpf` itself, not only with a YAML parser.
+- **Name each effect system distinctly from day one.** On Tron the ramp tube shows were exported as
+  `leff_NNN`, which collides with the ROM's own "leff" (lamp-matrix effect) name; the MPF repo now pins
+  those paths, so they stay. On a new game use `tube_show_NNN` (or the game's own output name) for
+  game-specific outputs and `lampfx_NNN` for the lamp matrix.
 - Keep the ROM's own numbering in every name and event (`deff_046_*`, `call_0f0`, `lampfx_133_*`) so
   specs, traces and assets line up.
 - One `sound_pool` per sound call. One show per display effect (slide + sounds + tube show + lamp
@@ -415,6 +438,11 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 | Full 150 MB zip rebuilt for each fix | Owner asked to stop | Small update zips of changed files |
 | `OnSolenoidUpdated` missed coils 1-32 | Missing coil events | Poll `PinmameGetSolenoid` |
 | Repo rename attempted by the agent | Proxy refused settings writes | Owner renames in GitHub settings |
+| Generated MPF config had no `#config_version=6` header | MPF refused it; the build had to add it | Header on every config file, `#show_version=6` on shows |
+| Audit findings fixed but never marked resolved | Next agent worked around fixed defects | Mark RESOLVED where reported |
+| Font table and deff text layout not exported | MPF build re-derived them from captures and decompile | Export as JSON (section 14) |
+| Coil pulse/hold times not decoded | MPF build guessed values for real hardware | Decode the coil table |
+| Deff 115 captured running twice; frozen score panel | Doubled sounds, unusable panel pixels | One run per capture, note panel region |
 
 ---
 
@@ -433,6 +461,8 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 
 ## 13. Suggested order for a new SAM ROM
 
+(Section 14 is the checklist of what the result must contain.)
+
 1. Identify the set; map memory; entropy scan.
 2. Build libpinmame with the hook; get a game started (section 4). Find `task_sleep`.
 3. Find the strings tables (switch, coil, lamp, adjustment, audit, message names) and the switch
@@ -446,3 +476,59 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 9. Build the trace recorder, then write rules specs mode by mode, anchored on audit counters.
 10. Package; run the duplicate-key, reference and count checks; ship; then audit the package against
     the ROM with fresh eyes (on Tron that audit found 8 real errors).
+
+---
+
+## 14. Deliverables checklist for the next SAM game
+
+This list comes from the agent that built the Tron MPF recreation on top of this repository
+(feedback dated 2026-10-04). Produce each item as a table (CSV or JSON) first and prose second, and give
+every row the ROM address it came from and an observed/code/inferred tag.
+
+**What the downstream build valued most (keep doing it):**
+- Reference traces plus the compare tool. Every rules feature was accepted only when its trace matched;
+  the scenario language (`start`, `hit`, `wait`, `mark`, `adj`) was easy to replay on MPF.
+- ROM addresses everywhere (task ids, functions, tables) in specs and the decompile: every dispute was
+  settled with a grep.
+- Fact tags, and a stated conflict rule (rules spec wins on rules, package wins on media and names).
+- A read order (`rules/README.md` → `developer_guide.md` → `modes/`) and a "do not build unreachable
+  code" list.
+- All ROM images as PNG (`rom_images_all.zip`): enough to rebuild all 44 fonts and the service icons.
+- One sound pool per sound call, `timing.json` and `reference_capture.gif` per deff.
+
+**Deliverables:**
+1. **IO:** switches (matrix plus dedicated D1-D24), coils with **decoded pulse and hold times**, lamps,
+   flashers, aux-bus outputs. One CSV each, SAM numbers, no duplicate names.
+2. **Fonts:** the font table as JSON (character ranges, glyph image id, x/y offset, height, spacing per font).
+3. **Deffs:** one row per deff: priority, run length, background flag, hold, function address, screens
+   (selector → draw calls with font or font list, flags, x, y, format string, argument sources), the
+   lamp effects, tube shows and sounds it starts with their offsets, and its randomised parts with
+   their RNG source.
+4. **Lamp effects:** the lamp-matrix table with each effect's priority and lamp group; for code-drawn
+   effects, the function and short pseudo-code. Lamp groups as named lists.
+5. **Sounds:** call → samples, track (voice/sfx/music), loop flag, channel-stop calls. Export every stream.
+6. **Settings:** adjustments (number, name, default, range, value labels, reader address), audits with
+   their formulas, **all pricing tables**, and the service menu tree with every message text.
+7. **OS model:** tick length, task id names, switch → hook order, show queue thresholds, deff rule and
+   lamp rule lists. These made or broke trace matches.
+8. **Traces:** one per mode, plus multi-player, tilt and slam tilt, every random branch (seeded or
+   forced), and lamp and coil events in every trace. Name the RNG and say how a scenario forces it.
+9. **Captures:** per deff, the arguments and RNG that produced it, one run only, and the status-panel
+   region, so a rebuild can compare the rest dot by dot.
+10. **Valid MPF YAML** (headers, unique keys) and a CI check that loads it with `mpf`.
+
+**Still open on Tron** (recovered or guessed by the MPF build, not yet extracted in this repository):
+
+| Missing | What the build did | State |
+|---|---|---|
+| Font table (RAM `0x36f48`) | Fonts as image groups from image 218, offsets fitted to captures | Recovered; 161/198 static text draws pixel-exact |
+| Deff text layout and argument sources | Parsed from the decompile; some font lists guessed | Recovered, partly guessed |
+| Screen selection per deff | Hand-made table | Recovered by hand |
+| Coil pulse/hold times (table `0xe0c00`, `desc_flags` undecoded) | Starting values per coil class | **Guessed** (matters on real hardware) |
+| Lamp group names (table `0x040e3acc`) | Named from light tags and `lamps.csv` | Partly guessed |
+| Code-drawn lamp effects (13, 14, 45, 47, 76, 78, 94, 99, 132, 136, 157, 159) | Rebuilt from code | Recovered |
+| Deff 105 award reel logic, deff 108 clips | Rebuilt from `0x0100e8bc` | Recovered (parts now exported) |
+| Pricing tables other than USA 10 | Unsupported | Missing |
+| Service texts msg 0x113/0x114; audits 11, 13, 72 formulas; adj 25 reader | Inferred | Guessed |
+| Tube strobe 0x10 left or right; GI latch polarity at power-up; dedicated switches 22/23 Minus/Plus | Followed PinMAME | Unverified on hardware |
+| Multi-player, Sea of Simulation stages 4-8, match odds, slam tilt | Read from code | Untraced |
