@@ -41,6 +41,7 @@ media and names (it was corrected after the specs were written, see "Known gaps"
 | [rom_data/](rom_data/README.md) | Machine-readable ROM data added 2026-10-04: fonts, deff text layout and screens, decoded coils, lamp groups, code-drawn lamp effects, RNG, pricing, service texts, audit formulas, hardware facts, OS model and late-state traces. Wins over older files where they disagree |
 | [AGENTS.md](AGENTS.md) | Reusable guide for agents reverse engineering any Stern SAM ROM: methods, tools, table layouts, and the mistakes made on this one (Tron values as worked examples) |
 | [docs/agent_notes/](docs/agent_notes/) | Condensed notes the agents kept while working: ROM format (memory map, image and sound formats), DMD capture method, IO and lighting, lamp effects/shaker/service capture, rules extraction |
+| [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) | Tron Pro 1.74 vs LE 1.74: switch, coil, lamp and aux differences, rule and adjustment differences, Pro table addresses (`io/pro_vs_le_io_map.csv`, `io/le_vs_pro_io.csv`) |
 
 ### Paths inside the documents
 
@@ -65,6 +66,8 @@ Read `tron/X` as `X` from the repo root. Two moves were made when assembling the
 - **Daft Punk Multiball and End of Line Multiball are the same mode.**
 - **Some code is never reached in v1.74** (for example the Light Cycle maze video mode, deff 45).
   The list is in section 4 of the developer guide. Don't build these.
+- **This is the LE code.** The Pro 1.74 uses a different IO map (T-R-O-N standups, no Recognizer
+  motor, no ramp tubes, renumbered lamps). See [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md).
 - **Starting a game in the emulator** needs trough switches 18-21 held closed (ball count check).
 
 ## Known gaps and open questions
