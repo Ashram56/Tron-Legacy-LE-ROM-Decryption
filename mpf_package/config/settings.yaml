@@ -1157,7 +1157,7 @@ settings:
     key_type: int
     sort: 140
     setting_type: standard
-  free_game_limit:   # adj 25, ROM range 0..10 step 1
+  free_game_limit:   # adj 25, ROM range 0..10 step 1  (no game-logic reader in v1.74: no effect)
     label: "FREE GAME LIMIT"
     values:
       0: "NO FREE GAMES"
@@ -2400,7 +2400,7 @@ settings:
     values:
       0: "NO"
       1: "YES"
-    default: 0
+    default: 1   # USA factory default (OS list 0x38fd4); was 0 before 2026-10-04
     key_type: int
     sort: 400
     setting_type: standard

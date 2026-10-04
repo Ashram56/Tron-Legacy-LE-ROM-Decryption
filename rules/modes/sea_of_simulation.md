@@ -61,7 +61,7 @@ Each stage row is 40 bytes: {item, lamp, setup fn, value fn, leff fn, display ta
 | 3 | ZUSE (23) | Z, U, S, E targets | 400,000 each | "SHOOT" / "ZUSE TARGETS" | 119 |
 | 4 | QUORRA (22) | left inner loop | 500,000 | "SHOOT" / "QUORRA" | 120 |
 | 5 | DISC (21) | the 6 major shots (0xfc000) | 600,000 | "SHOOT" / "DISCS" | 121 |
-| 6 | LIGHT CYCLE (20) | right orbit, right ramp, left ramp (0xc8000), chained [table 0x040d3748]; shots already made are excluded | 700,000 | "SHOOT" / "LIGHT CYCLES" | 122 |
+| 6 | LIGHT CYCLE (20) | all six shots of the chain [table 0x040d3748] (verified in rom_data/states/sea_of_simulation_late.md; an earlier version of this spec said only right orbit, right ramp, left ramp (0xc8000)) | 700,000 | "SHOOT" / "LIGHT CYCLES" | 122 |
 | 7 | RECOGNIZER (19) | 6 recognizer bank hits | 800,000 each | "SHOOT" / "RECOGNIZER" | 123 |
 | 8 | TRON (18) | T, R, O, N targets | 900,000 each | "SHOOT" / "TRON TARGETS" | 124 |
 
@@ -85,7 +85,7 @@ Verified (traces/sea_of_simulation.jsonl):
 - Each Zuse target also scored its own 5,000.
 
 ## 6. How it ends
-- **Completed:** after stage 8, FUN_01026430 sets flag 0x36 and clears 0x34. deff 125 "SEA OF SIMULATION COMPLETED", speech 0x113. Every item is then collected, which qualifies the Portal (find_flynn_and_items.md).
+- **Completed:** after stage 8, FUN_01026430 sets flag 0x36 and clears 0x34. Task 0x56 shows **deff 126 "TOTAL"** with sound 0x115, the same screen as a drain (verified, rom_data/states/sea_of_simulation_late.md). Deff 125 "SEA OF SIMULATION COMPLETED" and its speech 0x113 have no start site in 1.74 and never play (an earlier version of this spec said they did). Every item is then collected, which qualifies the Portal (find_flynn_and_items.md).
 - **Drain:** event 0x1d clears flag 0x34. deff 126 "TOTAL" + sos_total, sound 0x115, speech 0x114 (verified: deff 126 0.54 s after the drain, before bonus deff 25).
 - **Tilt (event 0x66)** [0x01026794]: if SOS is active, every queued skip bonus not yet paid is added to the score (and to sos_total). The ROM pays these even on tilt.
 - No timer. Lit bytes were cleared at start, so all nine items must be lit again to replay SOS. Items collected in SOS stay collected.
@@ -97,7 +97,7 @@ Verified (traces/sea_of_simulation.jsonl):
 | Running status | deff 114 "SEA OF SIMULATION" + stage msgs (table 0x040d37d8 msg field) | 0x108 at first show; speech 0x112 on the final stage | stage leff fn; leff 134 available | 64 available |
 | Stage shot | deff 116+k | 0x10a, then 0x111 | - | - |
 | Skip bonus | deff 115 | 0x109 | - | - |
-| Completed | deff 125 "SEA OF SIMULATION COMPLETED" | speech 0x113 | - | - |
+| Completed | deff 126 "TOTAL" (deff 125 is never started in 1.74) | 0x115 | - | - |
 | Drain | deff 126 "TOTAL" | 0x115, speech 0x114 | - | - |
 
 ## 8. Lamps
@@ -123,4 +123,4 @@ The stage's item lamp (27, 25, 24, 23, 22, 21, 20, 19, 18) shows the item state:
 - Audit 0x67 SOS STARTS: not bumped in the trace and no immediate writer found. Perhaps never written in 1.74.
 - What FUN_010077ac checks (assumed portal).
 - The CLU helmet rotation with flippers, were read from code and not run. tron_ref now has `button left|right`, so this could be checked.
-- Stages 4-8 were not played in the emulator (values read from the stage functions).
+- Stages 4-8 were not played in the emulator when this spec was written; they were later traced in rom_data/states/sea_of_simulation_late.md, which corrected stage 6 and the completion screen above.

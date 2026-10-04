@@ -103,6 +103,13 @@ Notes:
 
 ## Adjustments
 
+> **Numbering (corrected 2026-10-04):** the numbers in these tables are ROM table ids. The machine's
+> menus number items by their position in each list: STANDARD AUDIT #1 is audit 14, FEATURE AUDIT #1 is
+> audit 73, and standard adjustments follow the order list at RAM 0x39558 (adj 1 COIL PULSE POWER is
+> STANDARD ADJUSTMENT #43). The menu label for each id is in `rom_data/settings/` (`menu_label`), which
+> also corrects the diagnostics menu order and audit formulas.
+
+
 `setting` is the key in `config/settings.yaml`. Values: the ROM label for each value, "a..b" for a plain number range.
 
 | # | Name | Menu | Default | Values | Setting | Used by |
@@ -121,7 +128,7 @@ Notes:
 | 22 | SPECIAL LIMIT | standard | 1 | 0=NO SPECIALS, 1=1, 2=2, 3=3, 4=4, 5=5, 6=UNLIMITED | `special_limit` |  |
 | 24 | SPECIAL PERCENTAGE | standard | 10% | 1%..50% step 1 (e.g. 1%, 2%, 3%, 4%) | `special_percentage` |  |
 | 23 | SPECIAL AWARD | standard | CREDIT | 0=CREDIT, 1=TICKET, 2=TOKEN, 3=POINTS, 4=EXTRA BALL | `special_award` |  |
-| 25 | FREE GAME LIMIT | standard | 5 | 0=NO FREE GAMES, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=UNLIMITED | `free_game_limit` |  |
+| 25 | FREE GAME LIMIT | standard | 5 | 0=NO FREE GAMES, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=UNLIMITED | `free_game_limit` | no game-logic reader in v1.74: the setting has no effect (rom_data/settings) |
 | 26 | EXTRA BALL LIMIT | standard | 5 | 0=NO EXTRA BALLS, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=UNLIMITED | `extra_ball_limit` | game_flow, flynns_arcade |
 | 27 | EXTRA BALL PERCENTAGE | standard | 25% | 1%..50% step 1 (e.g. 1%, 2%, 3%, 4%) | `extra_ball_percentage` | game_flow, flynns_arcade |
 | 28 | GAME PRICING | standard | USA 10 | AUSTRALIA 1..CUSTOM step 1 (e.g. AUSTRALIA 1, AUSTRALIA 2, AUSTRALIA 3, AUSTRALIA 4) | `game_pricing` |  |
@@ -146,7 +153,7 @@ Notes:
 | 61 | HSTD RESET COUNT | standard | 2000 | OFF..9900 step 100 (e.g. OFF, 100, 200, 300) | `hstd_reset_count` |  |
 | 34 | FREE PLAY | standard | NO | 0=NO, 1=YES | `free_play` |  |
 | 7 | LANGUAGE | standard | ENGLISH | 0=ENGLISH, 1=DEUTSCH, 2=FRANCAIS, 3=ESPANOL, 4=ITALIANO | `language` | language |
-| 10 | PLAYER LANGUAGE SELECT | standard | NO | 0=NO, 1=YES | `player_language_select` |  |
+| 10 | PLAYER LANGUAGE SELECT | standard | YES (USA) | 0=NO, 1=YES | `player_language_select` | USA factory default is YES (OS list 0x38fd4; observed); was listed as NO before 2026-10-04 |
 | 2 | CUSTOM MESSAGE | standard | ON | 0=OFF, 1=ON, 2=CHANGE | `custom_message` |  |
 | 5 | FLASH LAMP POWER | standard | NORMAL | 0=OFF, 1=DIM, 2=NORMAL | `flash_lamp_power` |  |
 | 1 | COIL PULSE POWER | standard | NORMAL | 0=HARD, 1=SOFT, 2=NORMAL | `coil_pulse_power` |  |
@@ -229,7 +236,7 @@ INSTALL items (UTILITIES > GO TO INSTALLS MENU) set several adjustments at once.
 | 10 | TOTAL COINS | earnings |
 | 11 | TOTAL EARNINGS | earnings |
 | 12 | METER CLICKS | earnings |
-| 13 | SOFTWARE METER | earnings |
+| 13 | SOFTWARE METER (always 0 in v1.74) | earnings |
 | 14 | TOTAL BALLS PLAYED | standard |
 | 15 | TOTAL EXTRA BALLS | standard |
 | 16 | EXTRA BALL PERCENTAGE | standard |
@@ -288,7 +295,7 @@ INSTALL items (UTILITIES > GO TO INSTALLS MENU) set several adjustments at once.
 | 69 | 8 - 10 MINUTE GAMES | standard |
 | 70 | 10 - 15 MINUTE GAMES | standard |
 | 71 | 15+ MINUTE GAMES | standard |
-| 72 | RECENT REPLAY PERCENT | standard |
+| 72 | RECENT REPLAY PERCENT (always 0 in v1.74) | standard |
 | 73 | DISC MULTIBALL STARTED | feature (Tron) |
 | 74 | DISC M.B. SPINNING DISC JACKPOTS | feature (Tron) |
 | 75 | DISC M.B. BLUE DISC SHOTS | feature (Tron) |

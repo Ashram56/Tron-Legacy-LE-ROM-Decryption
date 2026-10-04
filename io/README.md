@@ -34,18 +34,19 @@ How a refresh works:
 
 ## Generic IO (for the other outputs)
 `io_registers.csv` maps every IO register to the RAM pointer variable the OS reads it through, and to the code that drives it. The OS never hard-codes register addresses. It loads pointers from a block at RAM `0x37280` to `0x37350`, so searching for those pointers finds every hardware access.
-- **Coils** (`coils.csv`, names from the ROM's coil table at `0xe0c00`):
+- **Coils** (`coils.csv`, names from the ROM's coil table at `0xe0c00`; `desc_flags` is the little-endian u32 at `0x040e0f60 + 28*coil`, corrected 2026-10-04: it was shifted by one coil and byte-swapped. Decoded flags, pulse and hold times are in `rom_data/io/coils.csv`):
   - Game code sets shadow bytes `0x3b97c[0..4]`.
   - The IO interrupt (around `0x13360`) copies them to SOL_B, SOL_A, SOL_C and FLSH_LMP (coils 1-32), then latches byte 4 to the aux bus with ESTB (coils 33-40).
   - `0x43a4` turns all outputs off.
 - **Lamps**: 80-lamp matrix through LMP_STB/LMP_DRV in the IO interrupt (`0x132e0`). Names are in `lamps.csv` (table `0xe2bf4`).
-- **GI relay**: bit 0 of `0x0240002B`. `0xcaf8` turns it off and `0xcb24` turns it on, both through an ownership claim at `0xc9dc`. 27 and 14 game call sites.
+- **GI relay**: bit 0 of `0x0240002B`, **active low** (0 = GI on), on from power-up (see `rom_data/states/hardware_facts.md`). `0xcaf8` turns it off and `0xcb24` turns it on, both through an ownership claim at `0xc9dc`. 27 and 14 game call sites.
 - **Generic aux write** `0xcb50(strobe_mask, data)`: has only one caller (the all-off reset). The tube driver does its own bus writes.
 
 ## Cross-check with PinMAME (`src/wpc/sam.c`)
 - PinMAME flags Tron with `SAM_GAME_TRON` ("Board 511-6927-01 TriColor Assembly strobed on C and D outputs").
 - It turns `AUX_DRV >> 3` into 3 PWM lamps on each strobe edge: CSTB to lamps 101-103 and DSTB to lamps 104-106. In each group the order is B, G, R.
-- **Discrepancy**: PinMAME's comments call CSTB the *right* ramp, but the ROM's own console labels CSTB as the *left* ramp light tube. Either the board is wired crossed or PinMAME's comment is wrong. Check this on the real machine before relying on left/right in PinMAME.
+- **Discrepancy**: PinMAME's comments call CSTB the *right* ramp, but the ROM labels strobe 0x10 the *left* ramp light tube. The ROM console, the service tube test labels and the skill shot shows all agree on 0x10 = left, 0x20 = right; PinMAME's labels are the reverse and unsourced (`rom_data/states/hardware_facts.md`). Still worth one look on the real machine.
+- PinMAME also reverses the dedicated switch labels: in the ROM **D22 = Minus, D23 = Plus** (`rom_data/states/dedicated_switches.csv`).
 
 ## Cross-check with Vincent's bus analysis (github.com/Ashram56/Stern-SAM-Databus-Analysis)
 - His schematic reading confirms the register map above. It also says strobes B to E on J3 pins 9 to 12 drive the Tron LE fiber optic ramps, so the ROM's "ramp light tubes" are those fiber optics.
@@ -54,7 +55,7 @@ How a refresh works:
   - Right tube (0x20) = DSTB, J3 pin 11
   - Aux coil latch 33-40 (0x40) = CSTB, J3 pin 10
 - The tube colour data goes out on J2: R = bit5 = pin 2, G = bit4 = pin 1, B = bit3 = pin 9.
-- His captures (`Tron attract.csv`, `Tron start.csv`) are only about 4 IO cycles long. They show the IO interrupt's aux coil latch: `AUX_DRV=0x00`, then strobe register `0xbe` (bit 6 low, GI on), then `0xfe`. That matches the ROM at `0x133d4`. No tube colour writes (strobe register `0xee` or `0xde`) were captured. To see them, capture while a ramp is lit, triggering on address 0xB with data bit 4 or bit 5 low.
+- His captures (`Tron attract.csv`, `Tron start.csv`) are only about 4 IO cycles long. They show the IO interrupt's aux coil latch: `AUX_DRV=0x00`, then strobe register `0xbe` (bit 6 low = the aux coil latch strobe, bit 0 low = GI on), then `0xfe`. That matches the ROM at `0x133d4`. No tube colour writes (strobe register `0xee` or `0xde`) were captured. To see them, capture while a ramp is lit, triggering on address 0xB with data bit 4 or bit 5 low.
 
 
 ## Light effects: the fiber optic shows, mapped to modes

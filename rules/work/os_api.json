@@ -395,7 +395,7 @@
   "addr": "0xb840",
   "name": "task_spawn_child",
   "signature": "void * task_spawn_child(void *fn, ushort flags, ushort stack_size)",
-  "meaning": "Create task with the CURRENT task's id, inheriting its context/user words (+0x24..0x44)",
+  "meaning": "Create task with the CURRENT task's id, inheriting its context/user words (+0x24..0x44); copies task+0x30..0x47 to the child",
   "confidence": "high",
   "evidence": "pseudo-C"
  },
@@ -563,8 +563,8 @@
   "addr": "0x1982c",
   "name": "lamp_rule_init",
   "signature": "void * lamp_rule_init(void *obj, uchar list, void *fn, ushort a, ushort b, int c, ushort mode_mask, uchar p8, uchar p9)",
-  "meaning": "Rule object variant (vtable 0x39f60) - likely lamp-state rule",
-  "confidence": "low",
+  "meaning": "Deff/sound rule object (vtable 0x39f60): method 0x198a8 calls deff_start and snd_play. On refresh the first true deff rule ends the walk (corrected 2026-10-04, rom_data/io/README.md; was \"likely lamp-state rule\")",
+  "confidence": "high",
   "evidence": "pseudo-C only"
  },
  {

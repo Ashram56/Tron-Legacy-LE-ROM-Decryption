@@ -169,8 +169,8 @@ the ramp tube shows.
 The ROM runs the shaker (coil 8) with `shaker_run(strength, min_setting)` from 46 display effects and
 two switch handlers (drop targets, every ZUSE Fast Scoring hit). It only runs when adjustment 86
 SHAKER MOTOR is at least `min_setting` (0 none, 1 minimal, 2 moderate, 3 maximal; default 3) and the
-game is not tilted or over. Strength 1, 2 and 3 run the motor for about 75, 265 and 1100 ms (observed
-on coil 8 in emulated play). `shaker.yaml` plays `shaker_strength_N` on each effect's event with a
+game is not tilted or over. Strength 1, 2 and 3 run the motor for 200, 384 and 1024 ms (code: table 0x040d3998;
+the emulator measured 203/390/1040 ms on coil 8 at 1 ms resolution; the 75/265/1100 ms shipped before 2026-10-04 came from 5 ms polling and were wrong). `shaker.yaml` plays `shaker_strength_N` on each effect's event with a
 condition on the `shaker_motor` setting, for example
 `tron_gem_intro{settings.shaker_motor>=2}: shaker_strength_2`. Post `tron_shaker_drop_target` and
 `tron_shaker_zuse_score` from those switch handlers. The shows enable and then disable coil 8, which

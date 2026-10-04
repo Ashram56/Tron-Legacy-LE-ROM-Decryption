@@ -155,13 +155,28 @@ This took longer than anything else on day one. Checklist:
    54-56) need a tiny simulation, or the game logs faults and may hold up play. See the ball sim in
    `tron_ref.cpp`: trough eject coil → shooter switch, launch coil → ball in play, scoop kick coil →
    release scoop switch.
-5. **Credits.** `PinmameSetHandleKeyboard(1)`; coin key 5, start key 1. Factory pricing on Tron needed
-   3 coins per credit, so insert several coins and watch the credit count.
+5. **Credits and the coin door.** `PinmameSetHandleKeyboard(1)`; coin keys 3-6 = coin slots 1-4,
+   start key 1. Factory pricing on Tron (USA 10) is 3 quarters per credit, so insert several coins and
+   watch the credit count. The libpinmame keyboard handler **overwrites switch column 0 (dedicated
+   switches D17-D24) every frame**, so `PinmameSetSwitch` on the coin door, service buttons or tilt is
+   undone at once: drive them with keys instead.
 6. **Solenoids.** The `OnSolenoidUpdated` callback missed coils 1-32 on Tron; poll
-   `PinmameGetSolenoid(i)` every step instead.
-7. **Lamps.** libpinmame lamp numbers 1-80 equal the ROM's lamp table numbers; 101+ are extra outputs
+   `PinmameGetSolenoid(i)` every step instead. Polling is only good to a few ms: for ms-accurate on-times
+   sample the coil shadow bytes (Tron `0x3b97c`) inside the coil IRQ (Tron `0x12070`), which the 1 ms
+   coil driver runs. 5 ms polling gave the shaker as 75/265/1100 ms; the real values are 200/384/1024.
+7. **Country and DIPs.** `PinmameSetDIP` did not change the country. Write the country bytes in NVRAM
+   (Tron `0x21100d8`/`0x21100d9`), fix the checksum (`0x21100da`, `checksum16` `0x27a0`) and call the
+   factory-install function (Tron `0x1278`).
+8. **Watchdog and resets.** The SAM watchdog is not emulated: after a slam tilt the ROM spins in its
+   halt loop (Tron `0x10ce8`) forever. Detect it and call `PinmameReset`.
+9. **Forced effects have side effects.** Forcing a background-loop deff makes it the default display
+   for the rest of the run, and an active service-menu deff blocks forced deffs. Start a fresh run per
+   background deff.
+10. **Process control.** `pgrep -f` / `pkill -f` inside a shell loop also match the loop's own command
+    line; match on a pid file or an exact binary name.
+11. **Lamps.** libpinmame lamp numbers 1-80 equal the ROM's lamp table numbers; 101+ are extra outputs
    PinMAME synthesises (Tron's RGB tubes are 101-106).
-8. **Timing.** One OS tick is about **16.26 ms** in play (measured 16.25-16.30). The ROM itself
+12. **Timing.** One OS tick is about **16.26 ms** in play (measured 16.25-16.30). The ROM itself
    treats 62 ticks as a "second", and some countdowns use 60, 64, 66 or 68. Give specs in ticks and ms.
 
 ### Forcing the ROM to run something (call injection)
@@ -177,6 +192,14 @@ To start any display effect, lamp effect or formatter on demand, hijack the OS s
    task list (head RAM `0x372b0`, next at `+0x1c`, flags `+2`, id `+0x28`) and poke it after creation.
 
 The same trick stops effects (`pc = leff_stop`), runs formatters to get adjustment labels, and so on.
+
+### Random numbers
+Tron's RNG is an LCG at RAM `0x372c4`: `x = x * 0x19660d + 1` (seed `0x04277dc9`), with
+`random_below(n) = (n * x) >> 32` at `0xc6b4` (and a `random_percent` variant). The main loop advances it
+on every pass, so **poking the seed in RAM cannot force a result**: the value has moved on by the time
+the effect calls it. To force a branch, hook the return of `random_below` / `random_percent` at the
+call site you care about and overwrite `r0`, or poke the seed at that call's PC. Name the RNG and the
+forcing method in every trace that depends on a random branch.
 
 ---
 
@@ -201,7 +224,10 @@ functions (mask `BL` offsets and literal-pool loads) and search the new OS block
 | `score_add(points)` | `0x2340c` | Called from almost every switch handler with round decimal constants (10, 170, 440 ...), multiplies by a playfield multiplier byte. |
 | `adj_get(id)` | `0xe90` | Small constants; result compared to ranges. Ids match the adjustment table order. |
 | `audit_add(id, n)` | `0x178c` | Small constants; each id matches an audit name like "DISC MULTIBALL STARTED". |
-| `msg_get(id)` and text drawing (`text_draw_msg`, `text_printf_msg`, `text_draw_msg_fit`) | `0xa58c`, `0x28ca8`, `0x28d5c`, `0x28e48` | Index the message table. **Include every text API** when extracting on-screen text; the first pass missed strings drawn with the "fit" variant. |
+| `msg_get(id)` and text drawing (`text_draw_msg`, `text_printf_msg`, `text_draw_msg_fit`) | `0xa58c`, `0x28ca8`, `0x28d5c`, `0x28e48` | Index the message table. **Include every text API** when extracting on-screen text; the first pass missed strings drawn with the "fit" variant. Text also reaches the renderer through vsprintf wrappers, font-picker functions, switch tables and function pointers, and some message ids are computed in registers (`mov r0,#imm` just before `0x28d5c`), so a grep of the decompile misses them. Hook the renderer in the emulator to be complete. |
+| `random_below(n)` | `0xc6b4` | Multiplies `n` by an LCG state and keeps the high word; see "Random numbers" in section 4. |
+| `task_spawn_child` | `0xb840` | Child task with the current task's id; copies `task+0x30..0x47` (effect arguments) to the child. |
+| `lamp_rule_init` | `0x1982c` | Despite the old name, it registers **deff/sound rules**, not lamp rules (method `0x198a8` calls `deff_start` and `snd_play`). On a rules refresh the first true deff rule ends the walk, while every leff rule (`leff_rule_init` `0x19740`) is evaluated. |
 | `lamp_on/off/flash`, `lampgroup_*` | `0x833c`, `0x81f8`, `0x9200` ... | Take lamp numbers 1-80; groups are 0-terminated lists. |
 | `coil_pulse(coil, ms)` | `0x6970` | Flashers and kickers from effects. |
 | `game_flag_set/clear/test(flag)` | see decompile | Bit flags per player for mode state; very useful anchors. |
@@ -223,7 +249,11 @@ from.
 | Table | Tron address | Record | How to find |
 |---|---|---|---|
 | Switch descriptors | `0x040f3574` | 32 B per switch, index i = switch i+1; `+0` handler fn, `+8` name ptr, `+0x10` flags (bit `0x80` on NC optos?) | Search for pointers to the switch-test name strings ("TROUGH #1"); the stride between them gives the record size. |
-| Coil names / descriptors | `0x040e0c00` (24 B) / `0x040e0f78` (28 B) | name, driver data | Search for the coil test names. |
+| Coil names | `0x040e0c00` (24 B) | name | Search for the coil test names. |
+| Coil descriptors | `0x040e0f60` (28 B, indexed by coil number, record 0 = INVALID; pointer at RAM `0x36c48`) | `+0` flags (`0x2` drivable with HV off, `0x4` flasher, `0x400` skipped by the cycling test, `0x800` hidden from test), `+0x10` coil-test ms, `+0x12` ball-search ms, `+0x14`/`+0x16` wire colour msg ids | Indexed by the coil test. Read the flags as a little-endian u32 (an early CSV byte-swapped them and was off by one coil). |
+| Coil rules | flippers `0x040e204c`, bumpers `0x040f0a5c`, slings `0x040f0a8c` | pulse ms, then hold pattern (Tron flippers: 40 ms, then 1 ms on / 11 ms off) | The coil driver ticks every 1 ms and supports a pulse, a 32-bit pattern, or on/off PWM. Decoded in `rom_data/io/`. |
+| Shaker strengths | `0x040d3998` | ms per strength (200 / 384 / 1024) | Argument table of `shaker_run`. |
+| Fonts | RAM `0x36f48`, count `0x36f44` | 20 B: `+0` char-range list, `+4` glyph table (8 B each: image ptr, s16 x off, s16 y off), `+8` height, `+0xa` spacing, `+0xc` masked, `+0x10` bank | The text renderer `text_draw_str` loads it. Tron: 44 fonts (`rom_data/fonts.json`). |
 | Lamp names | `0x040e2bf4` | | Lamp test names. Lamp letter order may be the **reverse** of switch letter order (Tron: lamp 1 = TRO(N), switch 1 = (T)RON). |
 | Lamp records / groups | `0x040e338c` (12 B) / `0x040e3acc` (109 0-terminated lists) | | Referenced by `lamp_lookup` and `lampgroup_*`. |
 | Coil groups | `0x040e20c4` | | `coilgroup_pulse`. |
@@ -238,9 +268,17 @@ from.
 | Adjustment formatters | `0x040dd890` | fn, or u16 list of message ids | Run them in the emulator to get exact value labels (`fmt.cpp`). |
 | Audits | `0x040e022c` | 16 B; `w3 >> 16` = counter id | Search for "GAMES STARTED". |
 | Service menu items / menus | `0x040f4574` (20 B: visible fn, action fn, screen fn, msg u16, id, submenu) / `0x040f5108` (12 B, `+8` u16 item list) | | Search for "SWITCH TEST" message ids. |
-| Install presets | lists of `(adj, value)` pairs | | Near the menu tables; Tron 1.74's difficulty presets are empty. |
+| Install presets | lists of `(adj, value)` pairs | | OS lists sit in the RAM-init area (Tron `0x394xx`), game lists from `0x36f7c`; both are referenced from the install functions (Tron `0x1041d38`...). Tron 1.74's difficulty presets are empty. Country factory defaults come from per-country OS lists (USA `0x38fd4`). |
 | Ball devices | `0x040e41f4` | 4 devices (trough + 3) | `ball_dev_call`. |
 | Random clip / award tables | e.g. `0x040d2804` (deff 48 clips), `0x040d29a0` (12 arcade awards) | per effect | Effects that call `random(n)` and index a pointer table. |
+
+**Service menu numbers are list positions, not table ids.** "STANDARD AUDIT #1" on Tron is audit 14,
+"FEATURE AUDIT #1" is audit 73, and standard adjustments follow an order list (Tron RAM `0x39558`, where
+adj 1 COIL PULSE POWER is STANDARD ADJUSTMENT #43). Export both numbers.
+
+Some table entries do nothing: on Tron adj 25 FREE GAME LIMIT has no reader in game logic, and audits
+13 and 72 always show 0 (their functions return 0). Check for a reader before documenting a setting's
+effect.
 
 `rules/tools/ghidra/romtables.py` has readers for most of these (`msg(i)`, `adj(i)`, audits, deff,
 leff and tube tables), and is the quickest way to start a table reader for a new ROM.
@@ -305,6 +343,9 @@ every draw call (font or font list, flags, x, baseline y, fit width), its format
 argument comes from (RAM address, order). The MPF build had to parse this out of the decompile two call
 levels deep. Also export the **font table** (Tron: RAM `0x36f48`, 0x14-byte records: character ranges,
 glyph image ids, x/y offsets, height, spacing); the build had to fit offsets to captures by hand.
+**Extract fonts directly from the table; don't fit them to captures.** A glyph is drawn at
+`(pen + xoff, y - h + yoff + 1)` and the pen then advances by `w + xoff + spacing`. Font images are not
+always one contiguous image group (Tron fonts 27-32 are images 2175-2240).
 
 **Capture hygiene** (each of these cost the downstream build time):
 - Record the arguments and RNG state that produced each capture, so a variant can be reproduced.
@@ -354,8 +395,13 @@ are a great shortcut to driver functions.
 **Coil types:** motors and relays (disc motor, 3-bank motor, shaker, direction relays) are held outputs,
 not pulse coils. Mark them hold/enable in the rebuild config.
 
-**Shaker:** `shaker_run(strength, min_setting)`, gated by the SHAKER MOTOR adjustment; measure the
-strengths on the coil (Tron: about 75 / 265 / 1100 ms).
+**Shaker:** `shaker_run(strength, min_setting)`, gated by the SHAKER MOTOR adjustment. Read the
+strengths from its argument table (Tron `0x040d3998`: 200 / 384 / 1024 ms; measured 203 / 390 / 1040 ms
+at the coil IRQ). Don't measure coil times by polling; see section 4.
+
+**GI:** on Tron it is bit 0 of `0x0240002B`, **active low** (0 = on), on from power-up, owned by one
+task at a time and released when the owning lamp effect ends. **Dedicated switches:** the ROM names
+D22 Minus and D23 Plus; PinMAME's labels are reversed, as are its ramp tube left/right labels.
 
 ---
 
@@ -443,6 +489,13 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 | Font table and deff text layout not exported | MPF build re-derived them from captures and decompile | Export as JSON (section 14) |
 | Coil pulse/hold times not decoded | MPF build guessed values for real hardware | Decode the coil table |
 | Deff 115 captured running twice; frozen score panel | Doubled sounds, unusable panel pixels | One run per capture, note panel region |
+| Shaker timed by 5 ms polling (75/265/1100 ms) | Real values 200/384/1024 ms | Read the ROM table; time coils at the 1 ms IRQ |
+| `coils.csv` `desc_flags` off by one coil and byte-swapped | Wrong flags per coil | Index by coil number; read as LE u32 |
+| `lamp_rule_init` named from a guess | It registers deff/sound rules | Name from the method it calls |
+| Sea of Simulation stage 6 and completion read from code only | Wrong shot count; deff 125 never plays | Trace late states (poke into them) |
+| Adj 10 default taken from the adjustment table | USA factory default differs (YES) | Read the per-country install lists |
+| Service menu numbers taken as table ids | Audit #1 is not audit 1 | Export menu position and table id |
+| PinMAME labels trusted (tube sides, D22/D23) | Both reversed vs the ROM | Prefer the ROM's own strings and tests |
 
 ---
 
@@ -458,6 +511,8 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 - Tables: see section 5.2.
 - Emulator start: trough 18-21 closed, disc opto 41 closed, 3+ coins, start; `PINMAME_NOJIT=1`.
 - Tick 16.26 ms; DMD 128x32, anims 87x32 at x = 41; speech mostly 12 kHz, sfx/music 24 kHz.
+- RNG: LCG at RAM `0x372c4`, `random_below 0xc6b4`. Fonts: RAM `0x36f48` (44). Coil descriptors `0x040e0f60`;
+  coil IRQ `0x12070` (1 ms); shaker table `0x040d3998`; slam halt loop `0x10ce8`. Machine-readable data: `rom_data/`.
 
 ## 13. Suggested order for a new SAM ROM
 
@@ -517,18 +572,11 @@ every row the ROM address it came from and an observed/code/inferred tag.
    region, so a rebuild can compare the rest dot by dot.
 10. **Valid MPF YAML** (headers, unique keys) and a CI check that loads it with `mpf`.
 
-**Still open on Tron** (recovered or guessed by the MPF build, not yet extracted in this repository):
-
-| Missing | What the build did | State |
-|---|---|---|
-| Font table (RAM `0x36f48`) | Fonts as image groups from image 218, offsets fitted to captures | Recovered; 161/198 static text draws pixel-exact |
-| Deff text layout and argument sources | Parsed from the decompile; some font lists guessed | Recovered, partly guessed |
-| Screen selection per deff | Hand-made table | Recovered by hand |
-| Coil pulse/hold times (table `0xe0c00`, `desc_flags` undecoded) | Starting values per coil class | **Guessed** (matters on real hardware) |
-| Lamp group names (table `0x040e3acc`) | Named from light tags and `lamps.csv` | Partly guessed |
-| Code-drawn lamp effects (13, 14, 45, 47, 76, 78, 94, 99, 132, 136, 157, 159) | Rebuilt from code | Recovered |
-| Deff 105 award reel logic, deff 108 clips | Rebuilt from `0x0100e8bc` | Recovered (parts now exported) |
-| Pricing tables other than USA 10 | Unsupported | Missing |
-| Service texts msg 0x113/0x114; audits 11, 13, 72 formulas; adj 25 reader | Inferred | Guessed |
-| Tube strobe 0x10 left or right; GI latch polarity at power-up; dedicated switches 22/23 Minus/Plus | Followed PinMAME | Unverified on hardware |
-| Multi-player, Sea of Simulation stages 4-8, match odds, slam tilt | Read from code | Untraced |
+**Status on Tron:** every item in the MPF build's "missing data" list was then extracted from the ROM
+into [rom_data/](rom_data/README.md) (commit 69fba72): fonts, deff text layout and screens, decoded
+coils, lamp groups, code-drawn lamp effects, randomised parts and the RNG, pricing tables, service
+texts, audit formulas and adjustment readers, hardware facts (tube sides, GI, D22/D23), the OS model, and
+traces for multi-player, tilt and slam, match and Sea of Simulation stages 4-8. `rom_data/README.md`
+maps each gap to its file and lists what is still open (for example lamp group names are inferred, the
+tube sides are still worth one look on the real machine, and CUSTOM pricing was not captured). Where
+`rom_data/` contradicts an older file, `rom_data/` wins.

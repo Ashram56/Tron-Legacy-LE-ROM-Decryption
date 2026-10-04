@@ -1,7 +1,7 @@
 #show_version=6
-# Shaker motor (coil 8) run, ROM strength 1: about 75 ms on (measured in emulation;
-# the ROM asks for 200 units from table 0x040d3998). A new run only replaces a shorter one in the ROM.
-- duration: 75ms
+# Shaker motor (coil 8) run, ROM strength 1: 200 ms on (table 0x040d3998, 1 ms driver ticks;
+# measured about 203 ms at the IO interrupt, rom_data/io/README.md). Was 75 ms before 2026-10-04. A new run only replaces a shorter one in the ROM.
+- duration: 200ms
   coils:
     c_shaker_motor_optional:
       action: enable

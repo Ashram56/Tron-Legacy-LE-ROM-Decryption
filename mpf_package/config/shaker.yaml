@@ -3,7 +3,7 @@
 # Shaker motor. The ROM runs it from display effects (and two switch handlers) with
 # shaker_run(strength, min_setting): only when setting shaker_motor (adjustment 86: 0 off, 1-3) is
 # at least min_setting, never while tilted or in game over (gf_state & 0x310). Strength 1/2/3 is
-# about 75/265/1100 ms of motor. Conditions use the machine setting from settings.yaml.
+# 200/384/1024 ms of motor (table 0x040d3998). Conditions use the machine setting from settings.yaml.
 show_player:
   tron_disc_multiball_intro{settings.shaker_motor>=2}: shaker_strength_2   # effect 46 deff_046_disc_multiball_intro
   tron_disc_multiball_jackpot{settings.shaker_motor>=2}: shaker_strength_2   # effect 48 deff_048_disc_multiball_jackpot
