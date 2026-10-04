@@ -1,0 +1,22 @@
+# hw study 4: drop bank reset (coil 3) in a game; run with hw_trace
+# drop bank reset check: knock all four TRON drops down, watch coil 3
+wait 2
+start 1
+wait 4
+mark drops_down
+hold 1
+wait 0.3
+hold 2
+wait 0.3
+hold 3
+wait 0.3
+hold 4
+wait 3
+release 1
+release 2
+release 3
+release 4
+wait 2
+mark drain
+drain
+wait 6
