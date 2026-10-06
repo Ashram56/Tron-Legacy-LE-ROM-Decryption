@@ -22,7 +22,7 @@ back-to-back byte cycles (16-bit store),150,ns,capture: A=8 then A=9 three sampl
 ramp tube refresh,250,us per bit-plane step,0x874 each tick,code + observed,4-bit BCM: planes held 1/2/4/8 ticks; 15-tick frame = 3.75 ms (267 Hz)
 ramp tube fade step,250,us,fade length = ms x 4 ticks (0x800),code,linear interpolation per tick
 GI relay latency,<=250,us,shadow 0x3c758 is written out by the next tube strobe or coil burst or phase-3 rewrite,code + observed,
-switch matrix scan,250 us per column; 2 ms per full scan,-,0x37378 = 1,observed (emulator),reload is 2 (500 us) when 0x373fc bits 4-6 are 0
+switch matrix scan,250 us per column; 4 columns = 1 ms per full scan,-,0x37378 = 1,observed (emulator),reload is 2 (500 us) when 0x373fc bits 4-6 are 0
 dedicated switch scan,1,ms,phase 1,code + observed,
 zero-cross sampling,1,ms,STATUS bit 2 in phase 0,code,line frequency counted over 250 ms windows; 60 Hz in PinMAME
 IO ISR length (game; to last tube write),p50 29 / p95 81 / max 87,us,emulator (instruction-level timing only),observed (emulator),phase 0 burst starts 24.4 us after STATUS on hardware vs 23.9 us in the emulator

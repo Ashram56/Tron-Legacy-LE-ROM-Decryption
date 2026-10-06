@@ -1,0 +1,6 @@
+bootdump boot
+wait 10
+buscap 1.0 attract_all
+start 1
+wait 5
+buscap 1.0 game_all

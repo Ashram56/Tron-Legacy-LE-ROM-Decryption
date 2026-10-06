@@ -277,6 +277,7 @@ int main(int argc, char** argv) {
   snprintf((char*)c.vpmPath, PINMAME_MAX_PATH, "%s/", dir);
   PinmameSetConfig(&c); PinmameSetHandleKeyboard(1); PinmameSetHandleMechanics(0); PinmameSetDmdMode(PINMAME_DMD_MODE_RAW);
   PinmameSetArmHook(hook); PinmameSetBusHook(bushook);
+  if (getenv("BUSCAP_BOOT")) { CAP.reserve(8000000); capOn = 1; }
   if (PinmameRun("trn_174h") != PINMAME_STATUS_OK) { fprintf(stderr, "run fail\n"); return 1; }
   while (!PinmameIsRunning()) std::this_thread::sleep_for(std::chrono::milliseconds(10));
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -322,6 +323,11 @@ int main(int argc, char** argv) {
       { std::lock_guard<std::mutex> g(injmu); injq.push_back(j); } }
     else if (cmd == "dump") dump_rules();
     else if (cmd == "peek") { unsigned a, n; is >> std::hex >> a >> std::dec >> n; for (unsigned i = 0; i < n; i++) emit("\"ev\":\"peek\",\"addr\":\"0x%x\",\"val\":\"0x%08x\"", a + 4*i, r32(a + 4*i)); }
+    else if (cmd == "bootdump") { std::string label; is >> label; capOn = 0;
+      std::string fn = label + ".csv"; FILE* f = fopen(fn.c_str(), "w");
+      fprintf(f, "cycles,t,pc,kind,addr,data,mask\n");
+      for (auto& e : CAP) fprintf(f, "%llu,%.9f,0x%x,%s,0x%08x,0x%x,0x%x\n", e.cyc, e.t, e.pc, e.kind == 1 ? "W" : e.kind == 0 ? "R" : "ENTRY", e.addr, e.data, e.mask);
+      fclose(f); CAP.clear(); }
     else if (cmd == "buscap") { double secs; std::string label; is >> secs >> label;
       CAP.clear(); CAP.reserve(4000000); capOn = 1; step_to(emu() + secs); capOn = 0;
       std::string fn = label + ".csv"; FILE* f = fopen(fn.c_str(), "w");

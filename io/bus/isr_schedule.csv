@@ -1,5 +1,5 @@
 tick_phase,ram_counter,block,bus_accesses,runs_in_attract,runs_in_game,emu_offset_us_from_irq_entry,capture_offset_us,notes
-every tick,0x37374 (reload from 0x37378 = 1),switch matrix column,R 0x01100000 then W 0x01100008 (next column),yes,yes,3.4 / 6.7,(CPU board; not on J1),8 columns -> 2 ms full scan
+every tick,0x37374 (reload from 0x37378 = 1),switch matrix column,R 0x01100000 then W 0x01100008 (next column),yes,yes,3.4 / 6.7,(CPU board; not on J1),4 columns x 16 returns (column count from 0x040d1c38 = 65 switches) -> 1 ms full scan
 every tick,0x37314 (counts to 1000),AC line accounting,none (RAM),yes,yes,-,-,every 1000 ticks (250 ms) latches the zero-cross edge count
 0,0x37370,STATUS sample + 40 coil slots (0x3b98c x 0x28 B),R STATUS; then coil burst,yes,yes,STATUS 2.8; burst 26.7,STATUS 0.0; burst +24.4,coil slot modes: 1 = bit pattern; 2 = pulse then on/off hold; 3 = timed on; optional zero-cross phase sync
 1,0x3737c / 0x37380,dedicated switches + hw rules list 0x3726c (flippers),R 0x01100002 / 0x01100004; then coil burst,yes,yes,8.0 / 9.6; burst 18.2,burst at +241 us after phase 0 burst,flipper pulse/hold logic at 1 ms resolution

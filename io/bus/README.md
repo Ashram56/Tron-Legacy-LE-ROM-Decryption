@@ -195,10 +195,9 @@ debounced over 8 OS ticks in `0x7c24` before the coil power mask changes. Bits 3
 
 ## 9. CPU board interfaces (not on J1)
 
-`cpu_board_interfaces.csv` lists the rest: switch matrix (16-bit return at 0x01100000, column strobe at 0x01100008,
-one column per tick, 2 ms per scan), dedicated switches (0x01100002 / 0x01100004, 1 ms), DMD page register
-(0x01100020), sound buffer and FIQ, NVRAM, LED (0x02500000), flash bank select (0x02580000), an LE-only write of
-0x3b to 0x02290000 (purpose unknown), the timers and the two USARTs.
+Everything else the CPU board drives (DMD, audio, switches, real-time clock, serial sign port, LEDs, flash
+banking, timers, interrupts) is documented in **`CPU_BOARD_IO.md`**, with the register list in
+`cpu_board_interfaces.csv` and the power-on peripheral setup in `peripheral_init.csv`.
 
 **Correction to `../io_registers.csv`:** the switch return is 0x01100000, the column strobe is 0x01100008 (it is
 not the DMD page), the dedicated switch inputs are 0x01100002/4, and 0x02580000 is the flash bank select, not
@@ -262,9 +261,11 @@ lamp. That removes the 1/10 duty limit and the matrix ghosting, but it is a new 
 | `isr_schedule.csv` | the 4-phase IO tick schedule with emulator and hardware offsets |
 | `timing_measurements.csv` | every timing number above, with its source and tag |
 | `lamp_matrix_map.csv` | 80 lamps: strobe line, drive bit, J12/J13 pins, RAM bit |
+| `CPU_BOARD_IO.md` | every CPU-board interface besides J1: DMD, audio, DAC volume, switches, RTC, serial ports, other chip selects |
 | `cpu_board_interfaces.csv` | everything else the CPU drives: switches, DMD, sound, timers, serial, chip selects |
+| `peripheral_init.csv` | every AT91 on-chip peripheral write during boot, in order (EBI, AIC, PIO, PS, TC, USART) |
 | `traces/emu_*.csv.gz` | emulator bus traces with cycle stamps (attract 0.1 s, flipper hold 0.3 s, tube colour test) |
-| `tools/pinmame_bus_hook.patch` | adds a bus callback to libpinmame (apply on top of `rules/tools/trace/pinmame_arm_hook.patch`) |
+| `tools/pinmame_bus_hook.patch` | full diff against stock PinMAME: bus callback on IO, DMD RAM, sound buffer and AT91 peripherals (includes the arm-hook hunks; apply to a fresh tree) |
 | `tools/bus_trace.cpp` + `s_*.txt` | harness (hw_trace plus `buscap SECONDS LABEL` and `peek`) and the scenarios used |
-| `tools/seq.py`, `stats.py`, `ana.py` | print per-tick sequences, timing statistics, access counts from a trace |
+| `tools/seq.py`, `stats.py`, `ana.py`, `ana2.py` | print per-tick sequences, timing statistics, access counts from a trace |
 | `tools/la_capture_decode.py` | decodes Vincent's PulseView CSV exports into bus cycles |

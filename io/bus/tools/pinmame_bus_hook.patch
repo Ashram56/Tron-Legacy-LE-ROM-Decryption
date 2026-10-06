@@ -1,3 +1,59 @@
+diff --git a/src/cpu/at91/at91.c b/src/cpu/at91/at91.c
+index f55400e..c5e85e1 100644
+--- a/src/cpu/at91/at91.c
++++ b/src/cpu/at91/at91.c
+@@ -82,6 +82,7 @@ extern int activecpu;
+ #define INT_BLOCK_TC2   0
+ 
+ /* Prototypes */
++extern void (*pinmame_bus_hook)(unsigned int addr, unsigned int data, unsigned int mask, int write);
+ INLINE void at91_cpu_write32( int addr, data32_t data );
+ INLINE void at91_cpu_write16( int addr, data16_t data );
+ INLINE void at91_cpu_write8( int addr, data8_t data );
+@@ -713,6 +714,7 @@ void at91_usart_write(int usartno, int addr, data32_t outdata)
+ //WRITE TO  - Atmel AT91 CPU On Chip Peripherals
+ INLINE void internal_write (int addr, data32_t data)
+ {
++	if (pinmame_bus_hook) pinmame_bus_hook(addr, data, 0xffffffff, 1);
+ 	int offset = (addr & 0xFF000) >> 12;
+ 
+ 	//EBI - External Bus Interface
+@@ -1304,7 +1306,7 @@ INLINE void internal_write (int addr, data32_t data)
+ 
+ 
+ //READ FROM  - Atmel AT91 CPU On Chip Periperhals
+-INLINE data32_t internal_read (int addr)
++INLINE data32_t internal_read_raw (int addr)
+ {
+ 	data32_t data = 0;
+ 	int offset2 = (addr & 0xFF000) >> 12;
+@@ -1562,6 +1564,13 @@ INLINE data32_t internal_read (int addr)
+ 
+ /***************************************************************************/
+ 
++INLINE data32_t internal_read (int addr)
++{
++	data32_t d = internal_read_raw(addr);
++	if (pinmame_bus_hook) pinmame_bus_hook(addr, d, 0xffffffff, 0);
++	return d;
++}
++
+ INLINE void at91_cpu_write32( int addr, data32_t data )
+ {
+ 	//Atmel AT91 CPU On Chip Periperhals Mapped here
+@@ -1705,6 +1714,12 @@ void at91_exit(void)
+ 	arm7_core_exit();
+ }
+ 
++void (*pinmame_arm_hook)(unsigned int pc, unsigned int *regs) = 0;
++unsigned int pinmame_arm_read32(unsigned int a) { return READ32(a); }
++unsigned int pinmame_arm_read8(unsigned int a) { return READ8(a); }
++void pinmame_arm_write32(unsigned int a, unsigned int d) { WRITE32(a,d); }
++void pinmame_arm_write8(unsigned int a, unsigned int d) { WRITE8(a,d); }
++#define ARM_TRACE_HOOK 1
+ int at91_execute( int cycles )
+ {
+ 	/*include the arm7 core execute code*/
 diff --git a/src/libpinmame/libpinmame.cpp b/src/libpinmame/libpinmame.cpp
 index 1bdf9fe..c97d62c 100644
 --- a/src/libpinmame/libpinmame.cpp
@@ -26,7 +82,7 @@ index 1bdf9fe..c97d62c 100644
 +extern "C" __attribute__((visibility("default"))) unsigned long long PinmameCpuCycles() { return cpunum_gettotalcycles64(0); }
 +extern "C" __attribute__((visibility("default"))) double PinmameEmuTime() { return timer_get_time(); }
 diff --git a/src/wpc/sam.c b/src/wpc/sam.c
-index a9b7bcd..b150899 100644
+index a9b7bcd..ef58710 100644
 --- a/src/wpc/sam.c
 +++ b/src/wpc/sam.c
 @@ -423,6 +423,9 @@ static struct CustomSound_interface samCustInt =
@@ -55,7 +111,23 @@ index a9b7bcd..b150899 100644
  	const int newdata = (data << (adj * 8));
  	return newdata;
  }
-@@ -674,6 +679,7 @@ static WRITE32_HANDLER(samxilinx_w)
+@@ -651,8 +656,15 @@ static MEMORY_READ32_START(sam_readmem)
+ MEMORY_END
+ 
+ //Memory Writes
++static WRITE32_HANDLER(samdmdbuf_w)
++{
++	data32_t *p = (data32_t *)(memory_region(REGION_CPU1) + 0x1080000) + offset;
++	COMBINE_DATA(p);
++	BUSHOOK(0x01080000 + offset*4, data, ~mem_mask, 1);
++}
+ static WRITE32_HANDLER(samxilinx_w)
+ {
++	BUSHOOK(0x0109F000 + offset*4, data, ~mem_mask, 1);
+ 	if(~mem_mask & 0xFFFF0000) // Left channel??
+ 	{
+ 		data >>= 16;
+@@ -674,6 +686,7 @@ static WRITE32_HANDLER(samxilinx_w)
  static WRITE32_HANDLER(samdmdram_w)
  {
    const int mask = ~mem_mask;
@@ -63,7 +135,7 @@ index a9b7bcd..b150899 100644
  
    switch(offset)
    {
-@@ -718,6 +724,7 @@ static WRITE32_HANDLER(sambank_w)
+@@ -718,6 +731,7 @@ static WRITE32_HANDLER(sambank_w)
  	int logit = LOG_CS_W;
  	offset = addr;
  	data = newdata;
@@ -71,3 +143,12 @@ index a9b7bcd..b150899 100644
  
  	if (offset > 0x024000FF) // CPU/Sound board
  	{
+@@ -1237,7 +1251,7 @@ static MEMORY_WRITE32_START(sam_writemem)
+ 	{ 0x00000000, 0x000FFFFF, MWA32_RAM, &sam_page0_ram},  //Boot RAM
+ 	{ 0x00300000, 0x003FFFFF, MWA32_RAM, &sam_reset_ram},  //Swapped RAM
+ 	{ 0x01000000, 0x0107FFFF, MWA32_RAM },				   //U13 RAM - General Usage (Code is executed here sometimes)
+-	{ 0x01080000, 0x0109EFFF, MWA32_RAM },				   //U13 RAM - DMD Data for output
++	{ 0x01080000, 0x0109EFFF, samdmdbuf_w },				   //U13 RAM - DMD Data for output
+ 	{ 0x0109F000, 0x010FFFFF, samxilinx_w },			   //U13 RAM - Sound Data for output
+ 	{ 0x01100000, 0x01FFFFFF, samdmdram_w },			   //Various Output Signals
+ 	{ 0x02100000, 0x0211FFFF, MWA32_RAM, &nvram },		   //U11 NVRAM (128K) 0x02100000,0x0211ffff
