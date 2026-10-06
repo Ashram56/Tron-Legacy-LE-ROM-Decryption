@@ -9,6 +9,9 @@ address,name,direction,rom_pointer_var,what_drives_it
 0x02400028,LMP_STB,write,0x37284,lamp matrix strobe (IO interrupt 0x132e0)
 0x0240002A,LMP_DRV,write,0x37280,lamp matrix row drive (IO interrupt 0x132e0)
 0x0240002B,GI relay + aux strobes,write,0x372d0,"shadow byte 0x3c758; bit0 GI relay (0=on), bit4 CSTB = left ramp light tube, bit5 DSTB = right ramp light tube, bit6 ESTB = aux coils 33-40"
-0x02580000,diagnostic LED,write,0x37344,CPU board LED
-0x01100002,switch strobe,write,0x372d8,switch matrix column select
-0x01100008,DMD page,write,0x372e4,DMD page register
+0x02580000,flash bank select,write,0x37344,"U42 A22-A25 bank register (corrected 2026-10-06, was listed as the diagnostic LED; see bus/cpu_board_interfaces.csv)"
+0x01100002,dedicated switches D1-D16,read,0x372d8,"IO tick phase 1 (corrected 2026-10-06, was listed as the switch strobe)"
+0x01100008,switch matrix column strobe,write,0x372e4,"IO tick, one column per 250 us tick (corrected 2026-10-06, was listed as the DMD page; the DMD page is 0x01100020)"
+0x01100000,switch matrix return (16 bit),read,0x372e0,IO tick every tick (added 2026-10-06)
+0x01100004,dedicated switches D17-D24 + DIP,read,0x372dc,IO tick phase 1 (added 2026-10-06)
+0x02500000,CPU board LED,write,-,0x34110 (added 2026-10-06)

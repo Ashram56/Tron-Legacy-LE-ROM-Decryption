@@ -1,0 +1,14 @@
+cpu_address,J1_A3A2A1A0,io_board_name,direction,latch_or_buffer,rom_pointer_var,written_by,when,update_rate,notes
+0x02400020,0000,SOL_A,write,octal D flip-flop (J9),0x37338,IO tick ISR 0x12070 @0x133cc,coil burst,every tick when any coil block ran (game: every 250 us; attract: 2 of 4 ticks),coils 9-16; bit0 = coil 9; shadow 0x3b97d
+0x02400021,0001,SOL_B,write,octal D flip-flop (J8),0x37334,IO tick ISR @0x133cc,coil burst (first write of the burst),as SOL_A,coils 1-8; shadow 0x3b97c
+0x02400022,0010,SOL_C,write,octal D flip-flop (J7),0x3733c,IO tick ISR @0x133cc,coil burst,as SOL_A,coils 17-24; shadow 0x3b97e
+0x02400023,0011,FLSH_LMP,write,octal D flip-flop (J6),0x37340,IO tick ISR @0x133cc,coil burst,as SOL_A,coils 25-32 (flashers); shadow 0x3b97f
+0x02400024,0100,(unused),-,-,-,never,-,-,decoder output Y4 not connected
+0x02400025,0101,STATUS,read,74xx245 transceiver,0x37350,IO tick ISR @0x12128 (and @0x12198),tick phase 0 (every 4th tick),1 kHz,D0 20 V interlock; D1 50 V interlock; D2 zero cross; D3 LMP1STAT; D4 LMP2STAT. ROM uses D0-D2 only
+0x02400026,0110,AUX_DRV,write,octal D flip-flop (J2 pins 1-3/5-9),0x372c8,tube refresh 0x874 @0x974; IO tick ISR @0x133f4,tube refresh every tick; coil burst,8 kHz (LE: 2 per tick) + coil bursts,data bus for the strobed aux boards; Tron LE: R=bit5 G=bit4 B=bit3 for the ramp tubes; aux coils 33-40 byte
+0x02400027,0111,AUX_IN,read,transceiver (J3 pins 1-8),0x372cc,never (no code reads the pointer),-,-,unused by Tron LE 1.74
+0x02400028,1000,LMP_STB,write,octal D flip-flop (J12 pins 1-8),0x37284,lamp blank in IO tick @0x132fc (value 0); lamp column ISR 0x11fbc @0x11fe4 (1<<col),blank then column,1 kHz each,written as a 16-bit store: the 8-bit bus splits it into LMP_STB (A=8) then AUX_LMP (A=9)
+0x02400029,1001,AUX_LMP,write,flip-flop (J12 pins 9-10),(via 0x37284 halfword),same 16-bit store as LMP_STB,blank then column,1 kHz each,strobe lines 8 and 9 (lamps 65-80)
+0x0240002A,1010,LMP_DRV,write,octal D flip-flop (J13),0x37280,lamp blank @0x132f0 (value 0); lamp column ISR @0x12000 (row data),blank then column,1 kHz each,bit7 = first lamp of the column (lamp n: bit 7-((n-1)%8))
+0x0240002B,1011,aux strobe + GI latch (Clk_input_aux),write,octal D flip-flop,0x372d0 (shadow byte 0x3c758),tube refresh @0x988/@0x99c; coil burst @0x13404/@0x13418; shadow rewrite @0x1333c,every tick,LE game: about 5 writes per tick,bit0 GI relay (0 = on); bits1-2 unused; bit3-7 aux strobes (idle high; pulse low then high to latch AUX_DRV). ROM uses bit4 (left tube) bit5 (right tube) bit6 (aux coils 33-40)
+0x0240002C-F,11xx,(unused),-,-,-,never,-,-,second decoder outputs Y4-Y7 not connected

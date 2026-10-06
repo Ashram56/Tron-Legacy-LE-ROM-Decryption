@@ -1,0 +1,19 @@
+cpu_address_or_unit,name,direction,rom_pointer_or_setup,used_by,rate,notes
+0x01100000,switch matrix return (16 bit),read,0x372e0,IO tick ISR @0x12658,every tick (one column per tick),inverted (0 = closed); debounced in RAM 0x3c76a..
+0x01100008,switch matrix column strobe,write,0x372e4,IO tick ISR @0x1278c,every tick,1<<col; columns 0-7 (wraps early if the game has fewer columns: limit from 0x040d1c38); 8 columns = 2 ms scan
+0x01100002,dedicated switches D1-D16,read,0x372d8,IO tick ISR @0x127f0,every 4th tick (1 kHz),
+0x01100004,dedicated switches D17-D24 + DIP,read,0x372dc,IO tick ISR @0x127f0,every 4th tick (1 kHz),
+0x01100020,DMD page register,write,-,DMD code @0x27874/@0x27894,2 writes per OS tick (~62 Hz),DMD raster itself is done by the Xilinx FPGA
+0x01180000,Xilinx / sound status,read,-,FIQ sound mixer 0x2d8b4; 0x11e98,every FIQ,
+0x0109F000,sound sample buffer,write,-,FIQ 0x2d8b4,12 x 16-bit samples per FIQ,FIQ = external pin P12 (sound FPGA)
+0x02100000,NVRAM 128 KB,read/write,-,many,-,
+0x02290000,LE extra IO (unknown),write,0x37348,0x11f08 (writes 0x3b once),rare,purpose not identified
+0x02500000,CPU board LED,write,-,0x34110,~1 per OS tick or slower,
+0x02580000,flash bank select (U42 A22-A25),write,0x37344,many,many,PinMAME confirms
+TC0 (0xFFFE0000),IO tick timer,internal,CMR 0x4000 (MCK/2 + RC trigger) RC 5000,AIC source 4 prio 5 -> 0x13624 -> 0x12070,4000 Hz (250.0 us),
+TC1 (0xFFFE0040),lamp column one-shot,internal,CMR 0x4000 RC 400,AIC source 5 prio 7 -> 0x13688 -> 0x13440 -> 0x11fbc,1 kHz (fires 20 us after each lamp blank),restarted (CCR=5) by the IO tick; handler stops it (CCR=2)
+FIQ (P12),sound buffer interrupt,internal,AIC source 0 positive edge,0x2b600 -> 0x2d8b4,about 4 kHz (PinMAME measured 4008 Hz),
+IRQ0 (P9),external IRQ,internal,AIC source 16 positive edge prio 4,0x33300 -> 0x32fec,event driven,probably the USB controller on CS2
+USART0 (0xFFFD0000),serial port,internal,divisor 43 (58140 baud ~ 57600) 8N1,0x16900,-,
+USART1 (0xFFFCC000),serial port,internal,divisor 260 (9615 baud ~ 9600) 8N1,0x16a00,-,PinMAME: TXD1/RXD1 go to the BetaBrite connector
+EBI CS1 (0x02000000),IO / NVRAM / boot flash chip select,internal,EBI_CSR1 = 0x0200212E,all IO board accesses,-,8-bit bus; WSE=1 NWS=3 (4 wait states); 16 MB page; TDF 0; byte-write access

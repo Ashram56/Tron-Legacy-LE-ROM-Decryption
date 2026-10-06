@@ -1,0 +1,73 @@
+diff --git a/src/libpinmame/libpinmame.cpp b/src/libpinmame/libpinmame.cpp
+index 1bdf9fe..c97d62c 100644
+--- a/src/libpinmame/libpinmame.cpp
++++ b/src/libpinmame/libpinmame.cpp
+@@ -3318,3 +3318,22 @@ PINMAMEAPI void PinmameSetMemMap(uint8_t* platform, size_t platformSize, uint8_t
+ 		libpinmame_log_error("PinmameSetMemMap(): failed to parse memory map: %s", e.what());
+ 	}
+ }
++
++extern "C" {
++extern void (*pinmame_arm_hook)(unsigned int pc, unsigned int *regs);
++unsigned int pinmame_arm_read32(unsigned int a);
++unsigned int pinmame_arm_read8(unsigned int a);
++void pinmame_arm_write32(unsigned int a, unsigned int d);
++void pinmame_arm_write8(unsigned int a, unsigned int d);
++__attribute__((visibility("default"))) void PinmameSetArmHook(void (*h)(unsigned int, unsigned int*)) { pinmame_arm_hook = h; }
++__attribute__((visibility("default"))) unsigned int PinmameArmRead32(unsigned int a) { return pinmame_arm_read32(a); }
++__attribute__((visibility("default"))) unsigned int PinmameArmRead8(unsigned int a) { return pinmame_arm_read8(a); }
++__attribute__((visibility("default"))) void PinmameArmWrite32(unsigned int a, unsigned int d) { pinmame_arm_write32(a,d); }
++__attribute__((visibility("default"))) void PinmameArmWrite8(unsigned int a, unsigned int d) { pinmame_arm_write8(a,d); }
++}
++extern "C" double timer_get_time(void);
++extern "C" void (*pinmame_bus_hook)(unsigned int, unsigned int, unsigned int, int);
++extern "C" __attribute__((visibility("default"))) void PinmameSetBusHook(void (*h)(unsigned int, unsigned int, unsigned int, int)) { pinmame_bus_hook = h; }
++extern "C" unsigned long long cpunum_gettotalcycles64(int cpunum);
++extern "C" __attribute__((visibility("default"))) unsigned long long PinmameCpuCycles() { return cpunum_gettotalcycles64(0); }
++extern "C" __attribute__((visibility("default"))) double PinmameEmuTime() { return timer_get_time(); }
+diff --git a/src/wpc/sam.c b/src/wpc/sam.c
+index a9b7bcd..b150899 100644
+--- a/src/wpc/sam.c
++++ b/src/wpc/sam.c
+@@ -423,6 +423,9 @@ static struct CustomSound_interface samCustInt =
+ 
+ //Memory Reads
+ //Complete - Needs cleanup
++
++void (*pinmame_bus_hook)(unsigned int addr, unsigned int data, unsigned int mask, int write) = 0;
++#define BUSHOOK(a,d,m,w) do { if (pinmame_bus_hook) pinmame_bus_hook((a),(d),(m),(w)); } while(0)
+ static READ32_HANDLER(samswitch_r)
+ {
+ 	data32_t data = 0;
+@@ -509,6 +512,7 @@ static READ32_HANDLER(samswitch_r)
+ 
+ 	if(logit) LOG(("%08x: reading from: %08x = %08x (mask=%x)\n",activecpu_get_pc(),offset,data,mask));
+ 
++	BUSHOOK(addr, data, mask, 0);
+ 	return (data<<(adj*8));
+ }
+ 
+@@ -549,6 +553,7 @@ static READ32_HANDLER(samio_r)
+ 		break;
+ 	}
+ 	if(logit) LOG(("%08x: reading from: %08x = %08x (mask=%x)\n",activecpu_get_pc(),0x02400024+offset,data,mask));
++	BUSHOOK(addr, data, mask, 0);
+ 	const int newdata = (data << (adj * 8));
+ 	return newdata;
+ }
+@@ -674,6 +679,7 @@ static WRITE32_HANDLER(samxilinx_w)
+ static WRITE32_HANDLER(samdmdram_w)
+ {
+   const int mask = ~mem_mask;
++  if (offset < 0x10) BUSHOOK(0x01100000 + offset*4, data, mask, 1);
+ 
+   switch(offset)
+   {
+@@ -718,6 +724,7 @@ static WRITE32_HANDLER(sambank_w)
+ 	int logit = LOG_CS_W;
+ 	offset = addr;
+ 	data = newdata;
++	BUSHOOK(addr, data, mask, 1);
+ 
+ 	if (offset > 0x024000FF) // CPU/Sound board
+ 	{

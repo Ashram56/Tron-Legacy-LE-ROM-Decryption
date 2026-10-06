@@ -95,3 +95,6 @@ Caveat: emulation follows the default game state. In 2 effects (36 and 88) some 
 ## Not done yet
 - The colour column comes from static analysis. Colours computed at runtime show as `?`.
 - Which mode selects the ambient colour effects 1 to 9 has not been traced.
+
+## Bus timing and all CPU-driven interfaces (2026-10-06)
+See `bus/README.md`: the 250 us IO tick schedule, lamp matrix scan and brightness, coil burst order, aux strobe protocol, EBI bus setup, hardware-checked timings, and a proposal for finer LED PWM on a replacement CPU board. `io_registers.csv` was corrected the same day (switch and bank-select addresses).

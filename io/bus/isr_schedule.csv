@@ -1,0 +1,10 @@
+tick_phase,ram_counter,block,bus_accesses,runs_in_attract,runs_in_game,emu_offset_us_from_irq_entry,capture_offset_us,notes
+every tick,0x37374 (reload from 0x37378 = 1),switch matrix column,R 0x01100000 then W 0x01100008 (next column),yes,yes,3.4 / 6.7,(CPU board; not on J1),8 columns -> 2 ms full scan
+every tick,0x37314 (counts to 1000),AC line accounting,none (RAM),yes,yes,-,-,every 1000 ticks (250 ms) latches the zero-cross edge count
+0,0x37370,STATUS sample + 40 coil slots (0x3b98c x 0x28 B),R STATUS; then coil burst,yes,yes,STATUS 2.8; burst 26.7,STATUS 0.0; burst +24.4,coil slot modes: 1 = bit pattern; 2 = pulse then on/off hold; 3 = timed on; optional zero-cross phase sync
+1,0x3737c / 0x37380,dedicated switches + hw rules list 0x3726c (flippers),R 0x01100002 / 0x01100004; then coil burst,yes,yes,8.0 / 9.6; burst 18.2,burst at +241 us after phase 0 burst,flipper pulse/hold logic at 1 ms resolution
+2,0x37384 / 0x37388,hw rules list 0x37250 + list 0x37258 (slings),coil burst only if a list is active,no (lists idle),yes,-,no access seen,
+3,0x3738c / 0x37390 / 0x37394 / 0x37398,bumpers 0x37254; devices 0x040f4548; LAMP BLANK; aux-latch rewrite,W LMP_DRV=0; W LMP_STB+AUX_LMP=0 (16-bit); W 0x0B=shadow; restart TC1; coil burst if bumper/device active,blank + rewrite only,yes,LMP_DRV 12.8; LMP_STB 13.0; 0x0B 13.9,LMP_DRV 0.0; LMP_STB +0.30; AUX_LMP +0.45; 0x0B +1.75,TC1 fires 20 us after its restart
+every tick (end),-,ramp tube refresh x2 (0x874 left then right),W AUX_DRV; W 0x0B strobe low; W 0x0B strobe high (per tube),LE only,LE only,left 20-38; right 29-48 (after other blocks),not present in the captures,one BCM bit-plane per tick
+every tick (end),0x37408,device callback list + 0x189b0,none seen on the bus,yes,yes,-,-,
+phase 3 + 20 us,TC1 one-shot,lamp column (0x11fbc),W LMP_STB+AUX_LMP = 1<<col (16-bit); W LMP_DRV = row data,yes,yes,35.7 (22.9 after blank),+24.35 after blank; LMP_DRV +0.60 after strobe,col 0-9; plane counter 0x37289

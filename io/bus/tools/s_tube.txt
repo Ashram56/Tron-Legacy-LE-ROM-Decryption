@@ -1,0 +1,5 @@
+wait 3
+inject 0x7a0 0x3b1d8 15 4 0
+inject 0x7a0 0x3b504 5 10 15
+wait 0.02
+buscap 0.03 tubeset

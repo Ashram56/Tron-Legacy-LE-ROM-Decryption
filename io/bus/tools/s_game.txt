@@ -1,0 +1,15 @@
+wait 2
+start 1
+wait 5
+mark tube_show
+inject 0x101b824 1
+wait 0.5
+buscap 1.0 tubes
+mark flipper_hold
+button left -1
+wait 0.02
+buscap 0.3 flipper
+button left 0
+wait 0.3
+mark sling
+buscap 0.4 sling_window
