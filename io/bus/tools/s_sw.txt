@@ -1,0 +1,11 @@
+start 1
+wait 5
+capstart
+wait 0.05
+hit 26 30
+wait 0.05
+hit 30 30
+wait 0.05
+hit 34 40
+wait 0.3
+capsave swhit

@@ -1,6 +1,6 @@
 interface,cpu_address_or_unit,direction,width,rom_pointer_or_setup,code,rate,tag,notes
 IO power board bus (J1),0x02400020-0x0240002F,read/write,8,EBI CS1 = 0x0200212E,IO tick 0x12070; lamp column 0x11fbc; tube refresh 0x874,see bus_register_map.csv,code + hardware,
-DMD frame pages,0x01080000-0x0109DFFF (30 pages x 0x1000),write,8/16/32,EBI CS3 (external SRAM U13),draw code 0x27268 0x29804 0x2ae68 and others,~243000 accesses/s in game; none while the image is static,code + emulator,128 x 32 pixels; 1 byte per pixel: low nibble = shade 0-15; high nibble = mask (0xF = show the background page pixel)
+DMD frame pages,0x01080000-0x0109DFFF (30 pages x 0x1000),write,8/16/32,EBI CS3 (external SRAM U13),draw code 0x27268 0x29804 0x2ae68 and others,~243000 accesses/s in game; none while the image is static,code + emulator,128 x 32 pixels; 1 byte per pixel: low nibble = shade 0-15; high nibble = mask; pixel = (bg & mask) | (fg & ~mask) per PinMAME
 DMD page register (foreground),0x01100020,write,16,pointer 0x381b8,flip 0x27830 called once per OS tick,~62/s,code + emulator,page number 0-0x1d; PinMAME: this page supplies the mask nibble
 DMD page register (background),0x01100022,write,16,pointer 0x381bc,flip 0x27830,~62/s,code + emulator,page number 0-0x1d
 DMD enable (inferred),0x01100024,write,16,pointer 0x381c0,DMD init @0x27fa0,once at boot (value 1),code + emulator,purpose inferred from position and timing
@@ -14,7 +14,7 @@ Real-time clock (3-wire),AT91 P16 = chip enable (active high); P18 = clock; P17 
 Switch matrix return,0x01100000,read,16,pointer 0x372e0,IO tick @0x12658,every 250 us,code + emulator,0 = closed; 16 rows per column
 Switch matrix column strobe,0x01100008,write,16,pointer 0x372e4,IO tick @0x1278c,every 250 us,code + emulator,1 << column; 4 columns (count from 0x040d1c38 = 65) -> 64 switches; full scan 1 ms
 Dedicated switches D1-D16,0x01100002,read,16,pointer 0x372d8,IO tick phase 1 @0x127f0,1 kHz,code + emulator,coin door; flipper buttons and EOS
-Dedicated switches D17-D24,0x01100004,read,16,pointer 0x372dc,IO tick phase 1 @0x127f0,1 kHz,code + emulator,
+Dedicated switches D17-D32,0x01100004,read,16,pointer 0x372dc,IO tick phase 1 @0x127f0,1 kHz,code + emulator,low byte D17-D24; high byte = DIP switches (D25-D32); switch numbers 145-160
 DIP switches,0x01100005,read,8,-,0xec8c,once per OS tick,code + emulator,reads 0x7f in PinMAME
 NVRAM 128 KB,0x02100000-0x0211FFFF,read/write,8,EBI CS1,many,-,code,battery-backed; audits; adjustments; high scores; AC line samples at 0x2111908
 CPU board LED 1,0x02500000,write,8,-,0x34110,~21 writes/s,code + emulator,heartbeat blink

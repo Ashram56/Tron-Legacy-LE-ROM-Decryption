@@ -1,0 +1,9 @@
+start 1
+wait 5
+capstart
+wait 0.0123
+button left -1
+wait 0.1
+button left 0
+wait 0.05
+capsave flip2

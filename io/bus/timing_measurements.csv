@@ -28,3 +28,14 @@ zero-cross sampling,1,ms,STATUS bit 2 in phase 0,code,line frequency counted ove
 IO ISR length (game; to last tube write),p50 29 / p95 81 / max 87,us,emulator (instruction-level timing only),observed (emulator),phase 0 burst starts 24.4 us after STATUS on hardware vs 23.9 us in the emulator
 IO tick jitter (emulator),131 of 3967 ticks outside 245-255 us,-,emulator,observed (emulator),not reliable; capture a long trace on hardware
 bus load (game),57000,accesses per second,emulator trace tubes (1 s),observed (emulator),J1 reads and writes
+switch return read offset,2.60,us after IO tick entry,game capture,observed (emulator),worst 70 us when the tick is delayed by the sound FIQ
+switch strobe to read (settle),246.7,us median,game capture,observed (emulator),range 124-635 us; the next strobe is written 3.3 us after each read
+switch debounce stage 1,2 consecutive scans,-,IO tick 0x12658-0x12790,code,"pending |= old_diff & new_diff; bounced |= pending & ~new_diff"
+switch debounce stage 2,1-10 main-loop passes (16 ms each),-,0xe85c; descriptor bytes +0x1b (close) +0x1c (open),code,per-switch counts in CPU_BOARD_IO.md 5.4
+flipper button to coil,17,us,flip2 capture,observed (emulator),same IO tick; plus 0-1 ms dedicated scan
+sling switch to coil,11,us,swhit capture,observed (emulator),same IO tick; plus 0-1 ms matrix scan
+bumper switch to coil,1.26,ms,swhit capture,observed (emulator),bumper rule debounce 2 ms
+DMD page flip interval,16.2-16.4,ms,game capture,observed (emulator),once per main-loop pass; not synchronised to the 62.67 Hz scan
+DMD page flip register order,bg then fg 0.5 us later,-,0x27830,code,
+DMD draw stores per frame,2896-5050,stores,game capture,observed (emulator),2048 16-bit clears + 8-bit pixel stores; ~243000/s
+DMD scan,62.67 Hz; 32 rows x 12 slots x 41.55 us; planes 1/2/4/5,-,PinMAME sam.c notes,external,needs a scope for dot clock and latch timing

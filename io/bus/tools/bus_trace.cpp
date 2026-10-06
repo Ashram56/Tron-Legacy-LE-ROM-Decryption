@@ -328,6 +328,12 @@ int main(int argc, char** argv) {
       fprintf(f, "cycles,t,pc,kind,addr,data,mask\n");
       for (auto& e : CAP) fprintf(f, "%llu,%.9f,0x%x,%s,0x%08x,0x%x,0x%x\n", e.cyc, e.t, e.pc, e.kind == 1 ? "W" : e.kind == 0 ? "R" : "ENTRY", e.addr, e.data, e.mask);
       fclose(f); CAP.clear(); }
+    else if (cmd == "capstart") { CAP.clear(); CAP.reserve(4000000); capOn = 1; }
+    else if (cmd == "capsave") { std::string label; is >> label; capOn = 0;
+      std::string fn = label + ".csv"; FILE* f = fopen(fn.c_str(), "w");
+      fprintf(f, "cycles,t,pc,kind,addr,data,mask\n");
+      for (auto& e : CAP) fprintf(f, "%llu,%.9f,0x%x,%s,0x%08x,0x%x,0x%x\n", e.cyc, e.t, e.pc, e.kind == 1 ? "W" : e.kind == 0 ? "R" : "ENTRY", e.addr, e.data, e.mask);
+      fclose(f); emit("\"ev\":\"buscap\",\"label\":\"%s\",\"n\":%zu", label.c_str(), CAP.size()); }
     else if (cmd == "buscap") { double secs; std::string label; is >> secs >> label;
       CAP.clear(); CAP.reserve(4000000); capOn = 1; step_to(emu() + secs); capOn = 0;
       std::string fn = label + ".csv"; FILE* f = fopen(fn.c_str(), "w");

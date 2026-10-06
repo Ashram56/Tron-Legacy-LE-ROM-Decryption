@@ -12,10 +12,10 @@ Tags as in the README: **code** (read from the ROM), **emulator** (patched libpi
 | Interface | How the CPU reaches it | Rate | Tag |
 |---|---|---|---|
 | IO power board (coils, lamps, aux, GI) | 8-bit bus at 0x02400020 (EBI CS1) | 250 µs tick | code + hardware |
-| DMD | frame pages in external SRAM, two page registers; the Xilinx FPGA scans the display | page flip every OS tick (16 ms) | code + emulator |
+| DMD | frame pages in external SRAM, two page registers; the Xilinx FPGA scans the display (section 3) | page flip every OS tick (16 ms) | code + emulator |
 | Audio | FIQ every 250 µs; 6 stereo frames written to a 24-byte buffer the Xilinx plays | 24 kHz stereo, 16-bit | code + emulator |
 | Audio volume | bit-banged 3-wire link on PIO P3-P5 to the DAC | on change | code + emulator |
-| Switch matrix | 16-bit return + column strobe at 0x01100000 | one column per 250 µs, 1 ms full scan | code + emulator |
+| Switch matrix | 16-bit return + column strobe at 0x01100000 (section 5) | one column per 250 µs, 1 ms full scan; flippers/slings reach the coils in the same tick | code + emulator |
 | Dedicated switches, DIPs | 0x01100002 / 0x01100004 / 0x01100005 | 1 kHz; DIPs once per OS tick | code + emulator |
 | Real-time clock | bit-banged 3-wire link on PIO P16-P18 | on demand | code |
 | LED sign port | USART1, 9600 baud | boot and on demand | code + emulator |
@@ -43,27 +43,86 @@ The emulator measures 62 main-loop passes per second. The AT91 watchdog is never
 
 ## 3. DMD
 
-**Memory.** 30 pages of 4 KB at 0x01080000-0x0109DFFF in the external SRAM (U13, CS3). A page is 128 x 32
-bytes, row-major, one byte per pixel:
-- low nibble = shade 0-15;
-- high nibble = mask. PinMAME's model: where the mask is 0xF the pixel comes from the background page instead.
+### 3.1 What the CPU sees
 
-**Page registers.** Two 16-bit registers select which pages the FPGA shows (code: flip 0x27830, pointers 0x381b8 /
-0x381bc):
+Everything sits on EBI chip select 3 (CSR3 = 0x01003121: 16 MB window at 0x01000000, 16-bit, 1 wait state, byte
+select). Inside that window the U13 SRAM holds the frame pages, and the Xilinx FPGA decodes the registers at
+0x01100000 and up (the board split is inferred; the addresses are code).
 
-| Register | Meaning |
+| Address | Access | Content | Tag |
+|---|---|---|---|
+| 0x01080000-0x0109DFFF | W 8/16-bit (read back by draw code) | 30 pages of 0x1000 bytes, page n at 0x01080000 + n x 0x1000 | code + emulator |
+| 0x01100020 | W 16 | foreground page number 0-29 | code + emulator |
+| 0x01100022 | W 16 | background page number 0-29 | code + emulator |
+| 0x01100024 | W 16 | written 1 once at boot by 0x27fa0, probably display enable | code; meaning inferred |
+
+There is no status register: the ROM never reads anything from the display side, so it never waits for a
+frame or row boundary.
+
+### 3.2 Page format
+
+A page is 32 rows x 128 bytes, row-major: byte (x, y) is at page + y x 128 + x, x = 0 at the left.
+
+| Bits | Meaning |
 |---|---|
-| 0x01100020 | foreground page (supplies the mask) |
-| 0x01100022 | background page |
-| 0x01100024 | written once with 1 at boot (0x27fa0), probably display enable (inferred) |
+| 0-3 | shade 0-15 |
+| 4-7 | mask |
 
-The ROM keeps three page pairs (shown, previous, being drawn: RAM 0x3d524-0x3d538) and flips once per OS tick,
-so the display changes at most every 16 ms. Drawing writes the pages directly with 8, 16 and 32-bit stores:
-about 243,000 stores per second during a game animation, none while the picture is static.
+PinMAME's model of the mixer (`sam_dmd` in `sam.c`), which matches every Stern SAM game it runs:
 
-**Scan (external).** The Xilinx FPGA refreshes the display by itself. PinMAME's measurement: 62.67 Hz, each row shown
-in 12 slots of 41.55 µs, planes weighted 1/2/4/5. The ROM never touches row timing, so a replacement board must
-reproduce this scanner (or drive a different display) itself.
+```
+mask  = fg >> 4
+pixel = (bg & mask) | (fg & ~mask)      (low 4 bits only)
+```
+
+So it is a bit-wise mix, not a blend: mask 0x0 shows the foreground shade, 0xF shows the background pixel. Only
+the foreground page's mask nibble matters. The formula is external (PinMAME). In the game capture every byte the
+ROM wrote had mask 0, so the background never showed through there; which effects set the mask was not traced.
+
+### 3.3 How the ROM uses it (code + emulator)
+
+- **Flip.** `0x27830(fg, bg)` rejects page numbers above 29 (error 0x20). It then writes the background
+  register first, and the foreground register 19 CPU cycles (0.5 µs) later. The previous pair is kept in RAM
+  0x3d534/0x3d538 and the current pair in 0x3d524/0x3d528. `0x278b8` shows the pair being drawn (0x3d530 fg,
+  0x3d52c bg), then `0x2779c` hands out the next free pages for drawing.
+- **Rate.** The flip runs from the display effect task, at most once per main-loop pass (16 ms). In the game
+  capture it ran on 61 of 62 passes: 16.2-16.4 ms apart, with no relation to the display scan.
+- **Page use.** During a game animation the background stayed on page 5. The foreground rotated through pages
+  0-17 (skipping 5), one new page per frame, so a page is rewritten about 17 frames after it was shown.
+- **Drawing.** Each new frame first clears the whole page with 2048 16-bit stores, then draws pixels with 8-bit
+  stores: 2,896 to 5,050 stores per frame and about 243,000 per second during the animation. No 32-bit stores
+  were seen. A static screen causes no writes.
+
+### 3.4 Display scan (external, needs a scope)
+
+The ROM never touches row timing, so this part is the FPGA's alone. PinMAME's notes, which say they were checked
+against real hardware:
+
+| Quantity | Value |
+|---|---|
+| Frame rate | 62.67 Hz (15.96 ms) |
+| Rows | 32, one at a time |
+| Per row | 12 time slots of 41.55 µs = 498.6 µs |
+| Sub-frames | 4 bit planes of the shade, shown for 1, 2, 4 and 5 slots |
+
+So the 16 shades give only 13 distinct brightness levels (0-12 slot units). To send 128 dots in one 41.55 µs slot
+the dot clock must be at least 3.1 MHz (inferred).
+
+The display cable is the standard 14-pin Stern/Williams 128x32 DMD connector. Its odd pins carry enable, row
+data, row clock, column latch, dot clock and serial dot data, and its even pins are ground. That pinout is
+external knowledge, not visible in the ROM. **A scope is needed** for these:
+- dot clock frequency;
+- latch and row-clock timing within a slot;
+- whether the page registers take effect at frame start (no tearing) or immediately.
+
+### 3.5 What a replacement board needs
+
+1. Two 16-bit page registers and 30 x 4 KB of page memory at the same addresses, or a translation layer.
+2. The fg/bg mask mix above.
+3. A scanner. Matching the original means 62.67 Hz with planes weighted 1/2/4/5. A new board is free to show
+   all 16 shades linearly (for example 15 slots weighted 1/2/4/8), because the ROM only writes shade values.
+4. Latching the page registers at frame start would remove any tearing. The ROM flips at random points in the
+   scan, so on the original hardware it either latches or tears (needs a scope).
 
 ## 4. Audio
 
@@ -93,17 +152,115 @@ emulator the bit period is about 0.5 µs, set only by instruction timing.
 
 ## 5. Switches
 
-| Register | Content | Read when |
-|---|---|---|
-| W 0x01100008 | column strobe, 1 << column, 4 columns | every 250 µs |
-| R 0x01100000 | 16 returns of that column, 0 = closed | every 250 µs, before the strobe moves on |
-| R 0x01100002 | dedicated switches D1-D16 | phase 1 of the IO tick (1 kHz) |
-| R 0x01100004 | dedicated switches D17-D24 (low byte) | phase 1 (1 kHz) |
-| R 0x01100005 | DIP switches | once per OS tick (0xec8c) |
+### 5.1 Registers (all on CS3, read as 16-bit, 0 = closed on the wire, the ROM inverts)
 
-4 columns x 16 returns = 64 matrix switches; the column count comes from the switch table size (0x040d1c38 = 65).
-A full scan takes 1 ms. Each column is read 250 µs after its strobe was set, and the next strobe is written
-right after. Debouncing happens in RAM (0x3c76a onwards).
+| Address | Dir | Content | Read by | Rate |
+|---|---|---|---|---|
+| 0x01100008 | W 16 | column strobe, value 1 << column (0x1, 0x2, 0x4, 0x8) | IO tick @0x1278c | every 250 µs |
+| 0x01100000 | R 16 | 16 returns of the strobed column, bit r = row r | IO tick @0x12658 | every 250 µs |
+| 0x01100002 | R 16 | dedicated D1-D16, bit k = D(k+1) | IO tick @0x127f0 | every 1 ms |
+| 0x01100004 | R 16 | low byte D17-D24, high byte the 8 DIP switches (D25-D32) | IO tick @0x127f0 | every 1 ms |
+| 0x01100005 | R 8 | DIP switches alone | 0xec8c | once per main-loop pass |
+
+**Numbering.** Switch number = column x 16 + row + 1.
+- Columns 0-3 are the matrix (switches 1-64). For example, trough switches 18-21 are column 1, rows 1-4.
+- Columns 8 and 9 are the dedicated words 0x01100002 and 0x01100004 (switches 129-160 = D1-D32).
+- The ROM keeps all of them in one set of 16-bit arrays indexed by column.
+
+The matrix size comes from the ROM: 0x040d1c38 = 65 switch numbers, so (65 - 1) / 16 = 4 columns. The scan code
+handles up to 8 columns for other games.
+
+### 5.2 Scan timing (code + emulator, `swhit` and game captures)
+
+Each IO tick, 2.60 µs after the handler starts:
+1. Read 0x01100000. This is the column strobed one tick earlier.
+2. Advance the column (wrapping after column 3).
+3. 3.3 µs later, write the next strobe to 0x01100008.
+
+So each column is driven for a whole tick, 246.7 µs on average, before it is read. That leaves plenty of
+settling time for a slower or optically isolated matrix.
+
+| Measured | Value |
+|---|---|
+| Read offset after tick entry | 2.60 µs typical, 70 µs worst (tick delayed by the sound FIQ) |
+| Strobe offset after tick entry | 5.90 µs typical |
+| Strobe to read | 124-635 µs, median 246.7 µs |
+| Full matrix scan | 1.0 ms |
+| Dedicated reads | 7.15 µs and 8.78 µs after tick entry, once every 4 ticks |
+
+The column period depends on the board revision. `0x11eec` reads bits 4-6 of 0x01180000:
+- revision 0: one column every 2 ticks (500 µs, 2 ms scan);
+- any other revision: every tick (250 µs).
+
+PinMAME reports revision 1. The strobe register is written as an active-high one-hot value. What polarity the
+pins drive is not visible in the ROM (needs the schematic or a scope).
+
+### 5.3 Debounce, stage 1: in the IO tick (code)
+
+Per column, with 16-bit arrays indexed by column:
+
+| RAM | Name used here | Meaning |
+|---|---|---|
+| 0x3c76a | raw | last read, 1 = closed |
+| 0x3c792 | stable | the debounced state the game sees |
+| 0x3c77e | diff | raw XOR stable from the previous scan |
+| 0x3c7a6 | pending | differed from stable on two scans in a row |
+| 0x3c7ba | bounced | was pending, then matched stable again |
+| 0x3c7ce | ack | bits the main loop has handled; cleared from pending/bounced on the next scan |
+
+```
+new_diff  = raw ^ stable
+pending  |= old_diff & new_diff        // changed on 2 consecutive scans (1 ms apart)
+bounced  |= pending & ~new_diff
+diff      = new_diff
+```
+
+The dedicated words use the same code, in columns 8 and 9, every 1 ms.
+
+### 5.4 Debounce, stage 2: in the main loop (code)
+
+`0xeadc` runs once per main-loop pass (16 ms), from `0x340a0`. It walks switches 1-64, then 129-160, through
+`0xe85c`, which handles each pending bit:
+1. It counts passes in a per-switch byte counter.
+2. A closing edge must last for descriptor byte +0x1b passes, and an opening edge for byte +0x1c passes. The
+   descriptors are 32 bytes each from 0x040f3574.
+3. If the switch bounces back first, the event is dropped.
+4. Otherwise the stable bit flips, the ack bit is set and the switch handler is queued (`0xe318`).
+
+Counts used by Tron (close / open, in 16 ms passes):
+
+| Close / open | Switches |
+|---|---|
+| 1 / 1 | right orbit spinner 36, disc opto 41, left spinner 44 |
+| 1 / 2 | bumpers 30-32 |
+| 1 / 3 | most rollovers, flipper buttons D9/D11/D13 |
+| 1 / 4 | slingshots 26, 27 |
+| 1 / 5 | targets 7, 8, 13, 48-51, video game eject 11 |
+| 1 / 9 | ramp entrances and exits 34, 35, 37, 38 |
+| 1 / 6 | tilt pendulum D17 |
+| 2 / 2 | start, tournament, trough 18-22, motor positions 52-56, coin slots, coin door buttons |
+| 2 / 4 | TRON letters 1-4 |
+| 2 / 5 | shooter lane 23 |
+| 0 / 0 | flipper EOS D10/D12, slam tilt D18 |
+| 10 / 10 | DIP switches |
+
+Rules-level switch events therefore arrive 1-2 ms (scan) plus 0-16 ms (waiting for the pass) after a closure,
+plus (count - 1) x 16 ms.
+
+### 5.5 Fast paths: flippers, slings, bumpers (emulator, `swhit` and `flip2` captures)
+
+These do not wait for the main loop. The flipper, sling and bumper rules run inside the IO tick every 1 ms and
+read the raw arrays directly:
+
+| Input | Seen by the CPU | Coil write | Latency |
+|---|---|---|---|
+| left flipper button D9 | 0x01100002 read | SOL_A bit 6 (coil 15), same tick | 17 µs |
+| left slingshot 26 | matrix column 1 read | SOL_A bit 4 (coil 13), same tick | 11 µs |
+| left bumper 30 | matrix column 1 read | SOL_A bit 0 (coil 9) | 1.26 ms (its rule has a 2 ms debounce) |
+
+Add 0-1 ms for the scan itself. So **a replacement board keeps the original feel if a switch reaches the coil
+outputs within about 1 ms.** The sling pulse measured 33.6 ms and the bumper pulse 48.7 ms; the flipper fired
+for 40.5 ms, then held at 1 ms on / 11 ms off.
 
 ## 6. Real-time clock
 
@@ -150,6 +307,8 @@ used for dates in audits and the clock setting.
 ## 10. How this was measured
 - `tools/pinmame_bus_hook.patch` hooks the IO handlers, the DMD page RAM (0x01080000), the sound buffer
   (0x0109F000) and every AT91 on-chip peripheral access.
+- `tools/s_sw.txt` (sling, bumper, ramp hits) and `tools/s_flip.txt` (flipper press) use the `capstart` / `capsave LABEL`
+  commands to capture across switch hits.
 - `BUSCAP_BOOT=1 PINMAME_NOJIT=1 ./bus_trace tools/s_all.txt out.jsonl` writes `boot.csv` (power-on to 8 s),
   `attract_all.csv` and `game_all.csv`. `tools/ana2.py` summarises them per peripheral and register.
 - The traces are not committed (about 130 MB); rerun the command to regenerate them.
