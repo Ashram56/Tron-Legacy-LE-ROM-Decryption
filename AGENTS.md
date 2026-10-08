@@ -19,10 +19,19 @@ conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
 the CPU board drives, with timing), [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) and
 [rom_data/pro/](rom_data/pro/README.md) (a second model of the same game, ported from the first).
 
+**Where this agent fits.** This is agent A of a pipeline whose master plan lives in the game repo:
+[Tron-Legacy-MPF `docs/agents/README.md`](https://github.com/Ashram56/Tron-Legacy-MPF/blob/main/docs/agents/README.md).
+Its output feeds the strict MPF recreation (agent C), the VPX extraction and bridge agents (B, D) and the
+optional improvements (E). **What the owner provides for this agent:** the ROM image of every model to
+cover (the PinMAME set zip, e.g. `trn_174h.zip`; never committed), and optionally the operator manual,
+schematics and logic analyzer captures (say which ROM the machine ran). A Visual Pinball X table of the game
+is not needed here; it goes to agent B.
+
 **Keep this file current.** It is the project's memory for the next ROM. Whenever a thread learns
 something that would change how another SAM ROM is taken apart (a new method, a hardware fact, a
 mistake and its fix, a correction to this file), fold it in here in the same session, in the generic
-section it belongs to, with the Tron value as the worked example. Last updated 2026-10-08.
+section it belongs to, with the Tron value as the worked example. Last updated 2026-10-08 (pipeline
+placement, owner inputs, per-frame text, PinMAME numbering, coin door and service suspend).
 
 ---
 
@@ -406,6 +415,12 @@ always one contiguous image group (Tron fonts 27-32 are images 2175-2240).
   appeared twice).
 - Record the status-panel region and its live content; captures with a frozen panel (score 00) can only
   be compared outside that region.
+- **Log the text draws of every captured frame** (frame index, font, x, baseline y, string, shade, and
+  whether it was drawn by a font call or as a picture). Captures bake the ROM's text into the frames; an HD
+  rebuild that redraws text in a smooth or different font must first remove it. The Tron HD build had to
+  find it again by matching glyphs dot for dot (`scripts/frame_text.py` in the game repo: 50 captured
+  effects); text that zooms or scatters (deff 100, ZEN) is drawn as blocks, not with a font. Better still,
+  also save each capture once with the text calls suppressed.
 
 **What forcing misses:**
 - Effects that check game state quit at once when forced (7 on Tron). Run long automated play
@@ -452,6 +467,16 @@ not pulse coils. Mark them hold/enable in the rebuild config.
 **Shaker:** `shaker_run(strength, min_setting)`, gated by the SHAKER MOTOR adjustment. Read the
 strengths from its argument table (Tron `0x040d3998`: 200 / 384 / 1024 ms; measured 203 / 390 / 1040 ms
 at the coil IRQ). Don't measure coil times by polling; see section 4.
+
+**Coin door interlock:** with the door open the 50 V / 20 V are cut and the ROM masks its own outputs: on
+Tron the IO interrupt `0x12070` writes the coil shadow ANDed with the mask at `0x3b984` while RAM
+`0x3727c & 3 != 3`, so only the optional coil 24 can fire, and the power handler (LE `FUN_00007bc4`, Pro
+`FUN_000071a0`) starts deff 4 ("50V / 20V DISABLED", priority 247, never ends by itself; BACK clears it with
+sound 0x009). A rebuild must model this; it is easy to miss, since emulator runs keep the door closed.
+
+**Service menu during a game:** SELECT in a game suspends the game task (`task_suspend(0, 0x800)`, Tron
+`FUN_0000f9b0`) and the menu exit resumes it (`FUN_0000fa34`). Export this with the OS model: an engine whose
+timers cannot be suspended (MPF) needs a stated departure.
 
 **GI:** on Tron it is bit 0 of `0x0240002B`, **active low** (0 = on), on from power-up, owned by one
 task at a time and released when the owning lamp effect ends. **Dedicated switches:** the ROM names
@@ -637,6 +662,15 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
   `show_player` conditions was not verified on Tron).
 - Before shipping: duplicate-key YAML check, reference checker (every show, sound, image, light, file
   referenced exists), and a count of pools vs calls and files vs directory entries.
+- **PinMAME's numbers next to the ROM's.** A Visual Pinball X table talks to PinMAME, not to the ROM's
+  numbering, and a rebuild played from VPX (agent D) must answer in PinMAME's numbers. On SAM, matrix
+  switches, coils 1-32 and lamps 1-80 are the ROM's numbers; the rest differs. Tron already exports the
+  dedicated switches' PinMAME numbers (`rom_data/states/dedicated_switches.csv`, `pinmame_switch`: flipper
+  buttons 84 / 82, tilt -7, slam -6, coins 65-68, service BACK/MINUS/PLUS/SELECT -3 / -2 / -1 / 0; the coin
+  door has no PinMAME switch, the VPX build uses D20's -4). Also export the outputs PinMAME adds: solenoid
+  33 is the "flippers enabled" input of `sam.vbs` fast flips, and game-specific outputs get lamp numbers
+  above 100 (Tron ramp tubes 101-106 from `SAM_GAME_TRON`, strobe 0x10 / 0x20, each blue, green, red). Tag
+  them **external** (PinMAME `src/wpc/sam.c`, VPX `sam.vbs`).
 - The ROM image is copyrighted: never commit it. The extracted media were committed as plain git
   (Tron: 291 MB, largest file 6 MB).
 
@@ -682,6 +716,9 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 | PinMAME's 4008 Hz taken as the IO tick | It is the sound FIQ; the IO tick is TC0 at 4000 Hz | Read the timer setup in the ROM |
 | Owner's bus captures assumed to be LE code | No tube writes in them; LE sends them every tick | Check a capture against a model-specific signature |
 | Owner asked whether the pseudo-C recompiles | It does not; mode changes need binary patches | Ground rule 16, section 16 |
+| Text left baked into the deff captures only | The HD rebuild matched glyphs dot for dot to clear and redraw it | Log text draws per captured frame (section 7) |
+| PinMAME's extra outputs not exported | The VPX bridge re-derived solenoid 33 (fast flips) and the tube lamps 101-106 from `sam.vbs` and PinMAME source | Export PinMAME numbers for every output (section 10) |
+| Coin door interlock and in-game service suspend not in the OS model | Found by the MPF build from the owner's play tests, after the rules were built | Export them with the OS model (section 8) |
 
 ---
 
@@ -774,6 +811,11 @@ every row the ROM address it came from and an observed/code/inferred tag.
     number tagged code / emulator / hardware / scope / external (section 8.2).
 12. **Model differences**: switch, coil and lamp maps side by side, per-model coil timing, and a
     function address map between the images (section 15).
+13. **PinMAME numbering** for every switch, coil and lamp next to the SAM number, including the outputs
+    PinMAME adds (fast-flip solenoid, lamps above 100), so a VPX table can drive the rebuild (section 10).
+14. **Per-frame text draws** for every capture, or a text-free copy of each capture (section 7).
+15. **Power and service behaviour**: coin door interlock masking, the power warning effect, what the OS
+    does when the service menu opens during a game (section 8).
 
 **Status on Tron:** every item in the MPF build's "missing data" list was then extracted from the ROM
 into [rom_data/](rom_data/README.md) (commit 69fba72): fonts, deff text layout and screens, decoded
