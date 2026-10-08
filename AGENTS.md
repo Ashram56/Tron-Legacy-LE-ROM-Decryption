@@ -14,7 +14,15 @@ The rest of this repository is the Tron result. Read it as a reference implement
 [README.md](README.md) (layout), [rules/developer_guide.md](rules/developer_guide.md) (rules spec
 conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
 [io/README.md](io/README.md) (IO and RGB tubes), [docs/agent_notes/](docs/agent_notes/) (raw notes),
-[rules/work/asset_audit.md](rules/work/asset_audit.md) (an audit that found real extraction errors).
+[rules/work/asset_audit.md](rules/work/asset_audit.md) (an audit that found real extraction errors),
+[io/bus/README.md](io/bus/README.md) and [io/bus/CPU_BOARD_IO.md](io/bus/CPU_BOARD_IO.md) (every interface
+the CPU board drives, with timing), [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) and
+[rom_data/pro/](rom_data/pro/README.md) (a second model of the same game, ported from the first).
+
+**Keep this file current.** It is the project's memory for the next ROM. Whenever a thread learns
+something that would change how another SAM ROM is taken apart (a new method, a hardware fact, a
+mistake and its fix, a correction to this file), fold it in here in the same session, in the generic
+section it belongs to, with the Tron value as the worked example. Last updated 2026-10-08.
 
 ---
 
@@ -64,6 +72,22 @@ conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
 15. **Hardware labels disagree between sources.** PinMAME, the ROM's own console strings and the
     owner's schematic analysis gave three different left/right and strobe-letter namings for the RGB
     tubes. Report all of them and flag "check on the real machine"; do not silently pick one.
+16. **The decompile is for reading, not for rebuilding.** Ghidra pseudo-C has no real types or struct
+    layouts, many unnamed functions, and data, graphics and sound referenced only by address. It will
+    not compile back into a working ROM. If the owner wants to change game behaviour on the original
+    hardware, the route is binary patching (section 16). Say so plainly when asked; nobody has tried to
+    compile it, so label that answer inferred.
+17. **Hardware facts need more tags.** For bus and board work, tag every number **code** (read from the
+    ROM, with address), **emulator** (patched libpinmame), **hardware** (owner's logic analyzer
+    capture), **scope** (cannot come from ROM or captures; needs an oscilloscope on the machine) or
+    **external** (PinMAME source notes, public pinouts). A board designer needs to know which numbers
+    still have to be measured.
+18. **Verify register addresses from runtime values.** Early IO notes on Tron had the switch strobe and
+    the flash bank-select addresses wrong, and gave the switch matrix 8 columns instead of 4. Read the
+    IO pointer block (section 8) in the emulator after boot and confirm each address against the code
+    that uses it before publishing a register map.
+19. **Model and region checks: document, don't defeat.** ROMs carry hardware/software mismatch and
+    country-lock checks. Note that they exist and where; do not analyse how to bypass them.
 
 ---
 
@@ -76,6 +100,13 @@ conventions), [mpf_package/README.md](mpf_package/README.md) (asset package),
   on C and D outputs"). Such flags point at game-specific hardware you will need to decode.
 - Run an entropy scan in 64 KB windows. Tron: code, strings, tables and DMD graphics up to about
   0x840000, then high-entropy compressed audio up to about 0x1F80000, then a low-entropy tail.
+- Find out which **models** of the game exist (Pro, Premium, LE). On SAM each model is a **separate
+  image**; the LE ROM had no Pro flag, no "PRO" string and no code path for Pro hardware. The game
+  info block names the model (Tron LE `0x36f20`: "TRON L.E.", "TRN", "C2"; Pro: "TRON", "B9"). See
+  section 15.
+- Match vendor downloads to PinMAME sets by SHA1, not by name. Stern's two Tron Pro 1.74 downloads
+  (TRNenglish00 / 02) hold byte-identical binaries (only a README line naming CPU board 520-5246-02
+  differs); that image is PinMAME `trn_17402`, while PinMAME's `trn_174` is a different Pro 1.74.
 
 ## 2. Memory map (SAM, ARM7 / AT91)
 
@@ -85,15 +116,24 @@ Tron 1.74 as used by the emulator and the decompile:
 |---|---|---|
 | `0x00000000-0x00035fff` | OS code | same |
 | `0x00036000-0x000fffff` | RAM; initial values come from the ROM bytes at the same offset | same |
-| `0x01000000-0x010fffff` | game (rules) code | `addr - 0x01000000 + 0x40000` |
+| `0x01000000-0x0107ffff` | game (rules) code, copied at boot to external RAM (EBI CS3) | `addr - 0x01000000 + 0x40000` |
+| `0x01080000-0x0109dfff` | DMD frame pages (30 x 0x1000), then the sound output buffer `0x0109f000` | none |
+| `0x01100000-0x01180000` | switch matrix, dedicated switches/DIPs, DMD page registers, bank read-back + board revision | none |
 | `0x02100000` (+0x20000) | NVRAM (audits, adjustments, per-player arrays) | none |
-| `0x02400000` | IO registers (solenoids, lamps, aux bus, switches) | none |
+| `0x02400020-0x0240002f` | IO power board bus: 16 registers on J1 (solenoids, lamps, aux bus, STATUS) | none |
+| `0x02580000` | flash bank select (write) | none |
 | `0x04000000-0x047fffff` | data: first 8 MB of the file | `addr - 0x04000000` |
 | `0x04800000` window | other 8 MB banks, selected by a bank register (`flash_bank_select`, Tron `0x11e8c`) | bank N = `N * 0x800000` |
 
 How to confirm the code base on another ROM: game-code `BL` targets only resolve to sane function
 prologues with the right base. Data pointers in banked form are `bank << 24 | offset`, so the file
 offset is `(p >> 24) * 0x800000 + (p & 0xffffff)`. That formula decodes both image and sound pointers.
+
+**The OS size, and so the RAM start, differs per ROM.** Tron LE's OS runs to `0x36000`; Tron Pro's ends
+at `0x2fa00`, so its RAM block starts there and every RAM address moves. Read the reset code: it copies
+the OS into the AT91's internal SRAM (Tron LE: copy loop `0x84-0xc4`, remap `0xe0`) and loads the chip
+selects from a table of EBI values (Tron `0x54`, code `0xd4`). Those two give you the real memory map;
+the full chip-select table is in section 8.2.
 
 ---
 
@@ -133,6 +173,11 @@ offset is `(p >> 24) * 0x800000 + (p & 0xffffff)`. That formula decodes both ima
 - Reference harness: `rules/tools/trace/tron_ref.cpp` (scenario language, JSON-lines trace, ball sim)
   and `trace_compare.py`. Asset capture: `mpf_package/tools/tracer.cpp` (forced deffs, play mode),
   `lfx.cpp` (lamp effects), `fmt.cpp` (run adjustment formatters).
+- For bus and board work, `io/bus/tools/pinmame_bus_hook.patch` (a full diff against stock PinMAME,
+  arm-hook hunks included) adds a callback with cycle stamps on every IO board access, the DMD page RAM,
+  the sound buffer and every AT91 on-chip peripheral. `io/bus/tools/bus_trace.cpp` runs it
+  (`BUSCAP_BOOT=1 PINMAME_NOJIT=1 ./bus_trace s_all.txt out.jsonl` logs power-on to 8 s, attract and a
+  game). Emulator timing has no bus wait states, so check µs offsets against a hardware capture.
 
 ### 3.3 Unicorn for small isolated routines
 Running one light-effect function in `unicorn` with hooks on the tube API and on `task_sleep` (advance a
@@ -182,6 +227,10 @@ This took longer than anything else on day one. Checklist:
    PinMAME synthesises (Tron's RGB tubes are 101-106).
 12. **Timing.** One OS tick is about **16.26 ms** in play (measured 16.25-16.30). The ROM itself
    treats 62 ticks as a "second", and some countdowns use 60, 64, 66 or 68. Give specs in ticks and ms.
+   The main loop is paced from the 250 µs IO interrupt (a counter that steps every 64 IO ticks, 16.0 ms
+   nominal; section 8.2); the measured pass interval is a little longer because a pass can overrun.
+13. **PinMAME's "4008 Hz" is the sound FIQ, not the IO tick.** The IO tick is a CPU timer (TC0) at
+   exactly 4000 Hz. Don't take timer rates from PinMAME comments; read the timer setup in the ROM.
 
 ### Forcing the ROM to run something (call injection)
 To start any display effect, lamp effect or formatter on demand, hijack the OS sleep function:
@@ -252,7 +301,7 @@ from.
 
 | Table | Tron address | Record | How to find |
 |---|---|---|---|
-| Switch descriptors | `0x040f3574` | 32 B per switch, index i = switch i+1; `+0` handler fn, `+8` name ptr, `+0x10` flags (bit `0x80` on NC optos?) | Search for pointers to the switch-test name strings ("TROUGH #1"); the stride between them gives the record size. |
+| Switch descriptors | `0x040f3574` | 32 B per switch, index i = switch i+1; `+0` handler fn, `+8` name ptr, `+0x10` flags (bit `0x80` on NC optos?), `+0x1b` / `+0x1c` debounce passes to close / open (section 8.2) | Search for pointers to the switch-test name strings ("TROUGH #1"); the stride between them gives the record size. |
 | Coil names | `0x040e0c00` (24 B) | name | Search for the coil test names. |
 | Coil descriptors | `0x040e0f60` (28 B, indexed by coil number, record 0 = INVALID; pointer at RAM `0x36c48`) | `+0` flags (`0x2` drivable with HV off, `0x4` flasher, `0x400` skipped by the cycling test, `0x800` hidden from test), `+0x10` coil-test ms, `+0x12` ball-search ms, `+0x14`/`+0x16` wire colour msg ids | Indexed by the coil test. Read the flags as a little-endian u32 (an early CSV byte-swapped them and was off by one coil). |
 | Coil rules | flippers `0x040e204c`, bumpers `0x040f0a5c`, slings `0x040f0a8c` | pulse ms, then hold pattern (Tron flippers: 40 ms, then 1 ms on / 11 ms off) | The coil driver ticks every 1 ms and supports a pulse, a 32-bit pattern, or on/off PWM. Decoded in `rom_data/io/`. |
@@ -394,7 +443,8 @@ confusion across threads:
 of pointers in RAM (Tron `0x37280-0x37350`). Search for that block, and every hardware access follows.
 Coils are written as shadow bytes (Tron `0x3b97c[0..4]`) that the IO interrupt copies out; GI relay is
 a bit of the strobe register. Console command strings (Tron has a debug console with named commands)
-are a great shortcut to driver functions.
+are a great shortcut to driver functions. Section 8.2 describes the whole bus and every CPU-board
+interface behind these pointers.
 
 **Coil types:** motors and relays (disc motor, 3-bank motor, shaker, direction relays) are held outputs,
 not pulse coils. Mark them hold/enable in the rebuild config.
@@ -470,6 +520,70 @@ their own times (Tron descriptor `+0x10` / `+0x12`), which differ from what game
 The same applies to other hardware the ROM drives: GI (bit, polarity, power-up state), aux-bus outputs
 (strobe, data bits, refresh rate), and dedicated switches (D1-D24 meanings, which differ from PinMAME's
 labels on Tron).
+
+### 8.2 CPU board interfaces and bus timing
+
+Needed when the owner wants to repair, replace or improve the hardware (Tron: a replacement CPU board
+with finer LED PWM), and useful for any rebuild that drives real boards. Everything below is the ROM's
+software timing; the board itself has no timing of its own. Tron's full result is
+[io/bus/README.md](io/bus/README.md) (power board bus, lamp matrix, PWM proposal) and
+[io/bus/CPU_BOARD_IO.md](io/bus/CPU_BOARD_IO.md) (DMD, audio, switches, RTC, serial), with CSVs beside them.
+
+**Procedure:**
+1. **Chip selects and boot setup.** Log every AT91 on-chip peripheral write from power-on (EBI, AIC,
+   PIO, PS, TC, USART) in the emulator, in order (Tron: `peripheral_init.csv`). The EBI values give each
+   device's bus width and wait states; the AIC values give every interrupt source, priority and handler.
+2. **Interrupts.** Find each timer's clock and RC (rate = MCK / divider / RC) and follow the AIC vector to
+   the handler. Expect one fast IO tick that does all power board traffic, a lamp one-shot, and the
+   sound FIQ. Tasks never touch the IO board: they write RAM shadows and the interrupts copy them out.
+3. **Tick schedule.** The IO tick runs blocks on down-counters (most reload with 4, so 1 ms in four fixed
+   phases). Tabulate phase, block, registers written and order (Tron: `isr_schedule.csv`).
+4. **Bus trace.** Run the bus hook (section 3.2) over attract, a game, a held flipper and each special
+   output, and print per-tick write sequences with µs offsets.
+5. **Hardware cross-check.** If the owner has logic analyzer captures, decode them into bus cycles
+   (`io/bus/tools/la_capture_decode.py` reads PulseView CSV) and line them up with the emulator. Derive
+   the analyzer's sample rate from a known period (Tron: 4 ticks = 20,002 samples, so 20 MS/s), and check
+   the capture came from the ROM you think: Tron LE sends ramp tube writes every tick, the owner's
+   captures had none, so they were most likely taken on Pro code.
+6. **Per interface, write down:** registers and bit layout, who writes or reads them (address), rate, the
+   order of writes, and what a replacement must reproduce. List the items that need a scope.
+
+**What SAM does (Tron LE 1.74, worked example):**
+
+| Interface | Finding | Tag |
+|---|---|---|
+| Chip selects | CS0 `0x04000000` game flash 16-bit, 5 wait states; **CS1 `0x02000000` 8-bit, 4 wait states**: boot flash, NVRAM, IO board, LED, bank select; CS2 `0x03000000` USB; CS3 `0x01000000` external RAM, 16-bit, 1 wait state (game code, DMD pages, switch and DMD registers) | code |
+| IO tick | TC0, MCK/2, RC 5000 = **250.0 µs**, handler `0x12070` (via `0x13624`); `0x11f2c` masks it as a critical section | code + hardware |
+| Lamp matrix | 10 strobe lines x 8 drive lines, **1 ms per line**, 10 ms frame. Phase 3 blanks all lines, then TC1 (`0x11fbc`) writes the next line **20 µs** later (24.35 µs on hardware). Lamp n = line (n-1)/8, drive bit 7-((n-1) mod 8). Max on-time 9.76 %. | code + hardware |
+| Lamp brightness | **2 bit-planes weighted 1:2** (4 levels) over 30 ms; `lamp_on/off` take a plane mask, almost always `0xff`. Compositor `0x7f68` rebuilds the buffer once per OS tick; blink mask toggles every 5 OS ticks. | code |
+| Coils | shadows rewritten every 250 µs, but coil slots and flipper/sling/bumper rules run every **1 ms**, so timing resolution is 1 ms. Slot modes: bit pattern, pulse then hold, timed on, optional zero-cross wait. Interlocks mask the driver bytes. | code + emulator |
+| Coil burst | always SOL_B, SOL_A, SOL_C, FLSH_LMP, AUX_DRV, then reg 0xB strobe low/high; 650 ns between writes on hardware | code + hardware |
+| Aux port / GI | reg 0xB is one latch: bit 0 GI (active low), bits 3-7 five aux strobes, idle high, always written whole from a shadow. Aux boards latch AUX_DRV on their strobe's rising edge. | code + hardware |
+| Ramp tubes (LE only) | 4-bit BCM, one bit-plane per tick, 3.75 ms frame; fades step once per tick | code + emulator |
+| STATUS | read at 1 kHz: bit 2 zero cross, bits 0-1 the 20 V / 50 V interlocks; lamp fault bits 3-4 are never tested | code |
+| Switches | 4 strobes x 16 returns (`0x01100008` / `0x01100000`), one column per 250 µs (every 500 µs on board revision 0, read from bits 4-6 of `0x01180000`), dedicated D1-D24 and DIPs at `0x01100002/4`. Switch number = column x 16 + row + 1; dedicated = 129-160. | code + emulator |
+| Debounce | stage 1 in the IO tick: changed on 2 scans in a row; stage 2 in the main loop (`0xeadc`): per-switch pass counts from the switch descriptor `+0x1b` (close) / `+0x1c` (open). Flipper EOS and slam are 0/0. | code |
+| Fast paths | flipper and sling rules read raw switch state in the IO tick: switch to coil in **11-17 µs** after the read; bumpers 1.3 ms. A replacement needs switch-to-coil within about 1 ms. | emulator |
+| DMD | 30 pages of 128x32 bytes at `0x01080000` (low nibble shade, high nibble mask); fg/bg page registers `0x01100020` / `0x01100022`, flipped once per OS tick, background first, never synced to the scan. The FPGA scans by itself (62.67 Hz, 4 planes weighted 1/2/4/5 per PinMAME). | code + emulator + external |
+| Audio | FIQ about 4 kHz from the FPGA; each writes 6 stereo 16-bit frames to `0x0109f000`: 24 kHz output from an 8-voice mixer that switches flash banks and restores them. Volume is a bit-banged 3-wire link on P3-P5 (words match a TI PCM17xx-class DAC, inferred). | code + emulator |
+| Other | RTC bit-banged on P16-P18 (DS1302-style, inferred); USART1 9600 baud LED sign (BetaBrite); USART0 57600 baud unused (probably the debug console); NVRAM 128 KB; board LEDs `0x02500000` / `0x02F00000`; the AT91 watchdog is never enabled | code + emulator |
+| Bus cycle | IOSTB low about 100 ns; latches clock on the rising edge; about 57,000 accesses per second in a game, under 1 % of the bus | hardware + emulator |
+
+**Gotchas found on Tron:**
+- **16-bit stores on an 8-bit chip select.** The ROM writes two adjacent IO registers (lamp strobe and
+  aux lamp) with one 16-bit store. The EBI splits it into two byte cycles with IOSTB held low across
+  both, so the first latch is clocked by the address change, not by IOSTB rising. It works on the
+  original board; a replacement should issue two clean byte cycles.
+- **PinMAME's IO register notes were wrong in places** (switch strobe, bank select). Confirm each
+  register from the runtime pointer block (ground rule 18).
+- **The IO board watchdog** is said to be fed from the lamp strobe logic: a replacement must keep
+  strobing at least as often as the ROM. The condition and timeout need the schematic and a scope.
+- **The ROM never reads the display side**, so it never waits for a frame. Whether the original page
+  registers latch at frame start or tear needs a scope.
+- **Finer PWM does not need a new bus protocol.** The ROM's coarse brightness comes from its own
+  scheduling, not from bus bandwidth. Edge-sorted PWM inside each lamp slot (write all on, then turn
+  lamps off in order) gives about 10-bit brightness at 400 Hz with at most 9 writes per slot; the
+  1/10 duty ceiling of a 10-line matrix stays unless the power board changes.
 
 ## 9. Rules extraction
 
@@ -563,6 +677,11 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 | Service menu numbers taken as table ids | Audit #1 is not audit 1 | Export menu position and table id |
 | PinMAME labels trusted (tube sides, D22/D23) | Both reversed vs the ROM | Prefer the ROM's own strings and tests |
 | Coil times not extracted until the MPF build asked | Build guessed pulse times for real hardware | Section 8.1 as a required step |
+| `io_registers.csv` switch strobe and bank-select addresses wrong | Caught only when the bus was traced | Confirm registers from the runtime pointer block |
+| Switch matrix first reported as 8 columns | Corrected to 4 from the switch count `0x040d1c38` | Size the matrix from the ROM's own count |
+| PinMAME's 4008 Hz taken as the IO tick | It is the sound FIQ; the IO tick is TC0 at 4000 Hz | Read the timer setup in the ROM |
+| Owner's bus captures assumed to be LE code | No tube writes in them; LE sends them every tick | Check a capture against a model-specific signature |
+| Owner asked whether the pseudo-C recompiles | It does not; mode changes need binary patches | Ground rule 16, section 16 |
 
 ---
 
@@ -580,6 +699,12 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 - Tick 16.26 ms; DMD 128x32, anims 87x32 at x = 41; speech mostly 12 kHz, sfx/music 24 kHz.
 - RNG: LCG at RAM `0x372c4`, `random_below 0xc6b4`. Fonts: RAM `0x36f48` (44). Coil descriptors `0x040e0f60`;
   coil IRQ `0x12070` (1 ms); shaker table `0x040d3998`; slam halt loop `0x10ce8`. Machine-readable data: `rom_data/`.
+- Hardware: IO tick TC0 250 µs (`0x13624` → `0x12070`), lamp one-shot TC1 (`0x11fbc`), sound FIQ
+  (`0x2b600` → `0x2d8b4`), IO bus `0x02400020-2f`, switch return/strobe `0x01100000`/`0x01100008`,
+  DMD pages `0x01080000`, page registers `0x01100020/22`, sound buffer `0x0109f000`, bank select
+  `0x02580000`, board revision bits 4-6 of `0x01180000`. Details: `io/bus/`.
+- Pro 1.74 (`trn_17402`): OS ends `0x2fa00`, coil descriptors at file `0xc6254`, shaker table `0x040bc8e0`,
+  LE → Pro function map `rom_data/pro/le_to_pro_functions.csv`. Differences: `docs/PRO_VS_LE.md`.
 
 ## 13. Suggested order for a new SAM ROM
 
@@ -600,6 +725,8 @@ video mode, is a **mystery award**. Ask the owner when the domain knowledge is t
 10. Build the trace recorder, then write rules specs mode by mode, anchored on audit counters.
 11. Package; run the duplicate-key, reference and count checks; ship; then audit the package against
     the ROM with fresh eyes (on Tron that audit found 8 real errors).
+12. If the owner works on hardware: CPU board interfaces and bus timing (section 8.2).
+13. If other models of the game exist: port the pipeline to each image (section 15).
 
 ---
 
@@ -642,6 +769,11 @@ every row the ROM address it came from and an observed/code/inferred tag.
 9. **Captures:** per deff, the arguments and RNG that produced it, one run only, and the status-panel
    region, so a rebuild can compare the rest dot by dot.
 10. **Valid MPF YAML** (headers, unique keys) and a CI check that loads it with `mpf`.
+11. **Board interfaces** (when hardware work is in scope): register map, interrupt schedule, lamp
+    matrix map, switch scan and debounce counts, DMD and audio paths, peripheral boot setup, each
+    number tagged code / emulator / hardware / scope / external (section 8.2).
+12. **Model differences**: switch, coil and lamp maps side by side, per-model coil timing, and a
+    function address map between the images (section 15).
 
 **Status on Tron:** every item in the MPF build's "missing data" list was then extracted from the ROM
 into [rom_data/](rom_data/README.md) (commit 69fba72): fonts, deff text layout and screens, decoded
@@ -651,3 +783,58 @@ traces for multi-player, tilt and slam, match and Sea of Simulation stages 4-8. 
 maps each gap to its file and lists what is still open (for example lamp group names are inferred, the
 tube sides are still worth one look on the real machine, and CUSTOM pricing was not captured). Where
 `rom_data/` contradicts an older file, `rom_data/` wins.
+
+---
+
+## 15. Other models of the same game (Pro / Premium / LE)
+
+Each model runs its own ROM image, built from the same source with different hardware tables and some
+different rules. Once one model is done, the second is mostly a port. How Tron Pro 1.74 was done from
+the LE in one session ([rules/tools/ghidra/pro/README.md](rules/tools/ghidra/pro/README.md),
+[rom_data/pro/](rom_data/pro/README.md), [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md)):
+
+1. **Name tables first.** Both images use the same record formats (Tron: 24-byte name records, five
+   language pointers then a zero word, entry 0 "INVALID"). Find the coil, lamp and switch name tables
+   and descriptors in the new image and compare **by number**: that gives the IO map at once
+   (`io/pro_vs_le_io_map.csv`). Expect switches mostly equal, several coils reassigned, and the lamp
+   matrix renumbered almost completely.
+2. **Port the function names.** Match functions by masked byte signatures (BL offsets and pc-relative
+   load offsets masked), then propagate through pairs of BL targets, then add unique 20-byte
+   signatures, and repeat until nothing is added (`fmatch.py`, `fprop.py`, `fextra.py`). Tron: 2,420 of
+   3,938 LE seeds matched. RAM names come from literal pools at equal positions in matched functions.
+3. **Re-run the decompile** with the new memory map (the OS size, and so the RAM base, moves; section 2)
+   and the ported seeds, signatures and RAM symbols.
+4. **Port the harness, not the scenarios.** Replace every address in the trace harness with its mapped
+   address (`pro_hw_trace.cpp` from `hw_trace.cpp`) and run the same scenarios as the other PinMAME set.
+5. **Pair call sites.** For coil timing, pair each call with the call at the same position in the
+   matched function (`coil_calls_le_vs_pro.csv`: 105 of 198 paired). A matched name means the same code
+   shape, not equal constants; leave pairings with unequal call counts unpaired.
+6. **Check the owner's hypothesis directly.** On Tron it was "timings are the same, only the outputs
+   move": confirmed by pairing and by a 1 ms emulator measurement on every Pro flasher.
+
+What the Tron comparison found, as a hint for other games:
+- The LE built all LE-only hardware unconditionally (no "is it fitted" check). "Disable" operator
+  adjustments for broken mechs (Tron 76, 77, 80, 81, 86) are workarounds, not a hidden Pro mode.
+- Outputs the cheaper model lacks are often reused as flashers there (Tron Pro 19/22/23/25), driven in
+  the same effects with the same timing.
+- A whole subsystem can be missing from one image (Tron Pro has no ramp tube driver, test or console
+  commands), which is also a quick way to tell which model a capture came from.
+- Hardware/software mismatch and country checks exist; document them only (ground rule 19).
+
+## 16. Changing game behaviour: patch the binary
+
+The decompile cannot be rebuilt (ground rule 16), so a behaviour change on the original hardware is a
+binary patch:
+
+1. Find the routine and its constants in the decompile (timers, targets, scores, which shots count),
+   and confirm them in the disassembly; the decompile can hide or reorder code.
+2. Change the ARM instructions or data in the image. Constants often sit in literal pools or data
+   tables shared with other code: check every reader before changing a shared value.
+3. Find whether the ROM verifies its own image (a checksum at boot or in diagnostics) and update it.
+   This was not explored on Tron.
+4. Prove the change in PinMAME with a reference trace before and after (section 9) before anyone flashes
+   a machine.
+
+Small changes (targets, timers, scoring, which shots count) fit this well. A new mode does not: it needs
+free space, new display and sound effects wired into the existing tables, and is effectively a new
+program. For that, a rebuild in MPF on the extracted assets and specs is the realistic route.
