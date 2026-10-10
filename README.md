@@ -40,7 +40,7 @@ media and names (it was corrected after the specs were written, see "Known gaps"
 | [code/](code/) | Ghidra pseudo-C of the whole game: `tron_game_decompiled_v2.c` is the annotated one to use (named functions and RAM variables, decoded sound/message/lamp/deff comments); `tron_game_decompiled.c` is the older first pass and mislabels some functions |
 | [rom_data/](rom_data/README.md) | Machine-readable ROM data added 2026-10-04: fonts, deff text layout and screens, decoded coils, lamp groups, code-drawn lamp effects, RNG, pricing, service texts, audit formulas, hardware facts, OS model and late-state traces. Wins over older files where they disagree |
 | [io/bus/](io/bus/) | CPU board interfaces for designing a replacement CPU board: IO power board bus timing, lamp matrix and LED PWM proposal ([README](io/bus/README.md)), and every other CPU-driven IO: DMD, audio, DAC volume, switches, RTC, serial ports, chip selects ([CPU_BOARD_IO.md](io/bus/CPU_BOARD_IO.md)) |
-| [AGENTS.md](AGENTS.md) | Reusable guide for agents reverse engineering any Stern SAM ROM: methods, tools, table layouts, and the mistakes made on this one (Tron values as worked examples) |
+| [AGENTS.md](AGENTS.md) | Tron's part of agent A: status and the Tron address card. The reusable guide for reverse engineering any Stern SAM ROM (methods, tools, table layouts, mistakes) moved to [Stern-SAM-Decryption `agents/rom_extraction.md`](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/agents/rom_extraction.md) |
 | [docs/agent_notes/](docs/agent_notes/) | Condensed notes the agents kept while working: ROM format (memory map, image and sound formats), DMD capture method, IO and lighting, lamp effects/shaker/service capture, rules extraction |
 | [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) | Tron Pro 1.74 vs LE 1.74: switch, coil, lamp and aux differences, rule and adjustment differences, Pro table addresses (`io/pro_vs_le_io_map.csv`, `io/le_vs_pro_io.csv`) |
 | [rom_data/pro/](rom_data/pro/README.md) | Tron Pro 1.74 coil data (descriptors, every coil call, LE pairing, emulator on-times) and the Pro decompile `code/tron_pro_decompiled.c` |
@@ -91,7 +91,7 @@ Read `tron/X` as `X` from the repo root. Two moves were made when assembling the
   the font table (RAM 0x36f48), per-deff text layout and argument sources, per-deff screen selection,
   decoded coil pulse/hold times (coil table 0xe0c00), named lamp groups (0x040e3acc), pricing tables other
   than USA 10, a few service texts and audit formulas, and multi-player / rare-state traces.
-  See section 14 of [AGENTS.md](AGENTS.md).
+  See section 14 of [agent A](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/agents/rom_extraction.md) in Stern-SAM-Decryption.
 - Display effects not captured: 27 (instant info, needs flipper buttons held) and 45 (no caller in
   v1.74). 24 library animations are never referenced by v1.74 code (likely unused).
 - Lamp effects: 34 are empty in v1.74 and 7 draw from live mode state, so they are not shows; your
