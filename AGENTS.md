@@ -18,6 +18,14 @@ file points to: [rules/developer_guide.md](rules/developer_guide.md), [mpf_packa
 [docs/PRO_VS_LE.md](docs/PRO_VS_LE.md) and [rom_data/pro/](rom_data/pro/README.md); the raw notes the Tron
 threads kept are in [docs/agent_notes/](docs/agent_notes/).
 
+**Generic copies live in Stern-SAM-Decryption.** The tools (`rules/tools/`, `rom_data/tools/`,
+`mpf_package/tools/`, `io/bus/tools/`) are copied in its [`tools/rom/`](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/tools/rom/README.md), the SAM
+board docs (`io/bus/*.md` and CSVs) in [`knowledge/sam_hardware/`](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/knowledge/sam_hardware/README.md),
+`rules/work/os_api.json` as [`knowledge/sam_os_api.json`](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/knowledge/sam_os_api.json), and the rules spec
+template and worker brief in [`knowledge/templates/`](https://github.com/Ashram56/Stern-SAM-Decryption/blob/main/knowledge/templates). Improve them there. The
+copies here are the versions that produced this repository's data and stay as that record (the Tron game repo
+also reads `rules/tools/trace/` through its submodule).
+
 ## Status
 
 Done for LE 1.74 and ported to Pro 1.74. The game repo [Tron-Legacy-MPF](https://github.com/Ashram56/Tron-Legacy-MPF)
