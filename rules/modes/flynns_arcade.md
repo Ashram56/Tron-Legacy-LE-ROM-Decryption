@@ -46,7 +46,7 @@ The table function pointers are the real entry points. The decompile's `// ====`
 | 3 | ADV. CLU | 25 | FUN_01001c98: not all items lit, not all collected, no MB, no SOS-ready, no SOS, no portal-ready, no portal | One CLU step [0x01016d14(1)]. Observed 50,000 | 0x55 |
 | 4 | ADV. ZUSE | 25 | FUN_01031804 | Zuse advance [0x010339fc(1)] | 0x56 |
 | 5 | ADV. QUORRA | 25 | Quorra counter 0x021117ac < 5 etc. [0x0101f384] | 10,000 and one Quorra lock-light step. At 5 it lights Quorra at the VUK (FUN_0102e8c0(2)) [0x0101f410(4,1)] (verified 10,000) | 0x57 |
-| 6 | ADV. DISC | 25 | FUN_01020b4c, and not FUN_0102ec38(6), and not all items lit or collected | Disc advance [0x01020da8(2,1)]. Weight was 0 at game start in the trace | 0x58 |
+| 6 | ADV. DISC | 25 | FUN_01020b4c, and not FUN_0102ec38(6), and not all items lit or collected | Disc advance [0x01020da8(2,1)]. Weight is 0 at game start because the Disc Battle is not lit (`dbattle_can_progress`) | 0x58 |
 | 7 | ADV. LIGHT CYCLE | 25 | FUN_0101b0dc | Collects the first lit Light Cycle target (masks table 0x040d2978) via light_cycle_target(mask,1) [0x0100e184] | 0x59 |
 | 8 | ADV. RECOGNIZER | 100 | FUN_0101ffd8, same item/SOS exclusions | Recognizer advance [0x010201e4(0x32,0x36,1)] (verified: 2,500 and REC item lit, audit 0x76) | 0x5a |
 | 9 | ADV. SEA OF SIMUL. | 101 + 1000 while SOS runs (flag 0x34), else 0 | SOS running | Spots the current SOS stage's shot quietly [0x010266c0]. Always chosen during SOS because the weight is > 1000 | 0x5b |
@@ -59,22 +59,24 @@ The table function pointers are the real entry points. The decompile's `// ====`
 - The weight is kept if r == adj, or r + margin < adj (EB: adj 27, margin 3; SPECIAL: adj 24, margin 2). Otherwise it is 0.
 - On a fresh machine both kept weight 1 (observed).
 
-**Observed default bag at game start (verified in emulator: traces/flynns_arcade.jsonl):**
+**Default bag at game start** (weights from the weight functions [0x0100df98..0x0100e354]; 500K and RECOGNIZER 100, the other advances 25 as the table shows; a fresh machine gave EB and SPECIAL weight 1, observed). The corrected totals are below (an earlier version of this page said 352 / 452: that was a sum slip, it counted 25 more than the table):
 
 | Weight | Award(s) | Chance each |
 |---|---|---|
-| 100 | 500K, ADV. RECOGNIZER | 28.4% |
-| 25 | GEM, CLU, ZUSE, QUORRA, LIGHT CYCLE | 7.1% |
+| 100 | 500K, ADV. RECOGNIZER | 30.6% (100/327) |
+| 25 | GEM, CLU, ZUSE, QUORRA, LIGHT CYCLE | 7.6% (25/327) |
 | 0 | DISC, SOS, MORE TIME | 0% |
-| 1 | EB, SPECIAL | 0.28% |
+| 1 | EB, SPECIAL | 0.31% (1/327) |
 
-The total is 352. While a TRON award runs, MORE TIME = 100 and the total is 452:
+The total is **327** (100 + 100 + 5 x 25 + 1 + 1). While a TRON award runs, MORE TIME = 100 and the total is **427**:
 
 | Weight | Award(s) | Chance each |
 |---|---|---|
-| 100 | 500K, REC, MORE TIME | 22.1% |
-| 25 | the five advances | 5.5% |
-| 1 | EB, SPECIAL | 0.22% |
+| 100 | 500K, REC, MORE TIME | 23.4% (100/427) |
+| 25 | the five advances | 5.9% (25/427) |
+| 1 | EB, SPECIAL | 0.23% (1/427) |
+
+ADV. DISC is 0 at game start, **by the code**: its weight function [0x0100e0dc] returns 0 unless `dbattle_can_progress` [0x01020b4c] is true, and that needs the Disc Battle lit (game flag 0x22, `dbattle_is_lit`), no multiball and no SOS/Portal. It is lit only after the Disc Battle is earned (recognizer_and_disc_battle.md), so DISC (and any award whose condition fails) stays out of the bag until then. It also returns 0 when a lit VUK item test (6) passes or all items are lit or collected.
 
 ## 5. Behaviour while running
 | Trigger | Condition | Effect | Display | Sound | Lamp | Next state |
@@ -142,4 +144,4 @@ Messages 0x593 "SHOOT FLYNN'S ARCADE" and 0x61a "FLYNN'S ARCADE IS LIT" exist, b
 ## 11. Open questions
 - Exact semantics of FUN_00001bc4(0x10,0xc0) (the EB/special percentage source). Inferred, not run with a non-fresh audit set.
 - Whether the msgs 0x593 / 0x61a are used indirectly (no pointer found).
-- Why ADV. DISC had weight 0 at game start (FUN_0102ec38(6) or FUN_01020b4c). Not traced further.
+- (Closed) Why ADV. DISC has weight 0 at game start: `dbattle_can_progress` [0x01020b4c] needs the Disc Battle lit (flag 0x22); see section 4.

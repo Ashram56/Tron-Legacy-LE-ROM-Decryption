@@ -60,8 +60,8 @@ player changes (inferred from the save/restore code; not tested with 2 players).
 
 ### 2.4 Playfield validation
 A new ball counts as "in play" after **1 force switch** (11, 12, 14, 24, 25, 28, 29, 34, 37, 39, 43, 46)
-or **3 different counting switches** (7, 8, 13, 35, 36, 38, 41, 44, 48-51, bumpers). Slings and TRON
-targets do not count. Ball save, skill-shot expiry and timer pauses depend on this
+or **3 different counting switches** (7, 8, 13, 35, 36, 38, 41, 44, 48-51, bumpers, slings 26/27, TRON
+targets 1-4: their handlers post event 0x6b themselves). Ball save, skill-shot expiry and timer pauses depend on this
 ([game_flow.md](modes/game_flow.md)).
 
 ### 2.5 OS events used by the rules
