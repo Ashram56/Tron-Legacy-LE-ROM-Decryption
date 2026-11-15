@@ -132,8 +132,12 @@ The ball is "in play" (ball save starts counting, drains count) only after:
   37 L. ramp exit, 39 R. inner loop, 43 left orbit, 46 right orbit (switch descriptor flag 0x2000 → event 0x6c); or
 - hits on **3 different** "valid" switches: 7, 8, 13, 48 (ZUSE), 35 L. ramp entrance, 36 R. orbit spinner,
   38 R. ramp entrance, 41 disc opto, 44 left spinner, 49-51 Recognizer 3-bank (descriptor flag 0x1000 →
-  event 0x6b), plus the pop bumpers 30-32 whose handlers post 0x6b themselves. Slingshots and the TRON
-  targets do not count. [table 0x040f3574 word +0xc]
+  event 0x6b), plus the pop bumpers 30-32, the slingshots 26/27 and the TRON targets 1-4, whose handlers
+  post 0x6b themselves [0x0102a434, 0x0102a590, 0x0102a600, 0x0100b050; the TRON target only while
+  `gf_state & 0x312` is 0, the slings only when the OS sling object reports a real fire]. The 0x6b hook
+  [0x0000ee48 -> 0x00010c70] counts any 3 different arguments, whatever posted them: they all count.
+  (verified in emulator: traces/switches_and_shots.jsonl, slings 26, 27 then bumper 30 = 3 different
+  switches, game flag 28 (0x1c, set by event 0x6a) set right after the bumper.) [table 0x040f3574 word +0xe]
 - When it becomes valid: event 0x6a. A drain **before** the playfield is valid is not a lost ball: the ball
   is re-served (type 7), same ball number, no bonus. (verified in emulator: run "a", sling hits only, drains re-served)
 
