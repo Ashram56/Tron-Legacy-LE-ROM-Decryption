@@ -23,9 +23,18 @@ def build():
     mu.mem_map(0x01000000, 0x00200000)             # game code + DMD pages + IO window
     mu.mem_write(0x01000000, ROM[0x40000:0x40000 + 0x80000])
     mu.mem_map(0x02000000, 0x00800000)             # NVRAM + IO (zero)
-    sz = (len(ROM) + 0xfff) & ~0xfff
-    mu.mem_map(0x04000000, sz)                     # data window: linear file offset (banked pointers 0x04nnnnnn)
-    mu.mem_write(0x04000000, ROM)
+    mu.mem_map(0x04000000, 0x800000)               # data: first 8 MB of the file (fixed)
+    mu.mem_write(0x04000000, ROM[:0x800000])
+    mu.mem_map(0x04800000, 0x800000)               # banked window: 8 MB, bank N = file[N*8MB:] (image table: bank 0 or 1)
+    mu.mem_write(0x04800000, ROM[:0x800000])
+
+    def bank_select(mu, access, address, size, value, ud):    # flash_bank_select 0x11e8c writes 0x02580000
+        n = value & 0xff
+        chunk = ROM[n * 0x800000:(n + 1) * 0x800000]
+        mu.mem_write(0x04800000, chunk + b"\xff" * (0x800000 - len(chunk)))
+        mu.mem_write(0x01180000, struct.pack("<H", (n & 0xf) | 0x10))   # read-back: bits 0-3 bank, 4-6 board revision
+    mu.hook_add(UC_HOOK_MEM_WRITE, bank_select, begin=0x02580000, end=0x02580003)
+    mu.mem_write(0x01180000, struct.pack("<H", 0x10))
     return mu
 
 

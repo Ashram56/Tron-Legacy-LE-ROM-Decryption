@@ -18,7 +18,7 @@ for k in (0x2b194, 0x2b2a0, 0x28ca8, 0x28d5c, 0x28e48, 0xa58c):   # real OS rout
     D.NAMES.pop(k, None)
 
 
-def frames(deff, max_ticks=400, rng=None, args=None, init=()):
+def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,)):
     snaps, orig = [], D.build
 
     def build():
