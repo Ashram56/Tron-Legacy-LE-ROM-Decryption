@@ -32,7 +32,7 @@ def build():
 TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's arguments
 
 
-def run(deff, max_insns=200000, args=None, ram=None):
+def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=()):
     mu = build()
     tab = 0x040e1350 + 8 * deff
     fn, flags, prio = struct.unpack_from("<IHB", ROM, tab - 0x04000000)
@@ -43,7 +43,11 @@ def run(deff, max_insns=200000, args=None, ram=None):
         return [struct.unpack("<I", mu.mem_read(sp + 4 * i, 4))[0] for i in range(n)]
 
     def hook(mu, addr, size, ud):
-        if addr in NAMES:
+        if addr == 0xc6b4 and rng is not None:       # random_below(n) (0xc6b4): forced pick, capped to n-1
+            n = mu.reg_read(UC_ARM_REG_R0)
+            mu.reg_write(UC_ARM_REG_R0, min(rng, max(n - 1, 0)))
+            mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
+        elif addr in NAMES:
             r = [mu.reg_read(x) for x in (UC_ARM_REG_R0, UC_ARM_REG_R1, UC_ARM_REG_R2, UC_ARM_REG_R3)]
             log.append((state["tick"], NAMES[addr], r, stack(mu, 4), mu.reg_read(UC_ARM_REG_LR)))
             if NAMES[addr] == "task_sleep":
@@ -74,6 +78,10 @@ def run(deff, max_insns=200000, args=None, ram=None):
     mu.reg_write(UC_ARM_REG_SP, 0x03008000)
     mu.reg_write(UC_ARM_REG_LR, SENT)
     try:
+        for i in init:               # boot initialisers the effect relies on, run as the OS does at startup
+            mu.reg_write(UC_ARM_REG_LR, SENT)
+            mu.emu_start(i, SENT, count=100000)
+        mu.reg_write(UC_ARM_REG_LR, SENT)
         mu.emu_start(fn, SENT, count=max_insns)
     except UcError as e:
         log.append((state["tick"], "UC_ERROR %s" % e, [], [], mu.reg_read(UC_ARM_REG_PC)))
