@@ -56,7 +56,8 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
     def hook(mu, addr, size, ud):
         if addr == 0xc6b4 and rng is not None:       # random_below(n) (0xc6b4): forced pick, capped to n-1
             n = mu.reg_read(UC_ARM_REG_R0)
-            mu.reg_write(UC_ARM_REG_R0, min(rng, max(n - 1, 0)))
+            v = rng(n) if callable(rng) else rng      # an int, or a callable(n) giving the pick (an LCG sweep)
+            mu.reg_write(UC_ARM_REG_R0, min(v, max(n - 1, 0)))
             mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
         elif addr in NAMES:
             r = [mu.reg_read(x) for x in (UC_ARM_REG_R0, UC_ARM_REG_R1, UC_ARM_REG_R2, UC_ARM_REG_R3)]
