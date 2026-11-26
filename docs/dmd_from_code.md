@@ -30,5 +30,6 @@ Open points, each with its reason:
 | Attract pages 11-12 (0x2f120, 0x2f260) | code: tournament pages (PRIZE POOL), gated by `tournament_get_type() == 4` (0x2f0e8): never shown in normal play | nothing to render without a tournament |
 | Effects 16, 112 and the entry screens 32, 36 | read their arguments (task block +0x30..+0x44, a pointer to a record) | the callers' argument layout, per effect |
 | Status panel, columns 0-40 | drawn by `deff_draw_status_panel` 0x10230ec from live game state (score, ball, credits) | game state model, per scenario |
-| Clip effects with a random pick | the reference holds one pick | compare every variant (0-11) |
+| Clip effects with a random pick | variants 0-11 searched (2026-11-26, columns 41-127): 48 = 66/66 frames with variant 9, 49 = 79/79 with variant 10, 68 = 100/100 with variant 1, 119 = 47/47 with variant 1, 111 = 52/95 with variant 7 (rest not matched), 115 = 0/164 in every variant | 111 (remaining 43 frames) and 115: the clip index is not the only random draw; trace the other `random_below` calls in the effect |
+| Effects 9, 14, 25, 33, 96, 105, 138 | argument 0-5 searched: 0 exact frames, so the missing input is game state, not the argument | model the state they read (score, item counts, combo count) |
 | Display timing | the flip ticks come from `task_sleep` arguments, not yet checked against the references' frame periods | compare per effect |
