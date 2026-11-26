@@ -18,7 +18,7 @@ for k in (0x2b194, 0x2b2a0, 0x28ca8, 0x28d5c, 0x28e48, 0xa58c):   # real OS rout
     D.NAMES.pop(k, None)
 
 
-def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=()):
+def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=(), snap_sleep=False):
     snaps, orig = [], D.build
 
     def build():
@@ -41,6 +41,15 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
             mu.reg_write(UC_ARM_REG_PC, 0x279e8)
         mu.hook_add(UC_HOOK_CODE, flip, begin=0x27a70, end=0x27a70)
 
+        if snap_sleep:                  # an attract page child draws into the pages its parent allocated, then sleeps: that is its picture
+            def slp(mu, a, s, u):
+                r0 = struct.unpack("<I", bytes(mu.mem_read(0x3d530, 4)))[0]
+                r1 = struct.unpack("<I", bytes(mu.mem_read(0x3d52c, 4)))[0]
+                if r0 < 16 and r1 < 16:
+                    snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
+                                  bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
+            mu.hook_add(UC_HOOK_CODE, slp, begin=0xb91c, end=0xb91c)
+
         def fade_end(mu, a, s, u):          # FUN_00028788(n, c): end-of-effect fade, nothing to draw
             mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
         mu.hook_add(UC_HOOK_CODE, fade_end, begin=0x28788, end=0x28788)
@@ -50,7 +59,7 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
         fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram, counters=counters)
     finally:
         D.build = orig
-    ticks = [t for t, n, *_ in log if n == "dmd_show_pages"]
+    ticks = [t for t, n, *_ in log if n == "dmd_show_pages" or (snap_sleep and n == "task_sleep")]
     return snaps, ticks
 
 

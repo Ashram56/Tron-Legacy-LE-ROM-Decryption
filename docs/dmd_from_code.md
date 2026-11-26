@@ -65,3 +65,15 @@ entry screen with real arguments (record at +0x38, 3 initials, texts 0x34a/0x34b
 Effect 111 (`deff_111_more_to_start` 0x01021bac): **exact, 95 of 95 reference frames**, with the single `random_below(11)` draw = 7 (clip bitmap
 `(&PTR_FUN_040d337c)[7]`) and the task block word +0x30 = 6 (the "%d" number of shots still needed, msg 0x56d, drawn at x 0x54, y 0xc, colour
 alternating each frame; the reference is a forced run, its number is 6). The earlier 52/95 came from an argument of 0.
+
+## Attract pages, from the code (2026-11-26, `tools/gen_code_dmd.py`, effect 1)
+
+`deff_001_attract_pages` (0x01034364) walks `attr_page_table` (RAM 0x36e10, initialised from the ROM image: 8-byte pairs of a "shown" predicate and a
+page routine, 31 pages, ends with a null routine) and spawns each page routine as a child task, waiting for it. A page draws into the two pages its
+parent allocated and sleeps (`deff_frame_sleep`/`task_sleep`): the generator runs each page routine alone and takes its picture at each sleep or
+flip (`deff_frames.frames(..., snap_sleep=True)`), with the high score table reset (`0x1a9f4(2)`) and the replay levels set (`0x22c08`, game start).
+Pages that give frames in the factory state: 0 (first pass, GAME OVER, 0x010008a8), 1 (credits 0x01000128), 2 (replay level 1, 0x01000878 via
+`FUN_00022b38`/`FUN_00022a90`), 7-10 (high score pages, 0x0100072c-0x01000750), 13 (0x2efe8), 27 (logo scroll 0x010001f0, 158 flips), 28
+(animation 0x0100026c, 69 flips), 29 (stern URL 0x01000468), 30 (0x32d04). Pages with no frame are not drawn in that state: 3-5 (replay levels 2-4:
+`FUN_00022a90` returns 0 unless the replay type defines them), 6 (high score slot empty), 11-12 and 14-26 (tournament pages: `tournament_get()` is null,
+0x2f0e8/0x2ee78), 31 (clock page 0x01000308, needs a time set).
