@@ -1,0 +1,253 @@
+{
+ "deff": 5,
+ "tick_ms": 16.0,
+ "source": "ROM code run (Unicorn), tools/gen_code_dmd.py",
+ "frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 0.0,
+   "duration_ms": 80.0,
+   "tick": 0
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 80.0,
+   "duration_ms": 80.0,
+   "tick": 5
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 160.0,
+   "duration_ms": 80.0,
+   "tick": 10
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 240.0,
+   "duration_ms": 80.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 320.0,
+   "duration_ms": 80.0,
+   "tick": 20
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 400.0,
+   "duration_ms": 80.0,
+   "tick": 25
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 480.0,
+   "duration_ms": 80.0,
+   "tick": 30
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 560.0,
+   "duration_ms": 80.0,
+   "tick": 35
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 640.0,
+   "duration_ms": 80.0,
+   "tick": 40
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 720.0,
+   "duration_ms": 80.0,
+   "tick": 45
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 800.0,
+   "duration_ms": 80.0,
+   "tick": 50
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 880.0,
+   "duration_ms": 80.0,
+   "tick": 55
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 960.0,
+   "duration_ms": 80.0,
+   "tick": 60
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 1040.0,
+   "duration_ms": 80.0,
+   "tick": 65
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 1120.0,
+   "duration_ms": 80.0,
+   "tick": 70
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 1200.0,
+   "duration_ms": 80.0,
+   "tick": 75
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 1280.0,
+   "duration_ms": 80.0,
+   "tick": 80
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 1360.0,
+   "duration_ms": 80.0,
+   "tick": 85
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 1440.0,
+   "duration_ms": 80.0,
+   "tick": 90
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 1520.0,
+   "duration_ms": 96.0,
+   "tick": 95
+  },
+  {
+   "file": "frames/020.png",
+   "t_ms": 1616.0,
+   "duration_ms": 96.0,
+   "tick": 101
+  },
+  {
+   "file": "frames/021.png",
+   "t_ms": 1712.0,
+   "duration_ms": 96.0,
+   "tick": 107
+  },
+  {
+   "file": "frames/022.png",
+   "t_ms": 1808.0,
+   "duration_ms": 96.0,
+   "tick": 113
+  },
+  {
+   "file": "frames/023.png",
+   "t_ms": 1904.0,
+   "duration_ms": 96.0,
+   "tick": 119
+  },
+  {
+   "file": "frames/024.png",
+   "t_ms": 2000.0,
+   "duration_ms": 96.0,
+   "tick": 125
+  },
+  {
+   "file": "frames/025.png",
+   "t_ms": 2096.0,
+   "duration_ms": 96.0,
+   "tick": 131
+  },
+  {
+   "file": "frames/026.png",
+   "t_ms": 2192.0,
+   "duration_ms": 96.0,
+   "tick": 137
+  },
+  {
+   "file": "frames/027.png",
+   "t_ms": 2288.0,
+   "duration_ms": 96.0,
+   "tick": 143
+  },
+  {
+   "file": "frames/028.png",
+   "t_ms": 2384.0,
+   "duration_ms": 96.0,
+   "tick": 149
+  },
+  {
+   "file": "frames/029.png",
+   "t_ms": 2480.0,
+   "duration_ms": 96.0,
+   "tick": 155
+  },
+  {
+   "file": "frames/030.png",
+   "t_ms": 2576.0,
+   "duration_ms": 96.0,
+   "tick": 161
+  },
+  {
+   "file": "frames/031.png",
+   "t_ms": 2672.0,
+   "duration_ms": 96.0,
+   "tick": 167
+  },
+  {
+   "file": "frames/032.png",
+   "t_ms": 2768.0,
+   "duration_ms": 96.0,
+   "tick": 173
+  },
+  {
+   "file": "frames/033.png",
+   "t_ms": 2864.0,
+   "duration_ms": 96.0,
+   "tick": 179
+  },
+  {
+   "file": "frames/034.png",
+   "t_ms": 2960.0,
+   "duration_ms": 96.0,
+   "tick": 185
+  },
+  {
+   "file": "frames/035.png",
+   "t_ms": 3056.0,
+   "duration_ms": 96.0,
+   "tick": 191
+  },
+  {
+   "file": "frames/036.png",
+   "t_ms": 3152.0,
+   "duration_ms": 96.0,
+   "tick": 197
+  },
+  {
+   "file": "frames/037.png",
+   "t_ms": 3248.0,
+   "duration_ms": 96.0,
+   "tick": 203
+  },
+  {
+   "file": "frames/038.png",
+   "t_ms": 3344.0,
+   "duration_ms": 96.0,
+   "tick": 209
+  },
+  {
+   "file": "frames/039.png",
+   "t_ms": 3440.0,
+   "duration_ms": 96.0,
+   "tick": 215
+  },
+  {
+   "file": "frames/040.png",
+   "t_ms": 3536.0,
+   "duration_ms": 16.0,
+   "tick": 221
+  }
+ ]
+}

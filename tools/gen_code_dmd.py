@@ -17,30 +17,81 @@ import deff_frames as F
 import deff_state as S
 
 TICK_MS = 16.0
+MAX_PER_TICK = 200      # flips kept per OS tick (an unsleeping redraw loop gives 10^5)
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 MEDIA = os.path.join(ROOT, "mpf_package", "media", "dmd")
 # effect -> dict(args, ram, rng): the neutral state the effect needs (read from the effect's code, docs/dmd_from_code.md)
-RECIPES = {
-    9: dict(ram=lambda: {**S.game(), **S.error_log(10)}),                 # error summary counts ten type-2 records
-    14: dict(args=[0], ram=S.game),
-    111: dict(args=[6], rng=7),                                              # clip variant 7, "6 more to start"
-}
+from dmd_recipes import RECIPES, REASONS
 MAX_INSNS = 6000000
 
 
-def recipe(e):
-    r = dict(RECIPES.get(e, {}))
+def recipe(e, r=None):
+    r = dict(RECIPES.get(e, {})) if r is None else dict(r)
     ram = r.get("ram", S.game)
-    return dict(args=r.get("args", [0, 0, 0, 0]), ram=ram() if callable(ram) else ram, rng=r.get("rng"))
+    return dict(args=r.get("args", [0, 0, 0, 0]), ram=ram() if callable(ram) else ram, rng=r.get("rng"), init=r.get("init", S.INIT),
+                counters=r.get("counters", ()), max_insns=r.get("max_insns", MAX_INSNS), fn_addr=r.get("fn_addr"),
+                extra_runs=r.get("extra_runs", ()), runs=r.get("runs", ()),
+                real_show_pages=r.get("real_show_pages", False) or r.get("needs_show_pages_state", False),
+                prev=r.get("prev"), first_frame_prev=r.get("first_frame_prev"))
+
+
+def seed_previous_screen(ram, fg, bg, p0=20, p1=21):
+    """Put a previous screen (two 0x1000-byte DMD pages) in RAM dict `ram` and point 0x3d528 / 0x3d524 at it (the dissolve transitions
+    FUN_00027acc -> 0x0102b744 copy the pages shown before the effect)."""
+    import struct
+    for i in range(0, 0x1000, 4):
+        ram[0x01080000 + 0x1000 * p0 + i] = struct.unpack_from("<I", fg, i)[0]
+        ram[0x01080000 + 0x1000 * p1 + i] = struct.unpack_from("<I", bg, i)[0]
+    ram[0x3d528], ram[0x3d524] = p0, p1
+    return ram
+
+
+def _run(e, r):
+    """One run of recipe dict r (already through recipe()): [(mixed frame, tick)] and the raw (fg, bg) pairs."""
+    ram = r["ram"]
+    if r["prev"]:                                  # the screen on display before the effect = another effect's frame k
+        pe = r["prev"]["deff"]
+        ps, _ = F.frames(pe, args=recipe(pe)["args"], ram=recipe(pe)["ram"], init=recipe(pe)["init"], counters=recipe(pe)["counters"],
+                         max_insns=recipe(pe)["max_insns"])
+        pairs = []
+        for _, _, a, b in ps:
+            if not pairs or pairs[-1] != (a, b):
+                pairs.append((a, b))
+        seed_previous_screen(ram, *pairs[r["prev"]["frame"]])
+    snaps, ticks = F.frames(e, args=r["args"], ram=ram, rng=r["rng"], init=r["init"], max_insns=r["max_insns"], counters=r["counters"],
+                            fn_addr=r["fn_addr"], real_show_pages=r["real_show_pages"])
+    frames = [(bytes(F.mix(a, b)), t) for (_, _, a, b), t in zip(snaps, ticks)]
+    if r["first_frame_prev"]:                      # the screen on display when the effect starts, one frame before its first flip
+        pe = r["first_frame_prev"]["deff"]
+        pr = recipe(pe)
+        ps, _ = F.frames(pe, args=pr["args"], ram=pr["ram"], init=pr["init"], counters=pr["counters"], max_insns=pr["max_insns"])
+        a, b = [(a, b) for _, _, a, b in ps][r["first_frame_prev"]["frame"]]
+        frames = [(bytes(F.mix(a, b)), 0)] + [(f, t + 1) for f, t in frames]
+    return frames
 
 
 def frames_of(e):
     r = recipe(e)
     try:
-        snaps, ticks = F.frames(e, args=r["args"], ram=r["ram"], rng=r["rng"], init=S.INIT, max_insns=MAX_INSNS)
-    except Exception as x:                                                    # recorded, not hidden
+        if r["runs"]:                              # several runs of one effect, concatenated (the reference holds both)
+            frames, shift = [], 0
+            for sub in r["runs"]:
+                part = _run(e, recipe(e, sub))
+                frames += [(f, t + shift) for f, t in part]
+                shift = (frames[-1][1] + 1) if frames else 0
+            return e, frames, ""
+        frames = _run(e, r)
+        for extra in r["extra_runs"]:              # more runs whose frames come first (a child task's own first frames)
+            sub = dict(RECIPES.get(e, {}))
+            sub.update(extra)
+            sub["extra_runs"] = ()
+            sub["max_insns"] = extra.get("max_insns", MAX_INSNS)
+            head = _run(e, recipe(e, sub))
+            shift = (head[-1][1] + 1) if head else 0
+            frames = head + [(f, t + shift) for f, t in frames]
+        return e, frames, ""
+    except Exception as x:                         # recorded, not hidden
         return e, None, "ERROR %s" % x
-    return e, ([(bytes(F.mix(a, b)), t) for (_, _, a, b), t in zip(snaps, ticks)] if snaps else []), ""
 
 
 def attract_pages():
@@ -67,6 +118,29 @@ def page_frames(job):
     return i, ([(bytes(F.mix(a, b)), t) for (_, _, a, b), t in zip(snaps, ticks)] if snaps else []), ""
 
 
+def variant_jobs():
+    """Effects that pick one clip at random (rom_data/deffs/random_parts.csv: one `random_below(n)` call site): (effect, n)."""
+    import collections
+    sites = collections.defaultdict(set)
+    rng_n = {}
+    with open(os.path.join(ROOT, "rom_data", "deffs", "random_parts.csv"), newline="") as f:
+        for row in csv.DictReader(f):
+            if row["rng_name"] == "random_below" and row["range"].isdigit():
+                sites[int(row["deff"])].add(row["call_site"])
+                rng_n[int(row["deff"])] = int(row["range"])
+    return [(e, rng_n[e]) for e in sorted(sites) if len(sites[e]) == 1 and e not in (38, 96, 97, 105)]
+
+
+def variant_frames(job):
+    e, k = job
+    r = recipe(e)
+    r["rng"] = k
+    try:
+        return e, k, _run(e, r), ""
+    except Exception as x:
+        return e, k, None, "ERROR %s" % x
+
+
 def control(e, frames):
     """CONTROL ONLY: how many reference frames (PinMAME capture) the generated frames reproduce, all columns and columns 41-127."""
     g = glob.glob(os.path.join(MEDIA, "deff_%03d_*" % e, "reference_capture.gif"))
@@ -82,7 +156,7 @@ def control(e, frames):
 
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "rom_data", "dmd_code")
-    only = [int(a) for a in sys.argv[2:]]
+    only = [int(a) for a in sys.argv[2:] if a.isdigit()]
     effects = only or [e for e in range(1, 146)]
     from PIL import Image
     rows = []
@@ -97,6 +171,12 @@ def main():
         for e, frames, err in results:
             rows.append(write(out, e, frames, err))
             print(e, rows[-1][1:], flush=True)
+    if not only or "--variants" in sys.argv:
+        jobs = [(e, k) for e, n in variant_jobs() for k in range(n) if not only or e in only]
+        with Pool(4) as p:
+            for e, k, frames, err in p.imap_unordered(variant_frames, jobs):
+                write(os.path.join(out, "deff_%03d" % e, "variants"), k, frames, err)
+                print("variant", e, k, len(frames) if frames else err, flush=True)
     rows.sort()
     os.makedirs(out, exist_ok=True)
     with open(os.path.join(out, "index.csv"), "w", newline="") as f:
@@ -106,8 +186,22 @@ def main():
     print(len(rows), "effects")
 
 
+def collapse(frames):
+    """Merge identical neighbouring frames (a routine that redraws the same picture without sleeping gives hundreds of thousands)."""
+    out, per_tick = [], {}
+    for f, t in frames:
+        if per_tick.get(t, 0) >= MAX_PER_TICK:     # a loop that flips without ever sleeping (effect 21 after its end): the run's artefact
+            continue
+        if not out or out[-1][0] != f:
+            out.append((f, t))
+            per_tick[t] = per_tick.get(t, 0) + 1
+    return out
+
+
 def write(out, e, frames, err):
     from PIL import Image
+    if frames:
+        frames = collapse(frames)
     if True:
         d = os.path.join(out, "deff_%03d" % e)
         if frames:

@@ -1,0 +1,73 @@
+{
+ "deff": 34,
+ "tick_ms": 16.0,
+ "source": "ROM code run (Unicorn), tools/gen_code_dmd.py",
+ "frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 0.0,
+   "duration_ms": 240.0,
+   "tick": 0
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 240.0,
+   "duration_ms": 0.0,
+   "tick": 15
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 240.0,
+   "duration_ms": 16.0,
+   "tick": 15
+  }
+ ]
+}

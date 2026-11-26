@@ -41,6 +41,9 @@ def build():
 TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's arguments
 
 
+STATE = {"tick": 0}
+
+
 def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=()):
     mu = build()
     tab = 0x040e1350 + 8 * deff
@@ -48,6 +51,8 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
     if fn_addr is not None:        # run a routine directly (a child task body, e.g. an attract page)
         fn = fn_addr
     log, state = [], {"tick": 0}
+    global STATE
+    STATE = state                    # the OS tick counter, read by deff_frames to time each flip
 
     def stack(mu, n):
         sp = mu.reg_read(UC_ARM_REG_SP)

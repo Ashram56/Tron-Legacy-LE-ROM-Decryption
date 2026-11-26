@@ -1,0 +1,115 @@
+{
+ "deff": 13,
+ "tick_ms": 16.0,
+ "source": "ROM code run (Unicorn), tools/gen_code_dmd.py",
+ "frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 0.0,
+   "duration_ms": 112.0,
+   "tick": 0
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 112.0,
+   "duration_ms": 112.0,
+   "tick": 7
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 224.0,
+   "duration_ms": 112.0,
+   "tick": 14
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 336.0,
+   "duration_ms": 112.0,
+   "tick": 21
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 448.0,
+   "duration_ms": 112.0,
+   "tick": 28
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 560.0,
+   "duration_ms": 112.0,
+   "tick": 35
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 672.0,
+   "duration_ms": 112.0,
+   "tick": 42
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 784.0,
+   "duration_ms": 112.0,
+   "tick": 49
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 896.0,
+   "duration_ms": 112.0,
+   "tick": 56
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 1008.0,
+   "duration_ms": 112.0,
+   "tick": 63
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 1120.0,
+   "duration_ms": 112.0,
+   "tick": 70
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 1232.0,
+   "duration_ms": 112.0,
+   "tick": 77
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 1344.0,
+   "duration_ms": 112.0,
+   "tick": 84
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 1456.0,
+   "duration_ms": 112.0,
+   "tick": 91
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 1568.0,
+   "duration_ms": 112.0,
+   "tick": 98
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 1680.0,
+   "duration_ms": 112.0,
+   "tick": 105
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 1792.0,
+   "duration_ms": 112.0,
+   "tick": 112
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 1904.0,
+   "duration_ms": 16.0,
+   "tick": 119
+  }
+ ]
+}
