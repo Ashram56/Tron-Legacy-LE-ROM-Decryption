@@ -110,8 +110,15 @@ def attract_pages():
         i += 1
 
 
+FACTORY_MESSAGE_ID = 824     # msg id 824 (table 0x040eeb7c, entry at file 0xe8fcc) = "PARTICIPATE IN\nLOCAL TOURNAMENTS!" in 5 languages
+
+
 def page_frames(job):
     i, addr = job
+    import deff_unicorn as D
+    D.STUBS.clear()
+    if addr == 0x1000308:       # the custom message page (adj 2 = 1) with no message stored: FUN_00005858 asks FUN_00006110 (language record, +0x16) for the factory message id
+        D.STUBS[0x6110] = FACTORY_MESSAGE_ID
     try:
         snaps, ticks = F.frames(1, args=[1], ram=S.game(), init=S.INIT + ((0x22c08, 0), (0x1a9f4, 2)), max_insns=PAGE_MAX_INSNS, fn_addr=addr, snap_sleep=True)
     except Exception as x:

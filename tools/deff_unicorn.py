@@ -44,6 +44,9 @@ TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's argument
 STATE = {"tick": 0}
 
 
+STUBS = {}          # address -> int (r0 returned) or callable(mu) -> r0: a routine answered instead of run (state the harness does not model: language, RTC)
+
+
 def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=(), ram_at=(), ram_late=None):
     mu = build()
     tab = 0x040e1350 + 8 * deff
@@ -77,9 +80,13 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
                     mu.mem_write(ca, struct.pack("<I", (struct.unpack("<I", bytes(mu.mem_read(ca, 4)))[0] + r[0]) & 0xffffffff))
             mu.reg_write(UC_ARM_REG_R0, 0)
             mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
+        elif addr in STUBS:
+            v = STUBS[addr]
+            mu.reg_write(UC_ARM_REG_R0, v(mu) if callable(v) else v)
+            mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
         elif addr == SENT:
             mu.emu_stop()
-    for a in list(NAMES) + [0xc6b4]:      # one hook per stubbed routine: a code hook over the whole OS range is ~10x slower
+    for a in list(NAMES) + [0xc6b4] + list(STUBS):      # one hook per stubbed routine: a code hook over the whole OS range is ~10x slower
         mu.hook_add(UC_HOOK_CODE, hook, begin=a, end=a)
     mu.hook_add(UC_HOOK_CODE, hook, begin=SENT, end=SENT)
     mu.mem_map(0x03000000, 0x10000)
