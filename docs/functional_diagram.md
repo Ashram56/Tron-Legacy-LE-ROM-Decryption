@@ -66,11 +66,23 @@ Zuse 0x01031664, mode objects 0x0100a244. [`game_flow.md` 6.1]
 | ZEN rollover | zen_rollover.md | 0x0103116c, 0x0103129c, 0x0102ac5c |
 | ZUSE fast scoring | zuse_fast_scoring.md | 0x01031b88, 0x01033624, 0x01033680, 0x01033790 |
 
+## Level two: one diagram per mode (`docs/flow/`)
+
+Each file has a Mermaid diagram with a ROM address per node, taken from the mode's spec (`rules/modes/`).
+`python tools/flow_check.py` checks that every cited ROM address is a function start (or inside a function
+of the decompile): 0 address outside the decompile on 2026-11-26.
+
+attract_and_service, bonus, clu_hurryup, combos, disc_multiball, end_of_line_multiball (with Daft Punk),
+find_flynn_and_items, flynns_arcade, gem_hurryup, light_cycle_multiball, portal_multiball, quorra_multiball,
+recognizer_and_disc_battle, sea_of_simulation, skill_shots, switches_and_shots, tron_targets, zen_rollover,
+zuse_fast_scoring (19 files, one per entry of the table above).
+
 ## Open (with the reason)
 
-- Level two (one node diagram per mode, a ROM address per node): the specs hold the steps and addresses in
-  prose; drawing them is the next work item, mode by mode, starting with the ones the bench flagged
-  (Arcade bag total, GAME RESTART). Reason: size, not a missing source.
+- Addresses that point a few bytes into a function (prologue skipped by the spec) are accepted by the check
+  and printed; they are not re-pointed to the function start.
+- The diagrams follow the specs; a node whose behaviour was only seen in a trace is marked as such in its spec,
+  not in the diagram.
 
 ## Check of every address (2026-11-26)
 
