@@ -18,7 +18,7 @@ for k in (0x2b194, 0x2b2a0, 0x28ca8, 0x28d5c, 0x28e48, 0xa58c):   # real OS rout
     D.NAMES.pop(k, None)
 
 
-def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000):
+def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=()):
     snaps, orig = [], D.build
 
     def build():
@@ -47,7 +47,7 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
         return mu
     D.build = build
     try:
-        fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram)
+        fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram, counters=counters)
     finally:
         D.build = orig
     ticks = [t for t, n, *_ in log if n == "dmd_show_pages"]
