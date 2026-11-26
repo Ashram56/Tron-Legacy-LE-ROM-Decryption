@@ -44,7 +44,7 @@ TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's argument
 STATE = {"tick": 0}
 
 
-def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=()):
+def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=(), ram_at=()):
     mu = build()
     tab = 0x040e1350 + 8 * deff
     fn, flags, prio = struct.unpack_from("<IHB", ROM, tab - 0x04000000)
@@ -69,6 +69,10 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
             log.append((state["tick"], NAMES[addr], r, stack(mu, 4), mu.reg_read(UC_ARM_REG_LR)))
             if NAMES[addr] == "task_sleep":
                 state["tick"] += r[0]
+                for t, a, v in ram_at:       # RAM words the game changes at a tick (a score that moves while the effect runs)
+                    if t <= state["tick"] and (t, a) not in state.setdefault("done", set()):
+                        state["done"].add((t, a))
+                        mu.mem_write(a, struct.pack("<I", v))
                 for ca in counters:          # RAM words the OS ticker adds one to per tick slept (e.g. a status-panel blink counter)
                     mu.mem_write(ca, struct.pack("<I", (struct.unpack("<I", bytes(mu.mem_read(ca, 4)))[0] + r[0]) & 0xffffffff))
             mu.reg_write(UC_ARM_REG_R0, 0)

@@ -32,7 +32,7 @@ def recipe(e, r=None):
                 counters=r.get("counters", ()), max_insns=r.get("max_insns", MAX_INSNS), fn_addr=r.get("fn_addr"),
                 extra_runs=r.get("extra_runs", ()), runs=r.get("runs", ()),
                 real_show_pages=r.get("real_show_pages", False) or r.get("needs_show_pages_state", False),
-                prev=r.get("prev"), first_frame_prev=r.get("first_frame_prev"))
+                prev=r.get("prev"), ram_at=r.get("ram_at", ()), first_frame_prev=r.get("first_frame_prev"))
 
 
 def seed_previous_screen(ram, fg, bg, p0=20, p1=21):
@@ -59,7 +59,7 @@ def _run(e, r):
                 pairs.append((a, b))
         seed_previous_screen(ram, *pairs[r["prev"]["frame"]])
     snaps, ticks = F.frames(e, args=r["args"], ram=ram, rng=r["rng"], init=r["init"], max_insns=r["max_insns"], counters=r["counters"],
-                            fn_addr=r["fn_addr"], real_show_pages=r["real_show_pages"])
+                            fn_addr=r["fn_addr"], real_show_pages=r["real_show_pages"], ram_at=r["ram_at"])
     frames = [(bytes(F.mix(a, b)), t) for (_, _, a, b), t in zip(snaps, ticks)]
     if r["first_frame_prev"]:                      # the screen on display when the effect starts, one frame before its first flip
         pe = r["first_frame_prev"]["deff"]
