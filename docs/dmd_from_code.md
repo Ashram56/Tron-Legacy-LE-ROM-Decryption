@@ -62,8 +62,6 @@ a game value (a real call passes a stack buffer, `FUN_00033afc` clears it). The 
 entry screen with real arguments (record at +0x38, 3 initials, texts 0x34a/0x34b) renders with the real alphabet strip. Done; the input handling
 (flipper presses moving the cursor, `FUN_00007404` / `FUN_000073e4` switch queue) is the deff's own state machine and runs in the same code.
 
-Effect 111 (2026-11-26, rng value 7 for the single `random_below(11)` draw): frames 0-51 of the reference are exact (52 of 95); frames 52-94 differ
-by 6 or 13 pixels, always the same small area (x 81-88, y 2-9, a text glyph box inside the clip: the reference's black box is one pixel wider on
-rows 2-5 and a dim background pixel shows through three rows of our box). The clip itself is identical, so this is one text element of the clip
-(a message or number whose content or width differs), not the clip choice. To finish: identify the text call drawn at that box in the effect's
-second half (`deff_111` frames after 51) and the argument it reads (RAM or task block).
+Effect 111 (`deff_111_more_to_start` 0x01021bac): **exact, 95 of 95 reference frames**, with the single `random_below(11)` draw = 7 (clip bitmap
+`(&PTR_FUN_040d337c)[7]`) and the task block word +0x30 = 6 (the "%d" number of shots still needed, msg 0x56d, drawn at x 0x54, y 0xc, colour
+alternating each frame; the reference is a forced run, its number is 6). The earlier 52/95 came from an argument of 0.
