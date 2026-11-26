@@ -153,4 +153,4 @@ One task per running award. Each task:
 
 ## 11. Open questions
 - What the per-player u16 counters 0x0211164c/54/5c count. They are cleared at game start but no reader was traced.
-- Exact effect of adj 80 DISABLE DROP TARGETS on the letter mask. Inferred from FUN_0102c358, not run.
+- Adj 80 DISABLE DROP TARGETS: code, not inferred: the drop bank object's slot 33 (FUN_0100b910) reports "disabled", the reset task (FUN_0100bdf4) then never pulses the coil and only re-reads the switches (FUN_0100b1cc). The letter mask (FUN_0102c358) is a separate question.
