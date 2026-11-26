@@ -68,7 +68,8 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
             mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
         elif addr == SENT:
             mu.emu_stop()
-    mu.hook_add(UC_HOOK_CODE, hook, begin=0, end=0x36000)
+    for a in list(NAMES) + [0xc6b4]:      # one hook per stubbed routine: a code hook over the whole OS range is ~10x slower
+        mu.hook_add(UC_HOOK_CODE, hook, begin=a, end=a)
     mu.hook_add(UC_HOOK_CODE, hook, begin=SENT, end=SENT)
     mu.mem_map(0x03000000, 0x10000)
 
