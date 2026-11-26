@@ -41,3 +41,15 @@ Open points, each with its reason:
 | Effect 105 (Arcade award slot machine) | **exact: 38 of 38 reference frames** (128x32, columns 41-127) with argument 0 (+0x30, no award code: the reel without icon) and the 7 `random_below` draws (0xc6b4) 4,13,4,13,4,13,3 = 0,1,1,0,3,6,1 (reel pictures 1477, 1478, 1480 from table 0x040d2990; icon codes from 0x040d29a0). Found by coordinate descent (`deff_unicorn.run(rng=callable)`, 4.5 s per run) | the LCG seed that gives these draws is run state, not ROM data; the picks are what the code consumes |
 | Effect 96 (ZUSE hit pop-up) | **exact: 28 of 28 reference frames** (128x32, columns 41-127) from the background child task FUN_01032a30 (0x1032a30) run with `fn_addr` (`deff_frames.frames(96, fn_addr=0x01032a30, init=INIT, ram=game())`, 9M instructions); the pop-up children FUN_01032900 (0x1032900) only add the `%luK` text on page 0x12 when the ring 0x3b91c/0x3b91e holds hits, which the reference run does not have | none |
 | Display timing | the flip ticks come from `task_sleep` arguments, not yet checked against the references' frame periods | compare per effect |
+
+## Entry screens, argument layout read from the callers (2026-11-26)
+
+| Effect | Caller | Task block (+0x30...) | Source |
+|---|---|---|---|
+| 32 (initials entry) | high score entry task, decompile v2 line ~28079 | +0x30 player number (byte), +0x34 word from the caller's frame (local_98[2]), +0x38 pointer to the player's 0x18-byte record (local_98 + player*6 words), +0x3c initials length (3, or 10 when adj 60 HSTD INITIALS = 1), +0x40 title text id (0x34a, or 0x34c when adj 60 = 1), +0x44 text id 0x34d when adj 60 = 1 | `adj_get(0x3c)` |
+| 36 (place, tournament) | tournament result task, line ~38108 | +0x30 pointer to a 0x24-byte zeroed record: byte at +0x19 / +0x14 = place, text ids 0x4a7 and 0x34e/0x34f (first screen), 0x4a8 and 0x350/0x351 (second screen) | tournament_get() paths; gated like attract pages 11-12 |
+| 16 (tournament game) | line ~33960 | no arguments written by the caller | `deff_start(0x10,0,0)` |
+
+Effect 36 and 16 belong to the tournament flow (`gf_state & 0x118 == 0x10`), which the base game never enters, so they are not rendered.
+Effect 32 is rendered by giving it that record; the initials-entry screen is part of the base game and is the next effect to run with
+this layout (`tools/deff_frames.py`, RAM pointer in +0x38).
