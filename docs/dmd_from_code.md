@@ -53,3 +53,10 @@ Open points, each with its reason:
 Effect 36 and 16 belong to the tournament flow (`gf_state & 0x118 == 0x10`), which the base game never enters, so they are not rendered.
 Effect 32 is rendered by giving it that record; the initials-entry screen is part of the base game and is the next effect to run with
 this layout (`tools/deff_frames.py`, RAM pointer in +0x38).
+
+Effect 32 run (2026-11-26, `deff_frames.py` with args [player, 0, record pointer, 3, 0x34a, 0], record in NVRAM): the ROM's own code draws the
+screen: the title lines (`ENTER ... INITIALS` text rows 0-4) and the bottom row are pixel-identical to the reference at its mid-run frame. The
+difference lies in the entry record the screen reads each frame (the typed letters, the cursor position and the highlight box around the
+current letter, rows 12-23 and the scrolling letter strip, rows 24-31): these change with the player's flipper input, so no single record
+reproduces all 107 reference frames; 0 whole frames match with an empty record. To finish: build the record per input step
+(current character index, cursor) from the entry task's state machine, `deff_032` reader at the record offsets listed above.
