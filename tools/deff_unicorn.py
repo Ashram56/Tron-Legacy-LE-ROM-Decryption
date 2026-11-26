@@ -44,7 +44,7 @@ TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's argument
 STATE = {"tick": 0}
 
 
-def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=(), ram_at=()):
+def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None, counters=(), ram_at=(), ram_late=None):
     mu = build()
     tab = 0x040e1350 + 8 * deff
     fn, flags, prio = struct.unpack_from("<IHB", ROM, tab - 0x04000000)
@@ -107,6 +107,8 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
             mu.reg_write(UC_ARM_REG_R0, r0)
             mu.reg_write(UC_ARM_REG_LR, SENT)
             mu.emu_start(addr, SENT, count=300000)
+        for a, v in (ram_late or {}).items():   # written after the boot initialisers (INSTALL FACTORY resets the credits record, ...)
+            mu.mem_write(a, struct.pack("<I", v))
         mu.reg_write(UC_ARM_REG_LR, SENT)
         mu.emu_start(fn, SENT, count=max_insns)
     except UcError as e:

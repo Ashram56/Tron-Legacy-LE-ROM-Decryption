@@ -18,7 +18,7 @@ for k in (0x2b194, 0x2b2a0, 0x28ca8, 0x28d5c, 0x28e48, 0xa58c):   # real OS rout
     D.NAMES.pop(k, None)
 
 
-def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=(), snap_sleep=False, real_show_pages=False, ram_at=()):
+def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=(), snap_sleep=False, real_show_pages=False, ram_at=(), ram_late=None):
     snaps, orig, tk = [], D.build, []
 
     def build():
@@ -57,7 +57,7 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
     D.build = build
     stub = D.NAMES.pop(0x27830, None) if real_show_pages else None   # run the real dmd_show_pages: it keeps the shown-pages bookkeeping
     try:                                                               # (RAM 0x3d524/28/34/38) the dissolve transition 0x102b26c reads
-        fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram, counters=counters, ram_at=ram_at)
+        fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram, counters=counters, ram_at=ram_at, ram_late=ram_late)
     finally:
         D.build = orig
         if stub:
