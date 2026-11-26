@@ -41,10 +41,12 @@ def build():
 TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's arguments
 
 
-def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=()):
+def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=None):
     mu = build()
     tab = 0x040e1350 + 8 * deff
     fn, flags, prio = struct.unpack_from("<IHB", ROM, tab - 0x04000000)
+    if fn_addr is not None:        # run a routine directly (a child task body, e.g. an attract page)
+        fn = fn_addr
     log, state = [], {"tick": 0}
 
     def stack(mu, n):
