@@ -54,9 +54,10 @@ Effect 36 and 16 belong to the tournament flow (`gf_state & 0x118 == 0x10`), whi
 Effect 32 is rendered by giving it that record; the initials-entry screen is part of the base game and is the next effect to run with
 this layout (`tools/deff_frames.py`, RAM pointer in +0x38).
 
-Effect 32 run (2026-11-26, `deff_frames.py` with args [player, 0, record pointer, 3, 0x34a, 0], record in NVRAM): the ROM's own code draws the
-screen: the title lines (`ENTER ... INITIALS` text rows 0-4) and the bottom row are pixel-identical to the reference at its mid-run frame. The
-difference lies in the entry record the screen reads each frame (the typed letters, the cursor position and the highlight box around the
-current letter, rows 12-23 and the scrolling letter strip, rows 24-31): these change with the player's flipper input, so no single record
-reproduces all 107 reference frames; 0 whole frames match with an empty record. To finish: build the record per input step
-(current character index, cursor) from the entry task's state machine, `deff_032` reader at the record offsets listed above.
+Effect 32 (2026-11-26, corrected): the reference is a **forced run with all arguments 0** (like effects 33 and 138: PLAYER 0, string
+"INVALID" from msg 0, text buffer = the record pointer +0x38 = address 0, `FUN_00033afc` 0x33afc writes a byte at address 0). The ROM's own
+code (`deff_032` 0x010346e8) run with arguments 0 reproduces **106 of 107 reference frames except 34 pixels, always the same**: the second
+character of the text field (rows 12-21, x 70-74), which reads the byte at address 1, i.e. the memory of the emulator at the null buffer, not
+a game value (a real call passes a stack buffer, `FUN_00033afc` clears it). The blink of the selection box alternates every frame in both. The
+entry screen with real arguments (record at +0x38, 3 initials, texts 0x34a/0x34b) renders with the real alphabet strip. Done; the input handling
+(flipper presses moving the cursor, `FUN_00007404` / `FUN_000073e4` switch queue) is the deff's own state machine and runs in the same code.
