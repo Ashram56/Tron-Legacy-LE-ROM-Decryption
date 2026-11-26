@@ -29,7 +29,10 @@ def build():
     return mu
 
 
-def run(deff, max_insns=200000):
+TASK = 0x03002000   # fake current-task block: +0x30.. are the effect's arguments
+
+
+def run(deff, max_insns=200000, args=None, ram=None):
     mu = build()
     tab = 0x040e1350 + 8 * deff
     fn, flags, prio = struct.unpack_from("<IHB", ROM, tab - 0x04000000)
@@ -62,6 +65,12 @@ def run(deff, max_insns=200000):
         log.append((state["tick"], "auto_map 0x%x" % base, [], [], mu.reg_read(UC_ARM_REG_PC)))
         return True
     mu.hook_add(UC_HOOK_MEM_UNMAPPED, unmapped)
+    mu.mem_write(0x372c0, struct.pack("<I", TASK))              # RAM 0x372c0: current task
+    mu.mem_write(TASK + 0xc, struct.pack("<I", 0x03003000))     # +0xc: pointer to a (zero) context block
+    for i, v in enumerate(args or []):
+        mu.mem_write(TASK + 0x30 + 4 * i, struct.pack("<I", v))
+    for a, v in (ram or {}).items():
+        mu.mem_write(a, struct.pack("<I", v))
     mu.reg_write(UC_ARM_REG_SP, 0x03008000)
     mu.reg_write(UC_ARM_REG_LR, SENT)
     try:
