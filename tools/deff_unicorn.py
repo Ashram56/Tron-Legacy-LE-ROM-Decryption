@@ -90,8 +90,10 @@ def run(deff, max_insns=200000, args=None, ram=None, rng=None, init=(), fn_addr=
     mu.reg_write(UC_ARM_REG_LR, SENT)
     try:
         for i in init:               # boot initialisers the effect relies on, run as the OS does at startup
+            addr, r0 = i if isinstance(i, tuple) else (i, 0)
+            mu.reg_write(UC_ARM_REG_R0, r0)
             mu.reg_write(UC_ARM_REG_LR, SENT)
-            mu.emu_start(i, SENT, count=100000)
+            mu.emu_start(addr, SENT, count=300000)
         mu.reg_write(UC_ARM_REG_LR, SENT)
         mu.emu_start(fn, SENT, count=max_insns)
     except UcError as e:
