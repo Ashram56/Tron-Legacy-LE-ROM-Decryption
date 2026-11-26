@@ -32,7 +32,7 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
         return mu
     D.build = build
     try:
-        fn, fl, pr, log = D.run(deff, 600000, args=args, rng=rng, init=init, fn_addr=fn_addr)
+        fn, fl, pr, log = D.run(deff, 20000000, args=args, rng=rng, init=init, fn_addr=fn_addr)
     finally:
         D.build = orig
     ticks = [t for t, n, *_ in log if n == "dmd_show_pages"]
