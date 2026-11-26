@@ -3,8 +3,8 @@
 
 No stub for the blit and text routines: the OS code draws into the DMD pages (0x01080000 + 0x1000 * index, one byte per
 pixel, 255 = untouched), dmd_show_pages(page0, page1) (0x27830) snapshots them. Output: PNG per flip (page0 level, page1
-level, 255 shown as 0) and frames.json (tick, page indices). How the hardware mixes page0 and page1 into 16 levels is the
-DMD FPGA's job and is still to be decoded (boards_inventory.md, DMD output).
+level, 255 shown as 0) and frames.json (tick, page indices). page0 is the foreground, page1 the background; the mix is the FPGA's
+(rule from PinMAME's model, hardware tag; to confirm, boards_inventory.md DMD output).
 Usage: deff_frames.py DEFF_ID OUTDIR [max_ticks]
 """
 import json, os, sys
@@ -39,9 +39,15 @@ def frames(deff, max_ticks=400):
     return snaps, ticks
 
 
-def png(page):
+def mix(fg, bg):
+    """Display mixer (knowledge/sam_hardware/CPU_BOARD_IO.md 3.2, PinMAME sam_dmd; hardware, no ROM firmware):
+    mask = fg >> 4; pixel = (bg & mask) | (fg & ~mask), low 4 bits."""
+    return [(((b & (f >> 4)) | (f & ~(f >> 4))) & 15) for f, b in zip(fg, bg)]
+
+
+def png(fg, bg):
     im = Image.new("L", (128, 32))
-    im.putdata([0 if v == 255 else (v & 15) * 17 for v in page])
+    im.putdata([v * 17 for v in mix(fg, bg)])
     return im
 
 
@@ -51,8 +57,7 @@ if __name__ == "__main__":
     snaps, ticks = frames(d)
     meta = []
     for i, (r0, r1, a, b) in enumerate(snaps):
-        png(a).save(os.path.join(out, "f%03d_p0.png" % i))
-        png(b).save(os.path.join(out, "f%03d_p1.png" % i))
+        png(a, b).save(os.path.join(out, "f%03d.png" % i))
         meta.append({"frame": i, "tick": ticks[i] if i < len(ticks) else None, "page0": r0, "page1": r1})
     json.dump(meta, open(os.path.join(out, "frames.json"), "w"), indent=1)
     print(len(snaps), "flips")
