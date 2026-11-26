@@ -23,7 +23,6 @@ def score(d):
     mine = [F.mix(a, b) for r0, r1, a, b in snaps]
     if not mine:
         return d, None
-    keys = {tuple(f[x + 32 * 0 * 0] for x in range(0)) for f in mine}   # placeholder to keep the shape simple
     crop = [bytes(f[y * 128 + x] for y in range(32) for x in range(41, 128)) for f in mine]
     have = set(crop)
     refs = [[v // 17 for v in fr.convert("L").resize((128, 32)).get_flattened_data()] for fr in ImageSequence.Iterator(Image.open(g[0]))]

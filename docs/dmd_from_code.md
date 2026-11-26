@@ -15,8 +15,10 @@ What the harness needed (all read from the code):
 | Current task block | RAM 0x372c0 +0x30.. effect arguments | effects read their arguments there |
 | Random clips | `random_below` 0xc6b4 | 19 effects pick a clip at random; forced per variant for comparison |
 
-Result against the references (columns 41-127, first 20 frames of each reference): 58 effects exact on every checked frame,
-123 of about 140 with at least one exact frame (baseline before the bank and heap model: 41 and 63).
+Result against the references (`tools/deff_measure.py`, columns 41-127, every reference frame, instruction limit 20M): 7176 of 8477
+reference frames reproduced exactly (84.7 %; 1091 before the bank and heap model). Lowest: effects 9, 14, 19, 25, 32, 33, 36, 48, 49,
+68, 96, 105, 111, 115, 119, 138 (0 frames): entry screens and the score display need game state; the clip effects 48, 49, 68, 111,
+115, 119 need the clip variant forced (`rng`) and the arguments searched; 9, 14, 33, 96 are one-frame effects with arguments.
 
 Open points, each with its reason:
 
