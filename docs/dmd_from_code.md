@@ -25,7 +25,7 @@ Open points, each with its reason:
 | Effects 22, 45, 146 | code: 22 is `return` (0x1035d3c), 45 is dead code in 1.74 (0x102dd50), 146 is a null table entry | nothing to render |
 | Attract (deff 1): pages 7-10 (high scores) | render with the high score table reset by `0x1a9f4(2)` (`attr_page_high_score` 0x1000564) | wire them into the attract loop timing (task sleeps of the parent) |
 | Attract pages 2-6 (last score, `attr_page_last_score` 0x1000768) | show the last played game's record (`0x22b38`), which exists only after a game | model a finished game state |
-| Attract pages 11-12 (0x2f120, 0x2f260) | OS routines, not yet read | read them |
+| Attract pages 11-12 (0x2f120, 0x2f260) | code: tournament pages (PRIZE POOL), gated by `tournament_get_type() == 4` (0x2f0e8): never shown in normal play | nothing to render without a tournament |
 | Effects 16, 112 and the entry screens 32, 36 | read their arguments (task block +0x30..+0x44, a pointer to a record) | the callers' argument layout, per effect |
 | Status panel, columns 0-40 | drawn by `deff_draw_status_panel` 0x10230ec from live game state (score, ball, credits) | game state model, per scenario |
 | Clip effects with a random pick | the reference holds one pick | compare every variant (0-11) |
