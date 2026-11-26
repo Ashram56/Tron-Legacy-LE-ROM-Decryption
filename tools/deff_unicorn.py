@@ -23,8 +23,9 @@ def build():
     mu.mem_map(0x01000000, 0x00200000)             # game code + DMD pages + IO window
     mu.mem_write(0x01000000, ROM[0x40000:0x40000 + 0x80000])
     mu.mem_map(0x02000000, 0x00800000)             # NVRAM + IO (zero)
-    mu.mem_map(0x04000000, 0x00800000)
-    mu.mem_write(0x04000000, ROM[:0x800000])
+    sz = (len(ROM) + 0xfff) & ~0xfff
+    mu.mem_map(0x04000000, sz)                     # data window: linear file offset (banked pointers 0x04nnnnnn)
+    mu.mem_write(0x04000000, ROM)
     return mu
 
 
