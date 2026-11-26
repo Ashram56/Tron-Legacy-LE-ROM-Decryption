@@ -23,6 +23,7 @@ MEDIA = os.path.join(ROOT, "mpf_package", "media", "dmd")
 # effect -> dict(args, ram, rng): the neutral state the effect needs (read from the effect's code, docs/dmd_from_code.md)
 from dmd_recipes import RECIPES, REASONS
 MAX_INSNS = 6000000
+PAGE_MAX_INSNS = 60000000     # an attract page runs to its end (the logo scrolls 105 lines, 2 ticks each, ~230 ticks)
 
 
 def recipe(e, r=None):
@@ -112,7 +113,7 @@ def attract_pages():
 def page_frames(job):
     i, addr = job
     try:
-        snaps, ticks = F.frames(1, args=[1], ram=S.game(), init=S.INIT + ((0x22c08, 0), (0x1a9f4, 2)), max_insns=MAX_INSNS, fn_addr=addr, snap_sleep=True)
+        snaps, ticks = F.frames(1, args=[1], ram=S.game(), init=S.INIT + ((0x22c08, 0), (0x1a9f4, 2)), max_insns=PAGE_MAX_INSNS, fn_addr=addr, snap_sleep=True)
     except Exception as x:
         return i, None, "ERROR %s" % x
     return i, ([(bytes(F.mix(a, b)), t) for (_, _, a, b), t in zip(snaps, ticks)] if snaps else []), ""
