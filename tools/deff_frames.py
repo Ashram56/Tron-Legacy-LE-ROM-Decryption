@@ -7,7 +7,7 @@ level, 255 shown as 0) and frames.json (tick, page indices). page0 is the foregr
 (rule from PinMAME's model, hardware tag; to confirm, boards_inventory.md DMD output).
 Usage: deff_frames.py DEFF_ID OUTDIR [max_ticks]
 """
-import json, os, sys
+import json, os, struct, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import deff_unicorn as D
 from unicorn.arm_const import *
@@ -29,6 +29,21 @@ def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=No
             snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
                           bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
         mu.hook_add(UC_HOOK_CODE, h, begin=0x27830, end=0x27830)
+
+        def flip(mu, a, s, u):
+            # FUN_00027a70(n): the OS "flip and wait n ticks" used by fades. It shows the pages in RAM 0x3d530 / 0x3d52c
+            # (written to the page registers by FUN_000279e8 right after), then sleeps through the scheduler.
+            # Show them as 0x27830 does, then run only the page swap.
+            r0 = struct.unpack("<I", bytes(mu.mem_read(0x3d530, 4)))[0]
+            r1 = struct.unpack("<I", bytes(mu.mem_read(0x3d52c, 4)))[0]
+            snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
+                          bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
+            mu.reg_write(UC_ARM_REG_PC, 0x279e8)
+        mu.hook_add(UC_HOOK_CODE, flip, begin=0x27a70, end=0x27a70)
+
+        def fade_end(mu, a, s, u):          # FUN_00028788(n, c): end-of-effect fade, nothing to draw
+            mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
+        mu.hook_add(UC_HOOK_CODE, fade_end, begin=0x28788, end=0x28788)
         return mu
     D.build = build
     try:
