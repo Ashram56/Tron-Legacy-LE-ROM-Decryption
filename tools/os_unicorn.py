@@ -73,6 +73,70 @@ class Machine:
             self.mu.hook_add(UC_HOOK_CODE, hook, begin=addr, end=addr, user_data=name)
         return self.log
 
+    # switches (IO tick, stage 1 of the debounce: assets/io/bus/CPU_BOARD_IO.md 5.3) ---------------------------
+    RAW, STABLE, DIFF, PENDING, BOUNCED, ACK = 0x3c76a, 0x3c792, 0x3c77e, 0x3c7a6, 0x3c7ba, 0x3c7ce   # 16-bit words, one per column
+
+    def set_switch(self, n, closed):
+        """Switch n (ROM numbering 1-64 matrix, 129-160 dedicated) closes or opens at the next tick."""
+        self.switches = getattr(self, "switches", {})
+        self.switches[n] = bool(closed)
+        if self.scan not in self.hooks:
+            self.hooks.append(self.scan)
+
+    @staticmethod
+    def column_bit(n):
+        if n >= 129:
+            return 8 + (n - 129) // 16, (n - 129) % 16
+        return (n - 1) // 16, (n - 1) % 16
+
+    def _r16(self, a):
+        return struct.unpack("<H", bytes(self.mu.mem_read(a, 2)))[0]
+
+    def _w16(self, a, v):
+        self.mu.mem_write(a, struct.pack("<H", v & 0xffff))
+
+    def scan(self, _m=None):
+        """The IO tick ISR's switch scan the harness plays: raw = the closed switches, then the stage-1 debounce
+        (raw ^ stable differing on two consecutive scans = pending); run twice per tick (the real scan is 4 per tick)."""
+        raw = collections.defaultdict(int)
+        for n, closed in getattr(self, "switches", {}).items():
+            if closed:
+                c, b = self.column_bit(n)
+                raw[c] |= 1 << b
+        for _ in range(2):
+            for c in (0, 1, 2, 3, 8, 9):
+                a = 2 * c
+                self._w16(self.RAW + a, raw[c])
+                stable, old = self._r16(self.STABLE + a), self._r16(self.DIFF + a)
+                new = raw[c] ^ stable
+                ack = self._r16(self.ACK + a)                       # handled by the main loop: leaves pending / bounced
+                pending = self._r16(self.PENDING + a) & ~ack
+                bounced = self._r16(self.BOUNCED + a) & ~ack
+                self._w16(self.ACK + a, 0)
+                pending |= old & new
+                bounced |= pending & ~new
+                self._w16(self.DIFF + a, new)
+                self._w16(self.PENDING + a, pending)
+                self._w16(self.BOUNCED + a, bounced)
+
+    def stub(self, addr, fn):
+        """Answer a routine instead of running it (hardware the harness does not play): fn(machine) -> r0."""
+        from unicorn.arm_const import UC_ARM_REG_R0, UC_ARM_REG_LR
+
+        def hook(mu, address, size, ud):
+            mu.reg_write(UC_ARM_REG_R0, fn(self) & 0xffffffff)
+            mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
+        self.mu.hook_add(UC_HOOK_CODE, hook, begin=addr, end=addr)
+
+    def rtc(self, year=2026, month=11, day=27, hour=12, minute=0, sec=0):
+        """The real-time clock read 0xd244 (r0 = 8-byte buffer: u16 year, 3, month, day, hour, minute, second): answered."""
+        from unicorn.arm_const import UC_ARM_REG_R0
+
+        def read(m):
+            m.mu.mem_write(m.mu.reg_read(UC_ARM_REG_R0), struct.pack("<HBBBBBB", year, 3, month, day, hour, minute, sec))
+            return 1
+        self.stub(0xd244, read)
+
     # access -------------------------------------------------------------------------------------------------
     def read32(self, addr):
         return struct.unpack("<I", bytes(self.mu.mem_read(addr, 4)))[0]
