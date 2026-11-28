@@ -7,7 +7,7 @@ deff_start (task_create caller 0x27dbc, body = the deff routine) is gone. Deffs 
 mode variables, sounds) run with the attract state: their durations are the code's for that state only. The tracer
 must be installed BEFORE the first tick: a hook added after a block was translated is not called for it.
 
-Usage: TRON_ROM=trn_174h.bin os_deff_runs.py OUT.csv [first last] [--max TICKS]   (a fresh boot per deff, about 15 s each)
+Usage: TRON_ROM=trn_174h.bin os_deff_runs.py OUT.csv [first last] [--max TICKS] [--set OFF=VAL,...] [--rng K]   (a fresh boot per deff, about 15 s each)
 Output columns: deff, ticks (start to task end, 1 tick = 16.26 ms), body, ended (0 = still running at --max), holds
 (deff_hold_frames calls as tick:frames:priority).
 """
@@ -43,7 +43,30 @@ def inject(m, addr, r0=0):
     m.pc = addr
 
 
-def run_deff(m, log, deff, max_ticks=800):
+DEFF_TABLE = 0x040e1350      # 8-byte records: body, flags (u16), priority (u8)
+RANDOM_BELOW = 0xc6b4
+
+
+def preset(m, deff, params=(), rng=None):
+    """Set what the caller of deff_start would have set before the deff runs: `params` = [(task offset, value)] written
+    into the deff's task (byte/word/long by value size is not guessed: values are stored as 32-bit words, so use
+    0x30, 0x34, ... and values that fit the deff's own reads), `rng` = the number random_below() returns (modulo its
+    argument) instead of the ROM's LCG."""
+    from unicorn import UC_HOOK_CODE
+    from unicorn.arm_const import UC_ARM_REG_R0, UC_ARM_REG_PC
+    body = m.read32(DEFF_TABLE + 8 * deff)
+
+    def entry(mu, address, size, ud):
+        task = m.read32(0x372c0)
+        for off, val in params:
+            m.write32(task + off, val)
+    m.mu.hook_add(UC_HOOK_CODE, entry, begin=body, end=body)
+    if rng is not None:
+        m.stub(RANDOM_BELOW, lambda mm: rng % max(1, mm.mu.reg_read(UC_ARM_REG_R0)))
+
+
+def run_deff(m, log, deff, max_ticks=800, params=(), rng=None):
+    preset(m, deff, params, rng)
     n0 = len(log)
     inject(m, DEFF_START, deff)
     t0 = m.ticks
@@ -70,12 +93,21 @@ if __name__ == "__main__":
     mx = int(args[args.index("--max") + 1]) if "--max" in args else 800
     if "--max" in args:
         del args[args.index("--max"):args.index("--max") + 2]
+    params, rng = [], None
+    if "--set" in args:                          # --set 0x30=1,0x34=2 : words written into the deff's task at entry
+        i = args.index("--set")
+        params = [tuple(int(x, 0) for x in kv.split("=")) for kv in args[i + 1].split(",")]
+        del args[i:i + 2]
+    if "--rng" in args:                          # --rng K : random_below(n) returns K % n
+        i = args.index("--rng")
+        rng = int(args[i + 1])
+        del args[i:i + 2]
     first, last = (int(args[1]), int(args[2])) if len(args) >= 3 else (1, 142)
     with open(args[0], "w") as f:
         f.write("deff,ticks,body,ended,holds\n")
         for d in range(first, last + 1):          # a fresh machine per deff: a running deff of higher priority refuses the next
             m, log = machine()
-            r = run_deff(m, log, d, mx)
+            r = run_deff(m, log, d, mx, params, rng)
             if r:
                 f.write("%d,%d,0x%x,%d,%s\n" % (d, r[0], r[1], r[2], " ".join("%d:%d:0x%x" % h for h in r[3])))
                 f.flush()
