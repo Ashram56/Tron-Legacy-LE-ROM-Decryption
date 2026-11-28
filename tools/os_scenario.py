@@ -99,6 +99,10 @@ def run(script, out, stop=None):
         elif cmd == "poke":
             a, v = arg.split()
             m.mu.mem_write(int(a, 16), bytes([int(v, 16) & 0xff]))
+        elif cmd == "button":                     # button start 150 / button coin 150: the switch held for that many ms (start = 16, coin = 129 as in `start`)
+            name, _, ms = arg.partition(" ")
+            if name in ("start", "coin"):
+                pulse({"start": 16, "coin": 129}[name], max(1, round(float(ms or 150) / 1000 / TICK)))
         elif cmd == "hit":
             held.discard(int(arg))
             pulse(int(arg))
