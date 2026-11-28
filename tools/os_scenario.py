@@ -6,7 +6,7 @@ release SW); the ROM runs unmodified with its own scheduler, so every call it ma
 reference trace does not log (rules_refresh_request, FUN_0100f164, ...). The output is one JSON line per call:
 {"t": seconds, "ev": name, "r0": .., "caller": ..}.
 
-Hardware the harness plays: trough switches 18-21 closed (switch 21 opens when the eject coil 17 fires and closes at `drain`), the coin and start switches, the switch scan (os_unicorn),
+Hardware the harness plays: trough switches 18-21 closed (switch 21 opens when the trough up-kicker, coil 1, fires and closes at `drain`), the coin and start switches, the switch scan (os_unicorn),
 the real-time clock read (answered), the start-up lock-out counter RAM 0x37264 (counted down once per tick; 0x6180
 would show "this machine will not operate" because the clock chip is absent).
 
@@ -25,6 +25,7 @@ CALLS = {
     0x0101b824: "tube_show_start", 0x0101baac: "tube_show_stop", 0x19648: "rules_refresh_request",
     0x0100f164: "FUN_0100f164", 0x2340c: "score_add", 0xb624: "task_create", 0x6970: "coil_pulse",
     0x65d8: "game_flag_set", 0x6588: "game_flag_clear", 0x20afc: "game_start",
+    0x2b60: "coil_queue_pulse",       # FUN_00002b60(coil, ms, sync): the ball devices' kicks (trough up-kicker = coil 1, kick fn 0x0101bbc0)
 }
 
 
@@ -53,9 +54,9 @@ def run(script, out, stop=None):
     ejected = {"seen": 0, "todo": []}
 
     def eject_watch(mm):
-        """The trough eject coil (17) fired: the ball leaves the trough (switch 21 opens), rolls to the shooter lane (23 closes a second
+        """The trough up-kicker (coil 1, FUN_00002b60 queued by the ball device 1 kick 0x0101bbc0) fired: the ball leaves the trough (switch 21 opens), rolls to the shooter lane (23 closes a second
         later) and is plunged (23 opens again) until `drain` puts it back in the trough."""
-        n = sum(1 for e in log if e[1] == "coil_pulse" and e[2] == 17)
+        n = sum(1 for e in log if e[1] == "coil_queue_pulse" and e[2] == 1)
         if n > ejected["seen"]:
             ejected["seen"] = n
             if getattr(mm, "switches", {}).get(21, True):
@@ -97,7 +98,10 @@ def run(script, out, stop=None):
         elif cmd == "release":
             held.discard(int(arg))
             m.set_switch(int(arg), False)
-        elif cmd == "drain":                      # the ball rolls back into the trough: switch 21 closes
+        elif cmd == "drain":                      # the ball rolls back into the trough: switch 22 (jam) closes for a second, then 21
+            m.set_switch(22, True)                # the ball enters through the trough jam switch ...
+            m.tick(60)
+            m.set_switch(22, False)               # ... and settles at the kicker position
             m.set_switch(21, True)
             m.tick(2)
     with open(out, "w", encoding="utf-8") as f:
