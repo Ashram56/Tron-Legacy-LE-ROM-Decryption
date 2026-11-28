@@ -8,7 +8,9 @@
 - `switch_sound_map.csv`: **the main result**. Each row links a switch to a sound call.
   - `source`: how the link was found.
     - `static(depth N)`: found by reading the switch handler's code, N calls deep.
-    - `emulated`: heard when the switch was hit during a game in PinMAME.
+    - `code run (handler 0x...)`: the switch's handler (descriptor word 0, table 0x040f3574) run in Unicorn (`tools/switch_sounds.py`), the sound calls it makes.
+    - `static(rules, 2-5 calls deep)`: reached through shot or mode logic, from `callout_triggers.csv`.
+    - 2026-11-26: the rows that came from PinMAME (`emulated`, `times_heard`, `hits`, `samples_heard`, `heard_on_switches`) were removed (owner decision) and redone from the code.
   - `times_heard` / `hits`: how many plays were logged over how many hits of that switch.
   - `samples_heard`: the sample ids that actually played.
   - `all_samples`: every sample the call can pick from.
@@ -18,7 +20,7 @@
 ## How it was built
 1. Decoded the sample directory and the IMA ADPCM streams from the ROM.
 2. Traced static call paths from each switch handler to the play function `0x2c8f4`, which leads to `0x2c744` and then `0x2c1e4`.
-3. Ran the ROM in libpinmame with a hook on the play function, after simulating the trough and plunger and starting a game. Each playfield switch was pulsed once in a sweep, then 6 times in a row in a second sweep.
+3. (Removed 2026-11-26: the PinMAME sweep.) Ran each switch handler in Unicorn: `tools/switch_sounds.py`.
 
 ## Caveats
 - A rule only fires in the game state it needs. Callouts for modes, multiball, wizard modes and the video game will be missing until those states are reached.

@@ -1,0 +1,151 @@
+{
+ "deff": 65,
+ "tick_ms": 16.0,
+ "source": "ROM code run (Unicorn), tools/gen_code_dmd.py",
+ "frames": [
+  {
+   "file": "frames/000.png",
+   "t_ms": 0.0,
+   "duration_ms": 384.0,
+   "tick": 0
+  },
+  {
+   "file": "frames/001.png",
+   "t_ms": 384.0,
+   "duration_ms": 384.0,
+   "tick": 24
+  },
+  {
+   "file": "frames/002.png",
+   "t_ms": 768.0,
+   "duration_ms": 384.0,
+   "tick": 48
+  },
+  {
+   "file": "frames/003.png",
+   "t_ms": 1152.0,
+   "duration_ms": 384.0,
+   "tick": 72
+  },
+  {
+   "file": "frames/004.png",
+   "t_ms": 1536.0,
+   "duration_ms": 384.0,
+   "tick": 96
+  },
+  {
+   "file": "frames/005.png",
+   "t_ms": 1920.0,
+   "duration_ms": 384.0,
+   "tick": 120
+  },
+  {
+   "file": "frames/006.png",
+   "t_ms": 2304.0,
+   "duration_ms": 384.0,
+   "tick": 144
+  },
+  {
+   "file": "frames/007.png",
+   "t_ms": 2688.0,
+   "duration_ms": 384.0,
+   "tick": 168
+  },
+  {
+   "file": "frames/008.png",
+   "t_ms": 3072.0,
+   "duration_ms": 384.0,
+   "tick": 192
+  },
+  {
+   "file": "frames/009.png",
+   "t_ms": 3456.0,
+   "duration_ms": 384.0,
+   "tick": 216
+  },
+  {
+   "file": "frames/010.png",
+   "t_ms": 3840.0,
+   "duration_ms": 384.0,
+   "tick": 240
+  },
+  {
+   "file": "frames/011.png",
+   "t_ms": 4224.0,
+   "duration_ms": 384.0,
+   "tick": 264
+  },
+  {
+   "file": "frames/012.png",
+   "t_ms": 4608.0,
+   "duration_ms": 384.0,
+   "tick": 288
+  },
+  {
+   "file": "frames/013.png",
+   "t_ms": 4992.0,
+   "duration_ms": 384.0,
+   "tick": 312
+  },
+  {
+   "file": "frames/014.png",
+   "t_ms": 5376.0,
+   "duration_ms": 384.0,
+   "tick": 336
+  },
+  {
+   "file": "frames/015.png",
+   "t_ms": 5760.0,
+   "duration_ms": 384.0,
+   "tick": 360
+  },
+  {
+   "file": "frames/016.png",
+   "t_ms": 6144.0,
+   "duration_ms": 384.0,
+   "tick": 384
+  },
+  {
+   "file": "frames/017.png",
+   "t_ms": 6528.0,
+   "duration_ms": 384.0,
+   "tick": 408
+  },
+  {
+   "file": "frames/018.png",
+   "t_ms": 6912.0,
+   "duration_ms": 384.0,
+   "tick": 432
+  },
+  {
+   "file": "frames/019.png",
+   "t_ms": 7296.0,
+   "duration_ms": 384.0,
+   "tick": 456
+  },
+  {
+   "file": "frames/020.png",
+   "t_ms": 7680.0,
+   "duration_ms": 384.0,
+   "tick": 480
+  },
+  {
+   "file": "frames/021.png",
+   "t_ms": 8064.0,
+   "duration_ms": 384.0,
+   "tick": 504
+  },
+  {
+   "file": "frames/022.png",
+   "t_ms": 8448.0,
+   "duration_ms": 384.0,
+   "tick": 528
+  },
+  {
+   "file": "frames/023.png",
+   "t_ms": 8832.0,
+   "duration_ms": 16.0,
+   "tick": 552
+  }
+ ]
+}

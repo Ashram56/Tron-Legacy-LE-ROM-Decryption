@@ -63,18 +63,18 @@ The table function pointers are the real entry points. The decompile's `// ====`
 
 | Weight | Award(s) | Chance each |
 |---|---|---|
-| 100 | 500K, ADV. RECOGNIZER | 28.4% |
-| 25 | GEM, CLU, ZUSE, QUORRA, LIGHT CYCLE | 7.1% |
-| 0 | DISC, SOS, MORE TIME | 0% |
-| 1 | EB, SPECIAL | 0.28% |
+| 100 | 500K, ADV. RECOGNIZER | 30.6% |
+| 25 | GEM, CLU, ZUSE, QUORRA, LIGHT CYCLE | 7.6% |
+| 0 | DISC (25 only while the Disc Battle is lit: `dbattle_can_progress` 0x1020b4c), SOS, MORE TIME | 0% |
+| 1 | EB, SPECIAL | 0.31% |
 
-The total is 352. While a TRON award runs, MORE TIME = 100 and the total is 452:
+The total is 327 (100+100+5x25+1+1; corrected 2026-11-26: the earlier 352 counted ADV. DISC as 25, which the code gives only while the Disc Battle is lit, 0x1020b4c). While a TRON award runs, MORE TIME = 100 and the total is 427:
 
 | Weight | Award(s) | Chance each |
 |---|---|---|
-| 100 | 500K, REC, MORE TIME | 22.1% |
-| 25 | the five advances | 5.5% |
-| 1 | EB, SPECIAL | 0.22% |
+| 100 | 500K, REC, MORE TIME | 23.4% |
+| 25 | the five advances | 5.9% |
+| 1 | EB, SPECIAL | 0.23% |
 
 ## 5. Behaviour while running
 | Trigger | Condition | Effect | Display | Sound | Lamp | Next state |

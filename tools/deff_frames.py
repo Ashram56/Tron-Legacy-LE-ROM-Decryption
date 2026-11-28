@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Run a deff with the ROM's own OS drawing routines in Unicorn and dump the two DMD pages shown at each flip.
+
+No stub for the blit and text routines: the OS code draws into the DMD pages (0x01080000 + 0x1000 * index, one byte per
+pixel, 255 = untouched), dmd_show_pages(page0, page1) (0x27830) snapshots them. Output: PNG per flip (page0 level, page1
+level, 255 shown as 0) and frames.json (tick, page indices). page0 is the foreground, page1 the background; the mix is the FPGA's
+(rule from PinMAME's model, hardware tag; to confirm, boards_inventory.md DMD output).
+Usage: deff_frames.py DEFF_ID OUTDIR [max_ticks]
+"""
+import json, os, struct, sys
+sys.path.insert(0, os.path.dirname(__file__))
+import deff_unicorn as D
+from unicorn.arm_const import *
+from unicorn import UC_HOOK_CODE
+from PIL import Image
+
+for k in (0x2b194, 0x2b2a0, 0x28ca8, 0x28d5c, 0x28e48, 0xa58c):   # real OS routines draw
+    D.NAMES.pop(k, None)
+
+
+def frames(deff, max_ticks=400, rng=None, args=None, init=(0x2ae54,), fn_addr=None, ram=None, max_insns=20000000, counters=(), snap_sleep=False, real_show_pages=False, ram_at=(), ram_late=None):
+    snaps, orig, tk = [], D.build, []
+
+    def build():
+        mu = orig()
+
+        def h(mu, a, s, u):
+            r0, r1 = mu.reg_read(UC_ARM_REG_R0), mu.reg_read(UC_ARM_REG_R1)
+            tk.append(D.STATE["tick"]); snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
+                          bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
+        mu.hook_add(UC_HOOK_CODE, h, begin=0x27830, end=0x27830)
+
+        def flip(mu, a, s, u):
+            # FUN_00027a70(n): the OS "flip and wait n ticks" used by fades. It shows the pages in RAM 0x3d530 / 0x3d52c
+            # (written to the page registers by FUN_000279e8 right after), then sleeps through the scheduler.
+            # Show them as 0x27830 does, then run only the page swap.
+            r0 = struct.unpack("<I", bytes(mu.mem_read(0x3d530, 4)))[0]
+            r1 = struct.unpack("<I", bytes(mu.mem_read(0x3d52c, 4)))[0]
+            tk.append(D.STATE["tick"]); snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
+                          bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
+            mu.reg_write(UC_ARM_REG_PC, 0x279e8)
+        mu.hook_add(UC_HOOK_CODE, flip, begin=0x27a70, end=0x27a70)
+
+        if snap_sleep:                  # an attract page child draws into the pages its parent allocated, then sleeps: that is its picture
+            def slp(mu, a, s, u):
+                r0 = struct.unpack("<I", bytes(mu.mem_read(0x3d530, 4)))[0]
+                r1 = struct.unpack("<I", bytes(mu.mem_read(0x3d52c, 4)))[0]
+                if r0 < 16 and r1 < 16:
+                    tk.append(D.STATE["tick"]); snaps.append((r0, r1, bytes(mu.mem_read(0x01080000 + 0x1000 * r0, 0x1000)),
+                                  bytes(mu.mem_read(0x01080000 + 0x1000 * r1, 0x1000))))
+            mu.hook_add(UC_HOOK_CODE, slp, begin=0xb91c, end=0xb91c)
+
+        def fade_end(mu, a, s, u):          # FUN_00028788(n, c): end-of-effect fade, nothing to draw
+            mu.reg_write(UC_ARM_REG_PC, mu.reg_read(UC_ARM_REG_LR))
+        mu.hook_add(UC_HOOK_CODE, fade_end, begin=0x28788, end=0x28788)
+        return mu
+    D.build = build
+    stub = D.NAMES.pop(0x27830, None) if real_show_pages else None   # run the real dmd_show_pages: it keeps the shown-pages bookkeeping
+    try:                                                               # (RAM 0x3d524/28/34/38) the dissolve transition 0x102b26c reads
+        fn, fl, pr, log = D.run(deff, max_insns, args=args, rng=rng, init=init, fn_addr=fn_addr, ram=ram, counters=counters, ram_at=ram_at, ram_late=ram_late)
+    finally:
+        D.build = orig
+        if stub:
+            D.NAMES[0x27830] = stub
+    ticks = tk                       # the OS tick at each snapshot (page show, flip, or sleep with snap_sleep)
+    return snaps, ticks
+
+
+def mix(fg, bg):
+    """Display mixer (knowledge/sam_hardware/CPU_BOARD_IO.md 3.2, PinMAME sam_dmd; hardware, no ROM firmware):
+    mask = fg >> 4; pixel = (bg & mask) | (fg & ~mask), low 4 bits."""
+    return [(((b & (f >> 4)) | (f & ~(f >> 4))) & 15) for f, b in zip(fg, bg)]
+
+
+def png(fg, bg):
+    im = Image.new("L", (128, 32))
+    im.putdata([v * 17 for v in mix(fg, bg)])
+    return im
+
+
+if __name__ == "__main__":
+    d, out = int(sys.argv[1]), sys.argv[2]
+    os.makedirs(out, exist_ok=True)
+    snaps, ticks = frames(d)
+    meta = []
+    for i, (r0, r1, a, b) in enumerate(snaps):
+        png(a, b).save(os.path.join(out, "f%03d.png" % i))
+        meta.append({"frame": i, "tick": ticks[i] if i < len(ticks) else None, "page0": r0, "page1": r1})
+    json.dump(meta, open(os.path.join(out, "frames.json"), "w"), indent=1)
+    print(len(snaps), "flips")

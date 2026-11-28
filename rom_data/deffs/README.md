@@ -1,8 +1,10 @@
 # Display effects (deffs): table, text layout, screens, random parts
 
 Source ROM: trn_174h.bin (Tron Legacy LE 1.74). Every fact carries a ROM address and a tag:
-`observed` (seen in the emulator with rom_data/tools/deff_trace.cpp), `code` (read from the code
+`code` (read from the code
 by the static walker, not seen running) or `inferred` (not used for any value in these files).
+
+> **2026-11-26 (owner decision, strict rule): every emulator-observed field was removed** (`tools/strip_observed.py`: `observed_*` keys and columns, `observed_only` rows, `downstream_xcheck.csv`). What remains is read from the ROM code. `code_runs.csv` (new, `tools/deff_runs.py`) lists the OS calls each deff makes when its routine runs in Unicorn (ROM code only). Where this README below still mentions observed values, they no longer exist in the files.
 
 ## Files
 
