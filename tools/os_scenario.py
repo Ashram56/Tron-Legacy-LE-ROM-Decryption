@@ -35,6 +35,16 @@ def run(script, out, stop=None):
     m.stub(0x6180, lambda mm: 0)
     m.hooks.append(lambda mm: mm.write32(0x37264, max(0, mm.read32(0x37264) - 1)))
     log = m.trace(CALLS)
+    seen = {}
+
+    def coil_pending(mm):
+        """FUN_000028f4(coil, handle, 1) = the pulse `handle` is still queued or firing. The coil IRQ (0x12070) is not run by the harness, so a
+        pulse is answered as pending for 4 ticks (about 65 ms, the longest ball-device pulse is 64 ms, ROM 0x0101bbc0 event 9) after it was first asked about."""
+        from unicorn.arm_const import UC_ARM_REG_R1
+        h = mm.mu.reg_read(UC_ARM_REG_R1)
+        first = seen.setdefault(h, mm.ticks)
+        return 1 if mm.ticks - first < 4 else 0
+    m.stub(0x28f4, coil_pending)
     for n in (18, 19, 20, 21):
         m.set_switch(n, True)
     m.tick(900)                                   # boot, attract, the start-up lock-out
