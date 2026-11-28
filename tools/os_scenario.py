@@ -86,11 +86,15 @@ def run(script, out, stop=None):
         if stop is not None and now > stop:
             break
         if cmd == "start":
-            for _ in range(4):                    # coins until one credit, then the start button
+            players = max(1, int(arg or 1))
+            for _ in range(max(4, 3 * players)):  # coins (3 per player, as the reference script), then one START press per player 0.93 s apart
                 pulse(129, 12)
                 m.tick(12)
             m.tick(100)
-            pulse(16, 10)
+            for i in range(players):
+                pulse(16, 10)
+                if i < players - 1:
+                    m.tick(max(1, round(0.93 / TICK) - 11))
         elif cmd == "wait":
             advance(float(arg))
         elif cmd == "mark":
