@@ -8,7 +8,8 @@ mode variables, sounds) run with the attract state: their durations are the code
 must be installed BEFORE the first tick: a hook added after a block was translated is not called for it.
 
 Usage: TRON_ROM=trn_174h.bin os_deff_runs.py OUT.csv [first last] [--max TICKS]   (a fresh boot per deff, about 15 s each)
-Output columns: deff, ticks (start to task end, 1 tick = 16.26 ms), body, ended (0 = still running at --max).
+Output columns: deff, ticks (start to task end, 1 tick = 16.26 ms), body, ended (0 = still running at --max), holds
+(deff_hold_frames calls as tick:frames:priority).
 """
 import os
 import sys
@@ -18,6 +19,7 @@ import os_unicorn as O
 from unicorn.arm_const import UC_ARM_REG_LR, UC_ARM_REG_R0, UC_ARM_REG_R1, UC_ARM_REG_R2
 
 DEFF_START, TASK_CREATE, DEFF_CALLER = 0x280b0, 0xb624, 0x27dbc
+HOLD_FRAMES = 0x01024460     # deff_hold_frames(frames, priority): the last `frames` ticks run at priority `priority`
 
 
 def machine():
@@ -25,7 +27,7 @@ def machine():
     m.rtc()
     m.stub(0x6180, lambda mm: 0)
     m.hooks.append(lambda mm: mm.write32(0x37264, max(0, mm.read32(0x37264) - 1)))
-    log = m.trace({TASK_CREATE: "task_create"})
+    log = m.trace({TASK_CREATE: "task_create", HOLD_FRAMES: "hold"})
     for n in (18, 19, 20, 21):
         m.set_switch(n, True)
     m.tick(900)
@@ -60,7 +62,8 @@ def run_deff(m, log, deff, max_ticks=800):
     m.hooks.append(watch)
     m.tick(max_ticks)
     m.hooks.remove(watch)
-    return (end[0] if end else m.ticks) - t0, body, int(bool(end))
+    holds = [(e[0] - t0, e[2], e[3]) for e in log[n0:] if e[1] == "hold"]
+    return (end[0] if end else m.ticks) - t0, body, int(bool(end)), holds
 
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:]]
@@ -69,10 +72,10 @@ if __name__ == "__main__":
         del args[args.index("--max"):args.index("--max") + 2]
     first, last = (int(args[1]), int(args[2])) if len(args) >= 3 else (1, 142)
     with open(args[0], "w") as f:
-        f.write("deff,ticks,body,ended\n")
+        f.write("deff,ticks,body,ended,holds\n")
         for d in range(first, last + 1):          # a fresh machine per deff: a running deff of higher priority refuses the next
             m, log = machine()
             r = run_deff(m, log, d, mx)
             if r:
-                f.write("%d,%d,0x%x,%d\n" % (d, r[0], r[1], r[2]))
+                f.write("%d,%d,0x%x,%d,%s\n" % (d, r[0], r[1], r[2], " ".join("%d:%d:0x%x" % h for h in r[3])))
                 f.flush()
