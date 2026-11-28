@@ -6,7 +6,7 @@ release SW); the ROM runs unmodified with its own scheduler, so every call it ma
 reference trace does not log (rules_refresh_request, FUN_0100f164, ...). The output is one JSON line per call:
 {"t": seconds, "ev": name, "r0": .., "caller": ..}.
 
-Hardware the harness plays: trough switches 18-21 closed, the coin and start switches, the switch scan (os_unicorn),
+Hardware the harness plays: trough switches 18-21 closed (switch 21 opens when the eject coil 17 fires and closes at `drain`), the coin and start switches, the switch scan (os_unicorn),
 the real-time clock read (answered), the start-up lock-out counter RAM 0x37264 (counted down once per tick; 0x6180
 would show "this machine will not operate" because the clock chip is absent).
 
@@ -50,6 +50,22 @@ def run(script, out, stop=None):
         if n not in held:
             m.set_switch(n, False)
             m.tick(1)
+    ejected = {"seen": 0, "todo": []}
+
+    def eject_watch(mm):
+        """The trough eject coil (17) fired: the ball leaves the trough (switch 21 opens), rolls to the shooter lane (23 closes a second
+        later) and is plunged (23 opens again) until `drain` puts it back in the trough."""
+        n = sum(1 for e in log if e[1] == "coil_pulse" and e[2] == 17)
+        if n > ejected["seen"]:
+            ejected["seen"] = n
+            if getattr(mm, "switches", {}).get(21, True):
+                mm.set_switch(21, False)
+                ejected["todo"] = [(mm.ticks + 60, 23, True), (mm.ticks + 140, 23, False)]
+        for item in list(ejected["todo"]):
+            if mm.ticks >= item[0]:
+                mm.set_switch(item[1], item[2])
+                ejected["todo"].remove(item)
+    m.hooks.append(eject_watch)
     for line in open(script, encoding="utf-8"):
         line = line.strip()
         if not line or line.startswith("#"):
@@ -81,8 +97,9 @@ def run(script, out, stop=None):
         elif cmd == "release":
             held.discard(int(arg))
             m.set_switch(int(arg), False)
-        elif cmd == "drain":
-            pass
+        elif cmd == "drain":                      # the ball rolls back into the trough: switch 21 closes
+            m.set_switch(21, True)
+            m.tick(2)
     with open(out, "w", encoding="utf-8") as f:
         for tick, name, r0, r1, r2, r3, caller in log:
             f.write(json.dumps({"t": round((tick - t0) * TICK, 4), "ev": name, "r0": r0, "r1": r1,
